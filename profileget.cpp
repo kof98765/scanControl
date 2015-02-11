@@ -273,13 +273,13 @@ void profileGet::getVideoFrame()
 
       //Gets 1 profile in "polling-mode" and PROFILE configuration
 
-    if((iRetValue = m_pLLT->GetActualProfile(&vucVideoBuffer[0], (unsigned int)vucVideoBuffer.size(), PROFILE, NULL))
-         != vucVideoBuffer.size())
-    {
-       OnError("Error during GetActualProfile", iRetValue);
-       return ;
-    }
-    emit dispFrame(&vucVideoBuffer[0],vucVideoBuffer.size());
+//    if((iRetValue = m_pLLT->GetActualProfile(&vucVideoBuffer[0], (unsigned int)vucVideoBuffer.size(), PROFILE, NULL))
+//         != vucVideoBuffer.size())
+//    {
+//       OnError("Error during GetActualProfile", iRetValue);
+//       return ;
+//    }
+//    emit dispFrame(&vucVideoBuffer[0],vucVideoBuffer.size());
 
 }
 void profileGet::getSingleFrame()

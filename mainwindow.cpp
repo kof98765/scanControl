@@ -50,6 +50,11 @@ MainWindow::MainWindow(QWidget *parent) :
     mygroup->addButton(ui->imgRotate,6);
 
     ui->progressBar->setMaximum(100);
+    palette=ui->videoFrame->palette();
+
+
+    ui->videoFrame->setAutoFillBackground(true);
+
 
 //加载检测查块
     hal=new halconClass;
@@ -187,11 +192,12 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
 
-
+/*
     ui->base->setStyleSheet(QLatin1String(
     "border:2px;\n"
     "border-radius:5px"));
     event->accept();
+    */
     //QString("QGroupBox:title { color: rgb(255,0,0); }");
 }
 /*
@@ -279,8 +285,10 @@ void MainWindow::selectImg(int index)
 }
 void MainWindow::dispFrame(unsigned char *buf,int size)
 {
-    palette.setBrush(ui->base->widget(1)->backgroundRole(),QBrush(QImage::fromData(buf,size)));
-    ui->base->widget(1)->setPalette(palette);
+    palette.setBrush(QPalette::Window,QBrush(
+                         QImage::fromData(buf,size).scaled(ui->videoFrame->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation)));
+
+   ui->videoFrame->setPalette(palette);
 }
 void MainWindow::dispImg()
 {
@@ -295,7 +303,10 @@ void MainWindow::dispImg()
             break;
         case 1:
             profile->getVideoFrame();
+            palette.setBrush(QPalette::Window,QBrush(
+                                 QImage("frame.bmp").scaled(ui->videoFrame->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation)));
 
+            ui->videoFrame->setPalette(palette);
             break;
         case 2:
             profile->getSingleFrame();
@@ -722,7 +733,7 @@ void MainWindow::startVideo()
     connect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
     ui->startButton->setText(QStringLiteral("停止"));
     profile->startVedio();
-    timer->start(1000);
+    timer->start(200);
 
 }
 void MainWindow::stopVideo()
