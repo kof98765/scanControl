@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>add.png</file>
+        <file>bin.png</file>
+        <file>cancel.png</file>
+        <file>chat_bubble.png</file>
+        <file>download.png</file>
+        <file>email.png</file>
+        <file>female_user.png</file>
+        <file>folder.png</file>
+        <file>graph.png</file>
+        <file>home.png</file>
+        <file>ico.qrc</file>
+        <file>lock.png</file>
+        <file>magnifying_glass.png</file>
+        <file>minimize.png</file>
+        <file>pen.png</file>
+        <file>unlock.png</file>
+        <file>upload.png</file>
+        <file>user.png</file>
+        <file>user_female.png</file>
+        <file>users.png</file>
+        <file>video_play.png</file>
+        <file>ico.png</file>
+    </qresource>
+</RCC>
