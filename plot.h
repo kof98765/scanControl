@@ -31,6 +31,7 @@ public:
     void setYScale(double min,double max);
 public slots:
     void upDate(double *x,double *y,int size);
+    void upScanControlData(unsigned short *,unsigned short *,double *x,double *y,int size);
 private:
     double step;
     bool d_isDirty;

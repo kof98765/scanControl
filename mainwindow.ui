@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1039</width>
+    <width>1071</width>
     <height>693</height>
    </rect>
   </property>
@@ -28,7 +28,7 @@
      <rect>
       <x>530</x>
       <y>10</y>
-      <width>491</width>
+      <width>541</width>
       <height>601</height>
      </rect>
     </property>
@@ -86,38 +86,6 @@
       <string>参数设置</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="test">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>50</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;微软雅黑&quot;;</string>
-     </property>
-     <property name="text">
-      <string>调试</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="loadFile">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;微软雅黑&quot;;</string>
-     </property>
-     <property name="text">
-      <string>加载文件</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="launchDevice">
      <property name="geometry">
       <rect>
@@ -137,10 +105,10 @@
     <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>90</y>
-       <width>191</width>
-       <height>141</height>
+       <x>320</x>
+       <y>50</y>
+       <width>161</width>
+       <height>161</height>
       </rect>
      </property>
      <property name="title">
@@ -202,7 +170,7 @@
       <rect>
        <x>10</x>
        <y>370</y>
-       <width>471</width>
+       <width>521</width>
        <height>224</height>
       </rect>
      </property>
@@ -234,6 +202,11 @@
         </column>
         <column>
          <property name="text">
+          <string>区域名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
           <string>起点</string>
          </property>
         </column>
@@ -260,6 +233,218 @@
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>301</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>编辑测量区域</string>
+     </property>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>区域列表</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>20</y>
+        <width>161</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>绘制区域</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="2" column="0">
+        <widget class="QPushButton" name="roiDraw">
+         <property name="text">
+          <string>绘制</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QFormLayout" name="formLayout">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+         </property>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>区域名:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="roiName"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>颜色:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="roiColor">
+           <item>
+            <property name="text">
+             <string>red</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>white</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>green</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>blue</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>cyan</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>magenta</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>yellow</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>dim gray</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>gray</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>light gray</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>medium slate blue</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>coral</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>slate blue</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>spring green</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>orange red</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>orange</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>dark olive green</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>pink</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>cadet blue</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>black</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="0">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QListWidget" name="roiList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>111</width>
+        <height>251</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QGroupBox" name="view_box">
@@ -338,7 +523,7 @@ border-radius:25px</string>
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="threeDView"/>
      <widget class="QWidget" name="realTimeView">
@@ -573,7 +758,7 @@ border-radius:25px</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1039</width>
+     <width>1071</width>
      <height>23</height>
     </rect>
    </property>

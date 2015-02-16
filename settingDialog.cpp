@@ -2,9 +2,9 @@
 #include "ui_settingDialog.h"
 #include <qdebug.h>
 #include <QTextCodec>
-DialogNetParam::DialogNetParam(QWidget *parent) :
+mySettings::mySettings(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DialogNetParam)
+    ui(new Ui::mySettings)
 {
     ui->setupUi(this);
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf8"));
@@ -12,12 +12,12 @@ DialogNetParam::DialogNetParam(QWidget *parent) :
     flush_settings();
 }
 
-DialogNetParam::~DialogNetParam()
+mySettings::~mySettings()
 {
     delete ui;
 }
 
-void DialogNetParam::flush_settings()
+void mySettings::flush_settings()
 {
     ui->path->setText(set.value("path","D:/image").toString());
     ui->robotIp->setText(set.value("robotIp").toString());
@@ -29,9 +29,10 @@ void DialogNetParam::flush_settings()
     ui->select_device->addItems(set.value("interface","0").toStringList());
     ui->shutter_time->setValue(set.value("shutterTime",100).toInt());
     ui->idle_time->setValue(set.value("idleTime",900).toInt());
+    ui->resolution->addItems(set.value("resolutions","0").toStringList());
 
 }
-void DialogNetParam::on_Button_Yes_clicked()
+void mySettings::on_Button_Yes_clicked()
 {
     set.setValue("robotIp",ui->robotIp->text());
     set.setValue("robotPort",ui->robotPort->text().toInt());
@@ -41,7 +42,8 @@ void DialogNetParam::on_Button_Yes_clicked()
     set.setValue("idleTime",ui->idle_time->value());
     set.setValue("shutterTime",ui->shutter_time->value());
     set.setValue("profileCount",ui->profileCount->value());
-
+    set.setValue("median",ui->median->currentIndex());
+    set.setValue("average",ui->average->currentIndex());
 
     set.setValue("badMinArea",ui->badMinArea->text());
     set.setValue("badMaxArea",ui->badMaxArea->text());
@@ -63,10 +65,11 @@ void DialogNetParam::on_Button_Yes_clicked()
 
 
     set.sync();
+    emit updataSettings();
     close();
 }
 
-void DialogNetParam::on_open_clicked()
+void mySettings::on_open_clicked()
 {
 
      filePath=QFileDialog::getExistingDirectory(this,QStringLiteral("打开图像目录"),".",QFileDialog::ShowDirsOnly);
@@ -74,7 +77,7 @@ void DialogNetParam::on_open_clicked()
      ui->path->setText(filePath);
 }
 
-void DialogNetParam::on_default_2_clicked()
+void mySettings::on_default_2_clicked()
 {
     set.setValue("badMinArea",3);
     set.setValue("badMaxArea",200);
@@ -115,7 +118,7 @@ void DialogNetParam::on_default_2_clicked()
 
 }
 
-void DialogNetParam::on_sendButton_clicked()
+void mySettings::on_sendButton_clicked()
 {
     set.setValue("photoIp",ui->cameraIp->text());
     set.setValue("photoPort",ui->cameraPort->text());
@@ -124,22 +127,22 @@ void DialogNetParam::on_sendButton_clicked()
 
     emit netTest(ui->sendData->text()+"\n");
 }
-void DialogNetParam::recvData(char *str)
+void mySettings::recvData(char *str)
 {
     ui->recvData->append(str);
 }
 
-void DialogNetParam::on_resampleValue_currentIndexChanged(int index)
+void mySettings::on_resampleValue_currentIndexChanged(int index)
 {
     set.setValue("resampleValue",index);
 }
 
-void DialogNetParam::on_profileCount_valueChanged(int arg1)
+void mySettings::on_profileCount_valueChanged(int arg1)
 {
     set.setValue("profileCount",arg1);
 }
 
-void DialogNetParam::on_profile_config_currentIndexChanged(int index)
+void mySettings::on_profile_config_currentIndexChanged(int index)
 {
     if(index==4)
         set.setValue("profileConfig",5);
@@ -152,12 +155,12 @@ void DialogNetParam::on_profile_config_currentIndexChanged(int index)
 
 
 
-void DialogNetParam::on_idle_time_valueChanged(int arg1)
+void mySettings::on_idle_time_valueChanged(int arg1)
 {
     set.setValue("idleTime",arg1);
 }
 
-void DialogNetParam::on_shutter_time_valueChanged(int arg1)
+void mySettings::on_shutter_time_valueChanged(int arg1)
 {
     set.setValue("shutterTime",arg1);
 }

@@ -68,7 +68,7 @@ protected:
     void resizeEvent(QResizeEvent *);
 public slots:
     void outputMessage(QtMsgType,QString);
-    void recvHeightSub(double,double,double,double,double,double);
+    void recvHeightSub(QString,double,double,double);
     void dispFrame(unsigned char *buf,int size);
     void Net_Param();
     void about();
@@ -84,7 +84,7 @@ public slots:
     void netTest(QString);
     void on_textChanged();
 
-
+    void flushRoiList(QStringList list);
     void on_test_clicked();
 
     void on_launchDevice_clicked();
@@ -107,6 +107,7 @@ public slots:
     void stopVideo();
     void startSingleFrame();
     void stopSingleFrame();
+    void action_delItem();
 private:
     Ui::MainWindow *ui;
     Plot *plot;
@@ -118,7 +119,7 @@ private:
     QString searchPath;
     QList<QString> fileList;
     QPalette palette;
-    DialogNetParam    *dialNet;
+    mySettings    *setDialog;
     fileDialog *file;
     QLabel *status_label;
     QString serverIp;
@@ -143,12 +144,18 @@ private:
     bool leftRightPress;
     QList<double> badList;
     int badresult[10];
+    int currentItem;
+    QAction *delItem;
+
 
 
 signals:
     void stopMove();
     void E128_detect();
 
+private slots:
+    void on_roiDraw_clicked();
+  
 };
 
 #endif // MAINWINDOW_H

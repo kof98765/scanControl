@@ -41,7 +41,9 @@ Plot::Plot( QWidget *parent ):
 
 */
     setAutoReplot( false );
+    //使用鼠标左键平移
     ( void ) new QwtPlotPanner( canvas );
+    //使用滚轮缩放大小
     ( void ) new QwtPlotMagnifier( canvas );
 
 }
@@ -106,8 +108,21 @@ void Plot::upDate(double *x,double *y,int size)
         curve->setRenderHint( QwtPlotItem::RenderAntialiased );
         curve->setSamples(x,y,size);
          //   curve->setSamples(points);
+    }
 
+    replot();
 
+}
+void Plot::upScanControlData(unsigned short *,unsigned short *,double *x,double *y,int size)
+{
+    QwtPlotItemList curveList = itemList(QwtPlotItem::Rtti_PlotCurve);
+    if(curveList.size()>0)
+    {
+        QwtPlotCurve* curve = (QwtPlotCurve *)curveList.takeFirst();
+        QVector<QPointF> points;
+        curve->setRenderHint( QwtPlotItem::RenderAntialiased );
+        curve->setSamples(x,y,size);
+         //   curve->setSamples(points);
     }
 
     replot();
@@ -154,10 +169,13 @@ void Plot::insertCurve(double value[],int length,QString str)
 
     }
     curve->setPen( QColor( colors[ counter % numColors ] ), 1 );
+    //设置点图
+    curve->setStyle(QwtPlotCurve::Dots);
     curve->attach( this );
     this->setAxisScale(QwtPlot::yLeft,min,max);
     replot();
 }
+
 void Plot::clearCurve()
 {
     QwtPlotItemList curveList = itemList( QwtPlotItem::Rtti_PlotCurve );

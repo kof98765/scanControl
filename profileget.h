@@ -37,6 +37,7 @@ public:
     unsigned int m_uiPacketSizeMAX;
     unsigned int m_uiPacketSizeMIN;
     unsigned int uiWidth, uiHeight;
+    unsigned long filter;
     std::vector<unsigned char> vucVideoBuffer;
     HANDLE m_hProfileEvent;
     std::vector<unsigned char> m_vucProfileBuffer;
@@ -63,7 +64,7 @@ signals:
     void Error(QString);
     void putImagebyPointer1(double *pdValueZ,int width,int height);
     void putImagebyPointer3(double *x,double *y,double *z,int width,int height);
-    void dispSingleFrame(double *x,double *y,int size);
+    void dispSingleFrame(unsigned short *,unsigned short *,double *x,double *y,int size);
     void setData(double*,int);
     void dispFrame(unsigned char*,int);
 public slots:

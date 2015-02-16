@@ -175,6 +175,19 @@ void profileGet::initDevice()
                 OnError("Error during GetResolutions", iRetValue);
                 bOK = false;
             }
+            QStringList str;
+            for(int i=0;i<vdwResolutions.size();i++)
+            {
+                str<<QString::number(vdwResolutions[i]);
+                set.setValue("resolutions",str);
+            }
+
+            qDebug() << "Get profile filter \n";
+            if((iRetValue = m_pLLT->GetFeature(FEATURE_FUNCTION_PROFILE_FILTER,&filter)) < GENERAL_FUNCTION_OK)
+            {
+                OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGERPROFILE_FILTER)", iRetValue);
+                bOK = false;
+            }
             if((iRetValue = m_pLLT->GetMinMaxPacketSize((unsigned long*)&m_uiPacketSizeMIN, (unsigned long*)&m_uiPacketSizeMAX)) < GENERAL_FUNCTION_OK)
             {
                     OnError("Error during GetPacketSize", iRetValue);
@@ -182,7 +195,7 @@ void profileGet::initDevice()
             }
             m_uiResolution = vdwResolutions[0];
         }
-
+        set.sync();
 
         isReady=true;
         //Wait for a keyboard hit
@@ -200,64 +213,69 @@ void profileGet::flushSettings()
     uiShutterTime = set.value("shutterTime",100).toUInt();
     uiIdleTime = set.value("idleTime",900).toUInt();
     m_uiNeededProfileCount = set.value("profileCount",1000).toUInt();//ÉèÖÃÖ¡Êý
+
     qDebug() << "Set resolution to " << m_uiResolution << "\n";
     if((iRetValue = m_pLLT->SetResolution(m_uiResolution)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetResolution", iRetValue);
-        bOK = false;
+
     }
 
 
-    if(bOK)
+
+    qDebug() << "Set trigger to internal\n";
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x00000000)) < GENERAL_FUNCTION_OK)
     {
-        qDebug() << "Set trigger to internal\n";
-        if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x00000000)) < GENERAL_FUNCTION_OK)
-        {
-            OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
-            bOK = false;
-        }
-    }
-    if(bOK)
-    {
-        qDebug() << "Set profile filter \n";
-        if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_PROFILE_FILTER, 0x82000000|set.value("resampleValue",0).toInt())) < GENERAL_FUNCTION_OK)
-        {
-            OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
-            bOK = false;
-        }
-
+        OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
     }
-    if(bOK)
+
+
+
+
+    qDebug() << "Profile config set to PROFILE\n";
+    if((iRetValue = m_pLLT->SetProfileConfig(PROFILE)) < GENERAL_FUNCTION_OK)
     {
-        qDebug() << "Profile config set to PROFILE\n";
-        if((iRetValue = m_pLLT->SetProfileConfig(PROFILE)) < GENERAL_FUNCTION_OK)
-        {
-            OnError("Error during SetProfileConfig", iRetValue);
-            bOK = false;
-        }
+        OnError("Error during SetProfileConfig", iRetValue);
+
     }
 
-    if(bOK)
+
+
+    qDebug() << "Set shutter time to " << uiShutterTime << "\n";
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_SHUTTERTIME, uiShutterTime)) < GENERAL_FUNCTION_OK)
     {
-        qDebug() << "Set shutter time to " << uiShutterTime << "\n";
-        if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_SHUTTERTIME, uiShutterTime)) < GENERAL_FUNCTION_OK)
-        {
-            OnError("Error during SetFeature(FEATURE_FUNCTION_SHUTTERTIME)", iRetValue);
-            bOK = false;
-        }
+        OnError("Error during SetFeature(FEATURE_FUNCTION_SHUTTERTIME)", iRetValue);
+
     }
 
-    if(bOK)
+
+
+    qDebug() << "Set idle time to " << uiIdleTime << "\n";
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_IDLETIME, uiIdleTime)) < GENERAL_FUNCTION_OK)
     {
-        qDebug() << "Set idle time to " << uiIdleTime << "\n";
-        if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_IDLETIME, uiIdleTime)) < GENERAL_FUNCTION_OK)
-        {
-            OnError("Error during SetFeature(FEATURE_FUNCTION_IDLETIME)", iRetValue);
-            bOK = false;
-        }
+        OnError("Error during SetFeature(FEATURE_FUNCTION_IDLETIME)", iRetValue);
+
     }
+
+
+    filter&=~(0x1<<4);
+    filter&=~(0x1)<<2;
+    filter&=~(0x1)<<0;
+    filter|=set.value("resampleValue",0).toInt()<<4;
+    filter|=set.value("median",0).toInt()<<2;
+    filter|=set.value("average",0).toInt()<<0;
+
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_PROFILE_FILTER, filter)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_PROFILE_FILTER)", iRetValue);
+
+    }
+
     qDebug("ready to get %d profile",m_uiNeededProfileCount);
+
+
+
 
 
 }
@@ -290,6 +308,8 @@ void profileGet::getSingleFrame()
     std::vector<unsigned char> vucProfileBuffer(m_uiResolution*4+16);
     std::vector<double> vdValueX(m_uiResolution);
     std::vector<double> vdValueZ(m_uiResolution);
+    std::vector<unsigned short> vdIntensity(m_uiResolution);
+    std::vector<unsigned short> vdReflectionWidth(m_uiResolution);
 
  //   m_pLLT->SaveProfiles("video.bmp", BMP);
     if((iRetValue = m_pLLT->GetActualProfile(&vucProfileBuffer[0], (unsigned int)vucVideoBuffer.size(), PURE_PROFILE, NULL))
@@ -300,14 +320,14 @@ void profileGet::getSingleFrame()
     }
 
     iRetValue = m_pLLT->ConvertProfile2Values(&vucProfileBuffer[0], m_uiResolution, PURE_PROFILE, m_tscanCONTROLType,
-        0, true, NULL, NULL, NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
+        0, true, &vdReflectionWidth[0], &vdIntensity[0], NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
     if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
     {
         OnError("Error during Converting of profile data", iRetValue);
         return;
     }
    // emit dispFrame(&vucVideoBuffer[0],vucVideoBuffer.size());
-    emit dispSingleFrame(&vdValueX[0],&vdValueZ[0],m_uiResolution);
+    emit dispSingleFrame(&vdReflectionWidth[0],&vdIntensity[0],&vdValueX[0],&vdValueZ[0],m_uiResolution);
 
 }
 void profileGet::startSingleFrame()

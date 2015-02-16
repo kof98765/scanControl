@@ -1,20 +1,20 @@
-#ifndef DIALOGNETPARAM_H
-#define DIALOGNETPARAM_H
+#ifndef mySettings_H
+#define mySettings_H
 
 #include <QDialog>
 #include <QFileDialog>
 #include <QSettings>
 namespace Ui {
-class DialogNetParam;
+class mySettings;
 }
 
-class DialogNetParam : public QDialog
+class mySettings : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit DialogNetParam(QWidget *parent = 0);
-    ~DialogNetParam();
+    explicit mySettings(QWidget *parent = 0);
+    ~mySettings();
 
 public slots:
     void recvData(char *);
@@ -42,7 +42,7 @@ private slots:
     void on_shutter_time_valueChanged(int arg1);
 
 private:
-    Ui::DialogNetParam *ui;
+    Ui::mySettings *ui;
     QString filePath;
     QSettings set;
     QString *settings;
@@ -50,6 +50,7 @@ private:
 
 signals:
     void netTest(QString msg);
+    void updataSettings();
 };
 
-#endif // DIALOGNETPARAM_H
+#endif // mySettings_H

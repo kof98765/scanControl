@@ -1,6 +1,6 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "setdialog.h"
+
 
 
 
@@ -55,7 +55,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->videoFrame->setAutoFillBackground(true);
 
-
+    delItem=new QAction(QStringLiteral("删除"),this);
+    connect(delItem,SIGNAL(triggered()),this,SLOT(action_delItem()));
 //加载检测查块
     hal=new halconClass;
     ref=new reflectControl;
@@ -65,9 +66,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //ui->base->setLayout(layout);
   //  writeData = new writeExcel;
 
-    //网络设置对话框
-    dialNet = new DialogNetParam;
-    dialNet->setModal(true);
+    //设置对话框
+    setDialog = new mySettings;
+    setDialog->setModal(true);
 
     point=new pointAnalyze;
 
@@ -77,9 +78,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->base->setMouseTracking(true);
     ui->base->installEventFilter(this);
     ui->view_box->installEventFilter(this);
+    ui->roiList->installEventFilter(this);
     //glWidget->setMouseTracking(true);
     init_connect();
 
+    hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
 }
 
 bool MainWindow::eventFilter(QObject *target, QEvent *event)
@@ -184,6 +187,24 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
         return true;
 
     }
+    else if(target==ui->roiList)
+    {
+        if(event->type()==QEvent::ContextMenu)
+        {
+            QContextMenuEvent *mouse=static_cast<QContextMenuEvent *>(event);
+            
+            currentItem=ui->roiList->indexAt(mouse->pos()).row();
+
+            qDebug()<<mouse->pos();
+            qDebug()<<"item"<<currentItem;
+            QMenu menu(this);
+
+            menu.addAction(delItem);
+
+            menu.exec(mouse->globalPos());
+        }
+        return QWidget::eventFilter(target,event);
+    }
     else
        return  QWidget::eventFilter(target,event);
 
@@ -221,27 +242,32 @@ void MainWindow::init_connect()
 
     //点击开始按钮开始检测
     connect(ui->action_start,SIGNAL(triggered()),this,SLOT(startButton_clicked()));
+    connect(ui->action_Open,SIGNAL(triggered()),this,SLOT(on_loadFile_clicked()));
     //connect(point,SIGNAL(initDevice()),profile,SLOT(initDevice()));
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
     connect(ui->settings,SIGNAL(clicked()),ui->action_Net_Param,SLOT(trigger()));
     connect(ui->settings,SIGNAL(clicked()),this,SLOT(on_textChanged()));
     connect(mygroup,SIGNAL(buttonClicked(int)),this,SLOT(controlImg(int)));
-    connect(ref,SIGNAL(recvData(char*)),dialNet,SLOT(recvData(char*)));
-    connect(dialNet,SIGNAL(netTest(QString)),this,SLOT(netTest(QString)));
+    connect(ref,SIGNAL(recvData(char*)),setDialog,SLOT(recvData(char*)));
+    connect(setDialog,SIGNAL(netTest(QString)),this,SLOT(netTest(QString)));
     connect(ui->action_pointAnalyze,SIGNAL(triggered()),point,SLOT(show()));
 
     connect(MsgHandlerWapper::instance(),SIGNAL(message(QtMsgType,QString)),this,
                     SLOT(outputMessage(QtMsgType,QString)));
 
-    connect(hal,SIGNAL(sendHeightSub(double,double,double,double,double,double))
-            ,this,SLOT(recvHeightSub(double,double,double,double,double,double)));
+    connect(hal,SIGNAL(sendHeightSub(QString,double,double,double))
+            ,this,SLOT(recvHeightSub(QString,double,double,double)));
     connect(profile,SIGNAL(dispZ(QString)),hal,SLOT(read_img(QString)));
     connect(profile,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
     connect(profile,SIGNAL(putImagebyPointer3(double*,double*,double*,int,int)),hal,SLOT(getImagebyPointer3(double*,double*,double*,int,int)));
     //connect(profile,SIGNAL(setData(double*,int)),glWidget,SLOT(setData(double*,int)));
     connect(profile,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
-    connect(profile,SIGNAL(dispSingleFrame(double*,double*,int)),plot,SLOT(upDate(double*,double*,int)));
+    connect(profile,SIGNAL(dispSingleFrame(unsigned short *,unsigned short *,double *,double *,int)),
+            plot,SLOT(upScanControlData(unsigned short *,unsigned short *,double *,double *,int)));
     connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
+    connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
+    connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
+
 }
 
 void MainWindow::Error(QString str)
@@ -442,6 +468,9 @@ void MainWindow::detect()
 */
 void MainWindow::startButton_clicked()
 {
+    sum->clear_table();
+    hal->RectHeightSub();
+
    if(isRealTime)
    {
        switch(ui->base->currentIndex())
@@ -533,8 +562,8 @@ void MainWindow::closeEvent(QCloseEvent *e)
 */
 void MainWindow::Net_Param()
 {
-    dialNet->show();
-    if(dialNet->exec() == QDialog::Accepted)
+    setDialog->show();
+    if(setDialog->exec() == QDialog::Accepted)
     {
         qDebug()<<"Accepted";
     }
@@ -678,34 +707,24 @@ void MainWindow::on_setPoint_clicked()
     }
 
 }
-void MainWindow::recvHeightSub(double x,double y,double x2,double y2,double min,double max)
+void MainWindow::recvHeightSub(QString name,double min,double max,double range)
 {
-    static double tempMin,tempMax;
-    if(ui->check_num->value()!=1)
-    {
-        ui->check_num->setValue(ui->check_num->value()-1);
-        tempMin=tempMin<min?tempMin:min;
-        tempMax=tempMax>max?tempMax:max;
-        hal->RectHeightSub();
-        return;
-    }
-    else
-        {
-        tempMin=min;
-        tempMax=max;
-    }
+    QMap<QString,QVariant> list=set.value("roiList").toMap();
+    QStringList str=list.value(name).toStringList();
+
     ui->tableWidget->setSortingEnabled(false);
     sum->add_row();
-    if((tempMax-tempMin)>ui->limitValue->text().toDouble())
+    if(range>ui->limitValue->text().toDouble())
         sum->add_item(0,QString("NG"));
-    sum->add_item(1,QString("%1,%2").arg(x).arg(y));
-    sum->add_item(2,QString("%1,%2").arg(x2).arg(y2));
-    sum->add_item(3,QString("%1").arg(tempMin));
-    sum->add_item(4,QString("%1").arg(tempMax));
-    sum->add_item(5,QString("%1").arg(tempMax-tempMin));
+    sum->add_item(1,name);
+    sum->add_item(2,QString("%1,%2").arg(str.at(1)).arg(str.at(2)));
+    sum->add_item(3,QString("%1,%2").arg(str.at(3)).arg(str.at(4)));
+    sum->add_item(4,QString("%1").arg(min));
+    sum->add_item(5,QString("%1").arg(max));
+    sum->add_item(6,QString("%1").arg(range));
 
-    isDrawing=false;
-    ui->setPoint->setText(QStringLiteral("绘制测量点"));
+
+
     ui->tableWidget->setSortingEnabled(true);
 }
 
@@ -752,7 +771,7 @@ void MainWindow::startSingleFrame()
     isRealTime=true;
     connect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
     ui->startButton->setText(QStringLiteral("停止"));
-    timer->start(40);
+    timer->start(200);
     profile->startSingleFrame();
 }
 void MainWindow::stopSingleFrame()
@@ -790,3 +809,30 @@ void MainWindow::on_twoDButton_clicked()
     ui->base->setCurrentIndex(3);
     hal->setMode("2D");
 }
+
+void MainWindow::on_roiDraw_clicked()
+{
+    isDrawing=true;
+    char *p=ui->roiName->text().toUtf8().data();
+    hal->drawRect(p,ui->roiColor->currentText());
+    isDrawing=false;
+
+}
+void MainWindow::flushRoiList(QStringList list)
+{
+
+    ui->roiList->clear();
+    ui->roiList->addItems(list);
+
+}
+void MainWindow::action_delItem()
+{
+    QMap<QString,QVariant> list=set.value("roiList").toMap();
+    QStringList tmp=list.keys();
+    list.remove(tmp.at(currentItem));
+    hal->delRect(currentItem);
+    ui->roiList->takeItem(currentItem);
+
+}
+
+

@@ -50,6 +50,7 @@ public:
     int step;
     typedef void (halconClass::*detect_action)();
     detect_action menu[9];
+
 protected:
     void run();
 private:
@@ -68,7 +69,7 @@ private:
     bool is3D;
 
     Hobject result_img,Image,RGBImage;
-    QList<Hobject*> rectList;
+    QMap<QString,Hobject*> rectList;
     HTuple minLength;
     HTuple maxLength;
     HTuple minArea;
@@ -93,7 +94,7 @@ private:
     int smothHeight;
     bool hasData;
     QTime time;
-
+    QMap<QString,QVariant> roiList;
 
 public slots:
     void E128_detect();
@@ -104,13 +105,16 @@ public slots:
     void getImagebyPointer1(double *pdValueZ,int width,int height);
      void getImagebyPointer3(double *x,double *y,double *z,int width,int height);
     void close_the_window();
+    void drawRect(QString name,QString color);
+    void delRect(int);
 signals:
     void detectFinish();
     void stopMove();
     void sumResult(int type,int num);
     void badResult(int type,int x,int y,int width,int height,int length);
     void dispImg();
-    void sendHeightSub(double x,double y,double x2,double y2,double min,double max);
+    void sendHeightSub(QString,double,double,double);
+    void flushRoiList(QStringList list);
 
 };
 
