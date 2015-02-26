@@ -29,7 +29,10 @@ void mySettings::flush_settings()
     ui->select_device->addItems(set.value("interface","0").toStringList());
     ui->shutter_time->setValue(set.value("shutterTime",100).toInt());
     ui->idle_time->setValue(set.value("idleTime",900).toInt());
+    ui->resolution->clear();
     ui->resolution->addItems(set.value("resolutions","0").toStringList());
+    ui->median->setCurrentIndex(set.value("median",0).toInt());
+    ui->average->setCurrentIndex(set.value("average",0).toInt());
 
 }
 void mySettings::on_Button_Yes_clicked()
@@ -44,6 +47,7 @@ void mySettings::on_Button_Yes_clicked()
     set.setValue("profileCount",ui->profileCount->value());
     set.setValue("median",ui->median->currentIndex());
     set.setValue("average",ui->average->currentIndex());
+
 
     set.setValue("badMinArea",ui->badMinArea->text());
     set.setValue("badMaxArea",ui->badMaxArea->text());
@@ -97,6 +101,7 @@ void mySettings::on_default_2_clicked()
     set.setValue("smothWidth",7);
     set.setValue("smothHeight",7);
     set.sync();
+
     ui->badMinArea->setText(QString::number(3));
     ui->badMaxArea->setText(QString::number(200));
     ui->badMaxHeight->setText(QString::number(40));

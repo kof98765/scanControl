@@ -13,13 +13,14 @@
 #include <QFile>
 #include <QTime>
 #include <QPixmap>
+#include <QThread>
 #define MAX_INTERFACE_COUNT    5
 #define MAX_RESOULUTIONS       6
 
 using namespace std;
 static void *object;
 void __stdcall newProfile(const unsigned char* pucData, unsigned int uiSize, void* pUserData);
-class profileGet : public QObject
+class profileGet : public QThread
 {
     Q_OBJECT
 public:
@@ -27,7 +28,7 @@ public:
 
     ~profileGet();
     void initDevice();
-    void GetProfiles_Callback();
+
     CInterfaceLLT* m_pLLT;
     unsigned int m_uiResolution;
     TScannerType m_tscanCONTROLType;
@@ -39,6 +40,9 @@ public:
     unsigned int uiWidth, uiHeight;
     unsigned long filter;
     std::vector<unsigned char> vucVideoBuffer;
+    std::vector<double> vdValueX;
+    std::vector<double> vdValueZ;
+    std::vector<unsigned short> vdValueIntensity;
     HANDLE m_hProfileEvent;
     std::vector<unsigned char> m_vucProfileBuffer;
     void OnError(const char* szErrorTxt, int iErrorValue);
@@ -48,7 +52,8 @@ public:
     static void sendSignal(const unsigned char* pucData, unsigned int uiSize, void* pUserData);
     QSettings set;
     QTime time;
-
+protected:
+    void run();
 private:
      bool bConnected;
      bool isReady;
@@ -76,6 +81,7 @@ public slots:
     void startSingleFrame();
     void stopSingleFrame();
     void flushSettings();
+    void GetProfiles_Callback();
 
 };
 

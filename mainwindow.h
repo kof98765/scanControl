@@ -85,11 +85,9 @@ public slots:
     void on_textChanged();
 
     void flushRoiList(QStringList list);
-    void on_test_clicked();
+
 
     void on_launchDevice_clicked();
-
-    void on_setPoint_clicked();
 
     void on_actionReset_triggered();
     void paintEvent(QPaintEvent *event);
@@ -102,11 +100,14 @@ public slots:
 
     void on_threeDButton_clicked();
 
+
     void on_twoDButton_clicked();
+
     void startVideo();
     void stopVideo();
     void startSingleFrame();
     void stopSingleFrame();
+
     void action_delItem();
 private:
     Ui::MainWindow *ui;
@@ -130,6 +131,7 @@ private:
     bool isRunning;
     reflectControl *ref;
     QTimer *timer;
+    QTimer *eventTimer;
     QString fileName;
     int index;
     int preIndex;
@@ -146,7 +148,7 @@ private:
     int badresult[10];
     int currentItem;
     QAction *delItem;
-
+    int status;
 
 
 signals:
@@ -155,7 +157,9 @@ signals:
 
 private slots:
     void on_roiDraw_clicked();
-  
+    void statusCheck();
+    void updataProsessBar(QString,int);
+    void on_toExcel_clicked();
 };
 
 #endif // MAINWINDOW_H

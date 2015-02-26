@@ -16,7 +16,6 @@ class halconClass:public QThread
 public:
 
     halconClass(QObject *parent = 0);
-    void pointDetect();
 
     void saveResult();
     void startThread();
@@ -31,7 +30,7 @@ public:
     void sixteen_white_line();
     void seventeen_white_line();
     void readMTX(QString str);
-    void RectHeightSub();
+
 
 
     void stopThread();
@@ -107,6 +106,7 @@ public slots:
     void close_the_window();
     void drawRect(QString name,QString color);
     void delRect(int);
+    void RectHeightSub();
 signals:
     void detectFinish();
     void stopMove();

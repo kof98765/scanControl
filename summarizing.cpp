@@ -65,7 +65,7 @@ void summarizing::to_excel()
 
 
     Record rec;
-    QString str=QFileDialog::getSaveFileName(0,"save",".","",0,0);
+    QString str=QFileDialog::getSaveFileName(0,"save",".","xls",0,0);
     QFileInfo file(str);
 
 

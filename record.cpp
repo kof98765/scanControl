@@ -84,8 +84,8 @@ void Record::creat_excel(QList<QString> list)
     workbook = excel->querySubObject("ActiveWorkBook"); //获取当前工作簿
 
     worksheets = workbook->querySubObject("Sheets");         //获取工作表集合
-    worksheet = worksheets->querySubObject("Item(int)",1);   //获取工作表集合的工作表-youmo
-    worksheet->setProperty("Name","样品数据");
+    worksheet = worksheets->querySubObject("Item(int)",1);   //获取工作表集合的工作表-
+    worksheet->setProperty("Name","testValue");
             //删除添加后多余的两项
 
 

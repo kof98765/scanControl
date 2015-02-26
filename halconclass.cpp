@@ -29,33 +29,8 @@ halconClass::halconClass(QObject *parent) :
     emit flushRoiList(roiList.keys());
 }
 /*
-    函数名:pointDetect
-    参数:无
-    返回值:无
-    作用:
-    图像上的白点检测
+    打开一个窗口
 */
-void halconClass::pointDetect()
-{
-
-      // Local iconic variables
-      Hobject  image, Image1, Image2, Image3, Region;
-      // Local control variables
-      HTuple  Width, Height, Number;
-
-      read_image(&image, fileName.toUtf8().data());
-      get_image_size(image, &Width, &Height);
-      set_window_attr("background_color","black");
-
-
-
-      if (HDevWindowStack::IsOpen())
-        disp_obj(image, HDevWindowStack::GetActive());
-      decompose3(image, &Image1, &Image2, &Image3);
-      threshold(Image2, &Region, 128, 255);
-      count_obj(Region, &Number);
-
-}
 void halconClass::open_the_window(int handle,int width,int height)
 {
 
@@ -70,20 +45,29 @@ void halconClass::open_the_window(int handle,int width,int height)
     win_width=width;
     win_height=height;
 }
+/*
+   打开新窗口前,关闭所有窗口
+*/
 void halconClass::close_the_window()
 {
     if (HDevWindowStack::IsOpen())
     {
-        close_window(WindowHandle);
-        HDevWindowStack::Pop();
+
+        HDevWindowStack::CloseAll();
     }
 }
+/*
+    启动线程,读取图像文件
+*/
 void halconClass::read_img(QString str)
 {
 
    path=str;
    this->start();
 }
+/*
+    重置图像窗口,并刷新数据
+*/
 void halconClass::reset()
 {
     Hlong Width,Height;
@@ -102,6 +86,9 @@ void halconClass::reset()
 
     }
 }
+/*
+    设置halcon的窗口显示模式
+*/
 void halconClass::setMode(QString str)
 {
     if (HDevWindowStack::IsOpen()&hasData)
@@ -127,12 +114,13 @@ void halconClass::setMode(QString str)
 }
 void halconClass::disp_img()
 {
-    Hlong Width,Height;
+
     Hobject Rectangle;
+    roiList=set.value("roiList").toMap();
    // mirror_image(Image,&Image,"column");
-    qDebug()<<"disp_img";
-    if (HDevWindowStack::IsOpen())
-        clear_window(WindowHandle);
+
+   // if (HDevWindowStack::IsOpen())
+      //  clear_window(WindowHandle);
     if (HDevWindowStack::IsOpen()&hasData)
     {
 
@@ -142,20 +130,26 @@ void halconClass::disp_img()
             disp_obj(Image,WindowHandle);
             copy_image(Image,&result_img);
             set_window_param(WindowHandle,"interactive_plot", "true");
+            qDebug()<<"disp_3d";
         }
         else
         {
             disp_obj(RGBImage,WindowHandle);
             copy_image(RGBImage,&result_img);
+            qDebug()<<"disp_2d";
         }
 
 
     }
+
     if(HDevWindowStack::IsOpen())
     {
 
         //显示矩形窗口
         QStringList list=roiList.keys();
+
+        if(list.size()==0)
+            return;
         for(int i=0;i<list.size();i++)
         {
             QStringList str=roiList.value(list.at(i)).toStringList();
@@ -816,11 +810,14 @@ void halconClass::drawRect(QString name,QString color)
 
 void halconClass::RectHeightSub()
 {
+    QTime time;
+    time.start();
    if (HDevWindowStack::IsOpen()&hasData)
     {
         Hobject   Rectangle, RegionComplement, ImageReduced;
         HTuple  Row1, Column1, Row2, Column2, Min, Max;
-        HTuple  Range;
+        HTuple Rows,Columns,Grayval;
+        HTuple  Range,String,s,Result,Number;
         QStringList list=roiList.keys();
         for(int i=0;i<list.size();i++)
         {
@@ -828,13 +825,24 @@ void halconClass::RectHeightSub()
             gen_rectangle1(&Rectangle, str.at(1).toInt(), str.at(2).toInt(), str.at(3).toInt(), str.at(4).toInt());
 
             reduce_domain(Image, Rectangle, &ImageReduced);
-            min_max_gray(Rectangle, ImageReduced, 0, &Min, &Max, &Range);
+
+
+            get_region_points(ImageReduced, &Rows, &Columns);
+            get_grayval(ImageReduced, Rows, Columns, &Grayval);
+            tuple_max(Grayval, &Max);
+            tuple_string(Grayval, "f", &String);
+            tuple_string(Max, "f", &s);
+            tuple_regexp_replace(String, "^0.", s, &Result);
+            tuple_number(Result, &Number);
+            tuple_min(Number, &Min);
+            tuple_sub(Max,Min,&Range);
             qDebug()<<Min[0].D()<<Max[0].D()<<Range[0].D();
             emit sendHeightSub(list.at(i),Min[0].D(),Max[0].D(),Range[0].D());
         }
 
 
     }
+    qDebug()<<QStringLiteral("计算高差时间:")<<time.elapsed()<<"ms";
 }
 
 void halconClass::readSettings()
@@ -868,6 +876,7 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
     Hlong width,height;
     char     type[128];
     HTuple Row,Column;
+
 
     p=(unsigned short *)y;
     gen_image_const(&Image,"real",w,h);
@@ -916,12 +925,8 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     qDebug()<<width<<height;
     for (int row=0; row<height; row++)
     {
-      for (int col=0; col<width; col++)
-      {
-
-        pointer[row*width+col] =*pdValueZ++;
-      }
-
+      memcpy(pointer,pdValueZ,width);
+      pdValueZ+=width;
     }
     qDebug()<<"read time:"<<time.elapsed()<<"msec";
     //gen_image_interleaved()
@@ -931,14 +936,14 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     write_image(Image,"tiff",0,"test");
     threshold(Image, &Region, 1, 255);
     min_max_gray(Region, Image, 0, &Min, &Max, &Range);
-
+    qDebug()<<"img"<<Min[0].D()<<Max[0].D()<<Range[0].D();
     gen_image_const (&Imagetemp, "byte", w, h);
  //   gen_image_const(&Image, "real", Cols, Rows);
     cfa_to_rgb(Imagetemp, &RGBImage, "bayer_gb", "bilinear");
     decompose3(RGBImage, &Image1, &Image2, &Image3);
 
     get_image_size(RGBImage,&Width,&Height);
-    set_part(WindowHandle,0,0,Height-1,Width-1);
+    set_part(WindowHandle,0,0,Height,Width);
 
     img_width=Width[0].I();
     img_height=Height[0].I();
@@ -946,7 +951,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 
    // cfa_to_rgb (Image, &Image, "bayer_gb", "bilinear");
     HTuple step=Range/6;
-    qDebug()<<step[0].D();
+
     HTuple RGBValue;
     for(i=0;i<h-1;i++)
     {

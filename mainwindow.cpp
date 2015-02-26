@@ -17,10 +17,12 @@ MainWindow::MainWindow(QWidget *parent) :
    isDrag=false;
    isDrawing=false;
    isAuto=false;
+   isRealTime=false;
    leftRightPress=false;
    leftPress=false;
    rightPress=false;
    index=0;
+   status=0;
    pass=0;
    preIndex=-1;
 
@@ -37,7 +39,9 @@ MainWindow::MainWindow(QWidget *parent) :
     plot->resize(ui->base->widget(2)->size());
 
     timer=new QTimer();
-
+    eventTimer=new QTimer();
+    connect(eventTimer,SIGNAL(timeout()),this,SLOT(statusCheck()));
+    eventTimer->start(1000);
     sum=new summarizing;
     sum->set_table(ui->tableWidget);
     mygroup = new QButtonGroup;
@@ -243,6 +247,7 @@ void MainWindow::init_connect()
     //点击开始按钮开始检测
     connect(ui->action_start,SIGNAL(triggered()),this,SLOT(startButton_clicked()));
     connect(ui->action_Open,SIGNAL(triggered()),this,SLOT(on_loadFile_clicked()));
+
     //connect(point,SIGNAL(initDevice()),profile,SLOT(initDevice()));
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
     connect(ui->settings,SIGNAL(clicked()),ui->action_Net_Param,SLOT(trigger()));
@@ -267,6 +272,7 @@ void MainWindow::init_connect()
     connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
     connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
+
 
 }
 
@@ -319,9 +325,7 @@ void MainWindow::dispFrame(unsigned char *buf,int size)
 void MainWindow::dispImg()
 {
 
-    ui->progressBar->setValue(40);
-    ui->progressBar->setFormat(QStringLiteral("%p%显示图像,等待处理"));
-    ui->progressBar->repaint();
+    status=0;
     switch(ui->base->currentIndex())
     {
         case 0:
@@ -338,7 +342,11 @@ void MainWindow::dispImg()
             profile->getSingleFrame();
             break;
         case 3:
+            status=3;
             hal->disp_img();
+            QTimer::singleShot(1,hal,SLOT(RectHeightSub()));
+
+            //hal->RectHeightSub();
             break;
     }
 
@@ -348,9 +356,7 @@ void MainWindow::dispImg()
     ui->action_start->setEnabled(true);
     if(isAuto&isRunning)
     {
-        ui->progressBar->setValue(60);
-        ui->progressBar->setFormat(QStringLiteral("%p%处理中."));
-        ui->progressBar->repaint();
+
         emit detect();
 
     }
@@ -438,9 +444,7 @@ void MainWindow::detect()
    (hal->*hal->menu[8])();
     //QMessageBox::about(this,QStringLiteral("别急"),QStringLiteral("请先打开需要检测的文件~"));
 
-    ui->progressBar->setValue(100);
-    ui->progressBar->setFormat(QStringLiteral("%p%完成"));
-    ui->progressBar->repaint();
+
     if(isAuto&isRunning)
     {
             if(index<fileList.size()-1)
@@ -469,7 +473,7 @@ void MainWindow::detect()
 void MainWindow::startButton_clicked()
 {
     sum->clear_table();
-    hal->RectHeightSub();
+    //hal->RectHeightSub();
 
    if(isRealTime)
    {
@@ -500,8 +504,7 @@ void MainWindow::startButton_clicked()
    }
    else
    {
-       QTime time;
-       time.start();
+
        switch(ui->base->currentIndex())
        {
             case 0:
@@ -514,19 +517,21 @@ void MainWindow::startButton_clicked()
 
                break;
            case 3:
+                status=2;
                hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
-               profile->GetProfiles_Callback();
+
+               profile->start();
                break;
        }
 
-       qDebug()<<QStringLiteral("扫描时间:")<<time.elapsed()<<"msec";
+
    }
 
 }
 
 MainWindow::~MainWindow()
 {
-
+    eventTimer->stop();
     delete ui;
 
 }
@@ -562,7 +567,9 @@ void MainWindow::closeEvent(QCloseEvent *e)
 */
 void MainWindow::Net_Param()
 {
+    setDialog->flush_settings();
     setDialog->show();
+
     if(setDialog->exec() == QDialog::Accepted)
     {
         qDebug()<<"Accepted";
@@ -633,7 +640,9 @@ void MainWindow::controlImg(int index)
     }
 
 }
-
+/*
+    读取配置
+*/
 void MainWindow::readSettings()
 {
     filePath=set.value("path","D:/image").toString();
@@ -645,19 +654,23 @@ void MainWindow::on_textChanged()
 {
     preIndex=-1;
 }
+/*
+    通过socket发送消息,以测试连接
+*/
 void MainWindow::netTest(QString str)
 {
     ref->initSocked(set.value("photpIp").toString(),set.value("udpPort").toInt());
     ref->sendMsg(str,set.value("photoIp").toString(),set.value("photoPort").toInt());
 
 }
+/*
+    读取测试文件
 
+*/
 void MainWindow::on_loadFile_clicked()
 {
+    status=1;
 
-    ui->progressBar->setValue(20);
-    ui->progressBar->setFormat(QStringLiteral("%p%加载文件中.."));
-    ui->progressBar->repaint();
      hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
     hal->read_img("data/Z.mtx");
 }
@@ -665,10 +678,7 @@ void MainWindow::on_loadFile_clicked()
 
 
 
-void MainWindow::on_test_clicked()
-{
-    point->show();
-}
+
 void MainWindow::paintEvent(QPaintEvent *event)
 {
 
@@ -676,39 +686,32 @@ void MainWindow::paintEvent(QPaintEvent *event)
     //hal->disp_img();
 
 }
+/*
+    启动并初始化激光
+*/
 void MainWindow::on_launchDevice_clicked()
 {
-    ui->progressBar->setValue(20);
-    ui->progressBar->setFormat(QStringLiteral("%p%读取激光数据中.."));
-    ui->progressBar->repaint();
+
 
     profile->initDevice();
     ui->startButton->setEnabled(true);
 }
+/*
+
+
+    接收Debug信息并重定向到某控件上
+*/
 void MainWindow::outputMessage(QtMsgType type,QString str)
 {
     ui->debug->appendPlainText(str);
 }
 
-void MainWindow::on_setPoint_clicked()
-{
-    if(isDrawing)
-    {
-        isDrawing=false;
-        ui->setPoint->setText(QStringLiteral("绘制测量点"));
-    }
-    else
-    {
-        ui->setPoint->setText(QStringLiteral("停止绘制"));
-        isDrawing=true;
-        hal->clearRect();
-        hal->RectHeightSub();
-
-    }
-
-}
+/*
+    接收高差计算结果并显示
+*/
 void MainWindow::recvHeightSub(QString name,double min,double max,double range)
 {
+    status=0;
     QMap<QString,QVariant> list=set.value("roiList").toMap();
     QStringList str=list.value(name).toStringList();
 
@@ -835,4 +838,39 @@ void MainWindow::action_delItem()
 
 }
 
+void MainWindow::statusCheck()
+{
+    static int i=0;
+    if(i>100)
+        status=0;
+    switch(status)
+    {
+        case 0:
+            i=0;
+            updataProsessBar(QStringLiteral("已完成"),100);
+            break;
+        case 1:
+            updataProsessBar(QStringLiteral("读取图像中"),i);
+            i+=5;
+            break;
+        case 2:
+            updataProsessBar(QStringLiteral("激光扫描中"),i);
+            i+=5;
+            break;
+        case 3:
+            updataProsessBar(QStringLiteral("数据处理中"),i);
+            i+=5;
+            break;
+    }
+}
+void MainWindow::updataProsessBar(QString name,int num)
+{
+    ui->progressBar->setValue(num);
+    ui->progressBar->setFormat("%p%"+name+"...");
+    ui->progressBar->repaint();
+}
 
+void MainWindow::on_toExcel_clicked()
+{
+    sum->to_excel();
+}
