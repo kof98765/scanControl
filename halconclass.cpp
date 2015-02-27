@@ -920,6 +920,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     float *pointer=0;
     time.start();
     Image.Reset();
+    RGBImage.Reset();
     gen_image_const(&Image,"real",w,h);
     get_image_pointer1(Image,(long*)&pointer,type,&width,&height);
     qDebug()<<width<<height;
