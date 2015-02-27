@@ -207,6 +207,9 @@ void profileGet::initDevice()
 
 
 }
+/*
+    刷新设置
+*/
 void profileGet::flushSettings()
 {
 
@@ -216,6 +219,7 @@ void profileGet::flushSettings()
     m_uiNeededProfileCount = set.value("profileCount",1000).toUInt();//设置帧数
 
     qDebug() << "Set resolution to " << m_uiResolution << "\n";
+    
     if((iRetValue = m_pLLT->SetResolution(m_uiResolution)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetResolution", iRetValue);
@@ -256,20 +260,22 @@ void profileGet::flushSettings()
     }
 
     qDebug("filter %x",filter);
-    filter=0;
-
+    filter&=~(0xf<<8);
+    filter&=~(0xf<<4);
+    filter&=~(0xf<<0);
+    filter|=0xc<<8;
     filter|=set.value("resampleValue",0).toInt()<<4;
     filter|=set.value("median",0).toInt()<<2;
     filter|=set.value("average",0).toInt()<<0;
 
    qDebug("filter %x",filter);
-/*
+
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_PROFILE_FILTER, filter)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetFeature(FEATURE_FUNCTION_PROFILE_FILTER)", iRetValue);
 
     }
-    */
+
     qDebug() << "Sets the Firewire PacketSize to " << m_uiPacketSizeMAX << "\n";
 /*
     if((iRetValue = m_pLLT->SetPacketSize(1024)) < GENERAL_FUNCTION_OK)
@@ -323,7 +329,7 @@ void profileGet::getSingleFrame()
         OnError("Error during Converting of profile data", iRetValue);
         return;
     }
-   // emit dispFrame(&vucVideoBuffer[0],vucVideoBuffer.size());
+
     emit dispSingleFrame(&vdReflectionWidth[0],&vdIntensity[0],&vdValueX[0],&vdValueZ[0],m_uiResolution);
 
 }
@@ -412,6 +418,7 @@ void profileGet::GetProfiles_Callback()
     int iRetValue;
     QTime time;
     time.start();
+    m_uiRecivedProfileCount=0;
     if(!isReady)
     {
         emit Error(QStringLiteral("设备还没准备好,请重新启动激光!"));
@@ -426,7 +433,8 @@ void profileGet::GetProfiles_Callback()
 
     vdValueX.resize(m_uiResolution*m_uiNeededProfileCount);
     vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount);
-    vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount);  //intensity
+    vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount);
+
     //Resets the event
     ResetEvent(m_hProfileEvent);
 
@@ -499,7 +507,10 @@ void profileGet::GetProfiles_Callback()
 
 //  DisplayTimestamp(&m_vucProfileBuffer[m_uiNeededProfileCount*m_uiResolution*64-16]);
 }
-
+/*
+    获取一帧数据
+    
+*/
 void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize, void* pUserData)
 {
 

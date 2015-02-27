@@ -119,8 +119,8 @@ void halconClass::disp_img()
     roiList=set.value("roiList").toMap();
    // mirror_image(Image,&Image,"column");
 
-   // if (HDevWindowStack::IsOpen())
-      //  clear_window(WindowHandle);
+    if (HDevWindowStack::IsOpen())
+        clear_window(WindowHandle);
     if (HDevWindowStack::IsOpen()&hasData)
     {
 
@@ -919,14 +919,18 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     Hlong     width,height;
     float *pointer=0;
     time.start();
-
+    Image.Reset();
     gen_image_const(&Image,"real",w,h);
     get_image_pointer1(Image,(long*)&pointer,type,&width,&height);
     qDebug()<<width<<height;
     for (int row=0; row<height; row++)
     {
-      memcpy(pointer,pdValueZ,width);
-      pdValueZ+=width;
+        for (int col=0; col<width; col++)
+        {
+
+          pointer[row*width+col] =*pdValueZ++;
+
+        }
     }
     qDebug()<<"read time:"<<time.elapsed()<<"msec";
     //gen_image_interleaved()

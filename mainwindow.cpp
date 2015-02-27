@@ -519,7 +519,7 @@ void MainWindow::startButton_clicked()
            case 3:
                 status=2;
                hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
-
+               //profile->GetProfiles_Callback();
                profile->start();
                break;
        }
@@ -842,11 +842,14 @@ void MainWindow::statusCheck()
 {
     static int i=0;
     if(i>100)
+    {
         status=0;
+        i=0;
+    }
     switch(status)
     {
         case 0:
-            i=0;
+
             updataProsessBar(QStringLiteral("已完成"),100);
             break;
         case 1:
