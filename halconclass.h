@@ -7,6 +7,11 @@
 #include <QSettings>
 #include <QTime>
 #include <fstream>
+
+#include <iostream>
+#include <pcl/point_types.h>
+#include <pcl/io/pcd_io.h>
+
 using namespace std;
 using namespace Halcon;
 
@@ -46,6 +51,7 @@ public:
     void readSettings();
     void setMode(QString str);
     void clearRect();
+
     int step;
     typedef void (halconClass::*detect_action)();
     detect_action menu[9];
@@ -96,6 +102,7 @@ private:
     QMap<QString,QVariant> roiList;
 
 public slots:
+    void test();
     void E128_detect();
      void disp_img();
      void zoomIn();

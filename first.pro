@@ -15,6 +15,12 @@ RC_ICONS = ico/ico.ico
 #includes
 INCLUDEPATH += "$$(HALCONROOT)/include"
 INCLUDEPATH += "$$(HALCONROOT)/include/cpp"
+INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/Boost/include"
+INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/Eigen/include"
+INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/FLANN/include"
+INCLUDEPATH += "$$(PCL_ROOT)/include/pcl-1.6"
+INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/Qhull/include"
+
 #INCLUDEPATH+= "D:/opencv/include/opencv"
 DEFINES+=QWT_DLL
 DEFINES-= MD UNICODE
@@ -22,10 +28,11 @@ DEFINES-= MD UNICODE
 UI_DIR+=release
 #libs
 QMAKE_LIBDIR  += "$$(HALCONROOT)/lib/x86sse2-win32"
+QMAKE_LIBDIR  +="$$(PCL_ROOT)"/lib
 
 
 #QMAKE_LIBDIR +=./
-LIBS    +=halcon.lib halconcpp.lib qwt.lib
+LIBS    +=halcon.lib halconcpp.lib qwt.lib pcl_io_release.lib pcl_common_release.lib
 
 
 

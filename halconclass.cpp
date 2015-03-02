@@ -756,6 +756,25 @@ void halconClass::readMTX(QString str)
     hasData=true;
 
 }
+void halconClass::test()
+{
+    pcl::PointCloud<pcl::PointXYZ>::Ptr inCloud(new pcl::PointCloud<pcl::PointXYZ>);
+    for (float x = -5.0; x <= 5.0; x += 0.25)
+    {
+        for (float y = -5.0; y <= 5.0; y += 0.1)
+        {
+            pcl::PointXYZ cloud;
+
+            cloud.x = x;
+            cloud.y = y;
+            //cloud.z = 1+(float)rand();
+            cloud.z = 1+x;
+            inCloud->push_back(cloud);
+        }
+    }
+
+    pcl::io::savePCDFile("plane_cloud_out.pcd", *inCloud);
+}
 void halconClass::clearRect()
 {
     QStringList list=rectList.keys();

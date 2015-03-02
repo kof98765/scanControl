@@ -272,7 +272,8 @@ void MainWindow::init_connect()
     connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
     connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
-
+    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
+    connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
 
 }
 
@@ -695,6 +696,7 @@ void MainWindow::on_launchDevice_clicked()
 
     profile->initDevice();
     ui->startButton->setEnabled(true);
+    ui->action_start->setEnabled(true);
 }
 /*
 

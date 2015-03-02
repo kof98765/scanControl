@@ -767,10 +767,12 @@ border-radius:25px</string>
      <string>任务(&amp;N)</string>
     </property>
     <addaction name="action_Open"/>
+    <addaction name="action_init"/>
     <addaction name="action_start"/>
     <addaction name="action"/>
     <addaction name="action_pointAnalyze"/>
     <addaction name="actionReset"/>
+    <addaction name="actionTest"/>
    </widget>
    <addaction name="menu_2"/>
    <addaction name="menu_S"/>
@@ -889,10 +891,13 @@ border-radius:25px</string>
      <normalon>:/new/prefix1/minimize.png</normalon>:/new/prefix1/video_play.png</iconset>
    </property>
    <property name="text">
-    <string>开始检测(&amp;K)</string>
+    <string>开始测量(&amp;F3)</string>
    </property>
    <property name="toolTip">
-    <string>开始检测/停止检测</string>
+    <string>开始测量/停止测量</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
    </property>
   </action>
   <action name="action_big">
@@ -935,6 +940,19 @@ border-radius:25px</string>
   <action name="actionReset">
    <property name="text">
     <string>reset</string>
+   </property>
+  </action>
+  <action name="actionTest">
+   <property name="text">
+    <string>test</string>
+   </property>
+  </action>
+  <action name="action_init">
+   <property name="text">
+    <string>启动激光(&amp;F2)</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
    </property>
   </action>
  </widget>
