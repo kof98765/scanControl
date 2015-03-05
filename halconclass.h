@@ -11,6 +11,7 @@
 #include <iostream>
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
+#include "pcl/PCL_Library_Dll.h"
 
 using namespace std;
 using namespace Halcon;
@@ -51,7 +52,7 @@ public:
     void readSettings();
     void setMode(QString str);
     void clearRect();
-
+    HINSTANCE hInstance;
     int step;
     typedef void (halconClass::*detect_action)();
     detect_action menu[9];
@@ -73,6 +74,7 @@ private:
     bool useDefault;
     bool is3D;
 
+    PointCloud::Ptr inCloud;
     Hobject result_img,Image,RGBImage;
     QMap<QString,Hobject*> rectList;
     HTuple minLength;
@@ -114,6 +116,7 @@ public slots:
     void drawRect(QString name,QString color);
     void delRect(int);
     void RectHeightSub();
+    void calculatePlaneness();
 signals:
     void detectFinish();
     void stopMove();

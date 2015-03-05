@@ -193,12 +193,7 @@
         </column>
         <column>
          <property name="text">
-          <string>起点</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>终点</string>
+          <string>位置</string>
          </property>
         </column>
         <column>
@@ -773,6 +768,7 @@ border-radius:25px</string>
     <addaction name="action_pointAnalyze"/>
     <addaction name="actionReset"/>
     <addaction name="actionTest"/>
+    <addaction name="actionPcl"/>
    </widget>
    <addaction name="menu_2"/>
    <addaction name="menu_S"/>
@@ -953,6 +949,11 @@ border-radius:25px</string>
    </property>
    <property name="shortcut">
     <string>F2</string>
+   </property>
+  </action>
+  <action name="actionPcl">
+   <property name="text">
+    <string>pcl</string>
    </property>
   </action>
  </widget>

@@ -276,18 +276,16 @@ void profileGet::flushSettings()
 
     }
 
-    qDebug() << "Sets the Firewire PacketSize to " << m_uiPacketSizeMAX << "\n";
-/*
-    if((iRetValue = m_pLLT->SetPacketSize(1024)) < GENERAL_FUNCTION_OK)
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, filter)) < GENERAL_FUNCTION_OK)
     {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
-        OnError("Error during SetPacketSize", iRetValue);
-        return ;
     }
-    */
+
+    qDebug() << "Sets the Firewire PacketSize to " << m_uiPacketSizeMAX << "\n";
+
 
     qDebug("ready to get %d profile",m_uiNeededProfileCount);
-
 
 
 }
@@ -300,7 +298,6 @@ void profileGet::getVideoFrame()
       OnError("Error during saveProfile", iRetValue);
       return ;
     }
-
 
 }
 void profileGet::getSingleFrame()

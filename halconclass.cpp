@@ -23,6 +23,11 @@ halconClass::halconClass(QObject *parent) :
                            &halconClass::seventeen_white_line,
                            &halconClass::E128_detect
                                                    };
+    hInstance = LoadLibrary("PCL_Library_Dll.dll");
+
+
+
+
     memcpy(menu,tmp,sizeof(tmp));
     roiList=set.value("roiList").toMap();
 
@@ -81,8 +86,8 @@ void halconClass::reset()
         img_width=Width;
         clear_window(WindowHandle);
         set_part(WindowHandle,0,0,Height-1,Width-1);
-        disp_obj(Image,WindowHandle);
-        copy_image(Image,&result_img);
+        disp_obj(result_img,WindowHandle);
+
 
     }
 }
@@ -157,7 +162,7 @@ void halconClass::disp_img()
             set_tposition(WindowHandle,str.at(1).toInt(),str.at(2).toInt());
             write_string(WindowHandle,HTuple(list.at(i).toUtf8().data()));
             Hobject Rectangle,Contours;
-            gen_rectangle1(&Rectangle, (Hlong)str.at(1).toInt(), (Hlong)str.at(2).toInt(),(Hlong)str.at(3).toInt(), (Hlong)str.at(4).toInt());
+            gen_rectangle1(&Rectangle, (Hlong)str.at(1).toInt(), (Hlong)str.at(2).toInt(),(Hlong)str.at(3).toDouble(), (Hlong)str.at(4).toInt());
             gen_contour_region_xld(Rectangle,&Contours,"border");
             disp_obj(Contours,WindowHandle);
         }
@@ -641,7 +646,7 @@ void halconClass::readMTX(QString str)
       gen_image_const(&Image, "real", Cols, Rows);
       get_region_points(Image, &Row, &Column);
       set_grayval(Image, Row, Column, Values);
-      write_image(Image,"tiff",0,"test");
+      //write_image(Image,"tiff",0,"test");
 
 
 
@@ -651,7 +656,8 @@ void halconClass::readMTX(QString str)
       gen_image_const (&Imagetemp, "byte", Cols, Rows);
    //   gen_image_const(&Image, "real", Cols, Rows);
       cfa_to_rgb(Imagetemp, &RGBImage, "bayer_gb", "bilinear");
-      time.start();
+      time.restart();
+
       get_image_size(RGBImage,&Width,&Height);
       set_part(WindowHandle,0,0,Height-1,Width-1);
 
@@ -758,6 +764,7 @@ void halconClass::readMTX(QString str)
 }
 void halconClass::test()
 {
+    /*
     pcl::PointCloud<pcl::PointXYZ>::Ptr inCloud(new pcl::PointCloud<pcl::PointXYZ>);
     for (float x = -5.0; x <= 5.0; x += 0.25)
     {
@@ -774,15 +781,11 @@ void halconClass::test()
     }
 
     pcl::io::savePCDFile("plane_cloud_out.pcd", *inCloud);
+    */
+
 }
 void halconClass::clearRect()
 {
-    QStringList list=rectList.keys();
-
-    for(int index=0;index<list.size();index++)
-    {
-        clear_obj(*rectList.value(list.at(index)));
-    }
 
 }
 void halconClass::delRect(int index)
@@ -805,19 +808,21 @@ void halconClass::drawRect(QString name,QString color)
 
         name=QString("%1_%2").arg(name.mid(0,name.lastIndexOf("_"))).arg(i++);
     }
-    HTuple  Row1, Column1, Row2, Column2, Min, Max;
+    HTuple  Row, Column, Row2, Column2,Length2, Max;
     
     set_color(WindowHandle,color.toUtf8().data());
-    draw_rectangle1(WindowHandle, &Row1, &Column1, &Row2, &Column2);
-    qDebug()<<Row1[0].I()<<Column1[0].I()<<Row2[0].I()<<Column2[0].I();
+
+    draw_rectangle1(WindowHandle,&Row,&Column,&Row2,&Column2);
+    qDebug()<<Row[0].I()<<Column[0].I()<<Row2[0].I()<<Column2[0].I();
 
    //写入配置文件
     QStringList str;
     str<<color;
-    str<<QString::number(Row1[0].I());
-    str<<QString::number(Column1[0].I());
+    str<<QString::number(Row[0].I());
+    str<<QString::number(Column[0].I());
     str<<QString::number(Row2[0].I());
     str<<QString::number(Column2[0].I());
+
     roiList.insert(name,QVariant(str));
     set.setValue("roiList",roiList);
     set.sync();
@@ -833,8 +838,8 @@ void halconClass::RectHeightSub()
     time.start();
    if (HDevWindowStack::IsOpen()&hasData)
     {
-        Hobject   Rectangle, RegionComplement, ImageReduced;
-        HTuple  Row1, Column1, Row2, Column2, Min, Max;
+        Hobject   Rectangle, RegionComplement, ImageReduced,rect;
+        HTuple  Row1, Column1, Row2, Column2, Min, Max,Indices;
         HTuple Rows,Columns,Grayval;
         HTuple  Range,String,s,Result,Number;
         QStringList list=roiList.keys();
@@ -848,12 +853,22 @@ void halconClass::RectHeightSub()
 
             get_region_points(ImageReduced, &Rows, &Columns);
             get_grayval(ImageReduced, Rows, Columns, &Grayval);
+
             tuple_max(Grayval, &Max);
-            tuple_string(Grayval, "f", &String);
-            tuple_string(Max, "f", &s);
-            tuple_regexp_replace(String, "^0.", s, &Result);
-            tuple_number(Result, &Number);
-            tuple_min(Number, &Min);
+
+            tuple_find(Grayval,0,&Indices);
+            if(Indices[0].I()!=-1)
+            {
+                for(int i=0;i<Indices.Num();i++)
+                {
+
+                    Grayval[Indices[i].I()]=Max;
+                }
+            }
+
+
+            tuple_min(Grayval,&Min);
+
             tuple_sub(Max,Min,&Range);
             qDebug()<<Min[0].D()<<Max[0].D()<<Range[0].D();
             emit sendHeightSub(list.at(i),Min[0].D(),Max[0].D(),Range[0].D());
@@ -863,7 +878,50 @@ void halconClass::RectHeightSub()
     }
     qDebug()<<QStringLiteral("计算高差时间:")<<time.elapsed()<<"ms";
 }
+void halconClass::calculatePlaneness()
+{
+    QTime time;
+    time.start();
+    if (HDevWindowStack::IsOpen()&hasData)
+    {
+        Hobject   Rectangle, Contours, ImageReduced,rect;
+        HTuple  Row, Column, Phi, Length1, Min, Max,Length2;
+        HTuple Rows,Columns,Grayval;
+        HTuple  Range,String,s,Result,PointOrder;
+        Hlong width,height;
+        float *pointer;
+        char     type[128];
+        QStringList list=roiList.keys();
+        for(int i=0;i<list.size();i++)
+        {
+            QStringList str=roiList.value(list.at(i)).toStringList();
+            gen_rectangle1(&Rectangle, str.at(1).toInt(), str.at(2).toInt(), str.at(3).toInt(), str.at(4).toInt());
+            gen_contour_region_xld(Rectangle,&Contours,"border");
+            fit_rectangle2_contour_xld(Contours, "regression", -1, 0, 0, 3, 2, &Row, &Column, &Phi, &Length1, &Length2, &PointOrder);
+            reduce_domain(Image, Rectangle, &ImageReduced);
 
+
+            PointCloud::Ptr newCloud;
+            PointT point;
+            for(int i=str.at(1).toInt();i<str.at(3).toInt();i++)
+            {
+                for(int j=str.at(2).toInt();i<str.at(4).toInt();i++)
+                {
+                    newCloud.get()->push_back(inCloud.get()[i][j]);
+                }
+            }
+
+
+            //typedef void (*Transfer2Cloud)(double* X,double* Y,double* Z,unsigned short* I,const int col,const int row,PointCloud::Ptr inCloud);
+           // Transfer2Cloud test_function =NULL;
+           // test_function = (Test_function)GetProcAddress(hInstance, "Transfer2Cloud");
+
+           //(*test_function)();
+
+        }
+     }
+    qDebug()<<QStringLiteral("计算平面度时间:")<<time.elapsed()<<"ms";
+}
 void halconClass::readSettings()
 {
 
@@ -896,6 +954,11 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
     char     type[128];
     HTuple Row,Column;
 
+
+    typedef void (*Transfer2Cloud)(double* X,double* Y,double* Z,unsigned short* I,const int col,const int row,PointCloud::Ptr inCloud);
+    Transfer2Cloud test_function =NULL;
+     test_function = (Transfer2Cloud)GetProcAddress(hInstance, "Transfer2Cloud");
+    (*test_function)(x,y,z,0,w,h,inCloud);
 
     p=(unsigned short *)y;
     gen_image_const(&Image,"real",w,h);
@@ -953,8 +1016,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
         }
     }
     qDebug()<<"read time:"<<time.elapsed()<<"msec";
-    //gen_image_interleaved()
-    //gen_image3()
+
 
   //  write_image(RGBImage,"bmp",0,"test.bmp");
     write_image(Image,"tiff",0,"test");

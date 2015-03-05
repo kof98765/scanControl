@@ -22,17 +22,18 @@ INCLUDEPATH += "$$(PCL_ROOT)/include/pcl-1.6"
 INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/Qhull/include"
 
 #INCLUDEPATH+= "D:/opencv/include/opencv"
-DEFINES+=QWT_DLL
+DEFINES+=QWT_DLL PCLLIBRARYDLL _AFXDLL
 DEFINES-= MD UNICODE
 
 UI_DIR+=release
 #libs
 QMAKE_LIBDIR  += "$$(HALCONROOT)/lib/x86sse2-win32"
 QMAKE_LIBDIR  +="$$(PCL_ROOT)"/lib
+QMAKE_LIBDIR +="../pcl"
 
 
 #QMAKE_LIBDIR +=./
-LIBS    +=halcon.lib halconcpp.lib qwt.lib pcl_io_release.lib pcl_common_release.lib
+LIBS    +=halcon.lib halconcpp.lib qwt.lib pcl_io_release.lib pcl_common_release.lib PCL_Library_Dll.lib
 
 
 
@@ -76,7 +77,8 @@ HEADERS  += mainwindow.h \
     profileget.h \
     msghandlerwapper.h \
     settingDialog.h \
-    glwidget.h
+    glwidget.h \
+    pcl/PCL_Library_Dll.h
 
     profileget.h \
 
@@ -89,5 +91,6 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     icons.qrc \
     ico/ico.qrc
+
 
 

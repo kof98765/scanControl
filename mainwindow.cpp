@@ -244,12 +244,15 @@ void MainWindow::init_connect()
     connect(ui->action_big,SIGNAL(triggered()),hal,SLOT(zoomOut()));
     connect(ui->action_small,SIGNAL(triggered()),hal,SLOT(zoomIn()));
 
-    //点击开始按钮开始检测
+    //点击开始按钮
     connect(ui->action_start,SIGNAL(triggered()),this,SLOT(startButton_clicked()));
+    //读取文件按钮
     connect(ui->action_Open,SIGNAL(triggered()),this,SLOT(on_loadFile_clicked()));
 
     //connect(point,SIGNAL(initDevice()),profile,SLOT(initDevice()));
+    //接收显示信号
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
+    //触发设置窗口
     connect(ui->settings,SIGNAL(clicked()),ui->action_Net_Param,SLOT(trigger()));
     connect(ui->settings,SIGNAL(clicked()),this,SLOT(on_textChanged()));
     connect(mygroup,SIGNAL(buttonClicked(int)),this,SLOT(controlImg(int)));
@@ -273,7 +276,9 @@ void MainWindow::init_connect()
     connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
     connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
+    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(calculatePlaneness()));
     connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
+    connect(ui->actionPcl,SIGNAL(triggered()),hal,SLOT(test()));
 
 }
 
@@ -723,10 +728,9 @@ void MainWindow::recvHeightSub(QString name,double min,double max,double range)
         sum->add_item(0,QString("NG"));
     sum->add_item(1,name);
     sum->add_item(2,QString("%1,%2").arg(str.at(1)).arg(str.at(2)));
-    sum->add_item(3,QString("%1,%2").arg(str.at(3)).arg(str.at(4)));
-    sum->add_item(4,QString("%1").arg(min));
-    sum->add_item(5,QString("%1").arg(max));
-    sum->add_item(6,QString("%1").arg(range));
+    sum->add_item(3,QString("%1").arg(min));
+    sum->add_item(4,QString("%1").arg(max));
+    sum->add_item(5,QString("%1").arg(range));
 
 
 
@@ -818,8 +822,8 @@ void MainWindow::on_twoDButton_clicked()
 void MainWindow::on_roiDraw_clicked()
 {
     isDrawing=true;
-    char *p=ui->roiName->text().toUtf8().data();
-    hal->drawRect(p,ui->roiColor->currentText());
+
+    hal->drawRect(ui->roiName->text(),ui->roiColor->currentText());
     isDrawing=false;
 
 }
@@ -853,6 +857,7 @@ void MainWindow::statusCheck()
         case 0:
 
             updataProsessBar(QStringLiteral("已完成"),100);
+            i=0;
             break;
         case 1:
             updataProsessBar(QStringLiteral("读取图像中"),i);

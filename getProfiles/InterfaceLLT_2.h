@@ -13,7 +13,7 @@
 #if !defined InterfaceLLT2H
 #define InterfaceLLT2H
 
-#include <windows.h>
+#include <qt_windows.h>
 #include "scanControlDataTypes.h"
 
 // declare the old functions as deprecated

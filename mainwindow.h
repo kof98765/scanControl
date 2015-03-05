@@ -25,7 +25,7 @@
 #include <QSettings>
 #include <QStringListModel>
 #include <QWheelEvent>
-#include <math.h>
+
 #include <QDirIterator>
 #include <QtGui>
 #include <QSplashScreen>
