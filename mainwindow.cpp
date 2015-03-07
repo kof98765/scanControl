@@ -27,7 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
    preIndex=-1;
 
    profile=new profileGet();
-
+    debug.setFileName("debug.txt");
+    debug.open(QIODevice::Append);
 
     plot = new Plot(ui->base->widget(2));
     QStringList str;
@@ -276,10 +277,11 @@ void MainWindow::init_connect()
     connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
     connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
-    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(calculatePlaneness()));
+    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(test()));
     connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
     connect(ui->actionPcl,SIGNAL(triggered()),hal,SLOT(test()));
-
+    connect(ui->actionCallback,SIGNAL(triggered()),profile,SLOT(start()));
+    connect(setDialog,SIGNAL(selectDevice(index)),profile,SLOT(selectDevice(int)));
 }
 
 void MainWindow::Error(QString str)
@@ -350,9 +352,7 @@ void MainWindow::dispImg()
         case 3:
             status=3;
             hal->disp_img();
-            QTimer::singleShot(1,hal,SLOT(RectHeightSub()));
-
-            //hal->RectHeightSub();
+            hal->RectHeightSub();
             break;
     }
 
@@ -526,7 +526,8 @@ void MainWindow::startButton_clicked()
                 status=2;
                hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
                //profile->GetProfiles_Callback();
-               profile->start();
+               //profile->start();
+               profile->startTrigger();
                break;
        }
 
@@ -678,7 +679,7 @@ void MainWindow::on_loadFile_clicked()
     status=1;
 
      hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
-    hal->read_img("data/Z.mtx");
+    hal->read_img("test.tif");
 }
 
 
@@ -711,6 +712,9 @@ void MainWindow::on_launchDevice_clicked()
 void MainWindow::outputMessage(QtMsgType type,QString str)
 {
     ui->debug->appendPlainText(str);
+    setDialog->debugMessage(str);
+    debug.write(str.toUtf8().data());
+    debug.flush();
 }
 
 /*
@@ -803,8 +807,7 @@ void MainWindow::on_singleFrameButton_clicked()
 
 void MainWindow::on_threeDButton_clicked()
 {
-     stopVideo();
-     stopSingleFrame();
+
      hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
      ui->base->setCurrentIndex(0);
      hal->setMode("3D");
@@ -812,8 +815,7 @@ void MainWindow::on_threeDButton_clicked()
 
 void MainWindow::on_twoDButton_clicked()
 {
-    stopVideo();
-    stopSingleFrame();
+
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
     ui->base->setCurrentIndex(3);
     hal->setMode("2D");

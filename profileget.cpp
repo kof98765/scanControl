@@ -7,6 +7,8 @@ profileGet::profileGet(QObject *parent) :
     bool bLoadError;
     m_hProfileEvent = CreateEvent(NULL, true, false, "ProfileEvent");
     bConnected = false;
+    mode=1;
+    index=0;
     //Creating a LLT-object
     //The LLT-Object will load the LLT.dll automaticly and give us a error if ther no LLT.dll
     m_pLLT = new CInterfaceLLT("LLT.dll", &bLoadError);
@@ -62,8 +64,7 @@ void profileGet::initDevice()
     uiShutterTime = set.value("shutterTime",100).toUInt();
     uiIdleTime = set.value("idleTime",900).toUInt();
     m_uiNeededProfileCount = set.value("profileCount",1000).toUInt();//设置帧数
-     int iRetValue;
-     bool bOK = true;
+
      m_uiPacketSizeMAX = 0;
      m_uiPacketSizeMIN=0;
      isReady=false;
@@ -72,18 +73,52 @@ void profileGet::initDevice()
 
      m_uiRecivedProfileCount = 0;
 
-     if(bConnected)
-     {
-         qDebug() << "Disconnect the scanCONTROL\n";
-         if((iRetValue=m_pLLT->Disconnect()) < GENERAL_FUNCTION_OK)
-         {
-           OnError("Error during Disconnect", iRetValue);
-
-         }
-     }
+     readSettings();
 
 
-    //Gets the available interfaces from the scanCONTROL-device
+
+}
+void profileGet::selectDevice(int index)
+{
+    int iRetValue;
+    this->index=index;
+    if(bConnected)
+    {
+        qDebug() << "Disconnect the scanCONTROL\n";
+        if((iRetValue=m_pLLT->Disconnect()) < GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during Disconnect", iRetValue);
+            return;
+        }
+        bConnected=false;
+    }
+
+    qDebug() << "\nSelect the device interface " <<index<< vuiInterfaces[index] << "\n";
+    if((iRetValue = m_pLLT->SetDeviceInterface(vuiInterfaces[index], 0)) < GENERAL_FUNCTION_OK)
+    {
+
+        OnError("Error during SetDeviceInterface", iRetValue);
+
+    }
+
+    qDebug() << "Connecting to scanCONTROL\n";
+    if((iRetValue = m_pLLT->Connect()) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during Connect", iRetValue);
+
+    }
+    else
+    {
+        qDebug()<<"connect succesful";
+        bConnected = true;
+    }
+
+}
+void profileGet::readSettings()
+{
+    int iRetValue;
+    bool bOK = true;
+    //获取设备列表
     iRetValue = m_pLLT->GetDeviceInterfacesFast(&vuiInterfaces[0], (unsigned int)vuiInterfaces.size());
 
     if(iRetValue == ERROR_GETDEVINTERFACES_REQUEST_COUNT)
@@ -114,97 +149,91 @@ void profileGet::initDevice()
 
    if(uiInterfaceCount >= 1)
    {
-        QStringList str;
+       //保存设备列表
+        QStringList str1;
         for(unsigned int i=0;i<uiInterfaceCount;i++)
         {
-            str<<QString(vuiInterfaces[i]);
+            str1<<QString(vuiInterfaces[i]);
         }
-        set.setValue("interface",str);
-        qDebug() << "\nSelect the device interface " << vuiInterfaces[0] << "\n";
-        if((iRetValue = m_pLLT->SetDeviceInterface(vuiInterfaces[0], 0)) < GENERAL_FUNCTION_OK)
+        set.setValue("interface",str1);
+        qDebug()<<"interface"<<str1;
+        //选择当前设备
+        selectDevice(index);
+
+        //获取LLT类型
+        if((iRetValue = m_pLLT->GetLLTType(&m_tscanCONTROLType)) < GENERAL_FUNCTION_OK)
         {
+            OnError("Error during GetLLTType", iRetValue);
 
-            OnError("Error during SetDeviceInterface", iRetValue);
-            bOK = false;
         }
+        qDebug() << "Get scanCONTROL type"<<m_tscanCONTROLType;
 
-        if(bOK)
+        if(iRetValue == GENERAL_FUNCTION_DEVICE_NAME_NOT_SUPPORTED)
         {
-            qDebug() << "Connecting to scanCONTROL\n";
-            if((iRetValue = m_pLLT->Connect()) < GENERAL_FUNCTION_OK)
-            {
-                OnError("Error during Connect", iRetValue);
-                bOK = false;
-            }
-            else
-            {
-                qDebug()<<"connect succesful";
-                bConnected = true;
-            }
+            qDebug() << "Can't decode scanCONTROL type. Please contact Micro-Epsilon for a newer version of the LLT.dll.\n";
         }
 
-       if(bOK)
-       {
-
-            if((iRetValue = m_pLLT->GetLLTType(&m_tscanCONTROLType)) < GENERAL_FUNCTION_OK)
-            {
-                OnError("Error during GetLLTType", iRetValue);
-                bOK = false;
-            }
-            qDebug() << "Get scanCONTROL type"<<m_tscanCONTROLType;
-            if(iRetValue == GENERAL_FUNCTION_DEVICE_NAME_NOT_SUPPORTED)
-            {
-                qDebug() << "Can't decode scanCONTROL type. Please contact Micro-Epsilon for a newer version of the LLT.dll.\n";
-            }
-
-            if(m_tscanCONTROLType >= scanCONTROL28xx_25 && m_tscanCONTROLType <= scanCONTROL28xx_xxx)
-            {
-                qDebug() << "The scanCONTROL is a scanCONTROL28xx\n\n";
-            }
-            else if(m_tscanCONTROLType >= scanCONTROL27xx_25 && m_tscanCONTROLType <= scanCONTROL27xx_xxx)
-            {
-                qDebug() << "The scanCONTROL is a scanCONTROL27xx\n\n";
-            }
-            else
-            {
-                qDebug() << "The scanCONTROL is a undefined type\nPlease contact Micro-Epsilon for a newer SDK\n\n";
-            }
-
-            qDebug() << "Get all possible resolutions\n";
-            if((iRetValue = m_pLLT->GetResolutions(&vdwResolutions[0], vdwResolutions.size())) < GENERAL_FUNCTION_OK)
-            {
-                OnError("Error during GetResolutions", iRetValue);
-                bOK = false;
-            }
-            QStringList str;
-            for(unsigned int i=0;i<vdwResolutions.size();i++)
-            {
-                str<<QString::number(vdwResolutions[i]);
-                set.setValue("resolutions",str);
-            }
-
-            qDebug() << "Get profile filter \n";
-            if((iRetValue = m_pLLT->GetFeature(FEATURE_FUNCTION_PROFILE_FILTER,&filter)) < GENERAL_FUNCTION_OK)
-            {
-                OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGERPROFILE_FILTER)", iRetValue);
-                bOK = false;
-            }
-            if((iRetValue = m_pLLT->GetMinMaxPacketSize((unsigned long*)&m_uiPacketSizeMIN, (unsigned long*)&m_uiPacketSizeMAX)) < GENERAL_FUNCTION_OK)
-            {
-                    OnError("Error during GetPacketSize", iRetValue);
-                    bOK = false;
-            }
-            m_uiResolution = vdwResolutions[0];
+        if(m_tscanCONTROLType >= scanCONTROL28xx_25 && m_tscanCONTROLType <= scanCONTROL28xx_xxx)
+        {
+            qDebug() << "The scanCONTROL is a scanCONTROL28xx\n\n";
         }
+        else if(m_tscanCONTROLType >= scanCONTROL27xx_25 && m_tscanCONTROLType <= scanCONTROL27xx_xxx)
+        {
+            qDebug() << "The scanCONTROL is a scanCONTROL27xx\n\n";
+        }
+        else
+        {
+            qDebug() << "The scanCONTROL is a undefined type\nPlease contact Micro-Epsilon for a newer SDK\n\n";
+        }
+        //获取所有分辨率
+        qDebug() << "Get all possible resolutions\n";
+        if((iRetValue = m_pLLT->GetResolutions(&vdwResolutions[0], vdwResolutions.size())) < GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during GetResolutions", iRetValue);
+
+        }
+        //保存分辨率列表
+        QStringList str2;
+        for(unsigned int i=0;i<vdwResolutions.size();i++)
+        {
+            str2<<QString::number(vdwResolutions[i]);
+            set.setValue("resolutions",str2);
+        }
+        qDebug()<<"resolution"<<str2;
+       //读取滤波器属性
+        if((iRetValue = m_pLLT->GetFeature(FEATURE_FUNCTION_PROFILE_FILTER,&filter)) < GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGERPROFILE_FILTER)", iRetValue);
+
+        }
+        qDebug("filter set %x",filter);
+        //读取触发器属性
+        if((iRetValue=m_pLLT->GetFeature(FEATURE_FUNCTION_TRIGGER,&trigger))<GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during SetFeature(TRIGGER)",iRetValue);
+        }
+        qDebug("trigger set %x",trigger);
+
+        if((iRetValue=m_pLLT->GetFeature(FEATURE_FUNCTION_RS422_INTERFACE_FUNCTION,&IOConfigure))<GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during SetFeature(IOConfigure)",iRetValue);
+        }
+        qDebug("IOConfigure set %x",IOConfigure);
+
+        if((iRetValue = m_pLLT->GetMinMaxPacketSize((unsigned long*)&m_uiPacketSizeMIN, (unsigned long*)&m_uiPacketSizeMAX)) < GENERAL_FUNCTION_OK)
+        {
+                OnError("Error during GetPacketSize", iRetValue);
+
+        }
+        qDebug()<<"minPackSize"<<m_uiPacketSizeMIN<<"maxPackSize"<<m_uiPacketSizeMAX;
+        m_uiResolution = vdwResolutions[0];
+
         set.sync();
         flushSettings();
         isReady=true;
-        //Wait for a keyboard hit
 
 
     }
-
-
 
 }
 /*
@@ -223,13 +252,6 @@ void profileGet::flushSettings()
     if((iRetValue = m_pLLT->SetResolution(m_uiResolution)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetResolution", iRetValue);
-
-    }
-
-    qDebug() << "Set trigger to internal\n";
-    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x00000000)) < GENERAL_FUNCTION_OK)
-    {
-        OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
     }
 
@@ -276,7 +298,33 @@ void profileGet::flushSettings()
 
     }
 
-    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, filter)) < GENERAL_FUNCTION_OK)
+    trigger&=~(0xfff<<0);
+    trigger&=~(0xf<<16);
+    trigger&=~(0xf<<21);
+    trigger&=~(0x1<<24);
+    trigger&=~(0x1<<25);
+    trigger|=(set.value("encoderDivisor",0).toInt()<<0);
+    trigger|=(set.value("triggerMode",0).toInt()<<16);
+    trigger|=(set.value("triggerPolarity",0).toInt()<<21);
+    trigger|=(set.value("triggerSource",0).toInt()<<24);
+    trigger|=(set.value("trigger",0).toInt()<<25);
+
+    int t=(set.value("trigger",0).toInt()<<25);
+    qDebug()<<"trigger mode"<<t;
+    if(t)
+        isExternalTrigger=true;
+    else
+        isExternalTrigger=false;
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, trigger)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
+
+    }
+    IOConfigure&=~(0xf<<4);
+    IOConfigure&=~(0x1<<11);
+    IOConfigure|=(set.value("voltage",0).toInt()<<4);
+    IOConfigure|=(set.value("digitalInputs",0).toInt()<<1);
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_RS422_INTERFACE_FUNCTION, IOConfigure)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
@@ -285,9 +333,27 @@ void profileGet::flushSettings()
     qDebug() << "Sets the Firewire PacketSize to " << m_uiPacketSizeMAX << "\n";
 
 
+
     qDebug("ready to get %d profile",m_uiNeededProfileCount);
 
 
+}
+void profileGet::preGetDate()
+{
+    switch(mode)
+    {
+        case 0:
+            this->stopTrigger();
+            break;
+        case 1:
+        break;
+        case 2:
+            this->stopSingleFrame();
+        break;
+        case 3:
+            this->stopVedio();
+        break;
+    }
 }
 void profileGet::getVideoFrame()
 {
@@ -333,12 +399,14 @@ void profileGet::getSingleFrame()
 void profileGet::startSingleFrame()
 {
     int iRetValue;
+
     if(!isReady)
     {
         emit Error(QStringLiteral("设备还没准备好,请重新启动激光!"));
         return;
     }
-
+    preGetDate();
+    mode=2;
     if((iRetValue = m_pLLT->SetProfileConfig(PURE_PROFILE)) < GENERAL_FUNCTION_OK)
     {
       OnError("Error during SetProfileConfig", iRetValue);
@@ -359,7 +427,7 @@ void profileGet::startSingleFrame()
 void profileGet::stopSingleFrame()
 {
 
-
+    mode=1;
      int iRetValue;
     qDebug()<< "Disable the SingleFrame stream\n";
     if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, false)) < GENERAL_FUNCTION_OK)
@@ -367,6 +435,52 @@ void profileGet::stopSingleFrame()
         OnError("Error during TransferProfiles", iRetValue);
         return;
       }
+}
+void profileGet::startTrigger()
+{
+    int iRetValue;
+
+    m_uiRecivedProfileCount=0;
+    if(!isReady)
+    {
+        emit Error(QStringLiteral("设备还没准备好,请重新启动激光!"));
+        return;
+    }
+    preGetDate();
+    mode=0;
+    vdValueX.resize(m_uiResolution*m_uiNeededProfileCount);
+    vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount);
+    vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount);
+    m_vucProfileBuffer.resize(m_uiResolution*64*m_uiNeededProfileCount);
+
+    if((iRetValue = m_pLLT->SetProfileConfig(PROFILE)) < GENERAL_FUNCTION_OK)
+    {
+      OnError("Error during SetProfileConfig", iRetValue);
+
+    }
+
+    if((iRetValue = m_pLLT->RegisterCallback(STD_CALL, newProfile, 0)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during RegisterCallback", iRetValue);
+        return;
+    }
+
+    if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, true)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during TransferProfiles", iRetValue);
+        return;
+    }
+}
+void profileGet::stopTrigger()
+{
+    int iRetValue;
+    mode=1;
+    qDebug() << "Disable the measurement\n";
+    if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, false)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during TransferProfiles", iRetValue);
+        return;
+    }
 }
 void profileGet::startVedio()
 {
@@ -377,7 +491,8 @@ void profileGet::startVedio()
         return;
     }
 
-
+    preGetDate();
+    mode=3;
     qDebug() << "Enable the video stream\n";
     if((iRetValue = m_pLLT->SetPacketSize(m_uiPacketSizeMAX)) < GENERAL_FUNCTION_OK)
     {
@@ -402,6 +517,7 @@ void profileGet::startVedio()
 void profileGet::stopVedio()
 {
     int iRetValue;
+    mode=1;
     qDebug() << "Disable the video stream\n";
     if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, false, NULL, NULL)) < GENERAL_FUNCTION_OK)
     {
@@ -421,7 +537,8 @@ void profileGet::GetProfiles_Callback()
         emit Error(QStringLiteral("设备还没准备好,请重新启动激光!"));
         return;
     }
-
+    preGetDate();
+    mode=1;
     if((iRetValue = m_pLLT->SetProfileConfig(PROFILE)) < GENERAL_FUNCTION_OK)
     {
       OnError("Error during SetProfileConfig", iRetValue);
@@ -492,10 +609,9 @@ void profileGet::GetProfiles_Callback()
         OnError("Error during Converting of profile data", iRetValue);
         return;
     }
-
+    qDebug()<<"convert complete";
     emit putImagebyPointer3(&vdValueX[0],(double *)(&vdValueIntensity[0]),&vdValueZ[0],1280,m_uiNeededProfileCount);
-//   DisplayProfile(&vdValueIntensity[0],&vdValueX[0], &vdValueZ[0], m_uiResolution*m_uiNeededProfileCount);
-//    emit dispZ("z.mtx");
+
 //
     emit putImagebyPointer1(&vdValueZ[0],1280,m_uiNeededProfileCount);
 
@@ -510,24 +626,41 @@ void profileGet::GetProfiles_Callback()
 */
 void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize, void* pUserData)
 {
-
-
-  if(uiSize > 0)
-  {
-    if(m_uiRecivedProfileCount < m_uiNeededProfileCount)
+    int iRetValue;
+    static int num=0;
+    if(uiSize > 0)
     {
-      //If the needed profile count not arrived: copy the new Profile in the buffer and increase the recived buffer count
-      m_uiProfileDataSize = uiSize;
-      memcpy(&m_vucProfileBuffer[m_uiRecivedProfileCount*uiSize], pucData, uiSize);
-      m_uiRecivedProfileCount++;
-    }
 
-    if(m_uiRecivedProfileCount >= m_uiNeededProfileCount)
-    {
-      //If the needed profile count is arived: set the event
-      SetEvent(m_hProfileEvent);
-    }
+        if(m_uiRecivedProfileCount < m_uiNeededProfileCount)
+        {
+            //If the needed profile count not arrived: copy the new Profile in the buffer and increase the recived buffer count
+            m_uiProfileDataSize = uiSize;
+            memcpy(&m_vucProfileBuffer[m_uiRecivedProfileCount*uiSize], pucData, uiSize);
+            m_uiRecivedProfileCount++;
+        }
+        if(isExternalTrigger)
+        {
+            if(num++==10)
+            {
+                qDebug()<<"recv "<<m_uiRecivedProfileCount;
+                num=0;
+            }
+            iRetValue = m_pLLT->ConvertProfile2Values(&m_vucProfileBuffer[0], m_uiResolution, PROFILE, m_tscanCONTROLType,
+            0, true, NULL, &vdValueIntensity[0], NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
+            if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
+            {
+                OnError("Error during Converting of profile data", iRetValue);
+                return;
+            }
+            emit dispSingleFrame(0,&vdValueIntensity[0],&vdValueX[0],&vdValueZ[0],m_uiResolution);
+        }
+        if(m_uiRecivedProfileCount >= m_uiNeededProfileCount)
+        {
+            //If the needed profile count is arived: set the event
+            SetEvent(m_hProfileEvent);
 
+
+        }
   }
 }
 void profileGet::OnError(const char* szErrorTxt, int iErrorValue)

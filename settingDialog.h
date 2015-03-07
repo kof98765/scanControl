@@ -19,7 +19,7 @@ public:
 public slots:
     void recvData(char *);
     void flush_settings();
-
+    void debugMessage(QString str);
 private slots:
     void on_Button_Yes_clicked();
 
@@ -41,6 +41,8 @@ private slots:
 
     void on_shutter_time_valueChanged(int arg1);
 
+    void on_select_device_currentIndexChanged(int index);
+
 private:
     Ui::mySettings *ui;
     QString filePath;
@@ -51,6 +53,7 @@ private:
 signals:
     void netTest(QString msg);
     void updataSettings();
+    void selectDevice(int index);
 };
 
 #endif // mySettings_H

@@ -74,7 +74,7 @@ private:
     bool useDefault;
     bool is3D;
 
-    PointCloud::Ptr inCloud;
+    PointCloud::Ptr *inCloud;
     Hobject result_img,Image,RGBImage;
     QMap<QString,Hobject*> rectList;
     HTuple minLength;

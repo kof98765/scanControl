@@ -39,6 +39,9 @@ public:
     unsigned int m_uiPacketSizeMIN;
     unsigned int uiWidth, uiHeight;
     unsigned long filter;
+    unsigned long trigger;
+    unsigned long IOConfigure;
+    unsigned int mode;//0为外部触发,1为内部触发,2为单帧模式,3为视频模式
     std::vector<unsigned char> vucVideoBuffer;
     std::vector<double> vdValueX;
     std::vector<double> vdValueZ;
@@ -49,6 +52,7 @@ public:
     void DisplayProfile(unsigned short *pdValueIntensity,double *pdValueX, double *pdValueZ, unsigned int uiResolution);
     void DisplayTimestamp(unsigned char *pucTimestamp);
     string Double2Str(double dValue);
+    void preGetDate();
     static void sendSignal(const unsigned char* pucData, unsigned int uiSize, void* pUserData);
     QSettings set;
     QTime time;
@@ -57,6 +61,8 @@ protected:
 private:
      bool bConnected;
      bool isReady;
+     bool isExternalTrigger;
+     int index;
      unsigned int uiShutterTime;
      unsigned int uiIdleTime;
      unsigned int uiInterfaceCount;
@@ -69,6 +75,7 @@ signals:
     void Error(QString);
     void putImagebyPointer1(double *pdValueZ,int width,int height);
     void putImagebyPointer3(double *x,double *y,double *z,int width,int height);
+
     void dispSingleFrame(unsigned short *,unsigned short *,double *x,double *y,int size);
     void setData(double*,int);
     void dispFrame(unsigned char*,int);
@@ -78,11 +85,14 @@ public slots:
     void getVideoFrame();
     void startVedio();
     void stopVedio();
+    void startTrigger();
+    void stopTrigger();
     void startSingleFrame();
     void stopSingleFrame();
     void flushSettings();
     void GetProfiles_Callback();
-
+    void readSettings();
+    void selectDevice(int index);
 };
 
 #endif // PROFILEGET_H

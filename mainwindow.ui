@@ -769,6 +769,7 @@ border-radius:25px</string>
     <addaction name="actionReset"/>
     <addaction name="actionTest"/>
     <addaction name="actionPcl"/>
+    <addaction name="actionCallback"/>
    </widget>
    <addaction name="menu_2"/>
    <addaction name="menu_S"/>
@@ -954,6 +955,11 @@ border-radius:25px</string>
   <action name="actionPcl">
    <property name="text">
     <string>pcl</string>
+   </property>
+  </action>
+  <action name="actionCallback">
+   <property name="text">
+    <string>callback</string>
    </property>
   </action>
  </widget>

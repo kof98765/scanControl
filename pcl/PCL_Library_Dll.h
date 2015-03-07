@@ -5,7 +5,7 @@
 #include <iostream>
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
-//#include <pcl/features/normal_3d.h>
+#include <pcl/features/normal_3d.h>
 
 #ifndef PCL_LIBRARY_DLL_H_
 #define PCL_LIBRARY_DLL_H_

@@ -26,13 +26,22 @@ void mySettings::flush_settings()
     ui->cameraPort->setText(set.value("photoPort").toString());
     ui->resampleValue->setCurrentIndex(set.value("resampleValue",0).toInt());
     ui->profileCount->setValue(set.value("profileCount",1000).toInt());
+    ui->select_device->clear();
     ui->select_device->addItems(set.value("interface","0").toStringList());
     ui->shutter_time->setValue(set.value("shutterTime",100).toInt());
     ui->idle_time->setValue(set.value("idleTime",900).toInt());
     ui->resolution->clear();
     ui->resolution->addItems(set.value("resolutions","0").toStringList());
+
     ui->median->setCurrentIndex(set.value("median",0).toInt());
     ui->average->setCurrentIndex(set.value("average",0).toInt());
+    ui->trigger->setCurrentIndex(set.value("trigger",0).toInt());
+    ui->triggerMode->setCurrentIndex(set.value("triggerMode",0).toInt());
+    ui->triggerPolarity->setCurrentIndex(set.value("triggerPolarity",0).toInt());
+    ui->triggerSource->setCurrentIndex(set.value("triggerSource",0).toInt());
+    ui->encoderDivisor->setValue(set.value("encoderDivisor",0).toInt());
+    ui->voltage->setCurrentIndex(set.value("voltage",0).toInt());
+    ui->digitalInputs->setCurrentIndex(set.value("digitalInputs",0).toInt());
 
 }
 void mySettings::on_Button_Yes_clicked()
@@ -47,7 +56,13 @@ void mySettings::on_Button_Yes_clicked()
     set.setValue("profileCount",ui->profileCount->value());
     set.setValue("median",ui->median->currentIndex());
     set.setValue("average",ui->average->currentIndex());
-
+    set.setValue("trigger",ui->trigger->currentIndex());
+    set.setValue("triggerMode",ui->triggerMode->currentIndex());
+    set.setValue("triggerPolarity",ui->triggerPolarity->currentIndex());
+    set.setValue("triggerSource",ui->triggerSource->currentIndex());
+    set.setValue("encoderDivisor",ui->encoderDivisor->value());
+    set.setValue("voltage",ui->voltage->currentIndex());
+    set.setValue("digitalInputs",ui->digitalInputs->currentIndex());
 
     set.setValue("badMinArea",ui->badMinArea->text());
     set.setValue("badMaxArea",ui->badMaxArea->text());
@@ -168,4 +183,14 @@ void mySettings::on_idle_time_valueChanged(int arg1)
 void mySettings::on_shutter_time_valueChanged(int arg1)
 {
     set.setValue("shutterTime",arg1);
+
+}
+void mySettings::debugMessage(QString str)
+{
+    ui->debug->append(str);
+}
+
+void mySettings::on_select_device_currentIndexChanged(int index)
+{
+    emit selectDevice(index);
 }

@@ -27,7 +27,7 @@ halconClass::halconClass(QObject *parent) :
 
 
 
-
+    inCloud=new PointCloud::Ptr(new PointCloud );
     memcpy(menu,tmp,sizeof(tmp));
     roiList=set.value("roiList").toMap();
 
@@ -308,6 +308,7 @@ void halconClass::run()
     {
         HTuple Width,Height;
         read_image(&Image,path.toUtf8().data());
+        copy_image(Image,&RGBImage);
         get_image_size(Image,&Width,&Height);
         set_part(WindowHandle,0,0,Height-1,Width-1);
 
@@ -315,9 +316,10 @@ void halconClass::run()
         img_height=Height[0].I();
         scale=Width[0].I()/win_width;
         hasData=true;
+        qDebug()<<"read finish";
         emit dispImg();
 
-        qDebug()<<"read finish";
+
     }
 
 }
@@ -783,6 +785,9 @@ void halconClass::test()
     pcl::io::savePCDFile("plane_cloud_out.pcd", *inCloud);
     */
 
+    this->calculatePlaneness();
+
+
 }
 void halconClass::clearRect()
 {
@@ -882,45 +887,39 @@ void halconClass::calculatePlaneness()
 {
     QTime time;
     time.start();
+    double result;
+    typedef int (*Calculate)(PointCloud::Ptr &inCloud, double &_result);
+    Calculate cal=NULL;
+    cal=(Calculate)GetProcAddress(hInstance,"CalculateFlatness");
     if (HDevWindowStack::IsOpen()&hasData)
     {
-        Hobject   Rectangle, Contours, ImageReduced,rect;
-        HTuple  Row, Column, Phi, Length1, Min, Max,Length2;
-        HTuple Rows,Columns,Grayval;
-        HTuple  Range,String,s,Result,PointOrder;
-        Hlong width,height;
-        float *pointer;
+        Hobject   Rectangle;
+
         char     type[128];
         QStringList list=roiList.keys();
         for(int i=0;i<list.size();i++)
         {
             QStringList str=roiList.value(list.at(i)).toStringList();
-            gen_rectangle1(&Rectangle, str.at(1).toInt(), str.at(2).toInt(), str.at(3).toInt(), str.at(4).toInt());
-            gen_contour_region_xld(Rectangle,&Contours,"border");
-            fit_rectangle2_contour_xld(Contours, "regression", -1, 0, 0, 3, 2, &Row, &Column, &Phi, &Length1, &Length2, &PointOrder);
-            reduce_domain(Image, Rectangle, &ImageReduced);
-
 
             PointCloud::Ptr newCloud;
-            PointT point;
+
             for(int i=str.at(1).toInt();i<str.at(3).toInt();i++)
             {
                 for(int j=str.at(2).toInt();i<str.at(4).toInt();i++)
                 {
-                    newCloud.get()->push_back(inCloud.get()[i][j]);
+                    newCloud.get()->push_back((*inCloud).get()[i][j]);
                 }
             }
 
 
-            //typedef void (*Transfer2Cloud)(double* X,double* Y,double* Z,unsigned short* I,const int col,const int row,PointCloud::Ptr inCloud);
-           // Transfer2Cloud test_function =NULL;
-           // test_function = (Test_function)GetProcAddress(hInstance, "Transfer2Cloud");
+            qDebug()<<"cal";
+            (*cal)(newCloud,result);
 
-           //(*test_function)();
+
 
         }
      }
-    qDebug()<<QStringLiteral("计算平面度时间:")<<time.elapsed()<<"ms";
+    qDebug()<<QStringLiteral("平整度为")<<result<<"/n"<<QStringLiteral("计算平面度时间:")<<time.elapsed()<<"ms";
 }
 void halconClass::readSettings()
 {
@@ -954,12 +953,19 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
     char     type[128];
     HTuple Row,Column;
 
-
+    qDebug()<<"start pointCloud";
     typedef void (*Transfer2Cloud)(double* X,double* Y,double* Z,unsigned short* I,const int col,const int row,PointCloud::Ptr inCloud);
     Transfer2Cloud test_function =NULL;
-     test_function = (Transfer2Cloud)GetProcAddress(hInstance, "Transfer2Cloud");
-    (*test_function)(x,y,z,0,w,h,inCloud);
+    test_function = (Transfer2Cloud)GetProcAddress(hInstance, "Transfer2Cloud");
+    double *yy=new double[h];
+    for(int i=0;i<h;i++)
+    {
+         yy[i]=i;
+    }
 
+    (*test_function)(x,yy,z,0,w,h,*inCloud);
+    qDebug()<<"end pointCloud";
+    delete[] yy;
     p=(unsigned short *)y;
     gen_image_const(&Image,"real",w,h);
     gen_image_const(&Image2,"real",w,h);

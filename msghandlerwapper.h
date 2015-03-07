@@ -17,6 +17,7 @@ signals:
 
 private:
     MsgHandlerWapper();
+    QFile f;
     static MsgHandlerWapper * m_instance;
 };
 

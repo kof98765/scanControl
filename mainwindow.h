@@ -111,6 +111,7 @@ public slots:
     void action_delItem();
 private:
     Ui::MainWindow *ui;
+    QFile debug;
     Plot *plot;
     QDialog *dataDialog;
     profileGet *profile;

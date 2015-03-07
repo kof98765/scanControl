@@ -7,6 +7,7 @@
 static void msgHandlerFunction(QtMsgType type,const QMessageLogContext &con,const QString &str)
 {
 
+
     QMetaObject::invokeMethod(MsgHandlerWapper::instance(), "message"
                         , Q_ARG(QtMsgType, type)
                         , Q_ARG(QString,str));
