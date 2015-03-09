@@ -43,6 +43,8 @@ private slots:
 
     void on_select_device_currentIndexChanged(int index);
 
+    void on_connecct_clicked();
+
 private:
     Ui::mySettings *ui;
     QString filePath;

@@ -686,7 +686,7 @@
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>251</width>
+          <width>211</width>
           <height>502</height>
          </rect>
         </property>
@@ -1074,6 +1074,9 @@
          </item>
          <item row="14" column="1">
           <widget class="QComboBox" name="voltage">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
            <item>
             <property name="text">
              <string extracomment="0 Low Level Logic (TTL, 5V) ">0 Low Level Logic (TTL, 5V) </string>
@@ -1095,6 +1098,9 @@
          </item>
          <item row="15" column="1">
           <widget class="QComboBox" name="digitalInputs">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0 encoder, positive edge of index track (*)&lt;/p&gt;&lt;p&gt;1 encoder with external trigger input (*)&lt;/p&gt;&lt;p&gt;2 external trigger input&lt;/p&gt;&lt;p&gt;3 ext. trigger + two bits for user mode loading&lt;/p&gt;&lt;p&gt;4 three bits for user mode loading&lt;/p&gt;&lt;p&gt;5 insert into timestamp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
            <item>
             <property name="text">
              <string extracomment="encoder, positive edge of index track (*)">encoder, positive edge of index track (*)</string>
@@ -1176,6 +1182,19 @@
         </property>
         <property name="text">
          <string>写入配置</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="connecct">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>0</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>连接</string>
         </property>
        </widget>
       </widget>

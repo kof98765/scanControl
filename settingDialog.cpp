@@ -194,3 +194,8 @@ void mySettings::on_select_device_currentIndexChanged(int index)
 {
     emit selectDevice(index);
 }
+
+void mySettings::on_connecct_clicked()
+{
+    emit selectDevice(ui->select_device->currentIndex());
+}

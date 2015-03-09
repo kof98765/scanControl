@@ -72,6 +72,17 @@ void profileGet::initDevice()
      m_uiResolution = 0;
 
      m_uiRecivedProfileCount = 0;
+     int iRetValue;
+     if(bConnected)
+     {
+         qDebug() << "Disconnect the scanCONTROL\n";
+         if((iRetValue=m_pLLT->Disconnect()) < GENERAL_FUNCTION_OK)
+         {
+             OnError("Error during Disconnect", iRetValue);
+             return;
+         }
+         bConnected=false;
+     }
 
      readSettings();
 
@@ -153,7 +164,7 @@ void profileGet::readSettings()
         QStringList str1;
         for(unsigned int i=0;i<uiInterfaceCount;i++)
         {
-            str1<<QString(vuiInterfaces[i]);
+            str1<<QString::number(vuiInterfaces[i]);
         }
         set.setValue("interface",str1);
         qDebug()<<"interface"<<str1;
@@ -297,7 +308,7 @@ void profileGet::flushSettings()
         OnError("Error during SetFeature(FEATURE_FUNCTION_PROFILE_FILTER)", iRetValue);
 
     }
-
+    qDebug("trigger:%x",trigger);
     trigger&=~(0xfff<<0);
     trigger&=~(0xf<<16);
     trigger&=~(0xf<<21);
@@ -308,8 +319,8 @@ void profileGet::flushSettings()
     trigger|=(set.value("triggerPolarity",0).toInt()<<21);
     trigger|=(set.value("triggerSource",0).toInt()<<24);
     trigger|=(set.value("trigger",0).toInt()<<25);
-
-    int t=(set.value("trigger",0).toInt()<<25);
+    qDebug("trigger:%x",trigger);
+    int t=(set.value("trigger",0).toInt());
     qDebug()<<"trigger mode"<<t;
     if(t)
         isExternalTrigger=true;
@@ -320,10 +331,14 @@ void profileGet::flushSettings()
         OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
     }
+    qDebug("IOConfigure:%x",IOConfigure);
+    IOConfigure&=~(0xf);
     IOConfigure&=~(0xf<<4);
     IOConfigure&=~(0x1<<11);
-    IOConfigure|=(set.value("voltage",0).toInt()<<4);
-    IOConfigure|=(set.value("digitalInputs",0).toInt()<<1);
+    IOConfigure|=(set.value("voltage",0).toInt()<<11);
+    IOConfigure|=(set.value("digitalInputs",0).toInt()<<4);
+    IOConfigure|=5<<0;
+    qDebug("IOConfigure:%x",IOConfigure);
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_RS422_INTERFACE_FUNCTION, IOConfigure)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
@@ -420,7 +435,7 @@ void profileGet::startSingleFrame()
      qDebug()<< "Enable the SingleFrame stream\n";
      if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, true)) < GENERAL_FUNCTION_OK)
        {
-         OnError("Error during TransferProfiles", iRetValue);
+         OnError("Error during TransferProfiles start", iRetValue);
          return;
        }
 }
@@ -432,7 +447,7 @@ void profileGet::stopSingleFrame()
     qDebug()<< "Disable the SingleFrame stream\n";
     if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, false)) < GENERAL_FUNCTION_OK)
       {
-        OnError("Error during TransferProfiles", iRetValue);
+        OnError("Error during TransferProfiles stop", iRetValue);
         return;
       }
 }
@@ -467,7 +482,7 @@ void profileGet::startTrigger()
 
     if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, true)) < GENERAL_FUNCTION_OK)
     {
-        OnError("Error during TransferProfiles", iRetValue);
+        OnError("Error during TransferProfiles start ", iRetValue);
         return;
     }
 }
@@ -478,7 +493,7 @@ void profileGet::stopTrigger()
     qDebug() << "Disable the measurement\n";
     if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, false)) < GENERAL_FUNCTION_OK)
     {
-        OnError("Error during TransferProfiles", iRetValue);
+        OnError("Error during TransferProfiles stop", iRetValue);
         return;
     }
 }
@@ -506,7 +521,7 @@ void profileGet::startVedio()
     }
     if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, true, &uiWidth, &uiHeight)) < GENERAL_FUNCTION_OK)
     {
-        OnError("Error during TransferVideoStream", iRetValue);
+        OnError("Error during TransferVideoStream start", iRetValue);
         return ;
     }
     vucVideoBuffer.resize(uiWidth*uiHeight);
@@ -521,7 +536,7 @@ void profileGet::stopVedio()
     qDebug() << "Disable the video stream\n";
     if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, false, NULL, NULL)) < GENERAL_FUNCTION_OK)
     {
-        OnError("Error during TransferVideoStream", iRetValue);
+        OnError("Error during TransferVideoStream stop", iRetValue);
         return ;
     }
 
@@ -638,13 +653,13 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
             memcpy(&m_vucProfileBuffer[m_uiRecivedProfileCount*uiSize], pucData, uiSize);
             m_uiRecivedProfileCount++;
         }
+
+
+        qDebug()<<"recv"<<m_uiRecivedProfileCount;
+
         if(isExternalTrigger)
         {
-            if(num++==10)
-            {
-                qDebug()<<"recv "<<m_uiRecivedProfileCount;
-                num=0;
-            }
+
             iRetValue = m_pLLT->ConvertProfile2Values(&m_vucProfileBuffer[0], m_uiResolution, PROFILE, m_tscanCONTROLType,
             0, true, NULL, &vdValueIntensity[0], NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
             if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
@@ -652,7 +667,10 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
                 OnError("Error during Converting of profile data", iRetValue);
                 return;
             }
-            emit dispSingleFrame(0,&vdValueIntensity[0],&vdValueX[0],&vdValueZ[0],m_uiResolution);
+            qDebug()<<"recv"<<m_uiRecivedProfileCount;
+            //emit dispSingleFrame(0,&vdValueIntensity[0],&vdValueX[0],&vdValueZ[0],m_uiResolution);
+            if(m_uiRecivedProfileCount>100)
+                emit putImagebyPointer1(&vdValueZ[0],1280,m_uiRecivedProfileCount);
         }
         if(m_uiRecivedProfileCount >= m_uiNeededProfileCount)
         {

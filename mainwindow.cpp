@@ -281,7 +281,7 @@ void MainWindow::init_connect()
     connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
     connect(ui->actionPcl,SIGNAL(triggered()),hal,SLOT(test()));
     connect(ui->actionCallback,SIGNAL(triggered()),profile,SLOT(start()));
-    connect(setDialog,SIGNAL(selectDevice(index)),profile,SLOT(selectDevice(int)));
+    connect(setDialog,SIGNAL(selectDevice(int)),profile,SLOT(selectDevice(int)));
 }
 
 void MainWindow::Error(QString str)
@@ -352,7 +352,7 @@ void MainWindow::dispImg()
         case 3:
             status=3;
             hal->disp_img();
-            hal->RectHeightSub();
+           // hal->RectHeightSub();
             break;
     }
 
@@ -707,7 +707,7 @@ void MainWindow::on_launchDevice_clicked()
 /*
 
 
-    接收Debug信息并重定向到某控件上
+    接收Debug信息并重定向到某控件上,文件上
 */
 void MainWindow::outputMessage(QtMsgType type,QString str)
 {
@@ -740,7 +740,9 @@ void MainWindow::recvHeightSub(QString name,double min,double max,double range)
 
     ui->tableWidget->setSortingEnabled(true);
 }
-
+/*
+    清除表格,测试用
+*/
 void MainWindow::on_actionReset_triggered()
 {
     sum->clear_table();
@@ -750,7 +752,9 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug()<<row<<column;
 }
-
+/*
+    切换为视频模式
+*/
 void MainWindow::on_realTimeButton_clicked()
 {
     hal->close_the_window();
@@ -758,6 +762,9 @@ void MainWindow::on_realTimeButton_clicked()
     startVideo();
 
 }
+/*
+    开妈视频模式
+*/
 void MainWindow::startVideo()
 {
     stopSingleFrame();
@@ -778,6 +785,9 @@ void MainWindow::stopVideo()
     disconnect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
     profile->stopVedio();
 }
+/*
+    停止视频模式
+*/
 void MainWindow::startSingleFrame()
 {
     stopVideo();
@@ -787,6 +797,9 @@ void MainWindow::startSingleFrame()
     timer->start(200);
     profile->startSingleFrame();
 }
+/*
+    停止单帧模式
+*/
 void MainWindow::stopSingleFrame()
 {
     if(!isRealTime)
@@ -797,6 +810,9 @@ void MainWindow::stopSingleFrame()
     disconnect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
     profile->stopSingleFrame();
 }
+/*
+    开始单帧模式
+*/
 void MainWindow::on_singleFrameButton_clicked()
 {
 
@@ -804,7 +820,9 @@ void MainWindow::on_singleFrameButton_clicked()
     ui->base->setCurrentIndex(2);
     startSingleFrame();
 }
-
+/*
+    3D模式按钮事件
+*/
 void MainWindow::on_threeDButton_clicked()
 {
 
@@ -812,7 +830,9 @@ void MainWindow::on_threeDButton_clicked()
      ui->base->setCurrentIndex(0);
      hal->setMode("3D");
 }
-
+/*
+    2D模式按钮事件
+*/
 void MainWindow::on_twoDButton_clicked()
 {
 
@@ -821,6 +841,9 @@ void MainWindow::on_twoDButton_clicked()
     hal->setMode("2D");
 }
 
+/*
+    绘图按钮事件
+*/
 void MainWindow::on_roiDraw_clicked()
 {
     isDrawing=true;
@@ -829,6 +852,9 @@ void MainWindow::on_roiDraw_clicked()
     isDrawing=false;
 
 }
+/*
+    刷新矩形框列表
+*/
 void MainWindow::flushRoiList(QStringList list)
 {
 
@@ -836,6 +862,9 @@ void MainWindow::flushRoiList(QStringList list)
     ui->roiList->addItems(list);
 
 }
+/*
+    矩形框列表右键事件
+*/
 void MainWindow::action_delItem()
 {
     QMap<QString,QVariant> list=set.value("roiList").toMap();
@@ -845,7 +874,9 @@ void MainWindow::action_delItem()
     ui->roiList->takeItem(currentItem);
 
 }
-
+/*
+    状态检查,暂不完善
+*/
 void MainWindow::statusCheck()
 {
     static int i=0;
@@ -875,13 +906,18 @@ void MainWindow::statusCheck()
             break;
     }
 }
+/*
+    更新进度条
+*/
 void MainWindow::updataProsessBar(QString name,int num)
 {
     ui->progressBar->setValue(num);
     ui->progressBar->setFormat("%p%"+name+"...");
     ui->progressBar->repaint();
 }
-
+/*
+    输出excel
+*/
 void MainWindow::on_toExcel_clicked()
 {
     sum->to_excel();
