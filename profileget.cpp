@@ -9,6 +9,7 @@ profileGet::profileGet(QObject *parent) :
     bConnected = false;
     mode=1;
     index=0;
+
     //Creating a LLT-object
     //The LLT-Object will load the LLT.dll automaticly and give us a error if ther no LLT.dll
     m_pLLT = new CInterfaceLLT("LLT.dll", &bLoadError);
@@ -643,9 +644,10 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
 {
     int iRetValue;
     static int num=0;
+    std::vector<unsigned char> vucProfileBuffer(m_uiResolution*4+16);
     if(uiSize > 0)
     {
-
+        /*
         if(m_uiRecivedProfileCount < m_uiNeededProfileCount)
         {
             //If the needed profile count not arrived: copy the new Profile in the buffer and increase the recived buffer count
@@ -653,24 +655,41 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
             memcpy(&m_vucProfileBuffer[m_uiRecivedProfileCount*uiSize], pucData, uiSize);
             m_uiRecivedProfileCount++;
         }
+        */
+        m_uiProfileDataSize = uiSize;
+        memcpy(&m_vucProfileBuffer[m_uiRecivedProfileCount*uiSize], pucData, uiSize);
+        m_uiRecivedProfileCount++;
+       // qDebug()<<"recv"<<m_uiRecivedProfileCount;
+        iRetValue = m_pLLT->ConvertProfile2Values(pucData, m_uiResolution,PROFILE, m_tscanCONTROLType,
+            0, true, 0, 0, NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
+        if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
+        {
+            OnError("Error during Converting of profile data", iRetValue);
+            return;
+        }
 
-
-        qDebug()<<"recv"<<m_uiRecivedProfileCount;
-
+        emit dispSingleFrame(0,0,&vdValueX[0],&vdValueZ[0],m_uiResolution);
         if(isExternalTrigger)
         {
 
-            iRetValue = m_pLLT->ConvertProfile2Values(&m_vucProfileBuffer[0], m_uiResolution, PROFILE, m_tscanCONTROLType,
-            0, true, NULL, &vdValueIntensity[0], NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
-            if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
-            {
-                OnError("Error during Converting of profile data", iRetValue);
-                return;
-            }
-            qDebug()<<"recv"<<m_uiRecivedProfileCount;
             //emit dispSingleFrame(0,&vdValueIntensity[0],&vdValueX[0],&vdValueZ[0],m_uiResolution);
-            if(m_uiRecivedProfileCount>100)
+            if(m_uiRecivedProfileCount>=100)
+            {
+                QTime time;
+                time.start();
+
+                iRetValue = m_pLLT->ConvertProfile2Values(&m_vucProfileBuffer[0], m_uiResolution*m_uiRecivedProfileCount, PROFILE, m_tscanCONTROLType,
+                0, true, NULL, &vdValueIntensity[0], NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
+                if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
+                {
+                    OnError("Error during Converting of profile data", iRetValue);
+                    return;
+                }
+                qDebug()<<QStringLiteral("×ª»»Ê±¼ä")<<time.elapsed();
                 emit putImagebyPointer1(&vdValueZ[0],1280,m_uiRecivedProfileCount);
+                m_uiRecivedProfileCount=0;
+
+            }
         }
         if(m_uiRecivedProfileCount >= m_uiNeededProfileCount)
         {

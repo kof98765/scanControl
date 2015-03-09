@@ -73,7 +73,8 @@ private:
     int win_width,win_height;
     bool useDefault;
     bool is3D;
-
+    double *imgData;
+    int recvCount;
     PointCloud::Ptr *inCloud;
     Hobject result_img,Image,RGBImage;
     QMap<QString,Hobject*> rectList;

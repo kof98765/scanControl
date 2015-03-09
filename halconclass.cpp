@@ -11,8 +11,10 @@ halconClass::halconClass(QObject *parent) :
     posX=0;
     posY=0;
     step=0;
+    recvCount=0;
     is3D=false;
     hasData=false;
+    imgData=new double[1280000];
     detect_action tmp[9]={&halconClass::one_white_line,
                            &halconClass::two_black_line,
                            &halconClass::three_black_block,
@@ -1001,7 +1003,14 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     HTuple  MatID, Rows, Cols, Values, MultValues;
     HTuple  Min, Max, Row, Column,Range,GrayVal,Value,i,j,Width,Height;
     Hobject Region,Imagetemp,Image1,Image2, Image3;
+    double *p=imgData;
 
+
+    if((recvCount+h)>1000)
+        recvCount=0;
+
+    memcpy(&imgData[recvCount*1280],pdValueZ,w*h);
+    recvCount+=h;
 
     char     type[128];
     Hlong     width,height;
@@ -1009,18 +1018,24 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     time.start();
     Image.Reset();
     RGBImage.Reset();
-    gen_image_const(&Image,"real",w,h);
+    gen_image_const(&Image,"real",w,1000);
     get_image_pointer1(Image,(long*)&pointer,type,&width,&height);
     qDebug()<<width<<height;
-    for (int row=0; row<height; row++)
+    qDebug("p=%x",p);
+
+    for (int row=0; row<recvCount; row++)
     {
         for (int col=0; col<width; col++)
         {
 
-          pointer[row*width+col] =*pdValueZ++;
+          pointer[row*width+col] =*p++;
+
 
         }
+
     }
+    qDebug()<<"recvCount"<<recvCount<<"w"<<w<<"h"<<h<<"width"<<width<<"height"<<height;
+    qDebug("p=%x",p);
     qDebug()<<"read time:"<<time.elapsed()<<"msec";
 
 
@@ -1029,13 +1044,13 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     threshold(Image, &Region, 1, 255);
     min_max_gray(Region, Image, 0, &Min, &Max, &Range);
     qDebug()<<"img"<<Min[0].D()<<Max[0].D()<<Range[0].D();
-    gen_image_const (&Imagetemp, "byte", w, h);
+    gen_image_const (&Imagetemp, "byte", w, recvCount);
  //   gen_image_const(&Image, "real", Cols, Rows);
     cfa_to_rgb(Imagetemp, &RGBImage, "bayer_gb", "bilinear");
     decompose3(RGBImage, &Image1, &Image2, &Image3);
 
     get_image_size(RGBImage,&Width,&Height);
-    set_part(WindowHandle,0,0,Height,Width);
+    set_part(WindowHandle,0,0,1000,Width);
 
     img_width=Width[0].I();
     img_height=Height[0].I();
@@ -1045,7 +1060,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     HTuple step=Range/6;
 
     HTuple RGBValue;
-    for(i=0;i<h-1;i++)
+    for(i=0;i<recvCount-1;i++)
     {
         for(j=0;j<w-1;j++)
         {
@@ -1128,6 +1143,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
         }
     }
     hasData=true;
+
     emit dispImg();
 }
 

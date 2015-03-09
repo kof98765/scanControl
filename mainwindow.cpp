@@ -347,7 +347,7 @@ void MainWindow::dispImg()
             ui->videoFrame->setPalette(palette);
             break;
         case 2:
-            profile->getSingleFrame();
+           // profile->getSingleFrame();
             break;
         case 3:
             status=3;
@@ -489,7 +489,7 @@ void MainWindow::startButton_clicked()
                 stopVideo();
                 break;
             case 2:
-                stopSingleFrame();
+                //stopSingleFrame();
                 break;
        }
        return;
@@ -818,7 +818,7 @@ void MainWindow::on_singleFrameButton_clicked()
 
     hal->close_the_window();
     ui->base->setCurrentIndex(2);
-    startSingleFrame();
+    //startSingleFrame();
 }
 /*
     3D模式按钮事件
