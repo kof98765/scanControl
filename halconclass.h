@@ -6,6 +6,7 @@
 #include <QThread>
 #include <QSettings>
 #include <QTime>
+#include <QFile>
 #include <fstream>
 
 #include <iostream>

@@ -41,7 +41,6 @@ private slots:
 
     void on_shutter_time_valueChanged(int arg1);
 
-    void on_select_device_currentIndexChanged(int index);
 
     void on_connecct_clicked();
 

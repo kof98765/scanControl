@@ -9,7 +9,8 @@ profileGet::profileGet(QObject *parent) :
     bConnected = false;
     mode=1;
     index=0;
-
+    f.setFileName("data");
+    f.open(QIODevice::WriteOnly);
     //Creating a LLT-object
     //The LLT-Object will load the LLT.dll automaticly and give us a error if ther no LLT.dll
     m_pLLT = new CInterfaceLLT("LLT.dll", &bLoadError);
@@ -466,8 +467,10 @@ void profileGet::startTrigger()
     mode=0;
     vdValueX.resize(m_uiResolution*m_uiNeededProfileCount);
     vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount);
+    tmp.resize(m_uiResolution*m_uiNeededProfileCount);
     vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount);
     m_vucProfileBuffer.resize(m_uiResolution*64*m_uiNeededProfileCount);
+    m_vucProfileBuffer2.resize(m_uiResolution*64*m_uiNeededProfileCount);
 
     if((iRetValue = m_pLLT->SetProfileConfig(PROFILE)) < GENERAL_FUNCTION_OK)
     {
@@ -644,7 +647,7 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
 {
     int iRetValue;
     static int num=0;
-    std::vector<unsigned char> vucProfileBuffer(m_uiResolution*4+16);
+    double *p;
     if(uiSize > 0)
     {
         /*
@@ -656,48 +659,52 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
             m_uiRecivedProfileCount++;
         }
         */
+
         m_uiProfileDataSize = uiSize;
+
         memcpy(&m_vucProfileBuffer[m_uiRecivedProfileCount*uiSize], pucData, uiSize);
-        m_uiRecivedProfileCount++;
-       // qDebug()<<"recv"<<m_uiRecivedProfileCount;
+
+        //qDebug()<<"recv"<<m_uiRecivedProfileCount;
+        if(num%2==0)
+            p=&vdValueZ[0];
+        else
+            p=&tmp[0];
         iRetValue = m_pLLT->ConvertProfile2Values(pucData, m_uiResolution,PROFILE, m_tscanCONTROLType,
-            0, true, 0, 0, NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
+            0, true, 0, &vdValueIntensity[m_uiRecivedProfileCount*m_uiResolution], NULL, &vdValueX[m_uiRecivedProfileCount*m_uiResolution], &p[m_uiRecivedProfileCount*m_uiResolution], NULL, NULL);
         if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
         {
             OnError("Error during Converting of profile data", iRetValue);
             return;
         }
+        for(int i=0;i<m_uiResolution;i++)
+        {
+            p[m_uiRecivedProfileCount*m_uiResolution+i]=192-p[m_uiRecivedProfileCount*m_uiResolution+i];
+        }
+        emit dispSingleFrame(0,0,&vdValueX[m_uiRecivedProfileCount*m_uiResolution],&p[m_uiRecivedProfileCount*m_uiResolution],m_uiResolution);
 
-        emit dispSingleFrame(0,0,&vdValueX[0],&vdValueZ[0],m_uiResolution);
         if(isExternalTrigger)
         {
 
             //emit dispSingleFrame(0,&vdValueIntensity[0],&vdValueX[0],&vdValueZ[0],m_uiResolution);
-            if(m_uiRecivedProfileCount>=100)
+            if((m_uiRecivedProfileCount+1)%100==0&m_uiRecivedProfileCount>0)
             {
-                QTime time;
-                time.start();
 
-                iRetValue = m_pLLT->ConvertProfile2Values(&m_vucProfileBuffer[0], m_uiResolution*m_uiRecivedProfileCount, PROFILE, m_tscanCONTROLType,
-                0, true, NULL, &vdValueIntensity[0], NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
-                if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
-                {
-                    OnError("Error during Converting of profile data", iRetValue);
-                    return;
-                }
-                qDebug()<<QStringLiteral("转换时间")<<time.elapsed();
-                emit putImagebyPointer1(&vdValueZ[0],1280,m_uiRecivedProfileCount);
-                m_uiRecivedProfileCount=0;
+                emit putImagebyPointer1(p,1280,(m_uiRecivedProfileCount+1)/100*100);
 
             }
         }
+        m_uiRecivedProfileCount++;
         if(m_uiRecivedProfileCount >= m_uiNeededProfileCount)
         {
             //If the needed profile count is arived: set the event
-            SetEvent(m_hProfileEvent);
+            //SetEvent(m_hProfileEvent);
 
+            emit putImagebyPointer3(&vdValueX[0],(double *)(&vdValueIntensity[0]),&vdValueZ[0],1280,m_uiNeededProfileCount);
+            m_uiRecivedProfileCount=0;
+            return;
 
         }
+
   }
 }
 void profileGet::OnError(const char* szErrorTxt, int iErrorValue)
@@ -742,7 +749,10 @@ void profileGet::DisplayProfile(unsigned short *pdValueIntensity,double *pdValue
       outfileI.close();
       qDebug()<<QStringLiteral("矩阵生成时间:")<<time.elapsed()<<"msec";
 }
-
+QList<double> profileGet::getList()
+{
+    return data;
+}
 //Displays the timestamp
 void profileGet::DisplayTimestamp(unsigned char *pucTimestamp)
 {

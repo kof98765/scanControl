@@ -190,10 +190,6 @@ void mySettings::debugMessage(QString str)
     ui->debug->append(str);
 }
 
-void mySettings::on_select_device_currentIndexChanged(int index)
-{
-    emit selectDevice(index);
-}
 
 void mySettings::on_connecct_clicked()
 {

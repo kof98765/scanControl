@@ -143,6 +143,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
                    }
                    else if(leftPress)
                    {
+
                        hal->threedControl(end.x(),end.y(),start.x(),start.y(),"rotate");
 
                    }
@@ -276,7 +277,7 @@ void MainWindow::init_connect()
     connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
     connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
-    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
+    //connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
     connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(test()));
     connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
     connect(ui->actionPcl,SIGNAL(triggered()),hal,SLOT(test()));
@@ -352,7 +353,7 @@ void MainWindow::dispImg()
         case 3:
             status=3;
             hal->disp_img();
-           // hal->RectHeightSub();
+            hal->RectHeightSub();
             break;
     }
 

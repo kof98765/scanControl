@@ -45,9 +45,11 @@ public:
     std::vector<unsigned char> vucVideoBuffer;
     std::vector<double> vdValueX;
     std::vector<double> vdValueZ;
+    std::vector<double> tmp;
     std::vector<unsigned short> vdValueIntensity;
     HANDLE m_hProfileEvent;
     std::vector<unsigned char> m_vucProfileBuffer;
+    std::vector<unsigned char> m_vucProfileBuffer2;
     void OnError(const char* szErrorTxt, int iErrorValue);
     void DisplayProfile(unsigned short *pdValueIntensity,double *pdValueX, double *pdValueZ, unsigned int uiResolution);
     void DisplayTimestamp(unsigned char *pucTimestamp);
@@ -56,6 +58,8 @@ public:
     static void sendSignal(const unsigned char* pucData, unsigned int uiSize, void* pUserData);
     QSettings set;
     QTime time;
+    QFile f;
+    QList<double> data;
 protected:
     void run();
 private:
@@ -93,6 +97,7 @@ public slots:
     void GetProfiles_Callback();
     void readSettings();
     void selectDevice(int index);
+    QList<double> getList();
 };
 
 #endif // PROFILEGET_H
