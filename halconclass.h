@@ -107,6 +107,7 @@ private:
 
 public slots:
     void test();
+    void clearData();
     void E128_detect();
      void disp_img();
      void zoomIn();

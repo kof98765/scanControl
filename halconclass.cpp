@@ -72,6 +72,15 @@ void halconClass::read_img(QString str)
    path=str;
    this->start();
 }
+void halconClass::clearData()
+{
+    hasData=false;
+    Image.Reset();
+
+    if (HDevWindowStack::IsOpen())
+        clear_window(WindowHandle);
+
+}
 /*
     重置图像窗口,并刷新数据
 */
@@ -89,7 +98,7 @@ void halconClass::reset()
         clear_window(WindowHandle);
         set_part(WindowHandle,0,0,Height-1,Width-1);
         disp_obj(result_img,WindowHandle);
-
+        this->threedControl(0,0,0,0,"rotate");
 
     }
 }
@@ -103,9 +112,10 @@ void halconClass::setMode(QString str)
         if(str.contains("2D"))
         {
                clear_window(WindowHandle);
+               set_lut(WindowHandle,"rainbow");
                set_paint(HDevWindowStack::GetActive(),"default");
-               disp_obj(RGBImage,WindowHandle);
-               copy_image(RGBImage,&result_img);
+               disp_obj(Image,WindowHandle);
+               copy_image(Image,&result_img);
                 is3D=false;
         }
         else
@@ -113,7 +123,9 @@ void halconClass::setMode(QString str)
             is3D=true;
             clear_window(WindowHandle);
            // set_paint(HDevWindowStack::GetActive(),"3d_plot");
-           set_paint(WindowHandle, ((HTuple("3d_plot").Concat("texture")).Concat(1)).Concat("auto"));
+            set_lut(WindowHandle,"rainbow");
+            set_window_param(WindowHandle,"display_grid","false");
+           set_paint(WindowHandle, ((HTuple("3d_plot").Concat("shaded")).Concat(1)).Concat("auto"));
             disp_obj(Image,WindowHandle);
             copy_image(Image,&result_img);
         }
@@ -130,7 +142,7 @@ void halconClass::disp_img()
         clear_window(WindowHandle);
     if (HDevWindowStack::IsOpen()&hasData)
     {
-
+        set_lut(WindowHandle,"rainbow");
 
         if(is3D)
         {
@@ -141,8 +153,8 @@ void halconClass::disp_img()
         }
         else
         {
-            disp_obj(RGBImage,WindowHandle);
-            copy_image(RGBImage,&result_img);
+            disp_obj(Image,WindowHandle);
+            copy_image(Image,&result_img);
             qDebug()<<"disp_2d";
         }
 
@@ -167,6 +179,9 @@ void halconClass::disp_img()
             gen_rectangle1(&Rectangle, (Hlong)str.at(1).toInt(), (Hlong)str.at(2).toInt(),(Hlong)str.at(3).toDouble(), (Hlong)str.at(4).toInt());
             gen_contour_region_xld(Rectangle,&Contours,"border");
             disp_obj(Contours,WindowHandle);
+            //计算高差
+            if(recvCount==set.value("profileCount",0).toInt())
+                RectHeightSub();
         }
 
     }
@@ -243,7 +258,7 @@ void halconClass::zoomOut()
     作用:
     halcon显示窗口放大,如果没有窗口打开,则无作用
 
-*/
+*/k
 void halconClass::zoomIn()
 {
 
@@ -267,7 +282,7 @@ void halconClass::threedControl(double lastRow, double lastCol, double Row, doub
     if(!HDevWindowStack::IsOpen())
         return;
 
-    qDebug()<<mode<<Column<<Row<<lastCol<<lastRow;
+   // qDebug()<<mode<<Column<<Row<<lastCol<<lastRow;
     update_window_pose(WindowHandle, lastRow*scale, lastCol*scale, Row*scale, Column*scale, mode.toUtf8().data());
     disp_obj(result_img,WindowHandle);
 
@@ -310,7 +325,7 @@ void halconClass::run()
     {
         HTuple Width,Height;
         read_image(&Image,path.toUtf8().data());
-        copy_image(Image,&RGBImage);
+
         get_image_size(Image,&Width,&Height);
         set_part(WindowHandle,0,0,Height-1,Width-1);
 
@@ -652,116 +667,6 @@ void halconClass::readMTX(QString str)
       set_grayval(Image, Row, Column, Values);
       //write_image(Image,"tiff",0,"test");
 
-
-
-      threshold(Image, &Region, 1, 255);
-      min_max_gray(Region, Image, 0, &Min, &Max, &Range);
-
-      gen_image_const (&Imagetemp, "byte", Cols, Rows);
-   //   gen_image_const(&Image, "real", Cols, Rows);
-      cfa_to_rgb(Imagetemp, &RGBImage, "bayer_gb", "bilinear");
-      time.restart();
-
-      get_image_size(RGBImage,&Width,&Height);
-      set_part(WindowHandle,0,0,Height-1,Width-1);
-
-      img_width=Width[0].I();
-      img_height=Height[0].I();
-      scale=Width[0].I()/win_width;
-
-
-
-      decompose3(RGBImage, &Image1, &Image2, &Image3);
-
-      qDebug()<<Rows[0].I()<<Cols[0].I();
-     // cfa_to_rgb (Image, &Image, "bayer_gb", "bilinear");
-      HTuple step=Range/6;
-
-      HTuple RGBValue;
-      for(i=0;i<Rows-1;i++)
-      {
-          for(j=0;j<Cols-1;j++)
-          {
-              get_grayval(Image,i,j,&GrayVal);
-
-              Value=(GrayVal-Min)/step;
-
-             // qDebug()<<Value[0].D();
-
-              tuple_int (Value, &Value);
-
-
-              RGBValue.Reset();
-              switch (Value[0].I())
-              {
-
-                  default:
-                  RGBValue.Append(0);
-                  RGBValue.Append(0);
-                  RGBValue.Append(0);
-                  break;
-
-                  case 0:
-                      //RGBValue=[128-GrayValue*128/Standard,0,255];
-                        RGBValue.Append(128-(GrayVal-Min)*128/step);
-                        RGBValue.Append(0);
-                        RGBValue.Append(255);
-
-                        break;
-                  case 1:
-                    //  RGBValue:=[0,(GrayValue-Standard)*255/Standard,255];
-                      //  *ptr|=HTuple(0<<16+((GrayVal-Min-step)*255/step)<<8+255)[0].I();
-                        RGBValue.Append(0);
-                        RGBValue.Append(((GrayVal-Min-step)*255/step));
-                        RGBValue.Append(255);
-
-                        break;
-                  case 2:
-                      //RGBValue:=[0,255,255-(GrayValue-Standard*2)*255/Standard];
-                      //  *ptr|=HTuple(0<<16+255<<8+255-((GrayVal-Min)/step*255-step*255))[0].I();
-                        RGBValue.Append(0);
-                        RGBValue.Append(255);
-                        RGBValue.Append(255-((GrayVal-Min)/step*255-step*255));
-                        break;
-                  case 3:
-                   //   RGBValue:=[(GrayValue-Standard*3)*255/Standard,255,0];
-                       // *ptr|=HTuple((GrayVal-Min-step*3)*255/step<<16+255<<8)[0].I();
-                        RGBValue.Append(((GrayVal-Min-step*3)*255/step));
-                        RGBValue.Append(255);
-                        RGBValue.Append(0);
-                        break;
-                  case 4:
-                   //   RGBValue:=[255,255-(GrayValue-Standard*4)*128/Standard,0];
-                     //   *ptr|=HTuple(255<<16+(255-(GrayVal-Min-step*4)*128/step)<<8)[0].I();
-                        RGBValue.Append(255);
-                        RGBValue.Append((255-(GrayVal-Min-step*4)*128/step));
-                        RGBValue.Append(0);
-                        break;
-                  case 5:
-                     // RGBValue:=[255,128-(GrayValue-Standard*5)*128/Standard,0];
-                      //*ptr|=HTuple(255<<16+(128-(GrayVal-Min-step*5)*128/step)<<8)[0].I();
-                        RGBValue.Append(255);
-                        RGBValue.Append(128-(GrayVal-Min-step*5)*128/step);
-                        RGBValue.Append(0);
-                        break;
-                  case 6:
-                    //  RGBValue:=[255,(GrayValue-Standard*6)*128/Standard,(GrayValue-Standard*6)*128/Standard];
-                       // *ptr|=HTuple(255<<16+((GrayVal-Min-step*6)*128/step)<<8+(GrayVal-Min-step*6)*128/step)[0].I();
-                        RGBValue.Append(255);
-                        RGBValue.Append((GrayVal-Min-step*6)*128/step);
-                        RGBValue.Append((GrayVal-Min-step*6)*128/step);
-                        break;
-
-              }
-
-
-              set_grayval (Image1, i, j, RGBValue[0]);
-              set_grayval (Image2, i, j, RGBValue[1]);
-              set_grayval (Image3, i, j, RGBValue[2]);
-          }
-      }
-     // set_grayval(Image, Row, Column, Values);
-
       qDebug()<<QStringLiteral("转换时间:")<<time.elapsed()<<"msec";
     hasData=true;
 
@@ -1005,7 +910,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     HTuple  Min, Max, Row, Column,Range,GrayVal,Value,i,j,Width,Height;
     Hobject Region,Imagetemp,Image1,Image2, Image3;
   //  double *p=imgData;
-
+    recvCount=h;
 
   //  if((recvCount+h)>1000)
     //    recvCount=0;
@@ -1018,7 +923,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     float *pointer=0;
     time.start();
     Image.Reset();
-    RGBImage.Reset();
+
     gen_image_const(&Image,"real",w,1000);
     get_image_pointer1(Image,(long*)&pointer,type,&width,&height);
     qDebug()<<width<<height;
@@ -1030,18 +935,14 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
         {
 
           pointer[row*width+col] =*pdValueZ++;
-
-
         }
-
     }
-
-
     qDebug()<<"read time:"<<time.elapsed()<<"msec";
 
 
   //  write_image(RGBImage,"bmp",0,"test.bmp");
     write_image(Image,"tiff",0,"test");
+    /*
     threshold(Image, &Region, 1, 255);
     min_max_gray(Region, Image, 0, &Min, &Max, &Range);
     qDebug()<<"img"<<Min[0].D()<<Max[0].D()<<Range[0].D();
@@ -1139,8 +1040,10 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
             set_grayval (Image3, i, j, RGBValue[2]);
         }
     }
+ */
     hasData=true;
 
     emit dispImg();
+
 }
 

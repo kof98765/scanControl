@@ -33,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent) :
     plot = new Plot(ui->base->widget(2));
     QStringList str;
     str<<"value"<<"pointNum"<<"1280"<<"100";
+    qDebug()<<"start";
     plot->initPlot(str);
     plot->insertCurve(0,0,"test");
     plot->setYScale(-100,100);
@@ -92,7 +93,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 bool MainWindow::eventFilter(QObject *target, QEvent *event)
 {
-    static QPoint start,end;
+    static QPoint start,end,threeDstart,threeDend;
 
     if(target==ui->base)
     {
@@ -107,7 +108,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
                 leftPress=true;
             if(mouse->button()==Qt::RightButton)
                 rightPress=true;
-            start=mouse->pos();
+            threeDstart=start=mouse->pos();
 
             isDrag=true;
 
@@ -116,12 +117,14 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
         if(event->type()==QEvent::MouseMove)
         {
             QMouseEvent *mouse=static_cast<QMouseEvent *>(event);
-            end=mouse->pos();
 
+
+           end=mouse->pos();
 
             //start=mouse->pos();
             if(isDrag)
             {
+
 
                 int x,y;
                 x=end.x()-start.x();
@@ -135,24 +138,27 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
                {
                    if((abs(x)>10)|(abs(y)>10))
                         hal->moveImg(start.x()-end.x(),start.y()-end.y());
-
-                   if(leftPress&rightPress)
+                   if(!isDrawing)
                    {
-                       hal->threedControl(end.x(),end.y(),start.x(),start.y(),"move");
+                       if(leftPress&rightPress)
+                       {
+                           hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"move");
+
+                       }
+                       else if(leftPress)
+                       {
+
+                           hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"rotate");
+
+                       }
+                       else if(rightPress)
+                       {
+                           hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"scale");
+
+                       }
+                       threeDstart=end;
 
                    }
-                   else if(leftPress)
-                   {
-
-                       hal->threedControl(end.x(),end.y(),start.x(),start.y(),"rotate");
-
-                   }
-                   else if(rightPress)
-                   {
-                       hal->threedControl(end.x(),end.y(),start.x(),start.y(),"scale");
-
-                   }
-
                }
             }
         }
@@ -280,8 +286,8 @@ void MainWindow::init_connect()
     //connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
     connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(test()));
     connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
-    connect(ui->actionPcl,SIGNAL(triggered()),hal,SLOT(test()));
-    connect(ui->actionCallback,SIGNAL(triggered()),profile,SLOT(start()));
+    connect(ui->actionPcl,SIGNAL(triggered()),hal,SLOT(calculatePlaneness()));
+    connect(ui->actionSubHeight,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
     connect(setDialog,SIGNAL(selectDevice(int)),profile,SLOT(selectDevice(int)));
 }
 
@@ -353,7 +359,7 @@ void MainWindow::dispImg()
         case 3:
             status=3;
             hal->disp_img();
-            hal->RectHeightSub();
+            //hal->RectHeightSub();
             break;
     }
 
@@ -747,6 +753,7 @@ void MainWindow::recvHeightSub(QString name,double min,double max,double range)
 void MainWindow::on_actionReset_triggered()
 {
     sum->clear_table();
+    hal->clearData();
 }
 
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
