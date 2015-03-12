@@ -85,6 +85,7 @@ signals:
     void dispSingleFrame(unsigned short *,unsigned short *,double *x,double *y,int size);
     void setData(double*,int);
     void dispFrame(unsigned char*,int);
+    void heartPack();
 public slots:
     void getNewProfile(const unsigned char* pucData, unsigned int uiSize, void* pUserData);
     void getSingleFrame();
@@ -100,6 +101,7 @@ public slots:
     void readSettings();
     void selectDevice(int index);
     void setExposeTime(int s,int i);
+    void setExternTrigger(int index);
     QList<double> getList();
 };
 

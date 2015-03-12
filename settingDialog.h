@@ -41,6 +41,12 @@ private slots:
 
     void on_exposure_currentIndexChanged(int index);
 
+
+
+    void on_testValue_valueChanged(double arg1);
+
+    void on_trigger_currentIndexChanged(int index);
+
 private:
     Ui::mySettings *ui;
     QString filePath;
@@ -53,6 +59,7 @@ signals:
     void updataSettings();
     void selectDevice(int index);
     void postExposeTime(int s,int i);
+    void setExternTrigger(int index);
 };
 
 #endif // mySettings_H

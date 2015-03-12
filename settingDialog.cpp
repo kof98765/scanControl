@@ -225,3 +225,15 @@ void mySettings::on_exposure_currentIndexChanged(int index)
             break;
     }
 }
+
+
+
+void mySettings::on_testValue_valueChanged(double arg1)
+{
+    set.setValue("testValue",arg1);
+}
+
+void mySettings::on_trigger_currentIndexChanged(int index)
+{
+    emit setExternTrigger(index);
+}

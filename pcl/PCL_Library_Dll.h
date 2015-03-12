@@ -39,7 +39,14 @@ PCLLIBRARYDLL void Transfer2Cloud(double* X,double* Y,double* Z,unsigned short* 
 		 * \param[out] 输出曲率
 		 * \param[return] 成功返回1 
 		 */
-PCLLIBRARYDLL int ComputePointNormal(PointCloud::Ptr &point,Vector4f &normal_vec,float &curvature);
+PCLLIBRARYDLL int ComputePointNormal(PointCloud::Ptr &cloud,Vector4f &normal_vec,float &curvature);
+
+		/** \brief 计算平面方程向量A B C
+		* \param[in] 输入点云
+		* \param[out] 输出平面方程 
+		* \param[return] 成功返回1 
+		*/
+PCLLIBRARYDLL int ComputePointNormal2 (PointCloud::Ptr &cloud, Vector4f &normal_vec);
 
 		/** \brief 计算点到平面的距离
 		 * \param[in] 输入点
@@ -55,6 +62,13 @@ PCLLIBRARYDLL int Dis_point2plane(PointT &point,Vector4f &normal_vec,double &_re
 		 * \param[return] 成功返回1 
 	     */
 PCLLIBRARYDLL int CalculateFlatness(PointCloud::Ptr &inCloud, double &_result);
+
+		/** \brief 计算平面度
+		 * \param[in] 输入的点云
+		 * \param[out] 返回平面度
+		 * \param[return] 成功返回1 
+	     */
+PCLLIBRARYDLL int CalculateFlatness2(PointCloud::Ptr &inCloud, double &_result);
 
 		/** \brief 从点云中选取新的区域点云
 		 * \param[in] 输入的原始点云

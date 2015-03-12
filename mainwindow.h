@@ -69,6 +69,7 @@ protected:
 public slots:
     void outputMessage(QtMsgType,QString);
     void recvHeightSub(QString,double,double,double);
+    void recvPlaneness(int ,double,double);
     void dispFrame(unsigned char *buf,int size);
     void Net_Param();
     void about();
@@ -83,7 +84,7 @@ public slots:
     void startButton_clicked();
     void netTest(QString);
     void on_textChanged();
-
+    void recvHeartPack();
     void flushRoiList(QStringList list);
 
 
@@ -109,6 +110,7 @@ public slots:
     void stopSingleFrame();
 
     void action_delItem();
+    void action_modifyItem();
 private:
     Ui::MainWindow *ui;
     QFile debug;
@@ -149,6 +151,7 @@ private:
     int badresult[10];
     int currentItem;
     QAction *delItem;
+    QAction *modifyItem;
     int status;
 
 
@@ -161,6 +164,7 @@ private slots:
     void statusCheck();
     void updataProsessBar(QString,int);
     void on_toExcel_clicked();
+
 };
 
 #endif // MAINWINDOW_H

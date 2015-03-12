@@ -116,10 +116,11 @@ public slots:
     void getImagebyPointer1(double *pdValueZ,int width,int height);
      void getImagebyPointer3(double *x,double *y,double *z,int width,int height);
     void close_the_window();
-    void drawRect(QString name,QString color);
+    void drawRect(QString name,QString color,int team,double limit,int func);
+    void calculate();
     void delRect(int);
-    void RectHeightSub();
-    void calculatePlaneness();
+    void RectHeightSub(int team);
+    void calculatePlaneness(int team);
 signals:
     void detectFinish();
     void stopMove();
@@ -128,6 +129,7 @@ signals:
     void dispImg();
     void sendHeightSub(QString,double,double,double);
     void flushRoiList(QStringList list);
+    void sendPlaneness(int ,double,double);
 
 };
 

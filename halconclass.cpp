@@ -692,7 +692,7 @@ void halconClass::test()
     pcl::io::savePCDFile("plane_cloud_out.pcd", *inCloud);
     */
 
-    this->calculatePlaneness();
+    this->calculatePlaneness(1);
 
 
 }
@@ -709,7 +709,10 @@ void halconClass::delRect(int index)
     set.sync();
     disp_img();
 }
-void halconClass::drawRect(QString name,QString color)
+/*
+    绘制计算区域
+*/
+void halconClass::drawRect(QString name,QString color,int team,double limit,int func)
 {
     int i=0;
     Hobject Rectangle;
@@ -734,7 +737,9 @@ void halconClass::drawRect(QString name,QString color)
     str<<QString::number(Column[0].I());
     str<<QString::number(Row2[0].I());
     str<<QString::number(Column2[0].I());
-
+    str<<QString::number(team);
+    str<<QString::number(limit);
+    str<<QString::number(func);
     roiList.insert(name,QVariant(str));
     set.setValue("roiList",roiList);
     set.sync();
@@ -743,9 +748,12 @@ void halconClass::drawRect(QString name,QString color)
     disp_img();
     emit flushRoiList(roiList.keys());
 }
-
-void halconClass::RectHeightSub()
+/*
+    计算高差
+*/
+void halconClass::RectHeightSub(int team)
 {
+    int num=0;
     QTime time;
     time.start();
    if (HDevWindowStack::IsOpen()&hasData)
@@ -755,63 +763,93 @@ void halconClass::RectHeightSub()
         HTuple Rows,Columns,Grayval;
         HTuple  Range,String,s,Result,Number;
         QStringList list=roiList.keys();
+
         for(int i=0;i<list.size();i++)
         {
+
             QStringList str=roiList.value(list.at(i)).toStringList();
-            gen_rectangle1(&Rectangle, str.at(1).toInt(), str.at(2).toInt(), str.at(3).toInt(), str.at(4).toInt());
 
-            reduce_domain(Image, Rectangle, &ImageReduced);
+            if(str.at(5).toInt()!=team)
+                continue;
 
-
-            get_region_points(ImageReduced, &Rows, &Columns);
-            get_grayval(ImageReduced, Rows, Columns, &Grayval);
-
-            tuple_max(Grayval, &Max);
-
-            tuple_find(Grayval,0,&Indices);
-            if(Indices[0].I()!=-1)
+            if(str.at(7).toInt()==0)
             {
-                for(int i=0;i<Indices.Num();i++)
+
+                num++;
+                gen_rectangle1(&Rectangle, str.at(1).toInt(), str.at(2).toInt(), str.at(3).toInt(), str.at(4).toInt());
+
+                reduce_domain(Image, Rectangle, &ImageReduced);
+
+
+                get_region_points(ImageReduced, &Rows, &Columns);
+                get_grayval(ImageReduced, Rows, Columns, &Grayval);
+
+                tuple_max(Grayval, &Max);
+
+                tuple_find(Grayval,0,&Indices);
+                if(Indices[0].I()!=-1)
                 {
+                    for(int i=0;i<Indices.Num();i++)
+                    {
 
-                    Grayval[Indices[i].I()]=Max;
+                        Grayval[Indices[i].I()]=Max;
+                    }
                 }
+
+
+                tuple_min(Grayval,&Min);
+
+                tuple_sub(Max,Min,&Range);
+                qDebug()<<Min[0].D()<<Max[0].D()<<Range[0].D();
+                emit sendHeightSub(list.at(i),Min[0].D(),Max[0].D(),Range[0].D());
             }
-
-
-            tuple_min(Grayval,&Min);
-
-            tuple_sub(Max,Min,&Range);
-            qDebug()<<Min[0].D()<<Max[0].D()<<Range[0].D();
-            emit sendHeightSub(list.at(i),Min[0].D(),Max[0].D(),Range[0].D());
         }
-
+        if(num==0)
+            return;
 
     }
     qDebug()<<QStringLiteral("计算高差时间:")<<time.elapsed()<<"ms";
 }
-void halconClass::calculatePlaneness()
+/*
+    计算所有区域
+*/
+void halconClass::calculate()
+{
+    for(int i=0;i<10;i++)
+    {
+        this->RectHeightSub(i);
+        this->calculatePlaneness(i);
+    }
+}
+/*
+    计算平面度
+*/
+void halconClass::calculatePlaneness(int team)
 {
 
-    double result;
+    double result1,result2;
+    int num=0;
     typedef int (*Calculate)(PointCloud::Ptr &, double &);
     typedef int (*GetChildCloud)(PointCloud::Ptr &inCloud, POINT point1,POINT point2,int width,PointCloud::Ptr outCloud);
+    typedef int (*CalculateFlatness2) (PointCloud::Ptr &cloud, double &);
     Calculate cal=NULL;
     GetChildCloud child=NULL;
+    CalculateFlatness2 Comp=NULL;
     cal=(Calculate)GetProcAddress(hInstance,"CalculateFlatness");
     child=(GetChildCloud)GetProcAddress(hInstance,"GetChildCloud");
+    Comp=(CalculateFlatness2)GetProcAddress(hInstance,"CalculateFlatness2");
 
 
-    qDebug("%x,CalculateFlatness",cal);
-    qDebug("%x,GetChildCloud",child);
     if(cal==NULL|child==NULL)
     {
         qDebug()<<"func is NULL";
         return;
     }
-    qDebug()<<"start CalculateFlatness";
+
+    PointCloud::Ptr globleCloud(new PointCloud);
     if (HDevWindowStack::IsOpen()&hasData)
     {
+
         Hobject   Rectangle;
 
         char     type[128];
@@ -821,27 +859,45 @@ void halconClass::calculatePlaneness()
             QTime time;
             time.start();
             QStringList str=roiList.value(list.at(i)).toStringList();
-            POINT p1,p2;
+            if(str.at(5).toInt()!=team)
+                continue;
 
-            p1.x=str.at(2).toInt();
-            p1.y=str.at(1).toInt();
-            p2.x=str.at(4).toInt();
-            p2.y=str.at(3).toInt();
-            qDebug()<<"start and end"<<p1.x<<p1.y<<p2.x<<p2.y;
-            PointCloud::Ptr newCloud(new PointCloud);
-            (*child)(*inCloud,p1,p2,1280,newCloud);
+            if(str.at(7).toInt()==1)
+            {
+                num++;
+                POINT p1,p2;
+                p1.x=str.at(2).toInt();
+                p1.y=str.at(1).toInt();
+                p2.x=str.at(4).toInt();
+                p2.y=str.at(3).toInt();
+                qDebug()<<"start and end"<<p1.x<<p1.y<<p2.x<<p2.y;
+                PointCloud::Ptr newCloud(new PointCloud);
+                (*child)(*inCloud,p1,p2,1280,newCloud);
 
-            pcl::io::savePCDFile(QString("roi%1.pcd").arg(i).toUtf8().data(),*(newCloud.get()));
+               // pcl::io::savePCDFile(QString("roi%1.pcd").arg(i).toUtf8().data(),*(newCloud.get()));
+                (*cal)(newCloud,result1);
+                (*Comp)(newCloud,result2);
+                //qDebug()<<"cal";
+                *globleCloud+=*newCloud;
+                qDebug()<<list.at(i)<<i<<QStringLiteral("平整度为")<<result1<<result2<<QStringLiteral("计算时间为")<<time.elapsed()<<"ms";
+            }
 
-            //qDebug()<<"cal";
-            (*cal)(newCloud,result);
-            //delete newCloud.get();
-            qDebug()<<list.at(i)<<QStringLiteral("平整度为")<<result<<QStringLiteral("计算时间为")<<time.elapsed()<<"ms";
 
-        }
+         }
+        if(num==0)
+            return;
+
+        (*cal)(globleCloud,result1);
+        (*Comp)(globleCloud,result2);
+        //delete newCloud.get();
+        qDebug()<<"team"<<team<<QStringLiteral("总平整度为")<<result1<<result2;
+        emit sendPlaneness(team,result1,result2);
      }
 
 }
+/*
+    读取设置
+*/
 void halconClass::readSettings()
 {
 
@@ -864,6 +920,9 @@ void halconClass::readSettings()
     smothHeight=set.value("smothHeight",7).toInt();
 
 }
+/*
+    获取完整图像并生成点云
+*/
 void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,const int h)
 {
     time.start();
@@ -888,7 +947,7 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
     for(int i=0;i<h;i++)
     {
         for(int j=0;j<w;j++)
-         yy[i*w+j]=i/100.0;
+         yy[i*w+j]=i*set.value("testValue",0.01).toDouble();
     }
 
     (*test_function)(x,yy,z,0,w,h,*inCloud);
@@ -925,7 +984,9 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
 
     qDebug()<<QStringLiteral("生成TIFF文件时间:")<<time.elapsed()<<"msec";
 }
-
+/*
+    刷新图像
+*/
 void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 {
     HTuple  MatID, Rows, Cols, Values, MultValues;
@@ -1067,6 +1128,6 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 
     emit dispImg();
     if(recvCount==set.value("profileCount",0).toInt())
-        RectHeightSub();
+        this->calculate();
 }
 

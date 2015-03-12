@@ -43,7 +43,7 @@ MainWindow::MainWindow(QWidget *parent) :
     timer=new QTimer();
     eventTimer=new QTimer();
     connect(eventTimer,SIGNAL(timeout()),this,SLOT(statusCheck()));
-    eventTimer->start(1000);
+    eventTimer->start(10);
     sum=new summarizing;
     sum->set_table(ui->tableWidget);
     mygroup = new QButtonGroup;
@@ -62,7 +62,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->videoFrame->setAutoFillBackground(true);
 
     delItem=new QAction(QStringLiteral("删除"),this);
+    modifyItem=new QAction(QStringLiteral("修改"),this);
     connect(delItem,SIGNAL(triggered()),this,SLOT(action_delItem()));
+    connect(modifyItem,SIGNAL(triggered()),this,SLOT(action_modifyItem()));
 //加载检测查块
     hal=new halconClass;
     ref=new reflectControl;
@@ -212,7 +214,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
             QMenu menu(this);
 
             menu.addAction(delItem);
-
+            menu.addAction(modifyItem);
             menu.exec(mouse->globalPos());
         }
         return QWidget::eventFilter(target,event);
@@ -284,12 +286,14 @@ void MainWindow::init_connect()
     connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
     //connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
-    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(test()));
+    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(calculate()));
     connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
-    connect(ui->actionPcl,SIGNAL(triggered()),hal,SLOT(calculatePlaneness()));
-    connect(ui->actionSubHeight,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
+    connect(hal,SIGNAL(sendPlaneness(int,double,double)),this,SLOT(recvPlaneness(int,double,double)));
+
     connect(setDialog,SIGNAL(selectDevice(int)),profile,SLOT(selectDevice(int)));
     connect(setDialog,SIGNAL(postExposeTime(int,int)),profile,SLOT(setExposeTime(int ,int )));
+    connect(profile,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
+    connect(setDialog,SIGNAL(setExternTrigger(int)),profile,SLOT(setExternTrigger(int)));
 }
 
 void MainWindow::Error(QString str)
@@ -342,6 +346,7 @@ void MainWindow::dispImg()
 {
 
     status=0;
+
     switch(ui->base->currentIndex())
     {
         case 0:
@@ -355,7 +360,7 @@ void MainWindow::dispImg()
             ui->videoFrame->setPalette(palette);
             break;
         case 2:
-           // profile->getSingleFrame();
+            //profile->getSingleFrame();
             break;
         case 3:
             status=3;
@@ -489,19 +494,7 @@ void MainWindow::startButton_clicked()
    this->on_actionReset_triggered();
     //hal->RectHeightSub();
 
-   if(isRealTime)
-   {
-       switch(ui->base->currentIndex())
-       {
-            case 1:
-                stopVideo();
-                break;
-            case 2:
-                //stopSingleFrame();
-                break;
-       }
-       return;
-   }
+
    if(isAuto)
    {
         if(!isRunning)
@@ -522,13 +515,13 @@ void MainWindow::startButton_clicked()
        switch(ui->base->currentIndex())
        {
             case 0:
-
+                profile->startTrigger();
                 break;
            case 1:
-
+                profile->startVedio();
                break;
            case 2:
-
+                profile->startSingleFrame();
                break;
            case 3:
                 status=2;
@@ -536,6 +529,8 @@ void MainWindow::startButton_clicked()
                //profile->GetProfiles_Callback();
                //profile->start();
                profile->startTrigger();
+
+
                break;
        }
 
@@ -686,7 +681,7 @@ void MainWindow::on_loadFile_clicked()
 {
     status=1;
 
-     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
+    hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
     hal->read_img("test.tif");
 }
 
@@ -732,20 +727,46 @@ void MainWindow::outputMessage(QtMsgType type,QString str)
 void MainWindow::recvHeightSub(QString name,double min,double max,double range)
 {
     status=0;
+
     QMap<QString,QVariant> list=set.value("roiList").toMap();
     QStringList str=list.value(name).toStringList();
 
     ui->tableWidget->setSortingEnabled(false);
     sum->add_row();
-    if(range>ui->limitValue->text().toDouble())
+    if(range>str.at(6).toDouble())
         sum->add_item(0,QString("NG"));
-    sum->add_item(1,name);
-    sum->add_item(2,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
-    sum->add_item(3,QString("%1").arg(min));
-    sum->add_item(4,QString("%1").arg(max));
-    sum->add_item(5,QString("%1").arg(range));
+    sum->add_item(1,QStringLiteral("高差"));
+    sum->add_item(2,name);
+    sum->add_item(3,QString("%1").arg(range));
+    sum->add_item(4,QStringLiteral("分组")+QString::number(str.at(5).toInt()+1));
+    sum->add_item(5,QString("%1").arg(min));
+    sum->add_item(6,QString("%1").arg(max));
+    sum->add_item(7,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
+
+    ui->tableWidget->setSortingEnabled(true);
+}
+/*
+    接收平面度信息
+*/
+void MainWindow::recvPlaneness(int team,double result1,double result2)
+{
+    status=0;
 
 
+    QMap<QString,QVariant> list=set.value("roiList").toMap();
+    //QStringList str=list.value(name).toStringList();
+
+    ui->tableWidget->setSortingEnabled(false);
+    sum->add_row();
+    //if(range>str.at(6).toDouble())
+       // sum->add_item(0,QString("NG"));
+    sum->add_item(1,QStringLiteral("平面度"));
+    sum->add_item(2,"name");
+    sum->add_item(3,QString("%1").arg(0));
+    sum->add_item(4,QStringLiteral("分组")+team);
+    sum->add_item(5,QString("%1").arg(result1>result2?result2:result1));
+    sum->add_item(6,QString("%1").arg(result1>result2?result1:result2));
+    //sum->add_item(7,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
 
     ui->tableWidget->setSortingEnabled(true);
 }
@@ -760,7 +781,7 @@ void MainWindow::on_actionReset_triggered()
 
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
-    qDebug()<<row<<column;
+
 }
 /*
     切换为视频模式
@@ -778,22 +799,20 @@ void MainWindow::on_realTimeButton_clicked()
 void MainWindow::startVideo()
 {
     stopSingleFrame();
-    isRealTime=true;
+
     connect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
-    ui->startButton->setText(QStringLiteral("停止"));
+
     profile->startVedio();
     timer->start(200);
 
 }
 void MainWindow::stopVideo()
 {
-    if(!isRealTime)
-        return;
-    isRealTime=false;
+
     timer->stop();
     ui->startButton->setText(QStringLiteral("开始扫描"));
     disconnect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
-    profile->stopVedio();
+
 }
 /*
     停止视频模式
@@ -801,9 +820,9 @@ void MainWindow::stopVideo()
 void MainWindow::startSingleFrame()
 {
     stopVideo();
-    isRealTime=true;
+
     connect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
-    ui->startButton->setText(QStringLiteral("停止"));
+
     timer->start(200);
     profile->startSingleFrame();
 }
@@ -812,13 +831,11 @@ void MainWindow::startSingleFrame()
 */
 void MainWindow::stopSingleFrame()
 {
-    if(!isRealTime)
-        return;
-    isRealTime=false;
+
     timer->stop();
     ui->startButton->setText(QStringLiteral("开始扫描"));
     disconnect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
-    profile->stopSingleFrame();
+
 }
 /*
     开始单帧模式
@@ -828,7 +845,7 @@ void MainWindow::on_singleFrameButton_clicked()
 
     hal->close_the_window();
     ui->base->setCurrentIndex(2);
-    //startSingleFrame();
+    startSingleFrame();
 }
 /*
     3D模式按钮事件
@@ -837,8 +854,10 @@ void MainWindow::on_threeDButton_clicked()
 {
 
      hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
+     stopSingleFrame();
      ui->startButton->setText(QStringLiteral("开始扫描"));
      ui->base->setCurrentIndex(0);
+     profile->startTrigger();
      hal->setMode("3D");
 }
 /*
@@ -848,7 +867,9 @@ void MainWindow::on_twoDButton_clicked()
 {
 
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
+    stopSingleFrame();
     ui->startButton->setText(QStringLiteral("开始扫描"));
+    profile->startTrigger();
     ui->base->setCurrentIndex(3);
     hal->setMode("2D");
 }
@@ -860,22 +881,41 @@ void MainWindow::on_roiDraw_clicked()
 {
     isDrawing=true;
 
-    hal->drawRect(ui->roiName->text(),ui->roiColor->currentText());
+    hal->drawRect(ui->roiName->text(),ui->roiColor->currentText(),ui->team->currentIndex(),
+                  ui->limitValue->text().toDouble(),ui->func->currentIndex());
+    qDebug()<<ui->roiName->text();
+           qDebug()<<ui->roiColor->currentIndex()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
     isDrawing=false;
 
 }
 /*
     刷新矩形框列表
 */
-void MainWindow::flushRoiList(QStringList list)
+void MainWindow::flushRoiList(QStringList ll)
 {
+    QStringList str;
 
+    QStringList line;
     ui->roiList->clear();
-    ui->roiList->addItems(list);
+    QMap<QString,QVariant> list=set.value("roiList").toMap();
+
+    for(int i=0;i<list.size();i++)
+    {
+        str.clear();
+        str<<list.keys().at(i);
+        QStringList tmp=list.value(list.keys().at(i)).toStringList();
+        str<<QStringLiteral("分组")+tmp.at(5)+1;
+        str<<QStringLiteral("算")+(tmp.at(7).toInt()==0?QStringLiteral("高差"):QStringLiteral("平面度"));
+        str<<QStringLiteral("阈值=")<<tmp.at(6);
+        line<<str.at(0)+" "+str.at(1)+" "+str.at(2)+" "+str.at(3)+" "+str.at(4);
+    }
+
+
+    ui->roiList->addItems(line);
 
 }
 /*
-    矩形框列表右键事件
+    矩形框列表删除事件
 */
 void MainWindow::action_delItem()
 {
@@ -887,11 +927,20 @@ void MainWindow::action_delItem()
 
 }
 /*
+    矩形框列表修改事件
+*/
+void MainWindow::action_modifyItem()
+{
+    QMap<QString,QVariant> list=set.value("roiList").toMap();
+    QStringList tmp=list.keys();
+}
+/*
     状态检查,暂不完善
 */
 void MainWindow::statusCheck()
 {
     static int i=0;
+
     if(i>100)
     {
         status=0;
@@ -933,4 +982,22 @@ void MainWindow::updataProsessBar(QString name,int num)
 void MainWindow::on_toExcel_clicked()
 {
     sum->to_excel();
+}
+void MainWindow::recvHeartPack()
+{
+    static QTime time;
+    pass++;
+    ui->rate->setText(QString::number(pass));
+/*
+    if(pass%100==0)
+        time.start();
+    pass++;
+
+    if(pass%100==99&pass!=1)
+    {
+        double elapsed=time.elapsed();
+        ui->rate->setText(QString::number(0.01*elapsed)+"/s fps");
+    }
+        //ui->rate->setText(QString("%1/s fps").arg(1000/time.elapsed()*100));
+        */
 }
