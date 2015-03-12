@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QFileDialog>
 #include <QSettings>
+#include <QDebug>
 namespace Ui {
 class mySettings;
 }
@@ -33,16 +34,12 @@ private slots:
 
     void on_profileCount_valueChanged(int arg1);
 
-    void on_profile_config_currentIndexChanged(int index);
 
-
-
-    void on_idle_time_valueChanged(int arg1);
-
-    void on_shutter_time_valueChanged(int arg1);
 
 
     void on_connecct_clicked();
+
+    void on_exposure_currentIndexChanged(int index);
 
 private:
     Ui::mySettings *ui;
@@ -55,6 +52,7 @@ signals:
     void netTest(QString msg);
     void updataSettings();
     void selectDevice(int index);
+    void postExposeTime(int s,int i);
 };
 
 #endif // mySettings_H

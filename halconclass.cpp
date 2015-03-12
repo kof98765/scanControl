@@ -26,7 +26,8 @@ halconClass::halconClass(QObject *parent) :
                            &halconClass::E128_detect
                                                    };
     hInstance = LoadLibrary("PCL_Library_Dll.dll");
-
+    if(hInstance==NULL)
+        qDebug()<<"pcl dll load fail";
 
 
     inCloud=new PointCloud::Ptr(new PointCloud );
@@ -180,8 +181,7 @@ void halconClass::disp_img()
             gen_contour_region_xld(Rectangle,&Contours,"border");
             disp_obj(Contours,WindowHandle);
             //计算高差
-            if(recvCount==set.value("profileCount",0).toInt())
-                RectHeightSub();
+
         }
 
     }
@@ -258,7 +258,7 @@ void halconClass::zoomOut()
     作用:
     halcon显示窗口放大,如果没有窗口打开,则无作用
 
-*/k
+*/
 void halconClass::zoomIn()
 {
 
@@ -672,7 +672,7 @@ void halconClass::readMTX(QString str)
 
 }
 void halconClass::test()
-{
+{ 
     /*
     pcl::PointCloud<pcl::PointXYZ>::Ptr inCloud(new pcl::PointCloud<pcl::PointXYZ>);
     for (float x = -5.0; x <= 5.0; x += 0.25)
@@ -792,12 +792,24 @@ void halconClass::RectHeightSub()
 }
 void halconClass::calculatePlaneness()
 {
-    QTime time;
-    time.start();
+
     double result;
-    typedef int (*Calculate)(PointCloud::Ptr &inCloud, double &_result);
+    typedef int (*Calculate)(PointCloud::Ptr &, double &);
+    typedef int (*GetChildCloud)(PointCloud::Ptr &inCloud, POINT point1,POINT point2,int width,PointCloud::Ptr outCloud);
     Calculate cal=NULL;
+    GetChildCloud child=NULL;
     cal=(Calculate)GetProcAddress(hInstance,"CalculateFlatness");
+    child=(GetChildCloud)GetProcAddress(hInstance,"GetChildCloud");
+
+
+    qDebug("%x,CalculateFlatness",cal);
+    qDebug("%x,GetChildCloud",child);
+    if(cal==NULL|child==NULL)
+    {
+        qDebug()<<"func is NULL";
+        return;
+    }
+    qDebug()<<"start CalculateFlatness";
     if (HDevWindowStack::IsOpen()&hasData)
     {
         Hobject   Rectangle;
@@ -806,27 +818,29 @@ void halconClass::calculatePlaneness()
         QStringList list=roiList.keys();
         for(int i=0;i<list.size();i++)
         {
+            QTime time;
+            time.start();
             QStringList str=roiList.value(list.at(i)).toStringList();
+            POINT p1,p2;
 
-            PointCloud::Ptr newCloud;
+            p1.x=str.at(2).toInt();
+            p1.y=str.at(1).toInt();
+            p2.x=str.at(4).toInt();
+            p2.y=str.at(3).toInt();
+            qDebug()<<"start and end"<<p1.x<<p1.y<<p2.x<<p2.y;
+            PointCloud::Ptr newCloud(new PointCloud);
+            (*child)(*inCloud,p1,p2,1280,newCloud);
 
-            for(int i=str.at(1).toInt();i<str.at(3).toInt();i++)
-            {
-                for(int j=str.at(2).toInt();i<str.at(4).toInt();i++)
-                {
-                    newCloud.get()->push_back((*inCloud).get()[i][j]);
-                }
-            }
+            pcl::io::savePCDFile(QString("roi%1.pcd").arg(i).toUtf8().data(),*(newCloud.get()));
 
-
-            qDebug()<<"cal";
+            //qDebug()<<"cal";
             (*cal)(newCloud,result);
-
-
+            //delete newCloud.get();
+            qDebug()<<list.at(i)<<QStringLiteral("平整度为")<<result<<QStringLiteral("计算时间为")<<time.elapsed()<<"ms";
 
         }
      }
-    qDebug()<<QStringLiteral("平整度为")<<result<<"/n"<<QStringLiteral("计算平面度时间:")<<time.elapsed()<<"ms";
+
 }
 void halconClass::readSettings()
 {
@@ -859,19 +873,27 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
     Hlong width,height;
     char     type[128];
     HTuple Row,Column;
-
+    QTime time;
     qDebug()<<"start pointCloud"<<w<<h;
-    typedef void (*Transfer2Cloud)(double* X,double* Y,double* Z,unsigned short* I,const int col,const int row,PointCloud::Ptr inCloud);
+    typedef void (*Transfer2Cloud)(double* ,double* ,double* ,unsigned short* ,const int ,const int ,PointCloud::Ptr );
     Transfer2Cloud test_function =NULL;
     test_function = (Transfer2Cloud)GetProcAddress(hInstance, "Transfer2Cloud");
-    double *yy=new double[h];
+    qDebug("%x,test_function",test_function);
+    if(test_function==NULL)
+    {
+        qDebug()<<"func is NULL";
+        return;
+    }
+    double *yy=new double[h*w];
     for(int i=0;i<h;i++)
     {
-         yy[i]=i;
+        for(int j=0;j<w;j++)
+         yy[i*w+j]=i/100.0;
     }
 
-    //(*test_function)(x,yy,z,0,w,h,*inCloud);
-    qDebug()<<"end pointCloud";
+    (*test_function)(x,yy,z,0,w,h,*inCloud);
+   // pcl::io::savePCDFile("out.pcd",*(inCloud->get()));
+    qDebug()<<"end pointCloud,prossess time:"<<time.elapsed()<<"ms";
     delete yy;
     return;
     p=(unsigned short *)y;
@@ -1044,6 +1066,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     hasData=true;
 
     emit dispImg();
-
+    if(recvCount==set.value("profileCount",0).toInt())
+        RectHeightSub();
 }
 

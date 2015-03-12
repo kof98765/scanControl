@@ -219,20 +219,47 @@ void profileGet::readSettings()
             OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGERPROFILE_FILTER)", iRetValue);
 
         }
-        qDebug("filter set %x",filter);
+        qDebug("filter read %x",filter);
+        //读取二值化阈值
+        if((iRetValue = m_pLLT->GetFeature(FEATURE_FUNCTION_THRESHOLD,&threshold)) < GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during SetFeature(FEATURE_FUNCTION_THRESHOLD)", iRetValue);
+
+        }
+        qDebug("threshold read %x",threshold);
+        //读取曝光时间
+        if((iRetValue = m_pLLT->GetFeature(FEATURE_FUNCTION_SHUTTERTIME,&uiShutterTime)) < GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during SetFeature(FEATURE_FUNCTION_SHUTTERTIME)", iRetValue);
+
+        }
+        //读取闲置时间
+        qDebug("ShutterTime read %x",uiShutterTime);
+        if((iRetValue = m_pLLT->GetFeature(FEATURE_FUNCTION_IDLETIME,&uiIdleTime)) < GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during SetFeature(FEATURE_FUNCTION_IDLETIME)", iRetValue);
+
+        }
+        qDebug("IdleTime read %x",uiIdleTime);
         //读取触发器属性
         if((iRetValue=m_pLLT->GetFeature(FEATURE_FUNCTION_TRIGGER,&trigger))<GENERAL_FUNCTION_OK)
         {
             OnError("Error during SetFeature(TRIGGER)",iRetValue);
         }
-        qDebug("trigger set %x",trigger);
-
+        qDebug("trigger read %x",trigger);
+        //读取IO设置
         if((iRetValue=m_pLLT->GetFeature(FEATURE_FUNCTION_RS422_INTERFACE_FUNCTION,&IOConfigure))<GENERAL_FUNCTION_OK)
         {
             OnError("Error during SetFeature(IOConfigure)",iRetValue);
         }
-        qDebug("IOConfigure set %x",IOConfigure);
-
+        qDebug("IOConfigure read %x",IOConfigure);
+        //读取轮廓处理属性
+        if((iRetValue=m_pLLT->GetFeature(FEATURE_FUNCTION_PROCESSING_PROFILEDATA,&Processing))<GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during GetFeature(FEATURE_FUNCTION_PROCESSING_PROFILEDATA)", iRetValue);
+        }
+        qDebug("Processing read %x",Processing);
+        //读取数据包的最大最小值
         if((iRetValue = m_pLLT->GetMinMaxPacketSize((unsigned long*)&m_uiPacketSizeMIN, (unsigned long*)&m_uiPacketSizeMAX)) < GENERAL_FUNCTION_OK)
         {
                 OnError("Error during GetPacketSize", iRetValue);
@@ -285,15 +312,13 @@ void profileGet::flushSettings()
 
     }
 
-
-
     qDebug() << "Set idle time to " << uiIdleTime << "\n";
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_IDLETIME, uiIdleTime)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetFeature(FEATURE_FUNCTION_IDLETIME)", iRetValue);
 
     }
-
+    //设置过滤器属性
     qDebug("filter %x",filter);
     filter&=~(0xf<<8);
     filter&=~(0xf<<4);
@@ -310,6 +335,7 @@ void profileGet::flushSettings()
         OnError("Error during SetFeature(FEATURE_FUNCTION_PROFILE_FILTER)", iRetValue);
 
     }
+    //设置触发器属性
     qDebug("trigger:%x",trigger);
     trigger&=~(0xfff<<0);
     trigger&=~(0xf<<16);
@@ -333,6 +359,7 @@ void profileGet::flushSettings()
         OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
     }
+    //设置IO属性
     qDebug("IOConfigure:%x",IOConfigure);
     IOConfigure&=~(0xf);
     IOConfigure&=~(0xf<<4);
@@ -348,12 +375,61 @@ void profileGet::flushSettings()
     }
 
     qDebug() << "Sets the Firewire PacketSize to " << m_uiPacketSizeMAX << "\n";
+    //设置翻转
+    Processing&=~(0x1<<6);
+    Processing|=0x1<<6;
+    if((iRetValue=m_pLLT->SetFeature(FEATURE_FUNCTION_PROCESSING_PROFILEDATA,Processing))<GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_PROCESSING_PROFILEDATA)", iRetValue);
+    }
+    qDebug("Processing:%x",Processing);
+    //设置阈值
 
+    threshold&=~(0xff<<0);
+    threshold|=set.value("threshold",128).toInt()<<0;
+    threshold&=~(0x1<<8);
+    threshold|=0xc<<8;
+    threshold&=~(0x1<<25);
+    threshold|=set.value("autoThreshold",0).toInt()<<25;
+
+    if((iRetValue=m_pLLT->SetFeature(FEATURE_FUNCTION_THRESHOLD,threshold))<GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_THRESHOLD)", iRetValue);
+    }
+    qDebug("threshold:%x",threshold);
 
 
     qDebug("ready to get %d profile",m_uiNeededProfileCount);
+    vdValueX.resize(m_uiResolution*m_uiNeededProfileCount);
+    vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount);
+    vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount);
 
+}
+void profileGet::setExposeTime(int s,int i)
+{
+    int iRetValue;
+    qDebug()<<s<<i<<"?";
+    set.setValue("shutterTime",s);
+    set.setValue("idleTime",i);
+    set.sync();
+    uiShutterTime = set.value("shutterTime",100).toUInt();
+    uiIdleTime = set.value("idleTime",900).toUInt();
+    if(bConnected)
+    {
+        qDebug() << "Set shutter time to " << uiShutterTime << "\n";
+        if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_SHUTTERTIME, uiShutterTime)) < GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during SetFeature(FEATURE_FUNCTION_SHUTTERTIME)", iRetValue);
 
+        }
+
+        qDebug() << "Set idle time to " << uiIdleTime << "\n";
+        if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_IDLETIME, uiIdleTime)) < GENERAL_FUNCTION_OK)
+        {
+            OnError("Error during SetFeature(FEATURE_FUNCTION_IDLETIME)", iRetValue);
+
+        }
+    }
 }
 void profileGet::preGetDate()
 {
@@ -424,12 +500,19 @@ void profileGet::startSingleFrame()
     }
     preGetDate();
     mode=2;
+
     if((iRetValue = m_pLLT->SetProfileConfig(PURE_PROFILE)) < GENERAL_FUNCTION_OK)
     {
       OnError("Error during SetProfileConfig", iRetValue);
 
     }
+    //设置触发
+    isExternalTrigger=false;
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x000000)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
+    }
       qDebug() << "\nDemonstrate the SingleFrame mode\n";
 
 
@@ -465,25 +548,32 @@ void profileGet::startTrigger()
     }
     preGetDate();
     mode=0;
-    vdValueX.resize(m_uiResolution*m_uiNeededProfileCount);
-    vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount);
+
     tmp.resize(m_uiResolution*m_uiNeededProfileCount);
-    vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount);
+
     m_vucProfileBuffer.resize(m_uiResolution*64*m_uiNeededProfileCount);
     m_vucProfileBuffer2.resize(m_uiResolution*64*m_uiNeededProfileCount);
-
+    //设置帧类型
     if((iRetValue = m_pLLT->SetProfileConfig(PROFILE)) < GENERAL_FUNCTION_OK)
     {
       OnError("Error during SetProfileConfig", iRetValue);
 
     }
+    isExternalTrigger=true;
+    //设置触发器
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, trigger)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
+    }
+    //设置回调函数
     if((iRetValue = m_pLLT->RegisterCallback(STD_CALL, newProfile, 0)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during RegisterCallback", iRetValue);
         return;
     }
-
+    //开始检测
+    qDebug() << "enable the measurement\n";
     if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, true)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during TransferProfiles start ", iRetValue);
@@ -495,6 +585,7 @@ void profileGet::stopTrigger()
     int iRetValue;
     mode=1;
     qDebug() << "Disable the measurement\n";
+    //停止检测
     if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, false)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during TransferProfiles stop", iRetValue);
@@ -511,7 +602,15 @@ void profileGet::startVedio()
     }
 
     preGetDate();
+    //设置触发
+    isExternalTrigger=false;
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x000000)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
+
+    }
     mode=3;
+
     qDebug() << "Enable the video stream\n";
     if((iRetValue = m_pLLT->SetPacketSize(m_uiPacketSizeMAX)) < GENERAL_FUNCTION_OK)
     {
@@ -523,6 +622,7 @@ void profileGet::startVedio()
       OnError("Error during SetProfileConfig", iRetValue);
 
     }
+    //开始视频模式
     if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, true, &uiWidth, &uiHeight)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during TransferVideoStream start", iRetValue);
@@ -538,6 +638,7 @@ void profileGet::stopVedio()
     int iRetValue;
     mode=1;
     qDebug() << "Disable the video stream\n";
+    //停止视频模式
     if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, false, NULL, NULL)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during TransferVideoStream stop", iRetValue);
@@ -564,9 +665,7 @@ void profileGet::GetProfiles_Callback()
 
     }
 
-    vdValueX.resize(m_uiResolution*m_uiNeededProfileCount);
-    vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount);
-    vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount);
+
 
     //Resets the event
     ResetEvent(m_hProfileEvent);
@@ -676,11 +775,8 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
             OnError("Error during Converting of profile data", iRetValue);
             return;
         }
-        for(int i=0;i<m_uiResolution;i++)
-        {
-            p[m_uiRecivedProfileCount*m_uiResolution+i]=192-p[m_uiRecivedProfileCount*m_uiResolution+i];
-        }
-        emit dispSingleFrame(0,0,&vdValueX[m_uiRecivedProfileCount*m_uiResolution],&p[m_uiRecivedProfileCount*m_uiResolution],m_uiResolution);
+
+        emit dispSingleFrame(0,0,&vdValueX[m_uiRecivedProfileCount*m_uiResolution],&(p[m_uiRecivedProfileCount*m_uiResolution]),m_uiResolution);
 
         if(isExternalTrigger)
         {
@@ -698,10 +794,13 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
         {
             //If the needed profile count is arived: set the event
             //SetEvent(m_hProfileEvent);
-
-            emit putImagebyPointer3(&vdValueX[0],(double *)(&vdValueIntensity[0]),&vdValueZ[0],1280,m_uiNeededProfileCount);
-            m_uiRecivedProfileCount=0;
-            return;
+            if(mode==0)
+            {
+                qDebug()<<"finish"<<m_uiRecivedProfileCount<<"profile";
+                emit putImagebyPointer3(&vdValueX[0],(double *)(&vdValueIntensity[0]),p,1280,m_uiNeededProfileCount);
+                m_uiRecivedProfileCount=0;
+                return;
+            }
 
         }
 

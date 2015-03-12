@@ -33,6 +33,14 @@ typedef pcl::PointCloud<PointT> PointCloud;
 	     */
 PCLLIBRARYDLL void Transfer2Cloud(double* X,double* Y,double* Z,unsigned short* I,const int col,const int row,PointCloud::Ptr inCloud);
 	  	
+		/** \brief 计算平面方程
+		* \param[in] 输入点云
+		 * \param[out] 输出平面方程
+		 * \param[out] 输出曲率
+		 * \param[return] 成功返回1 
+		 */
+PCLLIBRARYDLL int ComputePointNormal(PointCloud::Ptr &point,Vector4f &normal_vec,float &curvature);
+
 		/** \brief 计算点到平面的距离
 		 * \param[in] 输入点
 		 * \param[in] 输入平面方程
@@ -42,11 +50,21 @@ PCLLIBRARYDLL void Transfer2Cloud(double* X,double* Y,double* Z,unsigned short* 
 PCLLIBRARYDLL int Dis_point2plane(PointT &point,Vector4f &normal_vec,double &_result);
 
 		/** \brief 计算平面度
-		 * \param[in] 返回的点云
+		 * \param[in] 输入的点云
 		 * \param[out] 返回平面度
 		 * \param[return] 成功返回1 
 	     */
 PCLLIBRARYDLL int CalculateFlatness(PointCloud::Ptr &inCloud, double &_result);
+
+		/** \brief 从点云中选取新的区域点云
+		 * \param[in] 输入的原始点云
+		 * \param[in] 输入的左上角坐标point
+		 * \param[in] 输入的右下角坐标point
+		 * \param[in] 输入每行多少个点
+		 * \param[out] 返回的新的点云
+		 * \param[return] 成功返回1 
+	     */
+PCLLIBRARYDLL int GetChildCloud(PointCloud::Ptr &inCloud, POINT point1,POINT point2,int width,PointCloud::Ptr outCloud);
 
 //You can also write like this:
 //extern "C" {

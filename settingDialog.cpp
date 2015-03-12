@@ -28,8 +28,7 @@ void mySettings::flush_settings()
     ui->profileCount->setValue(set.value("profileCount",1000).toInt());
     ui->select_device->clear();
     ui->select_device->addItems(set.value("interface","0").toStringList());
-    ui->shutter_time->setValue(set.value("shutterTime",100).toInt());
-    ui->idle_time->setValue(set.value("idleTime",900).toInt());
+
     ui->resolution->clear();
     ui->resolution->addItems(set.value("resolutions","0").toStringList());
 
@@ -39,9 +38,12 @@ void mySettings::flush_settings()
     ui->triggerMode->setCurrentIndex(set.value("triggerMode",0).toInt());
     ui->triggerPolarity->setCurrentIndex(set.value("triggerPolarity",0).toInt());
     ui->triggerSource->setCurrentIndex(set.value("triggerSource",0).toInt());
-    ui->encoderDivisor->setValue(set.value("encoderDivisor",0).toInt());
+
     ui->voltage->setCurrentIndex(set.value("voltage",0).toInt());
     ui->digitalInputs->setCurrentIndex(set.value("digitalInputs",0).toInt());
+    ui->threshold->setValue(set.value("threshold",128).toInt());
+    ui->autoThreshold->setCurrentIndex(set.value("autoThreshold",0).toInt());
+    ui->exposure->setCurrentIndex(set.value("exposeTime",0).toInt());
 
 }
 void mySettings::on_Button_Yes_clicked()
@@ -51,8 +53,7 @@ void mySettings::on_Button_Yes_clicked()
     set.setValue("photoIp",ui->cameraIp->text());
     set.setValue("photoPort",ui->cameraPort->text());
     set.setValue("path",ui->path->text());
-    set.setValue("idleTime",ui->idle_time->value());
-    set.setValue("shutterTime",ui->shutter_time->value());
+
     set.setValue("profileCount",ui->profileCount->value());
     set.setValue("median",ui->median->currentIndex());
     set.setValue("average",ui->average->currentIndex());
@@ -60,9 +61,11 @@ void mySettings::on_Button_Yes_clicked()
     set.setValue("triggerMode",ui->triggerMode->currentIndex());
     set.setValue("triggerPolarity",ui->triggerPolarity->currentIndex());
     set.setValue("triggerSource",ui->triggerSource->currentIndex());
-    set.setValue("encoderDivisor",ui->encoderDivisor->value());
+
     set.setValue("voltage",ui->voltage->currentIndex());
     set.setValue("digitalInputs",ui->digitalInputs->currentIndex());
+    set.setValue("threshold",ui->threshold->value());
+    set.setValue("autoThreshold",ui->autoThreshold->currentIndex());
 
     set.setValue("badMinArea",ui->badMinArea->text());
     set.setValue("badMaxArea",ui->badMaxArea->text());
@@ -162,29 +165,6 @@ void mySettings::on_profileCount_valueChanged(int arg1)
     set.setValue("profileCount",arg1);
 }
 
-void mySettings::on_profile_config_currentIndexChanged(int index)
-{
-    if(index==4)
-        set.setValue("profileConfig",5);
-    else if(index==5 | index==6 | index==1)
-        set.setValue("profileConfig",1);
-    else
-        set.setValue("profileConfig",index);
-
-}
-
-
-
-void mySettings::on_idle_time_valueChanged(int arg1)
-{
-    set.setValue("idleTime",arg1);
-}
-
-void mySettings::on_shutter_time_valueChanged(int arg1)
-{
-    set.setValue("shutterTime",arg1);
-
-}
 void mySettings::debugMessage(QString str)
 {
     ui->debug->append(str);
@@ -194,4 +174,54 @@ void mySettings::debugMessage(QString str)
 void mySettings::on_connecct_clicked()
 {
     emit selectDevice(ui->select_device->currentIndex());
+}
+
+void mySettings::on_exposure_currentIndexChanged(int index)
+{
+    int s=1,i=999;
+    set.setValue("exposeTime",index);
+    switch(index)
+    {
+        case 0:
+        case 1:
+            emit postExposeTime(s+index,i-index);
+
+            break;
+        case 2:
+            emit postExposeTime(s+index*2,i-index*2);
+            break;
+        case 3:
+            emit postExposeTime(s+index*index,i-index*index);
+            break;
+        case 4:
+            emit postExposeTime(s+index*index+3,i-index*index-3);
+            break;
+        case 5:
+            emit postExposeTime(s+index*index+9,i-index*index-9);
+            break;
+        case 6:
+            emit postExposeTime(s+index*index+13,i-index*index-13);
+            break;
+        case 7:
+            emit postExposeTime(s+index*index+25,i-index*index-25);
+            break;
+        case 8:
+            emit postExposeTime(s+index*index+35,i-index*index-35);
+            break;
+        case 9:
+            emit postExposeTime(s+index*index+68,i-index*index-68);
+            break;
+        case 10:
+            emit postExposeTime(s+index*index+99,i-index*index-99);
+            break;
+        case 11:
+            emit postExposeTime(s+499,i-499);
+            break;
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+            emit postExposeTime(s+998,i-998);
+            break;
+    }
 }

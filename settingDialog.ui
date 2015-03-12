@@ -26,6 +26,44 @@
     <string/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_5"/>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>220</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="Button_Yes">
+          <property name="text">
+           <string>确定</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_Cancel">
+          <property name="text">
+           <string>取消</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
@@ -686,7 +724,7 @@
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>201</width>
+          <width>251</width>
           <height>502</height>
          </rect>
         </property>
@@ -742,110 +780,107 @@
          <item row="2" column="0">
           <widget class="QLabel" name="label_22">
            <property name="text">
-            <string>快门时间:</string>
+            <string>曝光时间:</string>
            </property>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QSpinBox" name="shutter_time">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>4095</number>
-           </property>
-           <property name="value">
-            <number>100</number>
-           </property>
+          <widget class="QComboBox" name="exposure">
+           <item>
+            <property name="text">
+             <string>0.01</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0.02</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0.05</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0.10</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0.20</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0.35</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0.50</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>0.75</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1.00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1.50</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2.0</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5.0</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10.0</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20.0</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>40.0</string>
+            </property>
+           </item>
           </widget>
          </item>
          <item row="3" column="0">
-          <widget class="QLabel" name="label_26">
-           <property name="text">
-            <string>闲置时间:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="idle_time">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>4095</number>
-           </property>
-           <property name="value">
-            <number>900</number>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_23">
-           <property name="text">
-            <string>轮廓配置:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QComboBox" name="profile_config">
-           <property name="currentIndex">
-            <number>1</number>
-           </property>
-           <item>
-            <property name="text">
-             <string>None</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Profile</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Pure_Profile</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Quarter_Profile</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Partial_Profile</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Container</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Video_Image</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="5" column="0">
           <widget class="QLabel" name="label_24">
            <property name="text">
             <string>分辨率:</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="1">
+         <item row="3" column="1">
           <widget class="QComboBox" name="resolution"/>
          </item>
-         <item row="6" column="0">
+         <item row="4" column="0">
           <widget class="QLabel" name="label_20">
            <property name="text">
             <string>重采样:</string>
            </property>
           </widget>
          </item>
-         <item row="6" column="1">
+         <item row="4" column="1">
           <widget class="QComboBox" name="resampleValue">
            <item>
             <property name="text">
@@ -889,14 +924,14 @@
            </item>
           </widget>
          </item>
-         <item row="7" column="0">
+         <item row="5" column="0">
           <widget class="QLabel" name="label_27">
            <property name="text">
             <string>中值滤波:</string>
            </property>
           </widget>
          </item>
-         <item row="7" column="1">
+         <item row="5" column="1">
           <widget class="QComboBox" name="median">
            <item>
             <property name="text">
@@ -920,14 +955,14 @@
            </item>
           </widget>
          </item>
-         <item row="8" column="0">
+         <item row="6" column="0">
           <widget class="QLabel" name="label_28">
            <property name="text">
             <string>均值滤波:</string>
            </property>
           </widget>
          </item>
-         <item row="8" column="1">
+         <item row="6" column="1">
           <widget class="QComboBox" name="average">
            <item>
             <property name="text">
@@ -951,14 +986,14 @@
            </item>
           </widget>
          </item>
-         <item row="9" column="0">
+         <item row="7" column="0">
           <widget class="QLabel" name="label_30">
            <property name="text">
             <string>启动外部触发:</string>
            </property>
           </widget>
          </item>
-         <item row="9" column="1">
+         <item row="7" column="1">
           <widget class="QComboBox" name="trigger">
            <item>
             <property name="text">
@@ -972,14 +1007,14 @@
            </item>
           </widget>
          </item>
-         <item row="10" column="0">
+         <item row="8" column="0">
           <widget class="QLabel" name="label_31">
            <property name="text">
             <string>触发模式:</string>
            </property>
           </widget>
          </item>
-         <item row="10" column="1">
+         <item row="8" column="1">
           <widget class="QComboBox" name="triggerMode">
            <item>
             <property name="text">
@@ -1003,14 +1038,14 @@
            </item>
           </widget>
          </item>
-         <item row="11" column="0">
+         <item row="9" column="0">
           <widget class="QLabel" name="label_32">
            <property name="text">
             <string>触发源:</string>
            </property>
           </widget>
          </item>
-         <item row="11" column="1">
+         <item row="9" column="1">
           <widget class="QComboBox" name="triggerSource">
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0 RS422&lt;/p&gt;&lt;p&gt;1 Input In1 (Mode 0, 1 and 2) or encoder (Mode 3)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1025,19 +1060,19 @@
            </item>
            <item>
             <property name="text">
-             <string extracomment="Input In1 (Mode 0, 1 and 2) or encoder (Mode 3)">Input In1 (Mode 0, 1 and 2) or encoder (Mode 3)</string>
+             <string extracomment="Input In1 (Mode 0, 1 and 2) or encoder (Mode 3)">Input In1 or encoder</string>
             </property>
            </item>
           </widget>
          </item>
-         <item row="12" column="0">
+         <item row="10" column="0">
           <widget class="QLabel" name="label_33">
            <property name="text">
             <string>极性:</string>
            </property>
           </widget>
          </item>
-         <item row="12" column="1">
+         <item row="10" column="1">
           <widget class="QComboBox" name="triggerPolarity">
            <item>
             <property name="text">
@@ -1051,96 +1086,114 @@
            </item>
           </widget>
          </item>
-         <item row="13" column="0">
-          <widget class="QLabel" name="label_34">
-           <property name="text">
-            <string>encoder divisor: </string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="1">
-          <widget class="QSpinBox" name="encoderDivisor">
-           <property name="maximum">
-            <number>1000</number>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="0">
+         <item row="11" column="0">
           <widget class="QLabel" name="label_35">
            <property name="text">
-            <string>Voltage level of digital inputs</string>
+            <string>数字输入电压:</string>
            </property>
           </widget>
          </item>
-         <item row="14" column="1">
+         <item row="11" column="1">
           <widget class="QComboBox" name="voltage">
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <item>
             <property name="text">
-             <string extracomment="0 Low Level Logic (TTL, 5V) ">0 Low Level Logic (TTL, 5V) </string>
+             <string extracomment="0 Low Level Logic (TTL, 5V) ">TTL, 5V</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string extracomment="1 High Level Logic (HTL, 24V) ">1 High Level Logic (HTL, 24V) </string>
+             <string extracomment="1 High Level Logic (HTL, 24V) ">HTL, 24V</string>
             </property>
            </item>
           </widget>
          </item>
-         <item row="15" column="0">
+         <item row="12" column="0">
           <widget class="QLabel" name="label_36">
            <property name="text">
-            <string>Digital Inputs Functions</string>
+            <string>数字输入功能:</string>
            </property>
           </widget>
          </item>
-         <item row="15" column="1">
+         <item row="12" column="1">
           <widget class="QComboBox" name="digitalInputs">
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0 encoder, positive edge of index track (*)&lt;/p&gt;&lt;p&gt;1 encoder with external trigger input (*)&lt;/p&gt;&lt;p&gt;2 external trigger input&lt;/p&gt;&lt;p&gt;3 ext. trigger + two bits for user mode loading&lt;/p&gt;&lt;p&gt;4 three bits for user mode loading&lt;/p&gt;&lt;p&gt;5 insert into timestamp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <item>
             <property name="text">
-             <string extracomment="encoder, positive edge of index track (*)">encoder, positive edge of index track (*)</string>
+             <string extracomment="encoder, positive edge of index track (*)">编码器，正沿指数追踪</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string extracomment="encoder with external trigger input (*)">encoder with external trigger input (*)</string>
+             <string extracomment="encoder with external trigger input (*)">编码器，外部触发</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string extracomment="external trigger input">external trigger input</string>
+             <string extracomment="external trigger input">外部触发</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string extracomment="ext. trigger + two bits for user mode loading">ext. trigger + two bits for user mode loading</string>
+             <string extracomment="ext. trigger + two bits for user mode loading">外部触发 + 用户模式加载两位</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string extracomment="three bits for user mode loading">three bits for user mode loading</string>
+             <string extracomment="three bits for user mode loading">用户模式加载三位</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string extracomment="insert into timestamp">insert into timestamp</string>
+             <string extracomment="insert into timestamp">插入时间戳</string>
             </property>
            </item>
           </widget>
+         </item>
+         <item row="13" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>threshold:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QComboBox" name="autoThreshold">
+             <item>
+              <property name="text">
+               <string>absolute</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>auto</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="threshold">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>
        <widget class="QTextBrowser" name="debug">
         <property name="geometry">
          <rect>
-          <x>290</x>
+          <x>330</x>
           <y>30</y>
-          <width>301</width>
+          <width>261</width>
           <height>401</height>
          </rect>
         </property>
@@ -1148,7 +1201,7 @@
        <widget class="QLabel" name="label_37">
         <property name="geometry">
          <rect>
-          <x>290</x>
+          <x>330</x>
           <y>10</y>
           <width>54</width>
           <height>12</height>
@@ -1187,7 +1240,7 @@
        <widget class="QPushButton" name="connecct">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>280</x>
           <y>0</y>
           <width>41</width>
           <height>23</height>
@@ -1199,44 +1252,6 @@
        </widget>
       </widget>
      </widget>
-    </item>
-    <item row="1" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout_5"/>
-    </item>
-    <item row="1" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>220</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QPushButton" name="Button_Yes">
-          <property name="text">
-           <string>确定</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_Cancel">
-          <property name="text">
-           <string>取消</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
     </item>
    </layout>
   </widget>

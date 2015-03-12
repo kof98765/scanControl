@@ -41,6 +41,7 @@ public:
     unsigned long filter;
     unsigned long trigger;
     unsigned long IOConfigure;
+    unsigned long Processing;
     unsigned int mode;//0为外部触发,1为内部触发,2为单帧模式,3为视频模式
     std::vector<unsigned char> vucVideoBuffer;
     std::vector<double> vdValueX;
@@ -67,9 +68,10 @@ private:
      bool isReady;
      bool isExternalTrigger;
      int index;
-     unsigned int uiShutterTime;
-     unsigned int uiIdleTime;
+     unsigned long uiShutterTime;
+     unsigned long uiIdleTime;
      unsigned int uiInterfaceCount;
+     unsigned long threshold;
      std::vector<unsigned int> vuiInterfaces;
      std::vector<DWORD> vdwResolutions;
 
@@ -97,6 +99,7 @@ public slots:
     void GetProfiles_Callback();
     void readSettings();
     void selectDevice(int index);
+    void setExposeTime(int s,int i);
     QList<double> getList();
 };
 

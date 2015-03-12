@@ -289,6 +289,7 @@ void MainWindow::init_connect()
     connect(ui->actionPcl,SIGNAL(triggered()),hal,SLOT(calculatePlaneness()));
     connect(ui->actionSubHeight,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
     connect(setDialog,SIGNAL(selectDevice(int)),profile,SLOT(selectDevice(int)));
+    connect(setDialog,SIGNAL(postExposeTime(int,int)),profile,SLOT(setExposeTime(int ,int )));
 }
 
 void MainWindow::Error(QString str)
@@ -485,7 +486,7 @@ void MainWindow::detect()
 */
 void MainWindow::startButton_clicked()
 {
-    sum->clear_table();
+   this->on_actionReset_triggered();
     //hal->RectHeightSub();
 
    if(isRealTime)
@@ -720,7 +721,8 @@ void MainWindow::outputMessage(QtMsgType type,QString str)
 {
     ui->debug->appendPlainText(str);
     setDialog->debugMessage(str);
-    debug.write(str.toUtf8().data());
+    debug.write((str+"\n").toUtf8().data());
+
     debug.flush();
 }
 
@@ -738,7 +740,7 @@ void MainWindow::recvHeightSub(QString name,double min,double max,double range)
     if(range>ui->limitValue->text().toDouble())
         sum->add_item(0,QString("NG"));
     sum->add_item(1,name);
-    sum->add_item(2,QString("%1,%2").arg(str.at(1)).arg(str.at(2)));
+    sum->add_item(2,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
     sum->add_item(3,QString("%1").arg(min));
     sum->add_item(4,QString("%1").arg(max));
     sum->add_item(5,QString("%1").arg(range));
@@ -771,7 +773,7 @@ void MainWindow::on_realTimeButton_clicked()
 
 }
 /*
-    开妈视频模式
+    开始视频模式
 */
 void MainWindow::startVideo()
 {
@@ -835,6 +837,7 @@ void MainWindow::on_threeDButton_clicked()
 {
 
      hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
+     ui->startButton->setText(QStringLiteral("开始扫描"));
      ui->base->setCurrentIndex(0);
      hal->setMode("3D");
 }
@@ -845,6 +848,7 @@ void MainWindow::on_twoDButton_clicked()
 {
 
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
+    ui->startButton->setText(QStringLiteral("开始扫描"));
     ui->base->setCurrentIndex(3);
     hal->setMode("2D");
 }
