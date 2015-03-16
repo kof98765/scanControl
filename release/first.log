@@ -1,0 +1,224 @@
+﻿生成启动时间为 2015/3/16 13:42:42。
+     1>项目“D:\qt\first\first.vcxproj”在节点 2 上(build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(298,5): warning MSB8004: Intermediate 目录未以斜杠结尾。此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Intermediate 目录。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(299,5): warning MSB8004: Output 目录未以斜杠结尾。此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+     1>InitializeBuildStatus:
+         正在创建“Release\first.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       CustomBuild:
+         所有输出均为最新。
+       ClCompile:
+         所有输出均为最新。
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\MVTec\HALCON-10.0\include" /I"C:\Program Files\MVTec\HALCON-10.0\include\cpp" /I"F:\PCL 1.6.0\3rdParty\Boost\include" /I"F:\PCL 1.6.0\3rdParty\Eigen\include" /I"F:\PCL 1.6.0\3rdParty\FLANN\include" /I"F:\PCL 1.6.0\include\pcl-1.6" /I"F:\PCL 1.6.0\3rdParty\Qhull\include" /IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include /IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL /IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt /IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets /IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork /IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui /IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore /I.\release /I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" /I.\GeneratedFiles /I.\GeneratedFiles\release /Zi /nologo /W3 /WX- /MP /O2 /Oy- /D _WINDOWS /D WIN32 /D QWT_DLL /D PCLLIBRARYDLL /D _AFXDLL /D QT_NO_DEBUG /D QT_AXCONTAINER_LIB /D QT_OPENGL_LIB /D QT_AXBASE_LIB /D QT_WIDGETS_LIB /D QT_NETWORK_LIB /D QT_GUI_LIB /D QT_CORE_LIB /D NDEBUG /Gm /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt mainwindow.cpp -Zm200 -w34100 -w34189 
+         mainwindow.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(632): warning C4005: “M_PI”: 宏重定义
+                 C:\Program Files\MVTec\HALCON-10.0\include\HConst.h(160) : 参见“M_PI”的前一个定义
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(633): warning C4005: “M_PI_2”: 宏重定义
+                 C:\Program Files\MVTec\HALCON-10.0\include\HConst.h(163) : 参见“M_PI_2”的前一个定义
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(634): warning C4005: “M_PI_4”: 宏重定义
+                 C:\Program Files\MVTec\HALCON-10.0\include\HConst.h(166) : 参见“M_PI_4”的前一个定义
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1008): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1009): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1012): warning C4996: 'pcl::SHOT::rf': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1005) : 参见“pcl::SHOT::rf”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1013): warning C4996: 'pcl::SHOT::descriptor': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1004) : 参见“pcl::SHOT::descriptor”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1014): warning C4996: 'pcl::SHOT::descriptor': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1004) : 参见“pcl::SHOT::descriptor”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1014): warning C4996: 'pcl::SHOT::descriptor': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1004) : 参见“pcl::SHOT::descriptor”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(445): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(446): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(449): warning C4996: 'pcl::DefaultPointRepresentation<pcl::SHOT>': SHOT POINT IS DEPRECATED, USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(446) : 参见“pcl::DefaultPointRepresentation<pcl::SHOT>”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(455): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(458): warning C4996: 'pcl::SHOT::descriptor': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/impl/point_types.hpp(1004) : 参见“pcl::SHOT::descriptor”的声明
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(460): warning C4996: 'pcl::DefaultPointRepresentation<pcl::SHOT>::~DefaultPointRepresentation': SHOT POINT IS DEPRECATED, USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(460) : 编译器已在此处生成“pcl::DefaultPointRepresentation<pcl::SHOT>::~DefaultPointRepresentation”
+                 此诊断出现在编译器生成的函数“void *pcl::DefaultPointRepresentation<pcl::SHOT>::__delDtor(unsigned int)”中
+     1>F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(460): warning C4996: 'pcl::DefaultPointRepresentation<pcl::SHOT>::~DefaultPointRepresentation': SHOT POINT IS DEPRECATED, USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/point_representation.h(460) : 编译器已在此处生成“pcl::DefaultPointRepresentation<pcl::SHOT>::~DefaultPointRepresentation”
+                 此诊断出现在编译器生成的函数“void *pcl::DefaultPointRepresentation<pcl::SHOT>::__delDtor(unsigned int)”中
+     1>F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\qt\first\pcl/PCL_Library_Dll.h(14): warning C4005: “PCLLIBRARYDLL”: 宏重定义
+                 命令行参数: 参见前面的“PCLLIBRARYDLL”定义
+     1>c:\qt\qt5.3.2\5.3\msvc2010_opengl\include\qwt_math.h(23): warning C4005: “_USE_MATH_DEFINES”: 宏重定义
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/pcl_macros.h(67) : 参见“_USE_MATH_DEFINES”的前一个定义
+     1>mainwindow.cpp(216): warning C4100: “event”: 未引用的形参
+     1>mainwindow.cpp(718): warning C4100: “type”: 未引用的形参
+     1>mainwindow.cpp(787): warning C4100: “column”: 未引用的形参
+     1>mainwindow.cpp(787): warning C4100: “row”: 未引用的形参
+     1>F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(182): warning C4100: “sorted”: 未引用的形参
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(183): 编译类 模板 成员函数“void flann::KNNSimpleResultSet<DistanceType>::copy(int *,DistanceType *,size_t,bool)”时
+                 with
+                 [
+                     DistanceType=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/nn_index.h(115): 参见对正在编译的类 模板 实例化“flann::KNNSimpleResultSet<DistanceType>”的引用
+                 with
+                 [
+                     DistanceType=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/nn_index.h(84): 编译类 模板 成员函数“int flann::NNIndex<Distance>::knnSearch(const flann::Matrix<T> &,flann::Matrix<int> &,flann::Matrix<T> &,size_t,const flann::SearchParams &)”时
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/flann.hpp(124): 参见对正在编译的类 模板 实例化“flann::NNIndex<Distance>”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/flann.hpp(123): 编译类 模板 成员函数“flann::Index<Distance>::~Index(void)”时
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+                 F:\PCL 1.6.0\include\pcl-1.6\pcl/kdtree/kdtree_flann.h(377): 参见对正在编译的类 模板 实例化“flann::Index<Distance>”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+     1>F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(687): warning C4100: “index”: 未引用的形参
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(688): 编译类 模板 成员函数“void flann::CountRadiusResultSet<DistanceType>::addPoint(DistanceType,size_t)”时
+                 with
+                 [
+                     DistanceType=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/nn_index.h(253): 参见对正在编译的类 模板 实例化“flann::CountRadiusResultSet<DistanceType>”的引用
+                 with
+                 [
+                     DistanceType=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/nn_index.h(239): 编译类 模板 成员函数“int flann::NNIndex<Distance>::radiusSearch(const flann::Matrix<T> &,flann::Matrix<int> &,flann::Matrix<T> &,float,const flann::SearchParams &)”时
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+     1>F:\PCL 1.6.0\3rdParty\FLANN\include\flann/flann.hpp(78): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : 参见“fopen”的声明
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/flann.hpp(114): 参见对正在编译的函数 模板 实例化“flann::NNIndex<Distance> *flann::load_saved_index<Distance>(const flann::Matrix<T> &,const std::string &,Distance)”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/flann.hpp(107): 编译类 模板 成员函数“flann::Index<Distance>::Index(const flann::Matrix<T> &,const flann::IndexParams &,Distance)”时
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+     1>F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(748): warning C4100: “sorted”: 未引用的形参
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(749): 编译类 模板 成员函数“void flann::UniqueResultSet<DistanceType>::copy(int *,DistanceType *,int,bool)”时
+                 with
+                 [
+                     DistanceType=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(794): 参见对正在编译的类 模板 实例化“flann::UniqueResultSet<DistanceType>”的引用
+                 with
+                 [
+                     DistanceType=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/lsh_index.h(202): 参见对正在编译的类 模板 实例化“flann::KNNUniqueResultSet<DistanceType>”的引用
+                 with
+                 [
+                     DistanceType=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/lsh_index.h(193): 编译类 模板 成员函数“int flann::LshIndex<Distance>::knnSearch(const flann::Matrix<T> &,flann::Matrix<int> &,flann::Matrix<T> &,size_t,const flann::SearchParams &)”时
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/all_indices.h(96): 参见对正在编译的类 模板 实例化“flann::LshIndex<Distance>”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/all_indices.h(102): 参见对正在编译的类 模板 实例化“flann::valid_combination<Index,Distance,ElementType>::needs_kdtree_distance<T>”的引用
+                 with
+                 [
+                     Index=flann::LshIndex,
+                     Distance=flann::L2_Simple<float>,
+                     ElementType=ElementType,
+                     T=flann::LshIndex<flann::L2_Simple<float>>
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/all_indices.h(164): 参见对正在编译的类 模板 实例化“flann::valid_combination<Index,Distance,ElementType>”的引用
+                 with
+                 [
+                     Index=flann::LshIndex,
+                     Distance=flann::L2_Simple<float>,
+                     ElementType=ElementType
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/flann.hpp(118): 参见对正在编译的函数 模板 实例化“flann::NNIndex<Distance> *flann::create_index_by_type<Distance>(const flann::Matrix<T> &,const flann::IndexParams &,const Distance &)”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+     1>F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(283): warning C4100: “sorted”: 未引用的形参
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/util/result_set.h(284): 编译类 模板 成员函数“void flann::KNNResultSet<DistanceType>::copy(int *,DistanceType *,size_t,bool)”时
+                 with
+                 [
+                     DistanceType=float
+                 ]
+                 F:\PCL 1.6.0\3rdParty\FLANN\include\flann/algorithms/lsh_index.h(211): 参见对正在编译的类 模板 实例化“flann::KNNResultSet<DistanceType>”的引用
+                 with
+                 [
+                     DistanceType=float
+                 ]
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\release\first.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib /LIBPATH:C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib /LIBPATH:C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib /LIBPATH:"C:\Program Files\MVTec\HALCON-10.0\lib\x86sse2-win32" /LIBPATH:"F:\PCL 1.6.0\lib" /LIBPATH:..\pcl C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\qtmain.lib halcon.lib halconcpp.lib qwt.lib pcl_io_release.lib pcl_common_release.lib PCL_Library_Dll.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5AxContainer.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5AxBase.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Widgets.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5OpenGL.lib glu32.lib opengl32.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Gui.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Core.lib ole32.lib oleaut32.lib user32.lib gdi32.lib advapi32.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Network.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\first.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"D:\qt\first\release\first.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 Release\qrc_icons.obj
+         Release\DllLoader.obj
+         Release\InterfaceLLT_2.obj
+         Release\glwidget.obj
+         Release\halconclass.obj
+         Release\main.obj
+         Release\mainwindow.obj
+         Release\msghandlerwapper.obj
+         Release\plot.obj
+         Release\pointanalyze.obj
+         Release\profileget.obj
+         Release\record.obj
+         Release\reflectcontrol.obj
+         Release\moc_glwidget.obj
+         Release\moc_halconclass.obj
+         Release\moc_mainwindow.obj
+         Release\moc_msghandlerwapper.obj
+         Release\moc_plot.obj
+         Release\moc_pointanalyze.obj
+         Release\moc_profileget.obj
+         Release\moc_record.obj
+         Release\moc_reflectcontrol.obj
+         Release\moc_robot.obj
+         Release\moc_settingDialog.obj
+         Release\moc_summarizing.obj
+         Release\moc_tvplot.obj
+         Release\robot.obj
+         Release\settingDialog.obj
+         Release\summarizing.obj
+         Release\tvplot.obj "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" 
+         first.vcxproj -> D:\qt\first\.\release\first.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\release\first.exe;#1" /manifest Release\first.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Release\first.unsuccessfulbuild”。
+         正在对“Release\first.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\qt\first\first.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:40.36

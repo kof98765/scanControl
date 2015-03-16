@@ -1,0 +1,5 @@
+LIBRARY "PCL_Library_Dll"
+EXPORTS
+Transfer2Cloud @1
+Dis_point2plane @2
+CalculateFlatness @3

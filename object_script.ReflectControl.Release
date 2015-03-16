@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\checkthread.o
+./release\writeexcel.o
+./release\dialognetparam.o
+./release\dialogcameralight.o
+./release\moc_mainwindow.o
+./release\moc_checkthread.o
+./release\moc_writeexcel.o
+./release\moc_dialognetparam.o
+./release\moc_dialogcameralight.o
+./release\qrc_icons.o
+);

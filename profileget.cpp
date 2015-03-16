@@ -676,7 +676,13 @@ void profileGet::GetProfiles_Callback()
       OnError("Error during SetProfileConfig", iRetValue);
 
     }
+    //ÉèÖÃ´¥·¢
+    isExternalTrigger=false;
+    if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x000000)) < GENERAL_FUNCTION_OK)
+    {
+        OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
+    }
 
 
     //Resets the event
@@ -821,7 +827,6 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
             {
                 SetEvent(m_hProfileEvent);
                 m_uiRecivedProfileCount=0;
-
                 return;
             }
             if(mode==2)

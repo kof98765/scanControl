@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{856D300C-E66E-365A-BECF-D2EC120B4E0A}</ProjectGuid>
+    <RootNamespace>first</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>first</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>first</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\release</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">first</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">first</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\MVTec\HALCON-10.0\include;C:\Program Files\MVTec\HALCON-10.0\include\cpp;F:\PCL 1.6.0\3rdParty\Boost\include;F:\PCL 1.6.0\3rdParty\Eigen\include;F:\PCL 1.6.0\3rdParty\FLANN\include;F:\PCL 1.6.0\include\pcl-1.6;F:\PCL 1.6.0\3rdParty\Qhull\include;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore;.\release;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010;.\GeneratedFiles;.\GeneratedFiles\release;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;QWT_DLL;PCLLIBRARYDLL;_AFXDLL;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_OPENGL_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <MinimalRebuild>true</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\qtmain.lib;halcon.lib;halconcpp.lib;qwt.lib;pcl_io_release.lib;pcl_common_release.lib;PCL_Library_Dll.lib;$(QTDIR)\lib\Qt5AxContainer.lib;$(QTDIR)\lib\Qt5AxBase.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5OpenGL.lib;glu32.lib;opengl32.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;ole32.lib;oleaut32.lib;user32.lib;gdi32.lib;advapi32.lib;$(QTDIR)\lib\Qt5Network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib;"C:\Program Files\MVTec\HALCON-10.0\lib\x86sse2-win32";"F:\PCL 1.6.0\lib";..\pcl;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)first.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <RegisterOutput>false</RegisterOutput>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;QWT_DLL;PCLLIBRARYDLL;_AFXDLL;QT_NO_DEBUG;QT_AXCONTAINER_LIB;QT_OPENGL_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\MVTec\HALCON-10.0\include;C:\Program Files\MVTec\HALCON-10.0\include\cpp;F:\PCL 1.6.0\3rdParty\Boost\include;F:\PCL 1.6.0\3rdParty\Eigen\include;F:\PCL 1.6.0\3rdParty\FLANN\include;F:\PCL 1.6.0\include\pcl-1.6;F:\PCL 1.6.0\3rdParty\Qhull\include;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore;.\debug;.\release;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010;.\GeneratedFiles;.\GeneratedFiles\release;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;QWT_DLL;PCLLIBRARYDLL;_AFXDLL;QT_AXCONTAINER_LIB;QT_OPENGL_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\qtmaind.lib;halcon.lib;halconcpp.lib;qwt.lib;pcl_io_release.lib;pcl_common_release.lib;PCL_Library_Dll.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5AxContainerd.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5AxBased.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5OpenGLd.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5AxBased.lib;glu32.lib;opengl32.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Guid.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Cored.lib;ole32.lib;oleaut32.lib;user32.lib;gdi32.lib;advapi32.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Networkd.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Guid.lib;$(QTDIR)\lib\C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib;C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib;"C:\Program Files\MVTec\HALCON-10.0\lib\x86sse2-win32";"F:\PCL 1.6.0\lib";..\pcl;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\first.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;QWT_DLL;PCLLIBRARYDLL;_AFXDLL;QT_AXCONTAINER_LIB;QT_OPENGL_LIB;QT_AXBASE_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Debug\moc_glwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_halconclass.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_msghandlerwapper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_plot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_pointanalyze.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_profileget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_record.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_reflectcontrol.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_robot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_settingDialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_summarizing.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_tvplot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_icons.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="getProfiles\DllLoader.cpp" />
+    <ClCompile Include="getProfiles\InterfaceLLT_2.cpp" />
+    <ClCompile Include="glwidget.cpp" />
+    <ClCompile Include="halconclass.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="msghandlerwapper.cpp" />
+    <ClCompile Include="plot.cpp" />
+    <ClCompile Include="pointanalyze.cpp" />
+    <ClCompile Include="profileget.cpp" />
+    <ClCompile Include="record.cpp" />
+    <ClCompile Include="reflectcontrol.cpp" />
+    <ClCompile Include="Release\moc_glwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_halconclass.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_msghandlerwapper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_plot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_pointanalyze.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_profileget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_record.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_reflectcontrol.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_robot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_settingDialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_summarizing.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_tvplot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="robot.cpp" />
+    <ClCompile Include="settingDialog.cpp" />
+    <ClCompile Include="summarizing.cpp" />
+    <ClCompile Include="tvplot.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\release\ui_data_analyze.h" />
+    <ClInclude Include="GeneratedFiles\release\ui_mainwindow.h" />
+    <ClInclude Include="GeneratedFiles\release\ui_pointanalyze.h" />
+    <ClInclude Include="GeneratedFiles\release\ui_settingDialog.h" />
+    <ClInclude Include="getProfiles\DllLoader.h" />
+    <ClInclude Include="getProfiles\InterfaceLLT_2.h" />
+    <ClInclude Include="pcl\PCL_Library_Dll.h" />
+    <CustomBuild Include="glwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing glwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing glwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="halconclass.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing halconclass.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing halconclass.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing mainwindow.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing mainwindow.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="msghandlerwapper.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing msghandlerwapper.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing msghandlerwapper.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="plot.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing plot.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing plot.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="pointanalyze.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing pointanalyze.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing pointanalyze.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="profileget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing profileget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing profileget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="record.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing record.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing record.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="reflectcontrol.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing reflectcontrol.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing reflectcontrol.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="getProfiles\resource.h" />
+    <CustomBuild Include="robot.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing robot.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing robot.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="getProfiles\scanControlDataTypes.h" />
+    <CustomBuild Include="settingDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing settingDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing settingDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="settings.h" />
+    <ClInclude Include="getProfiles\stdafx.h" />
+    <CustomBuild Include="summarizing.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing summarizing.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing summarizing.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="tvplot.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing tvplot.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-IC:\Program Files\MVTec\HALCON-10.0\include" "-IC:\Program Files\MVTec\HALCON-10.0\include\cpp" "-IF:\PCL 1.6.0\3rdParty\Boost\include" "-IF:\PCL 1.6.0\3rdParty\Eigen\include" "-IF:\PCL 1.6.0\3rdParty\FLANN\include" "-IF:\PCL 1.6.0\include\pcl-1.6" "-IF:\PCL 1.6.0\3rdParty\Qhull\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I.\release" "-IC:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles" "-I.\GeneratedFiles\release"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing tvplot.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="data_analyze.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe" -o ".\GeneratedFiles\release\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\release\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe" -o ".\GeneratedFiles\release\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\release\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe" -o ".\GeneratedFiles\release\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\release\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe" -o ".\GeneratedFiles\release\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\release\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="pointanalyze.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe" -o ".\GeneratedFiles\release\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\release\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe" -o ".\GeneratedFiles\release\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\release\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="settingDialog.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe" -o ".\GeneratedFiles\release\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\release\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\uic.exe" -o ".\GeneratedFiles\release\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\release\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\add.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\bin.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\camera.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\cancel.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\chat_bubble.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\download.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\email.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\female_user.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\folder.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\graph.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\home.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_3d_plot_mode.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_abort_proc.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_active.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_apply_lines.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_aspect_window.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_aspect_zoom.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_back.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_bookmark.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_breakpoint.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_breakpoint_activate_all.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_breakpoint_deactivate.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_breakpoint_deactivate_all.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_call_stack.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_cascade_windows.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_clean_up.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_clear_all_bookmarks.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_clear_all_breakpoints.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_clear_bookmark.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_clear_breakpoint.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_clear_roi_all.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_clear_roi_sel.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_clear_window.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_close.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_copy.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_cut.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_deactive.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_delete.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_down.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_exception.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_exec_error.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_exec_info.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_exec_warning.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_file_info.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_file_warning.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_hlib_error.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_hlib_warning.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_event_cat_procline_warning.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_exit.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_export.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_find.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_find_again.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_forward.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_arbitrary_reg.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_circle.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_circular_arc.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_ellipse.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_elliptical_arc.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_line.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_nurbs.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_nurbs_interp.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_rect1.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_gen_rect2.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_generate_code.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_hand.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_help.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_histo.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_histo_standard_size.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_histo_zoom_in.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_home.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_insert_operator.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_light_off.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_light_on.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_line_profile.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_lineal.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_linear.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_logarithmic.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_magnify-glass.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_net_connect.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_net_param.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_new.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_online-zoom.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_event_log_wnd.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_example.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_graphics_wnd.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_new_tab.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_operator_wnd.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_prog.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_prog_line_view.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_prog_listing_wnd.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_open_var_view_wnd.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_organize_windows.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_paste.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_pref_ext_procs_16.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_preferences.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_print.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_prog_auto_completion_on.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_prog_edit_interface.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_prog_enter_execute_on.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_prog_mode_editor_on.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_read_image.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_redo.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_reghisto.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_region.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_reset.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_reset_horz.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_reset_horz_vert.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_reset_proc.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_reset_vert.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_create.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_edit_reg.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_mode_path.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_mode_region.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_mode_xld.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_op_add_roi.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_op_complement.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_op_complement_off.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_op_difference.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_op_intersection.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_op_union.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_roi_op_xor.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_run.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_run_to_insert_cursor.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_save_all.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_save_as.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_save_proc_as.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_save_prog.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_select_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_set.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_size_minus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_size_plus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_step.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_stepforward.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_stepinto.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_stepout.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_stop.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_undo.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_up.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_zoom_adjust_win_size.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_zoom_in.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="icons\ic_zoom_out.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\ico.ico" />
+    <None Include="ico\ico.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <CustomBuild Include="ico\ico.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);.\ico\add.png;.\ico\bin.png;.\ico\cancel.png;.\ico\chat_bubble.png;.\ico\download.png;.\ico\email.png;.\ico\female_user.png;.\ico\folder.png;.\ico\graph.png;.\ico\home.png;.\ico\ico.qrc;.\ico\lock.png;.\ico\magnifying_glass.png;.\ico\minimize.png;.\ico\pen.png;.\ico\unlock.png;.\ico\upload.png;.\ico\user.png;.\ico\user_female.png;.\ico\users.png;.\ico\video_play.png;.\ico\ico.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);.\ico\add.png;.\ico\bin.png;.\ico\cancel.png;.\ico\chat_bubble.png;.\ico\download.png;.\ico\email.png;.\ico\female_user.png;.\ico\folder.png;.\ico\graph.png;.\ico\home.png;.\ico\ico.qrc;.\ico\lock.png;.\ico\magnifying_glass.png;.\ico\minimize.png;.\ico\pen.png;.\ico\unlock.png;.\ico\upload.png;.\ico\user.png;.\ico\user_female.png;.\ico\users.png;.\ico\video_play.png;.\ico\ico.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="icons.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);.\icons\camera.png;.\icons\ic_3d_plot_mode.png;.\icons\ic_abort_proc.png;.\icons\ic_active.png;.\icons\ic_apply_lines.png;.\icons\ic_aspect_window.png;.\icons\ic_aspect_zoom.png;.\icons\ic_back.png;.\icons\ic_bookmark.png;.\icons\ic_breakpoint.png;.\icons\ic_breakpoint_activate_all.png;.\icons\ic_breakpoint_deactivate.png;.\icons\ic_breakpoint_deactivate_all.png;.\icons\ic_call_stack.png;.\icons\ic_cascade_windows.png;.\icons\ic_clean_up.png;.\icons\ic_clear_all_bookmarks.png;.\icons\ic_clear_all_breakpoints.png;.\icons\ic_clear_bookmark.png;.\icons\ic_clear_breakpoint.png;.\icons\ic_clear_roi_all.png;.\icons\ic_clear_roi_sel.png;.\icons\ic_clear_window.png;.\icons\ic_close.png;.\icons\ic_copy.png;.\icons\ic_cut.png;.\icons\ic_deactive.png;.\icons\ic_delete.png;.\icons\ic_event_cat_exception.png;.\icons\ic_event_cat_exec_error.png;.\icons\ic_event_cat_exec_info.png;.\icons\ic_event_cat_exec_warning.png;.\icons\ic_event_cat_file_info.png;.\icons\ic_event_cat_file_warning.png;.\icons\ic_event_cat_hlib_error.png;.\icons\ic_event_cat_hlib_warning.png;.\icons\ic_event_cat_procline_warning.png;.\icons\ic_exit.png;.\icons\ic_export.png;.\icons\ic_find.png;.\icons\ic_find_again.png;.\icons\ic_forward.png;.\icons\ic_gen_arbitrary_reg.png;.\icons\ic_gen_circle.png;.\icons\ic_gen_circular_arc.png;.\icons\ic_gen_ellipse.png;.\icons\ic_gen_elliptical_arc.png;.\icons\ic_gen_line.png;.\icons\ic_gen_nurbs.png;.\icons\ic_gen_nurbs_interp.png;.\icons\ic_gen_rect1.png;.\icons\ic_gen_rect2.png;.\icons\ic_generate_code.png;.\icons\ic_hand.png;.\icons\ic_help.png;.\icons\ic_histo.png;.\icons\ic_histo_standard_size.png;.\icons\ic_histo_zoom_in.png;.\icons\ic_home.png;.\icons\ic_insert_operator.png;.\icons\ic_light_off.png;.\icons\ic_light_on.png;.\icons\ic_line_profile.png;.\icons\ic_lineal.png;.\icons\ic_linear.png;.\icons\ic_logarithmic.png;.\icons\ic_magnify-glass.png;.\icons\ic_new.png;.\icons\ic_online-zoom.png;.\icons\ic_open_event_log_wnd.png;.\icons\ic_open_example.png;.\icons\ic_open_graphics_wnd.png;.\icons\ic_open_new_tab.png;.\icons\ic_open_operator_wnd.png;.\icons\ic_open_prog.png;.\icons\ic_open_prog_line_view.png;.\icons\ic_open_prog_listing_wnd.png;.\icons\ic_open_var_view_wnd.png;.\icons\ic_organize_windows.png;.\icons\ic_paste.png;.\icons\ic_pref_ext_procs_16.png;.\icons\ic_preferences.png;.\icons\ic_print.png;.\icons\ic_prog_auto_completion_on.png;.\icons\ic_prog_edit_interface.png;.\icons\ic_prog_enter_execute_on.png;.\icons\ic_prog_mode_editor_on.png;.\icons\ic_read_image.png;.\icons\ic_redo.png;.\icons\ic_reghisto.png;.\icons\ic_region.png;.\icons\ic_reset.png;.\icons\ic_reset_horz.png;.\icons\ic_reset_horz_vert.png;.\icons\ic_reset_proc.png;.\icons\ic_reset_vert.png;.\icons\ic_roi_create.png;.\icons\ic_roi_edit_reg.png;.\icons\ic_roi_mode_path.png;.\icons\ic_roi_mode_region.png;.\icons\ic_roi_mode_xld.png;.\icons\ic_roi_op_add_roi.png;.\icons\ic_roi_op_complement.png;.\icons\ic_roi_op_complement_off.png;.\icons\ic_roi_op_difference.png;.\icons\ic_roi_op_intersection.png;.\icons\ic_roi_op_union.png;.\icons\ic_roi_op_xor.png;.\icons\ic_run.png;.\icons\ic_run_to_insert_cursor.png;.\icons\ic_save_all.png;.\icons\ic_save_as.png;.\icons\ic_save_proc_as.png;.\icons\ic_save_prog.png;.\icons\ic_select_arrow.png;.\icons\ic_set.png;.\icons\ic_size_minus.png;.\icons\ic_size_plus.png;.\icons\ic_step.png;.\icons\ic_stepforward.png;.\icons\ic_stepinto.png;.\icons\ic_stepout.png;.\icons\ic_stop.png;.\icons\ic_undo.png;.\icons\ic_zoom_adjust_win_size.png;.\icons\ic_zoom_in.png;.\icons\ic_zoom_out.png;.\icons\ic_net_connect.png;.\icons\ic_net_param.png;.\icons\ic_down.png;.\icons\ic_up.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);.\icons\camera.png;.\icons\ic_3d_plot_mode.png;.\icons\ic_abort_proc.png;.\icons\ic_active.png;.\icons\ic_apply_lines.png;.\icons\ic_aspect_window.png;.\icons\ic_aspect_zoom.png;.\icons\ic_back.png;.\icons\ic_bookmark.png;.\icons\ic_breakpoint.png;.\icons\ic_breakpoint_activate_all.png;.\icons\ic_breakpoint_deactivate.png;.\icons\ic_breakpoint_deactivate_all.png;.\icons\ic_call_stack.png;.\icons\ic_cascade_windows.png;.\icons\ic_clean_up.png;.\icons\ic_clear_all_bookmarks.png;.\icons\ic_clear_all_breakpoints.png;.\icons\ic_clear_bookmark.png;.\icons\ic_clear_breakpoint.png;.\icons\ic_clear_roi_all.png;.\icons\ic_clear_roi_sel.png;.\icons\ic_clear_window.png;.\icons\ic_close.png;.\icons\ic_copy.png;.\icons\ic_cut.png;.\icons\ic_deactive.png;.\icons\ic_delete.png;.\icons\ic_event_cat_exception.png;.\icons\ic_event_cat_exec_error.png;.\icons\ic_event_cat_exec_info.png;.\icons\ic_event_cat_exec_warning.png;.\icons\ic_event_cat_file_info.png;.\icons\ic_event_cat_file_warning.png;.\icons\ic_event_cat_hlib_error.png;.\icons\ic_event_cat_hlib_warning.png;.\icons\ic_event_cat_procline_warning.png;.\icons\ic_exit.png;.\icons\ic_export.png;.\icons\ic_find.png;.\icons\ic_find_again.png;.\icons\ic_forward.png;.\icons\ic_gen_arbitrary_reg.png;.\icons\ic_gen_circle.png;.\icons\ic_gen_circular_arc.png;.\icons\ic_gen_ellipse.png;.\icons\ic_gen_elliptical_arc.png;.\icons\ic_gen_line.png;.\icons\ic_gen_nurbs.png;.\icons\ic_gen_nurbs_interp.png;.\icons\ic_gen_rect1.png;.\icons\ic_gen_rect2.png;.\icons\ic_generate_code.png;.\icons\ic_hand.png;.\icons\ic_help.png;.\icons\ic_histo.png;.\icons\ic_histo_standard_size.png;.\icons\ic_histo_zoom_in.png;.\icons\ic_home.png;.\icons\ic_insert_operator.png;.\icons\ic_light_off.png;.\icons\ic_light_on.png;.\icons\ic_line_profile.png;.\icons\ic_lineal.png;.\icons\ic_linear.png;.\icons\ic_logarithmic.png;.\icons\ic_magnify-glass.png;.\icons\ic_new.png;.\icons\ic_online-zoom.png;.\icons\ic_open_event_log_wnd.png;.\icons\ic_open_example.png;.\icons\ic_open_graphics_wnd.png;.\icons\ic_open_new_tab.png;.\icons\ic_open_operator_wnd.png;.\icons\ic_open_prog.png;.\icons\ic_open_prog_line_view.png;.\icons\ic_open_prog_listing_wnd.png;.\icons\ic_open_var_view_wnd.png;.\icons\ic_organize_windows.png;.\icons\ic_paste.png;.\icons\ic_pref_ext_procs_16.png;.\icons\ic_preferences.png;.\icons\ic_print.png;.\icons\ic_prog_auto_completion_on.png;.\icons\ic_prog_edit_interface.png;.\icons\ic_prog_enter_execute_on.png;.\icons\ic_prog_mode_editor_on.png;.\icons\ic_read_image.png;.\icons\ic_redo.png;.\icons\ic_reghisto.png;.\icons\ic_region.png;.\icons\ic_reset.png;.\icons\ic_reset_horz.png;.\icons\ic_reset_horz_vert.png;.\icons\ic_reset_proc.png;.\icons\ic_reset_vert.png;.\icons\ic_roi_create.png;.\icons\ic_roi_edit_reg.png;.\icons\ic_roi_mode_path.png;.\icons\ic_roi_mode_region.png;.\icons\ic_roi_mode_xld.png;.\icons\ic_roi_op_add_roi.png;.\icons\ic_roi_op_complement.png;.\icons\ic_roi_op_complement_off.png;.\icons\ic_roi_op_difference.png;.\icons\ic_roi_op_intersection.png;.\icons\ic_roi_op_union.png;.\icons\ic_roi_op_xor.png;.\icons\ic_run.png;.\icons\ic_run_to_insert_cursor.png;.\icons\ic_save_all.png;.\icons\ic_save_as.png;.\icons\ic_save_proc_as.png;.\icons\ic_save_prog.png;.\icons\ic_select_arrow.png;.\icons\ic_set.png;.\icons\ic_size_minus.png;.\icons\ic_size_plus.png;.\icons\ic_step.png;.\icons\ic_stepforward.png;.\icons\ic_stepinto.png;.\icons\ic_stepout.png;.\icons\ic_stop.png;.\icons\ic_undo.png;.\icons\ic_zoom_adjust_win_size.png;.\icons\ic_zoom_in.png;.\icons\ic_zoom_out.png;.\icons\ic_net_connect.png;.\icons\ic_net_param.png;.\icons\ic_down.png;.\icons\ic_up.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="ico\lock.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\magnifying_glass.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\minimize.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\pen.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\unlock.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\upload.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\user.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\user_female.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\users.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="ico\video_play.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles\release" RccDir=".\GeneratedFiles" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
         w.resize(1100,748);
         w.show();
 
-    QIcon ico(":/new/prefix1/ico.png");
+    QIcon ico(":/new/prefix1/ico/ico.png");
     a.setWindowIcon(ico);
 
     return a.exec();

@@ -8,7 +8,7 @@ mySettings::mySettings(QWidget *parent) :
 {
     ui->setupUi(this);
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf8"));
-
+	
     flush_settings();
 }
 
@@ -44,6 +44,8 @@ void mySettings::flush_settings()
     ui->threshold->setValue(set.value("threshold",128).toInt());
     ui->autoThreshold->setCurrentIndex(set.value("autoThreshold",0).toInt());
     ui->exposure->setCurrentIndex(set.value("exposeTime",0).toInt());
+    ui->rate->setValue(set.value("rate",25).toInt());
+
 
 }
 void mySettings::on_Button_Yes_clicked()
@@ -66,6 +68,8 @@ void mySettings::on_Button_Yes_clicked()
     set.setValue("digitalInputs",ui->digitalInputs->currentIndex());
     set.setValue("threshold",ui->threshold->value());
     set.setValue("autoThreshold",ui->autoThreshold->currentIndex());
+    set.setValue("rate",ui->rate->value());
+    set.setValue("exposeTime",ui->exposure->currentIndex());
 
     set.setValue("badMinArea",ui->badMinArea->text());
     set.setValue("badMaxArea",ui->badMaxArea->text());
@@ -176,58 +180,6 @@ void mySettings::on_connecct_clicked()
     emit selectDevice(ui->select_device->currentIndex());
 }
 
-void mySettings::on_exposure_currentIndexChanged(int index)
-{
-    int s=1,i=999;
-    set.setValue("exposeTime",index);
-    switch(index)
-    {
-        case 0:
-        case 1:
-            emit postExposeTime(s+index,i-index);
-
-            break;
-        case 2:
-            emit postExposeTime(s+index*2,i-index*2);
-            break;
-        case 3:
-            emit postExposeTime(s+index*index,i-index*index);
-            break;
-        case 4:
-            emit postExposeTime(s+index*index+3,i-index*index-3);
-            break;
-        case 5:
-            emit postExposeTime(s+index*index+9,i-index*index-9);
-            break;
-        case 6:
-            emit postExposeTime(s+index*index+13,i-index*index-13);
-            break;
-        case 7:
-            emit postExposeTime(s+index*index+25,i-index*index-25);
-            break;
-        case 8:
-            emit postExposeTime(s+index*index+35,i-index*index-35);
-            break;
-        case 9:
-            emit postExposeTime(s+index*index+68,i-index*index-68);
-            break;
-        case 10:
-            emit postExposeTime(s+index*index+99,i-index*index-99);
-            break;
-        case 11:
-            emit postExposeTime(s+499,i-499);
-            break;
-        case 12:
-        case 13:
-        case 14:
-        case 15:
-            emit postExposeTime(s+998,i-998);
-            break;
-    }
-}
-
-
-
 void mySettings::on_testValue_valueChanged(double arg1)
 {
     set.setValue("testValue",arg1);
@@ -236,4 +188,18 @@ void mySettings::on_testValue_valueChanged(double arg1)
 void mySettings::on_trigger_currentIndexChanged(int index)
 {
     emit setExternTrigger(index);
+}
+
+void mySettings::on_exposure_currentIndexChanged(const QString &arg1)
+{
+    double s=arg1.toDouble();
+    double i=(1000-ui->rate->value()*s)/ui->rate->value();
+    emit postExposeTime(s*100,i*100);
+}
+
+void mySettings::on_rate_valueChanged(int arg1)
+{
+    double s=ui->exposure->currentText().toDouble();
+    double i=(1000-arg1*s)/ui->rate->value();
+    emit postExposeTime(s*100,i*100);
 }

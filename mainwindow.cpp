@@ -111,7 +111,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
             if(mouse->button()==Qt::RightButton)
                 rightPress=true;
             threeDstart=start=mouse->pos();
-
+            ui->pos->setText(QString("%1,%2").arg(start.x()).arg(start.y()));
             isDrag=true;
 
         }
@@ -122,47 +122,40 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
 
 
            end=mouse->pos();
-
+		   qDebug()<<end;
             //start=mouse->pos();
             if(isDrag)
             {
-
-
                 int x,y;
                 x=end.x()-start.x();
                 y=end.y()-start.y();
-               if(isDrawing)
+               if(!isDrawing)
                {
-
-
-               }
-               else
-               {
-                   if((abs(x)>10)|(abs(y)>10))
+					if((abs(x)>10)|(abs(y)>10))
                         hal->moveImg(start.x()-end.x(),start.y()-end.y());
-                   if(!isDrawing)
-                   {
-                       if(leftPress&rightPress)
-                       {
-                           hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"move");
+                  
+                    if(leftPress&rightPress)
+                    {
+                         //  hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"move");
+						   hal->threedControl(threeDstart.y(),threeDstart.x(),end.y(),end.x(),"move");
+                    }
+                    else if(leftPress)
+                    {
 
-                       }
-                       else if(leftPress)
-                       {
+                        //   hal->threedControl(end.y(),end.x(),threeDstart.y(),threeDstart.x(),"rotate");
+						   hal->threedControl(threeDstart.y(),threeDstart.x(),end.y(),end.x(),"rotate");
 
-                           hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"rotate");
+                    }
+                    else if(rightPress)
+                    {
+                         //  hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"scale");
+						    hal->threedControl(threeDstart.x(),threeDstart.y(),end.x(),end.y(),"scale");
 
-                       }
-                       else if(rightPress)
-                       {
-                           hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"scale");
-
-                       }
-                       threeDstart=end;
-
-                   }
+                    }
+                     threeDstart=end;
                }
             }
+		
         }
         if(event->type()==QEvent::MouseButtonRelease)
         {
@@ -173,11 +166,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
                 leftPress=false;
             else if(mouse->button()==Qt::RightButton)
                 rightPress=false;
-            if(isDrawing)
-            {
-
-            }
-            else
+            if(!isDrawing)
                 hal->set_pos(start.x()-end.x(),start.y()-end.y());
 
         }
@@ -253,26 +242,32 @@ void MainWindow::init_connect()
 
     connect(ui->action_big,SIGNAL(triggered()),hal,SLOT(zoomOut()));
     connect(ui->action_small,SIGNAL(triggered()),hal,SLOT(zoomIn()));
-
+	
     //点击开始按钮
     connect(ui->action_start,SIGNAL(triggered()),this,SLOT(startButton_clicked()));
     //读取文件按钮
     connect(ui->action_Open,SIGNAL(triggered()),this,SLOT(on_loadFile_clicked()));
+    connect(ui->action_pointAnalyze,SIGNAL(triggered()),point,SLOT(show()));
+    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(calculate()));
+    connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
+    connect(ui->actionCallback,SIGNAL(triggered()),profile,SLOT(start()));
 
     //connect(point,SIGNAL(initDevice()),profile,SLOT(initDevice()));
-    //接收显示信号
-    connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
+
     //触发设置窗口
     connect(ui->settings,SIGNAL(clicked()),ui->action_Net_Param,SLOT(trigger()));
     connect(ui->settings,SIGNAL(clicked()),this,SLOT(on_textChanged()));
     connect(mygroup,SIGNAL(buttonClicked(int)),this,SLOT(controlImg(int)));
     connect(ref,SIGNAL(recvData(char*)),setDialog,SLOT(recvData(char*)));
-    connect(setDialog,SIGNAL(netTest(QString)),this,SLOT(netTest(QString)));
-    connect(ui->action_pointAnalyze,SIGNAL(triggered()),point,SLOT(show()));
+	//connect(ui->roiColor,SIGNAL(clicked()),this,SLOT(on_roiColor_clicked()));
+
 
     connect(MsgHandlerWapper::instance(),SIGNAL(message(QtMsgType,QString)),this,
                     SLOT(outputMessage(QtMsgType,QString)));
-
+    //接收显示信号
+    connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
+    connect(hal,SIGNAL(sendPlaneness(int,double,double)),this,SLOT(recvPlaneness(int,double,double)));
+    connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
     connect(hal,SIGNAL(sendHeightSub(QString,double,double,double))
             ,this,SLOT(recvHeightSub(QString,double,double,double)));
     connect(profile,SIGNAL(dispZ(QString)),hal,SLOT(read_img(QString)));
@@ -280,20 +275,20 @@ void MainWindow::init_connect()
     connect(profile,SIGNAL(putImagebyPointer3(double*,double*,double*,int,int)),hal,SLOT(getImagebyPointer3(double*,double*,double*,int,int)));
     //connect(profile,SIGNAL(setData(double*,int)),glWidget,SLOT(setData(double*,int)));
     connect(profile,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
+
+    connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
+    connect(profile,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
     connect(profile,SIGNAL(dispSingleFrame(unsigned short *,unsigned short *,double *,double *,int)),
             plot,SLOT(upScanControlData(unsigned short *,unsigned short *,double *,double *,int)));
-    connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
-    connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
-    connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
+
     //connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
-    connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(calculate()));
-    connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
-    connect(hal,SIGNAL(sendPlaneness(int,double,double)),this,SLOT(recvPlaneness(int,double,double)));
 
     connect(setDialog,SIGNAL(selectDevice(int)),profile,SLOT(selectDevice(int)));
     connect(setDialog,SIGNAL(postExposeTime(int,int)),profile,SLOT(setExposeTime(int ,int )));
-    connect(profile,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
+
     connect(setDialog,SIGNAL(setExternTrigger(int)),profile,SLOT(setExternTrigger(int)));
+    connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
+    connect(setDialog,SIGNAL(netTest(QString)),this,SLOT(netTest(QString)));
 }
 
 void MainWindow::Error(QString str)
@@ -342,6 +337,9 @@ void MainWindow::dispFrame(unsigned char *buf,int size)
 
    ui->videoFrame->setPalette(palette);
 }
+/*
+	显示控制
+*/
 void MainWindow::dispImg()
 {
 
@@ -350,7 +348,8 @@ void MainWindow::dispImg()
     switch(ui->base->currentIndex())
     {
         case 0:
-
+			status=3;
+			hal->disp_img();
             break;
         case 1:
             profile->getVideoFrame();
@@ -389,7 +388,8 @@ void MainWindow::dispImg()
 */
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
-
+	if(isDrawing)
+		return;
     QPoint m=mapFromGlobal(event->globalPos());
 
     if(QRect(ui->view_box->pos().x()+ui->base->pos().x(),ui->view_box->pos().y()+ui->base->pos().y(),ui->base->width()
@@ -493,7 +493,7 @@ void MainWindow::startButton_clicked()
 {
    this->on_actionReset_triggered();
     //hal->RectHeightSub();
-
+   pass=0;
 
    if(isAuto)
    {
@@ -620,6 +620,8 @@ void MainWindow::on_action_Quit_triggered()
 */
 void MainWindow::controlImg(int index)
 {
+	if(isDrawing)
+		return;
     switch(index)
     {
         case 0:
@@ -683,6 +685,7 @@ void MainWindow::on_loadFile_clicked()
 
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
     hal->read_img("test.tif");
+	
 }
 
 
@@ -691,7 +694,7 @@ void MainWindow::on_loadFile_clicked()
 
 void MainWindow::paintEvent(QPaintEvent *event)
 {
-
+	
     event->accept();
     //hal->disp_img();
 
@@ -714,6 +717,8 @@ void MainWindow::on_launchDevice_clicked()
 */
 void MainWindow::outputMessage(QtMsgType type,QString str)
 {
+    QTime time;
+    str=time.currentTime().toString("hh:mm:ss.zzz: ")+str;
     ui->debug->appendPlainText(str);
     setDialog->debugMessage(str);
     debug.write((str+"\n").toUtf8().data());
@@ -763,7 +768,7 @@ void MainWindow::recvPlaneness(int team,double result1,double result2)
     sum->add_item(1,QStringLiteral("平面度"));
     sum->add_item(2,"name");
     sum->add_item(3,QString("%1").arg(0));
-    sum->add_item(4,QStringLiteral("分组")+team);
+    sum->add_item(4,QStringLiteral("分组")+QString::number(team+1));
     sum->add_item(5,QString("%1").arg(result1>result2?result2:result1));
     sum->add_item(6,QString("%1").arg(result1>result2?result1:result2));
     //sum->add_item(7,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
@@ -881,10 +886,10 @@ void MainWindow::on_roiDraw_clicked()
 {
     isDrawing=true;
 
-    hal->drawRect(ui->roiName->text(),ui->roiColor->currentText(),ui->team->currentIndex(),
+    hal->drawRect(ui->roiName->text(),QString::number(ui->roiColor->palette().background().color().rgb()),ui->team->currentIndex(),
                   ui->limitValue->text().toDouble(),ui->func->currentIndex());
     qDebug()<<ui->roiName->text();
-           qDebug()<<ui->roiColor->currentIndex()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
+           qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
     isDrawing=false;
 
 }
@@ -904,7 +909,7 @@ void MainWindow::flushRoiList(QStringList ll)
         str.clear();
         str<<list.keys().at(i);
         QStringList tmp=list.value(list.keys().at(i)).toStringList();
-        str<<QStringLiteral("分组")+tmp.at(5)+1;
+        str<<QStringLiteral("分组")+QString::number(tmp.at(5).toInt()+1);
         str<<QStringLiteral("算")+(tmp.at(7).toInt()==0?QStringLiteral("高差"):QStringLiteral("平面度"));
         str<<QStringLiteral("阈值=")<<tmp.at(6);
         line<<str.at(0)+" "+str.at(1)+" "+str.at(2)+" "+str.at(3)+" "+str.at(4);
@@ -1000,4 +1005,25 @@ void MainWindow::recvHeartPack()
     }
         //ui->rate->setText(QString("%1/s fps").arg(1000/time.elapsed()*100));
         */
+}
+void MainWindow::on_roiColor_clicked()
+{
+	QColor color=QColorDialog::getColor();  
+	if(color.isValid()){  
+		int r,g,b;
+		color.getRgb(&r,&g,&b);
+		QString str;
+		str=QString("background-color: rgb(%1,%2,%3)").arg(r).arg(g).arg(b);
+		ui->roiColor->setStyleSheet(str.toUtf8().data());
+		//QPalette pal=ui->roiColor->palette();
+		//pal.setColor(QPalette::Active,QPalette::Button, color); 
+		//ui->roiColor->setPalette(pal);
+		qDebug()<<color.rgb();
+		qDebug()<<((color.rgb()&(0xff<<16))>>16)<<((color.rgb()&(0xff<<8))>>8)<<(color.rgb()&(0xff));
+		ui->roiColor->update();
+	}  
+	//QPalette pal    = ui->roiColor->palette();
+	//QBrush brush = pal.background();
+	//QColor col      = brush.color();
+	
 }

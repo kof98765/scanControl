@@ -57,8 +57,8 @@
       <string>开始测量</string>
      </property>
      <property name="icon">
-      <iconset resource="ico/ico.qrc">
-       <normaloff>:/new/prefix1/video_play.png</normaloff>:/new/prefix1/video_play.png</iconset>
+      <iconset resource="icons.qrc">
+       <normaloff>:/new/prefix1/ico/video_play.png</normaloff>:/new/prefix1/ico/video_play.png</iconset>
      </property>
      <property name="checkable">
       <bool>false</bool>
@@ -383,110 +383,6 @@
            </property>
           </widget>
          </item>
-         <item row="8" column="1">
-          <widget class="QComboBox" name="roiColor">
-           <item>
-            <property name="text">
-             <string>red</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>white</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>green</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>blue</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>cyan</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>magenta</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>yellow</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>dim gray</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>gray</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>light gray</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>medium slate blue</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>coral</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>slate blue</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>spring green</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>orange red</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>orange</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>dark olive green</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>pink</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>cadet blue</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>black</string>
-            </property>
-           </item>
-          </widget>
-         </item>
          <item row="7" column="0">
           <spacer name="verticalSpacer">
            <property name="orientation">
@@ -499,6 +395,19 @@
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="8" column="1">
+          <widget class="QPushButton" name="roiColor">
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -839,7 +748,20 @@ border-radius:25px</string>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pos">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>10</y>
+      <width>54</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0,0</string>
     </property>
    </widget>
   </widget>
@@ -877,7 +799,7 @@ border-radius:25px</string>
     <addaction name="action_pointAnalyze"/>
     <addaction name="actionReset"/>
     <addaction name="actionTest"/>
-    <addaction name="actionPcl"/>
+    <addaction name="actionCallback"/>
    </widget>
    <addaction name="menu_2"/>
    <addaction name="menu_S"/>
@@ -907,8 +829,8 @@ border-radius:25px</string>
   </widget>
   <action name="action_Net_Param">
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/graph.png</normaloff>:/new/prefix1/graph.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/graph.png</normaloff>:/new/prefix1/ico/graph.png</iconset>
    </property>
    <property name="text">
     <string>系统设置</string>
@@ -916,8 +838,8 @@ border-radius:25px</string>
   </action>
   <action name="action_about">
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/home.png</normaloff>:/new/prefix1/home.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/home.png</normaloff>:/new/prefix1/ico/home.png</iconset>
    </property>
    <property name="text">
     <string>关于</string>
@@ -925,8 +847,8 @@ border-radius:25px</string>
   </action>
   <action name="action_CameraLight_Param">
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/email.png</normaloff>:/new/prefix1/email.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/email.png</normaloff>:/new/prefix1/ico/email.png</iconset>
    </property>
    <property name="text">
     <string>相机和光源参数</string>
@@ -937,8 +859,8 @@ border-radius:25px</string>
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/chat_bubble.png</normaloff>:/new/prefix1/chat_bubble.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/chat_bubble.png</normaloff>:/new/prefix1/ico/chat_bubble.png</iconset>
    </property>
    <property name="text">
     <string>连接(&amp;L)</string>
@@ -952,8 +874,8 @@ border-radius:25px</string>
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/folder.png</normaloff>:/new/prefix1/folder.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/folder.png</normaloff>:/new/prefix1/ico/folder.png</iconset>
    </property>
    <property name="text">
     <string>加载文件(&amp;O)</string>
@@ -964,8 +886,8 @@ border-radius:25px</string>
   </action>
   <action name="action_Quit">
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/cancel.png</normaloff>:/new/prefix1/cancel.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/cancel.png</normaloff>:/new/prefix1/ico/cancel.png</iconset>
    </property>
    <property name="text">
     <string>退出(&amp;E)</string>
@@ -976,8 +898,8 @@ border-radius:25px</string>
   </action>
   <action name="action_imgset">
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/user.png</normaloff>:/new/prefix1/user.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/user.png</normaloff>:/new/prefix1/ico/user.png</iconset>
    </property>
    <property name="text">
     <string>图像检测参数</string>
@@ -991,9 +913,9 @@ border-radius:25px</string>
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/video_play.png</normaloff>
-     <normalon>:/new/prefix1/minimize.png</normalon>:/new/prefix1/video_play.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/video_play.png</normaloff>
+     <normalon>:/new/prefix1/ico/minimize.png</normalon>:/new/prefix1/ico/video_play.png</iconset>
    </property>
    <property name="text">
     <string>开始测量(&amp;F3)</string>
@@ -1007,8 +929,8 @@ border-radius:25px</string>
   </action>
   <action name="action_big">
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/add.png</normaloff>:/new/prefix1/add.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/add.png</normaloff>:/new/prefix1/ico/add.png</iconset>
    </property>
    <property name="text">
     <string>放大(&amp;B)</string>
@@ -1016,8 +938,8 @@ border-radius:25px</string>
   </action>
   <action name="action_small">
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/minimize.png</normaloff>:/new/prefix1/minimize.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/minimize.png</normaloff>:/new/prefix1/ico/minimize.png</iconset>
    </property>
    <property name="text">
     <string>缩小(&amp;S)</string>
@@ -1025,8 +947,8 @@ border-radius:25px</string>
   </action>
   <action name="action_EXCEL_T">
    <property name="icon">
-    <iconset resource="ico/ico.qrc">
-     <normaloff>:/new/prefix1/email.png</normaloff>:/new/prefix1/email.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/new/prefix1/ico/email.png</normaloff>:/new/prefix1/ico/email.png</iconset>
    </property>
    <property name="text">
     <string>导出EXCEL(T)</string>
@@ -1060,9 +982,9 @@ border-radius:25px</string>
     <string>F2</string>
    </property>
   </action>
-  <action name="actionPcl">
+  <action name="actionCallback">
    <property name="text">
-    <string>pcl</string>
+    <string>内部触发采集</string>
    </property>
   </action>
   <action name="actionSubHeight">
@@ -1079,7 +1001,6 @@ border-radius:25px</string>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="icons.qrc"/>
-  <include location="ico/ico.qrc"/>
  </resources>
  <connections>
   <connection>

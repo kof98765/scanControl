@@ -36,6 +36,7 @@
 #include "profileget.h"
 #include "msghandlerwapper.h"
 #include "glwidget.h"
+#include <QColorDialog>
 using namespace Halcon;
 
 
@@ -86,7 +87,7 @@ public slots:
     void on_textChanged();
     void recvHeartPack();
     void flushRoiList(QStringList list);
-
+	void on_roiColor_clicked();
 
     void on_launchDevice_clicked();
 

@@ -1,0 +1,282 @@
+﻿生成启动时间为 2015/3/3 11:38:47。
+     1>项目“E:\EDAC projects\Scancontrol SDK\PCL\PCL_edac\PCL_edac\PCL_edac.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\PCL_edac.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt leastsquare_normal_vector.cpp
+         leastsquare_normal_vector.cpp
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1008): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1009): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1012): warning C4996: 'pcl::SHOT::rf': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1005) : 参见“pcl::SHOT::rf”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1013): warning C4996: 'pcl::SHOT::descriptor': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1004) : 参见“pcl::SHOT::descriptor”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1014): warning C4996: 'pcl::SHOT::descriptor': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1004) : 参见“pcl::SHOT::descriptor”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1014): warning C4996: 'pcl::SHOT::descriptor': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1004) : 参见“pcl::SHOT::descriptor”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(445): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(446): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(449): warning C4996: 'pcl::DefaultPointRepresentation<pcl::SHOT>': SHOT POINT IS DEPRECATED, USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(446) : 参见“pcl::DefaultPointRepresentation<pcl::SHOT>”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(455): warning C4996: 'pcl::SHOT': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1003) : 参见“pcl::SHOT”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(458): warning C4996: 'pcl::SHOT::descriptor': USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp(1004) : 参见“pcl::SHOT::descriptor”的声明
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(460): warning C4996: 'pcl::DefaultPointRepresentation<pcl::SHOT>::~DefaultPointRepresentation': SHOT POINT IS DEPRECATED, USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(460) : 编译器已在此处生成“pcl::DefaultPointRepresentation<pcl::SHOT>::~DefaultPointRepresentation”
+                 此诊断出现在编译器生成的函数“void *pcl::DefaultPointRepresentation<pcl::SHOT>::__delDtor(unsigned int)”中
+     1>d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(460): warning C4996: 'pcl::DefaultPointRepresentation<pcl::SHOT>::~DefaultPointRepresentation': SHOT POINT IS DEPRECATED, USE SHOT352 FOR SHAPE AND SHOT1344 FOR SHAPE+COLOR INSTEAD
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\point_representation.h(460) : 编译器已在此处生成“pcl::DefaultPointRepresentation<pcl::SHOT>::~DefaultPointRepresentation”
+                 此诊断出现在编译器生成的函数“void *pcl::DefaultPointRepresentation<pcl::SHOT>::__delDtor(unsigned int)”中
+     1>d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\util\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(40): warning C4305: “=”: 从“double”到“float”截断
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(41): warning C4305: “=”: 从“double”到“float”截断
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(42): warning C4305: “=”: 从“double”到“float”截断
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(44): warning C4305: “=”: 从“double”到“float”截断
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(45): warning C4305: “=”: 从“double”到“float”截断
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(46): warning C4305: “=”: 从“double”到“float”截断
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(47): warning C4305: “=”: 从“double”到“float”截断
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(48): warning C4305: “=”: 从“double”到“float”截断
+     1>e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(178): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\flann.hpp(78): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\flann.hpp(114): 参见对正在编译的函数 模板 实例化“flann::NNIndex<Distance> *flann::load_saved_index<Distance>(const flann::Matrix<T> &,const std::string &,Distance)”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\flann.hpp(107): 编译类 模板 成员函数“flann::Index<Distance>::Index(const flann::Matrix<T> &,const flann::IndexParams &,Distance)”时
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\kdtree\kdtree_flann.h(377): 参见对正在编译的类 模板 实例化“flann::Index<Distance>”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+     1>d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\dist.h(103): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\kmeans_index.h(688): 参见对正在编译的函数 模板 实例化“float flann::L2_Simple<T>::operator ()<T*,double*>(Iterator1,Iterator2,size_t,float) const”的引用
+                 with
+                 [
+                     T=float,
+                     Iterator1=float *,
+                     Iterator2=double *
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\kmeans_index.h(644): 编译类 模板 成员函数“void flann::KMeansIndex<Distance>::computeClustering(flann::KMeansIndex<Distance>::KMeansNode *,int *,int,int,int)”时
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\all_indices.h(96): 参见对正在编译的类 模板 实例化“flann::KMeansIndex<Distance>”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\all_indices.h(102): 参见对正在编译的类 模板 实例化“flann::valid_combination<Index,Distance,ElementType>::needs_kdtree_distance<T>”的引用
+                 with
+                 [
+                     Index=flann::KMeansIndex,
+                     Distance=flann::L2_Simple<float>,
+                     ElementType=ElementType,
+                     T=flann::KMeansIndex<flann::L2_Simple<float>>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\all_indices.h(152): 参见对正在编译的类 模板 实例化“flann::valid_combination<Index,Distance,ElementType>”的引用
+                 with
+                 [
+                     Index=flann::KMeansIndex,
+                     Distance=flann::L2_Simple<float>,
+                     ElementType=ElementType
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\flann.hpp(118): 参见对正在编译的函数 模板 实例化“flann::NNIndex<Distance> *flann::create_index_by_type<Distance>(const flann::Matrix<T> &,const flann::IndexParams &,const Distance &)”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>,
+                     T=float
+                 ]
+     1>c:\program files\microsoft visual studio 10.0\vc\include\xutility(2227): warning C4996: 'std::_Copy_impl': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+                 c:\program files\microsoft visual studio 10.0\vc\include\xutility(2212) : 参见“std::_Copy_impl”的声明
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\util\sampling.h(73): 参见对正在编译的函数 模板 实例化“_OutIt std::copy<T*,T*>(_InIt,_InIt,_OutIt)”的引用
+                 with
+                 [
+                     _OutIt=float *,
+                     T=float,
+                     _InIt=float *
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\autotuned_index.h(423): 参见对正在编译的函数 模板 实例化“flann::Matrix<T> flann::random_sample<float>(const flann::Matrix<T> &,size_t)”的引用
+                 with
+                 [
+                     T=float
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\autotuned_index.h(407): 编译类 模板 成员函数“flann::IndexParams flann::AutotunedIndex<Distance>::estimateBuildParams(void)”时
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\all_indices.h(96): 参见对正在编译的类 模板 实例化“flann::AutotunedIndex<Distance>”的引用
+                 with
+                 [
+                     Distance=flann::L2_Simple<float>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\all_indices.h(102): 参见对正在编译的类 模板 实例化“flann::valid_combination<Index,Distance,ElementType>::needs_kdtree_distance<T>”的引用
+                 with
+                 [
+                     Index=flann::AutotunedIndex,
+                     Distance=flann::L2_Simple<float>,
+                     ElementType=ElementType,
+                     T=flann::AutotunedIndex<flann::L2_Simple<float>>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\flann\include\flann\algorithms\all_indices.h(158): 参见对正在编译的类 模板 实例化“flann::valid_combination<Index,Distance,ElementType>”的引用
+                 with
+                 [
+                     Index=flann::AutotunedIndex,
+                     Distance=flann::L2_Simple<float>,
+                     ElementType=ElementType
+                 ]
+     1>d:\program files\pcl 1.6.0\3rdparty\boost\include\boost\bind\bind.hpp(586): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+                 d:\program files\pcl 1.6.0\3rdparty\boost\include\boost\bind\bind_template.hpp(174): 参见对正在编译的函数 模板 实例化“R boost::_bi::list6<A1,A2,A3,A4,A5,A6>::operator ()<int,F,boost::_bi::list5<const pcl::PointCloud<PointT> &,unsigned int &,double &,std::vector<_Ty> &,std::vector<float> &>>(boost::_bi::type<T>,F &,A &,long)”的引用
+                 with
+                 [
+                     R=int,
+                     A1=boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,
+                     A2=boost::arg<1>,
+                     A3=boost::arg<2>,
+                     A4=boost::arg<3>,
+                     A5=boost::arg<4>,
+                     A6=boost::arg<5>,
+                     F=boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,
+                     PointT=pcl::PointXYZ,
+                     _Ty=int,
+                     T=int,
+                     A=boost::_bi::list5<const pcl::PointCloud<pcl::PointXYZ> &,size_t &,double &,std::vector<int> &,std::vector<float> &>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\boost\include\boost\function\function_template.hpp(132): 参见对正在编译的函数 模板 实例化“int boost::_bi::bind_t<R,F,L>::operator ()<const pcl::PointCloud<PointT>,T1,T2,std::vector<_Ty>,std::vector<float>>(A1 &,A2 &,A3 &,A4 &,A5 &)”的引用
+                 with
+                 [
+                     R=int,
+                     F=boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,
+                     L=boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>,
+                     PointT=pcl::PointXYZ,
+                     T1=size_t,
+                     T2=double,
+                     _Ty=int,
+                     A1=const pcl::PointCloud<pcl::PointXYZ>,
+                     A2=size_t,
+                     A3=double,
+                     A4=std::vector<int>,
+                     A5=std::vector<float>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\boost\include\boost\function\function_template.hpp(126): 编译类 模板 成员函数“int boost::detail::function::function_obj_invoker5<FunctionObj,R,T0,T1,T2,T3,T4>::invoke(boost::detail::function::function_buffer &,T0,T1,T2,T3,T4)”时
+                 with
+                 [
+                     FunctionObj=boost::_bi::bind_t<int,boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>>,
+                     R=int,
+                     T0=const pcl::PointCloud<pcl::PointXYZ> &,
+                     T1=size_t,
+                     T2=double,
+                     T3=std::vector<int> &,
+                     T4=std::vector<float> &
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\boost\include\boost\function\function_template.hpp(907): 参见对正在编译的类 模板 实例化“boost::detail::function::function_obj_invoker5<FunctionObj,R,T0,T1,T2,T3,T4>”的引用
+                 with
+                 [
+                     FunctionObj=boost::_bi::bind_t<int,boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>>,
+                     R=int,
+                     T0=const pcl::PointCloud<pcl::PointXYZ> &,
+                     T1=size_t,
+                     T2=double,
+                     T3=std::vector<int> &,
+                     T4=std::vector<float> &
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\boost\include\boost\function\function_template.hpp(722): 参见对正在编译的函数 模板 实例化“void boost::function5<R,T0,T1,T2,T3,T4>::assign_to<Functor>(Functor)”的引用
+                 with
+                 [
+                     R=int,
+                     T0=const pcl::PointCloud<pcl::PointXYZ> &,
+                     T1=size_t,
+                     T2=double,
+                     T3=std::vector<int> &,
+                     T4=std::vector<float> &,
+                     Functor=boost::_bi::bind_t<int,boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\boost\include\boost\function\function_template.hpp(1043): 参见对正在编译的函数 模板 实例化“boost::function5<R,T0,T1,T2,T3,T4>::function5<boost::_bi::bind_t<R,F,L>>(Functor,int)”的引用
+                 with
+                 [
+                     R=int,
+                     T0=const pcl::PointCloud<pcl::PointXYZ> &,
+                     T1=size_t,
+                     T2=double,
+                     T3=std::vector<int> &,
+                     T4=std::vector<float> &,
+                     F=boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,
+                     L=boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>,
+                     Functor=boost::_bi::bind_t<int,boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>>
+                 ]
+                 d:\program files\pcl 1.6.0\3rdparty\boost\include\boost\function\function_template.hpp(1083): 参见对正在编译的函数 模板 实例化“boost::function<Signature>::function<boost::_bi::bind_t<R,F,L>>(Functor,int)”的引用
+                 with
+                 [
+                     Signature=int (const pcl::PointCloud<pcl::PointXYZ> &,size_t,double,std::vector<int> &,std::vector<float> &),
+                     R=int,
+                     F=boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,
+                     L=boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>,
+                     Functor=boost::_bi::bind_t<int,boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>>
+                 ]
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\features\impl\feature.hpp(159): 参见对正在编译的函数 模板 实例化“boost::function<Signature> &boost::function<Signature>::operator =<boost::_bi::bind_t<R,F,L>>(Functor)”的引用
+                 with
+                 [
+                     Signature=int (const pcl::PointCloud<pcl::PointXYZ> &,size_t,double,std::vector<int> &,std::vector<float> &),
+                     R=int,
+                     F=boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,
+                     L=boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>,
+                     Functor=boost::_bi::bind_t<int,boost::_mfi::cmf5<int,pcl::search::Search<pcl::PointXYZ>,const pcl::PointCloud<pcl::PointXYZ> &,int,int,std::vector<int> &,std::vector<float> &>,boost::_bi::list6<boost::reference_wrapper<boost::shared_ptr<pcl::search::Search<pcl::PointXYZ>>>,boost::arg<1>,boost::arg<2>,boost::arg<3>,boost::arg<4>,boost::arg<5>>>
+                 ]
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\features\impl\feature.hpp(93): 编译类 模板 成员函数“bool pcl::Feature<PointInT,PointOutT>::initCompute(void)”时
+                 with
+                 [
+                     PointInT=pcl::PointXYZ,
+                     PointOutT=pcl::Normal
+                 ]
+                 d:\program files\pcl 1.6.0\include\pcl-1.6\pcl\features\normal_esti_leastsquare.h(10): 参见对正在编译的类 模板 实例化“pcl::Feature<PointInT,PointOutT>”的引用
+                 with
+                 [
+                     PointInT=pcl::PointXYZ,
+                     PointOutT=pcl::Normal
+                 ]
+                 e:\edac projects\scancontrol sdk\pcl\pcl_edac\pcl_edac\leastsquare_normal_vector.cpp(190): 参见对正在编译的类 模板 实例化“pcl::NormalEstimation2<PointInT,PointOutT>”的引用
+                 with
+                 [
+                     PointInT=pcl::PointXYZ,
+                     PointOutT=pcl::Normal
+                 ]
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\EDAC projects\Scancontrol SDK\PCL\PCL_edac\Debug\PCL_edac.exe" /INCREMENTAL /NOLOGO opengl32.lib pcl_kdtree_debug.lib pcl_io_debug.lib pcl_search_debug.lib pcl_segmentation_debug.lib pcl_apps_debug.lib pcl_features_debug.lib pcl_filters_debug.lib pcl_visualization_debug.lib pcl_common_debug.lib "flann_cpp_s-gd.lib" "libboost_system-vc100-mt-gd-1_47.lib" "libboost_filesystem-vc100-mt-gd-1_47.lib" "libboost_thread-vc100-mt-gd-1_47.lib" "libboost_date_time-vc100-mt-gd-1_47.lib" "libboost_iostreams-vc100-mt-gd-1_47.lib" "vtkalglib-gd.lib" "vtkCharts-gd.lib" "vtkCommon-gd.lib" "vtkDICOMParser-gd.lib" "vtkexoIIc-gd.lib" "vtkexpat-gd.lib" "vtkFiltering-gd.lib" "vtkfreetype-gd.lib" "vtkftgl-gd.lib" "vtkGenericFiltering-gd.lib" "vtkGeovis-gd.lib" "vtkGraphics-gd.lib" "vtkhdf5-gd.lib" "vtkHybrid-gd.lib" "vtkImaging-gd.lib" "vtkInfovis-gd.lib" "vtkIO-gd.lib" "vtkjpeg-gd.lib" "vtklibxml2-gd.lib" "vtkmetaio-gd.lib" "vtkNetCDF-gd.lib" "vtkNetCDF_cxx-gd.lib" "vtkpng-gd.lib" "vtkproj4-gd.lib" "vtkRendering-gd.lib" "vtksqlite-gd.lib" "vtksys-gd.lib" "vtktiff-gd.lib" "vtkverdict-gd.lib" "vtkViews-gd.lib" "vtkVolumeRendering-gd.lib" "vtkWidgets-gd.lib" "vtkzlib-gd.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\PCL_edac.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\EDAC projects\Scancontrol SDK\PCL\PCL_edac\Debug\PCL_edac.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\EDAC projects\Scancontrol SDK\PCL\PCL_edac\Debug\PCL_edac.lib" /MACHINE:X86 Debug\PCL_edac.exe.embed.manifest.res
+         Debug\leastsquare_normal_vector.obj
+         PCL_Library_Dll\PCL_Library_Dll.lib
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\PCL_edac.exe.embed.manifest" /manifest Debug\PCL_edac.exe.intermediate.manifest
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         PCL_edac.vcxproj -> E:\EDAC projects\Scancontrol SDK\PCL\PCL_edac\Debug\PCL_edac.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\PCL_edac.unsuccessfulbuild”。
+         正在对“Debug\PCL_edac.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\EDAC projects\Scancontrol SDK\PCL\PCL_edac\PCL_edac\PCL_edac.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:21.61

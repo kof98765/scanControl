@@ -724,7 +724,7 @@
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>241</width>
+          <width>288</width>
           <height>502</height>
          </rect>
         </property>
@@ -863,24 +863,24 @@
            </item>
           </widget>
          </item>
-         <item row="3" column="0">
+         <item row="4" column="0">
           <widget class="QLabel" name="label_24">
            <property name="text">
             <string>分辨率:</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
+         <item row="4" column="1">
           <widget class="QComboBox" name="resolution"/>
          </item>
-         <item row="4" column="0">
+         <item row="5" column="0">
           <widget class="QLabel" name="label_20">
            <property name="text">
             <string>重采样:</string>
            </property>
           </widget>
          </item>
-         <item row="4" column="1">
+         <item row="5" column="1">
           <widget class="QComboBox" name="resampleValue">
            <item>
             <property name="text">
@@ -924,14 +924,14 @@
            </item>
           </widget>
          </item>
-         <item row="5" column="0">
+         <item row="6" column="0">
           <widget class="QLabel" name="label_27">
            <property name="text">
             <string>中值滤波:</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="1">
+         <item row="6" column="1">
           <widget class="QComboBox" name="median">
            <item>
             <property name="text">
@@ -955,14 +955,14 @@
            </item>
           </widget>
          </item>
-         <item row="6" column="0">
+         <item row="7" column="0">
           <widget class="QLabel" name="label_28">
            <property name="text">
             <string>均值滤波:</string>
            </property>
           </widget>
          </item>
-         <item row="6" column="1">
+         <item row="7" column="1">
           <widget class="QComboBox" name="average">
            <item>
             <property name="text">
@@ -986,14 +986,14 @@
            </item>
           </widget>
          </item>
-         <item row="7" column="0">
+         <item row="8" column="0">
           <widget class="QLabel" name="label_30">
            <property name="text">
             <string>启动外部触发:</string>
            </property>
           </widget>
          </item>
-         <item row="7" column="1">
+         <item row="8" column="1">
           <widget class="QComboBox" name="trigger">
            <item>
             <property name="text">
@@ -1007,14 +1007,14 @@
            </item>
           </widget>
          </item>
-         <item row="8" column="0">
+         <item row="9" column="0">
           <widget class="QLabel" name="label_31">
            <property name="text">
             <string>触发模式:</string>
            </property>
           </widget>
          </item>
-         <item row="8" column="1">
+         <item row="9" column="1">
           <widget class="QComboBox" name="triggerMode">
            <item>
             <property name="text">
@@ -1038,14 +1038,14 @@
            </item>
           </widget>
          </item>
-         <item row="9" column="0">
+         <item row="10" column="0">
           <widget class="QLabel" name="label_32">
            <property name="text">
             <string>触发源:</string>
            </property>
           </widget>
          </item>
-         <item row="9" column="1">
+         <item row="10" column="1">
           <widget class="QComboBox" name="triggerSource">
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0 RS422&lt;/p&gt;&lt;p&gt;1 Input In1 (Mode 0, 1 and 2) or encoder (Mode 3)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1065,14 +1065,14 @@
            </item>
           </widget>
          </item>
-         <item row="10" column="0">
+         <item row="11" column="0">
           <widget class="QLabel" name="label_33">
            <property name="text">
             <string>极性:</string>
            </property>
           </widget>
          </item>
-         <item row="10" column="1">
+         <item row="11" column="1">
           <widget class="QComboBox" name="triggerPolarity">
            <item>
             <property name="text">
@@ -1086,14 +1086,14 @@
            </item>
           </widget>
          </item>
-         <item row="11" column="0">
+         <item row="12" column="0">
           <widget class="QLabel" name="label_35">
            <property name="text">
             <string>数字输入电压:</string>
            </property>
           </widget>
          </item>
-         <item row="11" column="1">
+         <item row="12" column="1">
           <widget class="QComboBox" name="voltage">
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1110,14 +1110,14 @@
            </item>
           </widget>
          </item>
-         <item row="12" column="0">
+         <item row="13" column="0">
           <widget class="QLabel" name="label_36">
            <property name="text">
             <string>数字输入功能:</string>
            </property>
           </widget>
          </item>
-         <item row="12" column="1">
+         <item row="13" column="1">
           <widget class="QComboBox" name="digitalInputs">
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;0 encoder, positive edge of index track (*)&lt;/p&gt;&lt;p&gt;1 encoder with external trigger input (*)&lt;/p&gt;&lt;p&gt;2 external trigger input&lt;/p&gt;&lt;p&gt;3 ext. trigger + two bits for user mode loading&lt;/p&gt;&lt;p&gt;4 three bits for user mode loading&lt;/p&gt;&lt;p&gt;5 insert into timestamp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1154,14 +1154,14 @@
            </item>
           </widget>
          </item>
-         <item row="13" column="0">
+         <item row="14" column="0">
           <widget class="QLabel" name="label_23">
            <property name="text">
             <string>threshold:</string>
            </property>
           </widget>
          </item>
-         <item row="13" column="1">
+         <item row="14" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
             <widget class="QComboBox" name="autoThreshold">
@@ -1185,6 +1185,23 @@
             </widget>
            </item>
           </layout>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>帧率:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="rate">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>200</number>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

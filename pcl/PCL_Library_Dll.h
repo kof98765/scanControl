@@ -6,6 +6,7 @@
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/features/normal_3d.h>
+#include "CPP/HalconCpp.h"
 
 #ifndef PCL_LIBRARY_DLL_H_
 #define PCL_LIBRARY_DLL_H_
@@ -18,6 +19,7 @@
 #define MESSAGE_OK 1
 #define MESSAGE_ERROR -1
 using namespace Eigen;
+using namespace Halcon;
 //简单类型定义
 typedef pcl::PointXYZ PointT;
 typedef pcl::PointCloud<PointT> PointCloud;
@@ -79,6 +81,46 @@ PCLLIBRARYDLL int CalculateFlatness2(PointCloud::Ptr &inCloud, double &_result);
 		 * \param[return] 成功返回1 
 	     */
 PCLLIBRARYDLL int GetChildCloud(PointCloud::Ptr &inCloud, POINT point1,POINT point2,int width,PointCloud::Ptr outCloud);
+
+		/** \brief 从区域点云中获取点（剔除点云中Z轴的最大值和最小值后返回平均值）
+		 * \param[in] 输入的原始点云
+		 * \param[in] 输入2D的原始图片
+		 * \param[in] 输入的左上角坐标row
+		 * \param[in] 输入的左上角坐标col
+		 * \param[in] 输入的右下角坐标row
+		 * \param[in] 输入的右下角坐标col
+		 * \param[out] 返回的新的点云
+		 * \param[return] 成功返回1 
+	     */
+PCLLIBRARYDLL int GetChildPoint(PointCloud::Ptr &inCloud,Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,PointCloud::Ptr outCloud);
+
+		/** \brief 从区域点云中获取点
+		 * \param[in] 输入的原始点云
+		 * \param[in] 输入2D的原始图片
+		 * \param[in] 输入的左上角坐标row
+		 * \param[in] 输入的左上角坐标col
+		 * \param[in] 输入的右下角坐标row
+		 * \param[in] 输入的右下角坐标col
+		 * \param[out] 返回的新的点云
+		 * \param[return] 成功返回1 
+	     */
+PCLLIBRARYDLL int GetChildPoint(PointCloud::Ptr &inCloud,Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,PointCloud::Ptr outCloud);
+
+
+		/** \brief 从区域点云中获取点(高通，低通，中通),只能在halcon12下使用
+		 * \param[in] 输入的原始点云
+		 * \param[in] 输入2D的原始图片
+		 * \param[in] 输入的左上角坐标row
+		 * \param[in] 输入的左上角坐标col
+		 * \param[in] 输入的右下角坐标row
+		 * \param[in] 输入的右下角坐标col
+		 * \param[in] 输入的滤波通过百分比（0~100）
+		 * \param[in] 输入滤波类型（1高通，2低通，其他数字是中通）
+		 * \param[out] 返回的新的点云
+		 * \param[return] 成功返回1 
+	     */
+
+//PCLLIBRARYDLL int GetChildPoint2(PointCloud::Ptr &inCloud,Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,float Percent,int f_type,PointCloud::Ptr outCloud);
 
 //You can also write like this:
 //extern "C" {

@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\checkthread.o
+./debug\writeexcel.o
+./debug\dialognetparam.o
+./debug\dialogcameralight.o
+./debug\moc_mainwindow.o
+./debug\moc_checkthread.o
+./debug\moc_writeexcel.o
+./debug\moc_dialognetparam.o
+./debug\moc_dialogcameralight.o
+./debug\qrc_icons.o
+);

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fileDialog</class>
+ <widget class="QDialog" name="fileDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>297</width>
+    <height>179</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>选择测试图片</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="3" column="3">
+    <widget class="QPushButton" name="cancleButton">
+     <property name="text">
+      <string>&amp;CANCLE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="fouimg_label">
+     <property name="text">
+      <string>浮值图:</string>
+     </property>
+     <property name="buddy">
+      <cstring>fouimg_edit</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QPushButton" name="quimg_button">
+     <property name="text">
+      <string>打开</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="okButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>&amp;OK</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="2">
+    <widget class="QLineEdit" name="quimg_edit"/>
+   </item>
+   <item row="0" column="3">
+    <widget class="QPushButton" name="rawimg_button">
+     <property name="text">
+      <string>打开</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="rawimg_label">
+     <property name="text">
+      <string>原始图像:</string>
+     </property>
+     <property name="buddy">
+      <cstring>rawimg_edit</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QLineEdit" name="rawimg_edit"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="QPushButton" name="fouimg_button">
+     <property name="text">
+      <string>打开</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="quimg_label">
+     <property name="text">
+      <string>曲度图:</string>
+     </property>
+     <property name="buddy">
+      <cstring>quimg_edit</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="QLineEdit" name="fouimg_edit"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

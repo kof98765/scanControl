@@ -1,0 +1,10 @@
+LIBRARY "PCL_Library_Dll"
+EXPORTS
+Transfer2Cloud @1
+ComputePointNormal @2
+ComputePointNormal2 @3
+Dis_point2plane @4
+CalculateFlatness @5
+CalculateFlatness @6
+GetChildCloud @7
+GetChildPoint @8
