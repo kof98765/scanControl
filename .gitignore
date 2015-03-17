@@ -1,0 +1,10 @@
+# git ignore file
+*.opensdf
+*.sdf
+*.suo
+*.aps
+*.ipch
+*.tlog
+*.obj
+*.idb
+*.pdb
