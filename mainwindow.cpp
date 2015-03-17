@@ -46,6 +46,9 @@ MainWindow::MainWindow(QWidget *parent) :
     eventTimer->start(10);
     sum=new summarizing;
     sum->set_table(ui->tableWidget);
+	roiList=new summarizing;
+	roiList->set_table(ui->roiList);
+	
     mygroup = new QButtonGroup;
     mygroup->addButton(ui->imgUp,0);
     mygroup->addButton(ui->imgDown,1);
@@ -195,10 +198,15 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
         if(event->type()==QEvent::ContextMenu)
         {
             QContextMenuEvent *mouse=static_cast<QContextMenuEvent *>(event);
-            
-            currentItem=ui->roiList->indexAt(mouse->pos()).row();
+			
+		    int height=ui->roiList->horizontalHeader()->height();
+			QPoint pt=mouse->pos();
+			QPoint pt2=QPoint(0,height);
 
+            currentItem=ui->roiList->indexAt(pt-pt2).row();
+			
             qDebug()<<mouse->pos();
+			qDebug()<<pt-pt2;
             qDebug()<<"item"<<currentItem;
             QMenu menu(this);
 
@@ -634,11 +642,11 @@ void MainWindow::controlImg(int index)
             break;
         case 2:
             hal->moveImg(100,0);
-            hal->moveImg(100,0);
+            hal->set_pos(100,0);
             break;
         case 3:
             hal->moveImg(-100,0);
-            hal->moveImg(-100,0);
+            hal->set_pos(-100,0);
             break;
         case 4:
             hal->zoomOut();
@@ -901,22 +909,23 @@ void MainWindow::flushRoiList(QStringList ll)
     QStringList str;
 
     QStringList line;
-    ui->roiList->clear();
+    roiList->clear_table();
     QMap<QString,QVariant> list=set.value("roiList").toMap();
-
+	
     for(int i=0;i<list.size();i++)
     {
         str.clear();
-        str<<list.keys().at(i);
+		roiList->add_row();
+        roiList->add_item(0,list.keys().at(i));
         QStringList tmp=list.value(list.keys().at(i)).toStringList();
-        str<<QStringLiteral("分组")+QString::number(tmp.at(5).toInt()+1);
-        str<<QStringLiteral("算")+(tmp.at(7).toInt()==0?QStringLiteral("高差"):QStringLiteral("平面度"));
-        str<<QStringLiteral("阈值=")<<tmp.at(6);
-        line<<str.at(0)+" "+str.at(1)+" "+str.at(2)+" "+str.at(3)+" "+str.at(4);
+        roiList->add_item(1,QString::number(tmp.at(5).toInt()+1));
+        roiList->add_item(2,(tmp.at(7).toInt()==0?QStringLiteral("高差"):QStringLiteral("平面度")));
+        roiList->add_item(3,tmp.at(6));
+        
     }
 
 
-    ui->roiList->addItems(line);
+   
 
 }
 /*
@@ -926,9 +935,12 @@ void MainWindow::action_delItem()
 {
     QMap<QString,QVariant> list=set.value("roiList").toMap();
     QStringList tmp=list.keys();
+	if(currentItem==-1)
+		return;
     list.remove(tmp.at(currentItem));
     hal->delRect(currentItem);
-    ui->roiList->takeItem(currentItem);
+    ui->roiList->removeRow(currentItem);
+	ui->roiList->update();
 
 }
 /*

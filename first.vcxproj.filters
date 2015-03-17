@@ -263,6 +263,9 @@
     <ClInclude Include="resource.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="data_analyze.ui">
@@ -742,5 +745,8 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="ico\ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ico.rc" />
   </ItemGroup>
 </Project>

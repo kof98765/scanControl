@@ -739,6 +739,8 @@ void halconClass::delRect(int index)
     roiList.remove(list.at(index));
     set.setValue("roiList",roiList);
     set.sync();
+	if (HDevWindowStack::IsOpen())
+		clear_window(WindowHandle);
     disp_img();
 }
 /*
@@ -1175,8 +1177,13 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
         }
     }
  */
-    hasData=true;
-
+	if(h==set.value("profileCount",1000).toUInt())
+	{
+		img_width=width;
+		img_height=height;
+		scale=width/win_width;
+	}
+	hasData=true;
     emit dispImg();
    
 }

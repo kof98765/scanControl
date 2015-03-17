@@ -21,7 +21,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -90,7 +89,7 @@ public:
     QPushButton *roiColor;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
-    QListWidget *roiList;
+    QTableWidget *roiList;
     QGroupBox *view_box;
     QProgressBar *progressBar;
     QStackedWidget *base;
@@ -375,8 +374,20 @@ public:
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        roiList = new QListWidget(groupBox);
+        roiList = new QTableWidget(groupBox);
+        if (roiList->columnCount() < 4)
+            roiList->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(0, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(1, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(2, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(3, __qtablewidgetitem11);
         roiList->setObjectName(QStringLiteral("roiList"));
+        roiList->setSelectionBehavior(QAbstractItemView::SelectRows);
+        roiList->horizontalHeader()->setDefaultSectionSize(65);
 
         gridLayout_2->addWidget(roiList, 0, 0, 1, 1);
 
@@ -406,6 +417,7 @@ public:
         base->setGeometry(QRect(10, 30, 491, 491));
         base->setAutoFillBackground(true);
         base->setStyleSheet(QStringLiteral(""));
+        base->setMidLineWidth(0);
         threeDView = new QWidget();
         threeDView->setObjectName(QStringLiteral("threeDView"));
         base->addWidget(threeDView);
@@ -659,6 +671,14 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
         roiColor->setText(QString());
         groupBox->setTitle(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\210\227\350\241\250", 0));
+        QTableWidgetItem *___qtablewidgetitem8 = roiList->horizontalHeaderItem(0);
+        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = roiList->horizontalHeaderItem(1);
+        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204", 0));
+        QTableWidgetItem *___qtablewidgetitem10 = roiList->horizontalHeaderItem(2);
+        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "\347\256\227\346\263\225", 0));
+        QTableWidgetItem *___qtablewidgetitem11 = roiList->horizontalHeaderItem(3);
+        ___qtablewidgetitem11->setText(QApplication::translate("MainWindow", "\351\230\210\345\200\274", 0));
         view_box->setTitle(QString());
         progressBar->setFormat(QApplication::translate("MainWindow", "%p%", 0));
         videoFrame->setText(QString());

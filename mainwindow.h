@@ -119,6 +119,7 @@ private:
     QDialog *dataDialog;
     profileGet *profile;
     summarizing *sum;
+	summarizing *roiList;
     QButtonGroup *mygroup;
     GLWidget *glWidget;
     QString searchPath;
