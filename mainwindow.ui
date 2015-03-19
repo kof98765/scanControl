@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1071</width>
-    <height>693</height>
+    <height>698</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -466,7 +466,7 @@
       <x>10</x>
       <y>30</y>
       <width>511</width>
-      <height>541</height>
+      <height>511</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -494,8 +494,8 @@ border-radius:25px
     <widget class="QProgressBar" name="progressBar">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>520</y>
+       <x>0</x>
+       <y>490</y>
        <width>501</width>
        <height>20</height>
       </rect>
@@ -526,7 +526,7 @@ border-radius:25px</string>
        <x>10</x>
        <y>30</y>
        <width>491</width>
-       <height>491</height>
+       <height>461</height>
       </rect>
      </property>
      <property name="autoFillBackground">
@@ -562,8 +562,8 @@ border-radius:25px</string>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>9</x>
-       <y>9</y>
+       <x>10</x>
+       <y>0</y>
        <width>481</width>
        <height>26</height>
       </rect>
@@ -732,16 +732,6 @@ border-radius:25px</string>
      <string>3D显示</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="debug">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>580</y>
-      <width>461</width>
-      <height>65</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="realTimeButton">
     <property name="geometry">
      <rect>
@@ -771,7 +761,7 @@ border-radius:25px</string>
    <widget class="QLabel" name="rate">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>410</x>
       <y>10</y>
       <width>54</width>
       <height>12</height>
@@ -784,7 +774,7 @@ border-radius:25px</string>
    <widget class="QLabel" name="pos">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>470</x>
       <y>10</y>
       <width>54</width>
       <height>12</height>
@@ -793,6 +783,27 @@ border-radius:25px</string>
     <property name="text">
      <string>0,0</string>
     </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>0</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>550</y>
+      <width>511</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="imgList"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

@@ -102,6 +102,9 @@ private:
     int smothWidth;
     int smothHeight;
     bool hasData;
+    int index;
+    HTuple centerX,centerY;
+    QList<Hobject*> imgList;
     QTime time;
     QMap<QString,QVariant> roiList;
 
@@ -121,6 +124,7 @@ public slots:
     void delRect(int);
     void RectHeightSub(int team);
     void calculatePlaneness(int team);
+    void selectImg(int index);
 signals:
     void detectFinish();
     void stopMove();
@@ -130,6 +134,9 @@ signals:
     void sendHeightSub(QString,double,double,double);
     void flushRoiList(QStringList list);
     void sendPlaneness(int ,double,double);
+    void Error(QString);
+    void addImg(Hobject *);
+    void deleteImg(int index);
 
 };
 

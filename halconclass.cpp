@@ -12,6 +12,7 @@ halconClass::halconClass(QObject *parent) :
     posY=0;
     step=0;
     recvCount=0;
+    index=0;
     is3D=false;
     hasData=false;
     imgData=new double[1280000];
@@ -41,7 +42,7 @@ halconClass::halconClass(QObject *parent) :
 */
 void halconClass::open_the_window(int handle,int width,int height)
 {
-
+    set_system("flush_graphic","true");
     Hobject Rectangle;
     close_the_window();
 
@@ -69,36 +70,52 @@ void halconClass::close_the_window()
 */
 void halconClass::read_img(QString str)
 {
+    char c[100];
 
-   path=str;
    //this->start();
+
+
+   HTuple area;
    HTuple Width,Height;
+   Hobject tmp;
    long w,h;
    char     type[128];
    double *p;
+   QFile f(str);
+   path=str;
+   if(!f.exists())
+   {
+       emit Error("file not found");
+       return;
+   }
+   qDebug()<<"read"<<str;
+   read_image(&result_img,path.toUtf8().data());
 
-   read_image(&Image,path.toUtf8().data());
+   get_image_size(result_img,&Width,&Height);
 
-   get_image_size(Image,&Width,&Height);
-   set_part(WindowHandle,0,0,Height-1,Width-1);
-   get_image_pointer1(Image,(long*)&p,type,&w,&h);
-  // getImagebyPointer3(0,0,p,w,h);
+   get_image_pointer1(result_img,(long*)&p,type,&w,&h);
+   //getImagebyPointer3(0,0,p,w,h);
+   qDebug()<<w<<h<<type;
+
+   getImagebyPointer1(p,w,h);
    qDebug()<<w<<h;
    img_width=Width[0].I();
    img_height=Height[0].I();
    scale=Width[0].I()/win_width;
    hasData=true;
    qDebug()<<"read finish"<<"scale"<<scale;
-   emit dispImg();
+   //emit dispImg();
 }
 void halconClass::clearData()
 {
-    hasData=false;
-    Image.Reset();
-
-    if (HDevWindowStack::IsOpen())
+	
+    if (HDevWindowStack::IsOpen()&hasData)
+	{
+		  //Image.Reset();
         clear_window(WindowHandle);
-
+	}
+	 hasData=false;
+	qDebug()<<"clear";
 }
 /*
     重置图像窗口,并刷新数据
@@ -149,6 +166,13 @@ void halconClass::setMode(QString str)
 
         }
     }
+}
+void halconClass::selectImg(int i)
+{
+    qDebug()<<"display"<<i;
+    index=i;
+    copy_image(*imgList.at(i),&Image);
+    disp_img();
 }
 void halconClass::disp_img()
 {
@@ -213,14 +237,22 @@ void halconClass::moveImg(int x,int y)
      Hobject  ImageTrans;
      // Local control variables
      HTuple  HomMat;
-
+     Hlong row,col,row1,col1;
      if(HDevWindowStack::IsOpen()&hasData)
      {
         if(!is3D)
         {
+            get_part(WindowHandle,&row,&col,&row1,&col1);
+             //move_rectangle(WindowHandle,row,col,row1,col1,y,x);
+           // set_part(WindowHandle,row+y*scale,col+x*scale,row1+y*scale,col1+x*scale);
              set_part(WindowHandle,posY+y*scale,posX+x*scale,img_height+posY+y*scale,img_width+posX+x*scale);
-
+          //  move_region(Image,&result_img,centerY-y*scale,centerX-x*scale);
+           // disp_obj(result_img,WindowHandle);
              disp_img();
+
+            // if (HDevWindowStack::IsOpen())
+               //clear_window(HDevWindowStack::GetActive());
+
         }
 
      }
@@ -246,6 +278,7 @@ void halconClass::set_pos(int x,int y)
     {
         posX+=x*scale;
         posY+=y*scale;
+       // set_part(WindowHandle,posY+y*scale,posX+x*scale,img_height+posY+y*scale,img_width+posX+x*scale);
         clear_window(WindowHandle);
         disp_img();
     }
@@ -354,7 +387,7 @@ void halconClass::run()
 		long w,h;
 		char     type[128];
 		float *p;
-		
+
         read_image(&Image,path.toUtf8().data());
 
         get_image_size(Image,&Width,&Height);
@@ -816,7 +849,11 @@ void halconClass::RectHeightSub(int team)
                 reduce_domain(Image, Rectangle, &ImageReduced);
                 get_region_points(ImageReduced, &Rows, &Columns);
                 get_grayval(ImageReduced, Rows, Columns, &Grayval);
-
+                if(Grayval.Num()==0)
+                {
+                    qDebug()<<"grayval:"<<Grayval.Num();
+                    continue;
+                }
                 tuple_max(Grayval, &Max);
 
                 tuple_find(Grayval,0,&Indices);
@@ -999,9 +1036,9 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
     }
 	qDebug()<<"run";
 	if(x==0)
-		(*test_function)(yy,yy,z,0,w,h,*inCloud);
+        (*test_function)(yy,yy,z,0,w,h,*inCloud);
 	else
-		(*test_function)(x,yy,z,0,w,h,*inCloud);
+        (*test_function)(x,yy,z,0,w,h,*inCloud);
    // pcl::io::savePCDFile("out.pcd",*(inCloud->get()));
     qDebug()<<"end pointCloud,prossess time:"<<time.elapsed()<<"ms";
     delete yy;
@@ -1044,7 +1081,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 {
     HTuple  MatID, Rows, Cols, Values, MultValues;
     HTuple  Min, Max, Row, Column,Range,GrayVal,Value,i,j,Width,Height;
-    Hobject Region,Imagetemp,Image1,Image2, Image3;
+    Hobject Region,Imagetemp,Image1,Image2, Image3,*tmp;
   //  double *p=imgData;
     recvCount=h;
 
@@ -1056,134 +1093,53 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     qDebug()<<"recv:"<<h;
     char     type[128];
     Hlong     width,height;
-    float *pointer=0;
+    float *pointer=0,*p=(float *)pdValueZ;
     time.start();
     Image.Reset();
 
-    gen_image_const(&Image,"real",w,1000);
+    gen_image_const(&Image,"real",w,set.value("profileCount",1000).toUInt());
     get_image_pointer1(Image,(long*)&pointer,type,&width,&height);
-    qDebug()<<width<<height;
-
-
-    for (int row=0; row<h; row++)
+    qDebug()<<width<<height<<sizeof pdValueZ;
+    qDebug("%x,%x,%d",pdValueZ,&pdValueZ[1280000],&pdValueZ[1280000]-pdValueZ);
+    qDebug()<<sizeof(float)<<sizeof(double);
+    set_part(WindowHandle,0,0,set.value("profileCount",1000).toInt(),w);
+    for (int row=0; row<set.value("profileCount",1000).toUInt(); row++)
     {
+
         for (int col=0; col<width; col++)
         {
 
-          pointer[row*width+col] =*pdValueZ++;
+          pointer[row*width+col] =*p++;
         }
     }
     qDebug()<<"read time:"<<time.elapsed()<<"msec";
 
 
   //  write_image(RGBImage,"bmp",0,"test.bmp");
+
     write_image(Image,"tiff",0,"test");
-    /*
-    threshold(Image, &Region, 1, 255);
-    min_max_gray(Region, Image, 0, &Min, &Max, &Range);
-    qDebug()<<"img"<<Min[0].D()<<Max[0].D()<<Range[0].D();
-    gen_image_const (&Imagetemp, "byte", w, h);
- //   gen_image_const(&Image, "real", Cols, Rows);
-    cfa_to_rgb(Imagetemp, &RGBImage, "bayer_gb", "bilinear");
-    decompose3(RGBImage, &Image1, &Image2, &Image3);
-
-    get_image_size(RGBImage,&Width,&Height);
 
 
-    img_width=Width[0].I();
-    img_height=Height[0].I();
-    scale=Width[0].I()/win_width;
-
-   // cfa_to_rgb (Image, &Image, "bayer_gb", "bilinear");
-    HTuple step=Range/6;
-
-    HTuple RGBValue;
-    for(i=0;i<h-1;i++)
-    {
-        for(j=0;j<w-1;j++)
-        {
-            get_grayval(Image,i,j,&GrayVal);
-
-            Value=(GrayVal-Min)/step;
-
-            tuple_int (Value, &Value);
-
-            RGBValue.Reset();
-            switch (Value[0].I())
-            {
-                default:
-                RGBValue.Append(0);
-                RGBValue.Append(0);
-                RGBValue.Append(0);
-                break;
-
-                case 0:
-                    //RGBValue=[128-GrayValue*128/Standard,0,255];
-                      RGBValue.Append(128-(GrayVal-Min)*128/step);
-                      RGBValue.Append(0);
-                      RGBValue.Append(255);
-
-                      break;
-                case 1:
-                  //  RGBValue:=[0,(GrayValue-Standard)*255/Standard,255];
-                    //  *ptr|=HTuple(0<<16+((GrayVal-Min-step)*255/step)<<8+255)[0].I();
-                      RGBValue.Append(0);
-                      RGBValue.Append(((GrayVal-Min-step)*255/step));
-                      RGBValue.Append(255);
-
-                      break;
-                case 2:
-                    //RGBValue:=[0,255,255-(GrayValue-Standard*2)*255/Standard];
-                    //  *ptr|=HTuple(0<<16+255<<8+255-((GrayVal-Min)/step*255-step*255))[0].I();
-                      RGBValue.Append(0);
-                      RGBValue.Append(255);
-                      RGBValue.Append(255-((GrayVal-Min)/step*255-step*255));
-                      break;
-                case 3:
-                 //   RGBValue:=[(GrayValue-Standard*3)*255/Standard,255,0];
-                     // *ptr|=HTuple((GrayVal-Min-step*3)*255/step<<16+255<<8)[0].I();
-                      RGBValue.Append(((GrayVal-Min-step*3)*255/step));
-                      RGBValue.Append(255);
-                      RGBValue.Append(0);
-                      break;
-                case 4:
-                 //   RGBValue:=[255,255-(GrayValue-Standard*4)*128/Standard,0];
-                   //   *ptr|=HTuple(255<<16+(255-(GrayVal-Min-step*4)*128/step)<<8)[0].I();
-                      RGBValue.Append(255);
-                      RGBValue.Append((255-(GrayVal-Min-step*4)*128/step));
-                      RGBValue.Append(0);
-                      break;
-                case 5:
-                   // RGBValue:=[255,128-(GrayValue-Standard*5)*128/Standard,0];
-                    //*ptr|=HTuple(255<<16+(128-(GrayVal-Min-step*5)*128/step)<<8)[0].I();
-                      RGBValue.Append(255);
-                      RGBValue.Append(128-(GrayVal-Min-step*5)*128/step);
-                      RGBValue.Append(0);
-                      break;
-                case 6:
-                  //  RGBValue:=[255,(GrayValue-Standard*6)*128/Standard,(GrayValue-Standard*6)*128/Standard];
-                     // *ptr|=HTuple(255<<16+((GrayVal-Min-step*6)*128/step)<<8+(GrayVal-Min-step*6)*128/step)[0].I();
-                      RGBValue.Append(255);
-                      RGBValue.Append((GrayVal-Min-step*6)*128/step);
-                      RGBValue.Append((GrayVal-Min-step*6)*128/step);
-                      break;
-
-            }
-
-
-            set_grayval (Image1, i, j, RGBValue[0]);
-            set_grayval (Image2, i, j, RGBValue[1]);
-            set_grayval (Image3, i, j, RGBValue[2]);
-        }
-    }
- */
-	if(h==set.value("profileCount",1000).toUInt())
+    if(h>=set.value("profileCount",1000).toUInt())
 	{
 		img_width=width;
 		img_height=height;
 		scale=width/win_width;
+        Hobject *tmp=new Hobject;
+        copy_image(Image,tmp);
+        imgList.push_back(tmp);
+        emit addImg(tmp);
+        qDebug()<<imgList.size();
+        if(imgList.size()>8)
+        {
+            clear_obj(*imgList.takeFirst());
+            emit deleteImg(0);
+        }
+
+
 	}
 	hasData=true;
+
     emit dispImg();
    
 }

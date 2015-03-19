@@ -22,12 +22,13 @@ void summarizing::set_table(QTableWidget *t)
 void summarizing::clear_table()
 {
     int i,maxrow = table->rowCount();
-    qDebug()<<"rowcount"<<maxrow;
+	
     for(i=maxrow-1;i>=0;i--)
     {
         table->removeRow(i);
     }
     index=1;
+	qDebug()<<"rowcount"<<maxrow;
 }
 void summarizing::add_row()
 {

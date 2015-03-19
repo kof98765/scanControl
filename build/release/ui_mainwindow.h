@@ -21,11 +21,9 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -86,11 +84,11 @@ public:
     QLabel *label;
     QLineEdit *limitValue;
     QLabel *label_3;
-    QComboBox *roiColor;
     QSpacerItem *verticalSpacer;
+    QPushButton *roiColor;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
-    QListWidget *roiList;
+    QTableWidget *roiList;
     QGroupBox *view_box;
     QProgressBar *progressBar;
     QStackedWidget *base;
@@ -111,11 +109,13 @@ public:
     QPushButton *imgRotate;
     QPushButton *twoDButton;
     QPushButton *threeDButton;
-    QPlainTextEdit *debug;
     QPushButton *realTimeButton;
     QPushButton *singleFrameButton;
     QLabel *rate;
     QLabel *pos;
+    QComboBox *comboBox;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *imgList;
     QMenuBar *menuBar;
     QMenu *menu_S;
     QMenu *menu;
@@ -127,7 +127,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1071, 693);
+        MainWindow->resize(1071, 698);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -137,57 +137,57 @@ public:
         action_Net_Param = new QAction(MainWindow);
         action_Net_Param->setObjectName(QStringLiteral("action_Net_Param"));
         QIcon icon;
-        icon.addFile(QStringLiteral(":/new/prefix1/graph.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral(":/new/prefix1/ico/graph.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Net_Param->setIcon(icon);
         action_about = new QAction(MainWindow);
         action_about->setObjectName(QStringLiteral("action_about"));
         QIcon icon1;
-        icon1.addFile(QStringLiteral(":/new/prefix1/home.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QStringLiteral(":/new/prefix1/ico/home.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_about->setIcon(icon1);
         action_CameraLight_Param = new QAction(MainWindow);
         action_CameraLight_Param->setObjectName(QStringLiteral("action_CameraLight_Param"));
         QIcon icon2;
-        icon2.addFile(QStringLiteral(":/new/prefix1/email.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QStringLiteral(":/new/prefix1/ico/email.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_CameraLight_Param->setIcon(icon2);
         action_Connection = new QAction(MainWindow);
         action_Connection->setObjectName(QStringLiteral("action_Connection"));
         action_Connection->setEnabled(true);
         QIcon icon3;
-        icon3.addFile(QStringLiteral(":/new/prefix1/chat_bubble.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QStringLiteral(":/new/prefix1/ico/chat_bubble.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Connection->setIcon(icon3);
         action_Open = new QAction(MainWindow);
         action_Open->setObjectName(QStringLiteral("action_Open"));
         action_Open->setEnabled(true);
         QIcon icon4;
-        icon4.addFile(QStringLiteral(":/new/prefix1/folder.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QStringLiteral(":/new/prefix1/ico/folder.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Open->setIcon(icon4);
         action_Quit = new QAction(MainWindow);
         action_Quit->setObjectName(QStringLiteral("action_Quit"));
         QIcon icon5;
-        icon5.addFile(QStringLiteral(":/new/prefix1/cancel.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QStringLiteral(":/new/prefix1/ico/cancel.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Quit->setIcon(icon5);
         action_imgset = new QAction(MainWindow);
         action_imgset->setObjectName(QStringLiteral("action_imgset"));
         QIcon icon6;
-        icon6.addFile(QStringLiteral(":/new/prefix1/user.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QStringLiteral(":/new/prefix1/ico/user.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_imgset->setIcon(icon6);
         action_start = new QAction(MainWindow);
         action_start->setObjectName(QStringLiteral("action_start"));
         action_start->setChecked(false);
         action_start->setEnabled(false);
         QIcon icon7;
-        icon7.addFile(QStringLiteral(":/new/prefix1/video_play.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon7.addFile(QStringLiteral(":/new/prefix1/minimize.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon7.addFile(QStringLiteral(":/new/prefix1/ico/video_play.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QStringLiteral(":/new/prefix1/ico/minimize.png"), QSize(), QIcon::Normal, QIcon::On);
         action_start->setIcon(icon7);
         action_big = new QAction(MainWindow);
         action_big->setObjectName(QStringLiteral("action_big"));
         QIcon icon8;
-        icon8.addFile(QStringLiteral(":/new/prefix1/add.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QStringLiteral(":/new/prefix1/ico/add.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_big->setIcon(icon8);
         action_small = new QAction(MainWindow);
         action_small->setObjectName(QStringLiteral("action_small"));
         QIcon icon9;
-        icon9.addFile(QStringLiteral(":/new/prefix1/minimize.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon9.addFile(QStringLiteral(":/new/prefix1/ico/minimize.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_small->setIcon(icon9);
         action_EXCEL_T = new QAction(MainWindow);
         action_EXCEL_T->setObjectName(QStringLiteral("action_EXCEL_T"));
@@ -220,7 +220,7 @@ public:
         startButton->setGeometry(QRect(120, 10, 121, 31));
         startButton->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         QIcon icon10;
-        icon10.addFile(QStringLiteral(":/new/prefix1/video_play.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon10.addFile(QStringLiteral(":/new/prefix1/ico/video_play.png"), QSize(), QIcon::Normal, QIcon::Off);
         startButton->setIcon(icon10);
         startButton->setCheckable(false);
         startButton->setChecked(false);
@@ -354,14 +354,16 @@ public:
 
         formLayout->setWidget(8, QFormLayout::LabelRole, label_3);
 
-        roiColor = new QComboBox(groupBox_5);
-        roiColor->setObjectName(QStringLiteral("roiColor"));
-
-        formLayout->setWidget(8, QFormLayout::FieldRole, roiColor);
-
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         formLayout->setItem(7, QFormLayout::LabelRole, verticalSpacer);
+
+        roiColor = new QPushButton(groupBox_5);
+        roiColor->setObjectName(QStringLiteral("roiColor"));
+        roiColor->setAutoFillBackground(false);
+        roiColor->setStyleSheet(QStringLiteral("background-color: rgb(255, 0, 0);"));
+
+        formLayout->setWidget(8, QFormLayout::FieldRole, roiColor);
 
 
         gridLayout_4->addLayout(formLayout, 1, 0, 1, 1);
@@ -373,14 +375,26 @@ public:
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        roiList = new QListWidget(groupBox);
+        roiList = new QTableWidget(groupBox);
+        if (roiList->columnCount() < 4)
+            roiList->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(0, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(1, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(2, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(3, __qtablewidgetitem11);
         roiList->setObjectName(QStringLiteral("roiList"));
+        roiList->setSelectionBehavior(QAbstractItemView::SelectRows);
+        roiList->horizontalHeader()->setDefaultSectionSize(65);
 
         gridLayout_2->addWidget(roiList, 0, 0, 1, 1);
 
         view_box = new QGroupBox(centralWidget);
         view_box->setObjectName(QStringLiteral("view_box"));
-        view_box->setGeometry(QRect(10, 30, 511, 541));
+        view_box->setGeometry(QRect(10, 30, 511, 511));
         sizePolicy.setHeightForWidth(view_box->sizePolicy().hasHeightForWidth());
         view_box->setSizePolicy(sizePolicy);
         view_box->setMouseTracking(false);
@@ -392,7 +406,7 @@ public:
 "}"));
         progressBar = new QProgressBar(view_box);
         progressBar->setObjectName(QStringLiteral("progressBar"));
-        progressBar->setGeometry(QRect(10, 520, 501, 20));
+        progressBar->setGeometry(QRect(0, 490, 501, 20));
         progressBar->setStyleSheet(QLatin1String("border:2px;\n"
 "border-radius:25px"));
         progressBar->setValue(0);
@@ -401,9 +415,10 @@ public:
         progressBar->setTextDirection(QProgressBar::TopToBottom);
         base = new QStackedWidget(view_box);
         base->setObjectName(QStringLiteral("base"));
-        base->setGeometry(QRect(10, 30, 491, 491));
+        base->setGeometry(QRect(10, 30, 491, 461));
         base->setAutoFillBackground(true);
         base->setStyleSheet(QStringLiteral(""));
+        base->setMidLineWidth(0);
         threeDView = new QWidget();
         threeDView->setObjectName(QStringLiteral("threeDView"));
         base->addWidget(threeDView);
@@ -428,7 +443,7 @@ public:
         base->addWidget(twoDView);
         layoutWidget = new QWidget(view_box);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(9, 9, 481, 26));
+        layoutWidget->setGeometry(QRect(10, 0, 481, 26));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -508,9 +523,6 @@ public:
         threeDButton = new QPushButton(centralWidget);
         threeDButton->setObjectName(QStringLiteral("threeDButton"));
         threeDButton->setGeometry(QRect(90, 0, 75, 23));
-        debug = new QPlainTextEdit(centralWidget);
-        debug->setObjectName(QStringLiteral("debug"));
-        debug->setGeometry(QRect(30, 580, 461, 65));
         realTimeButton = new QPushButton(centralWidget);
         realTimeButton->setObjectName(QStringLiteral("realTimeButton"));
         realTimeButton->setGeometry(QRect(170, 0, 75, 23));
@@ -519,10 +531,21 @@ public:
         singleFrameButton->setGeometry(QRect(250, 0, 75, 23));
         rate = new QLabel(centralWidget);
         rate->setObjectName(QStringLiteral("rate"));
-        rate->setGeometry(QRect(340, 10, 54, 12));
+        rate->setGeometry(QRect(410, 10, 54, 12));
         pos = new QLabel(centralWidget);
         pos->setObjectName(QStringLiteral("pos"));
-        pos->setGeometry(QRect(460, 10, 54, 12));
+        pos->setGeometry(QRect(470, 10, 54, 12));
+        comboBox = new QComboBox(centralWidget);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(330, 0, 69, 22));
+        horizontalLayoutWidget = new QWidget(centralWidget);
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(10, 550, 511, 71));
+        imgList = new QHBoxLayout(horizontalLayoutWidget);
+        imgList->setSpacing(6);
+        imgList->setContentsMargins(11, 11, 11, 11);
+        imgList->setObjectName(QStringLiteral("imgList"));
+        imgList->setContentsMargins(0, 0, 0, 0);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -655,30 +678,16 @@ public:
         label->setText(QApplication::translate("MainWindow", "\346\265\213\351\207\217\351\230\210\345\200\274:", 0));
         limitValue->setText(QApplication::translate("MainWindow", "3", 0));
         label_3->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
-        roiColor->clear();
-        roiColor->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "red", 0)
-         << QApplication::translate("MainWindow", "white", 0)
-         << QApplication::translate("MainWindow", "green", 0)
-         << QApplication::translate("MainWindow", "blue", 0)
-         << QApplication::translate("MainWindow", "cyan", 0)
-         << QApplication::translate("MainWindow", "magenta", 0)
-         << QApplication::translate("MainWindow", "yellow", 0)
-         << QApplication::translate("MainWindow", "dim gray", 0)
-         << QApplication::translate("MainWindow", "gray", 0)
-         << QApplication::translate("MainWindow", "light gray", 0)
-         << QApplication::translate("MainWindow", "medium slate blue", 0)
-         << QApplication::translate("MainWindow", "coral", 0)
-         << QApplication::translate("MainWindow", "slate blue", 0)
-         << QApplication::translate("MainWindow", "spring green", 0)
-         << QApplication::translate("MainWindow", "orange red", 0)
-         << QApplication::translate("MainWindow", "orange", 0)
-         << QApplication::translate("MainWindow", "dark olive green", 0)
-         << QApplication::translate("MainWindow", "pink", 0)
-         << QApplication::translate("MainWindow", "cadet blue", 0)
-         << QApplication::translate("MainWindow", "black", 0)
-        );
+        roiColor->setText(QString());
         groupBox->setTitle(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\210\227\350\241\250", 0));
+        QTableWidgetItem *___qtablewidgetitem8 = roiList->horizontalHeaderItem(0);
+        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = roiList->horizontalHeaderItem(1);
+        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204", 0));
+        QTableWidgetItem *___qtablewidgetitem10 = roiList->horizontalHeaderItem(2);
+        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "\347\256\227\346\263\225", 0));
+        QTableWidgetItem *___qtablewidgetitem11 = roiList->horizontalHeaderItem(3);
+        ___qtablewidgetitem11->setText(QApplication::translate("MainWindow", "\351\230\210\345\200\274", 0));
         view_box->setTitle(QString());
         progressBar->setFormat(QApplication::translate("MainWindow", "%p%", 0));
         videoFrame->setText(QString());

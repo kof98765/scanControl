@@ -389,3 +389,9 @@ disp_2d
 "计算高差时间:" 63 ms
 "计算所有高差时间" 64 ms
 "计算所有平面度时间" 0 ms
+18:47:04.491: rowcount 0
+18:47:06.260: A error occured during searching for connected scanCONTROL -253 
+
+11:10:35.862: rowcount 0
+11:10:39.113: A error occured during searching for connected scanCONTROL -253 
+

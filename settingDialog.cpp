@@ -98,7 +98,7 @@ void mySettings::on_Button_Yes_clicked()
 void mySettings::on_open_clicked()
 {
 
-     filePath=QFileDialog::getExistingDirectory(this,QStringLiteral("打开图像目录"),".",QFileDialog::ShowDirsOnly);
+     filePath=QFileDialog::getOpenFileName(this,QStringLiteral("打开图像"),".",("image (*.tif *.bmp *.jpg *.jpeg)"));
      qDebug()<<filePath;
      ui->path->setText(filePath);
 }
@@ -166,6 +166,7 @@ void mySettings::on_resampleValue_currentIndexChanged(int index)
 
 void mySettings::on_profileCount_valueChanged(int arg1)
 {
+
     set.setValue("profileCount",arg1);
 }
 

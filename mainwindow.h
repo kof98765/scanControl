@@ -13,7 +13,7 @@
 #include "dialogimgparam.h"
 #include "imgview.h"
 #include "imgbase.h"
-
+#include "imgListView.h"
 #include "reflectcontrol.h"
 #include "robot.h"
 #include "summarizing.h"
@@ -133,6 +133,7 @@ private:
     QSettings set;
     Robot *robot;
     pointAnalyze *point;
+    imgListView *imgView;
     bool isRunning;
     reflectControl *ref;
     QTimer *timer;

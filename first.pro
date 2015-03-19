@@ -33,7 +33,7 @@ QMAKE_LIBDIR +="../pcl"
 
 
 #QMAKE_LIBDIR +=./
-LIBS    +=halcon.lib halconcpp.lib qwt.lib pcl_io_release.lib pcl_common_release.lib PCL_Library_Dll.lib
+LIBS    +=halcon.lib halconcpp.lib qwt.lib  pcl_io_release.lib  pcl_common_release.lib PCL_Library_Dll.lib
 
 
 
@@ -52,7 +52,8 @@ SOURCES += main.cpp\
     profileget.cpp \
     msghandlerwapper.cpp \
     settingDialog.cpp \
-    glwidget.cpp
+    glwidget.cpp \
+    imgListView.cpp
 
 
     profileget.cpp \
@@ -78,7 +79,8 @@ HEADERS  += mainwindow.h \
     msghandlerwapper.h \
     settingDialog.h \
     glwidget.h \
-    pcl/PCL_Library_Dll.h
+    pcl/PCL_Library_Dll.h \
+    imgListView.h
 
     profileget.h \
 

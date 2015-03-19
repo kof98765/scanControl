@@ -75,6 +75,7 @@ void profileGet::initDevice()
 
      m_uiRecivedProfileCount = 0;
      int iRetValue;
+	 
      if(bConnected)
      {
          qDebug() << "Disconnect the scanCONTROL\n";
@@ -282,6 +283,8 @@ void profileGet::readSettings()
 void profileGet::flushSettings()
 {
 
+    if(!bConnected)
+        return;
     int iRetValue;
     uiShutterTime = set.value("shutterTime",100).toUInt();
     uiIdleTime = set.value("idleTime",900).toUInt();
@@ -340,10 +343,7 @@ void profileGet::flushSettings()
     qDebug("trigger:%x",trigger);
     int t=(set.value("trigger",0).toInt());
     qDebug()<<"trigger mode"<<t;
-    if(t)
-        isExternalTrigger=true;
-    else
-        isExternalTrigger=false;
+
    // if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, trigger)) < GENERAL_FUNCTION_OK)
    // {
    //     OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
@@ -390,15 +390,17 @@ void profileGet::flushSettings()
 
 
     qDebug("ready to get %d profile",m_uiNeededProfileCount);
-    vdValueX.resize(m_uiResolution*m_uiNeededProfileCount);
-    vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount);
-    vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount);
+    vdValueX.resize(m_uiResolution*m_uiNeededProfileCount*10);
+    vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount*10);
+    vdValueIntensity.resize(m_uiResolution*m_uiNeededProfileCount*10);
+    m_vucProfileBuffer.resize(m_uiResolution*64*m_uiNeededProfileCount*10);
+    m_vucProfileBuffer2.resize(m_uiResolution*64*m_uiNeededProfileCount*10);
 
 }
 void profileGet::setExternTrigger(int index)
 {
     int iRetValue;
-    isExternalTrigger=false;
+
     trigger|=(index<<25);
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x000000)) < GENERAL_FUNCTION_OK)
     {
@@ -460,7 +462,14 @@ void profileGet::getVideoFrame()
       OnError("Error during saveProfile", iRetValue);
       return ;
     }
-
+    /*
+    if((iRetValue = m_pLLT->GetActualProfile(&vucVideoBuffer[0], (unsigned int)vucVideoBuffer.size(), PROFILE, NULL))
+         != vucVideoBuffer.size())
+      {
+        OnError("Error during GetActualProfile", iRetValue);
+        return ;
+      }
+      */
 }
 void profileGet::getSingleFrame()
 {
@@ -510,6 +519,13 @@ void profileGet::startSingleFrame()
 
     }
     */
+	qDebug()<<"set call back";
+	//设置回调函数
+	if((iRetValue = m_pLLT->RegisterCallback(STD_CALL, newProfile, 0)) < GENERAL_FUNCTION_OK)
+	{
+		OnError("Error during RegisterCallback", iRetValue);
+		return;
+	}
     //设置帧类型
     qDebug() << "Profile config set to PROFILE\n";
     if((iRetValue = m_pLLT->SetProfileConfig(PROFILE)) < GENERAL_FUNCTION_OK)
@@ -518,7 +534,7 @@ void profileGet::startSingleFrame()
 
     }
     //设置触发
-    isExternalTrigger=false;
+
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x000000)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
@@ -563,15 +579,14 @@ void profileGet::startTrigger()
 
     tmp.resize(m_uiResolution*m_uiNeededProfileCount);
 
-    m_vucProfileBuffer.resize(m_uiResolution*64*m_uiNeededProfileCount);
-    m_vucProfileBuffer2.resize(m_uiResolution*64*m_uiNeededProfileCount);
+
     //设置帧类型
     if((iRetValue = m_pLLT->SetProfileConfig(PROFILE)) < GENERAL_FUNCTION_OK)
     {
       OnError("Error during SetProfileConfig", iRetValue);
 
     }
-    isExternalTrigger=true;
+
     //设置触发器
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, trigger)) < GENERAL_FUNCTION_OK)
     {
@@ -615,14 +630,20 @@ void profileGet::startVedio()
 
     preGetDate();
     //设置触发
-    isExternalTrigger=false;
+
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x000000)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
 
     }
     mode=3;
-
+	qDebug()<<"set call back";
+	//设置回调函数
+	if((iRetValue = m_pLLT->RegisterCallback(STD_CALL, newProfile, 0)) < GENERAL_FUNCTION_OK)
+	{
+		OnError("Error during RegisterCallback", iRetValue);
+		return;
+	}
     qDebug() << "Enable the video stream\n";
     if((iRetValue = m_pLLT->SetPacketSize(m_uiPacketSizeMAX)) < GENERAL_FUNCTION_OK)
     {
@@ -635,7 +656,7 @@ void profileGet::startVedio()
 
     }
     //开始视频模式
-    if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, true, &uiWidth, &uiHeight)) < GENERAL_FUNCTION_OK)
+    if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_0, true, &uiWidth, &uiHeight)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during TransferVideoStream start", iRetValue);
         return ;
@@ -651,7 +672,7 @@ void profileGet::stopVedio()
     mode=1;
     qDebug() << "Disable the video stream\n";
     //停止视频模式
-    if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, false, NULL, NULL)) < GENERAL_FUNCTION_OK)
+    if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_0, false, NULL, NULL)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during TransferVideoStream stop", iRetValue);
         return ;
@@ -677,7 +698,7 @@ void profileGet::GetProfiles_Callback()
 
     }
     //设置触发
-    isExternalTrigger=false;
+
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, 0x000000)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);
@@ -698,8 +719,6 @@ void profileGet::GetProfiles_Callback()
         OnError("Error during RegisterCallback", iRetValue);
         return;
     }
-    //Resize the profile buffer to the estimated profile size
-    m_vucProfileBuffer.resize(m_uiResolution*64*m_uiNeededProfileCount);
 
     qDebug() << "Enable the measurement\n";
     if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, true)) < GENERAL_FUNCTION_OK)
@@ -707,7 +726,7 @@ void profileGet::GetProfiles_Callback()
         OnError("Error during TransferProfiles", iRetValue);
         return;
     }
-
+/*
     qDebug() << "Wait for one profile\n";
 
     if(WaitForSingleObject(m_hProfileEvent, 50000) != WAIT_OBJECT_0)
@@ -715,43 +734,8 @@ void profileGet::GetProfiles_Callback()
         qDebug() << "Error getting profile over the callback \n\n";
         return;
     }
+*/
 
-    qDebug() << "Disable the measurement\n";
-    if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, false)) < GENERAL_FUNCTION_OK)
-    {
-        OnError("Error during TransferProfiles", iRetValue);
-        return;
-    }
-
-    //Test the size from the profile
-    if(m_uiProfileDataSize == m_uiResolution*64)
-        qDebug() << "Profile size is OK \n";
-    else
-    {
-        qDebug() << "Profile size is wrong \n\n";
-        return;
-    }
-
-    qDebug() << m_uiRecivedProfileCount << "profiles have recived \n";
-
-    qDebug() << "Converting of profile data from the first reflection\n";
-
-
-
-    iRetValue = m_pLLT->ConvertProfile2Values(&m_vucProfileBuffer[0], m_uiResolution*m_uiNeededProfileCount, PROFILE, m_tscanCONTROLType,
-    0, true, NULL, &vdValueIntensity[0], NULL, &vdValueX[0], &vdValueZ[0], NULL, NULL);
-    if(((iRetValue & CONVERT_X) == 0) || ((iRetValue & CONVERT_Z) == 0))
-    {
-        OnError("Error during Converting of profile data", iRetValue);
-        return;
-    }
-    qDebug()<<"convert complete";
-    emit putImagebyPointer3(&vdValueX[0],(double *)(&vdValueIntensity[0]),&vdValueZ[0],1280,m_uiNeededProfileCount);
-
-//
-    emit putImagebyPointer1(&vdValueZ[0],1280,m_uiNeededProfileCount);
-
-    qDebug()<<QStringLiteral("扫描时间:")<<time.elapsed()<<"msec";
   //}
 
 //  DisplayTimestamp(&m_vucProfileBuffer[m_uiNeededProfileCount*m_uiResolution*64-16]);
@@ -769,15 +753,6 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
         return;
     if(uiSize > 0)
     {
-        /*
-        if(m_uiRecivedProfileCount < m_uiNeededProfileCount)
-        {
-            //If the needed profile count not arrived: copy the new Profile in the buffer and increase the recived buffer count
-            m_uiProfileDataSize = uiSize;
-            memcpy(&m_vucProfileBuffer[m_uiRecivedProfileCount*uiSize], pucData, uiSize);
-            m_uiRecivedProfileCount++;
-        }
-        */
 
         m_uiProfileDataSize = uiSize;
 
@@ -795,23 +770,23 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
             OnError("Error during Converting of profile data", iRetValue);
             return;
         }
-       // f.write((char *)&p[m_uiRecivedProfileCount*m_uiResolution],m_uiResolution*4);
-       // f.flush();
+
         emit dispSingleFrame(0,0,&vdValueX[m_uiRecivedProfileCount*m_uiResolution],&p[m_uiRecivedProfileCount*m_uiResolution],m_uiResolution);
 
-        if(isExternalTrigger)
+        if(mode==0|mode==1)
         {
 
-            //emit dispSingleFrame(0,&vdValueIntensity[0],&vdValueX[0],&vdValueZ[0],m_uiResolution);
-            if((m_uiRecivedProfileCount+1)%100==0&m_uiRecivedProfileCount>0)
+            int rate=set.value("rate",100).toInt();
+            if((m_uiRecivedProfileCount+1)%rate==0&m_uiRecivedProfileCount>0)
             {
 
-                emit putImagebyPointer1(p,1280,(m_uiRecivedProfileCount+1)/100*100);
+                emit putImagebyPointer1(p,m_uiResolution,(m_uiRecivedProfileCount+1)/rate*rate);
 
             }
         }
         m_uiRecivedProfileCount++;
         emit heartPack();
+        //当数据达到设定帧大小时
         if(m_uiRecivedProfileCount >= m_uiNeededProfileCount)
         {
             //If the needed profile count is arived: set the event
@@ -825,7 +800,28 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
             }
             if(mode==1)
             {
-                SetEvent(m_hProfileEvent);
+                qDebug() << "Disable the measurement\n";
+                if((iRetValue = m_pLLT->TransferProfiles(NORMAL_TRANSFER, false)) < GENERAL_FUNCTION_OK)
+                {
+                    OnError("Error during TransferProfiles", iRetValue);
+                    return;
+                }
+
+                //Test the size from the profile
+                if(m_uiProfileDataSize == m_uiResolution*64)
+                    qDebug() << "Profile size is OK \n";
+                else
+                {
+                    qDebug() << "Profile size is wrong \n\n";
+                    return;
+                }
+
+                qDebug() << m_uiRecivedProfileCount << "profiles have recived \n";
+
+
+                emit putImagebyPointer3(&vdValueX[0],(double *)(&vdValueIntensity[0]),&vdValueZ[0],1280,m_uiNeededProfileCount);
+
+
                 m_uiRecivedProfileCount=0;
                 return;
             }

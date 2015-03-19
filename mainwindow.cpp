@@ -33,12 +33,16 @@ MainWindow::MainWindow(QWidget *parent) :
     plot = new Plot(ui->base->widget(2));
     QStringList str;
     str<<"value"<<"pointNum"<<"1280"<<"100";
-    qDebug()<<"start";
+
     plot->initPlot(str);
     plot->insertCurve(0,0,"test");
     plot->setYScale(-100,100);
     plot->setXScale(-40,40);
     plot->resize(ui->base->widget(2)->size());
+    imgView=new imgListView();
+    imgView->setLayout(ui->imgList);
+
+
 
     timer=new QTimer();
     eventTimer=new QTimer();
@@ -90,6 +94,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->base->installEventFilter(this);
     ui->view_box->installEventFilter(this);
     ui->roiList->installEventFilter(this);
+    ui->imgList->installEventFilter(this);
     //glWidget->setMouseTracking(true);
     init_connect();
 
@@ -99,7 +104,9 @@ MainWindow::MainWindow(QWidget *parent) :
 bool MainWindow::eventFilter(QObject *target, QEvent *event)
 {
     static QPoint start,end,threeDstart,threeDend;
-
+    if (clickLabel* label = dynamic_cast<clickLabel*>(sender())){
+            qDebug()<<ui->imgList->indexOf(label);
+        }
     if(target==ui->base)
     {
 
@@ -125,7 +132,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
 
 
            end=mouse->pos();
-		   qDebug()<<end;
+
             //start=mouse->pos();
             if(isDrag)
             {
@@ -136,7 +143,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
                {
 					if((abs(x)>10)|(abs(y)>10))
                         hal->moveImg(start.x()-end.x(),start.y()-end.y());
-                  
+                    ui->base->update();
                     if(leftPress&rightPress)
                     {
                          //  hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"move");
@@ -276,6 +283,7 @@ void MainWindow::init_connect()
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
     connect(hal,SIGNAL(sendPlaneness(int,double,double)),this,SLOT(recvPlaneness(int,double,double)));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
+    connect(hal,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
     connect(hal,SIGNAL(sendHeightSub(QString,double,double,double))
             ,this,SLOT(recvHeightSub(QString,double,double,double)));
     connect(profile,SIGNAL(dispZ(QString)),hal,SLOT(read_img(QString)));
@@ -297,6 +305,10 @@ void MainWindow::init_connect()
     connect(setDialog,SIGNAL(setExternTrigger(int)),profile,SLOT(setExternTrigger(int)));
     connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(setDialog,SIGNAL(netTest(QString)),this,SLOT(netTest(QString)));
+
+    connect(hal,SIGNAL(addImg(Hobject*)),imgView,SLOT(addImg(Hobject*)));
+    connect(hal,SIGNAL(deleteImg(int )),imgView,SLOT(deleteImg(int )));
+    connect(imgView,SIGNAL(selectImg(int)),hal,SLOT(selectImg(int)));
 }
 
 void MainWindow::Error(QString str)
@@ -499,6 +511,7 @@ void MainWindow::detect()
 */
 void MainWindow::startButton_clicked()
 {
+	qDebug()<<"start";
    this->on_actionReset_triggered();
     //hal->RectHeightSub();
    pass=0;
@@ -692,7 +705,7 @@ void MainWindow::on_loadFile_clicked()
     status=1;
 
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
-    hal->read_img("test.tif");
+    hal->read_img(set.value("path","test.tif").toString());
 	
 }
 
@@ -727,7 +740,7 @@ void MainWindow::outputMessage(QtMsgType type,QString str)
 {
     QTime time;
     str=time.currentTime().toString("hh:mm:ss.zzz: ")+str;
-    ui->debug->appendPlainText(str);
+
     setDialog->debugMessage(str);
     debug.write((str+"\n").toUtf8().data());
 
