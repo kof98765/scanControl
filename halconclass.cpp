@@ -13,6 +13,7 @@ halconClass::halconClass(QObject *parent) :
     step=0;
     recvCount=0;
     index=0;
+    isLoadFile=false;
     is3D=false;
     hasData=false;
     imgData=new double[1280000];
@@ -70,11 +71,7 @@ void halconClass::close_the_window()
 */
 void halconClass::read_img(QString str)
 {
-    char c[100];
-
-   //this->start();
-
-
+   char c[100];
    HTuple area;
    HTuple Width,Height;
    Hobject tmp;
@@ -88,12 +85,13 @@ void halconClass::read_img(QString str)
        emit Error("file not found");
        return;
    }
+   isLoadFile=true;
    qDebug()<<"read"<<str;
-   read_image(&result_img,path.toUtf8().data());
+   read_image(&tmp,path.toUtf8().data());
 
-   get_image_size(result_img,&Width,&Height);
+   get_image_size(tmp,&Width,&Height);
 
-   get_image_pointer1(result_img,(long*)&p,type,&w,&h);
+   get_image_pointer1(tmp,(long*)&p,type,&w,&h);
    //getImagebyPointer3(0,0,p,w,h);
    qDebug()<<w<<h<<type;
 
@@ -191,16 +189,13 @@ void halconClass::disp_img()
             disp_obj(Image,WindowHandle);
             copy_image(Image,&result_img);
             set_window_param(WindowHandle,"interactive_plot", "true");
-            qDebug()<<"disp_3d";
         }
         else
         {
+
             disp_obj(Image,WindowHandle);
             copy_image(Image,&result_img);
-            qDebug()<<"disp_2d";
         }
-
-
     }
 
     if(HDevWindowStack::IsOpen())
@@ -271,7 +266,7 @@ void halconClass::moveImg(int x,int y)
 }
 void halconClass::set_pos(int x,int y)
 {
-	qDebug()<<"set_pos";
+
     if(!HDevWindowStack::IsOpen())
         return;
     if(!is3D&hasData)
@@ -295,7 +290,7 @@ void halconClass::zoomOut()
 {
     if(is3D)
         return;
-	qDebug()<<"zoomOut";
+
     if (HDevWindowStack::IsOpen()&hasData)
     {
 
@@ -321,7 +316,7 @@ void halconClass::zoomIn()
 {
     if(is3D)
         return;
-	qDebug()<<"zoomIn";
+
     if (HDevWindowStack::IsOpen()&hasData)
     {
 
@@ -1095,30 +1090,35 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     Hlong     width,height;
     float *pointer=0,*p=(float *)pdValueZ;
     time.start();
+    tmpImage.Reset();
     Image.Reset();
+    result_img.Reset();
+    if(h==set.value("rate").toInt())
+        clearData();
+    gen_image_const(&Imagetemp,"real",w,set.value("profileCount",1000).toUInt());
+    get_image_pointer1(Imagetemp,(long*)&pointer,type,&width,&height);
 
-    gen_image_const(&Image,"real",w,set.value("profileCount",1000).toUInt());
-    get_image_pointer1(Image,(long*)&pointer,type,&width,&height);
-    qDebug()<<width<<height<<sizeof pdValueZ;
-    qDebug("%x,%x,%d",pdValueZ,&pdValueZ[1280000],&pdValueZ[1280000]-pdValueZ);
-    qDebug()<<sizeof(float)<<sizeof(double);
     set_part(WindowHandle,0,0,set.value("profileCount",1000).toInt(),w);
     for (int row=0; row<set.value("profileCount",1000).toUInt(); row++)
     {
 
         for (int col=0; col<width; col++)
         {
-
-          pointer[row*width+col] =*p++;
+            if(!isLoadFile)
+                pointer[row*width+col] =*pdValueZ++;
+            else
+                pointer[row*width+col] =*p++;
         }
     }
+    isLoadFile=false;
     qDebug()<<"read time:"<<time.elapsed()<<"msec";
 
 
   //  write_image(RGBImage,"bmp",0,"test.bmp");
 
-    write_image(Image,"tiff",0,"test");
+    write_image(Imagetemp,"tiff",0,"test");
 
+    copy_image(Imagetemp,&Image);
 
     if(h>=set.value("profileCount",1000).toUInt())
 	{
@@ -1126,10 +1126,11 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 		img_height=height;
 		scale=width/win_width;
         Hobject *tmp=new Hobject;
-        copy_image(Image,tmp);
+        copy_image(Imagetemp,tmp);
         imgList.push_back(tmp);
         emit addImg(tmp);
-        qDebug()<<imgList.size();
+        qDebug()<<"imgList.size="<<imgList.size();
+
         if(imgList.size()>8)
         {
             clear_obj(*imgList.takeFirst());

@@ -77,7 +77,7 @@ private:
     double *imgData;
     int recvCount;
     PointCloud::Ptr *inCloud;
-    Hobject result_img,Image,RGBImage;
+    Hobject result_img,Image,RGBImage,tmpImage;
     QMap<QString,Hobject*> rectList;
     HTuple minLength;
     HTuple maxLength;
@@ -102,6 +102,7 @@ private:
     int smothWidth;
     int smothHeight;
     bool hasData;
+    bool isLoadFile;
     int index;
     HTuple centerX,centerY;
     QList<Hobject*> imgList;

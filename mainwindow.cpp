@@ -130,9 +130,13 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
         {
             QMouseEvent *mouse=static_cast<QMouseEvent *>(event);
 
+            QPoint m=mapFromGlobal(mouse->globalPos());
+
 
            end=mouse->pos();
-
+           if(end.x()<0|end.y()<0|end.x()>ui->base->width()|end.y()>ui->base->height())
+               return QWidget::eventFilter(target,event);
+             ui->pos->setText(QString("%1,%2").arg(end.x()).arg(end.y()));
             //start=mouse->pos();
             if(isDrag)
             {
@@ -170,7 +174,12 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
         if(event->type()==QEvent::MouseButtonRelease)
         {
             QMouseEvent *mouse=static_cast<QMouseEvent *>(event);
+            QPoint m=mapFromGlobal(mouse->globalPos());
+
+
             end=mouse->pos();
+            if(end.x()<0|end.y()<0|end.x()>ui->base->width()|end.y()>ui->base->height())
+                return QWidget::eventFilter(target,event);
             isDrag=false;
             if(mouse->button()==Qt::LeftButton)
                 leftPress=false;
@@ -515,6 +524,7 @@ void MainWindow::startButton_clicked()
    this->on_actionReset_triggered();
     //hal->RectHeightSub();
    pass=0;
+   ui->rate->setText("0");
 
    if(isAuto)
    {

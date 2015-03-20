@@ -540,7 +540,7 @@ public:
         comboBox->setGeometry(QRect(330, 0, 69, 22));
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 550, 511, 71));
+        horizontalLayoutWidget->setGeometry(QRect(10, 540, 511, 80));
         imgList = new QHBoxLayout(horizontalLayoutWidget);
         imgList->setSpacing(6);
         imgList->setContentsMargins(11, 11, 11, 11);

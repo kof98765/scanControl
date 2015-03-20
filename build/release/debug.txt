@@ -395,3 +395,284 @@ disp_2d
 11:10:35.862: rowcount 0
 11:10:39.113: A error occured during searching for connected scanCONTROL -253 
 
+16:48:07.685: rowcount 0
+16:48:10.287: There is 1 scanCONTROL connected 
+
+16:48:10.288: interface ("2852017534")
+16:48:10.288: 
+Select the device interface  0 2852017534 
+
+16:48:10.288: Connecting to scanCONTROL
+
+16:48:10.377: connect succesful
+16:48:10.377: Get scanCONTROL type 3002
+16:48:10.377: The scanCONTROL is a undefined type
+Please contact Micro-Epsilon for a newer SDK
+
+
+16:48:10.378: Get all possible resolutions
+
+16:48:10.379: resolution ("1280", "640", "320", "160", "0", "0")
+16:48:10.381: filter read c00
+16:48:10.382: threshold read c80
+16:48:10.382: ShutterTime read 100000a
+16:48:10.383: IdleTime read 3de
+16:48:10.384: trigger read 1200000
+16:48:10.385: IOConfigure read 20
+16:48:10.386: Processing read a0f
+16:48:10.386: minPackSize 128 maxPackSize 4096
+16:48:10.391: Set resolution to  1280 
+
+16:48:10.403: Set shutter time to  100 
+
+16:48:10.404: Set idle time to  900 
+
+16:48:10.404: filter c00
+16:48:10.405: filter c00
+16:48:10.406: trigger:1200000
+16:48:10.407: trigger:3200000
+16:48:10.407: trigger mode 1
+16:48:10.407: IOConfigure:20
+16:48:10.408: IOConfigure:5
+16:48:10.409: Sets the Firewire PacketSize to  4096 
+
+16:48:10.410: Processing:a4f
+16:48:10.411: threshold:c80
+16:48:10.411: Register the callback
+
+16:48:10.411: ready to get 1000 profile
+16:48:10.606: finish setting
+16:48:11.295: start
+16:48:11.295: rowcount 0
+16:48:11.295: clear
+16:48:11.306: rowcount 7
+16:48:11.317: enable the measurement
+
+16:48:13.982: Disable the measurement
+
+16:48:13.984: 
+Demonstrate the profile transfer via callback function
+
+16:48:13.984: Enable the measurement
+
+16:48:14.014: Wait for one profile
+
+16:48:15.092: recv: 100
+16:48:15.093: clear
+16:48:15.254: read time: 161 msec
+16:48:16.090: recv: 200
+16:48:16.247: read time: 156 msec
+16:48:17.091: recv: 300
+16:48:17.248: read time: 156 msec
+16:48:18.091: recv: 400
+16:48:18.266: read time: 175 msec
+16:48:19.092: recv: 500
+16:48:19.255: read time: 163 msec
+16:48:20.091: recv: 600
+16:48:20.260: read time: 167 msec
+16:48:21.091: recv: 700
+16:48:21.251: read time: 160 msec
+16:48:22.092: recv: 800
+16:48:22.254: read time: 161 msec
+16:48:23.092: recv: 900
+16:48:23.261: read time: 167 msec
+16:48:24.091: recv: 1000
+16:48:24.237: read time: 145 msec
+16:48:24.354: 0
+16:48:24.355: imgList.size= 1
+16:48:24.395: start pointCloud 1280 1000
+16:48:24.396: 6b641700,test_function
+16:48:24.596: run
+16:48:24.747: end pointCloud,prossess time: 352 ms
+16:48:24.751: "开始计算高差"
+16:48:24.769: 81.152 81.432 0.279999
+16:48:24.781: 81.114 81.316 0.202003
+16:48:24.790: 81.344 81.522 0.178001
+16:48:24.798: 81.332 81.54 0.208
+16:48:24.803: 81.058 81.154 0.0960007
+16:48:24.806: "计算高差时间:" 54 ms
+16:48:24.807: "结束计算高差"
+16:48:24.809: start and end 137 633 239 707
+16:48:24.813: cacule flatness 1
+16:48:24.815: start and end 591 501 748 633
+16:48:24.821: cacule flatness 2
+16:48:24.822: team 0 "总平整度为" 7.56954e-07 2.30601 13 ms
+16:48:24.824: "计算所有平面度时间" 732 ms
+16:48:24.835: Disable the measurement
+
+16:48:24.841: Profile size is OK 
+
+16:48:24.841: 0 profiles have recived 
+
+16:48:24.949: rowcount 7
+16:48:24.952: read "D:/qt/first/build/rgb.tif"
+16:48:25.232: 1280 1000 real
+16:48:25.233: recv: 1000
+16:48:25.372: read time: 138 msec
+16:48:25.479: 1
+16:48:25.480: imgList.size= 2
+16:48:25.523: 1280 1000
+16:48:25.525: read finish scale 2
+16:48:30.630: 
+Demonstrate the profile transfer via callback function
+
+16:48:30.632: Enable the measurement
+
+16:48:30.652: Wait for one profile
+
+16:48:31.642: recv: 100
+16:48:31.646: clear
+16:48:31.815: read time: 172 msec
+16:48:32.642: recv: 200
+16:48:32.808: read time: 166 msec
+16:48:33.642: recv: 300
+16:48:33.812: read time: 169 msec
+16:48:34.641: recv: 400
+16:48:34.797: read time: 155 msec
+16:48:35.642: recv: 500
+16:48:35.802: read time: 159 msec
+16:48:36.640: recv: 600
+16:48:36.808: read time: 167 msec
+16:48:37.640: recv: 700
+16:48:37.802: read time: 161 msec
+16:48:38.640: recv: 800
+16:48:38.802: read time: 161 msec
+16:48:39.643: recv: 900
+16:48:39.808: read time: 165 msec
+16:48:40.643: recv: 1000
+16:48:40.803: read time: 159 msec
+16:48:40.916: 2
+16:48:40.917: imgList.size= 3
+16:48:40.956: start pointCloud 1280 1000
+16:48:40.957: 6b641700,test_function
+16:48:41.156: run
+16:48:41.207: end pointCloud,prossess time: 251 ms
+16:48:41.211: "开始计算高差"
+16:48:41.224: 81.152 81.432 0.279999
+16:48:41.235: 81.114 81.316 0.202003
+16:48:41.244: 81.344 81.522 0.178001
+16:48:41.252: 81.332 81.54 0.208
+16:48:41.257: 81.058 81.154 0.0960007
+16:48:41.259: "计算高差时间:" 47 ms
+16:48:41.260: "结束计算高差"
+16:48:41.261: start and end 137 633 239 707
+16:48:41.263: cacule flatness 1
+16:48:41.264: start and end 591 501 748 633
+16:48:41.270: cacule flatness 2
+16:48:41.271: team 0 "总平整度为" 7.56954e-07 2.30601 11 ms
+16:48:41.273: "计算所有平面度时间" 629 ms
+16:48:41.274: Disable the measurement
+
+16:48:41.279: Profile size is OK 
+
+16:48:41.280: 0 profiles have recived 
+
+16:48:48.768: 
+Demonstrate the profile transfer via callback function
+
+16:48:48.769: Enable the measurement
+
+16:48:48.803: Wait for one profile
+
+16:48:49.780: recv: 100
+16:48:49.785: clear
+16:48:49.950: read time: 169 msec
+16:48:50.780: recv: 200
+16:48:50.937: read time: 156 msec
+16:48:51.782: recv: 300
+16:48:51.944: read time: 161 msec
+16:48:52.785: recv: 400
+16:48:52.937: read time: 151 msec
+16:48:53.781: recv: 500
+16:48:53.939: read time: 157 msec
+16:48:54.781: recv: 600
+16:48:54.945: read time: 163 msec
+16:48:55.781: recv: 700
+16:48:55.939: read time: 158 msec
+16:48:56.782: recv: 800
+16:48:56.955: read time: 172 msec
+16:48:57.781: recv: 900
+16:48:57.940: read time: 158 msec
+16:48:58.783: recv: 1000
+16:48:58.954: read time: 170 msec
+16:48:59.073: 3
+16:48:59.075: imgList.size= 4
+16:48:59.119: start pointCloud 1280 1000
+16:48:59.120: 6b641700,test_function
+16:48:59.323: run
+16:48:59.377: end pointCloud,prossess time: 257 ms
+16:48:59.380: "开始计算高差"
+16:48:59.396: 81.152 81.432 0.279999
+16:48:59.408: 81.114 81.316 0.202003
+16:48:59.417: 81.344 81.522 0.178001
+16:48:59.425: 81.332 81.54 0.208
+16:48:59.431: 81.058 81.154 0.0960007
+16:48:59.435: "计算高差时间:" 53 ms
+16:48:59.436: "结束计算高差"
+16:48:59.437: start and end 137 633 239 707
+16:48:59.441: cacule flatness 1
+16:48:59.443: start and end 591 501 748 633
+16:48:59.451: cacule flatness 2
+16:48:59.452: team 0 "总平整度为" 1.46773e-07 1.0282 15 ms
+16:48:59.454: "计算所有平面度时间" 670 ms
+16:48:59.455: Disable the measurement
+
+16:48:59.463: Profile size is OK 
+
+16:48:59.464: 0 profiles have recived 
+
+16:49:00.560: display 0
+16:49:04.412: 
+Demonstrate the profile transfer via callback function
+
+16:49:04.414: Enable the measurement
+
+16:49:04.422: Wait for one profile
+
+16:49:05.410: recv: 100
+16:49:05.415: clear
+16:49:05.587: read time: 176 msec
+16:49:06.412: recv: 200
+16:49:06.594: read time: 180 msec
+16:49:07.410: recv: 300
+16:49:07.581: read time: 170 msec
+16:49:08.410: recv: 400
+16:49:08.571: read time: 159 msec
+16:49:09.414: recv: 500
+16:49:09.617: read time: 201 msec
+16:49:10.412: recv: 600
+16:49:10.579: read time: 166 msec
+16:49:11.410: recv: 700
+16:49:11.601: read time: 189 msec
+16:49:12.411: recv: 800
+16:49:12.583: read time: 171 msec
+16:49:13.411: recv: 900
+16:49:13.578: read time: 166 msec
+16:49:14.411: recv: 1000
+16:49:14.563: read time: 151 msec
+16:49:14.672: 4
+16:49:14.673: imgList.size= 5
+16:49:14.714: start pointCloud 1280 1000
+16:49:14.714: 6b641700,test_function
+16:49:14.911: run
+16:49:14.965: end pointCloud,prossess time: 252 ms
+16:49:14.968: "开始计算高差"
+16:49:14.982: 81.152 81.432 0.279999
+16:49:14.992: 81.114 81.316 0.202003
+16:49:15.002: 81.344 81.522 0.178001
+16:49:15.009: 81.332 81.54 0.208
+16:49:15.014: 81.058 81.154 0.0960007
+16:49:15.016: "计算高差时间:" 47 ms
+16:49:15.017: "结束计算高差"
+16:49:15.018: start and end 137 633 239 707
+16:49:15.020: cacule flatness 1
+16:49:15.021: start and end 591 501 748 633
+16:49:15.027: cacule flatness 2
+16:49:15.028: team 0 "总平整度为" 1.46773e-07 1.0282 10 ms
+16:49:15.030: "计算所有平面度时间" 618 ms
+16:49:15.031: Disable the measurement
+
+16:49:15.036: Profile size is OK 
+
+16:49:15.037: 0 profiles have recived 
+

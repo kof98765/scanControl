@@ -20,6 +20,7 @@ INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/Eigen/include"
 INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/FLANN/include"
 INCLUDEPATH += "$$(PCL_ROOT)/include/pcl-1.6"
 INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/Qhull/include"
+INCLUDEPATH+="lua/include"
 
 #INCLUDEPATH+= "D:/opencv/include/opencv"
 DEFINES+=QWT_DLL PCLLIBRARYDLL _AFXDLL
@@ -30,10 +31,10 @@ UI_DIR+=release
 QMAKE_LIBDIR  += "$$(HALCONROOT)/lib/x86sse2-win32"
 QMAKE_LIBDIR  +="$$(PCL_ROOT)"/lib
 QMAKE_LIBDIR +="../pcl"
-
+QMAKE_LIBDIR+="../lua"
 
 #QMAKE_LIBDIR +=./
-LIBS    +=halcon.lib halconcpp.lib qwt.lib  pcl_io_release.lib  pcl_common_release.lib PCL_Library_Dll.lib
+LIBS    +=halcon.lib halconcpp.lib lua53.lib qwt.lib  pcl_io_release.lib  pcl_common_release.lib PCL_Library_Dll.lib
 
 
 
@@ -53,10 +54,10 @@ SOURCES += main.cpp\
     msghandlerwapper.cpp \
     settingDialog.cpp \
     glwidget.cpp \
-    imgListView.cpp
-
-
+    imgListView.cpp\
     profileget.cpp \
+    lua/lua.cpp
+
 
 
 
@@ -80,9 +81,9 @@ HEADERS  += mainwindow.h \
     settingDialog.h \
     glwidget.h \
     pcl/PCL_Library_Dll.h \
-    imgListView.h
-
+    imgListView.h \
     profileget.h \
+    lua/lua.h
 
 
 FORMS    += mainwindow.ui \
@@ -93,6 +94,8 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     icons.qrc \
     ico/ico.qrc
+
+
 
 
 
