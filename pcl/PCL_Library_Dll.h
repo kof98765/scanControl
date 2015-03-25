@@ -94,17 +94,30 @@ PCLLIBRARYDLL int GetChildCloud(PointCloud::Ptr &inCloud, POINT point1,POINT poi
 	     */
 PCLLIBRARYDLL int GetChildPoint(PointCloud::Ptr &inCloud,Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,PointCloud::Ptr outCloud);
 
-		/** \brief 从区域点云中获取点
-		 * \param[in] 输入的原始点云
+		/** \brief 创建区域模板
 		 * \param[in] 输入2D的原始图片
 		 * \param[in] 输入的左上角坐标row
 		 * \param[in] 输入的左上角坐标col
 		 * \param[in] 输入的右下角坐标row
 		 * \param[in] 输入的右下角坐标col
-		 * \param[out] 返回的新的点云
+		 * \param[out] 返回的模板编号
 		 * \param[return] 成功返回1 
 	     */
-PCLLIBRARYDLL int GetChildPoint(PointCloud::Ptr &inCloud,Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,PointCloud::Ptr outCloud);
+PCLLIBRARYDLL int Create_template(Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,HTuple *hv_TemplateID);
+
+		/** \brief 搜索模板区域
+		 * \param[in] 输入2D的原始图片
+		 * \param[in] 输入的左上角坐标row
+		 * \param[in] 输入的左上角坐标col
+		 * \param[in] 输入的右下角坐标row
+		 * \param[in] 输入的右下角坐标col
+		 * \param[in] 输入的模板编号
+		 * \param[out] 返回的目标行坐标
+		 * \param[out] 返回的目标列坐标
+		 * \param[out] 返回的角度
+		 * \param[return] 成功返回1 
+	     */
+PCLLIBRARYDLL int Match_template(Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,HTuple hv_TemplateID,HTuple* hv_Row, HTuple *hv_Column,HTuple *hv_Angle);
 
 
 		/** \brief 从区域点云中获取点(高通，低通，中通),只能在halcon12下使用

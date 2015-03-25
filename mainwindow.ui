@@ -46,7 +46,7 @@
       <rect>
        <x>120</x>
        <y>10</y>
-       <width>121</width>
+       <width>101</width>
        <height>31</height>
       </rect>
      </property>
@@ -73,10 +73,10 @@
     <widget class="QPushButton" name="settings">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>230</x>
        <y>10</y>
-       <width>121</width>
-       <height>29</height>
+       <width>101</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -164,17 +164,12 @@
         </column>
         <column>
          <property name="text">
-          <string>区域名</string>
+          <string>分组</string>
          </property>
         </column>
         <column>
          <property name="text">
           <string>计算结果</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>分组</string>
          </property>
         </column>
         <column>
@@ -185,11 +180,6 @@
         <column>
          <property name="text">
           <string>最大值</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>位置</string>
          </property>
         </column>
        </widget>
@@ -243,7 +233,7 @@
          <item row="0" column="1">
           <widget class="QLineEdit" name="roiName"/>
          </item>
-         <item row="1" column="0">
+         <item row="2" column="0">
           <spacer name="verticalSpacer_2">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -256,14 +246,14 @@
            </property>
           </spacer>
          </item>
-         <item row="2" column="0">
+         <item row="3" column="0">
           <widget class="QLabel" name="label_6">
            <property name="text">
             <string>计算:</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
+         <item row="3" column="1">
           <widget class="QComboBox" name="func">
            <item>
             <property name="text">
@@ -277,8 +267,8 @@
            </item>
           </widget>
          </item>
-         <item row="3" column="0">
-          <spacer name="verticalSpacer_4">
+         <item row="4" column="0">
+          <spacer name="verticalSpacer_3">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
@@ -290,18 +280,62 @@
            </property>
           </spacer>
          </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_4">
+         <item row="5" column="0">
+          <widget class="QLabel" name="label">
            <property name="text">
-            <string>区域分组:</string>
+            <string>测量阈值:</string>
            </property>
           </widget>
          </item>
-         <item row="4" column="1">
-          <widget class="QComboBox" name="team">
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="limitValue">
+           <property name="text">
+            <string>3</string>
            </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>颜色:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QPushButton" name="roiColor">
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>分组:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="team">
            <item>
             <property name="text">
              <string>分组1</string>
@@ -342,71 +376,6 @@
              <string>分组8</string>
             </property>
            </item>
-           <item>
-            <property name="text">
-             <string>分组9</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <spacer name="verticalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>测量阈值:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLineEdit" name="limitValue">
-           <property name="text">
-            <string>3</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>颜色:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <spacer name="verticalSpacer">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="8" column="1">
-          <widget class="QPushButton" name="roiColor">
-           <property name="autoFillBackground">
-            <bool>false</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
           </widget>
          </item>
         </layout>
@@ -458,6 +427,39 @@
        </item>
       </layout>
      </widget>
+    </widget>
+    <widget class="QLabel" name="connect">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>10</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>未连接</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="reset">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>10</y>
+       <width>75</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;微软雅黑&quot;;</string>
+     </property>
+     <property name="text">
+      <string>复位</string>
+     </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="view_box">
@@ -784,16 +786,6 @@ border-radius:25px</string>
      <string>0,0</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>0</y>
-      <width>69</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
@@ -837,9 +829,9 @@ border-radius:25px</string>
     <addaction name="action_init"/>
     <addaction name="action_start"/>
     <addaction name="action"/>
-    <addaction name="action_pointAnalyze"/>
-    <addaction name="actionReset"/>
     <addaction name="actionTest"/>
+    <addaction name="actionReset"/>
+    <addaction name="actionCal"/>
     <addaction name="actionCallback"/>
    </widget>
    <addaction name="menu_2"/>
@@ -867,6 +859,8 @@ border-radius:25px</string>
    <addaction name="action_Open"/>
    <addaction name="action_start"/>
    <addaction name="action_Quit"/>
+   <addaction name="actionTest"/>
+   <addaction name="actionCal"/>
   </widget>
   <action name="action_Net_Param">
    <property name="icon">
@@ -1000,9 +994,12 @@ border-radius:25px</string>
     <string>网络测试</string>
    </property>
   </action>
-  <action name="action_pointAnalyze">
+  <action name="actionTest">
    <property name="text">
-    <string>点云分析</string>
+    <string>合成</string>
+   </property>
+   <property name="toolTip">
+    <string>合成</string>
    </property>
   </action>
   <action name="actionReset">
@@ -1010,9 +1007,9 @@ border-radius:25px</string>
     <string>reset</string>
    </property>
   </action>
-  <action name="actionTest">
+  <action name="actionCal">
    <property name="text">
-    <string>test</string>
+    <string>开始计算</string>
    </property>
   </action>
   <action name="action_init">

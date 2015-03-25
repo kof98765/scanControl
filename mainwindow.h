@@ -69,7 +69,7 @@ protected:
     void resizeEvent(QResizeEvent *);
 public slots:
     void outputMessage(QtMsgType,QString);
-    void recvHeightSub(QString,double,double,double);
+    void recvHeightSub(int,double,double,double);
     void recvPlaneness(int ,double,double);
     void dispFrame(unsigned char *buf,int size);
     void Net_Param();
@@ -167,6 +167,7 @@ private slots:
     void statusCheck();
     void updataProsessBar(QString,int);
     void on_toExcel_clicked();
+
 
 };
 

@@ -50,15 +50,17 @@ void imgListView::deleteImg(int index)
 }
 void imgListView::deleteAllImg()
 {
-    for(int i=0;i<getListSize();i++)
+    qDebug()<<getListSize();
+    for(int i=getListSize();i>0;i--)
     {
-        close_window(winList.at(index));
-        winList.removeAt(index);
-        layout->removeWidget(labelList.at(index));
-        labelList.at(index)->deleteLater();
-        labelList.removeAt(index);
-        imgList.removeAt(index);
+        close_window(winList.at(i-1));
+        winList.removeAt(i-1);
+        layout->removeWidget(labelList.at(i-1));
+        labelList.at(i-1)->deleteLater();
+        labelList.removeAt(i-1);
+        imgList.removeAt(i-1);
         layout->update();
+
     }
 }
 int imgListView::getListSize()

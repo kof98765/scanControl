@@ -411,6 +411,7 @@ release\qrc_icons.cpp: ..\icons.qrc \
 		..\ico\pen.png \
 		..\ico\video_play.png \
 		..\ico\email.png \
+		..\ico\3d.jpg \
 		..\ico\user.png \
 		..\ico\female_user.png \
 		..\ico\cancel.png \

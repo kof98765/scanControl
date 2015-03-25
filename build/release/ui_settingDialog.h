@@ -167,8 +167,7 @@ public:
     QSpinBox *rate;
     QTextBrowser *debug;
     QLabel *label_37;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *readSet;
     QPushButton *connecct;
     QDoubleSpinBox *testValue;
 
@@ -608,7 +607,7 @@ public:
         tab_5->setObjectName(QStringLiteral("tab_5"));
         formLayoutWidget = new QWidget(tab_5);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 0, 288, 502));
+        formLayoutWidget->setGeometry(QRect(10, 0, 221, 502));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
@@ -779,7 +778,8 @@ public:
         rate = new QSpinBox(formLayoutWidget);
         rate->setObjectName(QStringLiteral("rate"));
         rate->setMinimum(1);
-        rate->setMaximum(200);
+        rate->setMaximum(1000);
+        rate->setValue(100);
 
         formLayout->setWidget(3, QFormLayout::FieldRole, rate);
 
@@ -789,15 +789,12 @@ public:
         label_37 = new QLabel(tab_5);
         label_37->setObjectName(QStringLiteral("label_37"));
         label_37->setGeometry(QRect(330, 10, 54, 12));
-        pushButton = new QPushButton(tab_5);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(280, 470, 91, 23));
-        pushButton_2 = new QPushButton(tab_5);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(380, 470, 75, 23));
+        readSet = new QPushButton(tab_5);
+        readSet->setObjectName(QStringLiteral("readSet"));
+        readSet->setGeometry(QRect(280, 470, 91, 23));
         connecct = new QPushButton(tab_5);
         connecct->setObjectName(QStringLiteral("connecct"));
-        connecct->setGeometry(QRect(280, 0, 41, 23));
+        connecct->setGeometry(QRect(240, 0, 41, 23));
         testValue = new QDoubleSpinBox(tab_5);
         testValue->setObjectName(QStringLiteral("testValue"));
         testValue->setGeometry(QRect(280, 440, 62, 22));
@@ -820,6 +817,9 @@ public:
         QObject::connect(pushButton_Cancel, SIGNAL(clicked()), mySettings, SLOT(close()));
 
         tabWidget->setCurrentIndex(4);
+        triggerSource->setCurrentIndex(1);
+        triggerPolarity->setCurrentIndex(1);
+        digitalInputs->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(mySettings);
@@ -1002,8 +1002,7 @@ public:
         );
         label_26->setText(QApplication::translate("mySettings", "\345\270\247\347\216\207:", 0));
         label_37->setText(QApplication::translate("mySettings", "debug\350\276\223\345\207\272", 0));
-        pushButton->setText(QApplication::translate("mySettings", "\350\257\273\345\217\226\345\275\223\345\211\215\351\205\215\347\275\256", 0));
-        pushButton_2->setText(QApplication::translate("mySettings", "\345\206\231\345\205\245\351\205\215\347\275\256", 0));
+        readSet->setText(QApplication::translate("mySettings", "\350\257\273\345\217\226\345\275\223\345\211\215\351\205\215\347\275\256", 0));
         connecct->setText(QApplication::translate("mySettings", "\350\277\236\346\216\245", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("mySettings", "\346\277\200\345\205\211\350\256\276\347\275\256", 0));
     } // retranslateUi

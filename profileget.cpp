@@ -648,7 +648,7 @@ void profileGet::startVedio()
 
     }
     //开始视频模式
-    if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_0, true, &uiWidth, &uiHeight)) < GENERAL_FUNCTION_OK)
+    if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, true, &uiWidth, &uiHeight)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during TransferVideoStream start", iRetValue);
         return ;
@@ -664,7 +664,7 @@ void profileGet::stopVedio()
     mode=1;
     qDebug() << "Disable the video stream\n";
     //停止视频模式
-    if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_0, false, NULL, NULL)) < GENERAL_FUNCTION_OK)
+    if((iRetValue = m_pLLT->TransferVideoStream(VIDEO_MODE_1, false, NULL, NULL)) < GENERAL_FUNCTION_OK)
     {
         OnError("Error during TransferVideoStream stop", iRetValue);
         return ;
@@ -805,7 +805,7 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
 
                 SetEvent(m_hProfileEvent);
                 emit putImagebyPointer3(&vdValueX[0],(double *)(&vdValueIntensity[0]),&vdValueZ[0],1280,m_uiNeededProfileCount);
-                m_vucProfileBuffer.clear();
+                vdValueZ.resize(m_uiResolution*m_uiNeededProfileCount);
                 m_uiRecivedProfileCount=0;
                 return;
             }
@@ -882,6 +882,11 @@ void profileGet::DisplayTimestamp(unsigned char *pucTimestamp)
 void profileGet::run()
 {
     GetProfiles_Callback();
+}
+bool profileGet::testConnect()
+{
+
+   return (m_pLLT->Connect() == ERROR_CONNECT_ALREADY_CONNECTED);
 }
 
 void __stdcall newProfile(const unsigned char* pucData, unsigned int uiSize, void* pUserData)

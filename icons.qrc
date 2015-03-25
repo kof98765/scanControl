@@ -129,34 +129,35 @@
         <file>icons/ic_zoom_out.png</file>
         <file>icons/ic_net_connect.png</file>
         <file>icons/ic_net_param.png</file>
-      
     </qresource>
     <qresource prefix="/">
         <file>icons/ic_down.png</file>
         <file>icons/ic_up.png</file>
     </qresource>
-  <qresource prefix="/new/prefix1">
-    <file>ico/add.png</file>
-    <file>ico/bin.png</file>
-    <file>ico/cancel.png</file>
-    <file>ico/chat_bubble.png</file>
-    <file>ico/download.png</file>
-    <file>ico/email.png</file>
-    <file>ico/female_user.png</file>
-    <file>ico/folder.png</file>
-    <file>ico/graph.png</file>
-    <file>ico/home.png</file>
-    <file>ico/ico.qrc</file>
-    <file>ico/lock.png</file>
-    <file>ico/magnifying_glass.png</file>
-    <file>ico/minimize.png</file>
-    <file>ico/pen.png</file>
-    <file>ico/unlock.png</file>
-    <file>ico/upload.png</file>
-    <file>ico/user.png</file>
-    <file>ico/user_female.png</file>
-    <file>ico/users.png</file>
-    <file>ico/video_play.png</file>
-    <file>ico/ico.png</file>
+    <qresource prefix="/new/prefix1">
+        <file>ico/add.png</file>
+        <file>ico/bin.png</file>
+        <file>ico/cancel.png</file>
+        <file>ico/chat_bubble.png</file>
+        <file>ico/download.png</file>
+        <file>ico/email.png</file>
+        <file>ico/female_user.png</file>
+        <file>ico/folder.png</file>
+        <file>ico/graph.png</file>
+        <file>ico/home.png</file>
+        <file>ico/ico.qrc</file>
+        <file>ico/lock.png</file>
+        <file>ico/magnifying_glass.png</file>
+        <file>ico/minimize.png</file>
+        <file>ico/pen.png</file>
+        <file>ico/unlock.png</file>
+        <file>ico/upload.png</file>
+        <file>ico/user.png</file>
+        <file>ico/user_female.png</file>
+        <file>ico/users.png</file>
+        <file>ico/video_play.png</file>
+        <file>ico/ico.png</file>
+        <file>ico/3d.jpg</file>
+        <file>ico/hecheng.jpg</file>
     </qresource>
 </RCC>

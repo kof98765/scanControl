@@ -56,7 +56,7 @@ public:
     void DisplayTimestamp(unsigned char *pucTimestamp);
     string Double2Str(double dValue);
     void preGetDate();
-    static void sendSignal(const unsigned char* pucData, unsigned int uiSize, void* pUserData);
+
     QSettings set;
     QTime time;
     QFile f;
@@ -102,6 +102,7 @@ public slots:
     void selectDevice(int index);
     void setExposeTime(int s,int i);
     void setExternTrigger(int index);
+    bool testConnect();
     QList<double> getList();
 };
 

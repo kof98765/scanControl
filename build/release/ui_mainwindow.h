@@ -50,9 +50,9 @@ public:
     QAction *action_small;
     QAction *action_EXCEL_T;
     QAction *action;
-    QAction *action_pointAnalyze;
-    QAction *actionReset;
     QAction *actionTest;
+    QAction *actionReset;
+    QAction *actionCal;
     QAction *action_init;
     QAction *actionCallback;
     QAction *actionSubHeight;
@@ -77,18 +77,19 @@ public:
     QSpacerItem *verticalSpacer_2;
     QLabel *label_6;
     QComboBox *func;
-    QSpacerItem *verticalSpacer_4;
-    QLabel *label_4;
-    QComboBox *team;
     QSpacerItem *verticalSpacer_3;
     QLabel *label;
     QLineEdit *limitValue;
-    QLabel *label_3;
     QSpacerItem *verticalSpacer;
+    QLabel *label_3;
     QPushButton *roiColor;
+    QLabel *label_4;
+    QComboBox *team;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
     QTableWidget *roiList;
+    QLabel *connect;
+    QPushButton *reset;
     QGroupBox *view_box;
     QProgressBar *progressBar;
     QStackedWidget *base;
@@ -113,7 +114,6 @@ public:
     QPushButton *singleFrameButton;
     QLabel *rate;
     QLabel *pos;
-    QComboBox *comboBox;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *imgList;
     QMenuBar *menuBar;
@@ -194,12 +194,12 @@ public:
         action_EXCEL_T->setIcon(icon2);
         action = new QAction(MainWindow);
         action->setObjectName(QStringLiteral("action"));
-        action_pointAnalyze = new QAction(MainWindow);
-        action_pointAnalyze->setObjectName(QStringLiteral("action_pointAnalyze"));
-        actionReset = new QAction(MainWindow);
-        actionReset->setObjectName(QStringLiteral("actionReset"));
         actionTest = new QAction(MainWindow);
         actionTest->setObjectName(QStringLiteral("actionTest"));
+        actionReset = new QAction(MainWindow);
+        actionReset->setObjectName(QStringLiteral("actionReset"));
+        actionCal = new QAction(MainWindow);
+        actionCal->setObjectName(QStringLiteral("actionCal"));
         action_init = new QAction(MainWindow);
         action_init->setObjectName(QStringLiteral("action_init"));
         actionCallback = new QAction(MainWindow);
@@ -217,7 +217,7 @@ public:
         startButton = new QPushButton(groupBox_4);
         startButton->setObjectName(QStringLiteral("startButton"));
         startButton->setEnabled(false);
-        startButton->setGeometry(QRect(120, 10, 121, 31));
+        startButton->setGeometry(QRect(120, 10, 101, 31));
         startButton->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         QIcon icon10;
         icon10.addFile(QStringLiteral(":/new/prefix1/ico/video_play.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -227,7 +227,7 @@ public:
         startButton->setFlat(false);
         settings = new QPushButton(groupBox_4);
         settings->setObjectName(QStringLiteral("settings"));
-        settings->setGeometry(QRect(250, 10, 121, 29));
+        settings->setGeometry(QRect(230, 10, 101, 31));
         settings->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         launchDevice = new QPushButton(groupBox_4);
         launchDevice->setObjectName(QStringLiteral("launchDevice"));
@@ -250,8 +250,8 @@ public:
         gridLayout_3->addItem(horizontalSpacer, 0, 0, 1, 1);
 
         tableWidget = new QTableWidget(groupBox_2);
-        if (tableWidget->columnCount() < 8)
-            tableWidget->setColumnCount(8);
+        if (tableWidget->columnCount() < 6)
+            tableWidget->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -264,10 +264,6 @@ public:
         tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem7);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setSelectionMode(QAbstractItemView::MultiSelection);
         tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -308,62 +304,57 @@ public:
 
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        formLayout->setItem(1, QFormLayout::LabelRole, verticalSpacer_2);
+        formLayout->setItem(2, QFormLayout::LabelRole, verticalSpacer_2);
 
         label_6 = new QLabel(groupBox_5);
         label_6->setObjectName(QStringLiteral("label_6"));
 
-        formLayout->setWidget(2, QFormLayout::LabelRole, label_6);
+        formLayout->setWidget(3, QFormLayout::LabelRole, label_6);
 
         func = new QComboBox(groupBox_5);
         func->setObjectName(QStringLiteral("func"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, func);
-
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout->setItem(3, QFormLayout::LabelRole, verticalSpacer_4);
-
-        label_4 = new QLabel(groupBox_5);
-        label_4->setObjectName(QStringLiteral("label_4"));
-
-        formLayout->setWidget(4, QFormLayout::LabelRole, label_4);
-
-        team = new QComboBox(groupBox_5);
-        team->setObjectName(QStringLiteral("team"));
-        team->setLayoutDirection(Qt::LeftToRight);
-
-        formLayout->setWidget(4, QFormLayout::FieldRole, team);
+        formLayout->setWidget(3, QFormLayout::FieldRole, func);
 
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        formLayout->setItem(5, QFormLayout::LabelRole, verticalSpacer_3);
+        formLayout->setItem(4, QFormLayout::LabelRole, verticalSpacer_3);
 
         label = new QLabel(groupBox_5);
         label->setObjectName(QStringLiteral("label"));
 
-        formLayout->setWidget(6, QFormLayout::LabelRole, label);
+        formLayout->setWidget(5, QFormLayout::LabelRole, label);
 
         limitValue = new QLineEdit(groupBox_5);
         limitValue->setObjectName(QStringLiteral("limitValue"));
 
-        formLayout->setWidget(6, QFormLayout::FieldRole, limitValue);
+        formLayout->setWidget(5, QFormLayout::FieldRole, limitValue);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout->setItem(6, QFormLayout::LabelRole, verticalSpacer);
 
         label_3 = new QLabel(groupBox_5);
         label_3->setObjectName(QStringLiteral("label_3"));
 
-        formLayout->setWidget(8, QFormLayout::LabelRole, label_3);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout->setItem(7, QFormLayout::LabelRole, verticalSpacer);
+        formLayout->setWidget(7, QFormLayout::LabelRole, label_3);
 
         roiColor = new QPushButton(groupBox_5);
         roiColor->setObjectName(QStringLiteral("roiColor"));
         roiColor->setAutoFillBackground(false);
         roiColor->setStyleSheet(QStringLiteral("background-color: rgb(255, 0, 0);"));
 
-        formLayout->setWidget(8, QFormLayout::FieldRole, roiColor);
+        formLayout->setWidget(7, QFormLayout::FieldRole, roiColor);
+
+        label_4 = new QLabel(groupBox_5);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_4);
+
+        team = new QComboBox(groupBox_5);
+        team->setObjectName(QStringLiteral("team"));
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, team);
 
 
         gridLayout_4->addLayout(formLayout, 1, 0, 1, 1);
@@ -378,20 +369,29 @@ public:
         roiList = new QTableWidget(groupBox);
         if (roiList->columnCount() < 4)
             roiList->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(0, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(1, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(0, __qtablewidgetitem8);
+        roiList->setHorizontalHeaderItem(2, __qtablewidgetitem8);
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(1, __qtablewidgetitem9);
-        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(2, __qtablewidgetitem10);
-        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(3, __qtablewidgetitem11);
+        roiList->setHorizontalHeaderItem(3, __qtablewidgetitem9);
         roiList->setObjectName(QStringLiteral("roiList"));
         roiList->setSelectionBehavior(QAbstractItemView::SelectRows);
         roiList->horizontalHeader()->setDefaultSectionSize(65);
 
         gridLayout_2->addWidget(roiList, 0, 0, 1, 1);
 
+        connect = new QLabel(groupBox_4);
+        connect->setObjectName(QStringLiteral("connect"));
+        connect->setGeometry(QRect(440, 10, 101, 31));
+        connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+""));
+        reset = new QPushButton(groupBox_4);
+        reset->setObjectName(QStringLiteral("reset"));
+        reset->setGeometry(QRect(340, 10, 75, 31));
+        reset->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         view_box = new QGroupBox(centralWidget);
         view_box->setObjectName(QStringLiteral("view_box"));
         view_box->setGeometry(QRect(10, 30, 511, 511));
@@ -535,9 +535,6 @@ public:
         pos = new QLabel(centralWidget);
         pos->setObjectName(QStringLiteral("pos"));
         pos->setGeometry(QRect(470, 10, 54, 12));
-        comboBox = new QComboBox(centralWidget);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(330, 0, 69, 22));
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(10, 540, 511, 80));
@@ -577,13 +574,15 @@ public:
         menu_2->addAction(action_init);
         menu_2->addAction(action_start);
         menu_2->addAction(action);
-        menu_2->addAction(action_pointAnalyze);
-        menu_2->addAction(actionReset);
         menu_2->addAction(actionTest);
+        menu_2->addAction(actionReset);
+        menu_2->addAction(actionCal);
         menu_2->addAction(actionCallback);
         toolBar->addAction(action_Open);
         toolBar->addAction(action_start);
         toolBar->addAction(action_Quit);
+        toolBar->addAction(actionTest);
+        toolBar->addAction(actionCal);
 
         retranslateUi(MainWindow);
         QObject::connect(startButton, SIGNAL(clicked()), action_start, SLOT(trigger()));
@@ -622,9 +621,12 @@ public:
         action_small->setText(QApplication::translate("MainWindow", "\347\274\251\345\260\217(&S)", 0));
         action_EXCEL_T->setText(QApplication::translate("MainWindow", "\345\257\274\345\207\272EXCEL(T)", 0));
         action->setText(QApplication::translate("MainWindow", "\347\275\221\347\273\234\346\265\213\350\257\225", 0));
-        action_pointAnalyze->setText(QApplication::translate("MainWindow", "\347\202\271\344\272\221\345\210\206\346\236\220", 0));
+        actionTest->setText(QApplication::translate("MainWindow", "\345\220\210\346\210\220", 0));
+#ifndef QT_NO_TOOLTIP
+        actionTest->setToolTip(QApplication::translate("MainWindow", "\345\220\210\346\210\220", 0));
+#endif // QT_NO_TOOLTIP
         actionReset->setText(QApplication::translate("MainWindow", "reset", 0));
-        actionTest->setText(QApplication::translate("MainWindow", "test", 0));
+        actionCal->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\350\256\241\347\256\227", 0));
         action_init->setText(QApplication::translate("MainWindow", "\345\220\257\345\212\250\346\277\200\345\205\211(&F2)", 0));
         action_init->setShortcut(QApplication::translate("MainWindow", "F2", 0));
         actionCallback->setText(QApplication::translate("MainWindow", "\345\206\205\351\203\250\350\247\246\345\217\221\351\207\207\351\233\206", 0));
@@ -641,17 +643,13 @@ public:
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
         ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "\347\256\227\346\263\225", 0));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
+        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204", 0));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "\350\256\241\347\256\227\347\273\223\346\236\234", 0));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204", 0));
+        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\345\200\274", 0));
         QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\345\200\274", 0));
-        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\345\200\274", 0));
-        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
-        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "\344\275\215\347\275\256", 0));
+        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\345\200\274", 0));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221\346\265\213\351\207\217\345\214\272\345\237\237", 0));
         groupBox_5->setTitle(QApplication::translate("MainWindow", "\347\273\230\345\210\266\345\214\272\345\237\237", 0));
         roiDraw->setText(QApplication::translate("MainWindow", "\347\273\230\345\210\266", 0));
@@ -662,7 +660,11 @@ public:
          << QApplication::translate("MainWindow", "\351\253\230\345\267\256", 0)
          << QApplication::translate("MainWindow", "\345\271\263\351\235\242\345\272\246", 0)
         );
-        label_4->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\210\206\347\273\204:", 0));
+        label->setText(QApplication::translate("MainWindow", "\346\265\213\351\207\217\351\230\210\345\200\274:", 0));
+        limitValue->setText(QApplication::translate("MainWindow", "3", 0));
+        label_3->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
+        roiColor->setText(QString());
+        label_4->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204:", 0));
         team->clear();
         team->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "\345\210\206\347\273\2041", 0)
@@ -673,21 +675,18 @@ public:
          << QApplication::translate("MainWindow", "\345\210\206\347\273\2046", 0)
          << QApplication::translate("MainWindow", "\345\210\206\347\273\2047", 0)
          << QApplication::translate("MainWindow", "\345\210\206\347\273\2048", 0)
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2049", 0)
         );
-        label->setText(QApplication::translate("MainWindow", "\346\265\213\351\207\217\351\230\210\345\200\274:", 0));
-        limitValue->setText(QApplication::translate("MainWindow", "3", 0));
-        label_3->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
-        roiColor->setText(QString());
         groupBox->setTitle(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\210\227\350\241\250", 0));
-        QTableWidgetItem *___qtablewidgetitem8 = roiList->horizontalHeaderItem(0);
-        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
-        QTableWidgetItem *___qtablewidgetitem9 = roiList->horizontalHeaderItem(1);
-        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204", 0));
-        QTableWidgetItem *___qtablewidgetitem10 = roiList->horizontalHeaderItem(2);
-        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "\347\256\227\346\263\225", 0));
-        QTableWidgetItem *___qtablewidgetitem11 = roiList->horizontalHeaderItem(3);
-        ___qtablewidgetitem11->setText(QApplication::translate("MainWindow", "\351\230\210\345\200\274", 0));
+        QTableWidgetItem *___qtablewidgetitem6 = roiList->horizontalHeaderItem(0);
+        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
+        QTableWidgetItem *___qtablewidgetitem7 = roiList->horizontalHeaderItem(1);
+        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204", 0));
+        QTableWidgetItem *___qtablewidgetitem8 = roiList->horizontalHeaderItem(2);
+        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\347\256\227\346\263\225", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = roiList->horizontalHeaderItem(3);
+        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\351\230\210\345\200\274", 0));
+        connect->setText(QApplication::translate("MainWindow", "\346\234\252\350\277\236\346\216\245", 0));
+        reset->setText(QApplication::translate("MainWindow", "\345\244\215\344\275\215", 0));
         view_box->setTitle(QString());
         progressBar->setFormat(QApplication::translate("MainWindow", "%p%", 0));
         videoFrame->setText(QString());

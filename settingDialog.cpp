@@ -204,3 +204,8 @@ void mySettings::on_rate_valueChanged(int arg1)
     double i=(1000-arg1*s)/ui->rate->value();
     emit postExposeTime(s*100,i*100);
 }
+
+void mySettings::on_readSet_clicked()
+{
+    flush_settings();
+}

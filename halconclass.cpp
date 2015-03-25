@@ -11,6 +11,7 @@ halconClass::halconClass(QObject *parent) :
     posX=0;
     posY=0;
     step=0;
+    scale=1;
     recvCount=0;
     index=0;
     isLoadFile=false;
@@ -35,7 +36,7 @@ halconClass::halconClass(QObject *parent) :
     inCloud=new PointCloud::Ptr(new PointCloud );
     memcpy(menu,tmp,sizeof(tmp));
     roiList=set.value("roiList").toMap();
-
+    dataList=set.value("dataList").toMap();
     emit flushRoiList(roiList.keys());
 }
 /*
@@ -99,9 +100,10 @@ void halconClass::read_img(QString str)
    qDebug()<<w<<h;
    img_width=Width[0].I();
    img_height=Height[0].I();
-   scale=Width[0].I()/win_width;
+   xScale=Width[0].I()/win_width;
+   yScale=Height[0].I()/win_width;
    hasData=true;
-   qDebug()<<"read finish"<<"scale"<<scale;
+   qDebug()<<"read finish";
    //emit dispImg();
 }
 void halconClass::clearData()
@@ -110,6 +112,9 @@ void halconClass::clearData()
     if (HDevWindowStack::IsOpen()&hasData)
 	{
 		  //Image.Reset();
+        imgList.clear();
+        emit deleteAllImg();
+        index=0;
         clear_window(WindowHandle);
 	}
 	 hasData=false;
@@ -129,8 +134,11 @@ void halconClass::reset()
         get_image_size(Image,&Width,&Height);
         img_height=Height;
         img_width=Width;
+        xScale=img_width/win_width;
+        yScale=img_height/win_height;
+
         clear_window(WindowHandle);
-        set_part(WindowHandle,0,0,Height-1,Width-1);
+        set_part(WindowHandle,0,0,img_height,img_width);
         disp_obj(result_img,WindowHandle);
         this->threedControl(0,0,0,0,"rotate");
 
@@ -143,6 +151,13 @@ void halconClass::setMode(QString str)
 {
     if (HDevWindowStack::IsOpen()&hasData)
     {
+        Hlong w,h;
+        get_image_size(Image,&w,&h);
+        set_part(WindowHandle,0,0,win_height,win_width);
+        img_width=w;
+        img_height=h;
+        xScale=img_width/win_width;
+        yScale=img_height/win_width;
         if(str.contains("2D"))
         {
                clear_window(WindowHandle);
@@ -154,6 +169,7 @@ void halconClass::setMode(QString str)
         }
         else
         {
+
             is3D=true;
             clear_window(WindowHandle);
            // set_paint(HDevWindowStack::GetActive(),"3d_plot");
@@ -168,6 +184,8 @@ void halconClass::setMode(QString str)
 void halconClass::selectImg(int i)
 {
     qDebug()<<"display"<<i;
+    if(imgList.size()<(i+1))
+        return;
     index=i;
     copy_image(*imgList.at(i),&Image);
     disp_img();
@@ -182,10 +200,21 @@ void halconClass::disp_img()
 
     if (HDevWindowStack::IsOpen()&hasData)
     {
+
+
         set_lut(WindowHandle,"rainbow");
 
         if(is3D)
         {
+           // compoundImg(0,0);
+            Hlong w,h;
+            get_image_size(Image,&w,&h);
+            set_part(WindowHandle,0,0,h,w);
+            img_width=w;
+            img_height=h;
+            xScale=img_width/win_width;
+            yScale=img_height/win_width;
+
             disp_obj(Image,WindowHandle);
             copy_image(Image,&result_img);
             set_window_param(WindowHandle,"interactive_plot", "true");
@@ -210,17 +239,18 @@ void halconClass::disp_img()
         for(int i=0;i<list.size();i++)
         {
             QStringList str=roiList.value(list.at(i)).toStringList();
-			
-			set_rgb(WindowHandle,(int)((str.at(0).toULong()&(0xff<<16))>>16),(int)((str.at(0).toULong()&(0xff<<8))>>8),(int)(str.at(0).toULong()&0xff));
-            //set_color(WindowHandle,str.at(0).toUtf8().data());
-            set_tposition(WindowHandle,str.at(1).toInt(),str.at(2).toInt());
-            write_string(WindowHandle,HTuple(list.at(i).toUtf8().data()));
-            Hobject Rectangle,Contours;
-            gen_rectangle1(&Rectangle, (Hlong)str.at(1).toInt(), (Hlong)str.at(2).toInt(),(Hlong)str.at(3).toDouble(), (Hlong)str.at(4).toInt());
-            gen_contour_region_xld(Rectangle,&Contours,"border");
-            disp_obj(Contours,WindowHandle);
+            if(str.at(8).toInt()==index)
+            {
+                set_rgb(WindowHandle,(int)((str.at(0).toULong()&(0xff<<16))>>16),(int)((str.at(0).toULong()&(0xff<<8))>>8),(int)(str.at(0).toULong()&0xff));
+                //set_color(WindowHandle,str.at(0).toUtf8().data());
+                set_tposition(WindowHandle,str.at(1).toInt(),str.at(2).toInt());
+                write_string(WindowHandle,HTuple(list.at(i).toUtf8().data()));
+                Hobject Rectangle,Contours;
+                gen_rectangle1(&Rectangle, (Hlong)str.at(1).toInt(), (Hlong)str.at(2).toInt(),(Hlong)str.at(3).toDouble(), (Hlong)str.at(4).toInt());
+                gen_contour_region_xld(Rectangle,&Contours,"border");
+                disp_obj(Contours,WindowHandle);
           
-
+            }
         }
 
     }
@@ -233,15 +263,21 @@ void halconClass::moveImg(int x,int y)
      // Local control variables
      HTuple  HomMat;
      Hlong row,col,row1,col1;
+
      if(HDevWindowStack::IsOpen()&hasData)
      {
         if(!is3D)
         {
+
             get_part(WindowHandle,&row,&col,&row1,&col1);
-             //move_rectangle(WindowHandle,row,col,row1,col1,y,x);
+
+            set_part(WindowHandle,row+y,col+x,row1+y,col1+x);
+            // move_rectangle(WindowHandle,row,col,row1,col1,y,x);
            // set_part(WindowHandle,row+y*scale,col+x*scale,row1+y*scale,col1+x*scale);
-             set_part(WindowHandle,posY+y*scale,posX+x*scale,img_height+posY+y*scale,img_width+posX+x*scale);
-          //  move_region(Image,&result_img,centerY-y*scale,centerX-x*scale);
+             //set_part(WindowHandle,posY+y,posX+x,win_height+posY+y,win_width+posX+x);
+                get_part(WindowHandle,&row,&col,&row1,&col1);
+
+             //  move_region(Image,&result_img,centerY-y*scale,centerX-x*scale);
            // disp_obj(result_img,WindowHandle);
              disp_img();
 
@@ -271,9 +307,10 @@ void halconClass::set_pos(int x,int y)
         return;
     if(!is3D&hasData)
     {
-        posX+=x*scale;
-        posY+=y*scale;
-       // set_part(WindowHandle,posY+y*scale,posX+x*scale,img_height+posY+y*scale,img_width+posX+x*scale);
+        Hlong row,col,row1,col1;
+        get_part(WindowHandle,&row,&col,&row1,&col1);
+        set_part(WindowHandle,row+y,col+x,row1+y,col1+x);
+        // set_part(WindowHandle,posY+y*scale,posX+x*scale,img_height+posY+y*scale,img_width+posX+x*scale);
         clear_window(WindowHandle);
         disp_img();
     }
@@ -293,13 +330,11 @@ void halconClass::zoomOut()
 
     if (HDevWindowStack::IsOpen()&hasData)
     {
-
-        img_height*=0.8;
-        img_width*=0.8;
-        posX*=0.8;
-        posY*=0.8;
         clear_window(WindowHandle);
-        set_part(WindowHandle,posY,posX,HTuple(img_height)+posY,HTuple(img_width)+posX);
+        Hlong row,col,row1,col1;
+        get_part(WindowHandle,&row,&col,&row1,&col1);
+        set_part(WindowHandle,row*0.8,col*0.8,row1*0.8,col1*0.8);
+        //set_part(WindowHandle,y,x,HTuple(h)+y,HTuple(w)+x);
         disp_img();
 
     }
@@ -319,13 +354,12 @@ void halconClass::zoomIn()
 
     if (HDevWindowStack::IsOpen()&hasData)
     {
-
-        img_height*=1.2;
-        img_width*=1.2;
-        posX*=1.2;
-        posY*=1.2;
         clear_window(WindowHandle);
-        set_part(WindowHandle,posY,posX,HTuple(img_height)+posY,HTuple(img_width)+posX);
+        Hlong row,col,row1,col1;
+        get_part(WindowHandle,&row,&col,&row1,&col1);
+
+        set_part(WindowHandle,row*1.2,col*1.2,row1*1.2,col1*1.2);
+       // set_part(WindowHandle,y,x,HTuple(h)+y,HTuple(w)+x);
         disp_img();
     }
 }
@@ -338,7 +372,7 @@ void halconClass::threedControl(double lastRow, double lastCol, double Row, doub
         return;
     //qDebug()<<lastRow*scale<<lastCol*scale<<Row*scale<<Column*scale<<mode;
    // qDebug()<<mode<<Column<<Row<<lastCol<<lastRow;
-    update_window_pose(WindowHandle, lastRow*scale, lastCol*scale, Row*scale, Column*scale, mode.toUtf8().data());
+    update_window_pose(WindowHandle, lastRow*yScale, lastCol*xScale, Row*yScale, Column*xScale, mode.toUtf8().data());
     disp_obj(result_img,WindowHandle);
 
 
@@ -391,7 +425,8 @@ void halconClass::run()
         //this->getImagebyPointer3(0,0,(double *)p,w,h);
         img_width=Width[0].I();
         img_height=Height[0].I();
-        scale=Width[0].I()/win_width;
+        xScale=img_width/win_width;
+        yScale=img_height/win_width;
         hasData=true;
         qDebug()<<"read finish";
         emit dispImg();
@@ -733,26 +768,9 @@ void halconClass::readMTX(QString str)
 }
 void halconClass::test()
 { 
-    /*
-    pcl::PointCloud<pcl::PointXYZ>::Ptr inCloud(new pcl::PointCloud<pcl::PointXYZ>);
-    for (float x = -5.0; x <= 5.0; x += 0.25)
-    {
-        for (float y = -5.0; y <= 5.0; y += 0.1)
-        {
-            pcl::PointXYZ cloud;
 
-            cloud.x = x;
-            cloud.y = y;
-            //cloud.z = 1+(float)rand();
-            cloud.z = 1+x;
-            inCloud->push_back(cloud);
-        }
-    }
-
-    pcl::io::savePCDFile("plane_cloud_out.pcd", *inCloud);
-    */
-
-    this->calculatePlaneness(1);
+    compoundImg(0,0);
+    disp_img();
 
 
 }
@@ -764,7 +782,15 @@ void halconClass::delRect(int index)
 {
     QStringList list=roiList.keys();
 
+    QString team=roiList.value(list.at(index)).toStringList().at(5);
+    QStringList data=dataList.value(team).toStringList();
+    qDebug()<<"before"<<data;
+    data.removeAll(list.at(index));
+    qDebug()<<"delete"<<data;
+    dataList.insert(team,data);
+    qDebug()<<"after"<<dataList;
     roiList.remove(list.at(index));
+    set.setValue("dataList",dataList);
     set.setValue("roiList",roiList);
     set.sync();
 	if (HDevWindowStack::IsOpen())
@@ -794,6 +820,8 @@ void halconClass::drawRect(QString name,QString color,int team,double limit,int 
     qDebug()<<Row[0].I()<<Column[0].I()<<Row2[0].I()<<Column2[0].I();
 
    //写入配置文件
+
+
     QStringList str;
     str<<color;
     str<<QString::number(Row[0].I());
@@ -803,13 +831,117 @@ void halconClass::drawRect(QString name,QString color,int team,double limit,int 
     str<<QString::number(team);
     str<<QString::number(limit);
     str<<QString::number(func);
+    str<<QString::number(index);
     roiList.insert(name,QVariant(str));
+
+    QString teamNum=QString::number(team);
+    QStringList data;
+    if(!dataList.contains(teamNum))
+    {
+        data<<name<<QString::number(limit);
+        dataList.insert(teamNum,data);
+    }
+    else
+    {
+        data=dataList.value(teamNum).toStringList();
+        data.removeLast();
+        data<<name<<QString::number(limit);
+        dataList.insert(teamNum,data);
+    }
+
+    qDebug()<<dataList;
+    set.setValue("dataList",dataList);
     set.setValue("roiList",roiList);
     set.sync();
 
     //更新界面
     disp_img();
     emit flushRoiList(roiList.keys());
+}
+
+void halconClass::matchTemplate(int team)
+{
+    int num=0;
+    QTime time;
+    HTuple hv_TemplateID;
+    time.start();
+    typedef int (*MT)(Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,HTuple hv_TemplateID,HTuple* hv_Row, HTuple *hv_Column,HTuple *hv_Angle);
+    MT cal=NULL;
+
+    cal=(MT)GetProcAddress(hInstance,"Match_template");
+   if (HDevWindowStack::IsOpen()&hasData)
+    {
+        Hobject   Rectangle, RegionComplement, ImageReduced,rect;
+        HTuple  tmp, tmp2, Row2, Column2, Min=0, Max=0,Indices;
+        HTuple Rows,Columns,Grayval;
+        HTuple  Range,String,s,Result,Number;
+        HTuple hv_Row,hv_Column,hv_Angle;
+        QString n=dataList.keys().at(team);
+
+        QStringList list=dataList.value(n).toStringList();
+        qDebug()<<list;
+        for(int i=0;i<list.size()-1;i++)
+        {
+            QStringList str=roiList.value(list.at(i)).toStringList();
+
+
+            if(str.at(7).toInt()==2)
+            {
+                if(imgList.size()<=str.at(8).toInt())
+                    continue;
+                num++;
+              //  (*cal)(*imgList.at(str.at(8).toInt()),str.at(1).toInt(), str.at(2).toInt(), str.at(3).toInt(), str.at(4).toInt(),&hv_TemplateID);
+
+            }
+        }
+
+        if(num==0)
+            return;
+    }
+
+    qDebug()<<QStringLiteral("生成模板时间:")<<time.elapsed()<<"ms";
+}
+void halconClass::createTemplate(int team)
+{
+    int num=0;
+    QTime time;
+    HTuple hv_TemplateID;
+    time.start();
+    typedef int (*CT)(Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,HTuple *hv_TemplateID);
+    CT cal=NULL;
+
+    cal=(CT)GetProcAddress(hInstance,"Create_template");
+   if (HDevWindowStack::IsOpen()&hasData)
+    {
+        Hobject   Rectangle, RegionComplement, ImageReduced,rect;
+        HTuple  tmp, tmp2, Row2, Column2, Min=0, Max=0,Indices;
+        HTuple Rows,Columns,Grayval;
+        HTuple  Range,String,s,Result,Number;
+
+        QString n=dataList.keys().at(team);
+
+        QStringList list=dataList.value(n).toStringList();
+        qDebug()<<list;
+        for(int i=0;i<list.size()-1;i++)
+        {
+            QStringList str=roiList.value(list.at(i)).toStringList();
+
+
+            if(str.at(7).toInt()==2)
+            {
+                if(imgList.size()<=str.at(8).toInt())
+                    continue;
+                num++;
+                (*cal)(*imgList.at(str.at(8).toInt()),str.at(1).toInt(), str.at(2).toInt(), str.at(3).toInt(), str.at(4).toInt(),&hv_TemplateID);
+
+            }
+        }
+
+        if(num==0)
+            return;
+    }
+
+    qDebug()<<QStringLiteral("生成模板时间:")<<time.elapsed()<<"ms";
 }
 /*
     计算高差
@@ -822,26 +954,27 @@ void halconClass::RectHeightSub(int team)
    if (HDevWindowStack::IsOpen()&hasData)
     {
         Hobject   Rectangle, RegionComplement, ImageReduced,rect;
-        HTuple  Row1, Column1, Row2, Column2, Min, Max,Indices;
+        HTuple  tmp, tmp2, Row2, Column2, Min=0, Max=0,Indices;
         HTuple Rows,Columns,Grayval;
         HTuple  Range,String,s,Result,Number;
-        QStringList list=roiList.keys();
 
-        for(int i=0;i<list.size();i++)
+        QString n=dataList.keys().at(team);
+
+        QStringList list=dataList.value(n).toStringList();
+        qDebug()<<list;
+        for(int i=0;i<list.size()-1;i++)
         {
-
             QStringList str=roiList.value(list.at(i)).toStringList();
 
-            if(str.at(5).toInt()!=team)
-                continue;
 
             if(str.at(7).toInt()==0)
             {
-
+                if(imgList.size()<=str.at(8).toInt())
+                    continue;
                 num++;
                 gen_rectangle1(&Rectangle, str.at(1).toInt(), str.at(2).toInt(), str.at(3).toInt(), str.at(4).toInt());
 
-                reduce_domain(Image, Rectangle, &ImageReduced);
+                reduce_domain(*imgList.at(str.at(8).toInt()), Rectangle, &ImageReduced);
                 get_region_points(ImageReduced, &Rows, &Columns);
                 get_grayval(ImageReduced, Rows, Columns, &Grayval);
                 if(Grayval.Num()==0)
@@ -849,7 +982,7 @@ void halconClass::RectHeightSub(int team)
                     qDebug()<<"grayval:"<<Grayval.Num();
                     continue;
                 }
-                tuple_max(Grayval, &Max);
+                tuple_max(Grayval, &tmp);
 
                 tuple_find(Grayval,0,&Indices);
                 if(Indices[0].I()!=-1)
@@ -857,22 +990,30 @@ void halconClass::RectHeightSub(int team)
                     for(int i=0;i<Indices.Num();i++)
                     {
 
-                        Grayval[Indices[i].I()]=Max;
+                        Grayval[Indices[i].I()]=tmp;
                     }
                 }
+                tuple_max2(tmp,Max,&Max);
+
+                tuple_min(Grayval,&tmp2);
+                if(Min[0].I()==0)
+                    Min=tmp2;
+                else
+                    tuple_min2(tmp2,Min,&Min);
 
 
-                tuple_min(Grayval,&Min);
 
-                tuple_sub(Max,Min,&Range);
-                qDebug()<<Min[0].D()<<Max[0].D()<<Range[0].D();
-                emit sendHeightSub(list.at(i),Min[0].D(),Max[0].D(),Range[0].D());
+
             }
         }
+
         if(num==0)
             return;
-
+        tuple_sub(Max,Min,&Range);
+        qDebug()<<Min[0].D()<<Max[0].D()<<Range[0].D();
+        emit sendHeightSub(n.toInt(),Min[0].D(),Max[0].D(),Range[0].D());
     }
+
     qDebug()<<QStringLiteral("计算高差时间:")<<time.elapsed()<<"ms";
 }
 /*
@@ -881,15 +1022,16 @@ void halconClass::RectHeightSub(int team)
 void halconClass::calculate()
 {
    qDebug()<<QStringLiteral("开始计算高差");
-    for(int i=0;i<10;i++)
+    for(int i=0;i<dataList.size();i++)
     {
         this->RectHeightSub(i);
 
     }
     qDebug()<<QStringLiteral("结束计算高差");
 
-    for(int i=0;i<10;i++)
+    for(int i=0;i<dataList.size();i++)
     {
+
          this->calculatePlaneness(i);
     }
     qDebug()<<QStringLiteral("计算所有平面度时间")<<time.elapsed()<<"ms";
@@ -930,17 +1072,21 @@ void halconClass::calculatePlaneness(int team)
         Hobject   Rectangle;
 
         char     type[128];
-        QStringList list=roiList.keys();
-        for(int i=0;i<list.size();i++)
+        QString n=dataList.keys().at(team);
+        QStringList list=dataList.value(n).toStringList();
+        qDebug()<<list;
+        for(int i=0;i<list.size()-1;i++)
         {
             
             QStringList str=roiList.value(list.at(i)).toStringList();
-            if(str.at(5).toInt()!=team)
-                continue;
+
 			
             if(str.at(7).toInt()==1)
             {
-                num++;
+
+                if(imgList.size()<=str.at(8).toInt())
+                    continue;
+                 num++;
                 POINT p1,p2;
                 p1.x=str.at(2).toInt();
                 p1.y=str.at(1).toInt();
@@ -949,7 +1095,7 @@ void halconClass::calculatePlaneness(int team)
                 qDebug()<<"start and end"<<p1.x<<p1.y<<p2.x<<p2.y;
                 PointCloud::Ptr newCloud(new PointCloud);
 				
-                (*child)(*inCloud,Image,HTuple(p1.y),HTuple(p1.x),HTuple(p2.y),HTuple(p2.x),newCloud);
+                (*child)(*inCloud,*imgList.at(str.at(8).toInt()),HTuple(p1.y),HTuple(p1.x),HTuple(p2.y),HTuple(p2.x),newCloud);
 				qDebug()<<"cacule flatness"<<num;
                // pcl::io::savePCDFile(QString("roi%1.pcd").arg(i).toUtf8().data(),*(newCloud.get()));
                // (*cal)(newCloud,result1);
@@ -961,14 +1107,14 @@ void halconClass::calculatePlaneness(int team)
 
 
          }
+
         if(num==0)
             return;
-
         (*cal)(globleCloud,result1);
         (*Comp)(globleCloud,result2);
         //delete newCloud.get();
         qDebug()<<"team"<<team<<QStringLiteral("总平整度为")<<result1<<result2<<time.elapsed()<<"ms";
-        emit sendPlaneness(team,result1,result2);
+        emit sendPlaneness(n.toInt(),result1,result2);
      }
 
 }
@@ -1094,12 +1240,20 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     Image.Reset();
     result_img.Reset();
     if(h==set.value("rate").toInt())
-        clearData();
+    {
+        if (HDevWindowStack::IsOpen()&hasData)
+        {
+              //Image.Reset();
+
+            clear_window(WindowHandle);
+            index++;
+        }
+    }
     gen_image_const(&Imagetemp,"real",w,set.value("profileCount",1000).toUInt());
     get_image_pointer1(Imagetemp,(long*)&pointer,type,&width,&height);
-
-    set_part(WindowHandle,0,0,set.value("profileCount",1000).toInt(),w);
-    for (int row=0; row<set.value("profileCount",1000).toUInt(); row++)
+    scale=win_width/w;
+    set_part(WindowHandle,0,0,1000,w);
+    for (int row=0; row<h; row++)
     {
 
         for (int col=0; col<width; col++)
@@ -1116,7 +1270,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 
   //  write_image(RGBImage,"bmp",0,"test.bmp");
 
-    write_image(Imagetemp,"tiff",0,"test");
+    write_image(Imagetemp,"tiff",0,QString("test%1").arg(index).toUtf8().data());
 
     copy_image(Imagetemp,&Image);
 
@@ -1124,7 +1278,8 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 	{
 		img_width=width;
 		img_height=height;
-		scale=width/win_width;
+        xScale=width/win_width;
+        yScale=height/win_height;
         Hobject *tmp=new Hobject;
         copy_image(Imagetemp,tmp);
         imgList.push_back(tmp);
@@ -1144,4 +1299,36 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     emit dispImg();
    
 }
+void halconClass::compoundImg(int xOffset,int yOffset)
+{
+    Hobject img,tmpImg;
+    HTuple w,h;
+    Hlong width,height;
+    float *pointer,*p2;
+    char type[100];
+    w=set.value("width",1280).toInt()*(imgList.size())+xOffset*(imgList.size()-1);
+    //h=set.value("height",1000).toInt()*imgList.size()+yOffset*(imgList.size()-1);
+    h=set.value("profileCount",1000).toInt();
+    gen_image_const(&img,"real",w,h);
+    qDebug()<<"com"<<w[0].I()<<h[0].I();
 
+    get_image_pointer1(img,(long*)&pointer,type,&width,&height);
+    qDebug()<<width<<height;
+    for(int i=0;i<imgList.size();i++)
+    {
+        get_image_pointer1(*imgList.at(i),(long*)&p2,type,&width,&height);
+        qDebug()<<width<<height<<(long)imgList.at(i);
+        for(int y=0;y<height;y++)
+        {
+            for(int x=0;x<width;x++)
+            {
+                pointer[(y)*w[0].I()+xOffset*i+i*width+x]=*p2++;
+            }
+        }
+    }
+    gen_image_const(&Image,"real",w,h);
+    copy_image(img,&Image);
+    get_image_size(Image,&width,&height);
+    set_part(WindowHandle,0,0,height,width);
+
+}

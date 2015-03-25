@@ -35,6 +35,8 @@ private slots:
 
     void on_rate_valueChanged(int arg1);
 
+    void on_readSet_clicked();
+
 private:
     Ui::mySettings *ui;
     QString filePath;

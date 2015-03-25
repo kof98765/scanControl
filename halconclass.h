@@ -70,7 +70,7 @@ private:
     bool stopped;
     int count;
     int posX,posY;
-    double scale;
+    double xScale,yScale,scale;
     int win_width,win_height;
     bool useDefault;
     bool is3D;
@@ -108,6 +108,7 @@ private:
     QList<Hobject*> imgList;
     QTime time;
     QMap<QString,QVariant> roiList;
+    QMap<QString,QVariant> dataList;
 
 public slots:
     void test();
@@ -124,20 +125,24 @@ public slots:
     void calculate();
     void delRect(int);
     void RectHeightSub(int team);
+    void createTemplate(int team);
+    void matchTemplate(int team);
     void calculatePlaneness(int team);
     void selectImg(int index);
+    void compoundImg(int xOffset,int yOffset);
 signals:
     void detectFinish();
     void stopMove();
     void sumResult(int type,int num);
     void badResult(int type,int x,int y,int width,int height,int length);
     void dispImg();
-    void sendHeightSub(QString,double,double,double);
+    void sendHeightSub(int,double,double,double);
     void flushRoiList(QStringList list);
     void sendPlaneness(int ,double,double);
     void Error(QString);
     void addImg(Hobject *);
     void deleteImg(int index);
+    void deleteAllImg();
 
 };
 
