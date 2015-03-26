@@ -27,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
    preIndex=-1;
 
    profile=new profileGet();
+   kings=new kingsControl();
+
     debug.setFileName("debug.txt");
     debug.open(QIODevice::Append);
 
@@ -96,6 +98,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->roiList->installEventFilter(this);
     ui->imgList->installEventFilter(this);
     //glWidget->setMouseTracking(true);
+
     init_connect();
 
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
@@ -294,16 +297,19 @@ void MainWindow::init_connect()
     connect(hal,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
     connect(hal,SIGNAL(sendHeightSub(int,double,double,double))
             ,this,SLOT(recvHeightSub(int,double,double,double)));
-    connect(profile,SIGNAL(dispZ(QString)),hal,SLOT(read_img(QString)));
-    connect(profile,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
-    connect(profile,SIGNAL(putImagebyPointer3(double*,double*,double*,int,int)),hal,SLOT(getImagebyPointer3(double*,double*,double*,int,int)));
+    connect(kings,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
+    connect(kings,SIGNAL(dispSingleFrame(unsigned short*,unsigned short*,double*,double*,int)),
+            plot,SLOT(upScanControlData(unsigned short*,unsigned short*,double*,double*,int)));
+    connect(kings,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
+    //connect(profile,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
+    //connect(profile,SIGNAL(putImagebyPointer3(double*,double*,double*,int,int)),hal,SLOT(getImagebyPointer3(double*,double*,double*,int,int)));
     //connect(profile,SIGNAL(setData(double*,int)),glWidget,SLOT(setData(double*,int)));
     connect(profile,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
 
-    connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
-    connect(profile,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
-    connect(profile,SIGNAL(dispSingleFrame(unsigned short *,unsigned short *,double *,double *,int)),
-            plot,SLOT(upScanControlData(unsigned short *,unsigned short *,double *,double *,int)));
+    //connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
+    //connect(profile,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
+    //connect(profile,SIGNAL(dispSingleFrame(unsigned short *,unsigned short *,double *,double *,int)),
+    //        plot,SLOT(upScanControlData(unsigned short *,unsigned short *,double *,double *,int)));
 
     //connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
 
@@ -552,15 +558,16 @@ void MainWindow::startButton_clicked()
                 profile->startVedio();
                break;
            case 2:
-                profile->startSingleFrame();
+                kings->startGetData();
+                //profile->startSingleFrame();
                break;
            case 3:
                 status=2;
                hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
                //profile->GetProfiles_Callback();
                //profile->start();
-               profile->startTrigger();
-
+               //profile->startTrigger();
+                kings->startGetData();
 
                break;
        }
@@ -737,7 +744,8 @@ void MainWindow::on_launchDevice_clicked()
 {
 
 
-    profile->initDevice();
+    //profile->initDevice();
+    kings->initDevice();
     ui->startButton->setEnabled(true);
     ui->action_start->setEnabled(true);
 }
@@ -827,7 +835,7 @@ void MainWindow::on_realTimeButton_clicked()
 {
     hal->close_the_window();
     ui->base->setCurrentIndex(1);
-    startVideo();
+    //startVideo();
 
 }
 /*
@@ -882,7 +890,8 @@ void MainWindow::on_singleFrameButton_clicked()
 
     hal->close_the_window();
     ui->base->setCurrentIndex(2);
-    startSingleFrame();
+    kings->setDispMode(0);
+    //startSingleFrame();
 }
 /*
     3D模式按钮事件
@@ -891,10 +900,11 @@ void MainWindow::on_threeDButton_clicked()
 {
 
      hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
-     stopSingleFrame();
+     //stopSingleFrame();
      ui->startButton->setText(QStringLiteral("开始扫描"));
      ui->base->setCurrentIndex(0);
-     profile->startTrigger();
+    // profile->startTrigger();
+     kings->setDispMode(1);
      hal->setMode("3D");
 }
 /*
@@ -904,9 +914,10 @@ void MainWindow::on_twoDButton_clicked()
 {
 
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
-    stopSingleFrame();
+    //stopSingleFrame();
     ui->startButton->setText(QStringLiteral("开始扫描"));
-    profile->startTrigger();
+    //profile->startTrigger();
+    kings->setDispMode(1);
     ui->base->setCurrentIndex(3);
     hal->setMode("2D");
 }

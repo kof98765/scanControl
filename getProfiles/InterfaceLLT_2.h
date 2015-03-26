@@ -12,7 +12,6 @@
 
 #if !defined InterfaceLLT2H
 #define InterfaceLLT2H
-
 #include <qt_windows.h>
 #include "scanControlDataTypes.h"
 

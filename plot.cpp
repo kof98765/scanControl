@@ -115,9 +115,12 @@ void Plot::upDate(double *x,double *y,int size)
 }
 void Plot::upScanControlData(unsigned short *,unsigned short *,double *x,double *y,int size)
 {
+    static bool n=false;
     QwtPlotItemList curveList = itemList(QwtPlotItem::Rtti_PlotCurve);
+
     if(curveList.size()>0)
     {
+
         QwtPlotCurve* curve = (QwtPlotCurve *)curveList.takeFirst();
         QVector<QPointF> points;
         curve->setRenderHint( QwtPlotItem::RenderAntialiased );

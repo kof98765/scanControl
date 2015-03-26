@@ -25,6 +25,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTabWidget>
@@ -170,6 +171,23 @@ public:
     QPushButton *readSet;
     QPushButton *connecct;
     QDoubleSpinBox *testValue;
+    QWidget *tab_6;
+    QWidget *formLayoutWidget_2;
+    QFormLayout *formLayout_2;
+    QLabel *label_34;
+    QHBoxLayout *horizontalLayout_6;
+    QSpinBox *ip32;
+    QSpinBox *ip24;
+    QSpinBox *ip16;
+    QSpinBox *ip0;
+    QLabel *label_41;
+    QSpinBox *dataPort;
+    QLabel *label_40;
+    QSpinBox *commandPort;
+    QLabel *label_38;
+    QSpinBox *freq;
+    QRadioButton *usb;
+    QRadioButton *Ethernet;
 
     void setupUi(QDialog *mySettings)
     {
@@ -607,7 +625,7 @@ public:
         tab_5->setObjectName(QStringLiteral("tab_5"));
         formLayoutWidget = new QWidget(tab_5);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 0, 221, 502));
+        formLayoutWidget->setGeometry(QRect(10, 0, 288, 502));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
@@ -801,6 +819,105 @@ public:
         testValue->setSingleStep(0.001);
         testValue->setValue(0.01);
         tabWidget->addTab(tab_5, QString());
+        tab_6 = new QWidget();
+        tab_6->setObjectName(QStringLiteral("tab_6"));
+        formLayoutWidget_2 = new QWidget(tab_6);
+        formLayoutWidget_2->setObjectName(QStringLiteral("formLayoutWidget_2"));
+        formLayoutWidget_2->setGeometry(QRect(10, 10, 301, 501));
+        formLayout_2 = new QFormLayout(formLayoutWidget_2);
+        formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
+        formLayout_2->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
+        formLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_34 = new QLabel(formLayoutWidget_2);
+        label_34->setObjectName(QStringLiteral("label_34"));
+
+        formLayout_2->setWidget(2, QFormLayout::LabelRole, label_34);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        ip32 = new QSpinBox(formLayoutWidget_2);
+        ip32->setObjectName(QStringLiteral("ip32"));
+        ip32->setMinimum(0);
+        ip32->setMaximum(255);
+        ip32->setValue(192);
+
+        horizontalLayout_6->addWidget(ip32);
+
+        ip24 = new QSpinBox(formLayoutWidget_2);
+        ip24->setObjectName(QStringLiteral("ip24"));
+        ip24->setMinimum(0);
+        ip24->setMaximum(255);
+        ip24->setValue(168);
+
+        horizontalLayout_6->addWidget(ip24);
+
+        ip16 = new QSpinBox(formLayoutWidget_2);
+        ip16->setObjectName(QStringLiteral("ip16"));
+        ip16->setMaximum(255);
+
+        horizontalLayout_6->addWidget(ip16);
+
+        ip0 = new QSpinBox(formLayoutWidget_2);
+        ip0->setObjectName(QStringLiteral("ip0"));
+        ip0->setMaximum(255);
+        ip0->setValue(1);
+
+        horizontalLayout_6->addWidget(ip0);
+
+
+        formLayout_2->setLayout(2, QFormLayout::FieldRole, horizontalLayout_6);
+
+        label_41 = new QLabel(formLayoutWidget_2);
+        label_41->setObjectName(QStringLiteral("label_41"));
+
+        formLayout_2->setWidget(3, QFormLayout::LabelRole, label_41);
+
+        dataPort = new QSpinBox(formLayoutWidget_2);
+        dataPort->setObjectName(QStringLiteral("dataPort"));
+        dataPort->setMinimum(1024);
+        dataPort->setMaximum(65535);
+        dataPort->setValue(24692);
+
+        formLayout_2->setWidget(3, QFormLayout::FieldRole, dataPort);
+
+        label_40 = new QLabel(formLayoutWidget_2);
+        label_40->setObjectName(QStringLiteral("label_40"));
+
+        formLayout_2->setWidget(4, QFormLayout::LabelRole, label_40);
+
+        commandPort = new QSpinBox(formLayoutWidget_2);
+        commandPort->setObjectName(QStringLiteral("commandPort"));
+        commandPort->setMinimum(1024);
+        commandPort->setMaximum(65535);
+        commandPort->setValue(24691);
+
+        formLayout_2->setWidget(4, QFormLayout::FieldRole, commandPort);
+
+        label_38 = new QLabel(formLayoutWidget_2);
+        label_38->setObjectName(QStringLiteral("label_38"));
+
+        formLayout_2->setWidget(5, QFormLayout::LabelRole, label_38);
+
+        freq = new QSpinBox(formLayoutWidget_2);
+        freq->setObjectName(QStringLiteral("freq"));
+        freq->setMinimum(1);
+        freq->setMaximum(10000);
+        freq->setValue(10);
+
+        formLayout_2->setWidget(5, QFormLayout::FieldRole, freq);
+
+        usb = new QRadioButton(formLayoutWidget_2);
+        usb->setObjectName(QStringLiteral("usb"));
+
+        formLayout_2->setWidget(1, QFormLayout::LabelRole, usb);
+
+        Ethernet = new QRadioButton(formLayoutWidget_2);
+        Ethernet->setObjectName(QStringLiteral("Ethernet"));
+        Ethernet->setChecked(true);
+
+        formLayout_2->setWidget(1, QFormLayout::FieldRole, Ethernet);
+
+        tabWidget->addTab(tab_6, QString());
 
         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
 
@@ -816,7 +933,7 @@ public:
         QObject::connect(Button_Yes, SIGNAL(clicked()), mySettings, SLOT(accept()));
         QObject::connect(pushButton_Cancel, SIGNAL(clicked()), mySettings, SLOT(close()));
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(5);
         triggerSource->setCurrentIndex(1);
         triggerPolarity->setCurrentIndex(1);
         digitalInputs->setCurrentIndex(2);
@@ -1005,6 +1122,13 @@ public:
         readSet->setText(QApplication::translate("mySettings", "\350\257\273\345\217\226\345\275\223\345\211\215\351\205\215\347\275\256", 0));
         connecct->setText(QApplication::translate("mySettings", "\350\277\236\346\216\245", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("mySettings", "\346\277\200\345\205\211\350\256\276\347\275\256", 0));
+        label_34->setText(QApplication::translate("mySettings", "IP:", 0));
+        label_41->setText(QApplication::translate("mySettings", "\344\274\240\350\276\223\347\253\257\345\217\243:", 0));
+        label_40->setText(QApplication::translate("mySettings", "\346\216\247\345\210\266\347\253\257\345\217\243:", 0));
+        label_38->setText(QApplication::translate("mySettings", "\345\233\236\350\260\203\351\242\221\347\216\207:", 0));
+        usb->setText(QApplication::translate("mySettings", "USB", 0));
+        Ethernet->setText(QApplication::translate("mySettings", "Ethernet", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("mySettings", "\345\237\272\346\201\251\346\226\257\346\277\200\345\205\211\350\256\276\347\275\256", 0));
     } // retranslateUi
 
 };

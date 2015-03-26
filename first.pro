@@ -21,6 +21,7 @@ INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/FLANN/include"
 INCLUDEPATH += "$$(PCL_ROOT)/include/pcl-1.6"
 INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/Qhull/include"
 INCLUDEPATH+="lua/include"
+INCLUDEPATH+="kings/"
 
 #INCLUDEPATH+= "D:/opencv/include/opencv"
 DEFINES+=QWT_DLL PCLLIBRARYDLL _AFXDLL
@@ -32,9 +33,10 @@ QMAKE_LIBDIR  += "$$(HALCONROOT)/lib/x86sse2-win32"
 QMAKE_LIBDIR  +="$$(PCL_ROOT)"/lib
 QMAKE_LIBDIR +="../pcl"
 QMAKE_LIBDIR+="../lua"
+QMAKE_LIBDIR+="../kings"
 
 #QMAKE_LIBDIR +=./
-LIBS    +=halcon.lib halconcpp.lib lua53.lib qwt.lib  pcl_io_release.lib  pcl_common_release.lib PCL_Library_Dll.lib
+LIBS    +=halcon.lib halconcpp.lib LJV7_IF.lib lua53.lib qwt.lib  pcl_io_release.lib  pcl_common_release.lib PCL_Library_Dll.lib
 
 
 
@@ -56,7 +58,9 @@ SOURCES += main.cpp\
     glwidget.cpp \
     imgListView.cpp\
     profileget.cpp \
-    lua/lua.cpp
+    lua/lua.cpp \
+    kings/kingscontrol.cpp \
+    laser/laser.cpp
 
 
 
@@ -83,7 +87,9 @@ HEADERS  += mainwindow.h \
     pcl/PCL_Library_Dll.h \
     imgListView.h \
     profileget.h \
-    lua/lua.h
+    lua/lua.h \
+    kings/kingscontrol.h \
+    laser/laser.h
 
 
 FORMS    += mainwindow.ui \

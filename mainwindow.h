@@ -1,6 +1,8 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <afx.h>
+#include "afxcmn.h"
+#include "afxwin.h"
 #include <QMainWindow>
 
 #include "checkthread.h"
@@ -37,6 +39,7 @@
 #include "msghandlerwapper.h"
 #include "glwidget.h"
 #include <QColorDialog>
+#include "kingscontrol.h"
 using namespace Halcon;
 
 
@@ -115,6 +118,7 @@ public slots:
 private:
     Ui::MainWindow *ui;
     QFile debug;
+    kingsControl *kings;
     Plot *plot;
     QDialog *dataDialog;
     profileGet *profile;

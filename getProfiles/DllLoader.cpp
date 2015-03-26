@@ -10,10 +10,12 @@
 //   01465 Dresden OT Langebrueck
 //   Germany
 
+
+
 #include "stdafx.h"
 
-
 #include "DllLoader.h"
+
 #include <string.h>
 // <summary>
 // constructor of the DllLoader class

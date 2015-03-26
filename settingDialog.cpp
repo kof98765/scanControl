@@ -10,6 +10,7 @@ mySettings::mySettings(QWidget *parent) :
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf8"));
 	
     flush_settings();
+    qDebug()<<"settings system is run";
 }
 
 mySettings::~mySettings()
@@ -19,6 +20,18 @@ mySettings::~mySettings()
 
 void mySettings::flush_settings()
 {
+    if(set.value("kingsIP",0)!=0)
+    {
+        ui->ip0->setValue(set.value("kingsIp",0).toStringList().at(0).toInt());
+        ui->ip16->setValue(set.value("kingsIp",0).toStringList().at(1).toInt());
+        ui->ip24->setValue(set.value("kingsIp",0).toStringList().at(2).toInt());
+        ui->ip32->setValue(set.value("kingsIp",0).toStringList().at(3).toInt());
+    }
+    ui->commandPort->setValue(set.value("commandPort",24691).toInt());
+    ui->dataPort->setValue(set.value("dataPort",24692).toInt());
+    ui->freq->setValue(set.value("freq",10).toInt());
+    set.setValue("dataPort",ui->dataPort->value());
+    set.setValue("freq",ui->freq->value());
     ui->path->setText(set.value("path","D:/image").toString());
     ui->robotIp->setText(set.value("robotIp").toString());
     ui->robotPort->setText(set.value("robotPort").toString());
@@ -50,6 +63,16 @@ void mySettings::flush_settings()
 }
 void mySettings::on_Button_Yes_clicked()
 {
+    QStringList str;
+    str<<QString("%1").arg(ui->ip0->value());
+    str<<QString("%1").arg(ui->ip16->value());
+    str<<QString("%1").arg(ui->ip24->value());
+    str<<QString("%1").arg(ui->ip32->value());
+    set.setValue("mode",ui->Ethernet->isChecked()?1:0);
+    set.setValue("kingsIp",str);
+    set.setValue("commandPort",ui->commandPort->value());
+    set.setValue("dataPort",ui->dataPort->value());
+    set.setValue("freq",ui->freq->value());
     set.setValue("robotIp",ui->robotIp->text());
     set.setValue("robotPort",ui->robotPort->text().toInt());
     set.setValue("photoIp",ui->cameraIp->text());

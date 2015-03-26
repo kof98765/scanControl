@@ -1231,7 +1231,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 
    // memcpy(&imgData[recvCount*1280],pdValueZ,w*h);
   //  recvCount+=h;
-    qDebug()<<"recv:"<<h;
+   // qDebug()<<"recv:"<<h;
     char     type[128];
     Hlong     width,height;
     float *pointer=0,*p=(float *)pdValueZ;
@@ -1265,7 +1265,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
         }
     }
     isLoadFile=false;
-    qDebug()<<"read time:"<<time.elapsed()<<"msec";
+    //qDebug()<<"read time:"<<time.elapsed()<<"msec";
 
 
   //  write_image(RGBImage,"bmp",0,"test.bmp");
@@ -1284,7 +1284,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
         copy_image(Imagetemp,tmp);
         imgList.push_back(tmp);
         emit addImg(tmp);
-        qDebug()<<"imgList.size="<<imgList.size();
+      //  qDebug()<<"imgList.size="<<imgList.size();
 
         if(imgList.size()>8)
         {
