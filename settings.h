@@ -1,47 +1,51 @@
-#ifndef _SETTINGS_
-#define _SETTINGS_
+#ifndef SETTINGS_H
+#define SETTINGS_H
 
-#include <qstring.h>
-
-class Settings
+#include <QObject>
+#include <QSettings>
+#include <QtCore/QCoreApplication>
+class Roi
 {
-public:
-    Settings()
+    Roi()
     {
-        legend.isEnabled = false;
-        legend.position = 0;
-
-        legendItem.isEnabled = false;
-        legendItem.numColumns = 0;
-        legendItem.alignment = 0;
-        legendItem.backgroundMode = 0;
-        legendItem.size = 12;
-
-        curve.numCurves = 0;
-        curve.title = "Curve";
+        name="rect";
     }
-    
-    struct
-    {
-        bool isEnabled;
-        int position;
-    } legend;
+public:
+    QString name;
+    double x;
+    double y;
+    double angle;
+    double endX;
+    double endY;
+    double width;
+    double height;
+    unsigned int color;
+    double size;
+    double limit;
+    int index;
+    int func;
+    int team;
+};
+class settings : public QObject
+{
+    Q_OBJECT
+public:
+    static settings * instance();
 
-    struct
-    {
-        bool isEnabled;
-        int numColumns;
-        int alignment;
-        int backgroundMode;
-        int size;
-        
-    } legendItem;
-    
-    struct
-    {
-        int numCurves;
-        QString title;
-    } curve;
+    QMap<QString,QVariant> teamList;
+    QMap<QString,QVariant> roiList;
+    void addRoi(Roi* r);
+    void delRoi(QString);
+
+private:
+    settings();
+    QSettings set;
+    static settings * m_instance;
+signals:
+
+public slots:
+
+
 };
 
-#endif
+#endif // SETTINGS_H

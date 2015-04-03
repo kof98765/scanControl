@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QFileDialog>
 #include "plot.h"
-#include "settings.h"
+
 #include <QMouseEvent>
 #include <QMenu>
 #include <QFile>

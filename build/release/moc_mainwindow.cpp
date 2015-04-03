@@ -111,7 +111,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      40,   14, // methods
+      41,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -119,48 +119,49 @@ static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  214,    2, 0x06 /* Public */,
-       3,    0,  215,    2, 0x06 /* Public */,
+       1,    0,  219,    2, 0x06 /* Public */,
+       3,    0,  220,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    2,  216,    2, 0x0a /* Public */,
-       6,    4,  221,    2, 0x0a /* Public */,
-       7,    3,  230,    2, 0x0a /* Public */,
-       8,    2,  237,    2, 0x0a /* Public */,
-      12,    0,  242,    2, 0x0a /* Public */,
-      13,    0,  243,    2, 0x0a /* Public */,
-      14,    0,  244,    2, 0x0a /* Public */,
-      15,    1,  245,    2, 0x0a /* Public */,
-      17,    0,  248,    2, 0x0a /* Public */,
-      18,    1,  249,    2, 0x0a /* Public */,
-      19,    1,  252,    2, 0x0a /* Public */,
-      20,    1,  255,    2, 0x0a /* Public */,
-      21,    0,  258,    2, 0x0a /* Public */,
-      22,    0,  259,    2, 0x0a /* Public */,
-      23,    0,  260,    2, 0x0a /* Public */,
-      24,    1,  261,    2, 0x0a /* Public */,
-      25,    0,  264,    2, 0x0a /* Public */,
-      26,    0,  265,    2, 0x0a /* Public */,
-      27,    1,  266,    2, 0x0a /* Public */,
-      29,    0,  269,    2, 0x0a /* Public */,
-      30,    0,  270,    2, 0x0a /* Public */,
-      31,    0,  271,    2, 0x0a /* Public */,
-      32,    1,  272,    2, 0x0a /* Public */,
-      35,    2,  275,    2, 0x0a /* Public */,
-      38,    0,  280,    2, 0x0a /* Public */,
-      39,    0,  281,    2, 0x0a /* Public */,
-      40,    0,  282,    2, 0x0a /* Public */,
-      41,    0,  283,    2, 0x0a /* Public */,
-      42,    0,  284,    2, 0x0a /* Public */,
-      43,    0,  285,    2, 0x0a /* Public */,
-      44,    0,  286,    2, 0x0a /* Public */,
-      45,    0,  287,    2, 0x0a /* Public */,
-      46,    0,  288,    2, 0x0a /* Public */,
-      47,    0,  289,    2, 0x0a /* Public */,
-      48,    0,  290,    2, 0x08 /* Private */,
-      49,    0,  291,    2, 0x08 /* Private */,
-      50,    2,  292,    2, 0x08 /* Private */,
-      51,    0,  297,    2, 0x08 /* Private */,
+       4,    2,  221,    2, 0x0a /* Public */,
+       6,    4,  226,    2, 0x0a /* Public */,
+       6,    4,  235,    2, 0x0a /* Public */,
+       7,    2,  244,    2, 0x0a /* Public */,
+       8,    2,  249,    2, 0x0a /* Public */,
+      12,    0,  254,    2, 0x0a /* Public */,
+      13,    0,  255,    2, 0x0a /* Public */,
+      14,    0,  256,    2, 0x0a /* Public */,
+      15,    1,  257,    2, 0x0a /* Public */,
+      17,    0,  260,    2, 0x0a /* Public */,
+      18,    1,  261,    2, 0x0a /* Public */,
+      19,    1,  264,    2, 0x0a /* Public */,
+      20,    1,  267,    2, 0x0a /* Public */,
+      21,    0,  270,    2, 0x0a /* Public */,
+      22,    0,  271,    2, 0x0a /* Public */,
+      23,    0,  272,    2, 0x0a /* Public */,
+      24,    1,  273,    2, 0x0a /* Public */,
+      25,    0,  276,    2, 0x0a /* Public */,
+      26,    0,  277,    2, 0x0a /* Public */,
+      27,    1,  278,    2, 0x0a /* Public */,
+      29,    0,  281,    2, 0x0a /* Public */,
+      30,    0,  282,    2, 0x0a /* Public */,
+      31,    0,  283,    2, 0x0a /* Public */,
+      32,    1,  284,    2, 0x0a /* Public */,
+      35,    2,  287,    2, 0x0a /* Public */,
+      38,    0,  292,    2, 0x0a /* Public */,
+      39,    0,  293,    2, 0x0a /* Public */,
+      40,    0,  294,    2, 0x0a /* Public */,
+      41,    0,  295,    2, 0x0a /* Public */,
+      42,    0,  296,    2, 0x0a /* Public */,
+      43,    0,  297,    2, 0x0a /* Public */,
+      44,    0,  298,    2, 0x0a /* Public */,
+      45,    0,  299,    2, 0x0a /* Public */,
+      46,    0,  300,    2, 0x0a /* Public */,
+      47,    0,  301,    2, 0x0a /* Public */,
+      48,    0,  302,    2, 0x08 /* Private */,
+      49,    0,  303,    2, 0x08 /* Private */,
+      50,    2,  304,    2, 0x08 /* Private */,
+      51,    0,  309,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -169,7 +170,8 @@ static const uint qt_meta_data_MainWindow[] = {
  // slots: parameters
     QMetaType::Void, 0x80000000 | 5, QMetaType::QString,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Double, QMetaType::Double, QMetaType::Double,    2,    2,    2,    2,
-    QMetaType::Void, QMetaType::Int, QMetaType::Double, QMetaType::Double,    2,    2,    2,
+    QMetaType::Void, QMetaType::QString, QMetaType::Double, QMetaType::Double, QMetaType::Double,    2,    2,    2,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Double,    2,    2,
     QMetaType::Void, 0x80000000 | 9, QMetaType::Int,   10,   11,
     QMetaType::Void,
     QMetaType::Void,
@@ -218,42 +220,43 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->E128_detect(); break;
         case 2: _t->outputMessage((*reinterpret_cast< QtMsgType(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 3: _t->recvHeightSub((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
-        case 4: _t->recvPlaneness((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3]))); break;
-        case 5: _t->dispFrame((*reinterpret_cast< unsigned char*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 6: _t->Net_Param(); break;
-        case 7: _t->about(); break;
-        case 8: _t->on_action_Quit_triggered(); break;
-        case 9: _t->Error((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 10: _t->dispImg(); break;
-        case 11: _t->controlImg((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 12: _t->selectImg((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: _t->modeSelect((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->on_loadFile_clicked(); break;
-        case 15: _t->detect(); break;
-        case 16: _t->startButton_clicked(); break;
-        case 17: _t->netTest((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 18: _t->on_textChanged(); break;
-        case 19: _t->recvHeartPack(); break;
-        case 20: _t->flushRoiList((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
-        case 21: _t->on_roiColor_clicked(); break;
-        case 22: _t->on_launchDevice_clicked(); break;
-        case 23: _t->on_actionReset_triggered(); break;
-        case 24: _t->paintEvent((*reinterpret_cast< QPaintEvent*(*)>(_a[1]))); break;
-        case 25: _t->on_tableWidget_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 26: _t->on_realTimeButton_clicked(); break;
-        case 27: _t->on_singleFrameButton_clicked(); break;
-        case 28: _t->on_threeDButton_clicked(); break;
-        case 29: _t->on_twoDButton_clicked(); break;
-        case 30: _t->startVideo(); break;
-        case 31: _t->stopVideo(); break;
-        case 32: _t->startSingleFrame(); break;
-        case 33: _t->stopSingleFrame(); break;
-        case 34: _t->action_delItem(); break;
-        case 35: _t->action_modifyItem(); break;
-        case 36: _t->on_roiDraw_clicked(); break;
-        case 37: _t->statusCheck(); break;
-        case 38: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 39: _t->on_toExcel_clicked(); break;
+        case 4: _t->recvHeightSub((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
+        case 5: _t->recvPlaneness((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 6: _t->dispFrame((*reinterpret_cast< unsigned char*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 7: _t->Net_Param(); break;
+        case 8: _t->about(); break;
+        case 9: _t->on_action_Quit_triggered(); break;
+        case 10: _t->Error((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 11: _t->dispImg(); break;
+        case 12: _t->controlImg((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->selectImg((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->modeSelect((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->on_loadFile_clicked(); break;
+        case 16: _t->detect(); break;
+        case 17: _t->startButton_clicked(); break;
+        case 18: _t->netTest((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 19: _t->on_textChanged(); break;
+        case 20: _t->recvHeartPack(); break;
+        case 21: _t->flushRoiList((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
+        case 22: _t->on_roiColor_clicked(); break;
+        case 23: _t->on_launchDevice_clicked(); break;
+        case 24: _t->on_actionReset_triggered(); break;
+        case 25: _t->paintEvent((*reinterpret_cast< QPaintEvent*(*)>(_a[1]))); break;
+        case 26: _t->on_tableWidget_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 27: _t->on_realTimeButton_clicked(); break;
+        case 28: _t->on_singleFrameButton_clicked(); break;
+        case 29: _t->on_threeDButton_clicked(); break;
+        case 30: _t->on_twoDButton_clicked(); break;
+        case 31: _t->startVideo(); break;
+        case 32: _t->stopVideo(); break;
+        case 33: _t->startSingleFrame(); break;
+        case 34: _t->stopSingleFrame(); break;
+        case 35: _t->action_delItem(); break;
+        case 36: _t->action_modifyItem(); break;
+        case 37: _t->on_roiDraw_clicked(); break;
+        case 38: _t->statusCheck(); break;
+        case 39: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 40: _t->on_toExcel_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -299,13 +302,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 40)
+        if (_id < 41)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 40;
+        _id -= 41;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 40)
+        if (_id < 41)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 40;
+        _id -= 41;
     }
     return _id;
 }

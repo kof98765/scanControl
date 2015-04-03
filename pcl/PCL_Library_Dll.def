@@ -5,6 +5,12 @@ ComputePointNormal @2
 ComputePointNormal2 @3
 Dis_point2plane @4
 CalculateFlatness @5
-CalculateFlatness @6
+CalculateFlatness2 @6
 GetChildCloud @7
 GetChildPoint @8
+Create_template @9
+Match_template @10
+gen_region2xld @11
+fit_line @12
+Points2Cloud3 @13
+byteMapperTable @14

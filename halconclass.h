@@ -1,6 +1,7 @@
 ﻿#ifndef HALCONCLASS_H
 #define HALCONCLASS_H
 #include "HalconCpp.h"
+#include "HIOStream.h"
 #include <QWindow>
 #include <QDebug>
 #include <QThread>
@@ -16,6 +17,10 @@
 
 using namespace std;
 using namespace Halcon;
+void CPPExpDefaultExceptionHandler(const Halcon::HException& except);
+
+
+
 
 class halconClass:public QThread
 {
@@ -23,31 +28,26 @@ class halconClass:public QThread
 public:
 
     halconClass(QObject *parent = 0);
+    typedef int (*ComputePointNormal2)(PointCloud::Ptr &cloud, Vector4f &normal_vec);
+    typedef int (*Dis_point2plane)(PointT &point,Vector4f &normal_vec,double &_result);
+    typedef int (*Calculate)(PointCloud::Ptr &, double &);
+    typedef int (*CalculateFlatness2) (PointCloud::Ptr &cloud, double &);
+    typedef int (*GetChildPoint)(PointCloud::Ptr &inCloud,Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,PointCloud::Ptr outCloud);
+    typedef int (*Points2Cloud3)(float* iX,float* iY,float* iZ,int iLength,PointCloud::Ptr inCloud);
+    typedef int (*CalculateFlatness)(PointCloud::Ptr &inCloud, double &_result);
+    typedef int (*CT)(Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,HTuple hv_mode,HTuple hv__min,HTuple hv__max,HTuple *hv_TemplateID);
+    typedef int (*byteMapperTable)(Halcon::Hobject ho_inImage,Halcon::Hobject *ho_outImage,HTuple hv__min,HTuple hv__max);
 
     void saveResult();
     void startThread();
-
-    void one_white_line();
-    void two_black_line();
-    void three_black_block();
-    void four_white_block();
-    void five_black_block();
-    void six_senve_night_white_line();
-    void eight_white_line();
-    void sixteen_white_line();
-    void seventeen_white_line();
     void readMTX(QString str);
-
-
-
+    void planePoint(int team);
     void stopThread();
     void open_the_window(int handle,int width,int height);
     HTuple WindowHandle;
     void threedControl(double lastRow, double lastCol, double Row, double Column,QString mode);
     void reset();
     void moveImg(int x,int y);
-    void setMinMaxLength(double min,double max);
-    void setMinMaxArea(double min,double max);
     void setUseDefault(bool def);
     void set_pos(int x,int y);
     void readSettings();
@@ -104,16 +104,24 @@ private:
     bool hasData;
     bool isLoadFile;
     int index;
+    HTuple locateRow;
+    HTuple locateColumn;
+    HTuple locateAngle;
+    HTuple HomMat2D;
+
     HTuple centerX,centerY;
+
     QList<Hobject*> imgList;
+
     QTime time;
     QMap<QString,QVariant> roiList;
     QMap<QString,QVariant> dataList;
+    QMap<QString,QVariant> locateList;
+    QMap<QString,HTuple> matList;
 
 public slots:
     void test();
     void clearData();
-    void E128_detect();
      void disp_img();
      void zoomIn();
      void zoomOut();
@@ -123,7 +131,7 @@ public slots:
     void close_the_window();
     void drawRect(QString name,QString color,int team,double limit,int func);
     void calculate();
-    void delRect(int);
+    void delRect(QString);
     void RectHeightSub(int team);
     void createTemplate(int team);
     void matchTemplate(int team);
@@ -137,12 +145,15 @@ signals:
     void badResult(int type,int x,int y,int width,int height,int length);
     void dispImg();
     void sendHeightSub(int,double,double,double);
+    void sendHeightSub(QString,double,double,double);
     void flushRoiList(QStringList list);
-    void sendPlaneness(int ,double,double);
+    void sendPlaneness(int ,double);
     void Error(QString);
     void addImg(Hobject *);
     void deleteImg(int index);
     void deleteAllImg();
+    void reConnect();
+
 
 };
 

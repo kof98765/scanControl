@@ -27,7 +27,7 @@
 #include <QSettings>
 #include <QStringListModel>
 #include <QWheelEvent>
-
+#include "settings.h"
 #include <QDirIterator>
 #include <QtGui>
 #include <QSplashScreen>
@@ -73,7 +73,8 @@ protected:
 public slots:
     void outputMessage(QtMsgType,QString);
     void recvHeightSub(int,double,double,double);
-    void recvPlaneness(int ,double,double);
+    void recvHeightSub(QString,double,double,double);
+    void recvPlaneness(int ,double);
     void dispFrame(unsigned char *buf,int size);
     void Net_Param();
     void about();

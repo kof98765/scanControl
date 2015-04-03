@@ -67,7 +67,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>5</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -375,6 +375,50 @@
            <string/>
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
+           <item row="13" column="2">
+            <widget class="QLineEdit" name="erosion">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>200</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>缺陷半径</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="2">
+            <widget class="QLineEdit" name="grayDvalue">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>20</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <widget class="QLabel" name="label_39">
+             <property name="text">
+              <string>图片数量</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QLineEdit" name="badMaxArea">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>200</string>
+             </property>
+            </widget>
+           </item>
            <item row="3" column="2">
             <widget class="QLineEdit" name="badMinHeight">
              <property name="inputMethodHints">
@@ -385,47 +429,10 @@
              </property>
             </widget>
            </item>
-           <item row="8" column="2">
-            <widget class="QLineEdit" name="contrast">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_10">
              <property name="text">
-              <string>2</string>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <widget class="QLabel" name="label_7">
-             <property name="text">
-              <string>对比度</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="4">
-            <widget class="QLineEdit" name="smothHeight">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
-             <property name="text">
-              <string>7</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="2">
-            <widget class="QLineEdit" name="smothWidth">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
-             <property name="text">
-              <string>7</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="0">
-            <widget class="QLabel" name="label_17">
-             <property name="text">
-              <string>模糊系数</string>
+              <string>缺陷限定宽度(pix)</string>
              </property>
             </widget>
            </item>
@@ -439,20 +446,33 @@
              </property>
             </widget>
            </item>
-           <item row="5" column="4">
-            <widget class="QLineEdit" name="maxGray">
+           <item row="14" column="2">
+            <widget class="QSpinBox" name="imgNum">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>8</number>
+             </property>
+             <property name="value">
+              <number>8</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QLineEdit" name="badMaxWidth">
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
              </property>
              <property name="text">
-              <string>255</string>
+              <string>40</string>
              </property>
             </widget>
            </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_16">
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_17">
              <property name="text">
-              <string>缺陷半径</string>
+              <string>模糊系数</string>
              </property>
             </widget>
            </item>
@@ -463,6 +483,115 @@
              </property>
              <property name="text">
               <string>100</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="2">
+            <widget class="QLineEdit" name="smothWidth">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>7</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>灰度值差值</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="2">
+            <widget class="QLineEdit" name="contrast">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLineEdit" name="checkMinArea">
+             <property name="text">
+              <string>2000000</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLineEdit" name="badMinArea">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>缺陷限定高度(pix)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>被测物面积(pix)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLineEdit" name="badMinWidth">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="4">
+            <widget class="QLineEdit" name="smothHeight">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>7</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLineEdit" name="checkMaxArea">
+             <property name="text">
+              <string>45700000</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>缺陷限定面积(pix)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>二值化范围:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="4">
+            <widget class="QLineEdit" name="maxGray">
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>255</string>
              </property>
             </widget>
            </item>
@@ -483,81 +612,6 @@
              </property>
             </widget>
            </item>
-           <item row="5" column="0">
-            <widget class="QLabel" name="label_15">
-             <property name="text">
-              <string>二值化范围:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="13" column="2">
-            <widget class="QLineEdit" name="erosion">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
-             <property name="text">
-              <string>200</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="QLineEdit" name="badMinWidth">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>缺陷限定宽度(pix)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="9" column="2">
-            <widget class="QLineEdit" name="grayDvalue">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
-             <property name="text">
-              <string>20</string>
-             </property>
-            </widget>
-           </item>
-           <item row="9" column="0">
-            <widget class="QLabel" name="label_9">
-             <property name="text">
-              <string>灰度值差值</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="label_11">
-             <property name="text">
-              <string>缺陷限定高度(pix)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_8">
-             <property name="text">
-              <string>缺陷限定面积(pix)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="4">
-            <widget class="QLineEdit" name="badMaxWidth">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
-             <property name="text">
-              <string>40</string>
-             </property>
-            </widget>
-           </item>
            <item row="3" column="4">
             <widget class="QLineEdit" name="badMaxHeight">
              <property name="inputMethodHints">
@@ -568,44 +622,17 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="4">
-            <widget class="QLineEdit" name="badMaxArea">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
+           <item row="8" column="0">
+            <widget class="QLabel" name="label_7">
              <property name="text">
-              <string>200</string>
+              <string>对比度</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_6">
+           <item row="15" column="0">
+            <widget class="QCheckBox" name="doubleTurn">
              <property name="text">
-              <string>被测物面积(pix)</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QLineEdit" name="badMinArea">
-             <property name="inputMethodHints">
-              <set>Qt::ImhDigitsOnly</set>
-             </property>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLineEdit" name="checkMinArea">
-             <property name="text">
-              <string>2000000</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="4">
-            <widget class="QLineEdit" name="checkMaxArea">
-             <property name="text">
-              <string>45700000</string>
+              <string>双数翻转</string>
              </property>
             </widget>
            </item>
@@ -767,7 +794,7 @@
          <item row="1" column="1">
           <widget class="QSpinBox" name="profileCount">
            <property name="maximum">
-            <number>5000</number>
+            <number>10000</number>
            </property>
            <property name="singleStep">
             <number>10</number>

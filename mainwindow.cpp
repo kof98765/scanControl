@@ -44,8 +44,8 @@ MainWindow::MainWindow(QWidget *parent) :
     imgView=new imgListView();
     imgView->setLayout(ui->imgList);
 
-
-
+    //qDebug()<<settings::team::roiList::roi.name;
+    settings::instance();
     timer=new QTimer();
     eventTimer=new QTimer();
     connect(eventTimer,SIGNAL(timeout()),this,SLOT(statusCheck()));
@@ -265,7 +265,7 @@ void MainWindow::init_connect()
     connect(ui->action_Net_Param,SIGNAL(triggered()),this,SLOT(Net_Param()));
 
     connect(ui->action_Quit,SIGNAL(triggered()),this,SLOT(on_action_Quit_triggered()));
-
+    connect(ui->actionStop,SIGNAL(triggered()),kings,SLOT(stopGetData()));
     connect(ui->action_big,SIGNAL(triggered()),hal,SLOT(zoomOut()));
     connect(ui->action_small,SIGNAL(triggered()),hal,SLOT(zoomIn()));
     connect(ui->reset,SIGNAL(clicked()),this,SLOT(on_actionReset_triggered()));
@@ -292,11 +292,12 @@ void MainWindow::init_connect()
                     SLOT(outputMessage(QtMsgType,QString)));
     //接收显示信号
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
-    connect(hal,SIGNAL(sendPlaneness(int,double,double)),this,SLOT(recvPlaneness(int,double,double)));
+    connect(hal,SIGNAL(reConnect()),kings,SLOT(startGetData()));
+    connect(hal,SIGNAL(sendPlaneness(int,double)),this,SLOT(recvPlaneness(int,double)));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
     connect(hal,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
-    connect(hal,SIGNAL(sendHeightSub(int,double,double,double))
-            ,this,SLOT(recvHeightSub(int,double,double,double)));
+    connect(hal,SIGNAL(sendHeightSub(QString,double,double,double))
+            ,this,SLOT(recvHeightSub(QString,double,double,double)));
     connect(kings,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
     connect(kings,SIGNAL(dispSingleFrame(unsigned short*,unsigned short*,double*,double*,int)),
             plot,SLOT(upScanControlData(unsigned short*,unsigned short*,double*,double*,int)));
@@ -305,7 +306,7 @@ void MainWindow::init_connect()
     //connect(profile,SIGNAL(putImagebyPointer3(double*,double*,double*,int,int)),hal,SLOT(getImagebyPointer3(double*,double*,double*,int,int)));
     //connect(profile,SIGNAL(setData(double*,int)),glWidget,SLOT(setData(double*,int)));
     connect(profile,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
-
+    connect(kings,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
     //connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
     //connect(profile,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
     //connect(profile,SIGNAL(dispSingleFrame(unsigned short *,unsigned short *,double *,double *,int)),
@@ -766,9 +767,20 @@ void MainWindow::outputMessage(QtMsgType type,QString str)
 }
 
 /*
-    接收高差计算结果并显示
+ *  name:recvHeightSub
+    type:槽函数
+    arg:[1]:int为分组,QString为区域名
+        [2]:高差最小值
+        [3]:高差最大值
+        [4]:高差
+
+    disciption:
+        接收高差计算结果并显示
+
 */
-void MainWindow::recvHeightSub(int team,double min,double max,double range)
+void MainWindow::recvHeightSub(int,double min,double max,double range)
+{}
+void MainWindow::recvHeightSub(QString name,double min,double max,double range)
 {
     status=0;
 
@@ -777,10 +789,10 @@ void MainWindow::recvHeightSub(int team,double min,double max,double range)
 
     ui->tableWidget->setSortingEnabled(false);
     sum->add_row();
-    if(range>data.value(QString::number(team)).toStringList().last().toDouble())
-        sum->add_item(0,QString("NG"));
+
+    sum->add_item(0,QString("OK"));
     sum->add_item(1,QStringLiteral("高差"));
-    sum->add_item(2,QStringLiteral("分组")+QString::number(team+1));
+    sum->add_item(2,name);
     sum->add_item(3,QString("%1").arg(range));
 
     sum->add_item(4,QString("%1").arg(min));
@@ -789,10 +801,19 @@ void MainWindow::recvHeightSub(int team,double min,double max,double range)
 
     ui->tableWidget->setSortingEnabled(true);
 }
+
 /*
-    接收平面度信息
+ *  name:recvPlaneness
+    type:槽函数
+    arg:[1]:int为分组
+        [2]:结果1
+        [3]:结果2
+
+    disciption:
+        接收高差计算结果并显示
+
 */
-void MainWindow::recvPlaneness(int team,double result1,double result2)
+void MainWindow::recvPlaneness(int team,double result1)
 {
     status=0;
 
@@ -802,14 +823,14 @@ void MainWindow::recvPlaneness(int team,double result1,double result2)
 
     ui->tableWidget->setSortingEnabled(false);
     sum->add_row();
-    if(result2>data.value(QString::number(team)).toStringList().last().toDouble())
-        sum->add_item(0,QString("NG"));
+
+    sum->add_item(0,QString("OK"));
     sum->add_item(1,QStringLiteral("平面度"));
     sum->add_item(2,QStringLiteral("分组")+QString::number(team+1));
-    sum->add_item(3,QString("%1").arg(result2));
+    sum->add_item(3,QString("%1").arg(result1));
 
-    sum->add_item(4,QString("%1").arg(result1>result2?result2:result1));
-    sum->add_item(5,QString("%1").arg(result1>result2?result1:result2));
+    sum->add_item(4,QString("%1").arg(0));
+    sum->add_item(5,QString("%1").arg(0));
     //sum->add_item(7,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
 
     ui->tableWidget->setSortingEnabled(true);
@@ -904,7 +925,6 @@ void MainWindow::on_threeDButton_clicked()
      ui->startButton->setText(QStringLiteral("开始扫描"));
      ui->base->setCurrentIndex(0);
     // profile->startTrigger();
-     kings->setDispMode(1);
      hal->setMode("3D");
 }
 /*
@@ -941,26 +961,37 @@ void MainWindow::on_roiDraw_clicked()
 */
 void MainWindow::flushRoiList(QStringList ll)
 {
-    QStringList str;
+
 
     QStringList line;
     roiList->clear_table();
     QMap<QString,QVariant> list=set.value("roiList").toMap();
-	
+
     for(int i=0;i<list.size();i++)
     {
-        str.clear();
+        QMap<QString,QVariant> roi=set.value("team/"+list.keys().at(i)).toMap();
+
 		roiList->add_row();
         roiList->add_item(0,list.keys().at(i));
-        QStringList tmp=list.value(list.keys().at(i)).toStringList();
-        roiList->add_item(1,QString::number(tmp.at(5).toInt()+1));
-        roiList->add_item(2,(tmp.at(7).toInt()==0?QStringLiteral("高差"):QStringLiteral("平面度")));
-        roiList->add_item(3,tmp.at(6));
+
+        roiList->add_item(1,QString::number(roi.value("team").toInt()+1));
+        switch(roi.value("func").toInt())
+        {
+            case 0:
+                roiList->add_item(2,QStringLiteral("定位"));
+                break;
+            case 1:
+                roiList->add_item(2,QStringLiteral("搜索"));
+                break;
+            case 2:
+                roiList->add_item(2,QStringLiteral("计算平面"));
+                break;
+            case 3:
+                roiList->add_item(2,QStringLiteral("计算高差"));
+                break;
+        }
         
     }
-
-
-   
 
 }
 /*
@@ -968,16 +999,15 @@ void MainWindow::flushRoiList(QStringList ll)
 */
 void MainWindow::action_delItem()
 {
-    QMap<QString,QVariant> list=set.value("roiList").toMap();
 
-    QStringList tmp=list.keys();
+
+    QString name=ui->roiList->item(currentItem,0)->text();
 	if(currentItem==-1)
 		return;
-    list.remove(tmp.at(currentItem));
-    hal->delRect(currentItem);
+
     ui->roiList->removeRow(currentItem);
 	ui->roiList->update();
-
+    hal->delRect(name);
 }
 /*
     矩形框列表修改事件
@@ -995,13 +1025,13 @@ void MainWindow::statusCheck()
     static int i=0;
     if(profile->testConnect())
     {
-        ui->connect->setText(QStringLiteral("已连接"));
+       // ui->connect->setText(QStringLiteral("已连接"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
         "color: rgb(0, 0, 0);"));
     }
     else
     {
-        ui->connect->setText(QStringLiteral("未连接"));
+        //ui->connect->setText(QStringLiteral("未连接"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
         "color: rgb(255, 0, 0);"));
 

@@ -22,6 +22,7 @@ INCLUDEPATH += "$$(PCL_ROOT)/include/pcl-1.6"
 INCLUDEPATH += "$$(PCL_ROOT)/3rdParty/Qhull/include"
 INCLUDEPATH+="lua/include"
 INCLUDEPATH+="kings/"
+INCLUDEPATH+="laser/"
 
 #INCLUDEPATH+= "D:/opencv/include/opencv"
 DEFINES+=QWT_DLL PCLLIBRARYDLL _AFXDLL
@@ -60,7 +61,8 @@ SOURCES += main.cpp\
     profileget.cpp \
     lua/lua.cpp \
     kings/kingscontrol.cpp \
-    laser/laser.cpp
+    laser/laser.cpp \
+    settings.cpp
 
 
 
@@ -74,7 +76,6 @@ HEADERS  += mainwindow.h \
     record.h \
     pointanalyze.h \
     plot.h \
-    settings.h \
     getProfiles/DllLoader.h \
     getProfiles/InterfaceLLT_2.h \
     getProfiles/resource.h \
@@ -89,7 +90,9 @@ HEADERS  += mainwindow.h \
     profileget.h \
     lua/lua.h \
     kings/kingscontrol.h \
-    laser/laser.h
+    laser/laser.h \
+    settings.h
+
 
 
 FORMS    += mainwindow.ui \

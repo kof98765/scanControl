@@ -13434,3 +13434,79 @@ Demonstrate the SingleFrame mode
 09:49:59.046: 0
 09:49:59.046: 0
 09:49:59.047: 0
+08:01:49.955: rowcount 0
+10:21:47.895: rowcount 0
+11:53:34.197: rowcount 0
+11:53:58.604: rowcount 0
+11:54:00.878: rowcount 13
+11:54:00.880: read "D:/qt/first/build/test0.tif"
+11:54:00.929: 1280 1000 real
+11:54:01.106: 1280 1000
+11:54:01.106: read finish
+11:54:07.920: rowcount 13
+11:54:07.922: ""
+11:54:07.922: 4294901760 0 "3" 2
+11:54:12.422: rowcount 14
+11:54:12.424: ""
+11:54:12.424: 4294901760 0 "3" 2
+16:10:15.455: rowcount 0
+16:10:18.617: start
+16:10:18.617: rowcount 0
+16:10:18.617: clear
+16:10:18.628: rowcount 1
+16:10:18.630: mode 1
+16:10:18.630: frequency 10
+16:10:18.630: commandPort 24691
+16:10:18.630: dataPort 24692
+16:10:18.632: 0
+16:10:18.632: start ethernet
+16:10:18.632: ("1", "0", "168", "192")
+16:10:18.640: etherneMode is init
+16:10:19.833: LJV7IF_PreStartHighSpeedDataCommunication
+16:49:21.647: rowcount 0
+16:49:24.487: rowcount 1
+16:49:24.488: read "D:/qt/first/build/test0.tif"
+16:49:24.530: 1280 1000 real
+16:49:24.716: 1280 1000
+16:49:24.717: read finish
+16:49:28.288: create template "rect"
+08:01:25.349: rowcount 0
+08:01:25.390: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+08:01:28.199: rowcount 11
+08:01:28.204: read "D:/qt/first/build/release/test3.tif"
+08:01:28.705: 800 5000 real
+08:01:29.210: 800 5000
+08:01:29.210: read finish
+08:01:29.664: rowcount 11
+08:01:29.668: read "D:/qt/first/build/release/test3.tif"
+08:01:29.771: 800 5000 real
+08:01:30.247: 800 5000
+08:01:30.247: read finish
+08:01:30.738: rowcount 11
+08:01:30.742: read "D:/qt/first/build/release/test3.tif"
+08:01:30.849: 800 5000 real
+08:01:31.311: 800 5000
+08:01:31.311: read finish
+08:01:32.333: rowcount 11
+08:01:32.337: read "D:/qt/first/build/release/test3.tif"
+08:01:32.442: 800 5000 real
+08:01:32.907: 800 5000
+08:01:32.907: read finish
+08:01:33.687: rowcount 11
+08:01:33.691: read "D:/qt/first/build/release/test3.tif"
+08:01:33.802: 800 5000 real
+08:01:34.272: 800 5000
+08:01:34.272: read finish
+08:01:34.893: rowcount 11
+08:01:34.898: read "D:/qt/first/build/release/test3.tif"
+08:01:35.001: 800 5000 real
+08:01:35.458: 800 5000
+08:01:35.458: read finish
+08:01:36.161: rowcount 11
+08:01:36.165: read "D:/qt/first/build/release/test3.tif"
+08:01:36.272: 800 5000 real
+08:01:36.724: 800 5000
+08:01:36.725: read finish
+08:01:37.323: rowcount 11
+08:01:37.326: read "D:/qt/first/build/release/test3.tif"
+08:01:37.428: 800 5000 real

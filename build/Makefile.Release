@@ -14,7 +14,7 @@ CXX           = cl
 DEFINES       = -DWIN32 -DQWT_DLL -DPCLLIBRARYDLL -D_AFXDLL -DQT_NO_DEBUG -DQT_AXCONTAINER_LIB -DQT_OPENGL_LIB -DQT_AXBASE_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG
 CFLAGS        = -nologo -Zm200 -Zc:wchar_t -O2 -MD -W3 $(DEFINES)
 CXXFLAGS      = -nologo -Zm200 -Zc:wchar_t -O2 -MD -GR -W3 -w34100 -w34189 -EHsc $(DEFINES)
-INCPATH       = -I"C:\Program Files\MVTec\HALCON-10.0\include" -I"C:\Program Files\MVTec\HALCON-10.0\include\cpp" -I"F:\PCL 1.6.0\3rdParty\Boost\include" -I"F:\PCL 1.6.0\3rdParty\Eigen\include" -I"F:\PCL 1.6.0\3rdParty\FLANN\include" -I"F:\PCL 1.6.0\include\pcl-1.6" -I"F:\PCL 1.6.0\3rdParty\Qhull\include" -I"..\lua\include" -I"..\kings" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" -I"release" -I"release" -I"." -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010"
+INCPATH       = -I"C:\Program Files\MVTec\HALCON-10.0\include" -I"C:\Program Files\MVTec\HALCON-10.0\include\cpp" -I"F:\PCL 1.6.0\3rdParty\Boost\include" -I"F:\PCL 1.6.0\3rdParty\Eigen\include" -I"F:\PCL 1.6.0\3rdParty\FLANN\include" -I"F:\PCL 1.6.0\include\pcl-1.6" -I"F:\PCL 1.6.0\3rdParty\Qhull\include" -I"..\lua\include" -I"..\kings" -I"..\laser" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\ActiveQt" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui" -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore" -I"release" -I"release" -I"." -I"C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010"
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
 LIBS          = /LIBPATH:C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\qtmain.lib /LIBPATH:"C:\Program Files\MVTec\HALCON-10.0\lib\x86sse2-win32" /LIBPATH:"F:\PCL 1.6.0\lib" /LIBPATH:..\pcl /LIBPATH:..\lua /LIBPATH:..\kings halcon.lib halconcpp.lib LJV7_IF.lib lua53.lib qwt.lib pcl_io_release.lib pcl_common_release.lib PCL_Library_Dll.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5AxContainer.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5OpenGL.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5AxBase.lib glu32.lib opengl32.lib ole32.lib oleaut32.lib user32.lib gdi32.lib advapi32.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Widgets.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Network.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Gui.lib C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\lib\Qt5Core.lib release\first_resource.res 
@@ -62,7 +62,9 @@ SOURCES       = ..\main.cpp \
 		..\imgListView.cpp \
 		..\profileget.cpp \
 		..\lua\lua.cpp \
-		..\kings\kingscontrol.cpp release\qrc_icons.cpp \
+		..\kings\kingscontrol.cpp \
+		..\laser\laser.cpp \
+		..\settings.cpp release\qrc_icons.cpp \
 		release\qrc_ico.cpp \
 		release\moc_mainwindow.cpp \
 		release\moc_robot.cpp \
@@ -78,7 +80,9 @@ SOURCES       = ..\main.cpp \
 		release\moc_settingDialog.cpp \
 		release\moc_glwidget.cpp \
 		release\moc_imgListView.cpp \
-		release\moc_kingscontrol.cpp
+		release\moc_kingscontrol.cpp \
+		release\moc_laser.cpp \
+		release\moc_settings.cpp
 OBJECTS       = release\main.obj \
 		release\mainwindow.obj \
 		release\robot.obj \
@@ -99,6 +103,8 @@ OBJECTS       = release\main.obj \
 		release\profileget.obj \
 		release\lua.obj \
 		release\kingscontrol.obj \
+		release\laser.obj \
+		release\settings.obj \
 		release\qrc_icons.obj \
 		release\qrc_ico.obj \
 		release\moc_mainwindow.obj \
@@ -115,7 +121,9 @@ OBJECTS       = release\main.obj \
 		release\moc_settingDialog.obj \
 		release\moc_glwidget.obj \
 		release\moc_imgListView.obj \
-		release\moc_kingscontrol.obj
+		release\moc_kingscontrol.obj \
+		release\moc_laser.obj \
+		release\moc_settings.obj
 
 DIST          = 
 QMAKE_TARGET  = first
@@ -126,6 +134,26 @@ DESTDIR_TARGET = release\first.exe
 ####### Implicit rules
 
 .SUFFIXES: .c .cpp .cc .cxx
+
+{..\laser}.cpp{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\laser}.cc{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\laser}.cxx{release\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
+
+{..\laser}.c{release\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\ @<<
+	$<
+<<
 
 {..\getProfiles}.cpp{release\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\ @<<
@@ -270,7 +298,7 @@ dist:
 	$(ZIP) first.zip $(SOURCES) $(DIST) ..\first.pro C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\spec_pre.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\common\shell-win32.conf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\qconfig.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axbase.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axserver.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_core.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_core_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_declarative.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designer.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_enginio.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_gui.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_help.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_help_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_network.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_network_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_nfc.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_opengl.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_positioning.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qml.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quick.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_script.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_script_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sensors.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_serialport.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sql.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_svg.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_testlib.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_uitools.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkit.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_websockets.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_widgets.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_winextras.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xml.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\qt_functions.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\qt_config.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\win32\qt_config.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010\qmake.conf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\spec_post.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\exclusive_builds.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\default_pre.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\win32\default_pre.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\resolve_config.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\exclusive_builds_post.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\default_post.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\build_pass.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\win32\rtti.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\precompile_header.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\warn_on.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\qt.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\resources.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\moc.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\win32\opengl.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\uic.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\win32\dumpcpp.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\win32\windows.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\testcase_targets.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\exceptions.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\yacc.prf C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\lex.prf ..\first.pro ..\icons.qrc ..\ico\ico.qrc C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/qtmain.prl C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Core.prl C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5AxContainer.prl C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5AxBase.prl C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Gui.prl C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Widgets.prl C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5OpenGL.prl C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Network.prl  NO_PCH_SOURCES RESOURCES TYPELIBS HEADERS TYPELIBS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\robot.obj release\reflectcontrol.obj release\summarizing.obj release\halconclass.obj release\tvplot.obj release\record.obj release\pointanalyze.obj release\plot.obj release\DllLoader.obj release\InterfaceLLT_2.obj release\profileget.obj release\msghandlerwapper.obj release\settingDialog.obj release\glwidget.obj release\imgListView.obj release\profileget.obj release\lua.obj release\kingscontrol.obj release\qrc_icons.obj release\qrc_ico.obj release\moc_mainwindow.obj release\moc_robot.obj release\moc_reflectcontrol.obj release\moc_summarizing.obj release\moc_halconclass.obj release\moc_tvplot.obj release\moc_record.obj release\moc_pointanalyze.obj release\moc_plot.obj release\moc_profileget.obj release\moc_msghandlerwapper.obj release\moc_settingDialog.obj release\moc_glwidget.obj release\moc_imgListView.obj release\moc_kingscontrol.obj
+	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\robot.obj release\reflectcontrol.obj release\summarizing.obj release\halconclass.obj release\tvplot.obj release\record.obj release\pointanalyze.obj release\plot.obj release\DllLoader.obj release\InterfaceLLT_2.obj release\profileget.obj release\msghandlerwapper.obj release\settingDialog.obj release\glwidget.obj release\imgListView.obj release\profileget.obj release\lua.obj release\kingscontrol.obj release\laser.obj release\settings.obj release\qrc_icons.obj release\qrc_ico.obj release\moc_mainwindow.obj release\moc_robot.obj release\moc_reflectcontrol.obj release\moc_summarizing.obj release\moc_halconclass.obj release\moc_tvplot.obj release\moc_record.obj release\moc_pointanalyze.obj release\moc_plot.obj release\moc_profileget.obj release\moc_msghandlerwapper.obj release\moc_settingDialog.obj release\moc_glwidget.obj release\moc_imgListView.obj release\moc_kingscontrol.obj release\moc_laser.obj release\moc_settings.obj
 	-$(DEL_FILE) release\first.exp release\first.exe.embed.manifest
 	-$(DEL_FILE) release\first_resource.res
 
@@ -474,9 +502,9 @@ release\qrc_ico.cpp: ..\ico\ico.qrc \
 
 compiler_dumpcpp_decl_make_all:
 compiler_dumpcpp_decl_clean:
-compiler_moc_header_make_all: release\moc_mainwindow.cpp release\moc_robot.cpp release\moc_reflectcontrol.cpp release\moc_summarizing.cpp release\moc_halconclass.cpp release\moc_tvplot.cpp release\moc_record.cpp release\moc_pointanalyze.cpp release\moc_plot.cpp release\moc_profileget.cpp release\moc_msghandlerwapper.cpp release\moc_settingDialog.cpp release\moc_glwidget.cpp release\moc_imgListView.cpp release\moc_profileget.cpp release\moc_kingscontrol.cpp
+compiler_moc_header_make_all: release\moc_mainwindow.cpp release\moc_robot.cpp release\moc_reflectcontrol.cpp release\moc_summarizing.cpp release\moc_halconclass.cpp release\moc_tvplot.cpp release\moc_record.cpp release\moc_pointanalyze.cpp release\moc_plot.cpp release\moc_profileget.cpp release\moc_msghandlerwapper.cpp release\moc_settingDialog.cpp release\moc_glwidget.cpp release\moc_imgListView.cpp release\moc_profileget.cpp release\moc_kingscontrol.cpp release\moc_laser.cpp release\moc_settings.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_robot.cpp release\moc_reflectcontrol.cpp release\moc_summarizing.cpp release\moc_halconclass.cpp release\moc_tvplot.cpp release\moc_record.cpp release\moc_pointanalyze.cpp release\moc_plot.cpp release\moc_profileget.cpp release\moc_msghandlerwapper.cpp release\moc_settingDialog.cpp release\moc_glwidget.cpp release\moc_imgListView.cpp release\moc_profileget.cpp release\moc_kingscontrol.cpp
+	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_robot.cpp release\moc_reflectcontrol.cpp release\moc_summarizing.cpp release\moc_halconclass.cpp release\moc_tvplot.cpp release\moc_record.cpp release\moc_pointanalyze.cpp release\moc_plot.cpp release\moc_profileget.cpp release\moc_msghandlerwapper.cpp release\moc_settingDialog.cpp release\moc_glwidget.cpp release\moc_imgListView.cpp release\moc_profileget.cpp release\moc_kingscontrol.cpp release\moc_laser.cpp release\moc_settings.cpp
 release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qwidget.h \
@@ -703,6 +731,7 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
 		..\halconclass.h \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HIOStream.h" \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QWindow \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qwindow.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
@@ -1740,6 +1769,7 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree2buf_base.h" \
 		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\organized.h" \
 		"C:\Program Files\MVTec\HALCON-10.0\include\CPP\HalconCpp.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\CPP\HIOStream.h" \
 		..\dialogimgparam.h \
 		..\imgview.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QWidget \
@@ -1829,6 +1859,7 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QStringListModel \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringlistmodel.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QWheelEvent \
+		..\settings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QtGui \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QtGuiDepends \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QtCore \
@@ -2052,7 +2083,6 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QSpacerItem \
 		..\pointanalyze.h \
 		..\plot.h \
-		..\settings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_zoomer.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_picker.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_picker.h \
@@ -2080,9 +2110,10 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		..\kings\NativeMethods.h \
 		..\kings\LJV7_IF.h \
 		..\kings\LJV7_ErrorCode.h \
+		..\laser\laser.h \
 		..\kings\resource.h \
 		..\mainwindow.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\mainwindow.h -o release\moc_mainwindow.cpp
 
 release\moc_robot.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\QTcpServer \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\qtcpserver.h \
@@ -2196,7 +2227,7 @@ release\moc_robot.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\QTcpS
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		..\robot.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\robot.h -o release\moc_robot.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\robot.h -o release\moc_robot.cpp
 
 release\moc_reflectcontrol.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\QUdpSocket \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\qudpsocket.h \
@@ -2277,7 +2308,7 @@ release\moc_reflectcontrol.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetw
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSettings \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
 		..\reflectcontrol.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\reflectcontrol.h -o release\moc_reflectcontrol.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\reflectcontrol.h -o release\moc_reflectcontrol.cpp
 
 release\moc_summarizing.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
@@ -2425,7 +2456,7 @@ release\moc_summarizing.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QO
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QProgressBar \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qprogressbar.h \
 		..\summarizing.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\summarizing.h -o release\moc_summarizing.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\summarizing.h -o release\moc_summarizing.cpp
 
 release\moc_halconclass.cpp: "C:\Program Files\MVTec\HALCON-10.0\include\cpp\HalconCpp.h" \
 		"C:\Program Files\MVTec\HALCON-10.0\include\HIntDef.h" \
@@ -2528,6 +2559,7 @@ release\moc_halconclass.cpp: "C:\Program Files\MVTec\HALCON-10.0\include\cpp\Hal
 		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HTextResult.h" \
 		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HInterfaceCPP.h" \
 		"C:\Program Files\MVTec\HALCON-10.0\include\hlib\HInstance.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HIOStream.h" \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QWindow \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qwindow.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
@@ -3657,8 +3689,9 @@ release\moc_halconclass.cpp: "C:\Program Files\MVTec\HALCON-10.0\include\cpp\Hal
 		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree2buf_base.h" \
 		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\organized.h" \
 		"C:\Program Files\MVTec\HALCON-10.0\include\CPP\HalconCpp.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\CPP\HIOStream.h" \
 		..\halconclass.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\halconclass.h -o release\moc_halconclass.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\halconclass.h -o release\moc_halconclass.cpp
 
 release\moc_tvplot.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_global.h \
@@ -3799,7 +3832,7 @@ release\moc_tvplot.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_marker.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_symbol.h \
 		..\tvplot.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\tvplot.h -o release\moc_tvplot.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\tvplot.h -o release\moc_tvplot.cpp
 
 release\moc_record.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
@@ -3923,7 +3956,7 @@ release\moc_record.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		..\record.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\record.h -o release\moc_record.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\record.h -o release\moc_record.cpp
 
 release\moc_pointanalyze.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qdialog.h \
@@ -4047,7 +4080,6 @@ release\moc_pointanalyze.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidget
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_transform.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_interval.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qframe.h \
-		..\settings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_zoomer.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_picker.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_picker.h \
@@ -4074,7 +4106,7 @@ release\moc_pointanalyze.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidget
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSemaphore \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsemaphore.h \
 		..\pointanalyze.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\pointanalyze.h -o release\moc_pointanalyze.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\pointanalyze.h -o release\moc_pointanalyze.cpp
 
 release\moc_plot.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_global.h \
@@ -4191,7 +4223,6 @@ release\moc_plot.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		..\settings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_zoomer.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_picker.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_picker.h \
@@ -4203,7 +4234,7 @@ release\moc_plot.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_panner.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_marker.h \
 		..\plot.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\plot.h -o release\moc_plot.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\plot.h -o release\moc_plot.cpp
 
 release\moc_profileget.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
@@ -4304,7 +4335,7 @@ release\moc_profileget.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QOb
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QThread \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qthread.h \
 		..\profileget.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\profileget.h -o release\moc_profileget.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\profileget.h -o release\moc_profileget.cpp
 
 release\moc_msghandlerwapper.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
@@ -4377,7 +4408,7 @@ release\moc_msghandlerwapper.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCo
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfile.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		..\msghandlerwapper.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\msghandlerwapper.h -o release\moc_msghandlerwapper.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\msghandlerwapper.h -o release\moc_msghandlerwapper.cpp
 
 release\moc_settingDialog.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qdialog.h \
@@ -4488,7 +4519,7 @@ release\moc_settingDialog.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidge
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
 		..\settingDialog.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\settingDialog.h -o release\moc_settingDialog.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\settingDialog.h -o release\moc_settingDialog.cpp
 
 release\moc_glwidget.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL\QGLWidget \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL\qgl.h \
@@ -4605,7 +4636,7 @@ release\moc_glwidget.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtOpenGL\QGL
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qsurfaceformat.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
 		..\glwidget.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\glwidget.h -o release\moc_glwidget.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\glwidget.h -o release\moc_glwidget.cpp
 
 release\moc_imgListView.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
@@ -4820,7 +4851,7 @@ release\moc_imgListView.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QO
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QMouseEvent \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
 		..\imgListView.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\imgListView.h -o release\moc_imgListView.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\imgListView.h -o release\moc_imgListView.cpp
 
 release\moc_profileget.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
@@ -4921,7 +4952,7 @@ release\moc_profileget.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QOb
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QThread \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qthread.h \
 		..\profileget.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\profileget.h -o release\moc_profileget.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\profileget.h -o release\moc_profileget.cpp
 
 release\moc_kingscontrol.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QThread \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qthread.h \
@@ -4976,6 +5007,7 @@ release\moc_kingscontrol.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\Q
 		..\kings\NativeMethods.h \
 		..\kings\LJV7_IF.h \
 		..\kings\LJV7_ErrorCode.h \
+		..\laser\laser.h \
 		..\kings\resource.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSettings \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
@@ -4998,7 +5030,131 @@ release\moc_kingscontrol.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\Q
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
 		..\kings\kingscontrol.h
-	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\kings\kingscontrol.h -o release\moc_kingscontrol.cpp
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\kings\kingscontrol.h -o release\moc_kingscontrol.cpp
+
+release\moc_laser.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QThread \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qthread.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfeatures.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qflags.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv7.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv6.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv5.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_ia64.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_mips.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_x86.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_gcc.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_unix.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstring.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qchar.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlist.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject_impl.h \
+		..\laser\laser.h
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\laser\laser.h -o release\moc_laser.cpp
+
+release\moc_settings.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfeatures.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qflags.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv7.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv6.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv5.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_ia64.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_mips.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_x86.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_gcc.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_unix.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstring.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qchar.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlist.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject_impl.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSettings \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvariant.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmap.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qpair.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdebug.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qhash.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtextstream.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qiodevice.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlocale.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qshareddata.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvector.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qpoint.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qset.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcontiguouscache.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdatastream.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringmatcher.h \
+		..\settings.h
+	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\settings.h -o release\moc_settings.cpp
 
 compiler_dumpcpp_impl_make_all:
 compiler_dumpcpp_impl_clean:
@@ -5490,7 +5646,6 @@ release\pointanalyze.obj: ..\pointanalyze.cpp ..\pointanalyze.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_transform.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_interval.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qframe.h \
-		..\settings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_zoomer.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_picker.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_picker.h \
@@ -5678,7 +5833,6 @@ release\plot.obj: ..\plot.cpp ..\plot.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		..\settings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_zoomer.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_picker.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_picker.h \
@@ -6428,6 +6582,7 @@ release\kingscontrol.obj: ..\kings\kingscontrol.cpp ..\kings\kingscontrol.h \
 		..\kings\NativeMethods.h \
 		..\kings\LJV7_IF.h \
 		..\kings\LJV7_ErrorCode.h \
+		..\laser\laser.h \
 		..\kings\resource.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSettings \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
@@ -6449,6 +6604,128 @@ release\kingscontrol.obj: ..\kings\kingscontrol.cpp ..\kings\kingscontrol.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qregexp.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug
+
+release\laser.obj: ..\laser\laser.cpp ..\laser\laser.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QThread \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qthread.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfeatures.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qflags.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv7.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv6.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv5.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_ia64.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_mips.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_x86.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_gcc.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_unix.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstring.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qchar.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlist.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject_impl.h
+
+release\settings.obj: ..\settings.cpp ..\settings.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfeatures.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qflags.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv7.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv6.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_armv5.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_ia64.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_mips.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_x86.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_gcc.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qatomic_unix.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstring.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qchar.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlist.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qobject_impl.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSettings \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvariant.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmap.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qpair.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdebug.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qhash.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtextstream.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qiodevice.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlocale.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qshareddata.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvector.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qpoint.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qset.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcontiguouscache.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdatastream.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringmatcher.h
 
 release\qrc_icons.obj: release\qrc_icons.cpp 
 
@@ -6483,6 +6760,10 @@ release\moc_glwidget.obj: release\moc_glwidget.cpp
 release\moc_imgListView.obj: release\moc_imgListView.cpp 
 
 release\moc_kingscontrol.obj: release\moc_kingscontrol.cpp 
+
+release\moc_laser.obj: release\moc_laser.cpp 
+
+release\moc_settings.obj: release\moc_settings.cpp 
 
 ####### Install
 

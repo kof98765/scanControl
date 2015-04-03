@@ -1,5 +1,5 @@
 #include "plot.h"
-#include "settings.h"
+
 #include <qwt_plot_curve.h>
 #include <qwt_plot_legenditem.h>
 #include <qwt_legend.h>

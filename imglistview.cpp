@@ -36,7 +36,7 @@ void imgListView::addImg(Hobject *obj)
      set_lut(win,"rainbow");
     winList.push_back(win);
     disp_obj(*obj,win);
-    qDebug()<<imgList.indexOf(obj);
+
 }
 void imgListView::deleteImg(int index)
 {

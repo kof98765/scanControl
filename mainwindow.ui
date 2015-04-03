@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1071</width>
+    <width>1280</width>
     <height>698</height>
    </rect>
   </property>
@@ -28,7 +28,7 @@
      <rect>
       <x>530</x>
       <y>10</y>
-      <width>541</width>
+      <width>731</width>
       <height>601</height>
      </rect>
     </property>
@@ -40,7 +40,7 @@
     </property>
     <widget class="QPushButton" name="startButton">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -107,7 +107,7 @@
       <rect>
        <x>10</x>
        <y>370</y>
-       <width>521</width>
+       <width>621</width>
        <height>224</height>
       </rect>
      </property>
@@ -159,7 +159,7 @@
         </column>
         <column>
          <property name="text">
-          <string>算法</string>
+          <string>类型</string>
          </property>
         </column>
         <column>
@@ -191,34 +191,83 @@
       <rect>
        <x>10</x>
        <y>50</y>
-       <width>511</width>
+       <width>621</width>
        <height>311</height>
       </rect>
      </property>
      <property name="title">
       <string>编辑测量区域</string>
      </property>
-     <widget class="QGroupBox" name="groupBox_5">
+     <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>10</x>
         <y>20</y>
-        <width>161</width>
+        <width>281</width>
         <height>281</height>
        </rect>
       </property>
       <property name="title">
-       <string>绘制区域</string>
+       <string>区域列表</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="2" column="0">
-        <widget class="QPushButton" name="roiDraw">
-         <property name="text">
-          <string>绘制</string>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTableWidget" name="roiList">
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
          </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>65</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>区域名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>分组</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>类型</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>阈值</string>
+          </property>
+         </column>
         </widget>
        </item>
-       <item row="1" column="0">
+      </layout>
+     </widget>
+     <widget class="QTabWidget" name="team2">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>10</y>
+        <width>301</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>绘制区域</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>151</width>
+          <height>231</height>
+         </rect>
+        </property>
         <layout class="QFormLayout" name="formLayout">
          <property name="fieldGrowthPolicy">
           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
@@ -249,7 +298,7 @@
          <item row="3" column="0">
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>计算:</string>
+            <string>类型:</string>
            </property>
           </widget>
          </item>
@@ -257,12 +306,22 @@
           <widget class="QComboBox" name="func">
            <item>
             <property name="text">
-             <string>高差</string>
+             <string>定位区域</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>平面度</string>
+             <string>搜索区域</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>计算平面度</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>计算高差</string>
             </property>
            </item>
           </widget>
@@ -379,53 +438,179 @@
           </widget>
          </item>
         </layout>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>301</width>
-        <height>281</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>区域列表</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QTableWidget" name="roiList">
-         <property name="selectionBehavior">
-          <enum>QAbstractItemView::SelectRows</enum>
+       </widget>
+       <widget class="QPushButton" name="roiDraw">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>240</y>
+          <width>151</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>绘制</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>键入区域</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>240</y>
+          <width>151</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>绘制</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="formLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>154</width>
+          <height>235</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout_2">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
          </property>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>65</number>
-         </attribute>
-         <column>
-          <property name="text">
-           <string>区域名</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>分组</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>算法</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>阈值</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
+         <item row="0" column="0">
+          <widget class="QLabel" name="Label">
+           <property name="text">
+            <string>区域名:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="roiname2"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="Label_2">
+           <property name="text">
+            <string>分组:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="ComboBox"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="Label_3">
+           <property name="text">
+            <string>类型:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="func2"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="Label_4">
+           <property name="text">
+            <string>区域大小:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="roiSize"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="Label_5">
+           <property name="text">
+            <string>坐标:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="pointX"/>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="pointY"/>
+           </item>
+          </layout>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="Label_6">
+           <property name="text">
+            <string>单位:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="unit">
+           <item>
+            <property name="text">
+             <string>微米</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>毫米</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="Label_7">
+           <property name="text">
+            <string>最小值:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLineEdit" name="minValue"/>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="Label_8">
+           <property name="text">
+            <string>最大值:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QLineEdit" name="maxValue"/>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="Label_9">
+           <property name="text">
+            <string>颜色:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QPushButton" name="roiColor2">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QLabel" name="connect">
@@ -442,7 +627,7 @@
 </string>
      </property>
      <property name="text">
-      <string>未连接</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="reset">
@@ -803,7 +988,7 @@ border-radius:25px</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1071</width>
+     <width>1280</width>
      <height>23</height>
     </rect>
    </property>
@@ -833,6 +1018,7 @@ border-radius:25px</string>
     <addaction name="actionReset"/>
     <addaction name="actionCal"/>
     <addaction name="actionCallback"/>
+    <addaction name="actionStop"/>
    </widget>
    <addaction name="menu_2"/>
    <addaction name="menu_S"/>
@@ -1033,6 +1219,11 @@ border-radius:25px</string>
   <action name="action_2">
    <property name="text">
     <string>测量高差</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="text">
+    <string>stop</string>
    </property>
   </action>
  </widget>

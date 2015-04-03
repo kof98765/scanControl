@@ -460,6 +460,29 @@ void profileGet::preGetDate()
         break;
     }
 }
+void profileGet::startGetData()
+{
+    switch(mode)
+    {
+        case 0:
+            this->startTrigger();
+            break;
+        case 1:
+            this->GetProfiles_Callback();
+        break;
+        case 2:
+            this->startSingleFrame();
+        break;
+        case 3:
+            this->startVedio();
+        break;
+    }
+}
+void profileGet::setDispMode(int m)
+{
+    mode=m;
+    startGetData();
+}
 void profileGet::getVideoFrame()
 {
     int iRetValue;

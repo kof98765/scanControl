@@ -2,7 +2,7 @@
 #define _PLOT_H_
 
 #include <qwt_plot.h>
-#include "settings.h"
+
 #include <qwt_plot_zoomer.h>
 #include <qwt_plot_magnifier.h>
 #include <qwt_plot_panner.h>

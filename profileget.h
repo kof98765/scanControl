@@ -103,6 +103,8 @@ public slots:
     void setExposeTime(int s,int i);
     void setExternTrigger(int index);
     bool testConnect();
+    void startGetData();
+    void setDispMode(int m);
     QList<double> getList();
 };
 

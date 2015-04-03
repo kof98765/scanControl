@@ -27,6 +27,7 @@ void mySettings::flush_settings()
         ui->ip24->setValue(set.value("kingsIp",0).toStringList().at(2).toInt());
         ui->ip32->setValue(set.value("kingsIp",0).toStringList().at(3).toInt());
     }
+    ui->imgNum->setValue(set.value("imgNum",8).toInt());
     ui->commandPort->setValue(set.value("commandPort",24691).toInt());
     ui->dataPort->setValue(set.value("dataPort",24692).toInt());
     ui->freq->setValue(set.value("freq",10).toInt());
@@ -58,8 +59,8 @@ void mySettings::flush_settings()
     ui->autoThreshold->setCurrentIndex(set.value("autoThreshold",0).toInt());
     ui->exposure->setCurrentIndex(set.value("exposeTime",0).toInt());
     ui->rate->setValue(set.value("rate",25).toInt());
-
-
+    ui->doubleTurn->setChecked(set.value("doubleTurn",false).toBool());
+    ui->usb->setChecked(!set.value("mode").toBool());
 }
 void mySettings::on_Button_Yes_clicked()
 {
@@ -68,6 +69,8 @@ void mySettings::on_Button_Yes_clicked()
     str<<QString("%1").arg(ui->ip16->value());
     str<<QString("%1").arg(ui->ip24->value());
     str<<QString("%1").arg(ui->ip32->value());
+    set.setValue("imgNum",ui->imgNum->value());
+    set.setValue("doubleTurn",ui->doubleTurn->isChecked());
     set.setValue("mode",ui->Ethernet->isChecked()?1:0);
     set.setValue("kingsIp",str);
     set.setValue("commandPort",ui->commandPort->value());

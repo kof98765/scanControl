@@ -1,6 +1,6 @@
 #include "laser.h"
 
-laser::laser(QObject *parent) :
+Laser::Laser(QObject *parent) :
     QThread(parent)
 {
 }
