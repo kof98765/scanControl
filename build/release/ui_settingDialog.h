@@ -191,6 +191,11 @@ public:
     QSpinBox *freq;
     QRadioButton *usb;
     QRadioButton *Ethernet;
+    QLabel *Label;
+    QHBoxLayout *horizontalLayout_8;
+    QLineEdit *minMeasuringRange;
+    QSpacerItem *horizontalSpacer_12;
+    QLineEdit *maxMeasuringRange;
 
     void setupUi(QDialog *mySettings)
     {
@@ -646,7 +651,7 @@ public:
         tab_5->setObjectName(QStringLiteral("tab_5"));
         formLayoutWidget = new QWidget(tab_5);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 0, 288, 502));
+        formLayoutWidget->setGeometry(QRect(10, 0, 221, 502));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
@@ -830,13 +835,13 @@ public:
         label_37->setGeometry(QRect(330, 10, 54, 12));
         readSet = new QPushButton(tab_5);
         readSet->setObjectName(QStringLiteral("readSet"));
-        readSet->setGeometry(QRect(280, 470, 91, 23));
+        readSet->setGeometry(QRect(330, 470, 91, 23));
         connecct = new QPushButton(tab_5);
         connecct->setObjectName(QStringLiteral("connecct"));
         connecct->setGeometry(QRect(240, 0, 41, 23));
         testValue = new QDoubleSpinBox(tab_5);
         testValue->setObjectName(QStringLiteral("testValue"));
-        testValue->setGeometry(QRect(280, 440, 62, 22));
+        testValue->setGeometry(QRect(530, 500, 62, 22));
         testValue->setSingleStep(0.001);
         testValue->setValue(0.01);
         tabWidget->addTab(tab_5, QString());
@@ -938,6 +943,30 @@ public:
 
         formLayout_2->setWidget(1, QFormLayout::FieldRole, Ethernet);
 
+        Label = new QLabel(formLayoutWidget_2);
+        Label->setObjectName(QStringLiteral("Label"));
+
+        formLayout_2->setWidget(6, QFormLayout::LabelRole, Label);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        minMeasuringRange = new QLineEdit(formLayoutWidget_2);
+        minMeasuringRange->setObjectName(QStringLiteral("minMeasuringRange"));
+
+        horizontalLayout_8->addWidget(minMeasuringRange);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_12);
+
+        maxMeasuringRange = new QLineEdit(formLayoutWidget_2);
+        maxMeasuringRange->setObjectName(QStringLiteral("maxMeasuringRange"));
+
+        horizontalLayout_8->addWidget(maxMeasuringRange);
+
+
+        formLayout_2->setLayout(6, QFormLayout::FieldRole, horizontalLayout_8);
+
         tabWidget->addTab(tab_6, QString());
 
         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
@@ -954,7 +983,7 @@ public:
         QObject::connect(Button_Yes, SIGNAL(clicked()), mySettings, SLOT(accept()));
         QObject::connect(pushButton_Cancel, SIGNAL(clicked()), mySettings, SLOT(close()));
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(5);
         triggerSource->setCurrentIndex(1);
         triggerPolarity->setCurrentIndex(1);
         digitalInputs->setCurrentIndex(2);
@@ -975,10 +1004,10 @@ public:
         label_2->setText(QApplication::translate("mySettings", "\346\226\207\344\273\266\350\267\257\345\276\204\357\274\232", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("mySettings", "\350\267\257\345\276\204\350\256\276\347\275\256", 0));
         groupBox_4->setTitle(QString());
-        label->setText(QApplication::translate("mySettings", "\346\234\272\346\242\260\346\211\213IP\345\234\260\345\235\200:", 0));
-        robotIp->setText(QApplication::translate("mySettings", "192.168.1.120", 0));
+        label->setText(QApplication::translate("mySettings", "\346\234\272\345\217\260IP\345\234\260\345\235\200:", 0));
+        robotIp->setText(QApplication::translate("mySettings", "127.0.0.1", 0));
         label_3->setText(QApplication::translate("mySettings", "\347\253\257\345\217\243:", 0));
-        robotPort->setText(QApplication::translate("mySettings", "5000", 0));
+        robotPort->setText(QApplication::translate("mySettings", "4000", 0));
         label_4->setText(QApplication::translate("mySettings", "  \347\233\270\346\234\272IP\345\234\260\345\235\200:", 0));
         label_5->setText(QApplication::translate("mySettings", "udp\347\253\257\345\217\243:", 0));
         cameraIp->setText(QApplication::translate("mySettings", "192.168.1.120", 0));
@@ -1151,6 +1180,9 @@ public:
         label_38->setText(QApplication::translate("mySettings", "\345\233\236\350\260\203\351\242\221\347\216\207:", 0));
         usb->setText(QApplication::translate("mySettings", "USB", 0));
         Ethernet->setText(QApplication::translate("mySettings", "Ethernet", 0));
+        Label->setText(QApplication::translate("mySettings", "\351\207\217\347\250\213", 0));
+        minMeasuringRange->setText(QApplication::translate("mySettings", "-7.5", 0));
+        maxMeasuringRange->setText(QApplication::translate("mySettings", "7.5", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("mySettings", "\345\237\272\346\201\251\346\226\257\346\277\200\345\205\211\350\256\276\347\275\256", 0));
     } // retranslateUi
 

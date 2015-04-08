@@ -67,7 +67,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -125,7 +125,7 @@
              <item>
               <widget class="QLabel" name="label">
                <property name="text">
-                <string>机械手IP地址:</string>
+                <string>机台IP地址:</string>
                </property>
                <property name="buddy">
                 <cstring>robotIp</cstring>
@@ -135,7 +135,7 @@
              <item>
               <widget class="QLineEdit" name="robotIp">
                <property name="text">
-                <string>192.168.1.120</string>
+                <string>127.0.0.1</string>
                </property>
               </widget>
              </item>
@@ -178,7 +178,7 @@
              <item>
               <widget class="QLineEdit" name="robotPort">
                <property name="text">
-                <string>5000</string>
+                <string>4000</string>
                </property>
               </widget>
              </item>
@@ -751,7 +751,7 @@
          <rect>
           <x>10</x>
           <y>0</y>
-          <width>288</width>
+          <width>221</width>
           <height>502</height>
          </rect>
         </property>
@@ -1270,7 +1270,7 @@
        <widget class="QPushButton" name="readSet">
         <property name="geometry">
          <rect>
-          <x>280</x>
+          <x>330</x>
           <y>470</y>
           <width>91</width>
           <height>23</height>
@@ -1296,8 +1296,8 @@
        <widget class="QDoubleSpinBox" name="testValue">
         <property name="geometry">
          <rect>
-          <x>280</x>
-          <y>440</y>
+          <x>530</x>
+          <y>500</y>
           <width>62</width>
           <height>22</height>
          </rect>
@@ -1457,6 +1457,44 @@
             <bool>true</bool>
            </property>
           </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="Label">
+           <property name="text">
+            <string>量程</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLineEdit" name="minMeasuringRange">
+             <property name="text">
+              <string>-7.5</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_12">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="maxMeasuringRange">
+             <property name="text">
+              <string>7.5</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>

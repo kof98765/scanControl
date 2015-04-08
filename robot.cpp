@@ -1,4 +1,4 @@
-#include "robot.h"
+﻿#include "robot.h"
 
 Robot::Robot(QObject *parent) :
     QObject(parent)
@@ -27,7 +27,12 @@ void Robot::initSocked(QString ip,int tcpport)
    tcpClient->connectToHost(serverIp,port);
     //tcpClient->write("Ready",6);
 #else
-
+    if(server->isListening())
+    {
+        server->close();
+        server->deleteLater();
+        server=new QTcpServer;
+    }
     server->listen(QHostAddress::LocalHost,port);
     connect(server,SIGNAL(acceptError(QAbstractSocket::SocketError)),this,SLOT(displayError(QAbstractSocket::SocketError)));
     connect(server,SIGNAL(newConnection()),this,SLOT(newConnect()));
@@ -59,6 +64,7 @@ void Robot::displayError(QAbstractSocket::SocketError socketError)
     default:
         emit netError(tr("The following error occurred: %1.")
                       .arg(tcpClient->errorString()));
+
     }
 }
 /*
@@ -72,7 +78,7 @@ void Robot::tcpDate()
 {
 
     QByteArray data=tcpClient->readAll();
-    qDebug()<<data.data()<<data.size();
+    qDebug()<<"receive:"<<data.data()<<data.size();
     if(QString(data.data()).contains("Ready"))
     {
         tcpClient->write("OK",3);

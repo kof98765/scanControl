@@ -169,17 +169,12 @@
         </column>
         <column>
          <property name="text">
+          <string>区域名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
           <string>计算结果</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>最小值</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>最大值</string>
          </property>
         </column>
        </widget>
@@ -243,7 +238,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QTabWidget" name="team2">
+     <widget class="QTabWidget" name="xxxxxxx">
       <property name="geometry">
        <rect>
         <x>310</x>
@@ -457,7 +452,7 @@
        <attribute name="title">
         <string>键入区域</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="roiDraw2">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -476,7 +471,7 @@
           <x>0</x>
           <y>0</y>
           <width>154</width>
-          <height>235</height>
+          <height>237</height>
          </rect>
         </property>
         <layout class="QFormLayout" name="formLayout_2">
@@ -501,7 +496,48 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QComboBox" name="ComboBox"/>
+          <widget class="QComboBox" name="team2">
+           <item>
+            <property name="text">
+             <string>分组1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>分组2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>分组3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>分组4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>分组5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>分组6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>分组7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>分组8</string>
+            </property>
+           </item>
+          </widget>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="Label_3">
@@ -511,7 +547,28 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QComboBox" name="func2"/>
+          <widget class="QComboBox" name="func2">
+           <item>
+            <property name="text">
+             <string>定位区域</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>搜索区域</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>计算平面度</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>计算高差</string>
+            </property>
+           </item>
+          </widget>
          </item>
          <item row="3" column="0">
           <widget class="QLabel" name="Label_4">
@@ -519,9 +576,6 @@
             <string>区域大小:</string>
            </property>
           </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="roiSize"/>
          </item>
          <item row="4" column="0">
           <widget class="QLabel" name="Label_5">
@@ -533,7 +587,11 @@
          <item row="4" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QLineEdit" name="pointX"/>
+            <widget class="QLineEdit" name="pointX">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
            </item>
            <item>
             <spacer name="horizontalSpacer_2">
@@ -549,7 +607,11 @@
             </spacer>
            </item>
            <item>
-            <widget class="QLineEdit" name="pointY"/>
+            <widget class="QLineEdit" name="pointY">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -582,7 +644,11 @@
           </widget>
          </item>
          <item row="6" column="1">
-          <widget class="QLineEdit" name="minValue"/>
+          <widget class="QLineEdit" name="minValue">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
          </item>
          <item row="7" column="0">
           <widget class="QLabel" name="Label_8">
@@ -592,7 +658,11 @@
           </widget>
          </item>
          <item row="7" column="1">
-          <widget class="QLineEdit" name="maxValue"/>
+          <widget class="QLineEdit" name="maxValue">
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
          </item>
          <item row="8" column="0">
           <widget class="QLabel" name="Label_9">
@@ -603,10 +673,23 @@
          </item>
          <item row="8" column="1">
           <widget class="QPushButton" name="roiColor2">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 0, 0);</string>
+           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
+         </item>
+         <item row="3" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLineEdit" name="roiLength1"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="roiLength2"/>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>
@@ -917,32 +1000,6 @@ border-radius:25px</string>
     </property>
     <property name="text">
      <string>3D显示</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="realTimeButton">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>0</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>实时显示</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="singleFrameButton">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>0</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>单帧显示</string>
     </property>
    </widget>
    <widget class="QLabel" name="rate">

@@ -50,6 +50,7 @@ signals:
     void selectDevice(int index);
     void postExposeTime(int s,int i);
     void setExternTrigger(int index);
+    void upDataNetwork(QString,int);
 };
 
 #endif // mySettings_H

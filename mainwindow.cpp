@@ -77,6 +77,8 @@ MainWindow::MainWindow(QWidget *parent) :
 //加载检测查块
     hal=new halconClass;
     ref=new reflectControl;
+    robot=new Robot;
+    robot->initSocked(set.value("robotIp","127.0.0.1").toString(),set.value("robotPort",4000).toInt());
    // glWidget = new GLWidget;
    // QGridLayout *layout=new QGridLayout;
    // layout->addWidget(glWidget);
@@ -320,7 +322,7 @@ void MainWindow::init_connect()
     connect(setDialog,SIGNAL(setExternTrigger(int)),profile,SLOT(setExternTrigger(int)));
     connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(setDialog,SIGNAL(netTest(QString)),this,SLOT(netTest(QString)));
-
+    connect(setDialog,SIGNAL(upDataNetwork(QString,int)),robot,SLOT(initSocked(QString,int)));
     connect(hal,SIGNAL(addImg(Hobject*)),imgView,SLOT(addImg(Hobject*)));
     connect(hal,SIGNAL(deleteImg(int )),imgView,SLOT(deleteImg(int )));
     connect(hal,SIGNAL(deleteAllImg()),imgView,SLOT(deleteAllImg()));
@@ -783,20 +785,24 @@ void MainWindow::recvHeightSub(int,double min,double max,double range)
 void MainWindow::recvHeightSub(QString name,double min,double max,double range)
 {
     status=0;
-
+    int i;
 
     QMap<QString,QVariant> data=set.value("dataList").toMap();
-
+    for(i=0;i<data.keys().size();i++)
+    {
+        if(data.value(data.keys().at(i)).toStringList().contains(name))
+            break;
+    }
     ui->tableWidget->setSortingEnabled(false);
     sum->add_row();
 
     sum->add_item(0,QString("OK"));
     sum->add_item(1,QStringLiteral("高差"));
-    sum->add_item(2,name);
-    sum->add_item(3,QString("%1").arg(range));
+    sum->add_item(2,QString::number(i));
+    sum->add_item(3,name);
+    sum->add_item(4,QString("%1").arg(range));
 
-    sum->add_item(4,QString("%1").arg(min));
-    sum->add_item(5,QString("%1").arg(max));
+
 
 
     ui->tableWidget->setSortingEnabled(true);
@@ -827,10 +833,10 @@ void MainWindow::recvPlaneness(int team,double result1)
     sum->add_item(0,QString("OK"));
     sum->add_item(1,QStringLiteral("平面度"));
     sum->add_item(2,QStringLiteral("分组")+QString::number(team+1));
-    sum->add_item(3,QString("%1").arg(result1));
+    sum->add_item(3,"N/A");
+    sum->add_item(4,QString("%1").arg(result1));
 
-    sum->add_item(4,QString("%1").arg(0));
-    sum->add_item(5,QString("%1").arg(0));
+
     //sum->add_item(7,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
 
     ui->tableWidget->setSortingEnabled(true);
@@ -947,12 +953,14 @@ void MainWindow::on_twoDButton_clicked()
 */
 void MainWindow::on_roiDraw_clicked()
 {
+    if(isDrawing)
+        return;
     isDrawing=true;
 
     hal->drawRect(ui->roiName->text(),QString::number(ui->roiColor->palette().background().color().rgb()),ui->team->currentIndex(),
                   ui->limitValue->text().toDouble(),ui->func->currentIndex());
     qDebug()<<ui->roiName->text();
-           qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
+    qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
     isDrawing=false;
 
 }
@@ -1118,3 +1126,32 @@ void MainWindow::on_roiColor_clicked()
 	
 }
 
+
+void MainWindow::on_roiColor2_clicked()
+{
+    QColor color=QColorDialog::getColor();
+    if(color.isValid()){
+        int r,g,b;
+        color.getRgb(&r,&g,&b);
+        QString str;
+        str=QString("background-color: rgb(%1,%2,%3)").arg(r).arg(g).arg(b);
+        ui->roiColor2->setStyleSheet(str.toUtf8().data());
+        //QPalette pal=ui->roiColor->palette();
+        //pal.setColor(QPalette::Active,QPalette::Button, color);
+        //ui->roiColor->setPalette(pal);
+        qDebug()<<color.rgb();
+        qDebug()<<((color.rgb()&(0xff<<16))>>16)<<((color.rgb()&(0xff<<8))>>8)<<(color.rgb()&(0xff));
+        ui->roiColor->update();
+    }
+}
+
+void MainWindow::on_roiDraw2_clicked()
+{
+    isDrawing=true;
+
+    hal->drawRect(ui->roiName->text(),QString::number(ui->roiColor->palette().background().color().rgb()),ui->team->currentIndex(),
+                  ui->limitValue->text().toDouble(),ui->func->currentIndex());
+    qDebug()<<ui->roiName->text();
+           qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
+    isDrawing=false;
+}

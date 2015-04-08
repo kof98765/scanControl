@@ -78,7 +78,7 @@ private:
     int recvCount;
     PointCloud::Ptr *inCloud;
     Hobject result_img,Image,RGBImage,tmpImage;
-    QMap<QString,Hobject*> rectList;
+
     HTuple minLength;
     HTuple maxLength;
     HTuple minArea;
@@ -114,9 +114,10 @@ private:
     QList<Hobject*> imgList;
 
     QTime time;
+
     QMap<QString,QVariant> roiList;
     QMap<QString,QVariant> dataList;
-    QMap<QString,QVariant> locateList;
+    QMap<QString,QList<HTuple>> locateList;
     QMap<QString,HTuple> matList;
 
 public slots:

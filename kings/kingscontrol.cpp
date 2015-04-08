@@ -58,7 +58,9 @@ void kingsControl::EthernetMode()
 {
 
 
-    QStringList str=set.value("kingsIp","0").toStringList();
+    QStringList str=set.value("kingsIp","").toStringList();
+    if(str.isEmpty())
+        str<<"10"<<"0"<<"168"<<"192";
     qDebug()<<str;
     _ethernetConfig.abyIpAddress[0]=str.at(3).toInt();
     _ethernetConfig.abyIpAddress[1]=str.at(2).toInt();

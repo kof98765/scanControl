@@ -40,6 +40,7 @@
 #include "glwidget.h"
 #include <QColorDialog>
 #include "kingscontrol.h"
+
 using namespace Halcon;
 
 
@@ -174,6 +175,8 @@ private slots:
     void on_toExcel_clicked();
 
 
+    void on_roiColor2_clicked();
+    void on_roiDraw2_clicked();
 };
 
 #endif // MAINWINDOW_H

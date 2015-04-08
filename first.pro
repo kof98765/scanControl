@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network axcontainer widgets opengl
+QT       += core gui network axcontainer widgets opengl sql
 
 #greaterThan(QT_MAJOR_VERSION, 4): QT +=
 

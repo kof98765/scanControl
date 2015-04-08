@@ -192,6 +192,7 @@ Makefile: ..\first.pro C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\win32-msvc2010\
 		C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Gui.prl \
 		C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Widgets.prl \
 		C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5OpenGL.prl \
+		C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Sql.prl \
 		C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Network.prl
 	$(QMAKE) -spec win32-msvc2010 -o Makefile ..\first.pro
 C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\mkspecs\features\spec_pre.prf:
@@ -313,6 +314,7 @@ C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5AxBase.prl:
 C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Gui.prl:
 C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Widgets.prl:
 C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5OpenGL.prl:
+C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Sql.prl:
 C:/Qt/Qt5.3.2/5.3/msvc2010_opengl/lib/Qt5Network.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-msvc2010 -o Makefile ..\first.pro

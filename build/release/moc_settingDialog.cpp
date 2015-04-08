@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_mySettings_t {
-    QByteArrayData data[29];
-    char stringdata[442];
+    QByteArrayData data[30];
+    char stringdata[456];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,31 +40,33 @@ QT_MOC_LITERAL(7, 58, 14),
 QT_MOC_LITERAL(8, 73, 1),
 QT_MOC_LITERAL(9, 75, 1),
 QT_MOC_LITERAL(10, 77, 16),
-QT_MOC_LITERAL(11, 94, 8),
-QT_MOC_LITERAL(12, 103, 5),
-QT_MOC_LITERAL(13, 109, 14),
-QT_MOC_LITERAL(14, 124, 12),
-QT_MOC_LITERAL(15, 137, 3),
-QT_MOC_LITERAL(16, 141, 21),
-QT_MOC_LITERAL(17, 163, 15),
-QT_MOC_LITERAL(18, 179, 20),
-QT_MOC_LITERAL(19, 200, 21),
-QT_MOC_LITERAL(20, 222, 36),
-QT_MOC_LITERAL(21, 259, 28),
-QT_MOC_LITERAL(22, 288, 4),
-QT_MOC_LITERAL(23, 293, 19),
-QT_MOC_LITERAL(24, 313, 25),
-QT_MOC_LITERAL(25, 339, 30),
-QT_MOC_LITERAL(26, 370, 31),
-QT_MOC_LITERAL(27, 402, 20),
-QT_MOC_LITERAL(28, 423, 18)
+QT_MOC_LITERAL(11, 94, 13),
+QT_MOC_LITERAL(12, 108, 8),
+QT_MOC_LITERAL(13, 117, 5),
+QT_MOC_LITERAL(14, 123, 14),
+QT_MOC_LITERAL(15, 138, 12),
+QT_MOC_LITERAL(16, 151, 3),
+QT_MOC_LITERAL(17, 155, 21),
+QT_MOC_LITERAL(18, 177, 15),
+QT_MOC_LITERAL(19, 193, 20),
+QT_MOC_LITERAL(20, 214, 21),
+QT_MOC_LITERAL(21, 236, 36),
+QT_MOC_LITERAL(22, 273, 28),
+QT_MOC_LITERAL(23, 302, 4),
+QT_MOC_LITERAL(24, 307, 19),
+QT_MOC_LITERAL(25, 327, 25),
+QT_MOC_LITERAL(26, 353, 30),
+QT_MOC_LITERAL(27, 384, 31),
+QT_MOC_LITERAL(28, 416, 20),
+QT_MOC_LITERAL(29, 437, 18)
     },
     "mySettings\0netTest\0\0msg\0updataSettings\0"
     "selectDevice\0index\0postExposeTime\0s\0"
-    "i\0setExternTrigger\0recvData\0char*\0"
-    "flush_settings\0debugMessage\0str\0"
-    "on_Button_Yes_clicked\0on_open_clicked\0"
-    "on_default_2_clicked\0on_sendButton_clicked\0"
+    "i\0setExternTrigger\0upDataNetwork\0"
+    "recvData\0char*\0flush_settings\0"
+    "debugMessage\0str\0on_Button_Yes_clicked\0"
+    "on_open_clicked\0on_default_2_clicked\0"
+    "on_sendButton_clicked\0"
     "on_resampleValue_currentIndexChanged\0"
     "on_profileCount_valueChanged\0arg1\0"
     "on_connecct_clicked\0on_testValue_valueChanged\0"
@@ -80,36 +82,37 @@ static const uint qt_meta_data_mySettings[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       5,       // signalCount
+       6,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  114,    2, 0x06 /* Public */,
-       4,    0,  117,    2, 0x06 /* Public */,
-       5,    1,  118,    2, 0x06 /* Public */,
-       7,    2,  121,    2, 0x06 /* Public */,
-      10,    1,  126,    2, 0x06 /* Public */,
+       1,    1,  119,    2, 0x06 /* Public */,
+       4,    0,  122,    2, 0x06 /* Public */,
+       5,    1,  123,    2, 0x06 /* Public */,
+       7,    2,  126,    2, 0x06 /* Public */,
+      10,    1,  131,    2, 0x06 /* Public */,
+      11,    2,  134,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      11,    1,  129,    2, 0x0a /* Public */,
-      13,    0,  132,    2, 0x0a /* Public */,
-      14,    1,  133,    2, 0x0a /* Public */,
-      16,    0,  136,    2, 0x08 /* Private */,
-      17,    0,  137,    2, 0x08 /* Private */,
-      18,    0,  138,    2, 0x08 /* Private */,
-      19,    0,  139,    2, 0x08 /* Private */,
-      20,    1,  140,    2, 0x08 /* Private */,
-      21,    1,  143,    2, 0x08 /* Private */,
-      23,    0,  146,    2, 0x08 /* Private */,
-      24,    1,  147,    2, 0x08 /* Private */,
-      25,    1,  150,    2, 0x08 /* Private */,
-      26,    1,  153,    2, 0x08 /* Private */,
-      27,    1,  156,    2, 0x08 /* Private */,
-      28,    0,  159,    2, 0x08 /* Private */,
+      12,    1,  139,    2, 0x0a /* Public */,
+      14,    0,  142,    2, 0x0a /* Public */,
+      15,    1,  143,    2, 0x0a /* Public */,
+      17,    0,  146,    2, 0x08 /* Private */,
+      18,    0,  147,    2, 0x08 /* Private */,
+      19,    0,  148,    2, 0x08 /* Private */,
+      20,    0,  149,    2, 0x08 /* Private */,
+      21,    1,  150,    2, 0x08 /* Private */,
+      22,    1,  153,    2, 0x08 /* Private */,
+      24,    0,  156,    2, 0x08 /* Private */,
+      25,    1,  157,    2, 0x08 /* Private */,
+      26,    1,  160,    2, 0x08 /* Private */,
+      27,    1,  163,    2, 0x08 /* Private */,
+      28,    1,  166,    2, 0x08 /* Private */,
+      29,    0,  169,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -117,22 +120,23 @@ static const uint qt_meta_data_mySettings[] = {
     QMetaType::Void, QMetaType::Int,    6,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    8,    9,
     QMetaType::Void, QMetaType::Int,    6,
+    QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 12,    2,
+    QMetaType::Void, 0x80000000 | 13,    2,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   15,
+    QMetaType::Void, QMetaType::QString,   16,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    6,
-    QMetaType::Void, QMetaType::Int,   22,
+    QMetaType::Void, QMetaType::Int,   23,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Double,   22,
+    QMetaType::Void, QMetaType::Double,   23,
     QMetaType::Void, QMetaType::Int,    6,
-    QMetaType::Void, QMetaType::QString,   22,
-    QMetaType::Void, QMetaType::Int,   22,
+    QMetaType::Void, QMetaType::QString,   23,
+    QMetaType::Void, QMetaType::Int,   23,
     QMetaType::Void,
 
        0        // eod
@@ -148,21 +152,22 @@ void mySettings::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->selectDevice((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->postExposeTime((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 4: _t->setExternTrigger((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: _t->recvData((*reinterpret_cast< char*(*)>(_a[1]))); break;
-        case 6: _t->flush_settings(); break;
-        case 7: _t->debugMessage((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 8: _t->on_Button_Yes_clicked(); break;
-        case 9: _t->on_open_clicked(); break;
-        case 10: _t->on_default_2_clicked(); break;
-        case 11: _t->on_sendButton_clicked(); break;
-        case 12: _t->on_resampleValue_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: _t->on_profileCount_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->on_connecct_clicked(); break;
-        case 15: _t->on_testValue_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 16: _t->on_trigger_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 17: _t->on_exposure_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 18: _t->on_rate_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 19: _t->on_readSet_clicked(); break;
+        case 5: _t->upDataNetwork((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 6: _t->recvData((*reinterpret_cast< char*(*)>(_a[1]))); break;
+        case 7: _t->flush_settings(); break;
+        case 8: _t->debugMessage((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 9: _t->on_Button_Yes_clicked(); break;
+        case 10: _t->on_open_clicked(); break;
+        case 11: _t->on_default_2_clicked(); break;
+        case 12: _t->on_sendButton_clicked(); break;
+        case 13: _t->on_resampleValue_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->on_profileCount_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->on_connecct_clicked(); break;
+        case 16: _t->on_testValue_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 17: _t->on_trigger_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->on_exposure_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 19: _t->on_rate_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 20: _t->on_readSet_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -198,6 +203,12 @@ void mySettings::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
                 *result = 4;
             }
         }
+        {
+            typedef void (mySettings::*_t)(QString , int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&mySettings::upDataNetwork)) {
+                *result = 5;
+            }
+        }
     }
 }
 
@@ -226,13 +237,13 @@ int mySettings::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 21;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 21)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 20;
+        _id -= 21;
     }
     return _id;
 }
@@ -269,5 +280,12 @@ void mySettings::setExternTrigger(int _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
+}
+
+// SIGNAL 5
+void mySettings::upDataNetwork(QString _t1, int _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 QT_END_MOC_NAMESPACE

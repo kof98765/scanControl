@@ -12,7 +12,7 @@ class Robot : public QObject
     Q_OBJECT
 public:
     Robot(QObject *parent = 0);
-    void initSocked(QString ip,int tcpport);
+
 
 public slots:
     void tcpDate();
@@ -20,6 +20,7 @@ public slots:
     void makeAMove();
     void detectNG();
     void newConnect();
+    void initSocked(QString ip,int tcpport);
     void displayError(QAbstractSocket::SocketError socketError);
 private:
     QByteArray *tmp;
