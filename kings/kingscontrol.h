@@ -10,6 +10,7 @@
 #include <math.h>
 #include <QSettings>
 #include <QDebug>
+#include <QTimer>
 #define _cdecl
 using namespace std;
 static void* obj;
@@ -37,9 +38,11 @@ private:
     std::vector<double> vdValueZ;
     std::vector<DWORD> profileBuf;
     std::vector<double> x;
+    QTimer timer;
 
 signals:
     void heartPack();
+    void stopSignal();
     void Error(QString);
     void putImagebyPointer1(double *pdValueZ,int width,int height);
     void putImagebyPointer3(double *x,double *y,double *z,int width,int height);
@@ -55,6 +58,7 @@ public slots:
     void flushSettings();
     void setDispMode(int mode);
     void setTransferMode(int mode);
+    void GetBatchProfile();
 
 
 };

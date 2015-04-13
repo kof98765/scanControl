@@ -13510,3 +13510,6 @@ Demonstrate the SingleFrame mode
 08:01:37.323: rowcount 11
 08:01:37.326: read "D:/qt/first/build/release/test3.tif"
 08:01:37.428: 800 5000 real
+11:35:49.628: rowcount 0
+11:35:49.629: roiList size 18
+11:35:49.670: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).

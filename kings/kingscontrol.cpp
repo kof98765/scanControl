@@ -51,6 +51,7 @@ void kingsControl::usbMode()
         isConnected=false;
         return;
     }
+    isConnected=true;
     qDebug()<<"usb mode is init";
 
 }
@@ -103,9 +104,17 @@ void kingsControl::startGetData()
     receiveCount=0;
     flushSettings();
     if(transferMode==0)
+    {
+
+        usbMode();
         startGetUsbData();
+    }
     else
+    {
+
+        EthernetMode();
         startGetEthernetData();
+    }
 
 }
 void kingsControl::setTransferMode(int mode)
@@ -134,7 +143,7 @@ void kingsControl::startGetUsbData()
     qDebug()<<"start usb";
 
     CRc::Rc rc = CRc::Ok;
-    usbMode();
+
     if(!isConnected)
         return;
     LJV7IF_StopHighSpeedDataCommunication(DEVICE_ID);
@@ -149,7 +158,7 @@ void kingsControl::startGetUsbData()
         return;
     }
 
-    req.bySendPos = 1;
+    req.bySendPos =set.value("sendPos",0).toInt();
 
     // High-speed data communication start prep
     LJV7IF_PROFILE_INFO profileInfo;
@@ -174,7 +183,7 @@ void kingsControl::startGetUsbData()
 void kingsControl::startGetEthernetData()
 {
     qDebug()<<"start ethernet";
-    EthernetMode();
+
     if(!isConnected)
         return;
     LJV7IF_StopHighSpeedDataCommunication(DEVICE_ID);
@@ -192,7 +201,7 @@ void kingsControl::startGetEthernetData()
         emit Error(QString("HighSpeedDataEthernetCommunicationInitalize:0x%1").arg(rc,0,16));
         return;
     }
-    req.bySendPos = 1;
+    req.bySendPos = set.value("sendPos",0).toInt();
     // High-speed data communication start prep
     LJV7IF_PROFILE_INFO profileInfo;
     rc = (CRc::Rc)LJV7IF_PreStartHighSpeedDataCommunication(DEVICE_ID, &req, &profileInfo);
@@ -233,8 +242,70 @@ void kingsControl::stopGetData()
         if (rc != CRc::Ok)
             qDebug("HighSpeedDataCommunicationFinalize,Error: 0x%08x ",rc);
     }
+    isConnected=false;
     qDebug()<<"stop";
 }
+void kingsControl::GetBatchProfile()
+{
+    /*
+    // Specify get target batch.
+    CRc::Rc rc;
+    LJV7IF_GET_BATCH_PROFILE_REQ req = new LJV7IF_GET_BATCH_PROFILE_REQ();
+    req.byTargetBank=LJV7IF_PROFILE_BANK_ACTIVE;
+    req.byPosMode = LJV7IF_BATCH_POS_COMMITED;
+    req.dwGetBatchNo = 0;
+    req.dwGetProfNo = 0;
+    req.byGetProfCnt = 255;
+    req.byErase = 0;
+
+    LJV7IF_GET_BATCH_PROFILE_RSP rsp = new LJV7IF_GET_BATCH_PROFILE_RSP();
+    LJV7IF_PROFILE_INFO profileInfo = new LJV7IF_PROFILE_INFO();
+
+    int profileDataSize = MAX_PROFILE_COUNT +
+        (sizeof(LJV7IF_PROFILE_HEADER) +sizeof(LJV7IF_PROFILE_FOOTER))/sizeof(int);
+    int[] receiveBuffer = new int[profileDataSize * req.byGetProfCnt];
+
+    std::vector<ProfileData> profileDatas;
+    rc=LJV7IF_GetBatchProfile(DEVICE_ID,&req,&rsp, &profileInfo, &receiveBuffer,profileDataSize * req.byGetProfCnt );
+    if (rc != CRc::Ok)
+        qDebug("HighSpeedDataCommunicationFinalize,Error: 0x%08x ",rc);
+
+            // Output profile data
+    int unitSize = ProfileData.CalculateDataSize(profileInfo);
+    for (int i = 0; i < rsp.byGetProfCnt; i++)
+    {
+        profileDatas.Add(new ProfileData(receiveBuffer, unitSize * i, profileInfo));
+    }
+
+    // Get all profiles in the batch.
+    req.byPosMode = LJV7IF_BATCH_POS_SPEC;
+    req.dwGetBatchNo = rsp.dwGetBatchNo;
+    do
+    {
+        // Update get profile position.
+        req.dwGetProfNo = rsp.dwGetBatchTopProfNo + rsp.byGetProfCnt;
+        if((rsp.dwCurrentBatchProfCnt - req.dwGetProfNo)<255)
+            req.byGetProfCnt = (byte)(rsp.dwCurrentBatchProfCnt - req.dwGetProfNo);
+        else
+            req.byGetProfCnt=255;
+
+        rc=LJV7IF_GetBatchProfile(DEVICE_ID,&req,&rsp, &profileInfo, &receiveBuffer,profileDataSize * req.byGetProfCnt );
+        if (rc != CRc::Ok)
+            qDebug("HighSpeedDataCommunicationFinalize,Error: 0x%08x ",rc);
+
+        for (int i = 0; i < rsp.byGetProfCnt; i++)
+        {
+
+        }
+    } while (rsp.dwGetBatchProfCnt != (rsp.dwGetBatchTopProfNo + rsp.byGetProfCnt));
+*/
+}
+
+
+
+
+
+
 void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD notify, DWORD user)
 {
     // Received data is in BYTE units, set as a group of INT units.
@@ -246,6 +317,11 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
     //qDebug()<<"size"<<size;
 
     emit heartPack();
+    if((notify&0xffff)!=0)
+    {
+        qDebug("notify: 0x%x",notify);
+        emit stopSignal();
+    }
     for (int i = 0; i < count; i++)
     {
 
@@ -283,19 +359,21 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
             {
                  x[i]=i*0.01;
             }
+            //单帧模式
             if(displayMode==0)
             {
                 emit dispSingleFrame(0,0,&x[0],&vdValueZ[0],_profileData.profSize);
 
             }
             //_profileData.SaveProfile("filepath");
-
+            //连续图像模式
             if(displayMode==1)
             {
                 emit putImagebyPointer1(&vdValueZ[0],_profileData.profSize,receiveCount+1);
 
 
             }
+            //单图像模式
             if(displayMode==2)
             {
                 emit putImagebyPointer1(&vdValueZ[0],_profileData.profSize,receiveCount+1);

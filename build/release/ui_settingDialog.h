@@ -196,6 +196,8 @@ public:
     QLineEdit *minMeasuringRange;
     QSpacerItem *horizontalSpacer_12;
     QLineEdit *maxMeasuringRange;
+    QLabel *sendPosLabel;
+    QComboBox *sendPosComboBox;
 
     void setupUi(QDialog *mySettings)
     {
@@ -651,7 +653,7 @@ public:
         tab_5->setObjectName(QStringLiteral("tab_5"));
         formLayoutWidget = new QWidget(tab_5);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 0, 221, 502));
+        formLayoutWidget->setGeometry(QRect(10, 0, 288, 502));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
@@ -967,6 +969,16 @@ public:
 
         formLayout_2->setLayout(6, QFormLayout::FieldRole, horizontalLayout_8);
 
+        sendPosLabel = new QLabel(formLayoutWidget_2);
+        sendPosLabel->setObjectName(QStringLiteral("sendPosLabel"));
+
+        formLayout_2->setWidget(7, QFormLayout::LabelRole, sendPosLabel);
+
+        sendPosComboBox = new QComboBox(formLayoutWidget_2);
+        sendPosComboBox->setObjectName(QStringLiteral("sendPosComboBox"));
+
+        formLayout_2->setWidget(7, QFormLayout::FieldRole, sendPosComboBox);
+
         tabWidget->addTab(tab_6, QString());
 
         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
@@ -1183,6 +1195,13 @@ public:
         Label->setText(QApplication::translate("mySettings", "\351\207\217\347\250\213", 0));
         minMeasuringRange->setText(QApplication::translate("mySettings", "-7.5", 0));
         maxMeasuringRange->setText(QApplication::translate("mySettings", "7.5", 0));
+        sendPosLabel->setText(QApplication::translate("mySettings", "SendPos", 0));
+        sendPosComboBox->clear();
+        sendPosComboBox->insertItems(0, QStringList()
+         << QApplication::translate("mySettings", "PROFILE_POS_CURRENT", 0)
+         << QApplication::translate("mySettings", "PROFILE_POS_OLDEST", 0)
+         << QApplication::translate("mySettings", "PROFILE_POS_SPEC", 0)
+        );
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("mySettings", "\345\237\272\346\201\251\346\226\257\346\277\200\345\205\211\350\256\276\347\275\256", 0));
     } // retranslateUi
 

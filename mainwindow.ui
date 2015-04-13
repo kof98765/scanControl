@@ -211,6 +211,9 @@
          <property name="selectionBehavior">
           <enum>QAbstractItemView::SelectRows</enum>
          </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
          <attribute name="horizontalHeaderDefaultSectionSize">
           <number>65</number>
          </attribute>
@@ -1071,7 +1074,6 @@ border-radius:25px</string>
     <addaction name="action_init"/>
     <addaction name="action_start"/>
     <addaction name="action"/>
-    <addaction name="actionTest"/>
     <addaction name="actionReset"/>
     <addaction name="actionCal"/>
     <addaction name="actionCallback"/>
@@ -1102,7 +1104,6 @@ border-radius:25px</string>
    <addaction name="action_Open"/>
    <addaction name="action_start"/>
    <addaction name="action_Quit"/>
-   <addaction name="actionTest"/>
    <addaction name="actionCal"/>
   </widget>
   <action name="action_Net_Param">

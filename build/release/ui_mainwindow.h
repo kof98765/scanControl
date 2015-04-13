@@ -324,6 +324,7 @@ public:
         roiList->setHorizontalHeaderItem(3, __qtablewidgetitem8);
         roiList->setObjectName(QStringLiteral("roiList"));
         roiList->setSelectionBehavior(QAbstractItemView::SelectRows);
+        roiList->setSortingEnabled(true);
         roiList->horizontalHeader()->setDefaultSectionSize(65);
 
         gridLayout_2->addWidget(roiList, 0, 0, 1, 1);
@@ -727,7 +728,6 @@ public:
         menu_2->addAction(action_init);
         menu_2->addAction(action_start);
         menu_2->addAction(action);
-        menu_2->addAction(actionTest);
         menu_2->addAction(actionReset);
         menu_2->addAction(actionCal);
         menu_2->addAction(actionCallback);
@@ -735,7 +735,6 @@ public:
         toolBar->addAction(action_Open);
         toolBar->addAction(action_start);
         toolBar->addAction(action_Quit);
-        toolBar->addAction(actionTest);
         toolBar->addAction(actionCal);
 
         retranslateUi(MainWindow);

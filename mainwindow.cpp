@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
    profile=new profileGet();
    kings=new kingsControl();
-
+   ui->launchDevice->hide();
     debug.setFileName("debug.txt");
     debug.open(QIODevice::Append);
 
@@ -798,7 +798,7 @@ void MainWindow::recvHeightSub(QString name,double min,double max,double range)
 
     sum->add_item(0,QString("OK"));
     sum->add_item(1,QStringLiteral("高差"));
-    sum->add_item(2,QString::number(i));
+    sum->add_item(2,QStringLiteral("分组")+QString::number(i+1));
     sum->add_item(3,name);
     sum->add_item(4,QString("%1").arg(range));
 
@@ -970,11 +970,11 @@ void MainWindow::on_roiDraw_clicked()
 void MainWindow::flushRoiList(QStringList ll)
 {
 
-
+    ui->tableWidget->setSortingEnabled(false);
     QStringList line;
     roiList->clear_table();
     QMap<QString,QVariant> list=set.value("roiList").toMap();
-
+    qDebug()<<"roiList size"<<list.size();
     for(int i=0;i<list.size();i++)
     {
         QMap<QString,QVariant> roi=set.value("team/"+list.keys().at(i)).toMap();
@@ -1000,7 +1000,7 @@ void MainWindow::flushRoiList(QStringList ll)
         }
         
     }
-
+    ui->tableWidget->setSortingEnabled(true);
 }
 /*
     矩形框列表删除事件

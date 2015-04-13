@@ -27,6 +27,7 @@ void mySettings::flush_settings()
         ui->ip24->setValue(set.value("kingsIp",0).toStringList().at(2).toInt());
         ui->ip32->setValue(set.value("kingsIp",0).toStringList().at(3).toInt());
     }
+    ui->sendPosComboBox->setCurrentIndex(set.value("sendPos",0).toInt());
     ui->minMeasuringRange->setText(set.value("minMeasuringRange","-7.5").toString());
     ui->maxMeasuringRange->setText(set.value("maxMeasuringRange","7.5").toString());
     ui->imgNum->setValue(set.value("imgNum",8).toInt());
@@ -71,6 +72,7 @@ void mySettings::on_Button_Yes_clicked()
     str<<QString("%1").arg(ui->ip16->value());
     str<<QString("%1").arg(ui->ip24->value());
     str<<QString("%1").arg(ui->ip32->value());
+    set.setValue("sendPos",ui->sendPosComboBox->currentIndex());
     set.setValue("minMeasuringRange",ui->minMeasuringRange->text());
     set.setValue("maxMeasuringRange",ui->maxMeasuringRange->text());
     set.setValue("imgNum",ui->imgNum->value());
