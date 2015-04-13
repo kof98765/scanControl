@@ -32,15 +32,15 @@ MainWindow::MainWindow(QWidget *parent) :
     debug.setFileName("debug.txt");
     debug.open(QIODevice::Append);
 
-    plot = new Plot(ui->base->widget(2));
+   // plot = new Plot(ui->base->widget(2));
     QStringList str;
     str<<"value"<<"pointNum"<<"1280"<<"100";
 
-    plot->initPlot(str);
-    plot->insertCurve(0,0,"test");
-    plot->setYScale(-100,100);
-    plot->setXScale(-40,40);
-    plot->resize(ui->base->widget(2)->size());
+   // plot->initPlot(str);
+   // plot->insertCurve(0,0,"test");
+   // plot->setYScale(-100,100);
+   // plot->setXScale(-40,40);
+   // plot->resize(ui->base->widget(2)->size());
     imgView=new imgListView();
     imgView->setLayout(ui->imgList);
 
@@ -89,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setDialog = new mySettings;
     setDialog->setModal(true);
 
-    point=new pointAnalyze;
+    //point=new pointAnalyze;
 
    //激活鼠标跟踪功能
     setMouseTracking(true);
@@ -301,8 +301,8 @@ void MainWindow::init_connect()
     connect(hal,SIGNAL(sendHeightSub(QString,double,double,double))
             ,this,SLOT(recvHeightSub(QString,double,double,double)));
     connect(kings,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
-    connect(kings,SIGNAL(dispSingleFrame(unsigned short*,unsigned short*,double*,double*,int)),
-            plot,SLOT(upScanControlData(unsigned short*,unsigned short*,double*,double*,int)));
+   // connect(kings,SIGNAL(dispSingleFrame(unsigned short*,unsigned short*,double*,double*,int)),
+    //        plot,SLOT(upScanControlData(unsigned short*,unsigned short*,double*,double*,int)));
     connect(kings,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
     //connect(profile,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
     //connect(profile,SIGNAL(putImagebyPointer3(double*,double*,double*,int,int)),hal,SLOT(getImagebyPointer3(double*,double*,double*,int,int)));
