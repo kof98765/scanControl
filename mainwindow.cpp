@@ -848,6 +848,7 @@ void MainWindow::on_actionReset_triggered()
 {
     pass=0;
     sum->clear_table();
+
     hal->clearData();
 }
 
@@ -969,16 +970,18 @@ void MainWindow::on_roiDraw_clicked()
 */
 void MainWindow::flushRoiList(QStringList ll)
 {
-
-    ui->tableWidget->setSortingEnabled(false);
-    QStringList line;
     roiList->clear_table();
+
+
+    QStringList line;
+
+
     QMap<QString,QVariant> list=set.value("roiList").toMap();
     qDebug()<<"roiList size"<<list.size();
     for(int i=0;i<list.size();i++)
     {
         QMap<QString,QVariant> roi=set.value("team/"+list.keys().at(i)).toMap();
-
+        ui->tableWidget->setSortingEnabled(false);
 		roiList->add_row();
         roiList->add_item(0,list.keys().at(i));
 
@@ -998,9 +1001,9 @@ void MainWindow::flushRoiList(QStringList ll)
                 roiList->add_item(2,QStringLiteral("计算高差"));
                 break;
         }
-        
+        ui->tableWidget->setSortingEnabled(true);
     }
-    ui->tableWidget->setSortingEnabled(true);
+
 }
 /*
     矩形框列表删除事件

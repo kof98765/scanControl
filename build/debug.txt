@@ -6563,3 +6563,763 @@
 08:28:14.030: planePoint now point 939.5 138
 08:28:14.030: xyz 939.702 138.166 -5.39816 9
 08:28:14.032: cloud
+12:57:56.563: rowcount 0
+12:57:56.564: roiList size 19
+12:57:59.108: rowcount 19
+12:57:59.109: roiList size 19
+12:57:59.114: read "D:/7080image/01/test0.tif"
+12:57:59.297: 800 1870 real
+12:57:59.470: 800 1870
+12:57:59.470: read finish
+12:58:03.704: func 0 145 357.5
+12:58:03.762: ("rect_0", "rect_1", "rect", "rect_10", "rect_2", "rect_3", "rect_4", "rect_5", "rect_6", "rect_7", "rect_8", "rect_9", "rect_11", "rect_12", "rect_13", "rect_14", "rect_15", "rect_16", "rect_17", "rect_18")
+12:58:03.762: QMap(("Column", QVariant(double, 17.445) ) ( "Column2" ,  QVariant(double, 665.097) ) ( "Row" ,  QVariant(double, 323.034) ) ( "Row2" ,  QVariant(double, 802.906) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 1) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.763: QMap(("Column", QVariant(double, 112.064) ) ( "Length1" ,  QVariant(double, 33.6226) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.3979) ) ( "Row" ,  QVariant(double, 257.893) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.763: QMap(("Column", QVariant(double, 111.192) ) ( "Column2" ,  QVariant(double, 231.298) ) ( "Row" ,  QVariant(double, 550.413) ) ( "Row2" ,  QVariant(double, 642.502) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.764: create template "rect" imgList size 1 0
+12:58:03.800: creat point 550.413 111.192 642.502 231.298
+12:58:03.905: Create_template 1
+12:58:03.918: templateID get
+12:58:03.919: QMap(("Column", QVariant(double, 78.3493) ) ( "Length1" ,  QVariant(double, 30.4756) ) ( "Length2" ,  QVariant(double, 12.1721) ) ( "Phi" ,  QVariant(double, 0.171886) ) ( "Row" ,  QVariant(double, 1037.05) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.919: QMap(("Column", QVariant(double, 89.2251) ) ( "Length1" ,  QVariant(double, 62.2448) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.246684) ) ( "Row" ,  QVariant(double, 431.602) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.920: QMap(("Column", QVariant(double, 169.162) ) ( "Length1" ,  QVariant(double, 22.673) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -1.27886) ) ( "Row" ,  QVariant(double, 859.361) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.920: QMap(("Column", QVariant(double, 492.172) ) ( "Length1" ,  QVariant(double, 64.3223) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.530963) ) ( "Row" ,  QVariant(double, 231.836) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.921: QMap(("Column", QVariant(double, 622.681) ) ( "Length1" ,  QVariant(double, 68.094) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.733728) ) ( "Row" ,  QVariant(double, 746.45) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.921: QMap(("Column", QVariant(double, 634.101) ) ( "Length1" ,  QVariant(double, 56.498) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.523165) ) ( "Row" ,  QVariant(double, 876.732) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.922: QMap(("Column", QVariant(double, 495.435) ) ( "Length1" ,  QVariant(double, 49.7057) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.17564) ) ( "Row" ,  QVariant(double, 572.741) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.922: QMap(("Column", QVariant(double, 364.926) ) ( "Length1" ,  QVariant(double, 83.1996) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, 0) ) ( "Row" ,  QVariant(double, 868.047) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.923: QMap(("Column", QVariant(double, 138.166) ) ( "Length1" ,  QVariant(double, 39.7189) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.334197) ) ( "Row" ,  QVariant(double, 939.702) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.923: QMap(("Column", QVariant(double, 302.934) ) ( "Length1" ,  QVariant(double, 63.3461) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.207145) ) ( "Row" ,  QVariant(double, 264.407) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.924: QMap(("Column", QVariant(double, 541.113) ) ( "Length1" ,  QVariant(double, 32.7243) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.559576) ) ( "Row" ,  QVariant(double, 470.687) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.925: QMap(("Column", QVariant(double, 480.753) ) ( "Length1" ,  QVariant(double, 19.9364) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.45077) ) ( "Row" ,  QVariant(double, 705.194) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.925: QMap(("Column", QVariant(double, 529.693) ) ( "Length1" ,  QVariant(double, 32.4733) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -1.21145) ) ( "Row" ,  QVariant(double, 878.903) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.925: QMap(("Column", QVariant(double, 725.457) ) ( "Length1" ,  QVariant(double, 52.1937) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.673891) ) ( "Row" ,  QVariant(double, 466.344) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.926: QMap(("Column", QVariant(double, 412.188) ) ( "Length1" ,  QVariant(double, 47.9673) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -1.03544) ) ( "Row" ,  QVariant(double, 397.546) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.926: QMap(("Column", QVariant(double, 185.476) ) ( "Column2" ,  QVariant(double, 252.362) ) ( "Row" ,  QVariant(double, 359.947) ) ( "Row2" ,  QVariant(double, 494.572) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:03.927: create template "rect_17" imgList size 1 0
+12:58:03.965: creat point 359.947 185.476 494.572 252.362
+12:58:04.018: Create_template 1
+12:58:04.034: templateID get
+12:58:04.035: QMap(("Column", QVariant(double, 324.142) ) ( "Column2" ,  QVariant(double, 391.027) ) ( "Row" ,  QVariant(double, 92.8688) ) ( "Row2" ,  QVariant(double, 197.094) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:04.035: create template "rect_18" imgList size 1 0
+12:58:04.071: creat point 92.8688 324.142 197.094 391.027
+12:58:04.107: Create_template 1
+12:58:04.118: templateID get
+12:58:04.119: "生成模板时间:" 364 ms
+12:58:04.172: rowcount 19
+12:58:04.173: roiList size 20
+12:58:04.178: ""
+12:58:04.178: 4294901760 0 "3" 0
+12:58:13.262: QPoint(139,134)
+12:58:13.263: QPoint(139,109)
+12:58:13.263: item 11
+12:58:13.896: QMap(("0", QVariant(QStringList, ("rect_0", "rect_1", "rect", "rect_10", "rect_2", "rect_3", "rect_4", "rect_5", "rect_6", "rect_7", "rect_8", "rect_9", "rect_11", "rect_12", "rect_13", "rect_14", "rect_15", "rect_16", "rect_17")) ) ( "1" ,  QVariant(QStringList, ()) ) ) 
+12:58:32.236: "D:/qt/first/build/0_1.tif"
+12:58:33.123: Accepted
+12:58:38.431: rowcount 0
+12:58:38.431: 1
+12:58:38.433: clear
+12:58:39.482: rowcount 19
+12:58:39.482: roiList size 19
+12:58:39.487: read "D:/qt/first/build/0_1.tif"
+12:58:39.609: 800 5000 real
+12:58:40.008: 800 5000
+12:58:40.009: read finish
+12:58:46.832: func 0 641 223.5
+12:58:47.003: ("rect_0", "rect_1", "rect", "rect_10", "rect_2", "rect_3", "rect_4", "rect_5", "rect_6", "rect_7", "rect_8", "rect_9", "rect_11", "rect_12", "rect_13", "rect_14", "rect_15", "rect_16", "rect_17", "rect_18")
+12:58:47.003: QMap(("Column", QVariant(double, 17.445) ) ( "Column2" ,  QVariant(double, 665.097) ) ( "Row" ,  QVariant(double, 323.034) ) ( "Row2" ,  QVariant(double, 802.906) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 1) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.004: QMap(("Column", QVariant(double, 112.064) ) ( "Length1" ,  QVariant(double, 33.6226) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.3979) ) ( "Row" ,  QVariant(double, 257.893) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.004: QMap(("Column", QVariant(double, 111.192) ) ( "Column2" ,  QVariant(double, 231.298) ) ( "Row" ,  QVariant(double, 550.413) ) ( "Row2" ,  QVariant(double, 642.502) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.004: create template "rect" imgList size 1 0
+12:58:47.124: creat point 550.413 111.192 642.502 231.298
+12:58:47.184: Create_template 1
+12:58:47.197: templateID get
+12:58:47.198: QMap(("Column", QVariant(double, 78.3493) ) ( "Length1" ,  QVariant(double, 30.4756) ) ( "Length2" ,  QVariant(double, 12.1721) ) ( "Phi" ,  QVariant(double, 0.171886) ) ( "Row" ,  QVariant(double, 1037.05) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.199: QMap(("Column", QVariant(double, 89.2251) ) ( "Length1" ,  QVariant(double, 62.2448) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.246684) ) ( "Row" ,  QVariant(double, 431.602) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.199: QMap(("Column", QVariant(double, 169.162) ) ( "Length1" ,  QVariant(double, 22.673) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -1.27886) ) ( "Row" ,  QVariant(double, 859.361) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.199: QMap(("Column", QVariant(double, 492.172) ) ( "Length1" ,  QVariant(double, 64.3223) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.530963) ) ( "Row" ,  QVariant(double, 231.836) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.200: QMap(("Column", QVariant(double, 622.681) ) ( "Length1" ,  QVariant(double, 68.094) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.733728) ) ( "Row" ,  QVariant(double, 746.45) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.200: QMap(("Column", QVariant(double, 634.101) ) ( "Length1" ,  QVariant(double, 56.498) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.523165) ) ( "Row" ,  QVariant(double, 876.732) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.201: QMap(("Column", QVariant(double, 495.435) ) ( "Length1" ,  QVariant(double, 49.7057) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.17564) ) ( "Row" ,  QVariant(double, 572.741) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.201: QMap(("Column", QVariant(double, 364.926) ) ( "Length1" ,  QVariant(double, 83.1996) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, 0) ) ( "Row" ,  QVariant(double, 868.047) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.202: QMap(("Column", QVariant(double, 138.166) ) ( "Length1" ,  QVariant(double, 39.7189) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.334197) ) ( "Row" ,  QVariant(double, 939.702) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 2) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.202: QMap(("Column", QVariant(double, 302.934) ) ( "Length1" ,  QVariant(double, 63.3461) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.207145) ) ( "Row" ,  QVariant(double, 264.407) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.203: QMap(("Column", QVariant(double, 541.113) ) ( "Length1" ,  QVariant(double, 32.7243) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.559576) ) ( "Row" ,  QVariant(double, 470.687) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.203: QMap(("Column", QVariant(double, 480.753) ) ( "Length1" ,  QVariant(double, 19.9364) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.45077) ) ( "Row" ,  QVariant(double, 705.194) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.204: QMap(("Column", QVariant(double, 529.693) ) ( "Length1" ,  QVariant(double, 32.4733) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -1.21145) ) ( "Row" ,  QVariant(double, 878.903) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.204: QMap(("Column", QVariant(double, 725.457) ) ( "Length1" ,  QVariant(double, 52.1937) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -0.673891) ) ( "Row" ,  QVariant(double, 466.344) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.205: QMap(("Column", QVariant(double, 412.188) ) ( "Length1" ,  QVariant(double, 47.9673) ) ( "Length2" ,  QVariant(double, 15.2109) ) ( "Phi" ,  QVariant(double, -1.03544) ) ( "Row" ,  QVariant(double, 397.546) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 3) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.205: QMap(("Column", QVariant(double, 185.476) ) ( "Column2" ,  QVariant(double, 252.362) ) ( "Row" ,  QVariant(double, 359.947) ) ( "Row2" ,  QVariant(double, 494.572) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.205: create template "rect_17" imgList size 1 0
+12:58:47.331: creat point 359.947 185.476 494.572 252.362
+12:58:47.429: Create_template 1
+12:58:47.458: templateID get
+12:58:47.458: QMap(("Column", QVariant(double, 164.268) ) ( "Column2" ,  QVariant(double, 283.357) ) ( "Row" ,  QVariant(double, 527.142) ) ( "Row2" ,  QVariant(double, 755.136) ) ( "color" ,  QVariant(QString, "4294901760") ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "limit" ,  QVariant(double, 3) ) ( "team" ,  QVariant(int, 0) ) ) 
+12:58:47.458: create template "rect_18" imgList size 1 0
+12:58:47.580: creat point 527.142 164.268 755.136 283.357
+12:58:47.788: Create_template 1
+12:58:47.828: templateID get
+12:58:47.832: "生成模板时间:" 830 ms
+12:58:47.938: rowcount 19
+12:58:47.938: roiList size 20
+12:58:47.944: ""
+12:58:47.944: 4294901760 0 "3" 0
+12:58:56.670: QPoint(144,192)
+12:58:56.670: QPoint(144,167)
+12:58:56.670: item 11
+12:58:57.561: QMap(("0", QVariant(QStringList, ("rect_0", "rect_1", "rect", "rect_10", "rect_2", "rect_3", "rect_4", "rect_5", "rect_6", "rect_7", "rect_8", "rect_9", "rect_11", "rect_12", "rect_13", "rect_14", "rect_15", "rect_16", "rect_17")) ) ( "1" ,  QVariant(QStringList, ()) ) ) 
+14:22:13.056: rowcount 0
+14:22:13.057: roiList size 19
+14:22:15.012: rowcount 19
+14:22:15.012: roiList size 19
+14:22:15.021: read "D:/qt/first/build/0_1.tif"
+14:22:15.494: 800 5000 real
+14:22:15.853: 800 5000
+14:22:15.853: read finish
+14:22:18.583: QPoint(168,36)
+14:22:18.584: QPoint(168,11)
+14:22:18.584: item 0
+14:22:22.636: start match
+14:22:22.882: ret = 1
+14:22:22.882: locate ("641.232", "223.69", "0.00295264")
+14:22:22.889: match orginal point 427.5 218.5
+14:22:22.889: "匹配模板时间:" 310 ms
+14:22:22.889: plane list.size 19
+14:22:22.890: start planePoint
+14:22:22.891: planePoint orginal point 257.893 112.064
+14:22:22.891: planePoint now point 472 117
+14:22:22.891: xyz 257.893 112.064 nan 0
+14:22:22.892: start planePoint
+14:22:22.892: planePoint orginal point 1037.05 78.3493
+14:22:22.892: planePoint now point 1251 85.08
+14:22:22.893: xyz 1037.05 78.3493 nan 1
+14:22:22.893: start planePoint
+14:22:22.894: planePoint orginal point 431.602 89.2251
+14:22:22.894: planePoint now point 645.5 94.5
+14:22:22.894: xyz 431.602 89.2251 3.14554 2
+14:22:22.895: start planePoint
+14:22:22.896: planePoint orginal point 859.361 169.162
+14:22:22.896: planePoint now point 1073.5 175.5
+14:22:22.897: xyz 859.361 169.162 nan 3
+14:22:22.897: start planePoint
+14:22:22.898: planePoint orginal point 231.836 492.172
+14:22:22.898: planePoint now point 445 497
+14:22:22.898: xyz 231.836 492.172 nan 4
+14:22:22.898: start planePoint
+14:22:22.899: planePoint orginal point 746.45 622.681
+14:22:22.899: planePoint now point 959.5 628.5
+14:22:22.899: xyz 746.45 622.681 nan 5
+14:22:22.899: start planePoint
+14:22:22.899: planePoint orginal point 876.732 634.101
+14:22:22.899: planePoint now point 1089.48 641.222
+14:22:22.900: xyz 876.732 634.101 nan 6
+14:22:22.900: start planePoint
+14:22:22.900: planePoint orginal point 572.741 495.435
+14:22:22.900: planePoint now point 786 501.581
+14:22:22.900: xyz 572.741 495.435 nan 7
+14:22:22.901: start planePoint
+14:22:22.901: planePoint orginal point 868.047 364.926
+14:22:22.901: planePoint now point 1081 371.387
+14:22:22.901: xyz 868.047 364.926 nan 8
+14:22:22.902: start planePoint
+14:22:22.902: planePoint orginal point 939.702 138.166
+14:22:22.902: planePoint now point 1153.5 145
+14:22:22.902: xyz 939.702 138.166 nan 9
+14:22:22.904: cloud
+14:22:22.905: cloud 1
+14:22:22.908: "平面度为:" nan
+14:22:22.908: heightsub list.size 19
+14:22:22.911: start heightsub
+14:22:22.912: RectHeightSub orginal point 264.407 302.934
+14:22:22.912: RectHeightSub now point 477.5 308
+14:22:22.913: Grayval Num,Indices Num, sum 30 30 0
+14:22:22.913: xyz 264.407 302.934 nan 0
+14:22:22.913: start heightsub
+14:22:22.914: RectHeightSub orginal point 470.687 541.113
+14:22:22.914: RectHeightSub now point 684 546
+14:22:22.914: Grayval Num,Indices Num, sum 27 1 38.7413
+14:22:22.914: xyz 470.687 541.113 1.49005 1
+14:22:22.914: start heightsub
+14:22:22.915: RectHeightSub orginal point 705.194 480.753
+14:22:22.915: RectHeightSub now point 918.5 486.5
+14:22:22.915: Grayval Num,Indices Num, sum 28 28 0
+14:22:22.915: xyz 705.194 480.753 nan 2
+14:22:22.915: start heightsub
+14:22:22.916: RectHeightSub orginal point 878.903 529.693
+14:22:22.916: RectHeightSub now point 1092 536.5
+14:22:22.916: Grayval Num,Indices Num, sum 30 30 0
+14:22:22.916: xyz 878.903 529.693 nan 3
+14:22:22.916: start heightsub
+14:22:22.917: RectHeightSub orginal point 466.344 725.457
+14:22:22.917: RectHeightSub now point 678 730.52
+14:22:22.917: Grayval Num,Indices Num, sum 25 1 89.1743
+14:22:22.917: xyz 466.344 725.457 3.7156 4
+14:22:22.917: start heightsub
+14:22:22.918: RectHeightSub orginal point 397.546 412.188
+14:22:22.918: RectHeightSub now point 610.519 417
+14:22:22.918: Grayval Num,Indices Num, sum 27 10 14.8242
+14:22:22.918: xyz 397.546 412.188 0.872012 5
+14:22:22.919: comp 1
+14:22:22.920: heightSub "rect_15" nan
+14:22:22.922: heightSub "rect_16" nan
+14:22:22.922: "计算高差时间:" 14 ms
+14:22:22.922: plane list.size 0
+14:22:22.922: heightsub list.size 0
+14:22:28.335: rowcount 3
+14:22:28.335: 1
+14:22:28.338: clear
+14:22:29.936: rowcount 19
+14:22:29.936: roiList size 19
+14:22:29.942: read "D:/qt/first/build/0_1.tif"
+14:22:30.033: 800 5000 real
+14:22:30.416: 800 5000
+14:22:30.416: read finish
+14:22:36.368: rowcount 0
+14:22:36.368: 1
+14:22:36.370: clear
+14:22:38.318: rowcount 19
+14:22:38.319: roiList size 19
+14:22:38.324: read "D:/qt/first/build/0_1.tif"
+14:22:38.415: 800 5000 real
+14:22:38.788: 800 5000
+14:22:38.789: read finish
+14:22:44.511: start match
+14:22:44.764: ret = 1
+14:22:44.764: locate ("641.232", "223.69", "0.00295264")
+14:22:44.769: match orginal point 427.5 218.5
+14:22:44.769: "匹配模板时间:" 298 ms
+14:22:44.769: plane list.size 19
+14:22:44.770: start planePoint
+14:22:44.770: planePoint orginal point 257.893 112.064
+14:22:44.770: planePoint now point 472 117
+14:22:44.770: xyz 257.893 112.064 nan 0
+14:22:44.771: start planePoint
+14:22:44.771: planePoint orginal point 1037.05 78.3493
+14:22:44.771: planePoint now point 1251 85.08
+14:22:44.771: xyz 1037.05 78.3493 nan 1
+14:22:44.772: start planePoint
+14:22:44.772: planePoint orginal point 431.602 89.2251
+14:22:44.772: planePoint now point 645.5 94.5
+14:22:44.772: xyz 431.602 89.2251 3.14554 2
+14:22:44.773: start planePoint
+14:22:44.773: planePoint orginal point 859.361 169.162
+14:22:44.773: planePoint now point 1073.5 175.5
+14:22:44.773: xyz 859.361 169.162 nan 3
+14:22:44.773: start planePoint
+14:22:44.774: planePoint orginal point 231.836 492.172
+14:22:44.774: planePoint now point 445 497
+14:22:44.774: xyz 231.836 492.172 nan 4
+14:22:44.774: start planePoint
+14:22:44.775: planePoint orginal point 746.45 622.681
+14:22:44.775: planePoint now point 959.5 628.5
+14:22:44.775: xyz 746.45 622.681 nan 5
+14:22:44.775: start planePoint
+14:22:44.775: planePoint orginal point 876.732 634.101
+14:22:44.775: planePoint now point 1089.48 641.222
+14:22:44.776: xyz 876.732 634.101 nan 6
+14:22:44.776: start planePoint
+14:22:44.776: planePoint orginal point 572.741 495.435
+14:22:44.776: planePoint now point 786 501.581
+14:22:44.776: xyz 572.741 495.435 nan 7
+14:22:44.777: start planePoint
+14:22:44.777: planePoint orginal point 868.047 364.926
+14:22:44.777: planePoint now point 1081 371.387
+14:22:44.777: xyz 868.047 364.926 nan 8
+14:22:44.777: start planePoint
+14:22:44.778: planePoint orginal point 939.702 138.166
+14:22:44.778: planePoint now point 1153.5 145
+14:22:44.778: xyz 939.702 138.166 nan 9
+14:22:44.779: cloud
+14:22:44.780: cloud 1
+14:22:44.781: "平面度为:" nan
+14:22:44.781: heightsub list.size 19
+14:22:44.783: start heightsub
+14:22:44.784: RectHeightSub orginal point 264.407 302.934
+14:22:44.784: RectHeightSub now point 477.5 308
+14:22:44.784: Grayval Num,Indices Num, sum 30 30 0
+14:22:44.784: xyz 264.407 302.934 nan 0
+14:22:44.785: start heightsub
+14:22:44.785: RectHeightSub orginal point 470.687 541.113
+14:22:44.785: RectHeightSub now point 684 546
+14:22:44.786: Grayval Num,Indices Num, sum 27 1 38.7413
+14:22:44.786: xyz 470.687 541.113 1.49005 1
+14:22:44.786: start heightsub
+14:22:44.786: RectHeightSub orginal point 705.194 480.753
+14:22:44.787: RectHeightSub now point 918.5 486.5
+14:22:44.787: Grayval Num,Indices Num, sum 28 28 0
+14:22:44.787: xyz 705.194 480.753 nan 2
+14:22:44.787: start heightsub
+14:22:44.787: RectHeightSub orginal point 878.903 529.693
+14:22:44.788: RectHeightSub now point 1092 536.5
+14:22:44.788: Grayval Num,Indices Num, sum 30 30 0
+14:22:44.788: xyz 878.903 529.693 nan 3
+14:22:44.788: start heightsub
+14:22:44.789: RectHeightSub orginal point 466.344 725.457
+14:22:44.789: RectHeightSub now point 678 730.52
+14:22:44.789: Grayval Num,Indices Num, sum 25 1 89.1743
+14:22:44.789: xyz 466.344 725.457 3.7156 4
+14:22:44.790: start heightsub
+14:22:44.790: RectHeightSub orginal point 397.546 412.188
+14:22:44.790: RectHeightSub now point 610.519 417
+14:22:44.790: Grayval Num,Indices Num, sum 27 10 14.8242
+14:22:44.790: xyz 397.546 412.188 0.872012 5
+14:22:44.791: comp 1
+14:22:44.792: heightSub "rect_15" nan
+14:22:44.792: heightSub "rect_16" nan
+14:22:44.793: "计算高差时间:" 12 ms
+14:22:44.793: plane list.size 0
+14:22:44.793: heightsub list.size 0
+14:22:46.208: rowcount 3
+14:22:46.209: 1
+14:22:46.210: clear
+14:22:47.452: rowcount 19
+14:22:47.453: roiList size 19
+14:22:47.458: read "D:/qt/first/build/0_1.tif"
+14:22:47.549: 800 5000 real
+14:22:47.909: 800 5000
+14:22:47.910: read finish
+14:22:48.981: start match
+14:22:49.231: ret = 1
+14:22:49.231: locate ("641.232", "223.69", "0.00295264")
+14:22:49.235: match orginal point 427.5 218.5
+14:22:49.235: "匹配模板时间:" 305 ms
+14:22:49.236: plane list.size 19
+14:22:49.236: start planePoint
+14:22:49.237: planePoint orginal point 257.893 112.064
+14:22:49.237: planePoint now point 472 117
+14:22:49.237: xyz 257.893 112.064 nan 0
+14:22:49.237: start planePoint
+14:22:49.238: planePoint orginal point 1037.05 78.3493
+14:22:49.238: planePoint now point 1251 85.08
+14:22:49.238: xyz 1037.05 78.3493 nan 1
+14:22:49.238: start planePoint
+14:22:49.238: planePoint orginal point 431.602 89.2251
+14:22:49.239: planePoint now point 645.5 94.5
+14:22:49.239: xyz 431.602 89.2251 3.14554 2
+14:22:49.239: start planePoint
+14:22:49.239: planePoint orginal point 859.361 169.162
+14:22:49.239: planePoint now point 1073.5 175.5
+14:22:49.239: xyz 859.361 169.162 nan 3
+14:22:49.240: start planePoint
+14:22:49.240: planePoint orginal point 231.836 492.172
+14:22:49.240: planePoint now point 445 497
+14:22:49.240: xyz 231.836 492.172 nan 4
+14:22:49.241: start planePoint
+14:22:49.241: planePoint orginal point 746.45 622.681
+14:22:49.241: planePoint now point 959.5 628.5
+14:22:49.241: xyz 746.45 622.681 nan 5
+14:22:49.241: start planePoint
+14:22:49.242: planePoint orginal point 876.732 634.101
+14:22:49.242: planePoint now point 1089.48 641.222
+14:22:49.242: xyz 876.732 634.101 nan 6
+14:22:49.242: start planePoint
+14:22:49.242: planePoint orginal point 572.741 495.435
+14:22:49.243: planePoint now point 786 501.581
+14:22:49.243: xyz 572.741 495.435 nan 7
+14:22:49.243: start planePoint
+14:22:49.243: planePoint orginal point 868.047 364.926
+14:22:49.243: planePoint now point 1081 371.387
+14:22:49.243: xyz 868.047 364.926 nan 8
+14:22:49.244: start planePoint
+14:22:49.244: planePoint orginal point 939.702 138.166
+14:22:49.244: planePoint now point 1153.5 145
+14:22:49.244: xyz 939.702 138.166 nan 9
+14:22:49.246: cloud
+14:22:49.246: cloud 1
+14:22:49.247: "平面度为:" nan
+14:22:49.247: heightsub list.size 19
+14:22:49.250: start heightsub
+14:22:49.250: RectHeightSub orginal point 264.407 302.934
+14:22:49.250: RectHeightSub now point 477.5 308
+14:22:49.251: Grayval Num,Indices Num, sum 30 30 0
+14:22:49.251: xyz 264.407 302.934 nan 0
+14:22:49.251: start heightsub
+14:22:49.251: RectHeightSub orginal point 470.687 541.113
+14:22:49.251: RectHeightSub now point 684 546
+14:22:49.252: Grayval Num,Indices Num, sum 27 1 38.7413
+14:22:49.252: xyz 470.687 541.113 1.49005 1
+14:22:49.252: start heightsub
+14:22:49.252: RectHeightSub orginal point 705.194 480.753
+14:22:49.252: RectHeightSub now point 918.5 486.5
+14:22:49.252: Grayval Num,Indices Num, sum 28 28 0
+14:22:49.253: xyz 705.194 480.753 nan 2
+14:22:49.253: start heightsub
+14:22:49.253: RectHeightSub orginal point 878.903 529.693
+14:22:49.253: RectHeightSub now point 1092 536.5
+14:22:49.253: Grayval Num,Indices Num, sum 30 30 0
+14:22:49.253: xyz 878.903 529.693 nan 3
+14:22:49.254: start heightsub
+14:22:49.254: RectHeightSub orginal point 466.344 725.457
+14:22:49.254: RectHeightSub now point 678 730.52
+14:22:49.254: Grayval Num,Indices Num, sum 25 1 89.1743
+14:22:49.254: xyz 466.344 725.457 3.7156 4
+14:22:49.255: start heightsub
+14:22:49.255: RectHeightSub orginal point 397.546 412.188
+14:22:49.255: RectHeightSub now point 610.519 417
+14:22:49.255: Grayval Num,Indices Num, sum 27 10 14.8242
+14:22:49.255: xyz 397.546 412.188 0.872012 5
+14:22:49.256: comp 1
+14:22:49.256: heightSub "rect_15" nan
+14:22:49.257: heightSub "rect_16" nan
+14:22:49.258: "计算高差时间:" 11 ms
+14:22:49.258: plane list.size 0
+14:22:49.258: heightsub list.size 0
+14:36:02.676: rowcount 0
+14:36:02.678: roiList size 19
+14:42:02.891: rowcount 19
+14:42:02.892: roiList size 19
+14:42:02.897: read "D:/qt/first/build/0_1.tif"
+14:42:02.987: 800 5000 real
+14:42:03.372: 800 5000
+14:42:03.372: read finish
+14:42:05.854: start match
+14:42:06.115: ret = 1
+14:42:06.116: locate ("641.232", "223.69", "0.00295264")
+14:42:06.120: match orginal point 427.5 218.5
+14:42:06.120: "匹配模板时间:" 308 ms
+14:42:06.120: plane list.size 19
+14:42:06.121: start planePoint
+14:42:06.122: planePoint orginal point 257.893 112.064
+14:42:06.122: planePoint now point 472 117
+14:42:06.123: xyz 257.893 112.064 nan 0
+14:42:06.123: start planePoint
+14:42:06.123: planePoint orginal point 1037.05 78.3493
+14:42:06.123: planePoint now point 1251 85.08
+14:42:06.124: xyz 1037.05 78.3493 nan 1
+14:42:06.124: start planePoint
+14:42:06.124: planePoint orginal point 431.602 89.2251
+14:42:06.125: planePoint now point 645.5 94.5
+14:42:06.125: xyz 431.602 89.2251 3.14554 2
+14:42:06.125: start planePoint
+14:42:06.125: planePoint orginal point 859.361 169.162
+14:42:06.125: planePoint now point 1073.5 175.5
+14:42:06.125: xyz 859.361 169.162 nan 3
+14:42:06.126: start planePoint
+14:42:06.126: planePoint orginal point 231.836 492.172
+14:42:06.126: planePoint now point 445 497
+14:42:06.127: xyz 231.836 492.172 nan 4
+14:42:06.127: start planePoint
+14:42:06.127: planePoint orginal point 746.45 622.681
+14:42:06.127: planePoint now point 959.5 628.5
+14:42:06.128: xyz 746.45 622.681 nan 5
+14:42:06.128: start planePoint
+14:42:06.128: planePoint orginal point 876.732 634.101
+14:42:06.128: planePoint now point 1089.48 641.222
+14:42:06.128: xyz 876.732 634.101 nan 6
+14:42:06.129: start planePoint
+14:42:06.129: planePoint orginal point 572.741 495.435
+14:42:06.129: planePoint now point 786 501.581
+14:42:06.129: xyz 572.741 495.435 nan 7
+14:42:06.129: start planePoint
+14:42:06.130: planePoint orginal point 868.047 364.926
+14:42:06.130: planePoint now point 1081 371.387
+14:42:06.130: xyz 868.047 364.926 nan 8
+14:42:06.130: start planePoint
+14:42:06.130: planePoint orginal point 939.702 138.166
+14:42:06.130: planePoint now point 1153.5 145
+14:42:06.131: xyz 939.702 138.166 nan 9
+14:42:06.132: cloud
+14:42:06.132: cloud 1
+14:42:06.134: "平面度为:" nan
+14:42:06.134: heightsub list.size 19
+14:42:06.136: start heightsub
+14:42:06.137: RectHeightSub orginal point 264.407 302.934
+14:42:06.137: RectHeightSub now point 477.5 308
+14:42:06.137: Grayval Num,Indices Num, sum 30 30 0
+14:42:06.137: xyz 264.407 302.934 nan 0
+14:42:06.138: start heightsub
+14:42:06.138: RectHeightSub orginal point 470.687 541.113
+14:42:06.138: RectHeightSub now point 684 546
+14:42:06.138: Grayval Num,Indices Num, sum 27 1 38.7413
+14:42:06.138: xyz 470.687 541.113 1.49005 1
+14:42:06.139: start heightsub
+14:42:06.139: RectHeightSub orginal point 705.194 480.753
+14:42:06.139: RectHeightSub now point 918.5 486.5
+14:42:06.139: Grayval Num,Indices Num, sum 28 28 0
+14:42:06.139: xyz 705.194 480.753 nan 2
+14:42:06.140: start heightsub
+14:42:06.141: RectHeightSub orginal point 878.903 529.693
+14:42:06.141: RectHeightSub now point 1092 536.5
+14:42:06.141: Grayval Num,Indices Num, sum 30 30 0
+14:42:06.141: xyz 878.903 529.693 nan 3
+14:42:06.141: start heightsub
+14:42:06.142: RectHeightSub orginal point 466.344 725.457
+14:42:06.142: RectHeightSub now point 678 730.52
+14:42:06.143: Grayval Num,Indices Num, sum 25 1 89.1743
+14:42:06.143: xyz 466.344 725.457 3.7156 4
+14:42:06.143: start heightsub
+14:42:06.144: RectHeightSub orginal point 397.546 412.188
+14:42:06.144: RectHeightSub now point 610.519 417
+14:42:06.145: Grayval Num,Indices Num, sum 27 10 14.8242
+14:42:06.145: xyz 397.546 412.188 0.872012 5
+14:42:06.146: comp 1
+14:42:06.146: heightSub "rect_15" nan
+14:42:06.147: heightSub "rect_16" nan
+14:42:06.148: "计算高差时间:" 14 ms
+14:42:06.148: plane list.size 0
+14:42:06.148: heightsub list.size 0
+14:42:10.057: rowcount 3
+14:42:10.057: 1
+14:42:10.059: clear
+14:42:11.321: rowcount 19
+14:42:11.322: roiList size 19
+14:42:11.328: read "D:/qt/first/build/0_1.tif"
+14:42:11.422: 800 5000 real
+14:42:11.801: 800 5000
+14:42:11.802: read finish
+14:46:34.507: rowcount 19
+14:46:34.508: roiList size 19
+14:46:34.514: read "D:/qt/first/build/0_1.tif"
+14:46:34.605: 800 5000 real
+14:46:34.991: 800 5000
+14:46:34.991: read finish
+14:46:37.695: rowcount 19
+14:46:37.695: roiList size 19
+14:46:37.701: read "D:/qt/first/build/0_1.tif"
+14:46:37.793: 800 5000 real
+14:46:38.151: 800 5000
+14:46:38.151: read finish
+14:46:58.349: rowcount 19
+14:46:58.349: roiList size 19
+14:46:58.355: read "D:/qt/first/build/0_1.tif"
+14:46:58.447: 800 5000 real
+14:46:58.836: 800 5000
+14:46:58.836: read finish
+14:46:59.612: display 0
+14:47:29.561: rowcount 19
+14:47:29.561: roiList size 19
+14:47:29.567: read "D:/qt/first/build/0_1.tif"
+14:47:29.663: 800 5000 real
+14:47:30.026: 800 5000
+14:47:30.026: read finish
+14:47:31.661: display 0
+14:47:32.965: start match
+14:47:33.212: ret = 1
+14:47:33.212: locate ("641.232", "223.69", "0.00295264")
+14:47:33.216: match orginal point 427.5 218.5
+14:47:33.216: "匹配模板时间:" 290 ms
+14:47:33.216: plane list.size 19
+14:47:33.217: start planePoint
+14:47:33.217: planePoint orginal point 257.893 112.064
+14:47:33.217: planePoint now point 472 117
+14:47:33.217: xyz 257.893 112.064 nan 0
+14:47:33.218: start planePoint
+14:47:33.218: planePoint orginal point 1037.05 78.3493
+14:47:33.218: planePoint now point 1251 85.08
+14:47:33.218: xyz 1037.05 78.3493 nan 1
+14:47:33.219: start planePoint
+14:47:33.219: planePoint orginal point 431.602 89.2251
+14:47:33.219: planePoint now point 645.5 94.5
+14:47:33.219: xyz 431.602 89.2251 3.14554 2
+14:47:33.220: start planePoint
+14:47:33.220: planePoint orginal point 859.361 169.162
+14:47:33.220: planePoint now point 1073.5 175.5
+14:47:33.220: xyz 859.361 169.162 nan 3
+14:47:33.220: start planePoint
+14:47:33.221: planePoint orginal point 231.836 492.172
+14:47:33.221: planePoint now point 445 497
+14:47:33.221: xyz 231.836 492.172 nan 4
+14:47:33.221: start planePoint
+14:47:33.222: planePoint orginal point 746.45 622.681
+14:47:33.222: planePoint now point 959.5 628.5
+14:47:33.222: xyz 746.45 622.681 nan 5
+14:47:33.222: start planePoint
+14:47:33.222: planePoint orginal point 876.732 634.101
+14:47:33.223: planePoint now point 1089.48 641.222
+14:47:33.223: xyz 876.732 634.101 nan 6
+14:47:33.223: start planePoint
+14:47:33.224: planePoint orginal point 572.741 495.435
+14:47:33.224: planePoint now point 786 501.581
+14:47:33.224: xyz 572.741 495.435 nan 7
+14:47:33.224: start planePoint
+14:47:33.225: planePoint orginal point 868.047 364.926
+14:47:33.225: planePoint now point 1081 371.387
+14:47:33.225: xyz 868.047 364.926 nan 8
+14:47:33.225: start planePoint
+14:47:33.225: planePoint orginal point 939.702 138.166
+14:47:33.226: planePoint now point 1153.5 145
+14:47:33.226: xyz 939.702 138.166 nan 9
+14:47:33.227: cloud
+14:47:33.227: cloud 1
+14:47:33.229: "平面度为:" nan
+14:47:33.229: heightsub list.size 19
+14:47:33.231: start heightsub
+14:47:33.232: RectHeightSub orginal point 264.407 302.934
+14:47:33.232: RectHeightSub now point 477.5 308
+14:47:33.232: Grayval Num,Indices Num, sum 30 30 0
+14:47:33.232: xyz 264.407 302.934 nan 0
+14:47:33.232: start heightsub
+14:47:33.233: RectHeightSub orginal point 470.687 541.113
+14:47:33.233: RectHeightSub now point 684 546
+14:47:33.233: Grayval Num,Indices Num, sum 27 1 38.7413
+14:47:33.233: xyz 470.687 541.113 1.49005 1
+14:47:33.234: start heightsub
+14:47:33.234: RectHeightSub orginal point 705.194 480.753
+14:47:33.234: RectHeightSub now point 918.5 486.5
+14:47:33.234: Grayval Num,Indices Num, sum 28 28 0
+14:47:33.235: xyz 705.194 480.753 nan 2
+14:47:33.235: start heightsub
+14:47:33.235: RectHeightSub orginal point 878.903 529.693
+14:47:33.235: RectHeightSub now point 1092 536.5
+14:47:33.236: Grayval Num,Indices Num, sum 30 30 0
+14:47:33.236: xyz 878.903 529.693 nan 3
+14:47:33.236: start heightsub
+14:47:33.236: RectHeightSub orginal point 466.344 725.457
+14:47:33.237: RectHeightSub now point 678 730.52
+14:47:33.237: Grayval Num,Indices Num, sum 25 1 89.1743
+14:47:33.237: xyz 466.344 725.457 3.7156 4
+14:47:33.237: start heightsub
+14:47:33.237: RectHeightSub orginal point 397.546 412.188
+14:47:33.238: RectHeightSub now point 610.519 417
+14:47:33.238: Grayval Num,Indices Num, sum 27 10 14.8242
+14:47:33.238: xyz 397.546 412.188 0.872012 5
+14:47:33.239: comp 1
+14:47:33.239: heightSub "rect_15" nan
+14:47:33.240: heightSub "rect_16" nan
+14:47:33.240: "计算高差时间:" 11 ms
+14:47:33.240: plane list.size 0
+14:47:33.240: heightsub list.size 0
+14:47:37.025: rowcount 19
+14:47:37.025: roiList size 19
+14:47:37.031: read "D:/qt/first/build/0_1.tif"
+14:47:37.123: 800 5000 real
+14:47:37.479: 800 5000
+14:47:37.479: read finish
+14:47:39.115: rowcount 19
+14:47:39.116: roiList size 19
+14:47:39.121: read "D:/qt/first/build/0_1.tif"
+14:47:39.212: 800 5000 real
+14:47:39.575: 800 5000
+14:47:39.575: read finish
+14:47:41.421: rowcount 19
+14:47:41.422: roiList size 19
+14:47:41.428: read "D:/qt/first/build/0_1.tif"
+14:47:41.519: 800 5000 real
+14:47:41.833: start match
+14:47:42.107: ret = 1
+14:47:42.107: locate ("641.232", "223.69", "0.00295264")
+14:47:42.111: match orginal point 427.5 218.5
+14:47:42.112: "匹配模板时间:" 322 ms
+14:47:42.112: plane list.size 19
+14:47:42.112: start planePoint
+14:47:42.113: planePoint orginal point 257.893 112.064
+14:47:42.113: planePoint now point 472 117
+14:47:42.113: xyz 257.893 112.064 nan 0
+14:47:42.114: start planePoint
+14:47:42.114: planePoint orginal point 1037.05 78.3493
+14:47:42.114: planePoint now point 1251 85.08
+14:47:42.114: xyz 1037.05 78.3493 nan 1
+14:47:42.115: start planePoint
+14:47:42.115: planePoint orginal point 431.602 89.2251
+14:47:42.115: planePoint now point 645.5 94.5
+14:47:42.115: xyz 431.602 89.2251 3.14554 2
+14:47:42.116: start planePoint
+14:47:42.116: planePoint orginal point 859.361 169.162
+14:47:42.116: planePoint now point 1073.5 175.5
+14:47:42.116: xyz 859.361 169.162 nan 3
+14:47:42.116: start planePoint
+14:47:42.117: planePoint orginal point 231.836 492.172
+14:47:42.117: planePoint now point 445 497
+14:47:42.117: xyz 231.836 492.172 nan 4
+14:47:42.117: start planePoint
+14:47:42.117: planePoint orginal point 746.45 622.681
+14:47:42.118: planePoint now point 959.5 628.5
+14:47:42.118: xyz 746.45 622.681 nan 5
+14:47:42.118: start planePoint
+14:47:42.118: planePoint orginal point 876.732 634.101
+14:47:42.118: planePoint now point 1089.48 641.222
+14:47:42.118: xyz 876.732 634.101 nan 6
+14:47:42.119: start planePoint
+14:47:42.119: planePoint orginal point 572.741 495.435
+14:47:42.119: planePoint now point 786 501.581
+14:47:42.119: xyz 572.741 495.435 nan 7
+14:47:42.120: start planePoint
+14:47:42.120: planePoint orginal point 868.047 364.926
+14:47:42.120: planePoint now point 1081 371.387
+14:47:42.120: xyz 868.047 364.926 nan 8
+14:47:42.120: start planePoint
+14:47:42.120: planePoint orginal point 939.702 138.166
+14:47:42.121: planePoint now point 1153.5 145
+14:47:42.121: xyz 939.702 138.166 nan 9
+14:47:42.122: cloud
+14:47:42.122: cloud 1
+14:47:42.124: "平面度为:" nan
+14:47:42.124: heightsub list.size 19
+14:47:42.127: start heightsub
+14:47:42.127: RectHeightSub orginal point 264.407 302.934
+14:47:42.127: RectHeightSub now point 477.5 308
+14:47:42.127: Grayval Num,Indices Num, sum 30 30 0
+14:47:42.127: xyz 264.407 302.934 nan 0
+14:47:42.128: start heightsub
+14:47:42.128: RectHeightSub orginal point 470.687 541.113
+14:47:42.128: RectHeightSub now point 684 546
+14:47:42.128: Grayval Num,Indices Num, sum 27 1 38.7413
+14:47:42.129: xyz 470.687 541.113 1.49005 1
+14:47:42.129: start heightsub
+14:47:42.129: RectHeightSub orginal point 705.194 480.753
+14:47:42.129: RectHeightSub now point 918.5 486.5
+14:47:42.129: Grayval Num,Indices Num, sum 28 28 0
+14:47:42.129: xyz 705.194 480.753 nan 2
+14:47:42.130: start heightsub
+14:47:42.130: RectHeightSub orginal point 878.903 529.693
+14:47:42.130: RectHeightSub now point 1092 536.5
+14:47:42.130: Grayval Num,Indices Num, sum 30 30 0
+14:47:42.130: xyz 878.903 529.693 nan 3
+14:47:42.131: start heightsub
+14:47:42.131: RectHeightSub orginal point 466.344 725.457
+14:47:42.131: RectHeightSub now point 678 730.52
+14:47:42.131: Grayval Num,Indices Num, sum 25 1 89.1743
+14:47:42.132: xyz 466.344 725.457 3.7156 4
+14:47:42.132: start heightsub
+14:47:42.132: RectHeightSub orginal point 397.546 412.188
+14:47:42.132: RectHeightSub now point 610.519 417
+14:47:42.132: Grayval Num,Indices Num, sum 27 10 14.8242
+14:47:42.133: xyz 397.546 412.188 0.872012 5
+14:47:42.133: comp 1
+14:47:42.134: heightSub "rect_15" nan
+14:47:42.134: heightSub "rect_16" nan
+14:47:42.135: "计算高差时间:" 11 ms
+14:47:42.135: plane list.size 0
+14:47:42.135: heightsub list.size 0
+14:47:42.230: 800 5000
+14:47:42.230: read finish
+14:47:46.216: rowcount 19
+14:47:46.217: roiList size 19
+14:47:46.223: read "D:/qt/first/build/0_1.tif"
+14:47:46.314: 800 5000 real
+14:47:46.315: 8
+14:47:46.320: clear
+14:47:46.693: 800 5000
+14:47:46.694: read finish
+14:47:50.759: rowcount 19
+14:47:50.759: roiList size 19
+14:47:50.765: read "D:/qt/first/build/0_1.tif"
+14:47:50.858: 800 5000 real
+14:47:51.225: 800 5000
+14:47:51.225: read finish
+14:50:50.729: rowcount 0
+14:50:50.729: roiList size 19
+14:50:54.090: rowcount 19
+14:50:54.091: roiList size 19
+14:50:54.097: read "D:/qt/first/build/0_1.tif"
+14:50:54.188: 800 5000 real
+14:50:54.563: 800 5000
+14:50:54.563: read finish
+14:50:57.637: rowcount 19
+14:50:57.638: roiList size 19
+14:50:57.645: read "D:/qt/first/build/0_1.tif"
+14:50:57.737: 800 5000 real
+14:50:58.099: 800 5000
+14:50:58.099: read finish
+14:51:00.460: rowcount 19
+14:51:00.461: roiList size 19
+14:51:00.468: read "D:/qt/first/build/0_1.tif"
+14:51:00.559: 800 5000 real
+14:51:00.923: 800 5000
+14:51:00.923: read finish
+14:51:06.526: rowcount 19
+14:51:06.527: roiList size 19
+14:51:06.534: read "D:/qt/first/build/0_1.tif"
+14:51:06.625: 800 5000 real
+14:51:06.991: 800 5000
+14:51:06.992: read finish
