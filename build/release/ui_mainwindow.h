@@ -33,6 +33,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -127,8 +128,8 @@ public:
     QPushButton *threeDButton;
     QLabel *rate;
     QLabel *pos;
-    QWidget *horizontalLayoutWidget;
-    QHBoxLayout *imgList;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *imgList;
     QMenuBar *menuBar;
     QMenu *menu_S;
     QMenu *menu;
@@ -484,7 +485,7 @@ public:
         reset->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         view_box = new QGroupBox(centralWidget);
         view_box->setObjectName(QStringLiteral("view_box"));
-        view_box->setGeometry(QRect(10, 30, 741, 511));
+        view_box->setGeometry(QRect(10, 30, 611, 591));
         sizePolicy.setHeightForWidth(view_box->sizePolicy().hasHeightForWidth());
         view_box->setSizePolicy(sizePolicy);
         view_box->setMouseTracking(false);
@@ -496,7 +497,7 @@ public:
 "}"));
         progressBar = new QProgressBar(view_box);
         progressBar->setObjectName(QStringLiteral("progressBar"));
-        progressBar->setGeometry(QRect(0, 490, 501, 20));
+        progressBar->setGeometry(QRect(10, 570, 501, 20));
         progressBar->setStyleSheet(QLatin1String("border:2px;\n"
 "border-radius:25px"));
         progressBar->setValue(0);
@@ -505,7 +506,7 @@ public:
         progressBar->setTextDirection(QProgressBar::TopToBottom);
         base = new QStackedWidget(view_box);
         base->setObjectName(QStringLiteral("base"));
-        base->setGeometry(QRect(10, 30, 721, 461));
+        base->setGeometry(QRect(10, 30, 591, 541));
         base->setAutoFillBackground(true);
         base->setStyleSheet(QStringLiteral(""));
         base->setMidLineWidth(0);
@@ -619,10 +620,10 @@ public:
         pos = new QLabel(centralWidget);
         pos->setObjectName(QStringLiteral("pos"));
         pos->setGeometry(QRect(470, 10, 54, 12));
-        horizontalLayoutWidget = new QWidget(centralWidget);
-        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 540, 741, 80));
-        imgList = new QHBoxLayout(horizontalLayoutWidget);
+        verticalLayoutWidget = new QWidget(centralWidget);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(630, 30, 121, 571));
+        imgList = new QVBoxLayout(verticalLayoutWidget);
         imgList->setSpacing(6);
         imgList->setContentsMargins(11, 11, 11, 11);
         imgList->setObjectName(QStringLiteral("imgList"));

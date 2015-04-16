@@ -602,8 +602,8 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>741</width>
-      <height>511</height>
+      <width>611</width>
+      <height>591</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -631,8 +631,8 @@ border-radius:25px
     <widget class="QProgressBar" name="progressBar">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>490</y>
+       <x>10</x>
+       <y>570</y>
        <width>501</width>
        <height>20</height>
       </rect>
@@ -662,8 +662,8 @@ border-radius:25px</string>
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>721</width>
-       <height>461</height>
+       <width>591</width>
+       <height>541</height>
       </rect>
      </property>
      <property name="autoFillBackground">
@@ -895,16 +895,16 @@ border-radius:25px</string>
      <string>0,0</string>
     </property>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>540</y>
-      <width>741</width>
-      <height>80</height>
+      <x>630</x>
+      <y>30</y>
+      <width>121</width>
+      <height>571</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="imgList"/>
+    <layout class="QVBoxLayout" name="imgList"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

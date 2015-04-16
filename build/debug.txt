@@ -9498,3 +9498,189 @@
 16:48:06.551: 800 1870 real
 16:48:06.708: 800 1870
 16:48:06.709: read finish
+16:50:40.248: rowcount 0
+16:50:40.249: roiList size 14
+16:50:40.280: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+16:50:42.595: rowcount 14
+16:50:42.596: roiList size 14
+16:50:42.601: read "D:/7080image/01/test0.tif"
+16:50:42.636: 800 1870 real
+16:50:42.797: 800 1870
+16:50:42.797: read finish
+16:55:04.570: rowcount 0
+16:55:04.571: roiList size 14
+16:55:04.600: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+16:55:26.498: rowcount 0
+16:55:26.499: roiList size 14
+16:55:26.525: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+16:56:00.349: rowcount 0
+16:56:00.350: roiList size 14
+16:56:00.379: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+16:58:37.989: rowcount 0
+16:58:37.990: roiList size 14
+16:58:38.023: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+16:58:43.786: rowcount 14
+16:58:43.787: roiList size 14
+16:58:43.792: read "D:/7080image/01/test0.tif"
+16:58:43.970: 800 1870 real
+16:58:44.129: 800 1870
+16:58:44.129: read finish
+16:58:45.020: rowcount 14
+16:58:45.020: roiList size 14
+16:58:45.025: read "D:/7080image/01/test0.tif"
+16:58:45.061: 800 1870 real
+16:58:45.222: 800 1870
+16:58:45.222: read finish
+16:58:46.117: rowcount 14
+16:58:46.118: roiList size 14
+16:58:46.123: read "D:/7080image/01/test0.tif"
+16:58:46.158: 800 1870 real
+16:58:46.319: 800 1870
+16:58:46.319: read finish
+16:58:47.036: rowcount 14
+16:58:47.037: roiList size 14
+16:58:47.042: read "D:/7080image/01/test0.tif"
+16:58:47.076: 800 1870 real
+16:58:47.232: 800 1870
+16:58:47.232: read finish
+16:58:47.906: rowcount 14
+16:58:47.907: roiList size 14
+16:58:47.911: read "D:/7080image/01/test0.tif"
+16:58:47.946: 800 1870 real
+16:58:48.097: 800 1870
+16:58:48.098: read finish
+16:58:48.746: rowcount 14
+16:58:48.747: roiList size 14
+16:58:48.751: read "D:/7080image/01/test0.tif"
+16:58:48.786: 800 1870 real
+16:58:48.938: 800 1870
+16:58:48.938: read finish
+16:58:49.505: rowcount 14
+16:58:49.506: roiList size 14
+16:58:49.511: read "D:/7080image/01/test0.tif"
+16:58:49.546: 800 1870 real
+16:58:49.696: 800 1870
+16:58:49.696: read finish
+16:58:50.278: rowcount 14
+16:58:50.278: roiList size 14
+16:58:50.283: read "D:/7080image/01/test0.tif"
+16:58:50.319: 800 1870 real
+16:58:50.448: start match
+16:58:50.620: ret = 1
+16:58:50.620: locate ("590.539", "163.787", "0.00606686")
+16:58:50.624: match orginal point 590 163
+16:58:50.624: "匹配模板时间:" 195 ms
+16:58:50.624: plane list.size 14
+16:58:50.625: start planePoint
+16:58:50.626: planePoint orginal point 257.893 630.838
+16:58:50.626: planePoint now point 256 630
+16:58:50.627: xyz 257.893 630.838 -4.99061 0
+16:58:50.627: start planePoint
+16:58:50.627: planePoint orginal point 242.693 353.506
+16:58:50.628: planePoint now point 241.5 352.5
+16:58:50.628: xyz 242.693 353.506 -5.09707 1
+16:58:50.628: start planePoint
+16:58:50.629: planePoint orginal point 635.71 588.423
+16:58:50.629: planePoint now point 633.5 589.5
+16:58:50.629: xyz 635.71 588.423 0.179286 2
+16:58:50.630: start planePoint
+16:58:50.631: planePoint orginal point 100 299
+16:58:50.631: planePoint now point 100 297
+16:58:50.631: xyz 100 299 -21.2868 3
+16:58:50.632: start planePoint
+16:58:50.633: planePoint orginal point 299 299
+16:58:50.633: planePoint now point 299 298
+16:58:50.633: xyz 299 299 -5.1374 4
+16:58:50.634: start planePoint
+16:58:50.635: planePoint orginal point 299 299
+16:58:50.635: planePoint now point 299 298
+16:58:50.635: xyz 299 299 -3.24909 5
+16:58:50.635: start planePoint
+16:58:50.635: planePoint orginal point 1000 299
+16:58:50.636: planePoint now point 1000 302.129
+16:58:50.636: xyz 1000 299 -1.79025 6
+16:58:50.636: cloud
+16:58:50.637: cloud 1
+16:58:50.641: "平面度为:" 15.3224
+16:58:50.641: heightsub list.size 14
+16:58:50.643: start heightsub
+16:58:50.643: RectHeightSub orginal point 865.875 634.101
+16:58:50.643: RectHeightSub now point 864 636.111
+16:58:50.643: Grayval Num,Indices Num, sum 27 1 4.2252
+16:58:50.644: xyz 865.875 634.101 0.156489 0
+16:58:50.644: start heightsub
+16:58:50.644: RectHeightSub orginal point 907.131 107.17
+16:58:50.644: RectHeightSub now point 908 110
+16:58:50.644: Grayval Num,Indices Num, sum 29 1 -152.144
+16:58:50.645: xyz 907.131 107.17 -5.24635 1
+16:58:50.645: start heightsub
+16:58:50.645: RectHeightSub orginal point 160.181 41.9155
+16:58:50.645: RectHeightSub now point 161 40.08
+16:58:50.646: Grayval Num,Indices Num, sum 25 25 0
+16:58:50.646: xyz 160.181 41.9155 0 2
+16:58:50.646: start heightsub
+16:58:50.646: RectHeightSub orginal point 68.9837 415.498
+16:58:50.646: RectHeightSub now point 68 413.52
+16:58:50.647: Grayval Num,Indices Num, sum 25 1 -529.172
+16:58:50.647: xyz 68.9837 415.498 -21.1669 3
+16:58:50.647: start heightsub
+16:58:50.647: RectHeightSub orginal point 71.1551 637.364
+16:58:50.648: RectHeightSub now point 69 635
+16:58:50.648: Grayval Num,Indices Num, sum 29 1 -612.048
+16:58:50.648: xyz 71.1551 637.364 -21.1051 4
+16:58:50.649: comp 1
+16:58:50.650: heightSub "rect_9" 2.29284
+16:58:50.651: "计算高差时间:" 10 ms
+16:58:50.652: plane list.size 0
+16:58:50.652: heightsub list.size 0
+16:58:50.694: 800 1870
+16:58:50.694: read finish
+16:58:52.539: display 1
+16:58:53.119: display 0
+16:58:54.118: display 2
+16:58:54.579: display 1
+16:58:55.259: display 0
+16:59:00.830: rowcount 2
+16:59:00.830: 8
+16:59:00.840: clear
+16:59:02.588: rowcount 14
+16:59:02.589: roiList size 14
+16:59:02.594: read "D:/7080image/01/test0.tif"
+16:59:02.629: 800 1870 real
+16:59:02.786: 800 1870
+16:59:02.787: read finish
+16:59:07.225: start match
+16:59:07.380: ret = 1
+16:59:07.381: locate ("590.539", "163.787", "0.00606686")
+16:59:07.384: match orginal point 590 163
+16:59:07.384: "匹配模板时间:" 178 ms
+16:59:07.384: plane list.size 14
+16:59:07.385: start planePoint
+16:59:07.386: planePoint orginal point 257.893 630.838
+16:59:07.386: planePoint now point 256 630
+16:59:07.386: xyz 257.893 630.838 -4.99061 0
+16:59:07.387: start planePoint
+16:59:07.387: planePoint orginal point 242.693 353.506
+16:59:07.387: planePoint now point 241.5 352.5
+16:59:07.388: xyz 242.693 353.506 -5.09707 1
+16:59:07.388: start planePoint
+16:59:07.388: planePoint orginal point 635.71 588.423
+16:59:07.388: planePoint now point 633.5 589.5
+16:59:07.389: xyz 635.71 588.423 0.179286 2
+16:59:07.390: start planePoint
+16:59:07.391: planePoint orginal point 100 299
+16:59:07.391: planePoint now point 100 297
+16:59:07.391: xyz 100 299 -21.2868 3
+16:59:07.391: start planePoint
+16:59:07.392: planePoint orginal point 299 299
+16:59:07.392: planePoint now point 299 298
+16:59:07.392: xyz 299 299 -5.1374 4
+16:59:07.392: start planePoint
+16:59:07.393: planePoint orginal point 299 299
+16:59:07.393: planePoint now point 299 298
+16:59:07.393: xyz 299 299 -3.24909 5
+16:59:07.393: start planePoint
+16:59:07.394: planePoint orginal point 1000 299
+16:59:07.394: planePoint now point 1000 302.129
+16:59:07.394: xyz 1000 299 -1.79025 6
+16:59:07.394: cloud
