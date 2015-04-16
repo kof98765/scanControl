@@ -799,10 +799,22 @@ void MainWindow::recvHeightSub(QString name,double min1,double max1,double range
     min=roi.value("min").toDouble();
     max=roi.value("max").toDouble();
 
+
     if(range<min|range>max)
+    {
         sum->add_item(0,QString("NG"));
+
+        ui->connect->setText(QStringLiteral("NG!"));
+        ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+                                                     "color: rgb(255, 0, 0);"));
+    }
     else
+    {
         sum->add_item(0,QString("OK"));
+        ui->connect->setText(QStringLiteral("OK!!"));
+        ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+                                                     "color: rgb(0, 0, 0);"));
+    }
     sum->add_item(1,QStringLiteral("高差"));
     sum->add_item(2,QStringLiteral("分组")+QString::number(i+1));
     sum->add_item(3,name);
@@ -840,9 +852,21 @@ void MainWindow::recvPlaneness(int team,double result1)
     double min=str.size()>0?str.at(0).toDouble():0;
     double max=str.size()>0?str.at(1).toDouble():0;
     if(result1<min|result1>max)
+    {
         sum->add_item(0,QString("NG"));
+
+
+        ui->connect->setText(QStringLiteral("NG!"));
+        ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+                                                     "color: rgb(255, 0, 0);"));
+    }
     else
+    {
         sum->add_item(0,QString("OK"));
+        ui->connect->setText(QStringLiteral("OK!!"));
+        ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+                                                     "color: rgb(0, 0, 0);"));
+    }
     sum->add_item(1,QStringLiteral("平面度"));
     sum->add_item(2,QStringLiteral("分组")+QString::number(team+1));
     sum->add_item(3,"N/A");
@@ -1195,9 +1219,9 @@ void MainWindow::on_roiDraw2_clicked()
     isDrawing=true;
 
     //hal->drawRect(ui->roiName->text(),QString::number(ui->roiColor->palette().background().color().rgb()),ui->team->currentIndex(),
-     //             ui->limitValue->text().toDouble(),ui->func->currentIndex());
+    //             ui->limitValue->text().toDouble(),ui->func->currentIndex());
     qDebug()<<ui->roiName->text();
-   // qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
+    // qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
     isDrawing=false;
 }
 

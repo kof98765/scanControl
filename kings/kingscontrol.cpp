@@ -34,6 +34,8 @@ void kingsControl::flushSettings()
     frequency=set.value("freq",10).toInt();
     commandPort=set.value("commandPort",24691).toInt();
     dataPort=set.value("dataPort",24692).toInt();
+    minMeasuringRange=set.value("minMeasuringRange",-7.5).toDouble();
+    maxMeasuringRange=set.value("maxMeasuringRange",7.5).toDouble();
     qDebug()<<"mode"<<transferMode;
     qDebug()<<"frequency"<<frequency;
     qDebug()<<"commandPort"<<commandPort;
@@ -339,9 +341,10 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
 
             vdValueZ[receiveCount*_profileData.profSize+i]=(int)_profileData._profileValue[i]*0.00001;
             double v=vdValueZ[receiveCount*_profileData.profSize+i];
-            if(v>200|v<-200)
-                vdValueZ[receiveCount*_profileData.profSize+i]=0;
-
+            if(v>maxMeasuringRange)
+                vdValueZ[receiveCount*_profileData.profSize+i]=maxMeasuringRange;
+            if(v<minMeasuringRange)
+                vdValueZ[receiveCount*_profileData.profSize+i]=minMeasuringRange;
             //qDebug()<<vdValueZ[j][i];
 
         }

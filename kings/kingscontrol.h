@@ -39,6 +39,8 @@ private:
     std::vector<DWORD> profileBuf;
     std::vector<double> x;
     QTimer timer;
+    double minMeasuringRange;
+    double maxMeasuringRange;
 
 signals:
     void heartPack();

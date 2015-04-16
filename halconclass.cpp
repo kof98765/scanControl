@@ -940,7 +940,7 @@ void halconClass::planePoint(int team)
                  tuple_find(Grayval,0,&Indices);
                  double sumResult;
                  tuple_sum(Grayval,&sumResult);
-                 double mean=sumResult/(Grayval.Num()-Indices.Num());
+                 double mean=sumResult/(Grayval.Num());
                  /*
                  if(Indices[0].I()!=-1)
                  {
@@ -1051,7 +1051,7 @@ void halconClass::RectHeightSub(int team)
                 double sumResult;
                 tuple_sum(Grayval,&sumResult);
                 qDebug()<<"Grayval Num,Indices Num, sum"<<Grayval.Num()<<Indices.Num()<<sumResult;
-                double mean=sumResult/(Grayval.Num()-Indices.Num());
+                double mean=sumResult/(Grayval.Num());
                 /*
                 if(Indices[0].I()!=-1)
                 {
@@ -1134,7 +1134,7 @@ void halconClass::calculate()
 
 }
 /*
-    计算平面度
+    计算平面度-已废弃
 */
 void halconClass::calculatePlaneness(int team)
 {
