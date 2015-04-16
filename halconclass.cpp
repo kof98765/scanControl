@@ -89,7 +89,11 @@ void halconClass::read_img(QString str)
    get_image_pointer1(tmp,(long*)&p,type,&w,&h);
    //getImagebyPointer3(0,0,p,w,h);
    qDebug()<<w<<h<<type;
-
+    if(type=="byte")
+    {
+        emit Error("thi image type is byte,not real!!");
+        return;
+    }
    getImagebyPointer1(p,w,h);
    qDebug()<<w<<h;
    img_width=Width[0].I();
@@ -135,7 +139,7 @@ void halconClass::reset()
         yScale=img_height/win_height;
 
         clear_window(WindowHandle);
-        set_part(WindowHandle,0,0,1000,img_width);
+        set_part(WindowHandle,0,0,win_height,img_width);
         disp_obj(result_img,WindowHandle);
         this->threedControl(0,0,0,0,"rotate");
 
@@ -150,7 +154,7 @@ void halconClass::setMode(QString str)
     {
         Hlong w,h;
         get_image_size(Image,&w,&h);
-        set_part(WindowHandle,0,0,win_height,win_width);
+        set_part(WindowHandle,0,0,win_height,img_width);
         img_width=w;
         img_height=h;
         xScale=img_width/win_width;
@@ -520,6 +524,12 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
     int func=map.value("func").toInt();
     double min=map.value("min").toDouble();
     double max=map.value("max").toDouble();
+    double row=map.value("Row").toDouble();
+    double column=map.value("Column").toDouble();
+    double length1=map.value("Length1",50).toDouble();
+    double length2=map.value("Length2",50).toDouble();
+    int unit=map.value("unit").toInt();
+    int drawType=map.value("drawType").toInt();
     if(name.isEmpty())
         name="rect";
     while(set.contains("team/"+name))
@@ -538,31 +548,50 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
     roi.insert("color",color);
     if(func==2|func==3)
     {
-        draw_rectangle2(WindowHandle,&Row,&Column,&Phi,&Length1,&Length2);
+        if(drawType)
+        {
+            draw_rectangle2(WindowHandle,&Row,&Column,&Phi,&Length1,&Length2);
         //roiList[1-5]
 
-        roi.insert("Row",Row[0].D());
-        roi.insert("Column",Column[0].D());
-        roi.insert("Phi",Phi[0].D());
-        roi.insert("Length1",Length1[0].D());
-        roi.insert("Length2",Length2[0].D());
+            roi.insert("Row",Row[0].D());
+            roi.insert("Column",Column[0].D());
+            roi.insert("Phi",Phi[0].D());
+            roi.insert("Length1",Length1[0].D());
+            roi.insert("Length2",Length2[0].D());
 
-        qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D()<<Phi[0].D();
+            qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D()<<Phi[0].D();
+        }
+        else
+        {
+            roi.insert("Row",row);
+            roi.insert("Column",column);
+            roi.insert("Phi",0);
+            roi.insert("Length1",length1);
+            roi.insert("Length2",length2);
+            qDebug()<<"func"<<row<<column<<length1<<length2;
+        }
     }
     else
     {
-        draw_rectangle1(WindowHandle,&Row,&Column,&Row2,&Column2);
-        //roiList[1-5]
+            if(!drawType)
+            {
+                Error(QStringLiteral("定位与搜索不支持键入区域!!"));
+                return;
+            }
+            draw_rectangle1(WindowHandle,&Row,&Column,&Row2,&Column2);
+            //roiList[1-5]
 
-        roi.insert("Row",Row[0].D());
-        roi.insert("Column",Column[0].D());
-        roi.insert("Row2",Row2[0].D());
-        roi.insert("Column2",Column2[0].D());
-        Hobject Rectangle;
-        gen_rectangle1(&Rectangle,Row,Column,Row2,Column2);
-        HTuple Area,r,c;
-        area_center(Rectangle,&Area,&r,&c);
-        qDebug()<<"func"<<func<<r[0].D()<<c[0].D();
+            roi.insert("Row",Row[0].D());
+            roi.insert("Column",Column[0].D());
+            roi.insert("Row2",Row2[0].D());
+            roi.insert("Column2",Column2[0].D());
+            Hobject Rectangle;
+            gen_rectangle1(&Rectangle,Row,Column,Row2,Column2);
+            HTuple Area,r,c;
+            area_center(Rectangle,&Area,&r,&c);
+            qDebug()<<"func"<<func<<r[0].D()<<c[0].D();
+
+
     }
 
 
@@ -965,9 +994,9 @@ void halconClass::planePoint(int team)
              return;
          PointCloud::Ptr newCloud(new PointCloud);
          double result;
-         if(in<4)
+         if(in<set.value("check_num",4).toInt())
          {
-             emit Error("not enough four point,at lease 4 point");
+             emit Error(QString("not enough four point,at lease %1 point").arg(set.value("check_num",4).toInt()));
              return;
          }
          qDebug()<<"cloud";
@@ -1083,12 +1112,12 @@ void halconClass::RectHeightSub(int team)
 
         result=(*comp)(newCloud,vec);
         qDebug()<<"comp"<<result;
-        if(in<5)
+        if(in<set.value("check_num",4).toInt()+1)
         {
-            emit Error("not enough four point,at least 5 point!!");
+            emit Error(QString("not enough four point,at least %1 point!!").arg(set.value("check_num",4).toInt()+1));
             return;
         }
-        for(int j=4;j<in;j++)
+        for(int j=set.value("check_num",4).toInt();j<in;j++)
         {
 
             QMap<QString,QVariant> roi=set.value("team/"+list.at(temp[j])).toMap();
@@ -1325,7 +1354,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     gen_image_const(&Imagetemp,"real",w,set.value("profileCount",1000).toUInt()>h?set.value("profileCount",1000).toUInt():h);
     get_image_pointer1(Imagetemp,(long*)&pointer,type,&width,&height);
     scale=win_width/w;
-    set_part(WindowHandle,0,0,1000,w);
+    set_part(WindowHandle,0,0,win_height,w);
 
     for (int row=0; row<h; row++)
     {

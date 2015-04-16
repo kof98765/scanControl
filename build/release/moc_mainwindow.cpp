@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[56];
-    char stringdata[781];
+    char stringdata[774];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -81,10 +81,10 @@ QT_MOC_LITERAL(48, 639, 18),
 QT_MOC_LITERAL(49, 658, 11),
 QT_MOC_LITERAL(50, 670, 16),
 QT_MOC_LITERAL(51, 687, 18),
-QT_MOC_LITERAL(52, 706, 20),
-QT_MOC_LITERAL(53, 727, 19),
-QT_MOC_LITERAL(54, 747, 27),
-QT_MOC_LITERAL(55, 775, 5)
+QT_MOC_LITERAL(52, 706, 27),
+QT_MOC_LITERAL(53, 734, 5),
+QT_MOC_LITERAL(54, 740, 16),
+QT_MOC_LITERAL(55, 757, 16)
     },
     "MainWindow\0stopMove\0\0E128_detect\0"
     "outputMessage\0QtMsgType\0recvHeightSub\0"
@@ -105,9 +105,8 @@ QT_MOC_LITERAL(55, 775, 5)
     "stopSingleFrame\0action_delItem\0"
     "action_modifyItem\0on_roiDraw_clicked\0"
     "statusCheck\0updataProsessBar\0"
-    "on_toExcel_clicked\0on_roiColor2_clicked\0"
-    "on_roiDraw2_clicked\0on_func_currentIndexChanged\0"
-    "index"
+    "on_toExcel_clicked\0on_func_currentIndexChanged\0"
+    "index\0on_draw1_clicked\0on_draw2_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -168,9 +167,9 @@ static const uint qt_meta_data_MainWindow[] = {
       49,    0,  318,    2, 0x08 /* Private */,
       50,    2,  319,    2, 0x08 /* Private */,
       51,    0,  324,    2, 0x08 /* Private */,
-      52,    0,  325,    2, 0x08 /* Private */,
-      53,    0,  326,    2, 0x08 /* Private */,
-      54,    1,  327,    2, 0x08 /* Private */,
+      52,    1,  325,    2, 0x08 /* Private */,
+      54,    0,  328,    2, 0x08 /* Private */,
+      55,    0,  329,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -216,9 +215,9 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   53,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   55,
 
        0        // eod
 };
@@ -269,9 +268,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 38: _t->statusCheck(); break;
         case 39: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 40: _t->on_toExcel_clicked(); break;
-        case 41: _t->on_roiColor2_clicked(); break;
-        case 42: _t->on_roiDraw2_clicked(); break;
-        case 43: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 41: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 42: _t->on_draw1_clicked(); break;
+        case 43: _t->on_draw2_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

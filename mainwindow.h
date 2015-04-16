@@ -173,11 +173,9 @@ private slots:
     void statusCheck();
     void updataProsessBar(QString,int);
     void on_toExcel_clicked();
-
-
-    void on_roiColor2_clicked();
-    void on_roiDraw2_clicked();
     void on_func_currentIndexChanged(int index);
+    void on_draw1_clicked();
+    void on_draw2_clicked();
 };
 
 #endif // MAINWINDOW_H

@@ -49,8 +49,8 @@ int main(int argc, char *argv[])
     //QTimer time;
    // time.singleShot(2000,&w,SLOT(showMaximized()));
     //time.singleShot(3000,screen,SLOT(hide()));
-        w.resize(1280,748);
-        w.show();
+    w.resize(1280,748);
+    w.showMaximized();
 
     QIcon ico(":/new/prefix1/ico/ico.png");
     a.setWindowIcon(ico);

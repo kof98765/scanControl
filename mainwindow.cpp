@@ -1005,13 +1005,20 @@ void MainWindow::on_roiDraw_clicked()
         ui->maxValue1->setText(QString::number(max));
     }
     QMap<QString,QVariant> map,limit;
+    map.insert("Row",ui->pointX->value());
+    map.insert("Column",ui->pointY->value());
+    map.insert("unit",ui->unit->currentIndex());
+    map.insert("Length1",ui->roiLength1->value());
+    map.insert("Length2",ui->roiLength2->value());
     map.insert("name",ui->roiName->text());
     map.insert("color",ui->roiColor->palette().background().color().rgb());
     map.insert("team",ui->team->currentIndex());
     map.insert("min",ui->minValue1->text());
     map.insert("max",ui->maxValue1->text());
     map.insert("func",ui->func->currentIndex());
+    map.insert("drawType",ui->draw1->isChecked()?1:0);
     hal->drawRect(map);
+
     qDebug()<<ui->roiName->text();
     qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->func->currentIndex();
     isDrawing=false;
@@ -1196,34 +1203,9 @@ void MainWindow::on_roiColor_clicked()
 }
 
 
-void MainWindow::on_roiColor2_clicked()
-{
-    QColor color=QColorDialog::getColor();
-    if(color.isValid()){
-        int r,g,b;
-        color.getRgb(&r,&g,&b);
-        QString str;
-        str=QString("background-color: rgb(%1,%2,%3)").arg(r).arg(g).arg(b);
-        ui->roiColor2->setStyleSheet(str.toUtf8().data());
-        //QPalette pal=ui->roiColor->palette();
-        //pal.setColor(QPalette::Active,QPalette::Button, color);
-        //ui->roiColor->setPalette(pal);
-        qDebug()<<color.rgb();
-        qDebug()<<((color.rgb()&(0xff<<16))>>16)<<((color.rgb()&(0xff<<8))>>8)<<(color.rgb()&(0xff));
-        ui->roiColor->update();
-    }
-}
 
-void MainWindow::on_roiDraw2_clicked()
-{
-    isDrawing=true;
 
-    //hal->drawRect(ui->roiName->text(),QString::number(ui->roiColor->palette().background().color().rgb()),ui->team->currentIndex(),
-    //             ui->limitValue->text().toDouble(),ui->func->currentIndex());
-    qDebug()<<ui->roiName->text();
-    // qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
-    isDrawing=false;
-}
+
 
 void MainWindow::on_func_currentIndexChanged(int index)
 {
@@ -1238,4 +1220,22 @@ void MainWindow::on_func_currentIndexChanged(int index)
         ui->maxValue1->setEnabled(true);
     }
 
+}
+
+void MainWindow::on_draw1_clicked()
+{
+    ui->roiLength1->setEnabled(false);
+    ui->roiLength2->setEnabled(false);
+    ui->pointX->setEnabled(false);
+    ui->pointY->setEnabled(false);
+    ui->unit->setEnabled(false);
+}
+
+void MainWindow::on_draw2_clicked()
+{
+    ui->roiLength1->setEnabled(true);
+    ui->roiLength2->setEnabled(true);
+    ui->pointX->setEnabled(true);
+    ui->pointY->setEnabled(true);
+    ui->unit->setEnabled(true);
 }

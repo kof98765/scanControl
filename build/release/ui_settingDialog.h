@@ -90,13 +90,6 @@ public:
     QGridLayout *gridLayout_4;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_5;
-    QLineEdit *erosion;
-    QLabel *label_16;
-    QLineEdit *grayDvalue;
-    QLabel *label_39;
-    QLineEdit *badMaxArea;
-    QLineEdit *badMinHeight;
-    QLabel *label_10;
     QLineEdit *badMinRadius;
     QSpinBox *imgNum;
     QLineEdit *badMaxWidth;
@@ -113,6 +106,10 @@ public:
     QLineEdit *smothHeight;
     QLineEdit *checkMaxArea;
     QLabel *label_8;
+    QLineEdit *badMinHeight;
+    QLabel *label_39;
+    QLineEdit *grayDvalue;
+    QLabel *label_16;
     QLabel *label_15;
     QLineEdit *maxGray;
     QLabel *label_18;
@@ -120,6 +117,11 @@ public:
     QLineEdit *badMaxHeight;
     QLabel *label_7;
     QCheckBox *doubleTurn;
+    QLabel *label_10;
+    QLineEdit *badMaxArea;
+    QLineEdit *erosion;
+    QLabel *label_42;
+    QSpinBox *check_num;
     QSpacerItem *horizontalSpacer;
     QPushButton *default_2;
     QWidget *tab_4;
@@ -415,45 +417,6 @@ public:
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         gridLayout_5 = new QGridLayout(groupBox_2);
         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
-        erosion = new QLineEdit(groupBox_2);
-        erosion->setObjectName(QStringLiteral("erosion"));
-        erosion->setInputMethodHints(Qt::ImhDigitsOnly);
-
-        gridLayout_5->addWidget(erosion, 13, 2, 1, 1);
-
-        label_16 = new QLabel(groupBox_2);
-        label_16->setObjectName(QStringLiteral("label_16"));
-
-        gridLayout_5->addWidget(label_16, 4, 0, 1, 1);
-
-        grayDvalue = new QLineEdit(groupBox_2);
-        grayDvalue->setObjectName(QStringLiteral("grayDvalue"));
-        grayDvalue->setInputMethodHints(Qt::ImhDigitsOnly);
-
-        gridLayout_5->addWidget(grayDvalue, 9, 2, 1, 1);
-
-        label_39 = new QLabel(groupBox_2);
-        label_39->setObjectName(QStringLiteral("label_39"));
-
-        gridLayout_5->addWidget(label_39, 14, 0, 1, 1);
-
-        badMaxArea = new QLineEdit(groupBox_2);
-        badMaxArea->setObjectName(QStringLiteral("badMaxArea"));
-        badMaxArea->setInputMethodHints(Qt::ImhDigitsOnly);
-
-        gridLayout_5->addWidget(badMaxArea, 1, 4, 1, 1);
-
-        badMinHeight = new QLineEdit(groupBox_2);
-        badMinHeight->setObjectName(QStringLiteral("badMinHeight"));
-        badMinHeight->setInputMethodHints(Qt::ImhDigitsOnly);
-
-        gridLayout_5->addWidget(badMinHeight, 3, 2, 1, 1);
-
-        label_10 = new QLabel(groupBox_2);
-        label_10->setObjectName(QStringLiteral("label_10"));
-
-        gridLayout_5->addWidget(label_10, 2, 0, 1, 1);
-
         badMinRadius = new QLineEdit(groupBox_2);
         badMinRadius->setObjectName(QStringLiteral("badMinRadius"));
         badMinRadius->setInputMethodHints(Qt::ImhDigitsOnly);
@@ -545,6 +508,28 @@ public:
 
         gridLayout_5->addWidget(label_8, 1, 0, 1, 1);
 
+        badMinHeight = new QLineEdit(groupBox_2);
+        badMinHeight->setObjectName(QStringLiteral("badMinHeight"));
+        badMinHeight->setInputMethodHints(Qt::ImhDigitsOnly);
+
+        gridLayout_5->addWidget(badMinHeight, 3, 2, 1, 1);
+
+        label_39 = new QLabel(groupBox_2);
+        label_39->setObjectName(QStringLiteral("label_39"));
+
+        gridLayout_5->addWidget(label_39, 14, 0, 1, 1);
+
+        grayDvalue = new QLineEdit(groupBox_2);
+        grayDvalue->setObjectName(QStringLiteral("grayDvalue"));
+        grayDvalue->setInputMethodHints(Qt::ImhDigitsOnly);
+
+        gridLayout_5->addWidget(grayDvalue, 9, 2, 1, 1);
+
+        label_16 = new QLabel(groupBox_2);
+        label_16->setObjectName(QStringLiteral("label_16"));
+
+        gridLayout_5->addWidget(label_16, 4, 0, 1, 1);
+
         label_15 = new QLabel(groupBox_2);
         label_15->setObjectName(QStringLiteral("label_15"));
 
@@ -582,6 +567,34 @@ public:
         doubleTurn->setObjectName(QStringLiteral("doubleTurn"));
 
         gridLayout_5->addWidget(doubleTurn, 15, 0, 1, 1);
+
+        label_10 = new QLabel(groupBox_2);
+        label_10->setObjectName(QStringLiteral("label_10"));
+
+        gridLayout_5->addWidget(label_10, 2, 0, 1, 1);
+
+        badMaxArea = new QLineEdit(groupBox_2);
+        badMaxArea->setObjectName(QStringLiteral("badMaxArea"));
+        badMaxArea->setInputMethodHints(Qt::ImhDigitsOnly);
+
+        gridLayout_5->addWidget(badMaxArea, 1, 4, 1, 1);
+
+        erosion = new QLineEdit(groupBox_2);
+        erosion->setObjectName(QStringLiteral("erosion"));
+        erosion->setInputMethodHints(Qt::ImhDigitsOnly);
+
+        gridLayout_5->addWidget(erosion, 13, 2, 1, 1);
+
+        label_42 = new QLabel(groupBox_2);
+        label_42->setObjectName(QStringLiteral("label_42"));
+
+        gridLayout_5->addWidget(label_42, 16, 0, 1, 1);
+
+        check_num = new QSpinBox(groupBox_2);
+        check_num->setObjectName(QStringLiteral("check_num"));
+        check_num->setMinimum(4);
+
+        gridLayout_5->addWidget(check_num, 16, 2, 1, 1);
 
 
         gridLayout_4->addWidget(groupBox_2, 1, 0, 1, 2);
@@ -995,7 +1008,7 @@ public:
         QObject::connect(Button_Yes, SIGNAL(clicked()), mySettings, SLOT(accept()));
         QObject::connect(pushButton_Cancel, SIGNAL(clicked()), mySettings, SLOT(close()));
 
-        tabWidget->setCurrentIndex(5);
+        tabWidget->setCurrentIndex(2);
         triggerSource->setCurrentIndex(1);
         triggerPolarity->setCurrentIndex(1);
         digitalInputs->setCurrentIndex(2);
@@ -1031,13 +1044,6 @@ public:
         label_29->setText(QApplication::translate("mySettings", "\346\216\245\346\224\266:", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("mySettings", "\347\275\221\347\273\234\350\256\276\347\275\256", 0));
         groupBox_2->setTitle(QString());
-        erosion->setText(QApplication::translate("mySettings", "200", 0));
-        label_16->setText(QApplication::translate("mySettings", "\347\274\272\351\231\267\345\215\212\345\276\204", 0));
-        grayDvalue->setText(QApplication::translate("mySettings", "20", 0));
-        label_39->setText(QApplication::translate("mySettings", "\345\233\276\347\211\207\346\225\260\351\207\217", 0));
-        badMaxArea->setText(QApplication::translate("mySettings", "200", 0));
-        badMinHeight->setText(QApplication::translate("mySettings", "2", 0));
-        label_10->setText(QApplication::translate("mySettings", "\347\274\272\351\231\267\351\231\220\345\256\232\345\256\275\345\272\246(pix)", 0));
         badMinRadius->setText(QApplication::translate("mySettings", "1", 0));
         badMaxWidth->setText(QApplication::translate("mySettings", "40", 0));
         label_17->setText(QApplication::translate("mySettings", "\346\250\241\347\263\212\347\263\273\346\225\260", 0));
@@ -1053,6 +1059,10 @@ public:
         smothHeight->setText(QApplication::translate("mySettings", "7", 0));
         checkMaxArea->setText(QApplication::translate("mySettings", "45700000", 0));
         label_8->setText(QApplication::translate("mySettings", "\347\274\272\351\231\267\351\231\220\345\256\232\351\235\242\347\247\257(pix)", 0));
+        badMinHeight->setText(QApplication::translate("mySettings", "2", 0));
+        label_39->setText(QApplication::translate("mySettings", "\345\233\276\347\211\207\346\225\260\351\207\217", 0));
+        grayDvalue->setText(QApplication::translate("mySettings", "20", 0));
+        label_16->setText(QApplication::translate("mySettings", "\347\274\272\351\231\267\345\215\212\345\276\204", 0));
         label_15->setText(QApplication::translate("mySettings", "\344\272\214\345\200\274\345\214\226\350\214\203\345\233\264:", 0));
         maxGray->setText(QApplication::translate("mySettings", "255", 0));
         label_18->setText(QApplication::translate("mySettings", "\350\205\220\350\232\200\347\263\273\346\225\260", 0));
@@ -1060,6 +1070,10 @@ public:
         badMaxHeight->setText(QApplication::translate("mySettings", "40", 0));
         label_7->setText(QApplication::translate("mySettings", "\345\257\271\346\257\224\345\272\246", 0));
         doubleTurn->setText(QApplication::translate("mySettings", "\345\217\214\346\225\260\347\277\273\350\275\254", 0));
+        label_10->setText(QApplication::translate("mySettings", "\347\274\272\351\231\267\351\231\220\345\256\232\345\256\275\345\272\246(pix)", 0));
+        badMaxArea->setText(QApplication::translate("mySettings", "200", 0));
+        erosion->setText(QApplication::translate("mySettings", "200", 0));
+        label_42->setText(QApplication::translate("mySettings", "\350\256\241\347\256\227\345\271\263\351\235\242\346\225\260:", 0));
         default_2->setText(QApplication::translate("mySettings", "\346\201\242\345\244\215\351\273\230\350\256\244", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("mySettings", "\346\243\200\346\265\213\350\256\276\347\275\256", 0));
         groupBox_5->setTitle(QString());

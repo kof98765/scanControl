@@ -26,10 +26,11 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -66,15 +67,13 @@ public:
     QPushButton *launchDevice;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_3;
-    QPushButton *toExcel;
     QSpacerItem *horizontalSpacer;
+    QPushButton *toExcel;
     QTableWidget *tableWidget;
     QGroupBox *groupBox_3;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
     QTableWidget *roiList;
-    QTabWidget *xxxxxxx;
-    QWidget *tab_2;
     QWidget *layoutWidget_2;
     QFormLayout *formLayout;
     QLabel *label_2;
@@ -90,33 +89,20 @@ public:
     QLabel *Label_11;
     QLineEdit *maxValue1;
     QPushButton *roiDraw;
-    QWidget *tab;
-    QPushButton *roiDraw2;
     QWidget *formLayoutWidget;
     QFormLayout *formLayout_2;
-    QLabel *Label;
-    QLineEdit *roiname2;
-    QLabel *Label_2;
-    QComboBox *team2;
-    QLabel *Label_3;
-    QComboBox *func2;
     QLabel *Label_4;
+    QHBoxLayout *horizontalLayout_3;
+    QSpinBox *roiLength1;
+    QSpinBox *roiLength2;
     QLabel *Label_5;
     QHBoxLayout *horizontalLayout_2;
-    QLineEdit *pointX;
-    QSpacerItem *horizontalSpacer_2;
-    QLineEdit *pointY;
+    QSpinBox *pointX;
+    QSpinBox *pointY;
     QLabel *Label_6;
     QComboBox *unit;
-    QLabel *Label_7;
-    QLineEdit *minValue2;
-    QLabel *Label_8;
-    QLineEdit *maxValue2;
-    QLabel *Label_9;
-    QPushButton *roiColor2;
-    QHBoxLayout *horizontalLayout_3;
-    QLineEdit *roiLength1;
-    QLineEdit *roiLength2;
+    QRadioButton *draw1;
+    QRadioButton *draw2;
     QLabel *connect;
     QPushButton *reset;
     QGroupBox *view_box;
@@ -154,7 +140,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1280, 698);
+        MainWindow->resize(1268, 698);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -241,7 +227,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox_4 = new QGroupBox(centralWidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(530, 10, 731, 601));
+        groupBox_4->setGeometry(QRect(760, 10, 501, 601));
         groupBox_4->setStyleSheet(QStringLiteral(""));
         startButton = new QPushButton(groupBox_4);
         startButton->setObjectName(QStringLiteral("startButton"));
@@ -264,19 +250,19 @@ public:
         launchDevice->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         groupBox_2 = new QGroupBox(groupBox_4);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(10, 370, 621, 224));
+        groupBox_2->setGeometry(QRect(10, 370, 491, 224));
         gridLayout_3 = new QGridLayout(groupBox_2);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_3->addItem(horizontalSpacer, 0, 0, 1, 1);
+
         toExcel = new QPushButton(groupBox_2);
         toExcel->setObjectName(QStringLiteral("toExcel"));
 
         gridLayout_3->addWidget(toExcel, 0, 1, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer, 0, 0, 1, 1);
 
         tableWidget = new QTableWidget(groupBox_2);
         if (tableWidget->columnCount() < 5)
@@ -298,7 +284,7 @@ public:
         tableWidget->horizontalHeader()->setCascadingSectionResizes(false);
         tableWidget->horizontalHeader()->setDefaultSectionSize(70);
 
-        gridLayout_3->addWidget(tableWidget, 1, 0, 1, 2);
+        gridLayout_3->addWidget(tableWidget, 1, 0, 1, 1);
 
         groupBox_3 = new QGroupBox(groupBox_4);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
@@ -330,14 +316,9 @@ public:
 
         gridLayout_2->addWidget(roiList, 0, 0, 1, 1);
 
-        xxxxxxx = new QTabWidget(groupBox_3);
-        xxxxxxx->setObjectName(QStringLiteral("xxxxxxx"));
-        xxxxxxx->setGeometry(QRect(310, 10, 301, 291));
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        layoutWidget_2 = new QWidget(tab_2);
+        layoutWidget_2 = new QWidget(groupBox_3);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(0, 0, 142, 231));
+        layoutWidget_2->setGeometry(QRect(310, 120, 151, 155));
         formLayout = new QFormLayout(layoutWidget_2);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
@@ -408,142 +389,90 @@ public:
 
         formLayout->setWidget(5, QFormLayout::FieldRole, maxValue1);
 
-        roiDraw = new QPushButton(tab_2);
+        roiDraw = new QPushButton(groupBox_3);
         roiDraw->setObjectName(QStringLiteral("roiDraw"));
-        roiDraw->setGeometry(QRect(0, 240, 151, 23));
-        xxxxxxx->addTab(tab_2, QString());
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        roiDraw2 = new QPushButton(tab);
-        roiDraw2->setObjectName(QStringLiteral("roiDraw2"));
-        roiDraw2->setGeometry(QRect(0, 240, 151, 23));
-        formLayoutWidget = new QWidget(tab);
+        roiDraw->setGeometry(QRect(310, 280, 151, 23));
+        formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(0, 0, 154, 237));
+        formLayoutWidget->setGeometry(QRect(310, 40, 151, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
         formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
         formLayout_2->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
         formLayout_2->setContentsMargins(0, 0, 0, 0);
-        Label = new QLabel(formLayoutWidget);
-        Label->setObjectName(QStringLiteral("Label"));
-
-        formLayout_2->setWidget(0, QFormLayout::LabelRole, Label);
-
-        roiname2 = new QLineEdit(formLayoutWidget);
-        roiname2->setObjectName(QStringLiteral("roiname2"));
-
-        formLayout_2->setWidget(0, QFormLayout::FieldRole, roiname2);
-
-        Label_2 = new QLabel(formLayoutWidget);
-        Label_2->setObjectName(QStringLiteral("Label_2"));
-
-        formLayout_2->setWidget(1, QFormLayout::LabelRole, Label_2);
-
-        team2 = new QComboBox(formLayoutWidget);
-        team2->setObjectName(QStringLiteral("team2"));
-
-        formLayout_2->setWidget(1, QFormLayout::FieldRole, team2);
-
-        Label_3 = new QLabel(formLayoutWidget);
-        Label_3->setObjectName(QStringLiteral("Label_3"));
-
-        formLayout_2->setWidget(2, QFormLayout::LabelRole, Label_3);
-
-        func2 = new QComboBox(formLayoutWidget);
-        func2->setObjectName(QStringLiteral("func2"));
-
-        formLayout_2->setWidget(2, QFormLayout::FieldRole, func2);
-
         Label_4 = new QLabel(formLayoutWidget);
         Label_4->setObjectName(QStringLiteral("Label_4"));
 
-        formLayout_2->setWidget(3, QFormLayout::LabelRole, Label_4);
-
-        Label_5 = new QLabel(formLayoutWidget);
-        Label_5->setObjectName(QStringLiteral("Label_5"));
-
-        formLayout_2->setWidget(4, QFormLayout::LabelRole, Label_5);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        pointX = new QLineEdit(formLayoutWidget);
-        pointX->setObjectName(QStringLiteral("pointX"));
-
-        horizontalLayout_2->addWidget(pointX);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer_2);
-
-        pointY = new QLineEdit(formLayoutWidget);
-        pointY->setObjectName(QStringLiteral("pointY"));
-
-        horizontalLayout_2->addWidget(pointY);
-
-
-        formLayout_2->setLayout(4, QFormLayout::FieldRole, horizontalLayout_2);
-
-        Label_6 = new QLabel(formLayoutWidget);
-        Label_6->setObjectName(QStringLiteral("Label_6"));
-
-        formLayout_2->setWidget(5, QFormLayout::LabelRole, Label_6);
-
-        unit = new QComboBox(formLayoutWidget);
-        unit->setObjectName(QStringLiteral("unit"));
-
-        formLayout_2->setWidget(5, QFormLayout::FieldRole, unit);
-
-        Label_7 = new QLabel(formLayoutWidget);
-        Label_7->setObjectName(QStringLiteral("Label_7"));
-
-        formLayout_2->setWidget(6, QFormLayout::LabelRole, Label_7);
-
-        minValue2 = new QLineEdit(formLayoutWidget);
-        minValue2->setObjectName(QStringLiteral("minValue2"));
-
-        formLayout_2->setWidget(6, QFormLayout::FieldRole, minValue2);
-
-        Label_8 = new QLabel(formLayoutWidget);
-        Label_8->setObjectName(QStringLiteral("Label_8"));
-
-        formLayout_2->setWidget(7, QFormLayout::LabelRole, Label_8);
-
-        maxValue2 = new QLineEdit(formLayoutWidget);
-        maxValue2->setObjectName(QStringLiteral("maxValue2"));
-
-        formLayout_2->setWidget(7, QFormLayout::FieldRole, maxValue2);
-
-        Label_9 = new QLabel(formLayoutWidget);
-        Label_9->setObjectName(QStringLiteral("Label_9"));
-
-        formLayout_2->setWidget(8, QFormLayout::LabelRole, Label_9);
-
-        roiColor2 = new QPushButton(formLayoutWidget);
-        roiColor2->setObjectName(QStringLiteral("roiColor2"));
-        roiColor2->setStyleSheet(QStringLiteral("background-color: rgb(255, 0, 0);"));
-
-        formLayout_2->setWidget(8, QFormLayout::FieldRole, roiColor2);
+        formLayout_2->setWidget(0, QFormLayout::LabelRole, Label_4);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        roiLength1 = new QLineEdit(formLayoutWidget);
+        roiLength1 = new QSpinBox(formLayoutWidget);
         roiLength1->setObjectName(QStringLiteral("roiLength1"));
+        roiLength1->setEnabled(false);
+        roiLength1->setMinimum(1);
+        roiLength1->setMaximum(500);
+        roiLength1->setValue(50);
 
         horizontalLayout_3->addWidget(roiLength1);
 
-        roiLength2 = new QLineEdit(formLayoutWidget);
+        roiLength2 = new QSpinBox(formLayoutWidget);
         roiLength2->setObjectName(QStringLiteral("roiLength2"));
+        roiLength2->setEnabled(false);
+        roiLength2->setMinimum(1);
+        roiLength2->setMaximum(500);
+        roiLength2->setValue(50);
 
         horizontalLayout_3->addWidget(roiLength2);
 
 
-        formLayout_2->setLayout(3, QFormLayout::FieldRole, horizontalLayout_3);
+        formLayout_2->setLayout(0, QFormLayout::FieldRole, horizontalLayout_3);
 
-        xxxxxxx->addTab(tab, QString());
+        Label_5 = new QLabel(formLayoutWidget);
+        Label_5->setObjectName(QStringLiteral("Label_5"));
+
+        formLayout_2->setWidget(1, QFormLayout::LabelRole, Label_5);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        pointX = new QSpinBox(formLayoutWidget);
+        pointX->setObjectName(QStringLiteral("pointX"));
+        pointX->setEnabled(false);
+        pointX->setMaximum(10000);
+
+        horizontalLayout_2->addWidget(pointX);
+
+        pointY = new QSpinBox(formLayoutWidget);
+        pointY->setObjectName(QStringLiteral("pointY"));
+        pointY->setEnabled(false);
+        pointY->setMaximum(10000);
+
+        horizontalLayout_2->addWidget(pointY);
+
+
+        formLayout_2->setLayout(1, QFormLayout::FieldRole, horizontalLayout_2);
+
+        Label_6 = new QLabel(formLayoutWidget);
+        Label_6->setObjectName(QStringLiteral("Label_6"));
+
+        formLayout_2->setWidget(2, QFormLayout::LabelRole, Label_6);
+
+        unit = new QComboBox(formLayoutWidget);
+        unit->setObjectName(QStringLiteral("unit"));
+        unit->setEnabled(false);
+
+        formLayout_2->setWidget(2, QFormLayout::FieldRole, unit);
+
+        draw1 = new QRadioButton(groupBox_3);
+        draw1->setObjectName(QStringLiteral("draw1"));
+        draw1->setGeometry(QRect(310, 20, 89, 16));
+        draw1->setChecked(true);
+        draw2 = new QRadioButton(groupBox_3);
+        draw2->setObjectName(QStringLiteral("draw2"));
+        draw2->setGeometry(QRect(410, 20, 89, 16));
         connect = new QLabel(groupBox_4);
         connect->setObjectName(QStringLiteral("connect"));
         connect->setGeometry(QRect(440, 10, 101, 31));
@@ -555,7 +484,7 @@ public:
         reset->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         view_box = new QGroupBox(centralWidget);
         view_box->setObjectName(QStringLiteral("view_box"));
-        view_box->setGeometry(QRect(10, 30, 511, 511));
+        view_box->setGeometry(QRect(10, 30, 741, 511));
         sizePolicy.setHeightForWidth(view_box->sizePolicy().hasHeightForWidth());
         view_box->setSizePolicy(sizePolicy);
         view_box->setMouseTracking(false);
@@ -576,7 +505,7 @@ public:
         progressBar->setTextDirection(QProgressBar::TopToBottom);
         base = new QStackedWidget(view_box);
         base->setObjectName(QStringLiteral("base"));
-        base->setGeometry(QRect(10, 30, 491, 461));
+        base->setGeometry(QRect(10, 30, 721, 461));
         base->setAutoFillBackground(true);
         base->setStyleSheet(QStringLiteral(""));
         base->setMidLineWidth(0);
@@ -604,7 +533,7 @@ public:
         base->addWidget(twoDView);
         layoutWidget = new QWidget(view_box);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 0, 481, 26));
+        layoutWidget->setGeometry(QRect(10, 0, 591, 26));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -692,7 +621,7 @@ public:
         pos->setGeometry(QRect(470, 10, 54, 12));
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 540, 511, 80));
+        horizontalLayoutWidget->setGeometry(QRect(10, 540, 741, 80));
         imgList = new QHBoxLayout(horizontalLayoutWidget);
         imgList->setSpacing(6);
         imgList->setContentsMargins(11, 11, 11, 11);
@@ -701,7 +630,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1280, 23));
+        menuBar->setGeometry(QRect(0, 0, 1268, 23));
         menu_S = new QMenu(menuBar);
         menu_S->setObjectName(QStringLiteral("menu_S"));
         menu = new QMenu(menuBar);
@@ -741,7 +670,6 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(startButton, SIGNAL(clicked()), action_start, SLOT(trigger()));
 
-        xxxxxxx->setCurrentIndex(0);
         base->setCurrentIndex(3);
 
 
@@ -844,46 +772,16 @@ public:
         Label_11->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
         maxValue1->setText(QApplication::translate("MainWindow", "10", 0));
         roiDraw->setText(QApplication::translate("MainWindow", "\347\273\230\345\210\266", 0));
-        xxxxxxx->setTabText(xxxxxxx->indexOf(tab_2), QApplication::translate("MainWindow", "\347\273\230\345\210\266\345\214\272\345\237\237", 0));
-        roiDraw2->setText(QApplication::translate("MainWindow", "\347\273\230\345\210\266", 0));
-        Label->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215:", 0));
-        Label_2->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204:", 0));
-        team2->clear();
-        team2->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2041", 0)
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2042", 0)
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2043", 0)
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2044", 0)
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2045", 0)
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2046", 0)
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2047", 0)
-         << QApplication::translate("MainWindow", "\345\210\206\347\273\2048", 0)
-        );
-        Label_3->setText(QApplication::translate("MainWindow", "\347\261\273\345\236\213:", 0));
-        func2->clear();
-        func2->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "\345\256\232\344\275\215\345\214\272\345\237\237", 0)
-         << QApplication::translate("MainWindow", "\346\220\234\347\264\242\345\214\272\345\237\237", 0)
-         << QApplication::translate("MainWindow", "\350\256\241\347\256\227\345\271\263\351\235\242\345\272\246", 0)
-         << QApplication::translate("MainWindow", "\350\256\241\347\256\227\351\253\230\345\267\256", 0)
-        );
-        Label_4->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\244\247\345\260\217:", 0));
+        Label_4->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\351\225\277\345\256\275:", 0));
         Label_5->setText(QApplication::translate("MainWindow", "\345\235\220\346\240\207:", 0));
-        pointX->setText(QApplication::translate("MainWindow", "0", 0));
-        pointY->setText(QApplication::translate("MainWindow", "0", 0));
         Label_6->setText(QApplication::translate("MainWindow", "\345\215\225\344\275\215:", 0));
         unit->clear();
         unit->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "\345\276\256\347\261\263", 0)
          << QApplication::translate("MainWindow", "\346\257\253\347\261\263", 0)
         );
-        Label_7->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\344\270\213\351\231\220", 0));
-        minValue2->setText(QApplication::translate("MainWindow", "0", 0));
-        Label_8->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
-        maxValue2->setText(QApplication::translate("MainWindow", "0", 0));
-        Label_9->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
-        roiColor2->setText(QString());
-        xxxxxxx->setTabText(xxxxxxx->indexOf(tab), QApplication::translate("MainWindow", "\351\224\256\345\205\245\345\214\272\345\237\237", 0));
+        draw1->setText(QApplication::translate("MainWindow", "\347\273\230\345\210\266\345\214\272\345\237\237", 0));
+        draw2->setText(QApplication::translate("MainWindow", "\351\224\256\345\205\245\345\214\272\345\237\237", 0));
         connect->setText(QString());
         reset->setText(QApplication::translate("MainWindow", "\345\244\215\344\275\215", 0));
         view_box->setTitle(QString());
