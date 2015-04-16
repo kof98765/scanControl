@@ -4,6 +4,10 @@ clickLabel::clickLabel(QLabel *parent) :
 {
     installEventFilter(this);
 }
+clickLabel::~clickLabel()
+{
+
+}
 bool clickLabel::eventFilter(QObject *obj, QEvent *e)
 {
     if(e->type()==QEvent::MouseButtonPress)
@@ -11,6 +15,7 @@ bool clickLabel::eventFilter(QObject *obj, QEvent *e)
 
     return QLabel::eventFilter(obj,e);
 }
+
 imgListView::imgListView(QObject *parent) :
     QObject(parent)
 {

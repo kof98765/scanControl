@@ -14,6 +14,7 @@ class clickLabel:public QLabel
     Q_OBJECT
 public:
     clickLabel(QLabel *parent=0);
+    ~clickLabel();
 protected:
     bool eventFilter(QObject *obj, QEvent *e);
 signals:

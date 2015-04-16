@@ -9684,3 +9684,2337 @@
 16:59:07.394: planePoint now point 1000 302.129
 16:59:07.394: xyz 1000 299 -1.79025 6
 16:59:07.394: cloud
+17:04:41.473: rowcount 0
+17:04:41.473: roiList size 14
+17:04:41.500: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:05:00.211: rowcount 14
+17:05:00.211: roiList size 14
+17:05:00.217: read "D:/7080image/01/test0.tif"
+17:05:00.256: 800 1870 real
+17:05:00.415: 800 1870
+17:05:00.415: read finish
+17:05:01.338: rowcount 14
+17:05:01.338: roiList size 14
+17:05:01.343: read "D:/7080image/01/test0.tif"
+17:05:01.378: 800 1870 real
+17:05:01.529: 800 1870
+17:05:01.529: read finish
+17:05:02.115: rowcount 14
+17:05:02.116: roiList size 14
+17:05:02.121: read "D:/7080image/01/test0.tif"
+17:05:02.155: 800 1870 real
+17:05:02.313: 800 1870
+17:05:02.313: read finish
+17:05:03.221: rowcount 14
+17:05:03.222: roiList size 14
+17:05:03.227: read "D:/7080image/01/test0.tif"
+17:05:03.262: 800 1870 real
+17:05:03.414: 800 1870
+17:05:03.414: read finish
+17:05:47.541: QFileInfo::absolutePath: Constructed with empty filename
+17:05:47.542: QFileInfo::absolutePath: Constructed with empty filename
+17:05:47.542: ""
+17:05:47.542: ""
+17:05:47.542: exit
+17:09:15.392: rowcount 0
+17:09:15.393: roiList size 0
+17:09:15.421: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:10:13.388: rowcount 0
+17:10:13.389: roiList size 0
+17:10:13.389: read "test.tif"
+17:10:13.561: 1280 1000 real
+17:10:13.694: 1280 1000
+17:10:13.694: read finish
+17:10:18.805: func 0 203.5 411
+17:10:18.856: ("rect")
+17:10:18.856: QMap(("Column", QVariant(double, 346.302) ) ( "Column2" ,  QVariant(double, 476.353) ) ( "Row" ,  QVariant(double, 174.823) ) ( "Row2" ,  QVariant(double, 231.929) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+17:10:18.856: create template "rect" imgList size 1 0
+17:10:18.888: creat point 174.823 346.302 231.929 476.353
+17:10:18.929: Create_template 1
+17:10:18.939: templateID get
+17:10:18.940: "生成模板时间:" 84 ms
+17:10:18.977: rowcount 0
+17:10:18.977: roiList size 1
+17:10:18.977: ""
+17:10:18.977: 4294901760 0 0
+17:15:54.819: rowcount 0
+17:15:54.819: roiList size 0
+17:15:54.841: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:15:58.601: rowcount 0
+17:15:58.601: roiList size 0
+17:15:58.602: read "test.tif"
+17:15:58.649: 1280 1000 real
+17:15:58.802: 1280 1000
+17:15:58.803: read finish
+17:16:04.186: func 0 155 433
+17:16:04.262: ("rect")
+17:16:04.263: QMap(("Column", QVariant(double, 346.302) ) ( "Column2" ,  QVariant(double, 519.703) ) ( "Row" ,  QVariant(double, 126.735) ) ( "Row2" ,  QVariant(double, 182.838) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+17:16:04.263: create template "rect" imgList size 1 0
+17:16:04.307: creat point 126.735 346.302 182.838 519.703
+17:16:04.369: Create_template 1
+17:16:04.384: templateID get
+17:16:04.385: "生成模板时间:" 123 ms
+17:16:04.422: rowcount 0
+17:16:04.422: roiList size 1
+17:16:04.423: ""
+17:16:04.423: 4294901760 0 0
+17:26:56.877: rowcount 0
+17:26:56.877: roiList size 14
+17:26:56.903: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:31:28.870: rowcount 0
+17:31:28.871: roiList size 14
+17:31:28.898: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:32:37.239: rowcount 0
+17:32:37.240: roiList size 1
+17:32:37.263: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:34:22.982: rowcount 0
+17:34:22.982: roiList size 0
+17:34:23.012: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:35:13.510: rowcount 0
+17:35:13.510: roiList size 0
+17:35:13.510: read "test.tif"
+17:35:13.683: 1280 1000 real
+17:35:13.816: 1280 1000
+17:35:13.816: read finish
+17:35:16.335: func 0 201 445
+17:35:16.404: ("rect")
+17:35:16.405: QMap(("Column", QVariant(double, 346.302) ) ( "Column2" ,  QVariant(double, 543.546) ) ( "Row" ,  QVariant(double, 162.801) ) ( "Row2" ,  QVariant(double, 238.942) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+17:35:16.405: create template "rect" imgList size 1 0
+17:35:16.448: creat point 162.801 346.302 238.942 543.546
+17:35:16.548: Create_template 1
+17:35:16.568: templateID get
+17:35:16.569: "生成模板时间:" 165 ms
+17:35:16.606: rowcount 0
+17:35:16.606: roiList size 1
+17:35:16.607: ""
+17:35:16.607: 4294901760 0 0
+17:36:24.513: rowcount 0
+17:36:24.514: roiList size 1
+17:36:24.536: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:38:23.995: rowcount 0
+17:38:23.996: roiList size 1
+17:38:24.021: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:39:58.835: rowcount 0
+17:39:58.835: roiList size 14
+17:39:58.868: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:41:09.041: rowcount 0
+17:41:09.042: roiList size 1
+17:41:09.065: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:41:17.906: QPoint(87,40)
+17:41:17.907: QPoint(87,15)
+17:41:17.907: item 0
+17:41:18.738: QMap(("0", QVariant(QStringList, ()) ) ) 
+17:41:20.433: rowcount 0
+17:41:20.433: roiList size 0
+17:41:20.434: read "test.tif"
+17:41:20.483: 1280 1000 real
+17:41:20.615: 1280 1000
+17:41:20.615: read finish
+17:41:23.239: func 0 218 414.5
+17:41:23.309: ("rect")
+17:41:23.309: QMap(("Column", QVariant(double, 289.947) ) ( "Column2" ,  QVariant(double, 539.211) ) ( "Row" ,  QVariant(double, 194.86) ) ( "Row2" ,  QVariant(double, 240.945) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+17:41:23.309: create template "rect" imgList size 1 0
+17:41:23.353: creat point 194.86 289.947 240.945 539.211
+17:41:23.447: Create_template 1
+17:41:23.468: templateID get
+17:41:23.469: "生成模板时间:" 160 ms
+17:41:23.505: rowcount 0
+17:41:23.506: roiList size 1
+17:41:23.506: ""
+17:41:23.506: 4294901760 0 0
+17:43:39.912: rowcount 0
+17:43:39.912: roiList size 0
+17:43:39.934: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:43:57.508: rowcount 0
+17:43:57.509: roiList size 0
+17:43:57.531: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+17:44:00.220: rowcount 0
+17:44:00.221: roiList size 0
+17:44:00.221: read "test.tif"
+17:44:00.266: 1280 1000 real
+17:44:00.396: 1280 1000
+17:44:00.396: read finish
+17:44:00.445: rowcount 0
+17:44:00.445: roiList size 0
+17:44:00.446: read "test.tif"
+17:44:00.488: 1280 1000 real
+17:44:00.636: 1280 1000
+17:44:00.636: read finish
+17:44:00.685: rowcount 0
+17:44:00.686: roiList size 0
+17:44:00.686: read "test.tif"
+17:44:00.730: 1280 1000 real
+17:44:00.864: 1280 1000
+17:44:00.864: read finish
+17:44:00.913: rowcount 0
+17:44:00.913: roiList size 0
+17:44:00.913: read "test.tif"
+17:44:00.956: 1280 1000 real
+17:44:01.086: 1280 1000
+17:44:01.086: read finish
+17:44:01.133: rowcount 0
+17:44:01.134: roiList size 0
+17:44:01.134: read "test.tif"
+17:44:01.177: 1280 1000 real
+17:44:01.312: 1280 1000
+17:44:01.312: read finish
+17:44:01.359: rowcount 0
+17:44:01.360: roiList size 0
+17:44:01.360: read "test.tif"
+17:44:01.404: 1280 1000 real
+17:44:01.539: 1280 1000
+17:44:01.539: read finish
+17:44:01.591: rowcount 0
+17:44:01.591: roiList size 0
+17:44:01.592: read "test.tif"
+17:44:01.635: 1280 1000 real
+17:44:01.770: 1280 1000
+17:44:01.770: read finish
+17:44:01.824: rowcount 0
+17:44:01.824: roiList size 0
+17:44:01.825: read "test.tif"
+17:44:01.868: 1280 1000 real
+17:44:01.999: 1280 1000
+17:44:01.999: read finish
+17:44:02.046: rowcount 0
+17:44:02.047: roiList size 0
+17:44:02.047: read "test.tif"
+17:44:02.090: 1280 1000 real
+17:44:02.090: 8
+17:44:02.094: clear
+17:44:02.228: 1280 1000
+17:44:02.228: read finish
+17:44:02.275: rowcount 0
+17:44:02.275: roiList size 0
+17:44:02.275: read "test.tif"
+17:44:02.318: 1280 1000 real
+17:44:02.466: 1280 1000
+17:44:02.466: read finish
+17:44:02.514: rowcount 0
+17:44:02.515: roiList size 0
+17:44:02.515: read "test.tif"
+17:44:02.559: 1280 1000 real
+17:44:02.692: 1280 1000
+17:44:02.692: read finish
+17:44:02.740: rowcount 0
+17:44:02.740: roiList size 0
+17:44:02.740: read "test.tif"
+17:44:02.784: 1280 1000 real
+17:44:02.917: 1280 1000
+17:44:02.918: read finish
+17:44:02.964: rowcount 0
+17:44:02.965: roiList size 0
+17:44:02.965: read "test.tif"
+17:44:03.008: 1280 1000 real
+17:44:03.138: 1280 1000
+17:44:03.138: read finish
+17:44:03.184: rowcount 0
+17:44:03.185: roiList size 0
+17:44:03.185: read "test.tif"
+17:44:03.231: 1280 1000 real
+17:44:03.363: 1280 1000
+17:44:03.363: read finish
+17:44:03.408: rowcount 0
+17:44:03.408: roiList size 0
+17:44:03.409: read "test.tif"
+17:44:03.452: 1280 1000 real
+17:44:03.584: 1280 1000
+17:44:03.585: read finish
+17:44:03.631: rowcount 0
+17:44:03.632: roiList size 0
+17:44:03.632: read "test.tif"
+17:44:03.675: 1280 1000 real
+17:44:03.809: 1280 1000
+17:44:03.809: read finish
+17:44:03.856: rowcount 0
+17:44:03.857: roiList size 0
+17:44:03.857: read "test.tif"
+17:44:03.901: 1280 1000 real
+17:44:03.901: 8
+17:44:03.905: clear
+17:44:04.040: 1280 1000
+17:44:04.040: read finish
+17:44:04.086: rowcount 0
+17:44:04.087: roiList size 0
+17:44:04.087: read "test.tif"
+17:44:04.130: 1280 1000 real
+17:44:04.286: 1280 1000
+17:44:04.286: read finish
+17:44:04.330: rowcount 0
+17:44:04.331: roiList size 0
+17:44:04.331: read "test.tif"
+17:44:04.374: 1280 1000 real
+17:44:04.511: 1280 1000
+17:44:04.511: read finish
+17:44:04.556: rowcount 0
+17:44:04.556: roiList size 0
+17:44:04.557: read "test.tif"
+17:44:04.600: 1280 1000 real
+17:44:04.736: 1280 1000
+17:44:04.736: read finish
+17:44:04.781: rowcount 0
+17:44:04.781: roiList size 0
+17:44:04.782: read "test.tif"
+17:44:04.825: 1280 1000 real
+17:44:04.965: 1280 1000
+17:44:04.965: read finish
+17:44:05.013: rowcount 0
+17:44:05.013: roiList size 0
+17:44:05.013: read "test.tif"
+17:44:05.056: 1280 1000 real
+17:44:05.194: 1280 1000
+17:44:05.194: read finish
+17:44:05.254: rowcount 0
+17:44:05.254: roiList size 0
+17:44:05.254: read "test.tif"
+17:44:05.298: 1280 1000 real
+17:44:05.436: 1280 1000
+17:44:05.437: read finish
+17:44:05.485: rowcount 0
+17:44:05.486: roiList size 0
+17:44:05.486: read "test.tif"
+17:44:05.530: 1280 1000 real
+17:44:05.669: 1280 1000
+17:44:05.669: read finish
+17:44:05.717: rowcount 0
+17:44:05.717: roiList size 0
+17:44:05.717: read "test.tif"
+17:44:05.760: 1280 1000 real
+17:44:05.761: 8
+17:44:05.765: clear
+17:44:05.909: 1280 1000
+17:44:05.909: read finish
+17:44:05.955: rowcount 0
+17:44:05.955: roiList size 0
+17:44:05.956: read "test.tif"
+17:44:05.999: 1280 1000 real
+17:44:06.149: 1280 1000
+17:44:06.150: read finish
+17:44:06.195: rowcount 0
+17:44:06.195: roiList size 0
+17:44:06.196: read "test.tif"
+17:44:06.240: 1280 1000 real
+17:44:06.373: 1280 1000
+17:44:06.374: read finish
+17:44:06.480: rowcount 0
+17:44:06.480: roiList size 0
+17:44:06.481: read "test.tif"
+17:44:06.525: 1280 1000 real
+17:44:06.665: 1280 1000
+17:44:06.665: read finish
+17:44:06.718: rowcount 0
+17:44:06.719: roiList size 0
+17:44:06.719: read "test.tif"
+17:44:06.763: 1280 1000 real
+17:44:06.904: 1280 1000
+17:44:06.904: read finish
+17:44:06.951: rowcount 0
+17:44:06.952: roiList size 0
+17:44:06.953: read "test.tif"
+17:44:06.997: 1280 1000 real
+17:44:07.131: 1280 1000
+17:44:07.131: read finish
+17:44:07.180: rowcount 0
+17:44:07.180: roiList size 0
+17:44:07.180: read "test.tif"
+17:44:07.225: 1280 1000 real
+17:44:07.361: 1280 1000
+17:44:07.361: read finish
+17:44:07.410: rowcount 0
+17:44:07.411: roiList size 0
+17:44:07.411: read "test.tif"
+17:44:07.455: 1280 1000 real
+17:44:07.596: 1280 1000
+17:44:07.596: read finish
+17:44:07.646: rowcount 0
+17:44:07.646: roiList size 0
+17:44:07.647: read "test.tif"
+17:44:07.692: 1280 1000 real
+17:44:07.692: 8
+17:44:07.698: clear
+17:44:07.903: 1280 1000
+17:44:07.903: read finish
+17:44:07.950: rowcount 0
+17:44:07.951: roiList size 0
+17:44:07.951: read "test.tif"
+17:44:07.994: 1280 1000 real
+17:44:08.146: 1280 1000
+17:44:08.146: read finish
+17:44:08.193: rowcount 0
+17:44:08.194: roiList size 0
+17:44:08.194: read "test.tif"
+17:44:08.240: 1280 1000 real
+17:44:08.374: 1280 1000
+17:44:08.374: read finish
+17:44:08.422: rowcount 0
+17:44:08.423: roiList size 0
+17:44:08.423: read "test.tif"
+17:44:08.467: 1280 1000 real
+17:44:08.603: 1280 1000
+17:44:08.603: read finish
+17:44:24.245: rowcount 0
+17:44:24.245: roiList size 0
+17:44:24.246: read "test.tif"
+17:44:24.290: 1280 1000 real
+17:44:24.425: 1280 1000
+17:44:24.425: read finish
+17:44:24.479: rowcount 0
+17:44:24.479: roiList size 0
+17:44:24.479: read "test.tif"
+17:44:24.523: 1280 1000 real
+17:44:24.658: 1280 1000
+17:44:24.658: read finish
+17:44:24.708: rowcount 0
+17:44:24.708: roiList size 0
+17:44:24.709: read "test.tif"
+17:44:24.755: 1280 1000 real
+17:44:24.888: 1280 1000
+17:44:24.889: read finish
+17:44:24.952: rowcount 0
+17:44:24.952: roiList size 0
+17:44:24.953: read "test.tif"
+17:44:24.996: 1280 1000 real
+17:44:25.133: 1280 1000
+17:44:25.133: read finish
+17:44:25.180: rowcount 0
+17:44:25.180: roiList size 0
+17:44:25.181: read "test.tif"
+17:44:25.226: 1280 1000 real
+17:44:25.226: 8
+17:44:25.233: clear
+17:44:25.367: 1280 1000
+17:44:25.368: read finish
+17:44:25.417: rowcount 0
+17:44:25.418: roiList size 0
+17:44:25.418: read "test.tif"
+17:44:25.461: 1280 1000 real
+17:44:25.610: 1280 1000
+17:44:25.611: read finish
+17:44:25.656: rowcount 0
+17:44:25.656: roiList size 0
+17:44:25.656: read "test.tif"
+17:44:25.700: 1280 1000 real
+17:44:25.837: 1280 1000
+17:44:25.837: read finish
+17:44:25.888: rowcount 0
+17:44:25.888: roiList size 0
+17:44:25.888: read "test.tif"
+17:44:25.932: 1280 1000 real
+17:44:26.064: 1280 1000
+17:44:26.064: read finish
+17:44:26.112: rowcount 0
+17:44:26.112: roiList size 0
+17:44:26.112: read "test.tif"
+17:44:26.156: 1280 1000 real
+17:44:26.294: 1280 1000
+17:44:26.295: read finish
+17:44:26.342: rowcount 0
+17:44:26.342: roiList size 0
+17:44:26.342: read "test.tif"
+17:44:26.385: 1280 1000 real
+17:44:26.520: 1280 1000
+17:44:26.520: read finish
+17:44:26.570: rowcount 0
+17:44:26.570: roiList size 0
+17:44:26.570: read "test.tif"
+17:44:26.614: 1280 1000 real
+17:44:26.748: 1280 1000
+17:44:26.750: read finish
+17:44:26.799: rowcount 0
+17:44:26.800: roiList size 0
+17:44:26.800: read "test.tif"
+17:44:26.844: 1280 1000 real
+17:44:26.981: 1280 1000
+17:44:26.981: read finish
+17:44:27.027: rowcount 0
+17:44:27.027: roiList size 0
+17:44:27.027: read "test.tif"
+17:44:27.072: 1280 1000 real
+17:44:27.072: 8
+17:44:27.076: clear
+17:44:27.217: 1280 1000
+17:44:27.218: read finish
+17:44:36.665: rowcount 0
+17:44:36.666: roiList size 0
+17:44:36.666: read "test.tif"
+17:44:36.710: 1280 1000 real
+17:44:36.860: 1280 1000
+17:44:36.861: read finish
+17:44:36.908: rowcount 0
+17:44:36.909: roiList size 0
+17:44:36.909: read "test.tif"
+17:44:36.953: 1280 1000 real
+17:44:37.089: 1280 1000
+17:44:37.089: read finish
+17:44:37.153: rowcount 0
+17:44:37.154: roiList size 0
+17:44:37.154: read "test.tif"
+17:44:37.198: 1280 1000 real
+17:44:37.340: 1280 1000
+17:44:37.341: read finish
+17:44:37.389: rowcount 0
+17:44:37.389: roiList size 0
+17:44:37.389: read "test.tif"
+17:44:37.433: 1280 1000 real
+17:44:37.567: 1280 1000
+17:44:37.567: read finish
+17:44:43.507: rowcount 0
+17:44:43.507: roiList size 0
+17:44:43.508: read "test.tif"
+17:44:43.552: 1280 1000 real
+17:44:43.687: 1280 1000
+17:44:43.687: read finish
+17:44:43.738: rowcount 0
+17:44:43.738: roiList size 0
+17:44:43.738: read "test.tif"
+17:44:43.782: 1280 1000 real
+17:44:43.918: 1280 1000
+17:44:43.918: read finish
+17:44:43.969: rowcount 0
+17:44:43.970: roiList size 0
+17:44:43.970: read "test.tif"
+17:44:44.013: 1280 1000 real
+17:44:44.149: 1280 1000
+17:44:44.149: read finish
+17:44:44.198: rowcount 0
+17:44:44.198: roiList size 0
+17:44:44.199: read "test.tif"
+17:44:44.244: 1280 1000 real
+17:44:44.245: 8
+17:44:44.255: clear
+17:44:44.389: 1280 1000
+17:44:44.389: read finish
+17:44:44.435: rowcount 0
+17:44:44.435: roiList size 0
+17:44:44.436: read "test.tif"
+17:44:44.479: 1280 1000 real
+17:44:44.633: 1280 1000
+17:44:44.634: read finish
+17:44:44.682: rowcount 0
+17:44:44.682: roiList size 0
+17:44:44.683: read "test.tif"
+17:44:44.727: 1280 1000 real
+17:44:44.866: 1280 1000
+17:44:44.866: read finish
+17:44:44.913: rowcount 0
+17:44:44.913: roiList size 0
+17:44:44.914: read "test.tif"
+17:44:44.958: 1280 1000 real
+17:44:45.094: 1280 1000
+17:44:45.094: read finish
+17:44:45.141: rowcount 0
+17:44:45.141: roiList size 0
+17:44:45.141: read "test.tif"
+17:44:45.185: 1280 1000 real
+17:44:45.346: 1280 1000
+17:44:45.347: read finish
+18:27:27.374: rowcount 0
+18:27:27.375: roiList size 0
+18:27:27.398: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:27:30.246: rowcount 0
+18:27:30.246: roiList size 0
+18:27:30.247: read "test.tif"
+18:27:30.423: 1280 1000 real
+18:27:30.557: 1280 1000
+18:27:30.557: read finish
+18:27:59.959: rowcount 0
+18:27:59.960: roiList size 0
+18:27:59.960: read "test.tif"
+18:27:59.992: 1280 1000 real
+18:28:00.130: 1280 1000
+18:28:00.130: read finish
+18:28:01.451: rowcount 0
+18:28:01.451: roiList size 0
+18:28:01.452: read "test.tif"
+18:28:01.484: 1280 1000 real
+18:28:01.617: 1280 1000
+18:28:01.618: read finish
+18:28:02.734: rowcount 0
+18:28:02.734: roiList size 0
+18:28:02.734: read "test.tif"
+18:28:02.766: 1280 1000 real
+18:28:02.904: 1280 1000
+18:28:02.904: read finish
+18:28:03.602: rowcount 0
+18:28:03.602: roiList size 0
+18:28:03.602: read "test.tif"
+18:28:03.634: 1280 1000 real
+18:28:03.773: 1280 1000
+18:28:03.773: read finish
+18:28:04.380: rowcount 0
+18:28:04.380: roiList size 0
+18:28:04.381: read "test.tif"
+18:28:04.413: 1280 1000 real
+18:28:04.546: 1280 1000
+18:28:04.546: read finish
+18:28:05.188: rowcount 0
+18:28:05.188: roiList size 0
+18:28:05.189: read "test.tif"
+18:28:05.226: 1280 1000 real
+18:28:05.365: 1280 1000
+18:28:05.365: read finish
+18:28:13.569: rowcount 0
+18:28:13.570: roiList size 0
+18:28:13.570: read "test.tif"
+18:28:13.602: 1280 1000 real
+18:28:13.735: 1280 1000
+18:28:13.735: read finish
+18:28:14.578: rowcount 0
+18:28:14.579: roiList size 0
+18:28:14.579: read "test.tif"
+18:28:14.611: 1280 1000 real
+18:28:14.611: 8
+18:28:14.623: clear
+18:28:14.757: 1280 1000
+18:28:14.757: read finish
+18:28:15.737: rowcount 0
+18:28:15.738: roiList size 0
+18:28:15.738: read "test.tif"
+18:28:15.771: 1280 1000 real
+18:28:15.905: 1280 1000
+18:28:15.905: read finish
+18:28:16.746: rowcount 0
+18:28:16.746: roiList size 0
+18:28:16.747: read "test.tif"
+18:28:16.779: 1280 1000 real
+18:28:16.911: 1280 1000
+18:28:16.911: read finish
+18:28:17.776: rowcount 0
+18:28:17.776: roiList size 0
+18:28:17.776: read "test.tif"
+18:28:17.809: 1280 1000 real
+18:28:17.942: 1280 1000
+18:28:17.943: read finish
+18:29:10.339: rowcount 0
+18:29:10.340: roiList size 0
+18:29:10.362: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:29:12.465: rowcount 0
+18:29:12.466: roiList size 0
+18:29:12.466: read "test.tif"
+18:29:12.500: 1280 1000 real
+18:29:12.568: 1280 1000
+18:29:12.568: read finish
+18:29:13.443: rowcount 0
+18:29:13.444: roiList size 0
+18:29:13.444: read "test.tif"
+18:29:13.477: 1280 1000 real
+18:29:13.550: 1280 1000
+18:29:13.550: read finish
+18:29:14.116: rowcount 0
+18:29:14.117: roiList size 0
+18:29:14.117: read "test.tif"
+18:29:14.148: 1280 1000 real
+18:29:14.221: 1280 1000
+18:29:14.221: read finish
+18:29:14.704: rowcount 0
+18:29:14.704: roiList size 0
+18:29:14.705: read "test.tif"
+18:29:14.738: 1280 1000 real
+18:29:14.810: 1280 1000
+18:29:14.811: read finish
+18:29:39.958: rowcount 0
+18:29:39.958: roiList size 0
+18:29:39.959: read "test.tif"
+18:29:39.993: 1280 1000 real
+18:29:40.062: 1280 1000
+18:29:40.062: read finish
+18:29:40.751: rowcount 0
+18:29:40.752: roiList size 0
+18:29:40.752: read "test.tif"
+18:29:40.784: 1280 1000 real
+18:29:40.853: 1280 1000
+18:29:40.853: read finish
+18:29:41.265: rowcount 0
+18:29:41.265: roiList size 0
+18:29:41.266: read "test.tif"
+18:29:41.298: 1280 1000 real
+18:29:41.367: 1280 1000
+18:29:41.368: read finish
+18:29:41.745: rowcount 0
+18:29:41.746: roiList size 0
+18:29:41.746: read "test.tif"
+18:29:41.778: 1280 1000 real
+18:29:41.849: 1280 1000
+18:29:41.850: read finish
+18:29:42.235: rowcount 0
+18:29:42.235: roiList size 0
+18:29:42.235: read "test.tif"
+18:29:42.267: 1280 1000 real
+18:29:42.335: 1280 1000
+18:29:42.336: read finish
+18:29:42.665: rowcount 0
+18:29:42.666: roiList size 0
+18:29:42.666: read "test.tif"
+18:29:42.698: 1280 1000 real
+18:29:42.769: 1280 1000
+18:29:42.769: read finish
+18:29:43.138: rowcount 0
+18:29:43.138: roiList size 0
+18:29:43.138: read "test.tif"
+18:29:43.170: 1280 1000 real
+18:29:43.245: 1280 1000
+18:29:43.246: read finish
+18:30:36.188: rowcount 0
+18:30:36.189: roiList size 0
+18:30:36.215: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:30:38.178: rowcount 0
+18:30:38.178: roiList size 0
+18:30:38.178: read "test.tif"
+18:30:38.214: 1280 1000 real
+18:30:38.337: 1280 1000
+18:30:38.337: read finish
+18:30:44.729: rowcount 0
+18:30:44.730: roiList size 0
+18:30:44.730: read "test.tif"
+18:30:44.762: 1280 1000 real
+18:30:44.872: 1280 1000
+18:30:44.872: read finish
+18:30:45.418: rowcount 0
+18:30:45.418: roiList size 0
+18:30:45.419: read "test.tif"
+18:30:45.450: 1280 1000 real
+18:30:45.564: 1280 1000
+18:30:45.565: read finish
+18:30:45.929: rowcount 0
+18:30:45.929: roiList size 0
+18:30:45.930: read "test.tif"
+18:30:45.962: 1280 1000 real
+18:30:46.074: 1280 1000
+18:30:46.074: read finish
+18:30:46.920: rowcount 0
+18:30:46.921: roiList size 0
+18:30:46.921: read "test.tif"
+18:30:46.952: 1280 1000 real
+18:30:47.062: 1280 1000
+18:30:47.062: read finish
+18:31:26.677: rowcount 0
+18:31:26.678: roiList size 0
+18:31:26.702: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:31:30.178: rowcount 0
+18:31:30.179: roiList size 0
+18:31:30.179: read "test.tif"
+18:31:30.216: 1280 1000 real
+18:31:30.331: 1280 1000
+18:31:30.331: read finish
+18:31:36.188: rowcount 0
+18:31:36.188: roiList size 0
+18:31:36.188: read "test.tif"
+18:31:36.222: 1280 1000 real
+18:31:36.336: 1280 1000
+18:31:36.336: read finish
+18:31:36.980: rowcount 0
+18:31:36.980: roiList size 0
+18:31:36.981: read "test.tif"
+18:31:37.014: 1280 1000 real
+18:31:37.125: 1280 1000
+18:31:37.125: read finish
+18:31:37.439: rowcount 0
+18:31:37.440: roiList size 0
+18:31:37.440: read "test.tif"
+18:31:37.473: 1280 1000 real
+18:31:37.584: 1280 1000
+18:31:37.585: read finish
+18:31:38.040: rowcount 0
+18:31:38.041: roiList size 0
+18:31:38.041: read "test.tif"
+18:31:38.072: 1280 1000 real
+18:31:38.181: 1280 1000
+18:31:38.181: read finish
+18:31:38.780: rowcount 0
+18:31:38.780: roiList size 0
+18:31:38.780: read "test.tif"
+18:31:38.812: 1280 1000 real
+18:31:38.921: 1280 1000
+18:31:38.921: read finish
+18:32:27.474: rowcount 0
+18:32:27.474: roiList size 0
+18:32:27.500: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:32:39.143: rowcount 0
+18:32:39.143: roiList size 0
+18:32:39.143: read "test.tif"
+18:32:39.176: 1280 1000 real
+18:32:39.290: 1280 1000
+18:32:39.290: read finish
+18:32:40.380: rowcount 0
+18:32:40.380: roiList size 0
+18:32:40.380: read "test.tif"
+18:32:40.412: 1280 1000 real
+18:32:40.520: 1280 1000
+18:32:40.521: read finish
+18:32:41.067: rowcount 0
+18:32:41.067: roiList size 0
+18:32:41.067: read "test.tif"
+18:32:41.099: 1280 1000 real
+18:32:41.211: 1280 1000
+18:32:41.211: read finish
+18:32:42.096: rowcount 0
+18:32:42.097: roiList size 0
+18:32:42.097: read "test.tif"
+18:32:42.131: 1280 1000 real
+18:32:42.242: 1280 1000
+18:32:42.243: read finish
+18:32:43.015: rowcount 0
+18:32:43.015: roiList size 0
+18:32:43.015: read "test.tif"
+18:32:43.047: 1280 1000 real
+18:32:43.160: 1280 1000
+18:32:43.160: read finish
+18:32:43.825: rowcount 0
+18:32:43.825: roiList size 0
+18:32:43.826: read "test.tif"
+18:32:43.858: 1280 1000 real
+18:32:43.969: 1280 1000
+18:32:43.970: read finish
+18:32:44.965: rowcount 0
+18:32:44.966: roiList size 0
+18:32:44.966: read "test.tif"
+18:32:44.998: 1280 1000 real
+18:32:45.107: 1280 1000
+18:32:45.108: read finish
+18:32:46.132: rowcount 0
+18:32:46.133: roiList size 0
+18:32:46.133: read "test.tif"
+18:32:46.165: 1280 1000 real
+18:32:46.279: 1280 1000
+18:32:46.280: read finish
+18:32:47.154: rowcount 0
+18:32:47.154: roiList size 0
+18:32:47.155: read "test.tif"
+18:32:47.186: 1280 1000 real
+18:32:47.186: 0
+18:32:47.189: clear
+18:32:47.303: 1280 1000
+18:32:47.303: read finish
+18:32:48.228: rowcount 0
+18:32:48.228: roiList size 0
+18:32:48.228: read "test.tif"
+18:32:48.261: 1280 1000 real
+18:32:48.370: 1280 1000
+18:32:48.370: read finish
+18:32:49.194: rowcount 0
+18:32:49.195: roiList size 0
+18:32:49.195: read "test.tif"
+18:32:49.229: 1280 1000 real
+18:32:49.339: 1280 1000
+18:32:49.340: read finish
+18:32:50.175: rowcount 0
+18:32:50.175: roiList size 0
+18:32:50.175: read "test.tif"
+18:32:50.209: 1280 1000 real
+18:32:50.324: 1280 1000
+18:32:50.324: read finish
+18:32:51.115: rowcount 0
+18:32:51.116: roiList size 0
+18:32:51.116: read "test.tif"
+18:32:51.147: 1280 1000 real
+18:32:51.265: 1280 1000
+18:32:51.266: read finish
+18:32:52.208: rowcount 0
+18:32:52.208: roiList size 0
+18:32:52.208: read "test.tif"
+18:32:52.241: 1280 1000 real
+18:32:52.353: 1280 1000
+18:32:52.354: read finish
+18:32:53.259: rowcount 0
+18:32:53.259: roiList size 0
+18:32:53.260: read "test.tif"
+18:32:53.292: 1280 1000 real
+18:32:53.400: 1280 1000
+18:32:53.401: read finish
+18:32:54.025: rowcount 0
+18:32:54.025: roiList size 0
+18:32:54.025: read "test.tif"
+18:32:54.058: 1280 1000 real
+18:32:54.170: 1280 1000
+18:32:54.170: read finish
+18:32:54.877: rowcount 0
+18:32:54.877: roiList size 0
+18:32:54.878: read "test.tif"
+18:32:54.909: 1280 1000 real
+18:32:54.910: 0
+18:32:54.912: clear
+18:32:55.021: 1280 1000
+18:32:55.022: read finish
+18:32:55.604: rowcount 0
+18:32:55.605: roiList size 0
+18:32:55.605: read "test.tif"
+18:32:55.637: 1280 1000 real
+18:32:55.747: 1280 1000
+18:32:55.747: read finish
+18:34:49.849: rowcount 0
+18:34:49.850: roiList size 0
+18:34:49.871: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:34:53.132: rowcount 0
+18:34:53.132: roiList size 0
+18:34:53.132: read "test.tif"
+18:34:53.166: 1280 1000 real
+18:34:53.314: 1280 1000
+18:34:53.314: read finish
+18:35:01.976: rowcount 0
+18:35:01.976: roiList size 0
+18:35:01.977: read "test.tif"
+18:35:02.010: 1280 1000 real
+18:35:02.144: 1280 1000
+18:35:02.145: read finish
+18:35:02.876: rowcount 0
+18:35:02.876: roiList size 0
+18:35:02.876: read "test.tif"
+18:35:02.907: 1280 1000 real
+18:35:03.037: 1280 1000
+18:35:03.038: read finish
+18:35:03.466: rowcount 0
+18:35:03.467: roiList size 0
+18:35:03.467: read "test.tif"
+18:35:03.499: 1280 1000 real
+18:35:03.635: 1280 1000
+18:35:03.636: read finish
+18:35:03.956: rowcount 0
+18:35:03.957: roiList size 0
+18:35:03.957: read "test.tif"
+18:35:03.989: 1280 1000 real
+18:35:04.123: 1280 1000
+18:35:04.123: read finish
+18:35:04.616: rowcount 0
+18:35:04.617: roiList size 0
+18:35:04.617: read "test.tif"
+18:35:04.649: 1280 1000 real
+18:35:04.783: 1280 1000
+18:35:04.783: read finish
+18:35:05.555: rowcount 0
+18:35:05.556: roiList size 0
+18:35:05.556: read "test.tif"
+18:35:05.590: 1280 1000 real
+18:35:05.723: 1280 1000
+18:35:05.724: read finish
+18:35:06.498: rowcount 0
+18:35:06.499: roiList size 0
+18:35:06.499: read "test.tif"
+18:35:06.531: 1280 1000 real
+18:35:06.665: 1280 1000
+18:35:06.665: read finish
+18:35:07.498: rowcount 0
+18:35:07.498: roiList size 0
+18:35:07.499: read "test.tif"
+18:35:07.530: 1280 1000 real
+18:35:07.663: 1280 1000
+18:35:07.663: read finish
+18:35:08.353: rowcount 0
+18:35:08.354: roiList size 0
+18:35:08.354: read "test.tif"
+18:35:08.386: 1280 1000 real
+18:35:08.519: 1280 1000
+18:35:08.519: read finish
+18:35:09.414: rowcount 0
+18:35:09.415: roiList size 0
+18:35:09.415: read "test.tif"
+18:35:09.448: 1280 1000 real
+18:35:09.581: 1280 1000
+18:35:09.581: read finish
+18:35:10.215: rowcount 0
+18:35:10.215: roiList size 0
+18:35:10.215: read "test.tif"
+18:35:10.247: 1280 1000 real
+18:35:10.378: 1280 1000
+18:35:10.379: read finish
+18:35:11.045: rowcount 0
+18:35:11.045: roiList size 0
+18:35:11.045: read "test.tif"
+18:35:11.077: 1280 1000 real
+18:35:11.212: 1280 1000
+18:35:11.213: read finish
+18:35:11.933: rowcount 0
+18:35:11.934: roiList size 0
+18:35:11.934: read "test.tif"
+18:35:11.966: 1280 1000 real
+18:35:12.097: 1280 1000
+18:35:12.097: read finish
+18:35:12.662: rowcount 0
+18:35:12.662: roiList size 0
+18:35:12.663: read "test.tif"
+18:35:12.698: 1280 1000 real
+18:35:12.853: 1280 1000
+18:35:12.854: read finish
+18:35:13.475: rowcount 0
+18:35:13.476: roiList size 0
+18:35:13.476: read "test.tif"
+18:35:13.509: 1280 1000 real
+18:35:13.643: 1280 1000
+18:35:13.643: read finish
+18:35:14.250: rowcount 0
+18:35:14.251: roiList size 0
+18:35:14.251: read "test.tif"
+18:35:14.283: 1280 1000 real
+18:35:14.414: 1280 1000
+18:35:14.414: read finish
+18:35:15.204: rowcount 0
+18:35:15.205: roiList size 0
+18:35:15.205: read "test.tif"
+18:35:15.247: 1280 1000 real
+18:35:15.378: 1280 1000
+18:35:15.378: read finish
+18:35:16.066: rowcount 0
+18:35:16.066: roiList size 0
+18:35:16.066: read "test.tif"
+18:35:16.098: 1280 1000 real
+18:35:16.232: 1280 1000
+18:35:16.232: read finish
+18:35:16.914: rowcount 0
+18:35:16.914: roiList size 0
+18:35:16.915: read "test.tif"
+18:35:16.947: 1280 1000 real
+18:35:17.078: 1280 1000
+18:35:17.078: read finish
+18:35:17.735: rowcount 0
+18:35:17.736: roiList size 0
+18:35:17.736: read "test.tif"
+18:35:17.769: 1280 1000 real
+18:35:17.899: 1280 1000
+18:35:17.900: read finish
+18:35:18.618: rowcount 0
+18:35:18.619: roiList size 0
+18:35:18.619: read "test.tif"
+18:35:18.651: 1280 1000 real
+18:35:18.782: 1280 1000
+18:35:18.782: read finish
+18:36:13.903: rowcount 0
+18:36:13.903: roiList size 0
+18:36:13.927: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:36:20.311: rowcount 0
+18:36:20.311: roiList size 0
+18:36:20.311: read "test.tif"
+18:36:20.345: 1280 1000 real
+18:36:20.454: 1280 1000
+18:36:20.454: read finish
+18:36:24.211: rowcount 0
+18:36:24.212: roiList size 0
+18:36:24.212: read "test.tif"
+18:36:24.246: 1280 1000 real
+18:36:24.356: 1280 1000
+18:36:24.356: read finish
+18:36:25.109: rowcount 0
+18:36:25.109: roiList size 0
+18:36:25.110: read "test.tif"
+18:36:25.141: 1280 1000 real
+18:36:25.258: 1280 1000
+18:36:25.258: read finish
+18:36:26.033: rowcount 0
+18:36:26.033: roiList size 0
+18:36:26.033: read "test.tif"
+18:36:26.066: 1280 1000 real
+18:36:26.174: 1280 1000
+18:36:26.174: read finish
+18:36:26.837: rowcount 0
+18:36:26.837: roiList size 0
+18:36:26.838: read "test.tif"
+18:36:26.870: 1280 1000 real
+18:36:26.979: 1280 1000
+18:36:26.979: read finish
+18:36:27.605: rowcount 0
+18:36:27.605: roiList size 0
+18:36:27.606: read "test.tif"
+18:36:27.638: 1280 1000 real
+18:36:27.747: 1280 1000
+18:36:27.747: read finish
+18:36:28.410: rowcount 0
+18:36:28.410: roiList size 0
+18:36:28.410: read "test.tif"
+18:36:28.442: 1280 1000 real
+18:36:28.556: 1280 1000
+18:36:28.556: read finish
+18:36:29.298: rowcount 0
+18:36:29.298: roiList size 0
+18:36:29.299: read "test.tif"
+18:36:29.331: 1280 1000 real
+18:36:29.442: 1280 1000
+18:36:29.443: read finish
+18:36:30.212: rowcount 0
+18:36:30.212: roiList size 0
+18:36:30.213: read "test.tif"
+18:36:30.245: 1280 1000 real
+18:36:30.352: 1280 1000
+18:36:30.353: read finish
+18:36:31.212: rowcount 0
+18:36:31.213: roiList size 0
+18:36:31.213: read "test.tif"
+18:36:31.247: 1280 1000 real
+18:36:31.358: 1280 1000
+18:36:31.358: read finish
+18:36:32.443: rowcount 0
+18:36:32.443: roiList size 0
+18:36:32.443: read "test.tif"
+18:36:32.476: 1280 1000 real
+18:36:32.593: 1280 1000
+18:36:32.593: read finish
+18:36:33.516: rowcount 0
+18:36:33.517: roiList size 0
+18:36:33.517: read "test.tif"
+18:36:33.549: 1280 1000 real
+18:36:33.660: 1280 1000
+18:36:33.660: read finish
+18:36:34.658: rowcount 0
+18:36:34.658: roiList size 0
+18:36:34.659: read "test.tif"
+18:36:34.690: 1280 1000 real
+18:36:34.797: 1280 1000
+18:36:34.797: read finish
+18:36:35.705: rowcount 0
+18:36:35.706: roiList size 0
+18:36:35.706: read "test.tif"
+18:36:35.739: 1280 1000 real
+18:36:35.851: 1280 1000
+18:36:35.851: read finish
+18:39:05.363: rowcount 0
+18:39:05.364: roiList size 0
+18:39:05.385: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:39:07.848: rowcount 0
+18:39:07.848: roiList size 0
+18:39:07.848: read "test.tif"
+18:39:07.880: 1280 1000 real
+18:41:33.176: rowcount 0
+18:41:33.176: roiList size 0
+18:41:33.202: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:41:37.511: rowcount 0
+18:41:37.512: roiList size 0
+18:41:37.512: read "test.tif"
+18:41:37.544: 1280 1000 real
+18:41:37.674: 1280 1000
+18:41:37.674: read finish
+18:41:40.687: rowcount 0
+18:41:40.687: roiList size 0
+18:41:40.687: read "test.tif"
+18:41:40.720: 1280 1000 real
+18:41:40.849: 1280 1000
+18:41:40.849: read finish
+18:41:41.923: rowcount 0
+18:41:41.923: roiList size 0
+18:41:41.924: read "test.tif"
+18:41:41.958: 1280 1000 real
+18:41:42.096: 1280 1000
+18:41:42.096: read finish
+18:41:42.914: rowcount 0
+18:41:42.915: roiList size 0
+18:41:42.915: read "test.tif"
+18:41:42.947: 1280 1000 real
+18:41:43.080: 1280 1000
+18:41:43.080: read finish
+18:41:43.956: rowcount 0
+18:41:43.956: roiList size 0
+18:41:43.957: read "test.tif"
+18:41:43.991: 1280 1000 real
+18:41:44.124: 1280 1000
+18:41:44.124: read finish
+18:41:45.037: rowcount 0
+18:41:45.038: roiList size 0
+18:41:45.038: read "test.tif"
+18:41:45.069: 1280 1000 real
+18:41:45.206: 1280 1000
+18:41:45.207: read finish
+18:41:46.280: rowcount 0
+18:41:46.281: roiList size 0
+18:41:46.281: read "test.tif"
+18:41:46.314: 1280 1000 real
+18:41:46.448: 1280 1000
+18:41:46.448: read finish
+18:41:47.035: rowcount 0
+18:41:47.035: roiList size 0
+18:41:47.035: read "test.tif"
+18:41:47.067: 1280 1000 real
+18:41:47.205: 1280 1000
+18:41:47.205: read finish
+18:41:48.050: rowcount 0
+18:41:48.050: roiList size 0
+18:41:48.051: read "test.tif"
+18:41:48.083: 1280 1000 real
+18:41:48.083: 8
+18:41:48.093: clear
+18:41:48.226: 1280 1000
+18:41:48.226: read finish
+18:41:49.043: rowcount 0
+18:41:49.044: roiList size 0
+18:41:49.044: read "test.tif"
+18:41:49.075: 1280 1000 real
+18:41:49.213: 1280 1000
+18:41:49.213: read finish
+18:41:50.056: rowcount 0
+18:41:50.056: roiList size 0
+18:41:50.056: read "test.tif"
+18:41:50.089: 1280 1000 real
+18:41:50.225: 1280 1000
+18:41:50.225: read finish
+18:41:50.757: rowcount 0
+18:41:50.758: roiList size 0
+18:41:50.758: read "test.tif"
+18:41:50.789: 1280 1000 real
+18:41:50.920: 1280 1000
+18:41:50.921: read finish
+18:41:51.003: rowcount 0
+18:41:51.003: roiList size 0
+18:41:51.003: read "test.tif"
+18:41:51.034: 1280 1000 real
+18:41:51.167: 1280 1000
+18:41:51.168: read finish
+18:41:51.222: rowcount 0
+18:41:51.223: roiList size 0
+18:41:51.223: read "test.tif"
+18:41:51.261: 1280 1000 real
+18:41:51.392: 1280 1000
+18:41:51.392: read finish
+18:41:51.439: rowcount 0
+18:41:51.440: roiList size 0
+18:41:51.440: read "test.tif"
+18:41:51.472: 1280 1000 real
+18:41:51.603: 1280 1000
+18:41:51.604: read finish
+18:41:51.654: rowcount 0
+18:41:51.654: roiList size 0
+18:41:51.654: read "test.tif"
+18:41:51.686: 1280 1000 real
+18:41:51.817: 1280 1000
+18:41:51.818: read finish
+18:41:51.866: rowcount 0
+18:41:51.866: roiList size 0
+18:41:51.867: read "test.tif"
+18:41:51.898: 1280 1000 real
+18:41:51.899: 8
+18:41:51.905: clear
+18:41:52.040: 1280 1000
+18:41:52.040: read finish
+18:41:52.180: rowcount 0
+18:41:52.180: roiList size 0
+18:41:52.180: read "test.tif"
+18:41:52.220: 1280 1000 real
+18:41:52.364: 1280 1000
+18:41:52.364: read finish
+18:41:52.411: rowcount 0
+18:41:52.412: roiList size 0
+18:41:52.412: read "test.tif"
+18:41:52.445: 1280 1000 real
+18:41:52.586: 1280 1000
+18:41:52.586: read finish
+18:41:52.634: rowcount 0
+18:41:52.635: roiList size 0
+18:41:52.635: read "test.tif"
+18:41:52.667: 1280 1000 real
+18:41:52.805: 1280 1000
+18:41:52.805: read finish
+18:41:52.852: rowcount 0
+18:41:52.853: roiList size 0
+18:41:52.853: read "test.tif"
+18:41:52.885: 1280 1000 real
+18:41:53.022: 1280 1000
+18:41:53.022: read finish
+18:41:53.070: rowcount 0
+18:41:53.070: roiList size 0
+18:41:53.070: read "test.tif"
+18:41:53.102: 1280 1000 real
+18:41:53.250: 1280 1000
+18:41:53.250: read finish
+18:41:53.298: rowcount 0
+18:41:53.298: roiList size 0
+18:41:53.299: read "test.tif"
+18:41:53.331: 1280 1000 real
+18:41:53.467: 1280 1000
+18:41:53.467: read finish
+18:41:53.515: rowcount 0
+18:41:53.515: roiList size 0
+18:41:53.516: read "test.tif"
+18:41:53.548: 1280 1000 real
+18:41:53.685: 1280 1000
+18:41:53.686: read finish
+18:41:53.734: rowcount 0
+18:41:53.735: roiList size 0
+18:41:53.735: read "test.tif"
+18:41:53.767: 1280 1000 real
+18:41:53.767: 8
+18:41:53.772: clear
+18:41:53.907: 1280 1000
+18:41:53.908: read finish
+18:41:53.953: rowcount 0
+18:41:53.953: roiList size 0
+18:41:53.954: read "test.tif"
+18:41:53.985: 1280 1000 real
+18:41:54.122: 1280 1000
+18:41:54.122: read finish
+18:41:54.174: rowcount 0
+18:41:54.174: roiList size 0
+18:41:54.174: read "test.tif"
+18:41:54.208: 1280 1000 real
+18:41:54.369: 1280 1000
+18:41:54.370: read finish
+18:41:54.419: rowcount 0
+18:41:54.419: roiList size 0
+18:41:54.419: read "test.tif"
+18:41:54.452: 1280 1000 real
+18:41:54.589: 1280 1000
+18:41:54.589: read finish
+18:41:54.636: rowcount 0
+18:41:54.636: roiList size 0
+18:41:54.636: read "test.tif"
+18:41:54.668: 1280 1000 real
+18:41:54.808: 1280 1000
+18:41:54.809: read finish
+18:41:54.863: rowcount 0
+18:41:54.863: roiList size 0
+18:41:54.863: read "test.tif"
+18:41:54.896: 1280 1000 real
+18:41:55.032: 1280 1000
+18:41:55.032: read finish
+18:41:55.079: rowcount 0
+18:41:55.080: roiList size 0
+18:41:55.080: read "test.tif"
+18:41:55.112: 1280 1000 real
+18:41:55.251: 1280 1000
+18:41:55.251: read finish
+18:41:55.300: rowcount 0
+18:41:55.301: roiList size 0
+18:41:55.301: read "test.tif"
+18:41:55.333: 1280 1000 real
+18:41:55.467: 1280 1000
+18:41:55.467: read finish
+18:41:55.516: rowcount 0
+18:41:55.517: roiList size 0
+18:41:55.517: read "test.tif"
+18:41:55.549: 1280 1000 real
+18:41:55.550: 8
+18:41:55.554: clear
+18:41:55.687: 1280 1000
+18:41:55.687: read finish
+18:41:55.735: rowcount 0
+18:41:55.735: roiList size 0
+18:41:55.736: read "test.tif"
+18:41:55.768: 1280 1000 real
+18:41:55.904: 1280 1000
+18:41:55.904: read finish
+18:41:55.952: rowcount 0
+18:41:55.952: roiList size 0
+18:41:55.953: read "test.tif"
+18:41:55.985: 1280 1000 real
+18:41:56.118: 1280 1000
+18:41:56.118: read finish
+18:41:56.165: rowcount 0
+18:41:56.165: roiList size 0
+18:41:56.165: read "test.tif"
+18:41:56.198: 1280 1000 real
+18:41:56.338: 1280 1000
+18:41:56.339: read finish
+18:41:56.385: rowcount 0
+18:41:56.385: roiList size 0
+18:41:56.386: read "test.tif"
+18:41:56.418: 1280 1000 real
+18:41:56.549: 1280 1000
+18:41:56.550: read finish
+18:41:56.597: rowcount 0
+18:41:56.597: roiList size 0
+18:41:56.598: read "test.tif"
+18:41:56.630: 1280 1000 real
+18:41:56.762: 1280 1000
+18:41:56.763: read finish
+18:41:56.811: rowcount 0
+18:41:56.811: roiList size 0
+18:41:56.812: read "test.tif"
+18:41:56.845: 1280 1000 real
+18:41:56.979: 1280 1000
+18:41:56.979: read finish
+18:41:57.027: rowcount 0
+18:41:57.027: roiList size 0
+18:41:57.027: read "test.tif"
+18:41:57.059: 1280 1000 real
+18:41:57.196: 1280 1000
+18:41:57.196: read finish
+18:41:57.248: rowcount 0
+18:41:57.248: roiList size 0
+18:41:57.249: read "test.tif"
+18:41:57.283: 1280 1000 real
+18:41:57.283: 8
+18:41:57.287: clear
+18:41:57.434: 1280 1000
+18:41:57.434: read finish
+18:41:57.482: rowcount 0
+18:41:57.482: roiList size 0
+18:41:57.483: read "test.tif"
+18:41:57.517: 1280 1000 real
+18:41:57.654: 1280 1000
+18:41:57.654: read finish
+18:41:57.702: rowcount 0
+18:41:57.703: roiList size 0
+18:41:57.703: read "test.tif"
+18:41:57.736: 1280 1000 real
+18:41:57.872: 1280 1000
+18:41:57.872: read finish
+18:41:57.919: rowcount 0
+18:41:57.920: roiList size 0
+18:41:57.920: read "test.tif"
+18:41:57.952: 1280 1000 real
+18:41:58.088: 1280 1000
+18:41:58.088: read finish
+18:41:58.137: rowcount 0
+18:41:58.137: roiList size 0
+18:41:58.138: read "test.tif"
+18:41:58.170: 1280 1000 real
+18:41:58.304: 1280 1000
+18:41:58.305: read finish
+18:41:58.358: rowcount 0
+18:41:58.359: roiList size 0
+18:41:58.359: read "test.tif"
+18:41:58.392: 1280 1000 real
+18:41:58.528: 1280 1000
+18:41:58.528: read finish
+18:41:58.575: rowcount 0
+18:41:58.576: roiList size 0
+18:41:58.576: read "test.tif"
+18:41:58.608: 1280 1000 real
+18:41:58.755: 1280 1000
+18:41:58.755: read finish
+18:44:01.261: rowcount 0
+18:44:01.261: roiList size 0
+18:44:01.284: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:44:07.985: rowcount 0
+18:44:07.985: roiList size 0
+18:44:07.986: read "test.tif"
+18:44:08.018: 1280 1000 real
+18:44:08.113: 1280 1000
+18:44:08.114: read finish
+18:44:10.628: rowcount 0
+18:44:10.629: roiList size 0
+18:44:10.629: read "test.tif"
+18:44:10.661: 1280 1000 real
+18:44:10.760: 1280 1000
+18:44:10.760: read finish
+18:44:13.359: rowcount 0
+18:44:13.359: roiList size 0
+18:44:13.360: read "test.tif"
+18:44:13.392: 1280 1000 real
+18:44:13.490: 1280 1000
+18:44:13.490: read finish
+18:44:14.592: rowcount 0
+18:44:14.593: roiList size 0
+18:44:14.593: read "test.tif"
+18:44:14.624: 1280 1000 real
+18:44:14.721: 1280 1000
+18:44:14.722: read finish
+18:44:15.552: rowcount 0
+18:44:15.552: roiList size 0
+18:44:15.552: read "test.tif"
+18:44:15.584: 1280 1000 real
+18:44:15.682: 1280 1000
+18:44:15.682: read finish
+18:44:16.226: rowcount 0
+18:44:16.227: roiList size 0
+18:44:16.227: read "test.tif"
+18:44:16.259: 1280 1000 real
+18:44:16.356: 1280 1000
+18:44:16.356: read finish
+18:44:17.170: rowcount 0
+18:44:17.170: roiList size 0
+18:44:17.170: read "test.tif"
+18:44:17.203: 1280 1000 real
+18:44:17.301: 1280 1000
+18:44:17.302: read finish
+18:44:18.252: rowcount 0
+18:44:18.252: roiList size 0
+18:44:18.253: read "test.tif"
+18:44:18.284: 1280 1000 real
+18:44:18.383: 1280 1000
+18:44:18.383: read finish
+18:44:19.730: rowcount 0
+18:44:19.731: roiList size 0
+18:44:19.731: read "test.tif"
+18:44:19.764: 1280 1000 real
+18:44:19.764: 8
+18:44:19.773: clear
+18:44:19.872: 1280 1000
+18:44:19.873: read finish
+18:44:23.549: rowcount 0
+18:44:23.549: roiList size 0
+18:44:23.549: read "test.tif"
+18:44:23.581: 1280 1000 real
+18:44:23.680: 1280 1000
+18:44:23.681: read finish
+18:44:25.432: rowcount 0
+18:44:25.432: roiList size 0
+18:44:25.432: read "test.tif"
+18:44:25.464: 1280 1000 real
+18:44:25.564: 1280 1000
+18:44:25.564: read finish
+18:44:25.988: rowcount 0
+18:44:25.988: roiList size 0
+18:44:25.988: read "test.tif"
+18:44:26.020: 1280 1000 real
+18:44:26.120: 1280 1000
+18:44:26.120: read finish
+18:44:26.541: rowcount 0
+18:44:26.541: roiList size 0
+18:44:26.542: read "test.tif"
+18:44:26.574: 1280 1000 real
+18:44:26.674: 1280 1000
+18:44:26.674: read finish
+18:44:27.020: rowcount 0
+18:44:27.020: roiList size 0
+18:44:27.021: read "test.tif"
+18:44:27.052: 1280 1000 real
+18:44:27.152: 1280 1000
+18:44:27.152: read finish
+18:44:27.612: rowcount 0
+18:44:27.612: roiList size 0
+18:44:27.612: read "test.tif"
+18:44:27.645: 1280 1000 real
+18:44:27.744: 1280 1000
+18:44:27.745: read finish
+18:44:28.151: rowcount 0
+18:44:28.151: roiList size 0
+18:44:28.152: read "test.tif"
+18:44:28.183: 1280 1000 real
+18:44:28.288: 1280 1000
+18:44:28.288: read finish
+18:44:28.721: rowcount 0
+18:44:28.722: roiList size 0
+18:44:28.722: read "test.tif"
+18:44:28.754: 1280 1000 real
+18:44:28.754: 8
+18:44:28.763: clear
+18:44:28.867: 1280 1000
+18:44:28.868: read finish
+18:44:36.226: rowcount 0
+18:44:36.226: roiList size 0
+18:44:36.227: read "test.tif"
+18:44:36.260: 1280 1000 real
+18:44:36.363: 1280 1000
+18:44:36.363: read finish
+18:44:38.619: rowcount 0
+18:44:38.619: roiList size 0
+18:44:38.619: read "test.tif"
+18:44:38.652: 1280 1000 real
+18:44:38.759: 1280 1000
+18:44:38.759: read finish
+18:44:39.349: rowcount 0
+18:44:39.350: roiList size 0
+18:44:39.350: read "test.tif"
+18:44:39.382: 1280 1000 real
+18:44:39.489: 1280 1000
+18:44:39.489: read finish
+18:44:40.753: rowcount 0
+18:44:40.753: 4
+18:44:40.759: clear
+18:44:42.347: rowcount 0
+18:44:42.347: roiList size 0
+18:44:42.347: read "test.tif"
+18:44:42.380: 1280 1000 real
+18:44:42.484: 1280 1000
+18:44:42.484: read finish
+18:44:43.108: rowcount 0
+18:44:43.108: roiList size 0
+18:44:43.109: read "test.tif"
+18:44:43.141: 1280 1000 real
+18:44:43.250: 1280 1000
+18:44:43.250: read finish
+18:44:45.937: rowcount 0
+18:44:45.938: roiList size 0
+18:44:45.938: read "test.tif"
+18:44:45.970: 1280 1000 real
+18:44:46.074: 1280 1000
+18:44:46.074: read finish
+18:44:46.749: rowcount 0
+18:44:46.750: roiList size 0
+18:44:46.750: read "test.tif"
+18:44:46.782: 1280 1000 real
+18:44:46.887: 1280 1000
+18:44:46.888: read finish
+18:44:47.554: rowcount 0
+18:44:47.555: roiList size 0
+18:44:47.555: read "test.tif"
+18:44:47.587: 1280 1000 real
+18:44:47.696: 1280 1000
+18:44:47.696: read finish
+18:44:48.314: rowcount 0
+18:44:48.314: roiList size 0
+18:44:48.315: read "test.tif"
+18:44:48.346: 1280 1000 real
+18:44:48.450: 1280 1000
+18:44:48.451: read finish
+18:44:49.141: rowcount 0
+18:44:49.141: roiList size 0
+18:44:49.141: read "test.tif"
+18:44:49.173: 1280 1000 real
+18:44:49.283: 1280 1000
+18:44:49.283: read finish
+18:44:50.161: rowcount 0
+18:44:50.162: roiList size 0
+18:44:50.162: read "test.tif"
+18:44:50.194: 1280 1000 real
+18:44:50.303: 1280 1000
+18:44:50.303: read finish
+18:44:51.372: rowcount 0
+18:44:51.372: roiList size 0
+18:44:51.372: read "test.tif"
+18:44:51.404: 1280 1000 real
+18:44:51.405: 8
+18:44:51.415: clear
+18:44:51.521: 1280 1000
+18:44:51.521: read finish
+18:46:29.649: rowcount 0
+18:46:29.649: roiList size 0
+18:46:29.671: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:46:33.855: rowcount 0
+18:46:33.856: roiList size 0
+18:46:33.856: read "test.tif"
+18:46:33.893: 1280 1000 real
+18:46:33.987: 1280 1000
+18:46:33.987: read finish
+18:46:35.147: rowcount 0
+18:46:35.148: roiList size 0
+18:46:35.148: read "test.tif"
+18:46:35.179: 1280 1000 real
+18:46:35.290: 1280 1000
+18:46:35.290: read finish
+18:46:36.141: rowcount 0
+18:46:36.142: roiList size 0
+18:46:36.142: read "test.tif"
+18:46:36.174: 1280 1000 real
+18:46:36.279: 1280 1000
+18:46:36.279: read finish
+18:46:37.153: rowcount 0
+18:46:37.153: roiList size 0
+18:46:37.154: read "test.tif"
+18:46:37.186: 1280 1000 real
+18:46:37.296: 1280 1000
+18:46:37.297: read finish
+18:46:38.120: rowcount 0
+18:46:38.120: roiList size 0
+18:46:38.120: read "test.tif"
+18:46:38.152: 1280 1000 real
+18:46:38.259: 1280 1000
+18:46:38.259: read finish
+18:46:39.072: rowcount 0
+18:46:39.072: roiList size 0
+18:46:39.073: read "test.tif"
+18:46:39.104: 1280 1000 real
+18:46:39.206: 1280 1000
+18:46:39.206: read finish
+18:46:40.140: rowcount 0
+18:46:40.140: roiList size 0
+18:46:40.140: read "test.tif"
+18:46:40.172: 1280 1000 real
+18:46:40.273: 1280 1000
+18:46:40.273: read finish
+18:46:41.281: rowcount 0
+18:46:41.282: roiList size 0
+18:46:41.282: read "test.tif"
+18:46:41.314: 1280 1000 real
+18:46:41.414: 1280 1000
+18:46:41.414: read finish
+18:46:42.450: rowcount 0
+18:46:42.451: roiList size 0
+18:46:42.451: read "test.tif"
+18:46:42.483: 1280 1000 real
+18:46:42.484: 8
+18:46:42.493: clear
+18:46:42.597: 1280 1000
+18:46:42.597: read finish
+18:46:43.549: rowcount 0
+18:46:43.550: roiList size 0
+18:46:43.550: read "test.tif"
+18:46:43.582: 1280 1000 real
+18:46:43.682: 1280 1000
+18:46:43.682: read finish
+18:46:44.339: rowcount 0
+18:46:44.339: roiList size 0
+18:46:44.339: read "test.tif"
+18:46:44.370: 1280 1000 real
+18:46:44.524: 1280 1000
+18:46:44.525: read finish
+18:46:45.097: rowcount 0
+18:46:45.097: roiList size 0
+18:46:45.098: read "test.tif"
+18:46:45.129: 1280 1000 real
+18:46:45.230: 1280 1000
+18:46:45.231: read finish
+18:46:46.072: rowcount 0
+18:46:46.072: roiList size 0
+18:46:46.073: read "test.tif"
+18:46:46.105: 1280 1000 real
+18:46:46.206: 1280 1000
+18:46:46.206: read finish
+18:46:46.970: rowcount 0
+18:46:46.971: roiList size 0
+18:46:46.971: read "test.tif"
+18:46:47.002: 1280 1000 real
+18:46:47.100: 1280 1000
+18:46:47.100: read finish
+18:46:47.551: rowcount 0
+18:46:47.551: roiList size 0
+18:46:47.551: read "test.tif"
+18:46:47.584: 1280 1000 real
+18:46:47.686: 1280 1000
+18:46:47.687: read finish
+18:46:48.109: rowcount 0
+18:46:48.110: roiList size 0
+18:46:48.110: read "test.tif"
+18:46:48.141: 1280 1000 real
+18:46:48.252: 1280 1000
+18:46:48.253: read finish
+18:52:47.711: rowcount 0
+18:52:47.711: roiList size 0
+18:52:47.733: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:52:52.315: rowcount 0
+18:52:52.316: roiList size 0
+18:52:52.316: read "test.tif"
+18:52:52.348: 1280 1000 real
+18:52:52.486: 1280 1000
+18:52:52.486: read finish
+18:54:28.398: rowcount 0
+18:54:28.398: roiList size 0
+18:54:28.427: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:54:53.194: rowcount 0
+18:54:53.194: roiList size 0
+18:54:53.195: read "test.tif"
+18:54:53.229: 1280 1000 real
+18:54:53.363: 1280 1000
+18:54:53.363: read finish
+18:57:55.836: rowcount 0
+18:57:55.836: roiList size 0
+18:57:55.857: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:57:58.071: rowcount 0
+18:57:58.072: roiList size 0
+18:57:58.072: read "test.tif"
+18:57:58.104: 1280 1000 real
+18:57:58.118: 1280 1000
+18:57:58.118: read finish
+18:58:58.886: rowcount 0
+18:58:58.887: roiList size 0
+18:58:58.908: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+18:59:05.568: rowcount 0
+18:59:05.569: roiList size 0
+18:59:05.569: read "test.tif"
+18:59:05.601: 1280 1000 real
+18:59:05.669: 1280 1000
+18:59:05.669: read finish
+18:59:07.284: rowcount 0
+18:59:07.284: roiList size 0
+18:59:07.284: read "test.tif"
+18:59:07.316: 1280 1000 real
+18:59:07.388: 1280 1000
+18:59:07.388: read finish
+18:59:08.242: rowcount 0
+18:59:08.243: roiList size 0
+18:59:08.243: read "test.tif"
+18:59:08.274: 1280 1000 real
+18:59:08.344: 1280 1000
+18:59:08.344: read finish
+18:59:09.231: rowcount 0
+18:59:09.232: roiList size 0
+18:59:09.232: read "test.tif"
+18:59:09.264: 1280 1000 real
+18:59:09.333: 1280 1000
+18:59:09.334: read finish
+18:59:10.346: rowcount 0
+18:59:10.346: roiList size 0
+18:59:10.347: read "test.tif"
+18:59:10.378: 1280 1000 real
+18:59:10.448: 1280 1000
+18:59:10.449: read finish
+18:59:11.177: rowcount 0
+18:59:11.178: roiList size 0
+18:59:11.178: read "test.tif"
+18:59:11.211: 1280 1000 real
+18:59:11.282: 1280 1000
+18:59:11.282: read finish
+18:59:11.880: rowcount 0
+18:59:11.881: roiList size 0
+18:59:11.881: read "test.tif"
+18:59:11.913: 1280 1000 real
+18:59:11.985: 1280 1000
+18:59:11.985: read finish
+18:59:12.649: rowcount 0
+18:59:12.650: roiList size 0
+18:59:12.650: read "test.tif"
+18:59:12.681: 1280 1000 real
+18:59:12.753: 1280 1000
+18:59:12.754: read finish
+18:59:13.251: rowcount 0
+18:59:13.251: roiList size 0
+18:59:13.251: read "test.tif"
+18:59:13.284: 1280 1000 real
+18:59:13.353: 1280 1000
+18:59:13.354: read finish
+18:59:13.778: rowcount 0
+18:59:13.778: roiList size 0
+18:59:13.779: read "test.tif"
+18:59:13.810: 1280 1000 real
+18:59:13.879: 1280 1000
+18:59:13.880: read finish
+18:59:14.270: rowcount 0
+18:59:14.270: roiList size 0
+18:59:14.271: read "test.tif"
+18:59:14.302: 1280 1000 real
+18:59:14.372: 1280 1000
+18:59:14.372: read finish
+18:59:14.758: rowcount 0
+18:59:14.759: roiList size 0
+18:59:14.759: read "test.tif"
+18:59:14.790: 1280 1000 real
+18:59:14.859: 1280 1000
+18:59:14.859: read finish
+18:59:15.252: rowcount 0
+18:59:15.252: roiList size 0
+18:59:15.252: read "test.tif"
+18:59:15.284: 1280 1000 real
+18:59:15.352: 1280 1000
+18:59:15.352: read finish
+18:59:18.047: rowcount 0
+18:59:18.047: roiList size 0
+18:59:18.048: read "test.tif"
+18:59:18.079: 1280 1000 real
+18:59:18.150: 1280 1000
+18:59:18.150: read finish
+19:03:08.386: rowcount 0
+19:03:08.386: roiList size 0
+19:03:08.407: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:03:11.769: rowcount 0
+19:03:11.769: roiList size 0
+19:03:11.769: read "test.tif"
+19:03:11.804: 1280 1000 real
+19:03:11.943: 1280 1000
+19:03:11.943: read finish
+19:03:31.198: rowcount 0
+19:03:31.198: roiList size 0
+19:03:31.223: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:03:33.210: rowcount 0
+19:03:33.210: roiList size 0
+19:03:33.210: read "test.tif"
+19:03:33.245: 1280 1000 real
+19:03:33.391: 1280 1000
+19:03:33.391: read finish
+19:04:48.453: rowcount 0
+19:04:48.453: roiList size 0
+19:04:48.476: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:04:50.832: rowcount 0
+19:04:50.833: roiList size 0
+19:04:50.833: read "test.tif"
+19:04:50.867: 1280 1000 real
+19:04:51.000: 1280 1000
+19:04:51.000: read finish
+19:06:19.360: rowcount 0
+19:06:19.361: roiList size 0
+19:06:19.386: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:06:23.699: rowcount 0
+19:06:23.700: roiList size 0
+19:06:23.700: read "test.tif"
+19:06:23.732: 1280 1000 real
+19:06:23.834: 11
+19:06:23.869: 1280 1000
+19:06:23.869: read finish
+19:07:53.117: rowcount 0
+19:07:53.118: roiList size 0
+19:07:53.139: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:07:57.581: rowcount 0
+19:07:57.582: roiList size 0
+19:07:57.582: read "test.tif"
+19:07:57.615: 1280 1000 real
+19:07:57.616: 11
+19:07:57.761: 1280 1000
+19:07:57.761: read finish
+19:09:09.131: rowcount 0
+19:09:09.131: roiList size 0
+19:09:09.153: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:09:11.495: rowcount 0
+19:09:11.496: roiList size 0
+19:09:11.496: read "test.tif"
+19:09:11.530: 1280 1000 real
+19:09:11.530: 11
+19:09:11.668: 1280 1000
+19:09:11.668: read finish
+19:12:24.054: rowcount 0
+19:12:24.054: roiList size 0
+19:12:24.077: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:12:26.687: rowcount 0
+19:12:26.687: roiList size 0
+19:12:26.687: read "test.tif"
+19:12:26.722: 1280 1000 real
+19:12:26.722: 11
+19:12:26.858: 1280 1000
+19:12:26.859: read finish
+19:14:30.297: rowcount 0
+19:14:30.298: roiList size 0
+19:14:30.320: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:15:20.492: rowcount 0
+19:15:20.492: roiList size 0
+19:15:20.493: read "test.tif"
+19:15:20.526: 1280 1000 real
+19:15:20.659: 1280 1000
+19:15:20.659: read finish
+19:16:59.292: rowcount 0
+19:16:59.293: roiList size 0
+19:16:59.315: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:17:01.574: rowcount 0
+19:17:01.574: roiList size 0
+19:17:01.575: read "test.tif"
+19:17:01.608: 1280 1000 real
+19:17:01.746: 1280 1000
+19:17:01.746: read finish
+19:17:17.769: Accepted
+19:28:32.962: rowcount 0
+19:28:32.963: roiList size 0
+19:28:32.990: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:29:08.568: rowcount 0
+19:29:08.569: roiList size 0
+19:29:08.593: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+19:29:10.796: rowcount 0
+19:29:10.796: roiList size 0
+19:29:29.615: "D:/qt/first/build/team0.tif"
+19:29:30.422: Accepted
+19:29:33.284: rowcount 0
+19:29:33.284: roiList size 0
+19:29:33.285: read "D:/qt/first/build/team0.tif"
+19:29:33.763: 800 5000 real
+19:29:34.162: 800 5000
+19:29:34.162: read finish
+19:29:36.972: rowcount 0
+19:29:36.972: roiList size 0
+19:29:36.972: read "D:/qt/first/build/team0.tif"
+19:29:37.066: 800 5000 real
+19:29:37.489: 800 5000
+19:29:37.489: read finish
+19:29:39.098: rowcount 0
+19:29:39.098: roiList size 0
+19:29:39.098: read "D:/qt/first/build/team0.tif"
+19:29:39.192: 800 5000 real
+19:29:39.599: 800 5000
+19:29:39.599: read finish
+19:30:14.060: rowcount 0
+19:30:14.061: roiList size 0
+19:30:14.061: read "D:/qt/first/build/team0.tif"
+19:30:14.155: 800 5000 real
+19:30:14.528: 800 5000
+19:30:14.528: read finish
+19:30:15.499: rowcount 0
+19:30:15.499: roiList size 0
+19:30:15.499: read "D:/qt/first/build/team0.tif"
+19:30:15.592: 800 5000 real
+19:30:16.003: 800 5000
+19:30:16.003: read finish
+19:30:16.580: rowcount 0
+19:30:16.580: roiList size 0
+19:30:16.580: read "D:/qt/first/build/team0.tif"
+19:30:16.674: 800 5000 real
+19:30:17.035: 800 5000
+19:30:17.036: read finish
+19:30:17.496: rowcount 0
+19:30:17.496: roiList size 0
+19:30:17.497: read "D:/qt/first/build/team0.tif"
+19:30:17.591: 800 5000 real
+19:30:17.958: 800 5000
+19:30:17.958: read finish
+19:30:18.438: rowcount 0
+19:30:18.438: roiList size 0
+19:30:18.439: read "D:/qt/first/build/team0.tif"
+19:30:18.532: 800 5000 real
+19:30:18.901: 800 5000
+19:30:18.901: read finish
+19:30:19.374: rowcount 0
+19:30:19.374: roiList size 0
+19:30:19.374: read "D:/qt/first/build/team0.tif"
+19:30:19.466: 800 5000 real
+19:30:19.467: 8
+19:30:19.477: clear
+19:30:19.879: 800 5000
+19:30:19.880: read finish
+19:30:20.315: rowcount 0
+19:30:20.315: roiList size 0
+19:30:20.315: read "D:/qt/first/build/team0.tif"
+19:30:20.407: 800 5000 real
+19:30:20.802: 800 5000
+19:30:20.803: read finish
+19:30:21.317: rowcount 0
+19:30:21.318: roiList size 0
+19:30:21.318: read "D:/qt/first/build/team0.tif"
+19:30:21.411: 800 5000 real
+19:30:21.817: 800 5000
+19:30:21.817: read finish
+19:30:22.232: rowcount 0
+19:30:22.233: roiList size 0
+19:30:22.233: read "D:/qt/first/build/team0.tif"
+19:30:22.330: 800 5000 real
+19:30:22.680: 800 5000
+19:30:22.680: read finish
+19:30:22.987: rowcount 0
+19:30:22.987: roiList size 0
+19:30:22.987: read "D:/qt/first/build/team0.tif"
+19:30:23.081: 800 5000 real
+19:30:23.477: 800 5000
+19:30:23.478: read finish
+19:30:23.590: rowcount 0
+19:30:23.590: roiList size 0
+19:30:23.591: read "D:/qt/first/build/team0.tif"
+19:30:23.686: 800 5000 real
+19:30:24.053: 800 5000
+19:30:24.054: read finish
+19:30:24.160: rowcount 0
+19:30:24.160: roiList size 0
+19:30:24.160: read "D:/qt/first/build/team0.tif"
+19:30:24.262: 800 5000 real
+19:30:24.624: 800 5000
+19:30:24.625: read finish
+19:30:24.735: rowcount 0
+19:30:24.735: roiList size 0
+19:30:24.736: read "D:/qt/first/build/team0.tif"
+19:30:24.829: 800 5000 real
+19:30:25.195: 800 5000
+19:30:25.195: read finish
+19:30:25.307: rowcount 0
+19:30:25.308: roiList size 0
+19:30:25.308: read "D:/qt/first/build/team0.tif"
+19:30:25.402: 800 5000 real
+19:30:25.402: 8
+19:30:25.409: clear
+19:30:25.809: 800 5000
+19:30:25.810: read finish
+19:30:25.913: rowcount 0
+19:30:25.914: roiList size 0
+19:30:25.914: read "D:/qt/first/build/team0.tif"
+19:30:26.007: 800 5000 real
+19:30:26.412: 800 5000
+19:30:26.412: read finish
+19:30:26.518: rowcount 0
+19:30:26.518: roiList size 0
+19:30:26.518: read "D:/qt/first/build/team0.tif"
+19:30:26.611: 800 5000 real
+19:30:26.998: 800 5000
+19:30:26.998: read finish
+19:30:27.106: rowcount 0
+19:30:27.106: roiList size 0
+19:30:27.107: read "D:/qt/first/build/team0.tif"
+19:30:27.200: 800 5000 real
+19:30:27.607: 800 5000
+19:30:27.607: read finish
+19:30:27.713: rowcount 0
+19:30:27.714: roiList size 0
+19:30:27.714: read "D:/qt/first/build/team0.tif"
+19:30:27.808: 800 5000 real
+19:30:28.200: 800 5000
+19:30:28.200: read finish
+19:30:28.312: rowcount 0
+19:30:28.312: roiList size 0
+19:30:28.313: read "D:/qt/first/build/team0.tif"
+19:30:28.409: 800 5000 real
+19:30:28.840: 800 5000
+19:30:28.840: read finish
+19:30:29.927: rowcount 0
+19:30:29.927: roiList size 0
+19:30:29.927: read "D:/qt/first/build/team0.tif"
+19:30:30.020: 800 5000 real
+19:30:30.387: 800 5000
+19:30:30.387: read finish
+19:30:30.706: rowcount 0
+19:30:30.706: roiList size 0
+19:30:30.706: read "D:/qt/first/build/team0.tif"
+19:30:30.799: 800 5000 real
+19:30:31.160: 800 5000
+19:30:31.160: read finish
+19:30:31.787: rowcount 0
+19:30:31.787: roiList size 0
+19:30:31.787: read "D:/qt/first/build/team0.tif"
+19:30:31.881: 800 5000 real
+19:30:31.881: 8
+19:30:31.892: clear
+19:30:32.294: 800 5000
+19:30:32.295: read finish
+19:30:32.400: rowcount 0
+19:30:32.401: roiList size 0
+19:30:32.401: read "D:/qt/first/build/team0.tif"
+19:30:32.495: 800 5000 real
+19:30:32.896: 800 5000
+19:30:32.896: read finish
+19:30:34.299: rowcount 0
+19:30:34.299: roiList size 0
+19:30:34.300: read "D:/qt/first/build/team0.tif"
+19:30:34.392: 800 5000 real
+19:30:34.804: 800 5000
+19:30:34.804: read finish
+19:30:35.854: rowcount 0
+19:30:35.854: roiList size 0
+19:30:35.855: read "D:/qt/first/build/team0.tif"
+19:30:35.949: 800 5000 real
+19:30:36.319: 800 5000
+19:30:36.320: read finish
+19:30:36.882: rowcount 0
+19:30:36.882: roiList size 0
+19:30:36.882: read "D:/qt/first/build/team0.tif"
+19:30:36.975: 800 5000 real
+19:30:37.386: 800 5000
+19:30:37.387: read finish
+19:30:38.002: rowcount 0
+19:30:38.002: roiList size 0
+19:30:38.003: read "D:/qt/first/build/team0.tif"
+19:30:38.096: 800 5000 real
+19:30:38.463: 800 5000
+19:30:38.463: read finish
+19:30:39.287: rowcount 0
+19:30:39.288: roiList size 0
+19:30:39.288: read "D:/qt/first/build/team0.tif"
+19:30:39.380: 800 5000 real
+19:30:39.742: 800 5000
+19:30:39.742: read finish
+19:30:40.644: rowcount 0
+19:30:40.644: roiList size 0
+19:30:40.645: read "D:/qt/first/build/team0.tif"
+19:30:40.737: 800 5000 real
+19:30:41.093: 800 5000
+19:30:41.093: read finish
+19:30:41.956: rowcount 0
+19:30:41.957: roiList size 0
+19:30:41.957: read "D:/qt/first/build/team0.tif"
+19:30:42.051: 800 5000 real
+19:30:42.051: 8
+19:30:42.060: clear
+19:30:42.461: 800 5000
+19:30:42.461: read finish
+19:30:51.024: rowcount 0
+19:30:51.025: roiList size 0
+19:30:51.025: read "D:/qt/first/build/team0.tif"
+19:30:51.120: 800 5000 real
+19:30:51.534: 800 5000
+19:30:51.535: read finish
+19:30:52.322: rowcount 0
+19:30:52.323: roiList size 0
+19:30:52.323: read "D:/qt/first/build/team0.tif"
+19:30:52.415: 800 5000 real
+19:30:52.820: 800 5000
+19:30:52.820: read finish
+19:30:53.625: rowcount 0
+19:30:53.626: roiList size 0
+19:30:53.626: read "D:/qt/first/build/team0.tif"
+19:30:53.718: 800 5000 real
+19:30:54.083: 800 5000
+19:30:54.083: read finish
+19:30:54.191: rowcount 0
+19:30:54.191: roiList size 0
+19:30:54.191: read "D:/qt/first/build/team0.tif"
+19:30:54.287: 800 5000 real
+19:30:54.694: 800 5000
+19:30:54.694: read finish
+19:30:55.537: rowcount 0
+19:30:55.537: roiList size 0
+19:30:55.538: read "D:/qt/first/build/team0.tif"
+19:30:55.630: 800 5000 real
+19:30:55.994: 800 5000
+19:30:55.995: read finish
+19:30:56.545: rowcount 0
+19:30:56.545: roiList size 0
+19:30:56.546: read "D:/qt/first/build/team0.tif"
+19:30:56.646: 800 5000 real
+19:30:57.005: 800 5000
+19:30:57.005: read finish
+19:30:57.588: rowcount 0
+19:30:57.589: roiList size 0
+19:30:57.589: read "D:/qt/first/build/team0.tif"
+19:30:57.683: 800 5000 real
+19:30:58.037: 800 5000
+19:30:58.037: read finish
+19:30:58.821: rowcount 0
+19:30:58.822: roiList size 0
+19:30:58.822: read "D:/qt/first/build/team0.tif"
+19:30:58.914: 800 5000 real
+19:30:58.914: 8
+19:30:58.925: clear
+19:30:59.357: 800 5000
+19:30:59.358: read finish
+19:31:00.028: rowcount 0
+19:31:00.028: roiList size 0
+19:31:00.029: read "D:/qt/first/build/team0.tif"
+19:31:00.122: 800 5000 real
+19:31:00.532: 800 5000
+19:31:00.532: read finish
+19:31:01.213: rowcount 0
+19:31:01.213: roiList size 0
+19:31:01.214: read "D:/qt/first/build/team0.tif"
+19:31:01.315: 800 5000 real
+19:31:01.724: 800 5000
+19:31:01.724: read finish
+19:31:02.435: rowcount 0
+19:31:02.435: roiList size 0
+19:31:02.435: read "D:/qt/first/build/team0.tif"
+19:31:02.528: 800 5000 real
+19:31:02.890: 800 5000
+19:31:02.890: read finish
+19:31:03.454: rowcount 0
+19:31:03.455: roiList size 0
+19:31:03.455: read "D:/qt/first/build/team0.tif"
+19:31:03.549: 800 5000 real
+19:31:03.963: 800 5000
+19:31:03.963: read finish
+19:31:04.411: rowcount 0
+19:31:04.412: roiList size 0
+19:31:04.412: read "D:/qt/first/build/team0.tif"
+19:31:04.507: 800 5000 real
+19:31:04.878: 800 5000
+19:31:04.878: read finish
+19:31:05.375: rowcount 0
+19:31:05.375: roiList size 0
+19:31:05.376: read "D:/qt/first/build/team0.tif"
+19:31:05.469: 800 5000 real
+19:31:05.834: 800 5000
+19:31:05.834: read finish
+19:31:06.260: rowcount 0
+19:31:06.261: roiList size 0
+19:31:06.261: read "D:/qt/first/build/team0.tif"
+19:31:06.354: 800 5000 real
+19:31:06.717: 800 5000
+19:31:06.717: read finish
+19:31:07.155: rowcount 0
+19:31:07.155: roiList size 0
+19:31:07.156: read "D:/qt/first/build/team0.tif"
+19:31:07.252: 800 5000 real
+19:31:07.252: 8
+19:31:07.262: clear
+19:31:07.658: 800 5000
+19:31:07.658: read finish
+19:31:08.236: rowcount 0
+19:31:08.237: roiList size 0
+19:31:08.237: read "D:/qt/first/build/team0.tif"
+19:31:08.331: 800 5000 real
+19:31:08.723: 800 5000
+19:31:08.723: read finish
+19:31:08.995: rowcount 0
+19:31:08.995: roiList size 0
+19:31:08.995: read "D:/qt/first/build/team0.tif"
+19:31:09.088: 800 5000 real
+19:31:09.493: 800 5000
+19:31:09.493: read finish
+19:31:09.803: rowcount 0
+19:31:09.803: roiList size 0
+19:31:09.803: read "D:/qt/first/build/team0.tif"
+19:31:09.896: 800 5000 real
+19:31:10.257: 800 5000
+19:31:10.257: read finish
+19:31:10.363: rowcount 0
+19:31:10.364: roiList size 0
+19:31:10.364: read "D:/qt/first/build/team0.tif"
+19:31:10.456: 800 5000 real
+19:31:10.864: 800 5000
+19:31:10.864: read finish
+19:31:10.970: rowcount 0
+19:31:10.971: roiList size 0
+19:31:10.971: read "D:/qt/first/build/team0.tif"
+19:31:11.068: 800 5000 real
+19:31:11.437: 800 5000
+19:31:11.437: read finish
+19:31:11.544: rowcount 0
+19:31:11.545: roiList size 0
+19:31:11.545: read "D:/qt/first/build/team0.tif"
+19:31:11.638: 800 5000 real
+19:31:12.013: 800 5000
+19:31:12.013: read finish
+19:31:12.574: rowcount 0
+19:31:12.575: roiList size 0
+19:31:12.575: read "D:/qt/first/build/team0.tif"
+19:31:12.668: 800 5000 real
+19:31:13.032: 800 5000
+19:31:13.033: read finish
+19:31:13.665: rowcount 0
+19:31:13.665: roiList size 0
+19:31:13.665: read "D:/qt/first/build/team0.tif"
+19:31:13.757: 800 5000 real
+19:31:13.758: 8
+19:31:13.766: clear
+19:31:14.157: 800 5000
+19:31:14.158: read finish
+19:31:14.827: rowcount 0
+19:31:14.827: roiList size 0
+19:31:14.827: read "D:/qt/first/build/team0.tif"
+19:31:14.920: 800 5000 real
+19:31:15.326: 800 5000
+19:31:15.326: read finish
+19:31:15.972: rowcount 0
+19:31:15.972: roiList size 0
+19:31:15.972: read "D:/qt/first/build/team0.tif"
+19:31:16.066: 800 5000 real
+19:31:16.474: 800 5000
+19:31:16.474: read finish
+19:31:17.059: rowcount 0
+19:31:17.060: roiList size 0
+19:31:17.060: read "D:/qt/first/build/team0.tif"
+19:31:17.154: 800 5000 real
+19:31:17.543: 800 5000
+19:31:17.544: read finish
+19:31:18.482: rowcount 0
+19:31:18.482: roiList size 0
+19:31:18.482: read "D:/qt/first/build/team0.tif"
+19:31:18.574: 800 5000 real
+19:31:18.978: 800 5000
+19:31:18.978: read finish
+19:31:19.718: rowcount 0
+19:31:19.719: roiList size 0
+19:31:19.719: read "D:/qt/first/build/team0.tif"
+19:31:19.813: 800 5000 real
+19:31:20.171: 800 5000
+19:31:20.171: read finish
+19:31:21.140: rowcount 0
+19:31:21.140: roiList size 0
+19:31:21.141: read "D:/qt/first/build/team0.tif"
+19:31:21.236: 800 5000 real
+19:31:21.601: 800 5000
+19:31:21.602: read finish
+19:31:22.215: rowcount 0
+19:31:22.215: roiList size 0
+19:31:22.215: read "D:/qt/first/build/team0.tif"
+19:31:22.322: 800 5000 real
+19:31:22.700: 800 5000
+19:31:22.700: read finish
+19:31:23.305: rowcount 0
+19:31:23.305: roiList size 0
+19:31:23.305: read "D:/qt/first/build/team0.tif"
+19:31:23.399: 800 5000 real
+19:31:23.400: 8
+19:31:23.408: clear
+19:31:23.805: 800 5000
+19:31:23.805: read finish
+19:31:24.738: rowcount 0
+19:31:24.739: roiList size 0
+19:31:24.739: read "D:/qt/first/build/team0.tif"
+19:31:24.832: 800 5000 real
+19:31:25.259: 800 5000
+19:31:25.260: read finish
+19:31:25.871: rowcount 0
+19:31:25.872: roiList size 0
+19:31:25.872: read "D:/qt/first/build/team0.tif"
+19:31:25.964: 800 5000 real
+19:31:26.382: 800 5000
+19:31:26.382: read finish
+19:31:26.956: rowcount 0
+19:31:26.957: roiList size 0
+19:31:26.957: read "D:/qt/first/build/team0.tif"
+19:31:27.051: 800 5000 real
+19:31:27.430: 800 5000
+19:31:27.430: read finish
+19:31:28.012: rowcount 0
+19:31:28.012: roiList size 0
+19:31:28.012: read "D:/qt/first/build/team0.tif"
+19:31:28.105: 800 5000 real
+19:31:28.507: 800 5000
+19:31:28.508: read finish
+19:31:32.340: rowcount 0
+19:31:32.340: roiList size 0
+19:31:32.341: read "D:/qt/first/build/team0.tif"
+19:31:32.435: 800 5000 real
+19:31:32.798: 800 5000
+19:31:32.798: read finish
+19:31:33.406: rowcount 0
+19:31:33.407: roiList size 0
+19:31:33.407: read "D:/qt/first/build/team0.tif"
+19:31:33.500: 800 5000 real
+19:31:33.859: 800 5000
+19:31:33.859: read finish
+19:31:34.350: rowcount 0
+19:31:34.350: roiList size 0
+19:31:34.351: read "D:/qt/first/build/team0.tif"
+19:31:34.443: 800 5000 real
+19:31:34.803: 800 5000
+19:31:34.804: read finish
+19:31:35.586: rowcount 0
+19:31:35.587: roiList size 0
+19:31:35.587: read "D:/qt/first/build/team0.tif"
+19:31:35.680: 800 5000 real
+19:31:35.680: 8
+19:31:35.690: clear
+19:31:36.097: 800 5000
+19:31:36.098: read finish

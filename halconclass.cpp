@@ -1330,8 +1330,9 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
         index=imgList.size()-1;
 
     }
+
     index++;
-    Hobject Imagetemp,*tmp;
+    Hobject Imagetemp;
     recvCount=h;
     if(!HDevWindowStack::IsOpen())
         return;
@@ -1342,8 +1343,10 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     float *pointer=0,*p=(float *)pdValueZ;
     time.start();
     tmpImage.Reset();
+
     Image.Reset();
     result_img.Reset();
+
     if(h==set.value("rate").toInt())
     {
         if (HDevWindowStack::IsOpen()&hasData)
@@ -1384,16 +1387,21 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 		img_height=height;
         xScale=width/win_width;
         yScale=height/win_height;
-        Hobject *tmp=new Hobject;
-        copy_image(Imagetemp,tmp);
+        Hobject *tmp=&Imagetemp;
+        //copy_image(Imagetemp,tmp);
         imgList.push_back(tmp);
+
+
         num++;
         emit addImg(tmp);
         if(imgList.size()==set.value("imgNum",8).toInt())
             calculate();
         if(imgList.size()>set.value("imgNum",8).toInt())
         {
-            clear_obj(*imgList.takeFirst());
+            Hobject *obj=imgList.takeFirst();
+
+            clear_obj(*obj);
+
             emit deleteImg(0);
             index=0;
 
@@ -1406,6 +1414,8 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 	}
 	hasData=true;
     isLoadFile=false;
+
+
     emit dispImg();
    
 }

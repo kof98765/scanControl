@@ -35,7 +35,8 @@ int main(int argc, char *argv[])
     //QLibrary mylib("halconclass.dll");
     QCoreApplication::setOrganizationName("EDAC");
     QCoreApplication::setApplicationName("ipad");
-
+    QSettings::setDefaultFormat(QSettings::IniFormat);
+    QSettings::setUserIniPath("./");
     MainWindow w;
 
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf8"));
