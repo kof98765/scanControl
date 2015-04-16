@@ -177,6 +177,7 @@ private slots:
 
     void on_roiColor2_clicked();
     void on_roiDraw2_clicked();
+    void on_func_currentIndexChanged(int index);
 };
 
 #endif // MAINWINDOW_H

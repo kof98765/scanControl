@@ -27,6 +27,9 @@ INCLUDEPATH+="laser/"
 #INCLUDEPATH+= "D:/opencv/include/opencv"
 DEFINES+=QWT_DLL PCLLIBRARYDLL _AFXDLL
 DEFINES-= MD UNICODE
+#加快编译速度
+#PRECOMPILED_HEADER = stable.h
+#QMAKE_CXXFLAGS += /MP
 
 UI_DIR+=release
 #libs

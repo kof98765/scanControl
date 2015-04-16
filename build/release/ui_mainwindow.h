@@ -79,17 +79,16 @@ public:
     QFormLayout *formLayout;
     QLabel *label_2;
     QLineEdit *roiName;
-    QSpacerItem *verticalSpacer_2;
-    QLabel *label_6;
-    QComboBox *func;
-    QSpacerItem *verticalSpacer_3;
-    QLabel *label;
-    QLineEdit *limitValue;
-    QSpacerItem *verticalSpacer;
-    QLabel *label_3;
-    QPushButton *roiColor;
     QLabel *label_4;
     QComboBox *team;
+    QLabel *label_6;
+    QComboBox *func;
+    QLabel *label_3;
+    QPushButton *roiColor;
+    QLabel *Label_10;
+    QLineEdit *minValue1;
+    QLabel *Label_11;
+    QLineEdit *maxValue1;
     QPushButton *roiDraw;
     QWidget *tab;
     QPushButton *roiDraw2;
@@ -110,9 +109,9 @@ public:
     QLabel *Label_6;
     QComboBox *unit;
     QLabel *Label_7;
-    QLineEdit *minValue;
+    QLineEdit *minValue2;
     QLabel *Label_8;
-    QLineEdit *maxValue;
+    QLineEdit *maxValue2;
     QLabel *Label_9;
     QPushButton *roiColor2;
     QHBoxLayout *horizontalLayout_3;
@@ -312,8 +311,8 @@ public:
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         roiList = new QTableWidget(groupBox);
-        if (roiList->columnCount() < 4)
-            roiList->setColumnCount(4);
+        if (roiList->columnCount() < 5)
+            roiList->setColumnCount(5);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         roiList->setHorizontalHeaderItem(0, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
@@ -322,10 +321,12 @@ public:
         roiList->setHorizontalHeaderItem(2, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
         roiList->setHorizontalHeaderItem(3, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(4, __qtablewidgetitem9);
         roiList->setObjectName(QStringLiteral("roiList"));
         roiList->setSelectionBehavior(QAbstractItemView::SelectRows);
         roiList->setSortingEnabled(true);
-        roiList->horizontalHeader()->setDefaultSectionSize(65);
+        roiList->horizontalHeader()->setDefaultSectionSize(55);
 
         gridLayout_2->addWidget(roiList, 0, 0, 1, 1);
 
@@ -336,7 +337,7 @@ public:
         tab_2->setObjectName(QStringLiteral("tab_2"));
         layoutWidget_2 = new QWidget(tab_2);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(0, 0, 151, 231));
+        layoutWidget_2->setGeometry(QRect(0, 0, 142, 231));
         formLayout = new QFormLayout(layoutWidget_2);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
@@ -353,50 +354,6 @@ public:
 
         formLayout->setWidget(0, QFormLayout::FieldRole, roiName);
 
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout->setItem(2, QFormLayout::LabelRole, verticalSpacer_2);
-
-        label_6 = new QLabel(layoutWidget_2);
-        label_6->setObjectName(QStringLiteral("label_6"));
-
-        formLayout->setWidget(3, QFormLayout::LabelRole, label_6);
-
-        func = new QComboBox(layoutWidget_2);
-        func->setObjectName(QStringLiteral("func"));
-
-        formLayout->setWidget(3, QFormLayout::FieldRole, func);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout->setItem(4, QFormLayout::LabelRole, verticalSpacer_3);
-
-        label = new QLabel(layoutWidget_2);
-        label->setObjectName(QStringLiteral("label"));
-
-        formLayout->setWidget(5, QFormLayout::LabelRole, label);
-
-        limitValue = new QLineEdit(layoutWidget_2);
-        limitValue->setObjectName(QStringLiteral("limitValue"));
-
-        formLayout->setWidget(5, QFormLayout::FieldRole, limitValue);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout->setItem(6, QFormLayout::LabelRole, verticalSpacer);
-
-        label_3 = new QLabel(layoutWidget_2);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        formLayout->setWidget(7, QFormLayout::LabelRole, label_3);
-
-        roiColor = new QPushButton(layoutWidget_2);
-        roiColor->setObjectName(QStringLiteral("roiColor"));
-        roiColor->setAutoFillBackground(false);
-        roiColor->setStyleSheet(QStringLiteral("background-color: rgb(255, 0, 0);"));
-
-        formLayout->setWidget(7, QFormLayout::FieldRole, roiColor);
-
         label_4 = new QLabel(layoutWidget_2);
         label_4->setObjectName(QStringLiteral("label_4"));
 
@@ -406,6 +363,50 @@ public:
         team->setObjectName(QStringLiteral("team"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, team);
+
+        label_6 = new QLabel(layoutWidget_2);
+        label_6->setObjectName(QStringLiteral("label_6"));
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, label_6);
+
+        func = new QComboBox(layoutWidget_2);
+        func->setObjectName(QStringLiteral("func"));
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, func);
+
+        label_3 = new QLabel(layoutWidget_2);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        formLayout->setWidget(3, QFormLayout::LabelRole, label_3);
+
+        roiColor = new QPushButton(layoutWidget_2);
+        roiColor->setObjectName(QStringLiteral("roiColor"));
+        roiColor->setAutoFillBackground(false);
+        roiColor->setStyleSheet(QStringLiteral("background-color: rgb(255, 0, 0);"));
+
+        formLayout->setWidget(3, QFormLayout::FieldRole, roiColor);
+
+        Label_10 = new QLabel(layoutWidget_2);
+        Label_10->setObjectName(QStringLiteral("Label_10"));
+
+        formLayout->setWidget(4, QFormLayout::LabelRole, Label_10);
+
+        minValue1 = new QLineEdit(layoutWidget_2);
+        minValue1->setObjectName(QStringLiteral("minValue1"));
+        minValue1->setEnabled(false);
+
+        formLayout->setWidget(4, QFormLayout::FieldRole, minValue1);
+
+        Label_11 = new QLabel(layoutWidget_2);
+        Label_11->setObjectName(QStringLiteral("Label_11"));
+
+        formLayout->setWidget(5, QFormLayout::LabelRole, Label_11);
+
+        maxValue1 = new QLineEdit(layoutWidget_2);
+        maxValue1->setObjectName(QStringLiteral("maxValue1"));
+        maxValue1->setEnabled(false);
+
+        formLayout->setWidget(5, QFormLayout::FieldRole, maxValue1);
 
         roiDraw = new QPushButton(tab_2);
         roiDraw->setObjectName(QStringLiteral("roiDraw"));
@@ -500,20 +501,20 @@ public:
 
         formLayout_2->setWidget(6, QFormLayout::LabelRole, Label_7);
 
-        minValue = new QLineEdit(formLayoutWidget);
-        minValue->setObjectName(QStringLiteral("minValue"));
+        minValue2 = new QLineEdit(formLayoutWidget);
+        minValue2->setObjectName(QStringLiteral("minValue2"));
 
-        formLayout_2->setWidget(6, QFormLayout::FieldRole, minValue);
+        formLayout_2->setWidget(6, QFormLayout::FieldRole, minValue2);
 
         Label_8 = new QLabel(formLayoutWidget);
         Label_8->setObjectName(QStringLiteral("Label_8"));
 
         formLayout_2->setWidget(7, QFormLayout::LabelRole, Label_8);
 
-        maxValue = new QLineEdit(formLayoutWidget);
-        maxValue->setObjectName(QStringLiteral("maxValue"));
+        maxValue2 = new QLineEdit(formLayoutWidget);
+        maxValue2->setObjectName(QStringLiteral("maxValue2"));
 
-        formLayout_2->setWidget(7, QFormLayout::FieldRole, maxValue);
+        formLayout_2->setWidget(7, QFormLayout::FieldRole, maxValue2);
 
         Label_9 = new QLabel(formLayoutWidget);
         Label_9->setObjectName(QStringLiteral("Label_9"));
@@ -812,20 +813,10 @@ public:
         QTableWidgetItem *___qtablewidgetitem7 = roiList->horizontalHeaderItem(2);
         ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "\347\261\273\345\236\213", 0));
         QTableWidgetItem *___qtablewidgetitem8 = roiList->horizontalHeaderItem(3);
-        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\351\230\210\345\200\274", 0));
+        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\344\270\213\351\231\220", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = roiList->horizontalHeaderItem(4);
+        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
         label_2->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215:", 0));
-        label_6->setText(QApplication::translate("MainWindow", "\347\261\273\345\236\213:", 0));
-        func->clear();
-        func->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "\345\256\232\344\275\215\345\214\272\345\237\237", 0)
-         << QApplication::translate("MainWindow", "\346\220\234\347\264\242\345\214\272\345\237\237", 0)
-         << QApplication::translate("MainWindow", "\350\256\241\347\256\227\345\271\263\351\235\242\345\272\246", 0)
-         << QApplication::translate("MainWindow", "\350\256\241\347\256\227\351\253\230\345\267\256", 0)
-        );
-        label->setText(QApplication::translate("MainWindow", "\346\265\213\351\207\217\351\230\210\345\200\274:", 0));
-        limitValue->setText(QApplication::translate("MainWindow", "3", 0));
-        label_3->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
-        roiColor->setText(QString());
         label_4->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204:", 0));
         team->clear();
         team->insertItems(0, QStringList()
@@ -838,6 +829,20 @@ public:
          << QApplication::translate("MainWindow", "\345\210\206\347\273\2047", 0)
          << QApplication::translate("MainWindow", "\345\210\206\347\273\2048", 0)
         );
+        label_6->setText(QApplication::translate("MainWindow", "\347\261\273\345\236\213:", 0));
+        func->clear();
+        func->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "\345\256\232\344\275\215\345\214\272\345\237\237", 0)
+         << QApplication::translate("MainWindow", "\346\220\234\347\264\242\345\214\272\345\237\237", 0)
+         << QApplication::translate("MainWindow", "\350\256\241\347\256\227\345\271\263\351\235\242\345\272\246", 0)
+         << QApplication::translate("MainWindow", "\350\256\241\347\256\227\351\253\230\345\267\256", 0)
+        );
+        label_3->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
+        roiColor->setText(QString());
+        Label_10->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\344\270\213\351\231\220", 0));
+        minValue1->setText(QApplication::translate("MainWindow", "0", 0));
+        Label_11->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
+        maxValue1->setText(QApplication::translate("MainWindow", "10", 0));
         roiDraw->setText(QApplication::translate("MainWindow", "\347\273\230\345\210\266", 0));
         xxxxxxx->setTabText(xxxxxxx->indexOf(tab_2), QApplication::translate("MainWindow", "\347\273\230\345\210\266\345\214\272\345\237\237", 0));
         roiDraw2->setText(QApplication::translate("MainWindow", "\347\273\230\345\210\266", 0));
@@ -872,10 +877,10 @@ public:
          << QApplication::translate("MainWindow", "\345\276\256\347\261\263", 0)
          << QApplication::translate("MainWindow", "\346\257\253\347\261\263", 0)
         );
-        Label_7->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\345\200\274:", 0));
-        minValue->setText(QApplication::translate("MainWindow", "0", 0));
-        Label_8->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\345\200\274:", 0));
-        maxValue->setText(QApplication::translate("MainWindow", "0", 0));
+        Label_7->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\344\270\213\351\231\220", 0));
+        minValue2->setText(QApplication::translate("MainWindow", "0", 0));
+        Label_8->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
+        maxValue2->setText(QApplication::translate("MainWindow", "0", 0));
         Label_9->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
         roiColor2->setText(QString());
         xxxxxxx->setTabText(xxxxxxx->indexOf(tab), QApplication::translate("MainWindow", "\351\224\256\345\205\245\345\214\272\345\237\237", 0));

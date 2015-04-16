@@ -33,7 +33,7 @@ void imgListView::addImg(Hobject *obj)
     open_window(0,0,50,50,l->winId(),"visible","",&win);
     get_image_size(*obj,&width,&height);
     set_part(win,0,0,height,width);
-     set_lut(win,"rainbow");
+    set_lut(win,"rainbow");
     winList.push_back(win);
     disp_obj(*obj,win);
 
@@ -73,7 +73,7 @@ void imgListView::onClick()
     if (clickLabel* label = dynamic_cast<clickLabel*>(sender())){
         int i=layout->indexOf(label);
 
-            emit selectImg(i);
+        emit selectImg(i);
 
-        }
+    }
 }

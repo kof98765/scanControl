@@ -510,6 +510,97 @@ void halconClass::delRect(QString name)
 /*
     绘制计算区域
 */
+void halconClass::drawRect(QMap<QString,QVariant> map)
+{
+    int i=0;
+    Hobject Rectangle;
+    QString name=map.value("name").toString();
+    int team=map.value("team").toInt();
+    int color=map.value("color").toInt();
+    int func=map.value("func").toInt();
+    double min=map.value("min").toDouble();
+    double max=map.value("max").toDouble();
+    if(name.isEmpty())
+        name="rect";
+    while(set.contains("team/"+name))
+    {
+
+        name=QString("%1_%2").arg(name.mid(0,name.lastIndexOf("_"))).arg(i++);
+    }
+    HTuple  Row, Column, Row2, Column2,Phi,Length1,Length2, Max;
+    QStringList str;
+    QMap<QString,QVariant> roi;
+    //set_color(WindowHandle,color.toUtf8().data());
+
+    set_rgb(WindowHandle,(int)((color&(0xff<<16))>>16),(int)((color&(0xff<<8))>>8),(int)(color&0xff));
+    //roiList[0]
+
+    roi.insert("color",color);
+    if(func==2|func==3)
+    {
+        draw_rectangle2(WindowHandle,&Row,&Column,&Phi,&Length1,&Length2);
+        //roiList[1-5]
+
+        roi.insert("Row",Row[0].D());
+        roi.insert("Column",Column[0].D());
+        roi.insert("Phi",Phi[0].D());
+        roi.insert("Length1",Length1[0].D());
+        roi.insert("Length2",Length2[0].D());
+
+        qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D()<<Phi[0].D();
+    }
+    else
+    {
+        draw_rectangle1(WindowHandle,&Row,&Column,&Row2,&Column2);
+        //roiList[1-5]
+
+        roi.insert("Row",Row[0].D());
+        roi.insert("Column",Column[0].D());
+        roi.insert("Row2",Row2[0].D());
+        roi.insert("Column2",Column2[0].D());
+        Hobject Rectangle;
+        gen_rectangle1(&Rectangle,Row,Column,Row2,Column2);
+        HTuple Area,r,c;
+        area_center(Rectangle,&Area,&r,&c);
+        qDebug()<<"func"<<func<<r[0].D()<<c[0].D();
+    }
+
+
+   //写入配置文件
+    //roiList[6-9]
+
+    roi.insert("team",team);
+    roi.insert("func",func);
+    roi.insert("index",index);
+    roi.insert("min",min);
+    roi.insert("max",max);
+
+    set.setValue("team/"+name,roi);
+    roiList.insert(name,QVariant(str));
+
+    QString teamNum=QString::number(team);
+    QStringList data;
+
+
+    data=dataList.value(teamNum).toStringList();
+
+    if(!data.contains(name))
+        data<<name;
+
+    dataList.insert(teamNum,data);
+
+    set.setValue("dataList",dataList);
+    set.setValue("roiList",roiList);
+    set.sync();
+    if(func==0)
+    {
+        write_image(Image,"tiff",0,QString("%1_%2.tif").arg(roi.value("team").toInt()).arg(roi.value("index").toInt()).toUtf8().data());
+        createTemplate(team);
+    }
+    //更新界面
+    disp_img();
+    emit flushRoiList(roiList.keys());
+}
 void halconClass::drawRect(QString name,QString color,int team,double limit,int func)
 {
     int i=0;
@@ -542,6 +633,7 @@ void halconClass::drawRect(QString name,QString color,int team,double limit,int 
         roi.insert("Length2",Length2[0].D());
 
         qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D()<<Phi[0].D();
+
     }
     else
     {

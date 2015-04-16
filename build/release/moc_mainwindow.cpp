@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[54];
-    char stringdata[747];
+    QByteArrayData data[56];
+    char stringdata[781];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -82,7 +82,9 @@ QT_MOC_LITERAL(49, 658, 11),
 QT_MOC_LITERAL(50, 670, 16),
 QT_MOC_LITERAL(51, 687, 18),
 QT_MOC_LITERAL(52, 706, 20),
-QT_MOC_LITERAL(53, 727, 19)
+QT_MOC_LITERAL(53, 727, 19),
+QT_MOC_LITERAL(54, 747, 27),
+QT_MOC_LITERAL(55, 775, 5)
     },
     "MainWindow\0stopMove\0\0E128_detect\0"
     "outputMessage\0QtMsgType\0recvHeightSub\0"
@@ -104,7 +106,8 @@ QT_MOC_LITERAL(53, 727, 19)
     "action_modifyItem\0on_roiDraw_clicked\0"
     "statusCheck\0updataProsessBar\0"
     "on_toExcel_clicked\0on_roiColor2_clicked\0"
-    "on_roiDraw2_clicked"
+    "on_roiDraw2_clicked\0on_func_currentIndexChanged\0"
+    "index"
 };
 #undef QT_MOC_LITERAL
 
@@ -114,7 +117,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      43,   14, // methods
+      44,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -122,51 +125,52 @@ static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  229,    2, 0x06 /* Public */,
-       3,    0,  230,    2, 0x06 /* Public */,
+       1,    0,  234,    2, 0x06 /* Public */,
+       3,    0,  235,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    2,  231,    2, 0x0a /* Public */,
-       6,    4,  236,    2, 0x0a /* Public */,
-       6,    4,  245,    2, 0x0a /* Public */,
-       7,    2,  254,    2, 0x0a /* Public */,
-       8,    2,  259,    2, 0x0a /* Public */,
-      12,    0,  264,    2, 0x0a /* Public */,
-      13,    0,  265,    2, 0x0a /* Public */,
-      14,    0,  266,    2, 0x0a /* Public */,
-      15,    1,  267,    2, 0x0a /* Public */,
-      17,    0,  270,    2, 0x0a /* Public */,
-      18,    1,  271,    2, 0x0a /* Public */,
-      19,    1,  274,    2, 0x0a /* Public */,
-      20,    1,  277,    2, 0x0a /* Public */,
-      21,    0,  280,    2, 0x0a /* Public */,
-      22,    0,  281,    2, 0x0a /* Public */,
-      23,    0,  282,    2, 0x0a /* Public */,
-      24,    1,  283,    2, 0x0a /* Public */,
-      25,    0,  286,    2, 0x0a /* Public */,
-      26,    0,  287,    2, 0x0a /* Public */,
-      27,    1,  288,    2, 0x0a /* Public */,
-      29,    0,  291,    2, 0x0a /* Public */,
-      30,    0,  292,    2, 0x0a /* Public */,
-      31,    0,  293,    2, 0x0a /* Public */,
-      32,    1,  294,    2, 0x0a /* Public */,
-      35,    2,  297,    2, 0x0a /* Public */,
-      38,    0,  302,    2, 0x0a /* Public */,
-      39,    0,  303,    2, 0x0a /* Public */,
-      40,    0,  304,    2, 0x0a /* Public */,
-      41,    0,  305,    2, 0x0a /* Public */,
-      42,    0,  306,    2, 0x0a /* Public */,
-      43,    0,  307,    2, 0x0a /* Public */,
-      44,    0,  308,    2, 0x0a /* Public */,
-      45,    0,  309,    2, 0x0a /* Public */,
-      46,    0,  310,    2, 0x0a /* Public */,
-      47,    0,  311,    2, 0x0a /* Public */,
-      48,    0,  312,    2, 0x08 /* Private */,
-      49,    0,  313,    2, 0x08 /* Private */,
-      50,    2,  314,    2, 0x08 /* Private */,
-      51,    0,  319,    2, 0x08 /* Private */,
-      52,    0,  320,    2, 0x08 /* Private */,
-      53,    0,  321,    2, 0x08 /* Private */,
+       4,    2,  236,    2, 0x0a /* Public */,
+       6,    4,  241,    2, 0x0a /* Public */,
+       6,    4,  250,    2, 0x0a /* Public */,
+       7,    2,  259,    2, 0x0a /* Public */,
+       8,    2,  264,    2, 0x0a /* Public */,
+      12,    0,  269,    2, 0x0a /* Public */,
+      13,    0,  270,    2, 0x0a /* Public */,
+      14,    0,  271,    2, 0x0a /* Public */,
+      15,    1,  272,    2, 0x0a /* Public */,
+      17,    0,  275,    2, 0x0a /* Public */,
+      18,    1,  276,    2, 0x0a /* Public */,
+      19,    1,  279,    2, 0x0a /* Public */,
+      20,    1,  282,    2, 0x0a /* Public */,
+      21,    0,  285,    2, 0x0a /* Public */,
+      22,    0,  286,    2, 0x0a /* Public */,
+      23,    0,  287,    2, 0x0a /* Public */,
+      24,    1,  288,    2, 0x0a /* Public */,
+      25,    0,  291,    2, 0x0a /* Public */,
+      26,    0,  292,    2, 0x0a /* Public */,
+      27,    1,  293,    2, 0x0a /* Public */,
+      29,    0,  296,    2, 0x0a /* Public */,
+      30,    0,  297,    2, 0x0a /* Public */,
+      31,    0,  298,    2, 0x0a /* Public */,
+      32,    1,  299,    2, 0x0a /* Public */,
+      35,    2,  302,    2, 0x0a /* Public */,
+      38,    0,  307,    2, 0x0a /* Public */,
+      39,    0,  308,    2, 0x0a /* Public */,
+      40,    0,  309,    2, 0x0a /* Public */,
+      41,    0,  310,    2, 0x0a /* Public */,
+      42,    0,  311,    2, 0x0a /* Public */,
+      43,    0,  312,    2, 0x0a /* Public */,
+      44,    0,  313,    2, 0x0a /* Public */,
+      45,    0,  314,    2, 0x0a /* Public */,
+      46,    0,  315,    2, 0x0a /* Public */,
+      47,    0,  316,    2, 0x0a /* Public */,
+      48,    0,  317,    2, 0x08 /* Private */,
+      49,    0,  318,    2, 0x08 /* Private */,
+      50,    2,  319,    2, 0x08 /* Private */,
+      51,    0,  324,    2, 0x08 /* Private */,
+      52,    0,  325,    2, 0x08 /* Private */,
+      53,    0,  326,    2, 0x08 /* Private */,
+      54,    1,  327,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -214,6 +218,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   55,
 
        0        // eod
 };
@@ -266,6 +271,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 40: _t->on_toExcel_clicked(); break;
         case 41: _t->on_roiColor2_clicked(); break;
         case 42: _t->on_roiDraw2_clicked(); break;
+        case 43: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -311,13 +317,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 43)
+        if (_id < 44)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 43;
+        _id -= 44;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 43)
+        if (_id < 44)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 43;
+        _id -= 44;
     }
     return _id;
 }

@@ -5061,6 +5061,9 @@ debug\moc_kingscontrol.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTh
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qregexp.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringmatcher.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTimer \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtimer.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbasictimer.h \
 		..\kings\kingscontrol.h
 	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtSql -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\kings\kingscontrol.h -o debug\moc_kingscontrol.cpp
 
@@ -6527,7 +6530,10 @@ debug\kingscontrol.obj: ..\kings\kingscontrol.cpp ..\kings\kingscontrol.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdatastream.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qregexp.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringmatcher.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTimer \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtimer.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbasictimer.h
 
 debug\laser.obj: ..\laser\laser.cpp ..\laser\laser.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QThread \

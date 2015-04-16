@@ -9,38 +9,38 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
 
-   ui->setupUi(this);
-   readSettings();
+    ui->setupUi(this);
+    readSettings();
 
-//初始化
-   isRunning=false;
-   isDrag=false;
-   isDrawing=false;
-   isAuto=false;
-   isRealTime=false;
-   leftRightPress=false;
-   leftPress=false;
-   rightPress=false;
-   index=0;
-   status=0;
-   pass=0;
-   preIndex=-1;
+    //初始化
+    isRunning=false;
+    isDrag=false;
+    isDrawing=false;
+    isAuto=false;
+    isRealTime=false;
+    leftRightPress=false;
+    leftPress=false;
+    rightPress=false;
+    index=0;
+    status=0;
+    pass=0;
+    preIndex=-1;
 
-   profile=new profileGet();
-   kings=new kingsControl();
-   ui->launchDevice->hide();
+    profile=new profileGet();
+    kings=new kingsControl();
+    ui->launchDevice->hide();
     debug.setFileName("debug.txt");
     debug.open(QIODevice::Append);
 
-   // plot = new Plot(ui->base->widget(2));
+    // plot = new Plot(ui->base->widget(2));
     QStringList str;
     str<<"value"<<"pointNum"<<"1280"<<"100";
 
-   // plot->initPlot(str);
-   // plot->insertCurve(0,0,"test");
-   // plot->setYScale(-100,100);
-   // plot->setXScale(-40,40);
-   // plot->resize(ui->base->widget(2)->size());
+    // plot->initPlot(str);
+    // plot->insertCurve(0,0,"test");
+    // plot->setYScale(-100,100);
+    // plot->setXScale(-40,40);
+    // plot->resize(ui->base->widget(2)->size());
     imgView=new imgListView();
     imgView->setLayout(ui->imgList);
 
@@ -52,9 +52,9 @@ MainWindow::MainWindow(QWidget *parent) :
     eventTimer->start(10);
     sum=new summarizing;
     sum->set_table(ui->tableWidget);
-	roiList=new summarizing;
-	roiList->set_table(ui->roiList);
-	
+    roiList=new summarizing;
+    roiList->set_table(ui->roiList);
+
     mygroup = new QButtonGroup;
     mygroup->addButton(ui->imgUp,0);
     mygroup->addButton(ui->imgDown,1);
@@ -74,16 +74,16 @@ MainWindow::MainWindow(QWidget *parent) :
     modifyItem=new QAction(QStringLiteral("修改"),this);
     connect(delItem,SIGNAL(triggered()),this,SLOT(action_delItem()));
     connect(modifyItem,SIGNAL(triggered()),this,SLOT(action_modifyItem()));
-//加载检测查块
+    //加载检测查块
     hal=new halconClass;
     ref=new reflectControl;
     robot=new Robot;
     robot->initSocked(set.value("robotIp","127.0.0.1").toString(),set.value("robotPort",4000).toInt());
-   // glWidget = new GLWidget;
-   // QGridLayout *layout=new QGridLayout;
-   // layout->addWidget(glWidget);
+    // glWidget = new GLWidget;
+    // QGridLayout *layout=new QGridLayout;
+    // layout->addWidget(glWidget);
     //ui->base->setLayout(layout);
-  //  writeData = new writeExcel;
+    //  writeData = new writeExcel;
 
     //设置对话框
     setDialog = new mySettings;
@@ -91,7 +91,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //point=new pointAnalyze;
 
-   //激活鼠标跟踪功能
+    //激活鼠标跟踪功能
     setMouseTracking(true);
     ui->centralWidget->setMouseTracking(true);
     ui->base->setMouseTracking(true);
@@ -110,8 +110,8 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
 {
     static QPoint start,end,threeDstart,threeDend;
     if (clickLabel* label = dynamic_cast<clickLabel*>(sender())){
-            qDebug()<<ui->imgList->indexOf(label);
-        }
+        qDebug()<<ui->imgList->indexOf(label);
+    }
     if(target==ui->base)
     {
 
@@ -138,42 +138,42 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
             QPoint m=mapFromGlobal(mouse->globalPos());
 
 
-           end=mouse->pos();
-           if(end.x()<0|end.y()<0|end.x()>ui->base->width()|end.y()>ui->base->height())
-               return QWidget::eventFilter(target,event);
-             ui->pos->setText(QString("%1,%2").arg(end.x()).arg(end.y()));
+            end=mouse->pos();
+            if(end.x()<0|end.y()<0|end.x()>ui->base->width()|end.y()>ui->base->height())
+                return QWidget::eventFilter(target,event);
+            ui->pos->setText(QString("%1,%2").arg(end.x()).arg(end.y()));
             //start=mouse->pos();
             if(isDrag)
             {
                 int x,y;
                 x=end.x()-threeDstart.x();
                 y=end.y()-threeDstart.y();
-               if(!isDrawing)
-               {
+                if(!isDrawing)
+                {
                     hal->moveImg(threeDstart.x()-end.x(),threeDstart.y()-end.y());
                     ui->view_box->update();
                     if(leftPress&rightPress)
                     {
-                         //  hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"move");
-						   hal->threedControl(threeDstart.y(),threeDstart.x(),end.y(),end.x(),"move");
+                        //  hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"move");
+                        hal->threedControl(threeDstart.y(),threeDstart.x(),end.y(),end.x(),"move");
                     }
                     else if(leftPress)
                     {
 
                         //   hal->threedControl(end.y(),end.x(),threeDstart.y(),threeDstart.x(),"rotate");
-						   hal->threedControl(threeDstart.y(),threeDstart.x(),end.y(),end.x(),"rotate");
+                        hal->threedControl(threeDstart.y(),threeDstart.x(),end.y(),end.x(),"rotate");
 
                     }
                     else if(rightPress)
                     {
-                         //  hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"scale");
-						    hal->threedControl(threeDstart.x(),threeDstart.y(),end.x(),end.y(),"scale");
+                        //  hal->threedControl(end.x(),end.y(),threeDstart.x(),threeDstart.y(),"scale");
+                        hal->threedControl(threeDstart.x(),threeDstart.y(),end.x(),end.y(),"scale");
 
                     }
-                     threeDstart=end;
-               }
+                    threeDstart=end;
+                }
             }
-		
+
         }
         if(event->type()==QEvent::MouseButtonRelease)
         {
@@ -218,15 +218,15 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
         if(event->type()==QEvent::ContextMenu)
         {
             QContextMenuEvent *mouse=static_cast<QContextMenuEvent *>(event);
-			
-		    int height=ui->roiList->horizontalHeader()->height();
-			QPoint pt=mouse->pos();
-			QPoint pt2=QPoint(0,height);
+
+            int height=ui->roiList->horizontalHeader()->height();
+            QPoint pt=mouse->pos();
+            QPoint pt2=QPoint(0,height);
 
             currentItem=ui->roiList->indexAt(pt-pt2).row();
-			
+
             qDebug()<<mouse->pos();
-			qDebug()<<pt-pt2;
+            qDebug()<<pt-pt2;
             qDebug()<<"item"<<currentItem;
             QMenu menu(this);
 
@@ -237,14 +237,14 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
         return QWidget::eventFilter(target,event);
     }
     else
-       return  QWidget::eventFilter(target,event);
+        return  QWidget::eventFilter(target,event);
 
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
 
-/*
+    /*
     ui->base->setStyleSheet(QLatin1String(
     "border:2px;\n"
     "border-radius:5px"));
@@ -287,11 +287,11 @@ void MainWindow::init_connect()
     connect(ui->settings,SIGNAL(clicked()),this,SLOT(on_textChanged()));
     connect(mygroup,SIGNAL(buttonClicked(int)),this,SLOT(controlImg(int)));
     connect(ref,SIGNAL(recvData(char*)),setDialog,SLOT(recvData(char*)));
-	//connect(ui->roiColor,SIGNAL(clicked()),this,SLOT(on_roiColor_clicked()));
+    //connect(ui->roiColor,SIGNAL(clicked()),this,SLOT(on_roiColor_clicked()));
 
 
     connect(MsgHandlerWapper::instance(),SIGNAL(message(QtMsgType,QString)),this,
-                    SLOT(outputMessage(QtMsgType,QString)));
+            SLOT(outputMessage(QtMsgType,QString)));
     //接收显示信号
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
     connect(hal,SIGNAL(reConnect()),kings,SLOT(startGetData()));
@@ -301,7 +301,7 @@ void MainWindow::init_connect()
     connect(hal,SIGNAL(sendHeightSub(QString,double,double,double))
             ,this,SLOT(recvHeightSub(QString,double,double,double)));
     connect(kings,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
-   // connect(kings,SIGNAL(dispSingleFrame(unsigned short*,unsigned short*,double*,double*,int)),
+    // connect(kings,SIGNAL(dispSingleFrame(unsigned short*,unsigned short*,double*,double*,int)),
     //        plot,SLOT(upScanControlData(unsigned short*,unsigned short*,double*,double*,int)));
     connect(kings,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
     //connect(profile,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
@@ -373,10 +373,10 @@ void MainWindow::dispFrame(unsigned char *buf,int size)
     palette.setBrush(QPalette::Window,QBrush(
                          QImage::fromData(buf,size).scaled(ui->videoFrame->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation)));
 
-   ui->videoFrame->setPalette(palette);
+    ui->videoFrame->setPalette(palette);
 }
 /*
-	显示控制
+    显示控制
 */
 void MainWindow::dispImg()
 {
@@ -385,25 +385,25 @@ void MainWindow::dispImg()
 
     switch(ui->base->currentIndex())
     {
-        case 0:
-			status=3;
-			hal->disp_img();
-            break;
-        case 1:
-            profile->getVideoFrame();
-            palette.setBrush(QPalette::Window,QBrush(
-                                 QImage("frame.bmp").scaled(ui->videoFrame->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation)));
+    case 0:
+        status=3;
+        hal->disp_img();
+        break;
+    case 1:
+        profile->getVideoFrame();
+        palette.setBrush(QPalette::Window,QBrush(
+                             QImage("frame.bmp").scaled(ui->videoFrame->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation)));
 
-            ui->videoFrame->setPalette(palette);
-            break;
-        case 2:
-            //profile->getSingleFrame();
-            break;
-        case 3:
-            status=3;
-            hal->disp_img();
-            //hal->RectHeightSub();
-            break;
+        ui->videoFrame->setPalette(palette);
+        break;
+    case 2:
+        //profile->getSingleFrame();
+        break;
+    case 3:
+        status=3;
+        hal->disp_img();
+        //hal->RectHeightSub();
+        break;
     }
 
 
@@ -426,8 +426,8 @@ void MainWindow::dispImg()
 */
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
-	if(isDrawing)
-		return;
+    if(isDrawing)
+        return;
     QPoint m=mapFromGlobal(event->globalPos());
 
     if(QRect(ui->view_box->pos().x()+ui->base->pos().x(),ui->view_box->pos().y()+ui->base->pos().y(),ui->base->width()
@@ -483,7 +483,7 @@ void MainWindow::searchFile(QString path)
         if (info.isFile())
         {
 
-          //  QListWidgetItem *item=new QListWidgetItem(info.fileName());
+            //  QListWidgetItem *item=new QListWidgetItem(info.fileName());
 
             fileList.append(info.filePath());
 
@@ -497,25 +497,25 @@ void MainWindow::searchFile(QString path)
 void MainWindow::detect()
 {
 
-  //  (hal->*(hal->menu[8]))();
-   (hal->*hal->menu[8])();
+    //  (hal->*(hal->menu[8]))();
+    (hal->*hal->menu[8])();
     //QMessageBox::about(this,QStringLiteral("别急"),QStringLiteral("请先打开需要检测的文件~"));
 
 
     if(isAuto&isRunning)
     {
-            if(index<fileList.size()-1)
-            {
-                index++;
+        if(index<fileList.size()-1)
+        {
+            index++;
 
-            }
-            else
-            {
-                index=0;
-                emit startButton_clicked();
-            }
+        }
+        else
+        {
+            index=0;
+            emit startButton_clicked();
+        }
 
-            selectImg(index);
+        selectImg(index);
 
     }
 }
@@ -529,14 +529,14 @@ void MainWindow::detect()
 */
 void MainWindow::startButton_clicked()
 {
-	qDebug()<<"start";
-   this->on_actionReset_triggered();
+    qDebug()<<"start";
+    this->on_actionReset_triggered();
     //hal->RectHeightSub();
-   pass=0;
-   ui->rate->setText("0");
+    pass=0;
+    ui->rate->setText("0");
 
-   if(isAuto)
-   {
+    if(isAuto)
+    {
         if(!isRunning)
         {
             ui->startButton->setText(QStringLiteral("停止检测"));
@@ -548,35 +548,35 @@ void MainWindow::startButton_clicked()
             ui->startButton->setText(QStringLiteral("开始检测"));
             isRunning=false;
         }
-   }
-   else
-   {
+    }
+    else
+    {
 
-       switch(ui->base->currentIndex())
-       {
-            case 0:
-                profile->startTrigger();
-                break;
-           case 1:
-                profile->startVedio();
-               break;
-           case 2:
-                kings->startGetData();
-                //profile->startSingleFrame();
-               break;
-           case 3:
-                status=2;
-               hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
-               //profile->GetProfiles_Callback();
-               //profile->start();
-               //profile->startTrigger();
-                kings->startGetData();
+        switch(ui->base->currentIndex())
+        {
+        case 0:
+            profile->startTrigger();
+            break;
+        case 1:
+            profile->startVedio();
+            break;
+        case 2:
+            kings->startGetData();
+            //profile->startSingleFrame();
+            break;
+        case 3:
+            status=2;
+            hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
+            //profile->GetProfiles_Callback();
+            //profile->start();
+            //profile->startTrigger();
+            kings->startGetData();
 
-               break;
-       }
+            break;
+        }
 
 
-   }
+    }
 
 }
 
@@ -661,35 +661,35 @@ void MainWindow::on_action_Quit_triggered()
 */
 void MainWindow::controlImg(int index)
 {
-	if(isDrawing)
-		return;
+    if(isDrawing)
+        return;
     switch(index)
     {
-        case 0:
-            hal->moveImg(0,100);
-            hal->set_pos(0,100);
-            break;
-        case 1:
-            hal->moveImg(0,-100);
-            hal->set_pos(0,-100);
-            break;
-        case 2:
-            hal->moveImg(100,0);
-            hal->set_pos(100,0);
-            break;
-        case 3:
-            hal->moveImg(-100,0);
-            hal->set_pos(-100,0);
-            break;
-        case 4:
-            hal->zoomOut();
-            break;
-        case 5:
-            hal->zoomIn();
-            break;
-        case 6:
-            hal->reset();
-            break;
+    case 0:
+        hal->moveImg(0,100);
+        hal->set_pos(0,100);
+        break;
+    case 1:
+        hal->moveImg(0,-100);
+        hal->set_pos(0,-100);
+        break;
+    case 2:
+        hal->moveImg(100,0);
+        hal->set_pos(100,0);
+        break;
+    case 3:
+        hal->moveImg(-100,0);
+        hal->set_pos(-100,0);
+        break;
+    case 4:
+        hal->zoomOut();
+        break;
+    case 5:
+        hal->zoomIn();
+        break;
+    case 6:
+        hal->reset();
+        break;
     }
 
 }
@@ -726,7 +726,7 @@ void MainWindow::on_loadFile_clicked()
 
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
     hal->read_img(set.value("path","test.tif").toString());
-	
+
 }
 
 
@@ -735,7 +735,7 @@ void MainWindow::on_loadFile_clicked()
 
 void MainWindow::paintEvent(QPaintEvent *event)
 {
-	
+
     event->accept();
     //hal->disp_img();
 
@@ -782,11 +782,11 @@ void MainWindow::outputMessage(QtMsgType type,QString str)
 */
 void MainWindow::recvHeightSub(int,double min,double max,double range)
 {}
-void MainWindow::recvHeightSub(QString name,double min,double max,double range)
+void MainWindow::recvHeightSub(QString name,double min1,double max1,double range)
 {
     status=0;
     int i;
-
+    double min,max;
     QMap<QString,QVariant> data=set.value("dataList").toMap();
     for(i=0;i<data.keys().size();i++)
     {
@@ -795,8 +795,14 @@ void MainWindow::recvHeightSub(QString name,double min,double max,double range)
     }
     ui->tableWidget->setSortingEnabled(false);
     sum->add_row();
+    QMap<QString,QVariant> roi=set.value("team/"+name).toMap();
+    min=roi.value("min").toDouble();
+    max=roi.value("max").toDouble();
 
-    sum->add_item(0,QString("OK"));
+    if(range<min|range>max)
+        sum->add_item(0,QString("NG"));
+    else
+        sum->add_item(0,QString("OK"));
     sum->add_item(1,QStringLiteral("高差"));
     sum->add_item(2,QStringLiteral("分组")+QString::number(i+1));
     sum->add_item(3,name);
@@ -829,8 +835,14 @@ void MainWindow::recvPlaneness(int team,double result1)
 
     ui->tableWidget->setSortingEnabled(false);
     sum->add_row();
-
-    sum->add_item(0,QString("OK"));
+    QMap<QString,QVariant> map=set.value("limit").toMap();
+    QStringList str=map.value(QString::number(team)).toStringList();
+    double min=str.size()>0?str.at(0).toDouble():0;
+    double max=str.size()>0?str.at(1).toDouble():0;
+    if(result1<min|result1>max)
+        sum->add_item(0,QString("NG"));
+    else
+        sum->add_item(0,QString("OK"));
     sum->add_item(1,QStringLiteral("平面度"));
     sum->add_item(2,QStringLiteral("分组")+QString::number(team+1));
     sum->add_item(3,"N/A");
@@ -927,12 +939,12 @@ void MainWindow::on_singleFrameButton_clicked()
 void MainWindow::on_threeDButton_clicked()
 {
 
-     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
-     //stopSingleFrame();
-     ui->startButton->setText(QStringLiteral("开始扫描"));
-     ui->base->setCurrentIndex(0);
+    hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
+    //stopSingleFrame();
+    ui->startButton->setText(QStringLiteral("开始扫描"));
+    ui->base->setCurrentIndex(0);
     // profile->startTrigger();
-     hal->setMode("3D");
+    hal->setMode("3D");
 }
 /*
     2D模式按钮事件
@@ -957,13 +969,38 @@ void MainWindow::on_roiDraw_clicked()
     if(isDrawing)
         return;
     isDrawing=true;
-
-    hal->drawRect(ui->roiName->text(),QString::number(ui->roiColor->palette().background().color().rgb()),ui->team->currentIndex(),
-                  ui->limitValue->text().toDouble(),ui->func->currentIndex());
+    double min,max;
+    min=ui->minValue1->text().toDouble();
+    max=ui->maxValue1->text().toDouble();
+    if(min>max)
+    {
+        double tmp=min;
+        min=max;
+        max=tmp;
+        ui->minValue1->setText(QString::number(min));
+        ui->maxValue1->setText(QString::number(max));
+    }
+    QMap<QString,QVariant> map,limit;
+    map.insert("name",ui->roiName->text());
+    map.insert("color",ui->roiColor->palette().background().color().rgb());
+    map.insert("team",ui->team->currentIndex());
+    map.insert("min",ui->minValue1->text());
+    map.insert("max",ui->maxValue1->text());
+    map.insert("func",ui->func->currentIndex());
+    hal->drawRect(map);
     qDebug()<<ui->roiName->text();
-    qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
+    qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->func->currentIndex();
     isDrawing=false;
+    if(ui->func->currentIndex()==2)
+    {
+        QStringList str;
 
+        str<<ui->minValue1->text();
+        str<<ui->maxValue1->text();
+        limit.insert(QString::number(ui->team->currentIndex()),str);
+        set.setValue("limit",limit);
+        set.sync();
+    }
 }
 /*
     刷新矩形框列表
@@ -972,7 +1009,7 @@ void MainWindow::flushRoiList(QStringList ll)
 {
     roiList->clear_table();
 
-
+    ui->roiList->setSortingEnabled(false);
     QStringList line;
 
 
@@ -981,29 +1018,34 @@ void MainWindow::flushRoiList(QStringList ll)
     for(int i=0;i<list.size();i++)
     {
         QMap<QString,QVariant> roi=set.value("team/"+list.keys().at(i)).toMap();
-        ui->tableWidget->setSortingEnabled(false);
-		roiList->add_row();
+
+        roiList->add_row();
         roiList->add_item(0,list.keys().at(i));
 
         roiList->add_item(1,QString::number(roi.value("team").toInt()+1));
         switch(roi.value("func").toInt())
         {
-            case 0:
-                roiList->add_item(2,QStringLiteral("定位"));
-                break;
-            case 1:
-                roiList->add_item(2,QStringLiteral("搜索"));
-                break;
-            case 2:
-                roiList->add_item(2,QStringLiteral("计算平面"));
-                break;
-            case 3:
-                roiList->add_item(2,QStringLiteral("计算高差"));
-                break;
+        case 0:
+            roiList->add_item(2,QStringLiteral("定位"));
+            break;
+        case 1:
+            roiList->add_item(2,QStringLiteral("搜索"));
+            break;
+        case 2:
+            roiList->add_item(2,QStringLiteral("计算平面度"));
+            roiList->add_item(3,roi.value("min").toString());
+            roiList->add_item(4,roi.value("max").toString());
+            break;
+        case 3:
+            roiList->add_item(2,QStringLiteral("计算高差"));
+            roiList->add_item(3,roi.value("min").toString());
+            roiList->add_item(4,roi.value("max").toString());
+            break;
         }
-        ui->tableWidget->setSortingEnabled(true);
-    }
 
+
+    }
+    ui->roiList->setSortingEnabled(true);
 }
 /*
     矩形框列表删除事件
@@ -1013,11 +1055,11 @@ void MainWindow::action_delItem()
 
 
     QString name=ui->roiList->item(currentItem,0)->text();
-	if(currentItem==-1)
-		return;
+    if(currentItem==-1)
+        return;
 
     ui->roiList->removeRow(currentItem);
-	ui->roiList->update();
+    ui->roiList->update();
     hal->delRect(name);
 }
 /*
@@ -1036,15 +1078,15 @@ void MainWindow::statusCheck()
     static int i=0;
     if(profile->testConnect())
     {
-       // ui->connect->setText(QStringLiteral("已连接"));
+        // ui->connect->setText(QStringLiteral("已连接"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-        "color: rgb(0, 0, 0);"));
+                                                     "color: rgb(0, 0, 0);"));
     }
     else
     {
         //ui->connect->setText(QStringLiteral("未连接"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-        "color: rgb(255, 0, 0);"));
+                                                     "color: rgb(255, 0, 0);"));
 
     }
     if(i>100)
@@ -1054,23 +1096,23 @@ void MainWindow::statusCheck()
     }
     switch(status)
     {
-        case 0:
+    case 0:
 
-            updataProsessBar(QStringLiteral("已完成"),100);
-            i=0;
-            break;
-        case 1:
-            updataProsessBar(QStringLiteral("读取图像中"),i);
-            i+=5;
-            break;
-        case 2:
-            updataProsessBar(QStringLiteral("激光扫描中"),i);
-            i+=5;
-            break;
-        case 3:
-            updataProsessBar(QStringLiteral("数据处理中"),i);
-            i+=5;
-            break;
+        updataProsessBar(QStringLiteral("已完成"),100);
+        i=0;
+        break;
+    case 1:
+        updataProsessBar(QStringLiteral("读取图像中"),i);
+        i+=5;
+        break;
+    case 2:
+        updataProsessBar(QStringLiteral("激光扫描中"),i);
+        i+=5;
+        break;
+    case 3:
+        updataProsessBar(QStringLiteral("数据处理中"),i);
+        i+=5;
+        break;
     }
 }
 /*
@@ -1094,7 +1136,7 @@ void MainWindow::recvHeartPack()
     static QTime time;
     pass++;
     ui->rate->setText(QString::number(pass));
-/*
+    /*
     if(pass%100==0)
         time.start();
     pass++;
@@ -1109,24 +1151,24 @@ void MainWindow::recvHeartPack()
 }
 void MainWindow::on_roiColor_clicked()
 {
-	QColor color=QColorDialog::getColor();  
-	if(color.isValid()){  
-		int r,g,b;
-		color.getRgb(&r,&g,&b);
-		QString str;
-		str=QString("background-color: rgb(%1,%2,%3)").arg(r).arg(g).arg(b);
-		ui->roiColor->setStyleSheet(str.toUtf8().data());
-		//QPalette pal=ui->roiColor->palette();
-		//pal.setColor(QPalette::Active,QPalette::Button, color); 
-		//ui->roiColor->setPalette(pal);
-		qDebug()<<color.rgb();
-		qDebug()<<((color.rgb()&(0xff<<16))>>16)<<((color.rgb()&(0xff<<8))>>8)<<(color.rgb()&(0xff));
-		ui->roiColor->update();
-	}  
-	//QPalette pal    = ui->roiColor->palette();
-	//QBrush brush = pal.background();
-	//QColor col      = brush.color();
-	
+    QColor color=QColorDialog::getColor();
+    if(color.isValid()){
+        int r,g,b;
+        color.getRgb(&r,&g,&b);
+        QString str;
+        str=QString("background-color: rgb(%1,%2,%3)").arg(r).arg(g).arg(b);
+        ui->roiColor->setStyleSheet(str.toUtf8().data());
+        //QPalette pal=ui->roiColor->palette();
+        //pal.setColor(QPalette::Active,QPalette::Button, color);
+        //ui->roiColor->setPalette(pal);
+        qDebug()<<color.rgb();
+        qDebug()<<((color.rgb()&(0xff<<16))>>16)<<((color.rgb()&(0xff<<8))>>8)<<(color.rgb()&(0xff));
+        ui->roiColor->update();
+    }
+    //QPalette pal    = ui->roiColor->palette();
+    //QBrush brush = pal.background();
+    //QColor col      = brush.color();
+
 }
 
 
@@ -1152,9 +1194,24 @@ void MainWindow::on_roiDraw2_clicked()
 {
     isDrawing=true;
 
-    hal->drawRect(ui->roiName->text(),QString::number(ui->roiColor->palette().background().color().rgb()),ui->team->currentIndex(),
-                  ui->limitValue->text().toDouble(),ui->func->currentIndex());
+    //hal->drawRect(ui->roiName->text(),QString::number(ui->roiColor->palette().background().color().rgb()),ui->team->currentIndex(),
+     //             ui->limitValue->text().toDouble(),ui->func->currentIndex());
     qDebug()<<ui->roiName->text();
-           qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
+   // qDebug()<<ui->roiColor->palette().background().color().rgb()<<ui->team->currentIndex()<<ui->limitValue->text()<<ui->func->currentIndex();
     isDrawing=false;
+}
+
+void MainWindow::on_func_currentIndexChanged(int index)
+{
+    if(index==0|index==1)
+    {
+        ui->minValue1->setEnabled(false);
+        ui->maxValue1->setEnabled(false);
+    }
+    else
+    {
+        ui->minValue1->setEnabled(true);
+        ui->maxValue1->setEnabled(true);
+    }
+
 }

@@ -131,6 +131,7 @@ public slots:
      void getImagebyPointer3(double *x,double *y,double *z,int width,int height);
     void close_the_window();
     void drawRect(QString name,QString color,int team,double limit,int func);
+    void drawRect(QMap<QString,QVariant> map);
     void calculate();
     void delRect(QString);
     void RectHeightSub(int team);
