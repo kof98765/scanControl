@@ -279,6 +279,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         tableWidget->setSelectionMode(QAbstractItemView::MultiSelection);
         tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
         tableWidget->setSortingEnabled(true);
@@ -395,7 +396,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 151, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 186, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -507,6 +508,7 @@ public:
         base = new QStackedWidget(view_box);
         base->setObjectName(QStringLiteral("base"));
         base->setGeometry(QRect(10, 30, 591, 541));
+        base->setCursor(QCursor(Qt::ArrowCursor));
         base->setAutoFillBackground(true);
         base->setStyleSheet(QStringLiteral(""));
         base->setMidLineWidth(0);

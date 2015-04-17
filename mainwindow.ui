@@ -137,6 +137,9 @@
       </item>
       <item row="1" column="0">
        <widget class="QTableWidget" name="tableWidget">
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        </property>
         <property name="selectionMode">
          <enum>QAbstractItemView::MultiSelection</enum>
         </property>
@@ -425,7 +428,7 @@
        <rect>
         <x>310</x>
         <y>40</y>
-        <width>151</width>
+        <width>186</width>
         <height>81</height>
        </rect>
       </property>
@@ -665,6 +668,9 @@ border-radius:25px</string>
        <width>591</width>
        <height>541</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
      </property>
      <property name="autoFillBackground">
       <bool>true</bool>

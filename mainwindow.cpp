@@ -31,7 +31,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->launchDevice->hide();
     debug.setFileName("debug.txt");
     debug.open(QIODevice::Append);
-
+    out.setFileName("data.txt");
+    out.open(QIODevice::Append);
     // plot = new Plot(ui->base->widget(2));
     QStringList str;
     str<<"value"<<"pointNum"<<"1280"<<"100";
@@ -293,6 +294,7 @@ void MainWindow::init_connect()
     connect(MsgHandlerWapper::instance(),SIGNAL(message(QtMsgType,QString)),this,
             SLOT(outputMessage(QtMsgType,QString)));
     //接收显示信号
+    connect(hal,SIGNAL(clearMemory()),kings,SLOT(clearMemory()));
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
     connect(hal,SIGNAL(reConnect()),kings,SLOT(startGetData()));
     connect(hal,SIGNAL(sendPlaneness(int,double)),this,SLOT(recvPlaneness(int,double)));
@@ -799,31 +801,39 @@ void MainWindow::recvHeightSub(QString name,double min1,double max1,double range
     min=roi.value("min").toDouble();
     max=roi.value("max").toDouble();
 
-
+    out.write(QTime::currentTime().toString().toUtf8()+',');
     if(range<min|range>max)
     {
         sum->add_item(0,QString("NG"));
 
         ui->connect->setText(QStringLiteral("NG!"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-                                                     "color: rgb(255, 0, 0);"));
+                                                  "color: rgb(255, 0, 0);"));
+        out.write("NG,");
     }
     else
     {
         sum->add_item(0,QString("OK"));
         ui->connect->setText(QStringLiteral("OK!!"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-                                                     "color: rgb(0, 0, 0);"));
+                                                   "color: rgb(0, 0, 0);"));
+        out.write("OK,");
     }
     sum->add_item(1,QStringLiteral("高差"));
+    out.write(QString(QStringLiteral("高差")+',').toUtf8());
     sum->add_item(2,QStringLiteral("分组")+QString::number(i+1));
+    out.write(QString(QStringLiteral("分组")+QString::number(i+1)+',').toUtf8());
     sum->add_item(3,name);
+    out.write((name+',').toUtf8());
     sum->add_item(4,QString("%1").arg(range));
+    out.write(QString("%1\r\n").arg(range).toUtf8());
 
 
 
 
     ui->tableWidget->setSortingEnabled(true);
+     ui->tableWidget->setCurrentCell(ui->tableWidget->rowCount()-1,0);
+    out.flush();
 }
 
 /*
@@ -840,7 +850,7 @@ void MainWindow::recvHeightSub(QString name,double min1,double max1,double range
 void MainWindow::recvPlaneness(int team,double result1)
 {
     status=0;
-
+    QStringList datastring;
 
 
     QMap<QString,QVariant> data=set.value("dataList").toMap();
@@ -851,11 +861,12 @@ void MainWindow::recvPlaneness(int team,double result1)
     QStringList str=map.value(QString::number(team)).toStringList();
     double min=str.size()>0?str.at(0).toDouble():0;
     double max=str.size()>0?str.at(1).toDouble():0;
+    out.write(QTime::currentTime().toString().toUtf8()+',');
     if(result1<min|result1>max)
     {
         sum->add_item(0,QString("NG"));
 
-
+        out.write(QByteArray("NG,"));
         ui->connect->setText(QStringLiteral("NG!"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
                                                      "color: rgb(255, 0, 0);"));
@@ -865,17 +876,23 @@ void MainWindow::recvPlaneness(int team,double result1)
         sum->add_item(0,QString("OK"));
         ui->connect->setText(QStringLiteral("OK!!"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-                                                     "color: rgb(0, 0, 0);"));
+                                               "color: rgb(0, 0, 0);"));
+        out.write(QByteArray("OK,"));
     }
     sum->add_item(1,QStringLiteral("平面度"));
+    out.write(QString(QStringLiteral("平面度")+',').toUtf8());
     sum->add_item(2,QStringLiteral("分组")+QString::number(team+1));
+    out.write(QString(QStringLiteral("分组")+QString::number(team+1)+',').toUtf8());
     sum->add_item(3,"N/A");
+    out.write("N/A,");
     sum->add_item(4,QString("%1").arg(result1));
-
+    out.write(QString("%1\r\n").arg(result1).toUtf8());
 
     //sum->add_item(7,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
 
     ui->tableWidget->setSortingEnabled(true);
+    ui->tableWidget->setCurrentCell(ui->tableWidget->rowCount()-1,0);
+    out.flush();
 }
 /*
     清除表格,测试用
@@ -1085,10 +1102,10 @@ void MainWindow::action_delItem()
 {
 
 
-    QString name=ui->roiList->item(currentItem,0)->text();
+
     if(currentItem==-1)
         return;
-
+    QString name=ui->roiList->item(currentItem,0)->text();
     ui->roiList->removeRow(currentItem);
     ui->roiList->update();
     hal->delRect(name);

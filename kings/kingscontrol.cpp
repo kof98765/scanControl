@@ -11,6 +11,7 @@ kingsControl::kingsControl(QObject *parent) :
     frequency=10;
     receiveCount=0;
     isConnected=false;
+    f.setFileName("kings.debug");
     qDebug()<<"init kings";
     CRc::Rc rc = CRc::Ok;
         // Initialize the DLL.
@@ -20,6 +21,10 @@ kingsControl::kingsControl(QObject *parent) :
 kingsControl::~kingsControl()
 {
 
+}
+void kingsControl::clearMemory()
+{
+    LJV7IF_ClearMemory(DEVICE_ID);
 }
 void kingsControl::initDevice()
 {
@@ -53,6 +58,7 @@ void kingsControl::usbMode()
         isConnected=false;
         return;
     }
+    LJV7IF_ClearMemory(DEVICE_ID);
     isConnected=true;
     qDebug()<<"usb mode is init";
 
@@ -80,7 +86,7 @@ void kingsControl::EthernetMode()
         isConnected=false;
         return;
     }
-
+    LJV7IF_ClearMemory(DEVICE_ID);
     rc = CRc::Ok;
 
     LJV7IF_TARGET_SETTING settings;
@@ -352,7 +358,7 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
         //_profileData.SaveProfile("filepath");
 
 
-        receiveCount++;
+
 
         if((receiveCount+1)==set.value("profileCount").toInt())
         {
@@ -383,9 +389,10 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
                 stopGetData();
             }
             receiveCount=0;
+            return;
 
         }
-
+        receiveCount++;
     }
 
     //delete[]bufferArray;

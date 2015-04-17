@@ -143,6 +143,7 @@ public slots:
 signals:
     void detectFinish();
     void stopMove();
+    void clearMemory();
     void sumResult(int type,int num);
     void badResult(int type,int x,int y,int width,int height,int length);
     void dispImg();

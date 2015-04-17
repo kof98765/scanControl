@@ -11,6 +11,7 @@
 #include <QSettings>
 #include <QDebug>
 #include <QTimer>
+#include <QFile>
 #define _cdecl
 using namespace std;
 static void* obj;
@@ -41,7 +42,7 @@ private:
     QTimer timer;
     double minMeasuringRange;
     double maxMeasuringRange;
-
+    QFile f;
 signals:
     void heartPack();
     void stopSignal();
@@ -52,6 +53,7 @@ signals:
 public slots:
     void initDevice();
     void usbMode();
+    void clearMemory();
     void EthernetMode();
     void startGetEthernetData();
     void startGetUsbData();

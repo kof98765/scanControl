@@ -122,6 +122,7 @@ private:
     QFile debug;
     kingsControl *kings;
     Plot *plot;
+    QFile out;
     QDialog *dataDialog;
     profileGet *profile;
     summarizing *sum;

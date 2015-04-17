@@ -18,7 +18,8 @@ halconClass::halconClass(QObject *parent) :
     is3D=false;
     hasData=false;
     HomMat2D=NULL;
-
+    img_width=0;
+    img_height=0;
     detect_action tmp[9]={};
     hInstance = LoadLibrary("PCL_Library_Dll.dll");
     if(hInstance==NULL)
@@ -44,7 +45,10 @@ void halconClass::open_the_window(int handle,int width,int height)
 
     open_window(0,0,width,height,handle,"visible","",&WindowHandle);
     HDevWindowStack::Push(WindowHandle);
-    set_part(WindowHandle,0,0,1024-1,1280-1);
+    if(img_width!=0&img_height!=0)
+        set_part(WindowHandle,0,0,img_height,img_width*yScale);
+    else
+        set_part(WindowHandle,0,0,1024-1,1280-1);
     disp_img();
     emit flushRoiList(roiList.keys());
     win_width=width;
@@ -110,7 +114,12 @@ void halconClass::clearData()
     if (HDevWindowStack::IsOpen()&hasData)
 	{
 		  //Image.Reset();
+        for(int i=0;i<imgList.size();i++)
+        {
+            clear_obj(*imgList.at(i));
+        }
         imgList.clear();
+
         emit deleteAllImg();
         index=0;
         matList.clear();
@@ -154,7 +163,7 @@ void halconClass::setMode(QString str)
     {
         Hlong w,h;
         get_image_size(Image,&w,&h);
-        set_part(WindowHandle,0,0,win_height,img_width);
+        set_part(WindowHandle,0,0,img_height,img_width*yScale);
         img_width=w;
         img_height=h;
         xScale=img_width/win_width;
@@ -188,6 +197,7 @@ void halconClass::selectImg(int i)
     if(imgList.size()<(i+1))
         return;
     index=i;
+
     copy_image(*imgList.at(i),&Image);
     disp_img();
 }
@@ -488,6 +498,9 @@ void halconClass::clearRect()
 {
 
 }
+/*
+    删除区域
+*/
 void halconClass::delRect(QString name)
 {
 
@@ -531,11 +544,11 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
     int unit=map.value("unit").toInt();
     int drawType=map.value("drawType").toInt();
     if(name.isEmpty())
-        name="rect";
+        name="rect000";
     while(set.contains("team/"+name))
     {
 
-        name=QString("%1_%2").arg(name.mid(0,name.lastIndexOf("_"))).arg(i++);
+        name=QString("rect%1").arg(i++,3,10,QLatin1Char('0'));
     }
     HTuple  Row, Column, Row2, Column2,Phi,Length1,Length2, Max;
     QStringList str;
@@ -783,6 +796,12 @@ void halconClass::matchTemplate(int team)
                 ret=(*cal)(*imgList.at(roi.value("index").toInt()),roi.value("Row").toDouble(), roi.value("Column").toDouble(), roi.value("Row2").toDouble(), roi.value("Column2").toDouble(),1,minRange,maxRange,TemplateID,&Row,&Column,&hv_Angle,&Result);
 
                 qDebug()<<"ret ="<<ret;
+                if(ret==-1)
+                {
+                    qDebug()<<"at lease one not match";
+                    emit Error("match fail!!");
+                    return;
+                }
                 if(ret==1)
                 {
                     QList<HTuple> tmp;
@@ -899,7 +918,7 @@ void halconClass::createTemplate(int team)
     qDebug()<<QStringLiteral("生成模板时间:")<<time.elapsed()<<"ms";
 }
 /*
-    取平面拟合点
+    取平面拟合点,计算平面度
 */
 void halconClass::planePoint(int team)
 {
@@ -1103,12 +1122,14 @@ void halconClass::RectHeightSub(int team)
 
         if(num==0)
             return;
+        qDebug()<<"creat cloud";
+        double result;
         PointCloud::Ptr newCloud(new PointCloud);
-        (*cloud)(&x[0],&y[0],&z[0],in,newCloud);
-
+        result=(*cloud)(&x[0],&y[0],&z[0],in,newCloud);
+        qDebug()<<(result==-1?"creat fail":"create sussful");
         Vector4f vec;
 
-        double result;
+
 
         result=(*comp)(newCloud,vec);
         qDebug()<<"comp"<<result;
@@ -1149,6 +1170,7 @@ void halconClass::RectHeightSub(int team)
 void halconClass::calculate()
 {
    // emit reConnect();
+    //emit clearMemory();
     for(int i=0;i<dataList.size();i++)
     {
 
@@ -1357,7 +1379,9 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     gen_image_const(&Imagetemp,"real",w,set.value("profileCount",1000).toUInt()>h?set.value("profileCount",1000).toUInt():h);
     get_image_pointer1(Imagetemp,(long*)&pointer,type,&width,&height);
     scale=win_width/w;
-    set_part(WindowHandle,0,0,win_height,w);
+    xScale=w/win_width;
+    yScale=h/win_height;
+    set_part(WindowHandle,0,0,h,w*yScale);
 
     for (int row=0; row<h; row++)
     {
@@ -1379,7 +1403,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     }
     write_image(Imagetemp,"tiff",0,QString("test%1").arg(num).toUtf8().data());
 
-    copy_image(Imagetemp,&Image);
+    copy_obj(Imagetemp,&Image,1,1);
 
     if(h>=set.value("profileCount",1000).toUInt()|isLoadFile)
 	{
@@ -1387,10 +1411,11 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 		img_height=height;
         xScale=width/win_width;
         yScale=height/win_height;
-        Hobject *tmp=&Imagetemp;
+        Hobject *tmp=new Hobject;
         //copy_image(Imagetemp,tmp);
+        copy_obj(Imagetemp,tmp,1,1);
         imgList.push_back(tmp);
-
+        qDebug("tmp=%x",tmp);
 
         num++;
         emit addImg(tmp);
@@ -1399,7 +1424,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
         if(imgList.size()>set.value("imgNum",8).toInt())
         {
             Hobject *obj=imgList.takeFirst();
-
+            qDebug("obj=%x",obj);
             clear_obj(*obj);
 
             emit deleteImg(0);
@@ -1469,7 +1494,7 @@ void halconClass::compoundImg(int xOffset,int yOffset)
     gen_image_const(&Image,"real",w,h);
     copy_image(img,&Image);
     get_image_size(Image,&width,&height);
-    set_part(WindowHandle,0,0,height,width);
+    set_part(WindowHandle,0,0,height,width*yScale);
     //}catch (HException &HDevExpDefaultException)
    // {
    //     HDevExpDefaultException.ToHTuple(&hv_Exception);
