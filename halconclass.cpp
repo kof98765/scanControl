@@ -46,7 +46,7 @@ void halconClass::open_the_window(int handle,int width,int height)
     open_window(0,0,width,height,handle,"visible","",&WindowHandle);
     HDevWindowStack::Push(WindowHandle);
     if(img_width!=0&img_height!=0)
-        set_part(WindowHandle,0,0,img_height,img_width*yScale);
+        resizePart();
     else
         set_part(WindowHandle,0,0,1024-1,1280-1);
     disp_img();
@@ -67,24 +67,26 @@ void halconClass::close_the_window()
 }
 void halconClass::resizePart()
 {
-    double ratio_win=win_width/win_height;
-    double ratio_img=img_width/img_height;
+    double ratio_win=(double)win_width/win_height;
+    double ratio_img=(double)img_width/img_height;
     int _beginRow, _begin_Col, _endRow, _endCol;
 
     if (ratio_win >= ratio_img)
     {
+
         _beginRow = 0;
         _endRow = img_height - 1;
-        _begin_Col = (int)(-img_width * (ratio_win / ratio_img - 1) / 2);
-        _endCol = (int)(img_width + img_width * (ratio_win / ratio_img - 1) / 2);
+        _begin_Col = (int)(-img_width * (ratio_win / ratio_img - 1.0) / 2.0);
+        _endCol = (int)(img_width + img_width * (ratio_win / ratio_img - 1.0) / 2.0);
     }
     else
     {
         _begin_Col = 0;
         _endCol = img_width - 1;
-        _beginRow = (int)(-img_height * (ratio_img / ratio_win - 1) / 2);
-        _endRow = (int)(img_height + img_height * (ratio_img / ratio_win - 1) / 2);
+        _beginRow = (int)(-img_height * (ratio_img / ratio_win - 1.0) / 2.0);
+        _endRow = (int)(img_height + img_height * (ratio_img / ratio_win - 1.0) / 2.0);
     }
+
     set_part(WindowHandle,_beginRow,_begin_Col,_endRow,_endCol);
 }
 /*
@@ -120,12 +122,13 @@ void halconClass::read_img(QString str)
         emit Error("thi image type is byte,not real!!");
         return;
     }
+    img_width=Width[0].I();
+    img_height=Height[0].I();
+    xScale=Width[0].I()/win_width;
+    yScale=Height[0].I()/win_width;
    getImagebyPointer1(p,w,h);
    qDebug()<<w<<h;
-   img_width=Width[0].I();
-   img_height=Height[0].I();
-   xScale=Width[0].I()/win_width;
-   yScale=Height[0].I()/win_width;
+
    hasData=true;
    qDebug()<<"read finish";
    //emit dispImg();
@@ -170,7 +173,7 @@ void halconClass::reset()
         yScale=img_height/win_height;
 
         clear_window(WindowHandle);
-        set_part(WindowHandle,0,0,win_height,img_width);
+        set_part(WindowHandle,0,0,win_height,win_width);
         disp_obj(result_img,WindowHandle);
         this->threedControl(0,0,0,0,"rotate");
 
@@ -185,7 +188,7 @@ void halconClass::setMode(QString str)
     {
         Hlong w,h;
         get_image_size(Image,&w,&h);
-        set_part(WindowHandle,0,0,img_height,img_width*yScale);
+        resizePart();
         img_width=w;
         img_height=h;
         xScale=img_width/win_width;
@@ -598,6 +601,7 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
         }
         else
         {
+
             roi.insert("Row",row);
             roi.insert("Column",column);
             roi.insert("Phi",0);
@@ -1036,7 +1040,7 @@ void halconClass::planePoint(int team)
          }
          if(num==0)
              return;
-         return;
+
          PointCloud::Ptr newCloud(new PointCloud);
          double result;
          if(in<set.value("check_num",4).toInt())
@@ -1148,7 +1152,7 @@ void halconClass::RectHeightSub(int team)
 
         if(num==0)
             return;
-        return;
+
         qDebug()<<"creat cloud";
         double result;
         PointCloud::Ptr newCloud(new PointCloud);
@@ -1408,8 +1412,8 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     scale=win_width/w;
     xScale=w/win_width;
     yScale=h/win_height;
-    set_part(WindowHandle,0,0,h,w*yScale);
-
+    //set_part(WindowHandle,0,0,h,w*yScale);
+resizePart();
     for (int row=0; row<h; row++)
     {
 
