@@ -65,6 +65,28 @@ void halconClass::close_the_window()
         HDevWindowStack::CloseAll();
     }
 }
+void halconClass::resizePart()
+{
+    double ratio_win=win_width/win_height;
+    double ratio_img=img_width/img_height;
+    int _beginRow, _begin_Col, _endRow, _endCol;
+
+    if (ratio_win >= ratio_img)
+    {
+        _beginRow = 0;
+        _endRow = img_height - 1;
+        _begin_Col = (int)(-img_width * (ratio_win / ratio_img - 1) / 2);
+        _endCol = (int)(img_width + img_width * (ratio_win / ratio_img - 1) / 2);
+    }
+    else
+    {
+        _begin_Col = 0;
+        _endCol = img_width - 1;
+        _beginRow = (int)(-img_height * (ratio_img / ratio_win - 1) / 2);
+        _endRow = (int)(img_height + img_height * (ratio_img / ratio_win - 1) / 2);
+    }
+    set_part(WindowHandle,_beginRow,_begin_Col,_endRow,_endCol);
+}
 /*
     启动线程,读取图像文件
 */
@@ -767,6 +789,7 @@ void halconClass::matchTemplate(int team)
             QMap<QString,QVariant> roi=set.value("team/"+list.at(i)).toMap();
             if(roi.value("func").toInt()==0)
             {
+
                 if(imgList.size()<=roi.value("index").toInt())
                     continue;
                 gen_rectangle1(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Row2").toDouble(),roi.value("Column2").toDouble());
@@ -786,7 +809,9 @@ void halconClass::matchTemplate(int team)
                     emit Error(QStringLiteral("没有")+ QString("%1_%2.mod").arg(roi.value("team").toInt()).arg(roi.value("index").toInt()).toUtf8().data());
                     return;
                 }
+
                 read_ncc_model(QString("%1_%2.mod").arg(roi.value("team").toInt()).arg(roi.value("index").toInt()).toUtf8().data(),&TemplateID);
+
 
                 qDebug()<<"start match";
                 double minRange,maxRange;
@@ -794,7 +819,7 @@ void halconClass::matchTemplate(int team)
                 maxRange=set.value("maxMeasuringRange","7.5").toDouble();
 
                 ret=(*cal)(*imgList.at(roi.value("index").toInt()),roi.value("Row").toDouble(), roi.value("Column").toDouble(), roi.value("Row2").toDouble(), roi.value("Column2").toDouble(),1,minRange,maxRange,TemplateID,&Row,&Column,&hv_Angle,&Result);
-
+                clear_ncc_model(TemplateID);
                 qDebug()<<"ret ="<<ret;
                 if(ret==-1)
                 {
@@ -1011,6 +1036,7 @@ void halconClass::planePoint(int team)
          }
          if(num==0)
              return;
+         return;
          PointCloud::Ptr newCloud(new PointCloud);
          double result;
          if(in<set.value("check_num",4).toInt())
@@ -1122,6 +1148,7 @@ void halconClass::RectHeightSub(int team)
 
         if(num==0)
             return;
+        return;
         qDebug()<<"creat cloud";
         double result;
         PointCloud::Ptr newCloud(new PointCloud);

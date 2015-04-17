@@ -53,6 +53,7 @@ public:
     void readSettings();
     void setMode(QString str);
     void clearRect();
+    void resizePart();
     HINSTANCE hInstance;
     int step;
     typedef void (halconClass::*detect_action)();

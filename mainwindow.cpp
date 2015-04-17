@@ -1022,8 +1022,8 @@ void MainWindow::on_roiDraw_clicked()
         ui->maxValue1->setText(QString::number(max));
     }
     QMap<QString,QVariant> map,limit;
-    map.insert("Row",ui->pointX->value());
-    map.insert("Column",ui->pointY->value());
+    map.insert("Row",ui->pointY->value());
+    map.insert("Column",ui->pointX->value());
     map.insert("unit",ui->unit->currentIndex());
     map.insert("Length1",ui->roiLength1->value());
     map.insert("Length2",ui->roiLength2->value());
