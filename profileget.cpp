@@ -1,7 +1,7 @@
 #include "profileget.h"
 
 profileGet::profileGet(QObject *parent) :
-    QThread(parent)
+    Laser(parent)
 {
     object=(void *)this;
     bool bLoadError;
@@ -41,6 +41,19 @@ profileGet::profileGet(QObject *parent) :
            return;
        }
     }
+}
+profileGet * profileGet::m_instance = 0;
+
+profileGet * profileGet::profileInstance()
+{
+    static QMutex mutex;
+    if (!m_instance) {
+        QMutexLocker locker(&mutex);
+        if (!m_instance)
+            m_instance = new profileGet;
+    }
+
+    return m_instance;
 }
 profileGet::~profileGet()
 {
@@ -321,7 +334,7 @@ void profileGet::flushSettings()
     filter|=set.value("median",0).toInt()<<2;
     filter|=set.value("average",0).toInt()<<0;
 
-   qDebug("filter %x",filter);
+    qDebug("filter %x",filter);
 
     if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_PROFILE_FILTER, filter)) < GENERAL_FUNCTION_OK)
     {
@@ -831,10 +844,10 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
 
             }
         }
-        m_uiRecivedProfileCount++;
+
         emit heartPack();
         //当数据达到设定帧大小时
-        if(m_uiRecivedProfileCount >= m_uiNeededProfileCount)
+        if((m_uiRecivedProfileCount+1) >= m_uiNeededProfileCount)
         {
             //If the needed profile count is arived: set the event
             //SetEvent(m_hProfileEvent);
@@ -862,7 +875,7 @@ void profileGet::getNewProfile(const unsigned char* pucData, unsigned int uiSize
             }
 
         }
-
+         m_uiRecivedProfileCount++;
   }
 }
 void profileGet::OnError(const char* szErrorTxt, int iErrorValue)

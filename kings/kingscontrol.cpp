@@ -22,6 +22,19 @@ kingsControl::~kingsControl()
 {
 
 }
+kingsControl * kingsControl::m_instance = 0;
+
+kingsControl * kingsControl::kingsInstance()
+{
+    static QMutex mutex;
+    if (!m_instance) {
+        QMutexLocker locker(&mutex);
+        if (!m_instance)
+            m_instance = new kingsControl;
+    }
+
+    return m_instance;
+}
 void kingsControl::clearMemory()
 {
     LJV7IF_ClearMemory(DEVICE_ID);
@@ -54,7 +67,7 @@ void kingsControl::usbMode()
     rc = (CRc::Rc)LJV7IF_UsbOpen(DEVICE_ID);
     if (rc!=CRc::Ok)
     {
-        qDebug()<<(QString("UsbOpen:0x%1").arg(rc,0,16));
+        emit Error(QString("UsbOpen:0x%1").arg(rc,0,16));
         isConnected=false;
         return;
     }
@@ -82,7 +95,7 @@ void kingsControl::EthernetMode()
     CRc::Rc rc = (CRc::Rc)(LJV7IF_EthernetOpen(DEVICE_ID,p));
     if (rc!=CRc::Ok)
     {
-        qDebug()<<(QString("EthernetOpen:0x%1").arg(rc,0,16));
+        emit Error(QString("EthernetOpen:0x%1").arg(rc,0,16));
         isConnected=false;
         return;
     }

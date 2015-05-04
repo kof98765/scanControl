@@ -67,7 +67,7 @@ public:
     QString filePath;
     void searchFile(QString path);
     void readSettings();
-
+    void initLaser();
 protected:
     void wheelEvent(QWheelEvent *);
     bool eventFilter(QObject *, QEvent *);

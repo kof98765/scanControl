@@ -11,3 +11,6 @@ void Laser::stopGetData(){}
 void Laser::flushSettings(){}
 void Laser::setDispMode(int mode){}
 void Laser::setTransferMode(int mode){}
+bool Laser::testConnect(){
+    return false;
+}

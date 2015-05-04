@@ -26,10 +26,11 @@ MainWindow::MainWindow(QWidget *parent) :
     pass=0;
     preIndex=-1;
 
-    profile=new profileGet();
-    kings=new kingsControl();
-    laser=new kingsControl();
-    ui->launchDevice->hide();
+    //profile=new profileGet();
+    //kings=new kingsControl();
+    //laser=new kingsControl();
+
+
     debug.setFileName("debug.txt");
     debug.open(QIODevice::Append);
     out.setFileName("data.txt");
@@ -107,7 +108,18 @@ MainWindow::MainWindow(QWidget *parent) :
 
     hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
 }
-
+void MainWindow::initLaser()
+{
+    if(!set.value("kingsCheck",false).toBool())
+        laser=profileGet::profileInstance();
+    else
+        laser=kingsControl::kingsInstance();
+    connect(ui->actionStop,SIGNAL(triggered()),laser,SLOT(stopGetData()));
+    connect(hal,SIGNAL(reConnect()),laser,SLOT(startGetData()));
+    connect(laser,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
+    connect(laser,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
+    connect(laser,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
+}
 bool MainWindow::eventFilter(QObject *target, QEvent *event)
 {
     static QPoint start,end,threeDstart,threeDend;
@@ -269,7 +281,7 @@ void MainWindow::init_connect()
     connect(ui->action_Net_Param,SIGNAL(triggered()),this,SLOT(Net_Param()));
 
     connect(ui->action_Quit,SIGNAL(triggered()),this,SLOT(on_action_Quit_triggered()));
-    connect(ui->actionStop,SIGNAL(triggered()),laser,SLOT(stopGetData()));
+
     connect(ui->action_big,SIGNAL(triggered()),hal,SLOT(zoomOut()));
     connect(ui->action_small,SIGNAL(triggered()),hal,SLOT(zoomIn()));
     connect(ui->reset,SIGNAL(clicked()),this,SLOT(on_actionReset_triggered()));
@@ -280,7 +292,7 @@ void MainWindow::init_connect()
     connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(test()));
     connect(ui->actionCal,SIGNAL(triggered()),hal,SLOT(calculate()));
     connect(ui->action_init,SIGNAL(triggered()),this,SLOT(on_launchDevice_clicked()));
-    connect(ui->actionCallback,SIGNAL(triggered()),profile,SLOT(start()));
+    //connect(ui->actionCallback,SIGNAL(triggered()),profile,SLOT(start()));
 
     //connect(point,SIGNAL(initDevice()),profile,SLOT(initDevice()));
 
@@ -297,21 +309,21 @@ void MainWindow::init_connect()
     //接收显示信号
     //connect(hal,SIGNAL(clearMemory()),laser,SLOT(clearMemory()));
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
-    connect(hal,SIGNAL(reConnect()),laser,SLOT(startGetData()));
+
     connect(hal,SIGNAL(sendPlaneness(int,double)),this,SLOT(recvPlaneness(int,double)));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
     connect(hal,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
     connect(hal,SIGNAL(sendHeightSub(QString,double,double,double))
             ,this,SLOT(recvHeightSub(QString,double,double,double)));
-    connect(laser,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
+
     // connect(kings,SIGNAL(dispSingleFrame(unsigned short*,unsigned short*,double*,double*,int)),
     //        plot,SLOT(upScanControlData(unsigned short*,unsigned short*,double*,double*,int)));
-    connect(laser,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
+
     //connect(profile,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
     //connect(profile,SIGNAL(putImagebyPointer3(double*,double*,double*,int,int)),hal,SLOT(getImagebyPointer3(double*,double*,double*,int,int)));
     //connect(profile,SIGNAL(setData(double*,int)),glWidget,SLOT(setData(double*,int)));
-    connect(profile,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
-    connect(laser,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
+    //connect(profile,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
+
     //connect(profile,SIGNAL(dispFrame(unsigned char*,int)),this,SLOT(dispFrame(unsigned char*,int)));
     //connect(profile,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
     //connect(profile,SIGNAL(dispSingleFrame(unsigned short *,unsigned short *,double *,double *,int)),
@@ -319,17 +331,18 @@ void MainWindow::init_connect()
 
     //connect(ui->actionTest,SIGNAL(triggered()),hal,SLOT(RectHeightSub()));
 
-    connect(setDialog,SIGNAL(selectDevice(int)),profile,SLOT(selectDevice(int)));
-    connect(setDialog,SIGNAL(postExposeTime(int,int)),profile,SLOT(setExposeTime(int ,int )));
+    //connect(setDialog,SIGNAL(selectDevice(int)),profile,SLOT(selectDevice(int)));
+    //connect(setDialog,SIGNAL(postExposeTime(int,int)),profile,SLOT(setExposeTime(int ,int )));
 
-    connect(setDialog,SIGNAL(setExternTrigger(int)),profile,SLOT(setExternTrigger(int)));
-    connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
+   // connect(setDialog,SIGNAL(setExternTrigger(int)),profile,SLOT(setExternTrigger(int)));
+    //connect(setDialog,SIGNAL(updataSettings()),profile,SLOT(flushSettings()));
     connect(setDialog,SIGNAL(netTest(QString)),this,SLOT(netTest(QString)));
     connect(setDialog,SIGNAL(upDataNetwork(QString,int)),robot,SLOT(initSocked(QString,int)));
     connect(hal,SIGNAL(addImg(Hobject*)),imgView,SLOT(addImg(Hobject*)));
     connect(hal,SIGNAL(deleteImg(int )),imgView,SLOT(deleteImg(int )));
     connect(hal,SIGNAL(deleteAllImg()),imgView,SLOT(deleteAllImg()));
     connect(imgView,SIGNAL(selectImg(int)),hal,SLOT(selectImg(int)));
+    initLaser();
 }
 
 void MainWindow::Error(QString str)
@@ -393,7 +406,7 @@ void MainWindow::dispImg()
         hal->disp_img();
         break;
     case 1:
-        profile->getVideoFrame();
+        //profile->getVideoFrame();
         palette.setBrush(QPalette::Window,QBrush(
                              QImage("frame.bmp").scaled(ui->videoFrame->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation)));
 
@@ -558,10 +571,10 @@ void MainWindow::startButton_clicked()
         switch(ui->base->currentIndex())
         {
         case 0:
-            profile->startTrigger();
+            //profile->startTrigger();
             break;
         case 1:
-            profile->startVideo();
+           // profile->startVideo();
             break;
         case 2:
             laser->startGetData();
@@ -751,7 +764,9 @@ void MainWindow::on_launchDevice_clicked()
 
 
     //profile->initDevice();
+    initLaser();
     laser->initDevice();
+
     ui->startButton->setEnabled(true);
     ui->action_start->setEnabled(true);
 }
@@ -929,7 +944,7 @@ void MainWindow::startVideo()
 
     connect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
 
-    profile->startVideo();
+    //profile->startVideo();
     timer->start(200);
 
 }
@@ -951,7 +966,7 @@ void MainWindow::startSingleFrame()
     connect(timer,SIGNAL(timeout()),this,SLOT(dispImg()));
 
     timer->start(200);
-    profile->startSingleFrame();
+    //profile->startSingleFrame();
 }
 /*
     停止单帧模式
@@ -1125,7 +1140,7 @@ void MainWindow::action_modifyItem()
 void MainWindow::statusCheck()
 {
     static int i=0;
-    if(profile->testConnect())
+    if(laser->testConnect())
     {
         // ui->connect->setText(QStringLiteral("已连接"));
         ui->connect->setStyleSheet(QString::fromUtf8("font: 18pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"

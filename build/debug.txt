@@ -26516,3 +26516,449 @@
 09:06:14.113: rowcount 0
 09:06:14.114: roiList size 0
 09:06:14.134: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+09:29:08.546: rowcount 0
+09:29:08.547: roiList size 0
+10:08:33.139: rowcount 0
+10:08:33.140: roiList size 0
+10:20:05.523: rowcount 0
+10:20:05.523: roiList size 0
+10:36:45.554: rowcount 0
+10:36:45.554: roiList size 0
+11:12:33.424: rowcount 0
+11:12:33.425: roiList size 0
+11:13:09.882: rowcount 0
+11:13:09.883: roiList size 0
+11:13:09.884: read "D:/7080image/01/test0.tif"
+11:13:10.065: 800 1870 real
+11:13:10.130: tmp=39e5498
+11:13:10.193: 800 1870
+11:13:10.193: read finish
+11:13:15.781: start
+11:13:15.781: rowcount 0
+11:13:15.781: 1
+11:13:15.784: clear
+11:13:15.791: rowcount 0
+11:13:15.791: roiList size 0
+11:13:15.792: Error during SetProfileConfig 
+
+11:13:15.792: There is no connection to the scanCONTROL -> call Connect  
+
+
+11:13:15.792: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+11:13:15.792: There is no connection to the scanCONTROL -> call Connect  
+
+
+11:13:15.792: 
+Demonstrate the profile transfer via callback function
+
+11:13:15.792: Enable the measurement
+
+11:13:15.792: Error during TransferProfiles 
+
+11:13:15.792: There is no connection to the scanCONTROL -> call Connect  
+
+
+11:13:40.636: start
+11:13:40.637: rowcount 0
+11:13:40.637: clear
+11:13:40.643: rowcount 0
+11:13:40.644: roiList size 0
+11:13:40.645: Error during SetProfileConfig 
+
+11:13:40.645: There is no connection to the scanCONTROL -> call Connect  
+
+
+11:13:40.646: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+11:13:40.646: There is no connection to the scanCONTROL -> call Connect  
+
+
+11:13:40.647: 
+Demonstrate the profile transfer via callback function
+
+11:13:40.647: Enable the measurement
+
+11:13:40.648: Error during TransferProfiles 
+
+11:13:40.649: There is no connection to the scanCONTROL -> call Connect  
+
+
+11:16:31.396: rowcount 0
+11:16:31.397: roiList size 0
+11:16:34.140: start
+11:16:34.140: rowcount 0
+11:16:34.140: clear
+11:16:34.145: rowcount 0
+11:16:34.145: roiList size 0
+11:16:34.146: Error during SetProfileConfig 
+
+11:16:34.146: There is no connection to the scanCONTROL -> call Connect  
+
+
+11:16:34.146: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+11:16:34.146: There is no connection to the scanCONTROL -> call Connect  
+
+
+11:16:34.146: 
+Demonstrate the profile transfer via callback function
+
+11:16:34.146: Enable the measurement
+
+11:16:34.147: Error during TransferProfiles 
+
+11:16:34.147: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:39:05.009: rowcount 0
+13:39:05.014: roiList size 0
+13:39:12.908: start
+13:39:12.908: rowcount 0
+13:39:12.908: clear
+13:39:12.915: rowcount 0
+13:39:12.915: roiList size 0
+13:39:12.916: Error during SetProfileConfig 
+
+13:39:12.916: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:39:12.916: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+13:39:12.916: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:39:12.916: 
+Demonstrate the profile transfer via callback function
+
+13:39:12.916: Enable the measurement
+
+13:39:12.916: Error during TransferProfiles 
+
+13:39:12.916: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:47:53.189: rowcount 0
+13:47:53.190: roiList size 0
+13:47:55.699: start
+13:47:55.699: rowcount 0
+13:47:55.699: clear
+13:47:55.706: rowcount 0
+13:47:55.706: roiList size 0
+13:47:55.706: Error during SetProfileConfig 
+
+13:47:55.707: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:47:55.707: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+13:47:55.707: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:47:55.707: 
+Demonstrate the profile transfer via callback function
+
+13:47:55.707: Enable the measurement
+
+13:47:55.707: Error during TransferProfiles 
+
+13:47:55.707: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:20.862: Accepted
+13:48:22.139: start
+13:48:22.139: rowcount 0
+13:48:22.140: clear
+13:48:22.147: rowcount 0
+13:48:22.147: roiList size 0
+13:48:22.148: Error during SetProfileConfig 
+
+13:48:22.148: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:22.149: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+13:48:22.149: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:22.150: 
+Demonstrate the profile transfer via callback function
+
+13:48:22.150: Enable the measurement
+
+13:48:22.151: Error during TransferProfiles 
+
+13:48:22.151: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:33.705: Accepted
+13:48:36.108: start
+13:48:36.108: rowcount 0
+13:48:36.109: clear
+13:48:36.117: rowcount 0
+13:48:36.118: roiList size 0
+13:48:36.119: Error during SetProfileConfig 
+
+13:48:36.120: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:36.120: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+13:48:36.121: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:36.122: 
+Demonstrate the profile transfer via callback function
+
+13:48:36.122: Enable the measurement
+
+13:48:36.123: Error during TransferProfiles 
+
+13:48:36.123: There is no connection to the scanCONTROL -> call Connect  
+
+
+14:03:39.061: CreateLLTDevice OK 
+
+14:03:39.197: rowcount 0
+14:03:39.198: roiList size 0
+14:03:44.351: start
+14:03:44.352: rowcount 0
+14:03:44.352: clear
+14:03:44.360: rowcount 0
+14:03:44.360: roiList size 0
+14:03:57.353: start
+14:03:57.353: rowcount 0
+14:03:57.354: clear
+14:03:57.360: rowcount 0
+14:03:57.362: roiList size 0
+14:15:48.852: CreateLLTDevice OK 
+
+14:15:48.978: rowcount 0
+14:15:48.978: roiList size 0
+14:15:53.272: start
+14:15:53.272: rowcount 0
+14:15:53.272: clear
+14:15:53.280: rowcount 0
+14:15:53.281: roiList size 0
+14:15:59.835: Accepted
+14:16:01.400: start
+14:16:01.400: rowcount 0
+14:16:01.401: clear
+14:16:01.409: rowcount 0
+14:16:01.410: roiList size 0
+14:16:14.494: Accepted
+14:16:15.541: start
+14:16:15.541: rowcount 0
+14:16:15.542: clear
+14:16:15.550: rowcount 0
+14:16:15.550: roiList size 0
+14:20:10.059: init kings
+14:20:10.187: rowcount 0
+14:20:10.188: roiList size 0
+14:20:11.659: start
+14:20:11.659: rowcount 0
+14:20:11.659: clear
+14:20:11.669: rowcount 0
+14:20:11.670: roiList size 0
+14:20:11.670: mode 0
+14:20:11.670: frequency 10
+14:20:11.670: commandPort 24691
+14:20:11.670: dataPort 24692
+14:20:11.673: "UsbOpen:0x1000"
+14:20:11.674: start usb
+14:20:20.447: Accepted
+14:20:21.617: start
+14:20:21.619: rowcount 0
+14:20:21.619: clear
+14:20:21.629: rowcount 0
+14:20:21.631: roiList size 0
+14:20:21.633: mode 0
+14:20:21.634: frequency 10
+14:20:21.634: commandPort 24691
+14:20:21.635: dataPort 24692
+14:20:21.636: "UsbOpen:0x1000"
+14:20:21.637: start usb
+14:21:35.261: CreateLLTDevice OK 
+
+14:21:35.397: rowcount 0
+14:21:35.397: roiList size 0
+14:21:37.703: start
+14:21:37.703: rowcount 0
+14:21:37.704: clear
+14:21:37.710: rowcount 0
+14:21:37.711: roiList size 0
+14:21:49.180: Accepted
+14:21:51.868: start
+14:21:51.869: rowcount 0
+14:21:51.869: clear
+14:21:51.876: rowcount 0
+14:21:51.877: roiList size 0
+14:21:55.662: Accepted
+14:21:56.622: start
+14:21:56.622: rowcount 0
+14:21:56.623: clear
+14:21:56.631: rowcount 0
+14:21:56.632: roiList size 0
+14:22:41.083: CreateLLTDevice OK 
+
+14:22:41.210: rowcount 0
+14:22:41.210: roiList size 0
+14:25:37.951: CreateLLTDevice OK 
+
+14:25:38.080: rowcount 0
+14:25:38.081: roiList size 0
+14:29:35.314: CreateLLTDevice OK 
+
+14:29:35.434: rowcount 0
+14:29:35.435: roiList size 0
+14:32:34.196: CreateLLTDevice OK 
+
+14:32:34.324: rowcount 0
+14:32:34.324: roiList size 0
+14:32:39.616: rowcount 0
+14:32:39.616: roiList size 0
+14:32:39.617: read "D:/7080image/01/test0.tif"
+14:32:39.796: 800 1870 real
+14:32:39.863: tmp=dc2c68
+14:32:39.927: 800 1870
+14:32:39.928: read finish
+14:32:40.574: rowcount 0
+14:32:40.575: roiList size 0
+14:32:40.575: read "D:/7080image/01/test0.tif"
+14:32:40.611: 800 1870 real
+14:32:40.678: tmp=dc2ae8
+14:32:40.742: 800 1870
+14:32:40.742: read finish
+14:32:40.996: rowcount 0
+14:32:40.997: roiList size 0
+14:32:40.997: read "D:/7080image/01/test0.tif"
+14:32:41.033: 800 1870 real
+14:32:41.099: tmp=dc2680
+14:32:41.160: 800 1870
+14:32:41.160: read finish
+14:32:41.445: rowcount 0
+14:32:41.445: roiList size 0
+14:32:41.445: read "D:/7080image/01/test0.tif"
+14:32:41.482: 800 1870 real
+14:32:41.548: tmp=dc2c08
+14:32:41.574: plane list.size 0
+14:32:41.575: heightsub list.size 0
+14:32:41.575: plane list.size 0
+14:32:41.575: heightsub list.size 0
+14:32:41.575: plane list.size 0
+14:32:41.575: heightsub list.size 0
+14:32:41.575: plane list.size 0
+14:32:41.575: heightsub list.size 0
+14:32:41.614: 800 1870
+14:32:41.614: read finish
+14:32:41.894: rowcount 0
+14:32:41.894: roiList size 0
+14:32:41.894: read "D:/7080image/01/test0.tif"
+14:32:41.930: 800 1870 real
+14:32:41.934: 4
+14:32:41.942: clear
+14:32:42.013: tmp=dc2c98
+14:32:42.074: 800 1870
+14:32:42.074: read finish
+14:32:43.765: rowcount 0
+14:32:43.765: roiList size 0
+14:32:43.765: read "D:/7080image/01/test0.tif"
+14:32:43.802: 800 1870 real
+14:32:43.868: tmp=d6eff0
+14:32:43.929: 800 1870
+14:32:43.930: read finish
+14:32:44.264: rowcount 0
+14:32:44.264: roiList size 0
+14:32:44.264: read "D:/7080image/01/test0.tif"
+14:32:44.299: 800 1870 real
+14:32:44.361: tmp=d6ed68
+14:32:44.422: 800 1870
+14:32:44.423: read finish
+14:32:44.772: rowcount 0
+14:32:44.773: roiList size 0
+14:32:44.773: read "D:/7080image/01/test0.tif"
+14:32:44.809: 800 1870 real
+14:32:44.875: tmp=d98060
+14:32:44.901: plane list.size 0
+14:32:44.901: heightsub list.size 0
+14:32:44.901: plane list.size 0
+14:32:44.901: heightsub list.size 0
+14:32:44.901: plane list.size 0
+14:32:44.902: heightsub list.size 0
+14:32:44.902: plane list.size 0
+14:32:44.902: heightsub list.size 0
+14:32:44.938: 800 1870
+14:32:44.938: read finish
+14:32:47.113: rowcount 0
+14:32:47.113: roiList size 0
+14:32:47.113: read "D:/7080image/01/test0.tif"
+14:32:47.148: 800 1870 real
+14:32:47.152: 4
+14:32:47.160: clear
+14:32:47.237: tmp=d6efd8
+14:32:47.299: 800 1870
+14:32:47.299: read finish
+14:36:29.023: CreateLLTDevice OK 
+
+14:36:29.151: rowcount 0
+14:36:29.151: roiList size 0
+14:36:36.982: start
+14:36:36.983: rowcount 0
+14:36:36.983: clear
+14:36:36.990: rowcount 0
+14:36:36.991: roiList size 0
+14:36:41.966: A error occured during searching for connected scanCONTROL -253 
+
+14:38:26.671: CreateLLTDevice OK 
+
+14:38:26.798: rowcount 0
+14:38:26.798: roiList size 0
+14:38:30.172: Accepted
+14:38:31.894: start
+14:38:31.895: rowcount 0
+14:38:31.895: clear
+14:38:31.903: rowcount 0
+14:38:31.903: roiList size 0
+14:38:34.032: A error occured during searching for connected scanCONTROL -253 
+
+14:38:40.422: Accepted
+14:38:41.386: init kings
+14:38:41.387: mode 0
+14:38:41.387: frequency 10
+14:38:41.388: commandPort 24691
+14:38:41.388: dataPort 24692
+14:38:42.591: start
+14:38:42.592: rowcount 0
+14:38:42.592: clear
+14:38:42.600: rowcount 0
+14:38:42.600: roiList size 0
+14:38:42.601: mode 0
+14:38:42.601: frequency 10
+14:38:42.602: commandPort 24691
+14:38:42.602: dataPort 24692
+14:38:42.607: "UsbOpen:0x1000"
+14:38:42.608: start usb
+14:40:00.635: init kings
+14:40:00.772: rowcount 0
+14:40:00.773: roiList size 0
+14:40:03.023: mode 0
+14:40:03.023: frequency 10
+14:40:03.023: commandPort 24691
+14:40:03.023: dataPort 24692
+14:40:20.843: init kings
+14:40:20.977: rowcount 0
+14:40:20.978: roiList size 0
+14:40:22.102: mode 0
+14:40:22.102: frequency 10
+14:40:22.102: commandPort 24691
+14:40:22.102: dataPort 24692
+14:40:26.919: start
+14:40:26.920: rowcount 0
+14:40:26.920: clear
+14:40:26.928: rowcount 0
+14:40:26.929: roiList size 0
+14:40:26.929: mode 0
+14:40:26.930: frequency 10
+14:40:26.930: commandPort 24691
+14:40:26.930: dataPort 24692
+14:40:29.114: start usb

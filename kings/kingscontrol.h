@@ -20,8 +20,10 @@ class kingsControl : public Laser
 {
     Q_OBJECT
 public:
-    kingsControl(QObject *parent = 0);
+
     ~kingsControl();
+    static kingsControl * kingsInstance();
+    static kingsControl * m_instance;
     int commandPort;
     int dataPort;
     unsigned int ipAddress;
@@ -35,6 +37,7 @@ public:
     bool isConnected;
     void new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD notify, DWORD user);
 private:
+    kingsControl(QObject *parent = 0);
     QSettings set;
     std::vector<double> vdValueZ;
     std::vector<DWORD> profileBuf;
@@ -44,9 +47,7 @@ private:
     double maxMeasuringRange;
     QFile f;
 signals:
-    void heartPack();
     void stopSignal();
-    void Error(QString);
     void putImagebyPointer1(double *pdValueZ,int width,int height);
     void putImagebyPointer3(double *x,double *y,double *z,int width,int height);
     void dispSingleFrame(unsigned short *,unsigned short *,double *x,double *y,int size);

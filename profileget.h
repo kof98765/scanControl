@@ -22,15 +22,16 @@
 using namespace std;
 static void *object;
 void __stdcall newProfile(const unsigned char* pucData, unsigned int uiSize, void* pUserData);
-class profileGet : public QThread
+class profileGet : public Laser
 {
     Q_OBJECT
 public:
-    profileGet(QObject *parent = 0);
+
 
     ~profileGet();
 
-
+    static profileGet * profileInstance();
+    static profileGet * m_instance;
     CInterfaceLLT* m_pLLT;
     unsigned int m_uiResolution;
     TScannerType m_tscanCONTROLType;
@@ -66,6 +67,7 @@ public:
 protected:
     void run();
 private:
+     profileGet(QObject *parent = 0);
      bool bConnected;
      bool isReady;
      bool isExternalTrigger;
@@ -80,14 +82,12 @@ private:
 signals:
     void DisplayProfile(double *pdValueX, double *pdValueZ, unsigned int uiResolution);
     void dispZ(QString);
-    void Error(QString);
-    void putImagebyPointer1(double *pdValueZ,int width,int height);
-    void putImagebyPointer3(double *x,double *y,double *z,int width,int height);
+
 
     void dispSingleFrame(unsigned short *,unsigned short *,double *x,double *y,int size);
     void setData(double*,int);
     void dispFrame(unsigned char*,int);
-    void heartPack();
+
 public slots:
     void initDevice();
     void getNewProfile(const unsigned char* pucData, unsigned int uiSize, void* pUserData);

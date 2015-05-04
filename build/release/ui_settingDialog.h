@@ -137,12 +137,47 @@ public:
     QLabel *label_14;
     QSpinBox *camera_exposureTime;
     QWidget *tab_5;
+    QTextBrowser *debug;
+    QLabel *label_37;
+    QPushButton *readSet;
+    QDoubleSpinBox *testValue;
     QWidget *formLayoutWidget;
     QFormLayout *formLayout;
-    QLabel *label_25;
-    QComboBox *select_device;
     QLabel *label_21;
     QSpinBox *profileCount;
+    QRadioButton *kingsCheck;
+    QRadioButton *miyiCheck;
+    QWidget *tab_6;
+    QWidget *formLayoutWidget_2;
+    QFormLayout *formLayout_2;
+    QLabel *label_34;
+    QHBoxLayout *horizontalLayout_6;
+    QSpinBox *ip32;
+    QSpinBox *ip24;
+    QSpinBox *ip16;
+    QSpinBox *ip0;
+    QLabel *label_41;
+    QSpinBox *dataPort;
+    QLabel *label_40;
+    QSpinBox *commandPort;
+    QLabel *label_38;
+    QSpinBox *freq;
+    QRadioButton *usb;
+    QRadioButton *Ethernet;
+    QLabel *Label;
+    QHBoxLayout *horizontalLayout_8;
+    QLineEdit *minMeasuringRange;
+    QSpacerItem *horizontalSpacer_12;
+    QLineEdit *maxMeasuringRange;
+    QLabel *sendPosLabel;
+    QComboBox *sendPosComboBox;
+    QWidget *tab_7;
+    QWidget *formLayoutWidget_3;
+    QFormLayout *formLayout_3;
+    QLabel *label_25;
+    QComboBox *select_device;
+    QLabel *label_26;
+    QSpinBox *rate;
     QLabel *label_22;
     QComboBox *exposure;
     QLabel *label_24;
@@ -169,37 +204,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QComboBox *autoThreshold;
     QSpinBox *threshold;
-    QLabel *label_26;
-    QSpinBox *rate;
-    QTextBrowser *debug;
-    QLabel *label_37;
-    QPushButton *readSet;
     QPushButton *connecct;
-    QDoubleSpinBox *testValue;
-    QWidget *tab_6;
-    QWidget *formLayoutWidget_2;
-    QFormLayout *formLayout_2;
-    QLabel *label_34;
-    QHBoxLayout *horizontalLayout_6;
-    QSpinBox *ip32;
-    QSpinBox *ip24;
-    QSpinBox *ip16;
-    QSpinBox *ip0;
-    QLabel *label_41;
-    QSpinBox *dataPort;
-    QLabel *label_40;
-    QSpinBox *commandPort;
-    QLabel *label_38;
-    QSpinBox *freq;
-    QRadioButton *usb;
-    QRadioButton *Ethernet;
-    QLabel *Label;
-    QHBoxLayout *horizontalLayout_8;
-    QLineEdit *minMeasuringRange;
-    QSpacerItem *horizontalSpacer_12;
-    QLineEdit *maxMeasuringRange;
-    QLabel *sendPosLabel;
-    QComboBox *sendPosComboBox;
 
     void setupUi(QDialog *mySettings)
     {
@@ -664,184 +669,6 @@ public:
         tabWidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
-        formLayoutWidget = new QWidget(tab_5);
-        formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 0, 288, 502));
-        formLayout = new QFormLayout(formLayoutWidget);
-        formLayout->setObjectName(QStringLiteral("formLayout"));
-        formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
-        formLayout->setRowWrapPolicy(QFormLayout::DontWrapRows);
-        formLayout->setHorizontalSpacing(20);
-        formLayout->setVerticalSpacing(12);
-        formLayout->setContentsMargins(0, 0, 0, 0);
-        label_25 = new QLabel(formLayoutWidget);
-        label_25->setObjectName(QStringLiteral("label_25"));
-
-        formLayout->setWidget(0, QFormLayout::LabelRole, label_25);
-
-        select_device = new QComboBox(formLayoutWidget);
-        select_device->setObjectName(QStringLiteral("select_device"));
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, select_device);
-
-        label_21 = new QLabel(formLayoutWidget);
-        label_21->setObjectName(QStringLiteral("label_21"));
-
-        formLayout->setWidget(1, QFormLayout::LabelRole, label_21);
-
-        profileCount = new QSpinBox(formLayoutWidget);
-        profileCount->setObjectName(QStringLiteral("profileCount"));
-        profileCount->setMaximum(10000);
-        profileCount->setSingleStep(10);
-        profileCount->setValue(1000);
-
-        formLayout->setWidget(1, QFormLayout::FieldRole, profileCount);
-
-        label_22 = new QLabel(formLayoutWidget);
-        label_22->setObjectName(QStringLiteral("label_22"));
-
-        formLayout->setWidget(2, QFormLayout::LabelRole, label_22);
-
-        exposure = new QComboBox(formLayoutWidget);
-        exposure->setObjectName(QStringLiteral("exposure"));
-
-        formLayout->setWidget(2, QFormLayout::FieldRole, exposure);
-
-        label_24 = new QLabel(formLayoutWidget);
-        label_24->setObjectName(QStringLiteral("label_24"));
-
-        formLayout->setWidget(4, QFormLayout::LabelRole, label_24);
-
-        resolution = new QComboBox(formLayoutWidget);
-        resolution->setObjectName(QStringLiteral("resolution"));
-
-        formLayout->setWidget(4, QFormLayout::FieldRole, resolution);
-
-        label_20 = new QLabel(formLayoutWidget);
-        label_20->setObjectName(QStringLiteral("label_20"));
-
-        formLayout->setWidget(5, QFormLayout::LabelRole, label_20);
-
-        resampleValue = new QComboBox(formLayoutWidget);
-        resampleValue->setObjectName(QStringLiteral("resampleValue"));
-
-        formLayout->setWidget(5, QFormLayout::FieldRole, resampleValue);
-
-        label_27 = new QLabel(formLayoutWidget);
-        label_27->setObjectName(QStringLiteral("label_27"));
-
-        formLayout->setWidget(6, QFormLayout::LabelRole, label_27);
-
-        median = new QComboBox(formLayoutWidget);
-        median->setObjectName(QStringLiteral("median"));
-
-        formLayout->setWidget(6, QFormLayout::FieldRole, median);
-
-        label_28 = new QLabel(formLayoutWidget);
-        label_28->setObjectName(QStringLiteral("label_28"));
-
-        formLayout->setWidget(7, QFormLayout::LabelRole, label_28);
-
-        average = new QComboBox(formLayoutWidget);
-        average->setObjectName(QStringLiteral("average"));
-
-        formLayout->setWidget(7, QFormLayout::FieldRole, average);
-
-        label_30 = new QLabel(formLayoutWidget);
-        label_30->setObjectName(QStringLiteral("label_30"));
-
-        formLayout->setWidget(8, QFormLayout::LabelRole, label_30);
-
-        trigger = new QComboBox(formLayoutWidget);
-        trigger->setObjectName(QStringLiteral("trigger"));
-
-        formLayout->setWidget(8, QFormLayout::FieldRole, trigger);
-
-        label_31 = new QLabel(formLayoutWidget);
-        label_31->setObjectName(QStringLiteral("label_31"));
-
-        formLayout->setWidget(9, QFormLayout::LabelRole, label_31);
-
-        triggerMode = new QComboBox(formLayoutWidget);
-        triggerMode->setObjectName(QStringLiteral("triggerMode"));
-
-        formLayout->setWidget(9, QFormLayout::FieldRole, triggerMode);
-
-        label_32 = new QLabel(formLayoutWidget);
-        label_32->setObjectName(QStringLiteral("label_32"));
-
-        formLayout->setWidget(10, QFormLayout::LabelRole, label_32);
-
-        triggerSource = new QComboBox(formLayoutWidget);
-        triggerSource->setObjectName(QStringLiteral("triggerSource"));
-        triggerSource->setToolTipDuration(-1);
-
-        formLayout->setWidget(10, QFormLayout::FieldRole, triggerSource);
-
-        label_33 = new QLabel(formLayoutWidget);
-        label_33->setObjectName(QStringLiteral("label_33"));
-
-        formLayout->setWidget(11, QFormLayout::LabelRole, label_33);
-
-        triggerPolarity = new QComboBox(formLayoutWidget);
-        triggerPolarity->setObjectName(QStringLiteral("triggerPolarity"));
-
-        formLayout->setWidget(11, QFormLayout::FieldRole, triggerPolarity);
-
-        label_35 = new QLabel(formLayoutWidget);
-        label_35->setObjectName(QStringLiteral("label_35"));
-
-        formLayout->setWidget(12, QFormLayout::LabelRole, label_35);
-
-        voltage = new QComboBox(formLayoutWidget);
-        voltage->setObjectName(QStringLiteral("voltage"));
-
-        formLayout->setWidget(12, QFormLayout::FieldRole, voltage);
-
-        label_36 = new QLabel(formLayoutWidget);
-        label_36->setObjectName(QStringLiteral("label_36"));
-
-        formLayout->setWidget(13, QFormLayout::LabelRole, label_36);
-
-        digitalInputs = new QComboBox(formLayoutWidget);
-        digitalInputs->setObjectName(QStringLiteral("digitalInputs"));
-
-        formLayout->setWidget(13, QFormLayout::FieldRole, digitalInputs);
-
-        label_23 = new QLabel(formLayoutWidget);
-        label_23->setObjectName(QStringLiteral("label_23"));
-
-        formLayout->setWidget(14, QFormLayout::LabelRole, label_23);
-
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        autoThreshold = new QComboBox(formLayoutWidget);
-        autoThreshold->setObjectName(QStringLiteral("autoThreshold"));
-
-        horizontalLayout_3->addWidget(autoThreshold);
-
-        threshold = new QSpinBox(formLayoutWidget);
-        threshold->setObjectName(QStringLiteral("threshold"));
-        threshold->setMaximum(255);
-
-        horizontalLayout_3->addWidget(threshold);
-
-
-        formLayout->setLayout(14, QFormLayout::FieldRole, horizontalLayout_3);
-
-        label_26 = new QLabel(formLayoutWidget);
-        label_26->setObjectName(QStringLiteral("label_26"));
-
-        formLayout->setWidget(3, QFormLayout::LabelRole, label_26);
-
-        rate = new QSpinBox(formLayoutWidget);
-        rate->setObjectName(QStringLiteral("rate"));
-        rate->setMinimum(1);
-        rate->setMaximum(1000);
-        rate->setValue(100);
-
-        formLayout->setWidget(3, QFormLayout::FieldRole, rate);
-
         debug = new QTextBrowser(tab_5);
         debug->setObjectName(QStringLiteral("debug"));
         debug->setGeometry(QRect(330, 30, 261, 401));
@@ -851,14 +678,41 @@ public:
         readSet = new QPushButton(tab_5);
         readSet->setObjectName(QStringLiteral("readSet"));
         readSet->setGeometry(QRect(330, 470, 91, 23));
-        connecct = new QPushButton(tab_5);
-        connecct->setObjectName(QStringLiteral("connecct"));
-        connecct->setGeometry(QRect(240, 0, 41, 23));
         testValue = new QDoubleSpinBox(tab_5);
         testValue->setObjectName(QStringLiteral("testValue"));
         testValue->setGeometry(QRect(530, 500, 62, 22));
         testValue->setSingleStep(0.001);
         testValue->setValue(0.01);
+        formLayoutWidget = new QWidget(tab_5);
+        formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
+        formLayoutWidget->setGeometry(QRect(10, 20, 191, 181));
+        formLayout = new QFormLayout(formLayoutWidget);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        label_21 = new QLabel(formLayoutWidget);
+        label_21->setObjectName(QStringLiteral("label_21"));
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_21);
+
+        profileCount = new QSpinBox(formLayoutWidget);
+        profileCount->setObjectName(QStringLiteral("profileCount"));
+        profileCount->setMaximum(10000);
+        profileCount->setSingleStep(10);
+        profileCount->setValue(1000);
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, profileCount);
+
+        kingsCheck = new QRadioButton(formLayoutWidget);
+        kingsCheck->setObjectName(QStringLiteral("kingsCheck"));
+        kingsCheck->setChecked(true);
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, kingsCheck);
+
+        miyiCheck = new QRadioButton(formLayoutWidget);
+        miyiCheck->setObjectName(QStringLiteral("miyiCheck"));
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, miyiCheck);
+
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QStringLiteral("tab_6"));
@@ -993,6 +847,174 @@ public:
         formLayout_2->setWidget(7, QFormLayout::FieldRole, sendPosComboBox);
 
         tabWidget->addTab(tab_6, QString());
+        tab_7 = new QWidget();
+        tab_7->setObjectName(QStringLiteral("tab_7"));
+        formLayoutWidget_3 = new QWidget(tab_7);
+        formLayoutWidget_3->setObjectName(QStringLiteral("formLayoutWidget_3"));
+        formLayoutWidget_3->setGeometry(QRect(10, 10, 161, 470));
+        formLayout_3 = new QFormLayout(formLayoutWidget_3);
+        formLayout_3->setObjectName(QStringLiteral("formLayout_3"));
+        formLayout_3->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
+        formLayout_3->setContentsMargins(0, 0, 0, 0);
+        label_25 = new QLabel(formLayoutWidget_3);
+        label_25->setObjectName(QStringLiteral("label_25"));
+
+        formLayout_3->setWidget(0, QFormLayout::LabelRole, label_25);
+
+        select_device = new QComboBox(formLayoutWidget_3);
+        select_device->setObjectName(QStringLiteral("select_device"));
+
+        formLayout_3->setWidget(0, QFormLayout::FieldRole, select_device);
+
+        label_26 = new QLabel(formLayoutWidget_3);
+        label_26->setObjectName(QStringLiteral("label_26"));
+
+        formLayout_3->setWidget(1, QFormLayout::LabelRole, label_26);
+
+        rate = new QSpinBox(formLayoutWidget_3);
+        rate->setObjectName(QStringLiteral("rate"));
+        rate->setMinimum(1);
+        rate->setMaximum(1000);
+        rate->setValue(100);
+
+        formLayout_3->setWidget(1, QFormLayout::FieldRole, rate);
+
+        label_22 = new QLabel(formLayoutWidget_3);
+        label_22->setObjectName(QStringLiteral("label_22"));
+
+        formLayout_3->setWidget(2, QFormLayout::LabelRole, label_22);
+
+        exposure = new QComboBox(formLayoutWidget_3);
+        exposure->setObjectName(QStringLiteral("exposure"));
+
+        formLayout_3->setWidget(2, QFormLayout::FieldRole, exposure);
+
+        label_24 = new QLabel(formLayoutWidget_3);
+        label_24->setObjectName(QStringLiteral("label_24"));
+
+        formLayout_3->setWidget(3, QFormLayout::LabelRole, label_24);
+
+        resolution = new QComboBox(formLayoutWidget_3);
+        resolution->setObjectName(QStringLiteral("resolution"));
+
+        formLayout_3->setWidget(3, QFormLayout::FieldRole, resolution);
+
+        label_20 = new QLabel(formLayoutWidget_3);
+        label_20->setObjectName(QStringLiteral("label_20"));
+
+        formLayout_3->setWidget(4, QFormLayout::LabelRole, label_20);
+
+        resampleValue = new QComboBox(formLayoutWidget_3);
+        resampleValue->setObjectName(QStringLiteral("resampleValue"));
+
+        formLayout_3->setWidget(4, QFormLayout::FieldRole, resampleValue);
+
+        label_27 = new QLabel(formLayoutWidget_3);
+        label_27->setObjectName(QStringLiteral("label_27"));
+
+        formLayout_3->setWidget(5, QFormLayout::LabelRole, label_27);
+
+        median = new QComboBox(formLayoutWidget_3);
+        median->setObjectName(QStringLiteral("median"));
+
+        formLayout_3->setWidget(5, QFormLayout::FieldRole, median);
+
+        label_28 = new QLabel(formLayoutWidget_3);
+        label_28->setObjectName(QStringLiteral("label_28"));
+
+        formLayout_3->setWidget(6, QFormLayout::LabelRole, label_28);
+
+        average = new QComboBox(formLayoutWidget_3);
+        average->setObjectName(QStringLiteral("average"));
+
+        formLayout_3->setWidget(6, QFormLayout::FieldRole, average);
+
+        label_30 = new QLabel(formLayoutWidget_3);
+        label_30->setObjectName(QStringLiteral("label_30"));
+
+        formLayout_3->setWidget(7, QFormLayout::LabelRole, label_30);
+
+        trigger = new QComboBox(formLayoutWidget_3);
+        trigger->setObjectName(QStringLiteral("trigger"));
+
+        formLayout_3->setWidget(7, QFormLayout::FieldRole, trigger);
+
+        label_31 = new QLabel(formLayoutWidget_3);
+        label_31->setObjectName(QStringLiteral("label_31"));
+
+        formLayout_3->setWidget(8, QFormLayout::LabelRole, label_31);
+
+        triggerMode = new QComboBox(formLayoutWidget_3);
+        triggerMode->setObjectName(QStringLiteral("triggerMode"));
+
+        formLayout_3->setWidget(8, QFormLayout::FieldRole, triggerMode);
+
+        label_32 = new QLabel(formLayoutWidget_3);
+        label_32->setObjectName(QStringLiteral("label_32"));
+
+        formLayout_3->setWidget(9, QFormLayout::LabelRole, label_32);
+
+        triggerSource = new QComboBox(formLayoutWidget_3);
+        triggerSource->setObjectName(QStringLiteral("triggerSource"));
+        triggerSource->setToolTipDuration(-1);
+
+        formLayout_3->setWidget(9, QFormLayout::FieldRole, triggerSource);
+
+        label_33 = new QLabel(formLayoutWidget_3);
+        label_33->setObjectName(QStringLiteral("label_33"));
+
+        formLayout_3->setWidget(10, QFormLayout::LabelRole, label_33);
+
+        triggerPolarity = new QComboBox(formLayoutWidget_3);
+        triggerPolarity->setObjectName(QStringLiteral("triggerPolarity"));
+
+        formLayout_3->setWidget(10, QFormLayout::FieldRole, triggerPolarity);
+
+        label_35 = new QLabel(formLayoutWidget_3);
+        label_35->setObjectName(QStringLiteral("label_35"));
+
+        formLayout_3->setWidget(11, QFormLayout::LabelRole, label_35);
+
+        voltage = new QComboBox(formLayoutWidget_3);
+        voltage->setObjectName(QStringLiteral("voltage"));
+
+        formLayout_3->setWidget(11, QFormLayout::FieldRole, voltage);
+
+        label_36 = new QLabel(formLayoutWidget_3);
+        label_36->setObjectName(QStringLiteral("label_36"));
+
+        formLayout_3->setWidget(12, QFormLayout::LabelRole, label_36);
+
+        digitalInputs = new QComboBox(formLayoutWidget_3);
+        digitalInputs->setObjectName(QStringLiteral("digitalInputs"));
+
+        formLayout_3->setWidget(12, QFormLayout::FieldRole, digitalInputs);
+
+        label_23 = new QLabel(formLayoutWidget_3);
+        label_23->setObjectName(QStringLiteral("label_23"));
+
+        formLayout_3->setWidget(13, QFormLayout::LabelRole, label_23);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        autoThreshold = new QComboBox(formLayoutWidget_3);
+        autoThreshold->setObjectName(QStringLiteral("autoThreshold"));
+
+        horizontalLayout_3->addWidget(autoThreshold);
+
+        threshold = new QSpinBox(formLayoutWidget_3);
+        threshold->setObjectName(QStringLiteral("threshold"));
+        threshold->setMaximum(255);
+
+        horizontalLayout_3->addWidget(threshold);
+
+
+        formLayout_3->setLayout(13, QFormLayout::FieldRole, horizontalLayout_3);
+
+        connecct = new QPushButton(tab_7);
+        connecct->setObjectName(QStringLiteral("connecct"));
+        connecct->setGeometry(QRect(320, 20, 41, 23));
+        tabWidget->addTab(tab_7, QString());
 
         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
 
@@ -1008,7 +1030,7 @@ public:
         QObject::connect(Button_Yes, SIGNAL(clicked()), mySettings, SLOT(accept()));
         QObject::connect(pushButton_Cancel, SIGNAL(clicked()), mySettings, SLOT(close()));
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(4);
         triggerSource->setCurrentIndex(1);
         triggerPolarity->setCurrentIndex(1);
         digitalInputs->setCurrentIndex(2);
@@ -1084,12 +1106,35 @@ public:
         cameraDevice->setText(QApplication::translate("mySettings", "TOSHIBA Web Camera - HD", 0));
         label_14->setText(QApplication::translate("mySettings", "ExposureTime:", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("mySettings", "\347\233\270\346\234\272\350\256\276\347\275\256", 0));
+        label_37->setText(QApplication::translate("mySettings", "debug\350\276\223\345\207\272", 0));
+        readSet->setText(QApplication::translate("mySettings", "\350\257\273\345\217\226\345\275\223\345\211\215\351\205\215\347\275\256", 0));
+        label_21->setText(QApplication::translate("mySettings", "\351\207\207\346\240\267\346\254\241\346\225\260:", 0));
+        kingsCheck->setText(QApplication::translate("mySettings", "\345\237\272\346\201\251\346\226\257", 0));
+        miyiCheck->setText(QApplication::translate("mySettings", "\347\261\263\344\276\235", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("mySettings", "\346\277\200\345\205\211\350\256\276\347\275\256", 0));
+        label_34->setText(QApplication::translate("mySettings", "IP:", 0));
+        label_41->setText(QApplication::translate("mySettings", "\344\274\240\350\276\223\347\253\257\345\217\243:", 0));
+        label_40->setText(QApplication::translate("mySettings", "\346\216\247\345\210\266\347\253\257\345\217\243:", 0));
+        label_38->setText(QApplication::translate("mySettings", "\345\233\236\350\260\203\351\242\221\347\216\207:", 0));
+        usb->setText(QApplication::translate("mySettings", "USB", 0));
+        Ethernet->setText(QApplication::translate("mySettings", "Ethernet", 0));
+        Label->setText(QApplication::translate("mySettings", "\351\207\217\347\250\213", 0));
+        minMeasuringRange->setText(QApplication::translate("mySettings", "-7.5", 0));
+        maxMeasuringRange->setText(QApplication::translate("mySettings", "7.5", 0));
+        sendPosLabel->setText(QApplication::translate("mySettings", "SendPos", 0));
+        sendPosComboBox->clear();
+        sendPosComboBox->insertItems(0, QStringList()
+         << QApplication::translate("mySettings", "PROFILE_POS_CURRENT", 0)
+         << QApplication::translate("mySettings", "PROFILE_POS_OLDEST", 0)
+         << QApplication::translate("mySettings", "PROFILE_POS_SPEC", 0)
+        );
+        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("mySettings", "\345\237\272\346\201\251\346\226\257\346\277\200\345\205\211\350\256\276\347\275\256", 0));
         label_25->setText(QApplication::translate("mySettings", "\351\200\211\346\213\251\350\256\276\345\244\207:", 0));
         select_device->clear();
         select_device->insertItems(0, QStringList()
          << QApplication::translate("mySettings", "0", 0)
         );
-        label_21->setText(QApplication::translate("mySettings", "\351\207\207\346\240\267\346\254\241\346\225\260:", 0));
+        label_26->setText(QApplication::translate("mySettings", "\345\270\247\347\216\207:", 0));
         label_22->setText(QApplication::translate("mySettings", "\346\233\235\345\205\211\346\227\266\351\227\264:", 0));
         exposure->clear();
         exposure->insertItems(0, QStringList()
@@ -1195,28 +1240,8 @@ public:
          << QApplication::translate("mySettings", "absolute", 0)
          << QApplication::translate("mySettings", "auto", 0)
         );
-        label_26->setText(QApplication::translate("mySettings", "\345\270\247\347\216\207:", 0));
-        label_37->setText(QApplication::translate("mySettings", "debug\350\276\223\345\207\272", 0));
-        readSet->setText(QApplication::translate("mySettings", "\350\257\273\345\217\226\345\275\223\345\211\215\351\205\215\347\275\256", 0));
         connecct->setText(QApplication::translate("mySettings", "\350\277\236\346\216\245", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("mySettings", "\346\277\200\345\205\211\350\256\276\347\275\256", 0));
-        label_34->setText(QApplication::translate("mySettings", "IP:", 0));
-        label_41->setText(QApplication::translate("mySettings", "\344\274\240\350\276\223\347\253\257\345\217\243:", 0));
-        label_40->setText(QApplication::translate("mySettings", "\346\216\247\345\210\266\347\253\257\345\217\243:", 0));
-        label_38->setText(QApplication::translate("mySettings", "\345\233\236\350\260\203\351\242\221\347\216\207:", 0));
-        usb->setText(QApplication::translate("mySettings", "USB", 0));
-        Ethernet->setText(QApplication::translate("mySettings", "Ethernet", 0));
-        Label->setText(QApplication::translate("mySettings", "\351\207\217\347\250\213", 0));
-        minMeasuringRange->setText(QApplication::translate("mySettings", "-7.5", 0));
-        maxMeasuringRange->setText(QApplication::translate("mySettings", "7.5", 0));
-        sendPosLabel->setText(QApplication::translate("mySettings", "SendPos", 0));
-        sendPosComboBox->clear();
-        sendPosComboBox->insertItems(0, QStringList()
-         << QApplication::translate("mySettings", "PROFILE_POS_CURRENT", 0)
-         << QApplication::translate("mySettings", "PROFILE_POS_OLDEST", 0)
-         << QApplication::translate("mySettings", "PROFILE_POS_SPEC", 0)
-        );
-        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("mySettings", "\345\237\272\346\201\251\346\226\257\346\277\200\345\205\211\350\256\276\347\275\256", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("mySettings", "\347\261\263\344\276\235\346\277\200\345\205\211\350\256\276\347\275\256", 0));
     } // retranslateUi
 
 };
