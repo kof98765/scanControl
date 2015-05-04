@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_profileGet_t {
-    QByteArrayData data[51];
-    char stringdata[546];
+    QByteArrayData data[55];
+    char stringdata[590];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,50 +52,55 @@ QT_MOC_LITERAL(19, 172, 7),
 QT_MOC_LITERAL(20, 180, 9),
 QT_MOC_LITERAL(21, 190, 14),
 QT_MOC_LITERAL(22, 205, 9),
-QT_MOC_LITERAL(23, 215, 13),
-QT_MOC_LITERAL(24, 229, 20),
-QT_MOC_LITERAL(25, 250, 7),
-QT_MOC_LITERAL(26, 258, 6),
-QT_MOC_LITERAL(27, 265, 9),
-QT_MOC_LITERAL(28, 275, 14),
-QT_MOC_LITERAL(29, 290, 13),
-QT_MOC_LITERAL(30, 304, 10),
-QT_MOC_LITERAL(31, 315, 9),
-QT_MOC_LITERAL(32, 325, 12),
-QT_MOC_LITERAL(33, 338, 11),
-QT_MOC_LITERAL(34, 350, 16),
-QT_MOC_LITERAL(35, 367, 15),
-QT_MOC_LITERAL(36, 383, 13),
-QT_MOC_LITERAL(37, 397, 20),
-QT_MOC_LITERAL(38, 418, 12),
-QT_MOC_LITERAL(39, 431, 12),
-QT_MOC_LITERAL(40, 444, 5),
-QT_MOC_LITERAL(41, 450, 13),
-QT_MOC_LITERAL(42, 464, 1),
-QT_MOC_LITERAL(43, 466, 1),
-QT_MOC_LITERAL(44, 468, 16),
-QT_MOC_LITERAL(45, 485, 11),
-QT_MOC_LITERAL(46, 497, 12),
-QT_MOC_LITERAL(47, 510, 11),
-QT_MOC_LITERAL(48, 522, 1),
-QT_MOC_LITERAL(49, 524, 7),
-QT_MOC_LITERAL(50, 532, 13)
+QT_MOC_LITERAL(23, 215, 10),
+QT_MOC_LITERAL(24, 226, 13),
+QT_MOC_LITERAL(25, 240, 20),
+QT_MOC_LITERAL(26, 261, 7),
+QT_MOC_LITERAL(27, 269, 6),
+QT_MOC_LITERAL(28, 276, 9),
+QT_MOC_LITERAL(29, 286, 14),
+QT_MOC_LITERAL(30, 301, 13),
+QT_MOC_LITERAL(31, 315, 10),
+QT_MOC_LITERAL(32, 326, 9),
+QT_MOC_LITERAL(33, 336, 12),
+QT_MOC_LITERAL(34, 349, 11),
+QT_MOC_LITERAL(35, 361, 16),
+QT_MOC_LITERAL(36, 378, 15),
+QT_MOC_LITERAL(37, 394, 13),
+QT_MOC_LITERAL(38, 408, 20),
+QT_MOC_LITERAL(39, 429, 12),
+QT_MOC_LITERAL(40, 442, 12),
+QT_MOC_LITERAL(41, 455, 5),
+QT_MOC_LITERAL(42, 461, 13),
+QT_MOC_LITERAL(43, 475, 1),
+QT_MOC_LITERAL(44, 477, 1),
+QT_MOC_LITERAL(45, 479, 16),
+QT_MOC_LITERAL(46, 496, 11),
+QT_MOC_LITERAL(47, 508, 12),
+QT_MOC_LITERAL(48, 521, 11),
+QT_MOC_LITERAL(49, 533, 11),
+QT_MOC_LITERAL(50, 545, 1),
+QT_MOC_LITERAL(51, 547, 15),
+QT_MOC_LITERAL(52, 563, 4),
+QT_MOC_LITERAL(53, 568, 7),
+QT_MOC_LITERAL(54, 576, 13)
     },
     "profileGet\0DisplayProfile\0\0double*\0"
     "pdValueX\0pdValueZ\0uiResolution\0dispZ\0"
     "Error\0putImagebyPointer1\0width\0height\0"
     "putImagebyPointer3\0x\0y\0z\0dispSingleFrame\0"
     "unsigned short*\0size\0setData\0dispFrame\0"
-    "unsigned char*\0heartPack\0getNewProfile\0"
-    "const unsigned char*\0pucData\0uiSize\0"
-    "pUserData\0getSingleFrame\0getVideoFrame\0"
-    "startVedio\0stopVedio\0startTrigger\0"
-    "stopTrigger\0startSingleFrame\0"
+    "unsigned char*\0heartPack\0initDevice\0"
+    "getNewProfile\0const unsigned char*\0"
+    "pucData\0uiSize\0pUserData\0getSingleFrame\0"
+    "getVideoFrame\0startVideo\0stopVideo\0"
+    "startTrigger\0stopTrigger\0startSingleFrame\0"
     "stopSingleFrame\0flushSettings\0"
     "GetProfiles_Callback\0readSettings\0"
     "selectDevice\0index\0setExposeTime\0s\0i\0"
     "setExternTrigger\0testConnect\0startGetData\0"
-    "setDispMode\0m\0getList\0QList<double>"
+    "stopGetData\0setDispMode\0m\0setTransferMode\0"
+    "mode\0getList\0QList<double>"
 };
 #undef QT_MOC_LITERAL
 
@@ -105,7 +110,7 @@ static const uint qt_meta_data_profileGet[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      28,   14, // methods
+      31,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -113,36 +118,39 @@ static const uint qt_meta_data_profileGet[] = {
        9,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    3,  154,    2, 0x06 /* Public */,
-       7,    1,  161,    2, 0x06 /* Public */,
-       8,    1,  164,    2, 0x06 /* Public */,
-       9,    3,  167,    2, 0x06 /* Public */,
-      12,    5,  174,    2, 0x06 /* Public */,
-      16,    5,  185,    2, 0x06 /* Public */,
-      19,    2,  196,    2, 0x06 /* Public */,
-      20,    2,  201,    2, 0x06 /* Public */,
-      22,    0,  206,    2, 0x06 /* Public */,
+       1,    3,  169,    2, 0x06 /* Public */,
+       7,    1,  176,    2, 0x06 /* Public */,
+       8,    1,  179,    2, 0x06 /* Public */,
+       9,    3,  182,    2, 0x06 /* Public */,
+      12,    5,  189,    2, 0x06 /* Public */,
+      16,    5,  200,    2, 0x06 /* Public */,
+      19,    2,  211,    2, 0x06 /* Public */,
+      20,    2,  216,    2, 0x06 /* Public */,
+      22,    0,  221,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      23,    3,  207,    2, 0x0a /* Public */,
-      28,    0,  214,    2, 0x0a /* Public */,
-      29,    0,  215,    2, 0x0a /* Public */,
-      30,    0,  216,    2, 0x0a /* Public */,
-      31,    0,  217,    2, 0x0a /* Public */,
-      32,    0,  218,    2, 0x0a /* Public */,
-      33,    0,  219,    2, 0x0a /* Public */,
-      34,    0,  220,    2, 0x0a /* Public */,
-      35,    0,  221,    2, 0x0a /* Public */,
-      36,    0,  222,    2, 0x0a /* Public */,
-      37,    0,  223,    2, 0x0a /* Public */,
-      38,    0,  224,    2, 0x0a /* Public */,
-      39,    1,  225,    2, 0x0a /* Public */,
-      41,    2,  228,    2, 0x0a /* Public */,
-      44,    1,  233,    2, 0x0a /* Public */,
-      45,    0,  236,    2, 0x0a /* Public */,
-      46,    0,  237,    2, 0x0a /* Public */,
-      47,    1,  238,    2, 0x0a /* Public */,
-      49,    0,  241,    2, 0x0a /* Public */,
+      23,    0,  222,    2, 0x0a /* Public */,
+      24,    3,  223,    2, 0x0a /* Public */,
+      29,    0,  230,    2, 0x0a /* Public */,
+      30,    0,  231,    2, 0x0a /* Public */,
+      31,    0,  232,    2, 0x0a /* Public */,
+      32,    0,  233,    2, 0x0a /* Public */,
+      33,    0,  234,    2, 0x0a /* Public */,
+      34,    0,  235,    2, 0x0a /* Public */,
+      35,    0,  236,    2, 0x0a /* Public */,
+      36,    0,  237,    2, 0x0a /* Public */,
+      37,    0,  238,    2, 0x0a /* Public */,
+      38,    0,  239,    2, 0x0a /* Public */,
+      39,    0,  240,    2, 0x0a /* Public */,
+      40,    1,  241,    2, 0x0a /* Public */,
+      42,    2,  244,    2, 0x0a /* Public */,
+      45,    1,  249,    2, 0x0a /* Public */,
+      46,    0,  252,    2, 0x0a /* Public */,
+      47,    0,  253,    2, 0x0a /* Public */,
+      48,    0,  254,    2, 0x0a /* Public */,
+      49,    1,  255,    2, 0x0a /* Public */,
+      51,    1,  258,    2, 0x0a /* Public */,
+      53,    0,  261,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 3, QMetaType::UInt,    4,    5,    6,
@@ -156,7 +164,8 @@ static const uint qt_meta_data_profileGet[] = {
     QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 24, QMetaType::UInt, QMetaType::VoidStar,   25,   26,   27,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 25, QMetaType::UInt, QMetaType::VoidStar,   26,   27,   28,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -168,13 +177,15 @@ static const uint qt_meta_data_profileGet[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   42,   43,
-    QMetaType::Void, QMetaType::Int,   40,
+    QMetaType::Void, QMetaType::Int,   41,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   43,   44,
+    QMetaType::Void, QMetaType::Int,   41,
     QMetaType::Bool,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   48,
-    0x80000000 | 50,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   52,
+    0x80000000 | 54,
 
        0        // eod
 };
@@ -193,26 +204,29 @@ void profileGet::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->setData((*reinterpret_cast< double*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 7: _t->dispFrame((*reinterpret_cast< unsigned char*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 8: _t->heartPack(); break;
-        case 9: _t->getNewProfile((*reinterpret_cast< const unsigned char*(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])),(*reinterpret_cast< void*(*)>(_a[3]))); break;
-        case 10: _t->getSingleFrame(); break;
-        case 11: _t->getVideoFrame(); break;
-        case 12: _t->startVedio(); break;
-        case 13: _t->stopVedio(); break;
-        case 14: _t->startTrigger(); break;
-        case 15: _t->stopTrigger(); break;
-        case 16: _t->startSingleFrame(); break;
-        case 17: _t->stopSingleFrame(); break;
-        case 18: _t->flushSettings(); break;
-        case 19: _t->GetProfiles_Callback(); break;
-        case 20: _t->readSettings(); break;
-        case 21: _t->selectDevice((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 22: _t->setExposeTime((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 23: _t->setExternTrigger((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 24: { bool _r = _t->testConnect();
+        case 9: _t->initDevice(); break;
+        case 10: _t->getNewProfile((*reinterpret_cast< const unsigned char*(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])),(*reinterpret_cast< void*(*)>(_a[3]))); break;
+        case 11: _t->getSingleFrame(); break;
+        case 12: _t->getVideoFrame(); break;
+        case 13: _t->startVideo(); break;
+        case 14: _t->stopVideo(); break;
+        case 15: _t->startTrigger(); break;
+        case 16: _t->stopTrigger(); break;
+        case 17: _t->startSingleFrame(); break;
+        case 18: _t->stopSingleFrame(); break;
+        case 19: _t->flushSettings(); break;
+        case 20: _t->GetProfiles_Callback(); break;
+        case 21: _t->readSettings(); break;
+        case 22: _t->selectDevice((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 23: _t->setExposeTime((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 24: _t->setExternTrigger((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 25: { bool _r = _t->testConnect();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 25: _t->startGetData(); break;
-        case 26: _t->setDispMode((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 27: { QList<double> _r = _t->getList();
+        case 26: _t->startGetData(); break;
+        case 27: _t->stopGetData(); break;
+        case 28: _t->setDispMode((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 29: _t->setTransferMode((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 30: { QList<double> _r = _t->getList();
             if (_a[0]) *reinterpret_cast< QList<double>*>(_a[0]) = _r; }  break;
         default: ;
         }
@@ -301,13 +315,13 @@ int profileGet::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 28)
+        if (_id < 31)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 28;
+        _id -= 31;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 28)
+        if (_id < 31)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 28;
+        _id -= 31;
     }
     return _id;
 }

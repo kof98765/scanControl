@@ -456,7 +456,7 @@ void profileGet::preGetDate()
             this->stopSingleFrame();
         break;
         case 3:
-            this->stopVedio();
+            this->stopVideo();
         break;
     }
 }
@@ -474,9 +474,31 @@ void profileGet::startGetData()
             this->startSingleFrame();
         break;
         case 3:
-            this->startVedio();
+            this->startVideo();
         break;
     }
+}
+void profileGet::stopGetData()
+{
+    switch(mode)
+    {
+        case 0:
+            this->stopTrigger();
+            break;
+        case 1:
+            //this->GetProfiles_Callback();
+        break;
+        case 2:
+            this->stopSingleFrame();
+        break;
+        case 3:
+            this->stopVideo();
+        break;
+    }
+}
+void profileGet::setTransferMode(int mode)
+{
+
 }
 void profileGet::setDispMode(int m)
 {
@@ -639,7 +661,7 @@ void profileGet::stopTrigger()
         return;
     }
 }
-void profileGet::startVedio()
+void profileGet::startVideo()
 {
     int iRetValue;
     if(!isReady)
@@ -681,7 +703,7 @@ void profileGet::startVedio()
 }
 
 
-void profileGet::stopVedio()
+void profileGet::stopVideo()
 {
     int iRetValue;
     mode=1;

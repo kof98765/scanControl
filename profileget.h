@@ -14,6 +14,8 @@
 #include <QTime>
 #include <QPixmap>
 #include <QThread>
+#include "laser/laser.h"
+
 #define MAX_INTERFACE_COUNT    5
 #define MAX_RESOULUTIONS       6
 
@@ -27,7 +29,7 @@ public:
     profileGet(QObject *parent = 0);
 
     ~profileGet();
-    void initDevice();
+
 
     CInterfaceLLT* m_pLLT;
     unsigned int m_uiResolution;
@@ -87,11 +89,12 @@ signals:
     void dispFrame(unsigned char*,int);
     void heartPack();
 public slots:
+    void initDevice();
     void getNewProfile(const unsigned char* pucData, unsigned int uiSize, void* pUserData);
     void getSingleFrame();
     void getVideoFrame();
-    void startVedio();
-    void stopVedio();
+    void startVideo();
+    void stopVideo();
     void startTrigger();
     void stopTrigger();
     void startSingleFrame();
@@ -104,7 +107,9 @@ public slots:
     void setExternTrigger(int index);
     bool testConnect();
     void startGetData();
+    void stopGetData();
     void setDispMode(int m);
+    void setTransferMode(int mode);
     QList<double> getList();
 };
 

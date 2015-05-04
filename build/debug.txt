@@ -26443,3 +26443,76 @@
 15:47:44.679: rowcount 0
 15:47:44.679: 1
 15:47:44.683: clear
+08:16:42.377: rowcount 0
+08:16:42.378: roiList size 0
+08:16:42.401: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+08:47:42.093: rowcount 0
+08:47:42.094: roiList size 0
+08:47:42.116: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+08:47:46.484: start
+08:47:46.484: rowcount 0
+08:47:46.484: clear
+08:47:46.489: rowcount 0
+08:47:46.489: roiList size 0
+08:47:46.489: mode 0
+08:47:46.489: frequency 10
+08:47:46.490: commandPort 24691
+08:47:46.490: dataPort 24692
+08:47:46.492: "UsbOpen:0x1000"
+08:47:46.492: start usb
+08:47:59.900: start
+08:47:59.901: rowcount 0
+08:47:59.901: clear
+08:47:59.907: rowcount 0
+08:47:59.907: roiList size 0
+08:47:59.908: mode 0
+08:47:59.908: frequency 10
+08:47:59.910: commandPort 24691
+08:47:59.911: dataPort 24692
+08:47:59.913: "UsbOpen:0x1000"
+08:47:59.914: start usb
+09:03:04.314: rowcount 0
+09:03:04.315: roiList size 0
+09:03:04.337: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).
+09:03:07.750: rowcount 0
+09:03:07.750: roiList size 0
+09:03:07.751: StopHighSpeedDataCommunication,Error: 0x00001001 
+09:03:07.751: HighSpeedDataCommunicationFinalize,Error: 0x00001001 
+09:03:07.751: stop
+09:03:07.751: mode 0
+09:03:07.752: frequency 10
+09:03:07.752: commandPort 24691
+09:03:07.752: dataPort 24692
+09:03:07.755: "UsbOpen:0x1000"
+09:03:07.755: start usb
+09:03:10.110: rowcount 0
+09:03:10.110: roiList size 0
+09:03:10.968: rowcount 0
+09:03:10.968: roiList size 0
+09:03:10.968: StopHighSpeedDataCommunication,Error: 0x00001001 
+09:03:10.968: HighSpeedDataCommunicationFinalize,Error: 0x00001001 
+09:03:10.968: stop
+09:03:10.968: mode 0
+09:03:10.969: frequency 10
+09:03:10.969: commandPort 24691
+09:03:10.969: dataPort 24692
+09:03:10.970: "UsbOpen:0x1000"
+09:03:10.970: start usb
+09:03:11.981: rowcount 0
+09:03:11.981: roiList size 0
+09:03:11.982: read "D:/7080image/01/test0.tif"
+09:03:12.162: 800 1870 real
+09:03:12.229: tmp=3844460
+09:03:12.291: 800 1870
+09:03:12.291: read finish
+09:03:19.634: plane list.size 0
+09:03:19.634: heightsub list.size 0
+09:03:19.634: plane list.size 0
+09:03:19.634: heightsub list.size 0
+09:03:19.634: plane list.size 0
+09:03:19.634: heightsub list.size 0
+09:03:19.635: plane list.size 0
+09:03:19.635: heightsub list.size 0
+09:06:14.113: rowcount 0
+09:06:14.114: roiList size 0
+09:06:14.134: QWindowsWindow::setGeometry: Unable to set geometry 1280x748+8+30 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1280x742+8+30 (frame: 8, 30, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 55x75, maximum size: 16777215x16777215).

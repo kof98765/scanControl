@@ -141,7 +141,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1268, 698);
+        MainWindow->resize(1280, 748);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -228,7 +228,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox_4 = new QGroupBox(centralWidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(760, 10, 501, 601));
+        groupBox_4->setGeometry(QRect(760, 10, 521, 601));
         groupBox_4->setStyleSheet(QStringLiteral(""));
         startButton = new QPushButton(groupBox_4);
         startButton->setObjectName(QStringLiteral("startButton"));
@@ -290,7 +290,7 @@ public:
 
         groupBox_3 = new QGroupBox(groupBox_4);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(10, 50, 621, 311));
+        groupBox_3->setGeometry(QRect(10, 50, 601, 311));
         groupBox = new QGroupBox(groupBox_3);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(10, 20, 281, 281));
@@ -396,7 +396,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 186, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 151, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -633,7 +633,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1268, 23));
+        menuBar->setGeometry(QRect(0, 0, 1280, 23));
         menu_S = new QMenu(menuBar);
         menu_S->setObjectName(QStringLiteral("menu_S"));
         menu = new QMenu(menuBar);

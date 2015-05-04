@@ -1,7 +1,7 @@
 #include "kingscontrol.h"
 
 kingsControl::kingsControl(QObject *parent) :
-    QThread(parent)
+    Laser(parent)
 {
     obj=(void *)this;
     commandPort=24691;

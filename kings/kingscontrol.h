@@ -16,7 +16,7 @@
 using namespace std;
 static void* obj;
 void _cdecl _callback(BYTE* buffer, DWORD size, DWORD count, DWORD notify, DWORD user);
-class kingsControl : public QThread
+class kingsControl : public Laser
 {
     Q_OBJECT
 public:

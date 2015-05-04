@@ -40,6 +40,7 @@
 #include "glwidget.h"
 #include <QColorDialog>
 #include "kingscontrol.h"
+#include "laser/laser.h"
 
 using namespace Halcon;
 
@@ -121,6 +122,7 @@ private:
     Ui::MainWindow *ui;
     QFile debug;
     kingsControl *kings;
+    Laser *laser;
     Plot *plot;
     QFile out;
     QDialog *dataDialog;
