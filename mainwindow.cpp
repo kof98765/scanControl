@@ -45,10 +45,10 @@ MainWindow::MainWindow(QWidget *parent) :
     // plot->setXScale(-40,40);
     // plot->resize(ui->base->widget(2)->size());
     imgView=new imgListView();
-    imgView->setLayout(ui->imgList);
+    imgView->setHBoxLayout(ui->imgList);
 
     //qDebug()<<settings::team::roiList::roi.name;
-    settings::instance();
+
     timer=new QTimer();
     eventTimer=new QTimer();
     connect(eventTimer,SIGNAL(timeout()),this,SLOT(statusCheck()));
@@ -75,8 +75,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     delItem=new QAction(QStringLiteral("删除"),this);
     modifyItem=new QAction(QStringLiteral("修改"),this);
+    delAllItem=new QAction(QStringLiteral("全部删除"),this);
     connect(delItem,SIGNAL(triggered()),this,SLOT(action_delItem()));
     connect(modifyItem,SIGNAL(triggered()),this,SLOT(action_modifyItem()));
+    connect(delAllItem,SIGNAL(triggered()),this,SLOT(action_delAllItem()));
     //加载检测查块
     hal=new halconClass;
     ref=new reflectControl;
@@ -110,10 +112,23 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 void MainWindow::initLaser()
 {
+
     if(!set.value("kingsCheck",false).toBool())
-        laser=profileGet::profileInstance();
+    {
+        if(laser!=profileGet::profileInstance())
+            laser=profileGet::profileInstance();
+
+    }
     else
-        laser=kingsControl::kingsInstance();
+    {
+        if(laser!=kingsControl::kingsInstance())
+            laser=kingsControl::kingsInstance();
+    }
+    disconnect(ui->actionStop,SIGNAL(triggered()),laser,SLOT(stopGetData()));
+    disconnect(hal,SIGNAL(reConnect()),laser,SLOT(startGetData()));
+    disconnect(laser,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
+    disconnect(laser,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
+    disconnect(laser,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
     connect(ui->actionStop,SIGNAL(triggered()),laser,SLOT(stopGetData()));
     connect(hal,SIGNAL(reConnect()),laser,SLOT(startGetData()));
     connect(laser,SIGNAL(putImagebyPointer1(double*,int,int)),hal,SLOT(getImagebyPointer1(double*,int,int)));
@@ -246,6 +261,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
 
             menu.addAction(delItem);
             menu.addAction(modifyItem);
+            menu.addAction(delAllItem);
             menu.exec(mouse->globalPos());
         }
         return QWidget::eventFilter(target,event);
@@ -255,17 +271,6 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
 
 }
 
-void MainWindow::resizeEvent(QResizeEvent *event)
-{
-
-    /*
-    ui->base->setStyleSheet(QLatin1String(
-    "border:2px;\n"
-    "border-radius:5px"));
-    event->accept();
-    */
-    //QString("QGroupBox:title { color: rgb(255,0,0); }");
-}
 /*
     函数名:init_connect()
     参数:无
@@ -299,6 +304,7 @@ void MainWindow::init_connect()
     //触发设置窗口
     connect(ui->settings,SIGNAL(clicked()),ui->action_Net_Param,SLOT(trigger()));
     connect(ui->settings,SIGNAL(clicked()),this,SLOT(on_textChanged()));
+    connect(setDialog,SIGNAL(openFile(QString)),this,SLOT(openFile(QString)));
     connect(mygroup,SIGNAL(buttonClicked(int)),this,SLOT(controlImg(int)));
     connect(ref,SIGNAL(recvData(char*)),setDialog,SLOT(recvData(char*)));
     //connect(ui->roiColor,SIGNAL(clicked()),this,SLOT(on_roiColor_clicked()));
@@ -744,7 +750,13 @@ void MainWindow::on_loadFile_clicked()
     hal->read_img(set.value("path","test.tif").toString());
 
 }
+void MainWindow::openFile(QString path)
+{
+    status=1;
 
+    hal->open_the_window(ui->base->winId(),ui->base->width(),ui->base->height());
+    hal->read_img(path);
+}
 
 
 
@@ -1101,7 +1113,12 @@ void MainWindow::flushRoiList(QStringList ll)
             roiList->add_item(4,roi.value("max").toString());
             break;
         case 3:
-            roiList->add_item(2,QStringLiteral("计算高差"));
+            roiList->add_item(2,QStringLiteral("点到平面高差"));
+            roiList->add_item(3,roi.value("min").toString());
+            roiList->add_item(4,roi.value("max").toString());
+            break;
+        case 4:
+            roiList->add_item(2,QStringLiteral("点到点高差"));
             roiList->add_item(3,roi.value("min").toString());
             roiList->add_item(4,roi.value("max").toString());
             break;
@@ -1125,6 +1142,17 @@ void MainWindow::action_delItem()
     ui->roiList->removeRow(currentItem);
     ui->roiList->update();
     hal->delRect(name);
+}
+void MainWindow::action_delAllItem()
+{
+    int i,maxrow = ui->roiList->rowCount();
+
+    for(i=maxrow-1;i>=0;i--)
+    {
+        QString name=ui->roiList->item(i,0)->text();
+        hal->delRect(name);
+        ui->roiList->removeRow(i);
+    }
 }
 /*
     矩形框列表修改事件

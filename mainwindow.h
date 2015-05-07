@@ -6,13 +6,8 @@
 #include <QMainWindow>
 
 #include "checkthread.h"
-#include <QtSerialPort/QSerialPort>
-#include "param.h"
-#include "filedialog.h"
-#include "dialogcameralight.h"
 #include "settingDialog.h"
 #include "halconclass.h"
-#include "dialogimgparam.h"
 #include "imgview.h"
 #include "imgbase.h"
 #include "imgListView.h"
@@ -27,7 +22,6 @@
 #include <QSettings>
 #include <QStringListModel>
 #include <QWheelEvent>
-#include "settings.h"
 #include <QDirIterator>
 #include <QtGui>
 #include <QSplashScreen>
@@ -71,7 +65,6 @@ public:
 protected:
     void wheelEvent(QWheelEvent *);
     bool eventFilter(QObject *, QEvent *);
-    void resizeEvent(QResizeEvent *);
 public slots:
     void outputMessage(QtMsgType,QString);
     void recvHeightSub(int,double,double,double);
@@ -115,8 +108,9 @@ public slots:
     void stopVideo();
     void startSingleFrame();
     void stopSingleFrame();
-
+    void openFile(QString path);
     void action_delItem();
+    void action_delAllItem();
     void action_modifyItem();
 private:
     Ui::MainWindow *ui;
@@ -135,7 +129,6 @@ private:
     QList<QString> fileList;
     QPalette palette;
     mySettings    *setDialog;
-    fileDialog *file;
     QLabel *status_label;
     QString serverIp;
     int serverPort;
@@ -164,6 +157,7 @@ private:
     int currentItem;
     QAction *delItem;
     QAction *modifyItem;
+    QAction *delAllItem;
     int status;
 
 

@@ -5,6 +5,9 @@
 #include <QFileDialog>
 #include <QSettings>
 #include <QDebug>
+#include <QDirIterator>
+#include <QMessageBox>
+#include "imglistview.h"
 namespace Ui {
 class mySettings;
 }
@@ -32,18 +35,21 @@ private slots:
     void on_testValue_valueChanged(double arg1);
     void on_trigger_currentIndexChanged(int index);
     void on_exposure_currentIndexChanged(const QString &arg1);
-
+    void selectImg(int);
     void on_rate_valueChanged(int arg1);
 
     void on_readSet_clicked();
 
+    void on_findButton_clicked();
+
 private:
     Ui::mySettings *ui;
     QString filePath;
+    QList<QString> fileList;
     QSettings set;
     QString *settings;
     QString *value;
-
+    imgListView *imgView;
 signals:
     void netTest(QString msg);
     void updataSettings();
@@ -51,6 +57,7 @@ signals:
     void postExposeTime(int s,int i);
     void setExternTrigger(int index);
     void upDataNetwork(QString,int);
+    void openFile(QString);
 };
 
 #endif // mySettings_H

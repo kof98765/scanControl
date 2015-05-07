@@ -21,9 +21,15 @@ imgListView::imgListView(QObject *parent) :
 {
 
 }
-void imgListView::setLayout(QLayout *l)
+void imgListView::setHBoxLayout(QLayout *l)
 {
     layout=(QHBoxLayout *)l;
+
+}
+void imgListView::setGridLayout(int w,int h,QGridLayout *l)
+{
+    l->setColumnMinimumWidth(w,h);
+    layout=l;
 
 }
 void imgListView::addImg(Hobject *obj)
@@ -43,11 +49,23 @@ void imgListView::addImg(Hobject *obj)
     disp_obj(*obj,win);
 
 }
+void imgListView::addImg(QString path)
+{
+    Hobject *img=new Hobject;
+    QTextCodec* gbk = QTextCodec::codecForName("GBK");
+    //QTextCodec* utf8 = QTextCodec::codecForName("UTF-8");
+    //编码器可以把QString转换为自己的编码：
+    QByteArray ba = gbk->fromUnicode(path);
+    char* c = ba.data();
+    read_image(img,c);
+    addImg(img);
+}
 void imgListView::deleteImg(int index)
 {
     close_window(winList.at(index));
     winList.removeAt(index);
     layout->removeWidget(labelList.at(index));
+    disconnect(labelList.at(index),SIGNAL(click()),this,SLOT(onClick()));
     labelList.at(index)->deleteLater();
     labelList.removeAt(index);
     imgList.removeAt(index);

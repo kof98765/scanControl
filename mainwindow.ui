@@ -349,7 +349,12 @@
          </item>
          <item>
           <property name="text">
-           <string>计算高差</string>
+           <string>点到平面高差</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>点到点高差</string>
           </property>
          </item>
         </widget>
@@ -428,7 +433,7 @@
        <rect>
         <x>310</x>
         <y>40</y>
-        <width>151</width>
+        <width>198</width>
         <height>81</height>
        </rect>
       </property>
@@ -493,6 +498,9 @@
            <property name="enabled">
             <bool>false</bool>
            </property>
+           <property name="minimum">
+            <number>-10000</number>
+           </property>
            <property name="maximum">
             <number>10000</number>
            </property>
@@ -502,6 +510,9 @@
           <widget class="QSpinBox" name="pointY">
            <property name="enabled">
             <bool>false</bool>
+           </property>
+           <property name="minimum">
+            <number>-10000</number>
            </property>
            <property name="maximum">
             <number>10000</number>

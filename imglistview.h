@@ -5,6 +5,7 @@
 #include "HalconCpp.h"
 #include <Qlabel>
 #include <QHBoxLayout>
+#include <QTextCodec>
 #include <QEvent>
 #include <QMouseEvent>
 #include <QDebug>
@@ -28,7 +29,7 @@ public:
 protected:
 
 private:
-    QHBoxLayout *layout;
+    QLayout *layout;
     QList<Hobject*> imgList;
     QList<clickLabel*> labelList;
     QList<HTuple> winList;
@@ -37,9 +38,11 @@ signals:
     void selectImg(int);
 public slots:
     void addImg(Hobject *obj);
+    void addImg(QString path);
     void deleteImg(int index);
     int getListSize();
-    void setLayout(QLayout *l);
+    void setHBoxLayout(QLayout *l);
+    void setGridLayout(int w,int h,QGridLayout *l);
     void deleteAllImg();
     void onClick();
 };

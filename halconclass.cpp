@@ -94,7 +94,7 @@ void halconClass::resizePart()
 */
 void halconClass::read_img(QString str)
 {
-   char c[100];
+
    HTuple area;
    HTuple Width,Height;
    Hobject tmp;
@@ -110,14 +110,21 @@ void halconClass::read_img(QString str)
    }
    isLoadFile=true;
    qDebug()<<"read"<<str;
-   read_image(&tmp,path.toUtf8().data());
+
+   QTextCodec* gbk = QTextCodec::codecForName("GBK");
+   //QTextCodec* utf8 = QTextCodec::codecForName("UTF-8");
+   //编码器可以把QString转换为自己的编码：
+   QByteArray ba = gbk->fromUnicode(path);
+
+   char* c = ba.data();
+   read_image(&tmp,c);
 
    get_image_size(tmp,&Width,&Height);
 
    get_image_pointer1(tmp,(long*)&p,type,&w,&h);
    //getImagebyPointer3(0,0,p,w,h);
    qDebug()<<w<<h<<type;
-    if(type=="byte")
+    if(type==gbk->fromUnicode("byte").data())
     {
         emit Error("thi image type is byte,not real!!");
         return;
@@ -282,23 +289,33 @@ void halconClass::disp_img()
 
                 Hobject Rectangle,Contours;
 
-                if(roi.value("func").toInt()==1|roi.value("func").toInt()==0)
+                if(roi.value("func").toInt()==1|roi.value("func").toInt()==0) 
                     gen_rectangle1(&Rectangle, (Hlong)roi.value("Row").toDouble(), (Hlong)roi.value("Column").toDouble(),(Hlong)roi.value("Row2").toDouble(), (Hlong)roi.value("Column2").toDouble());
                 else
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Length1").toDouble(),roi.value("Length2").toDouble());
+                {
+                    if(roi.value("isDraw").toInt()==0)
+                        gen_rectangle2(&Rectangle,roi.value("x").toDouble()+roi.value("Row").toDouble(),roi.value("y").toDouble()+roi.value("Column").toDouble(),0,roi.value("Length1").toDouble(),roi.value("Length2").toDouble());
+                    else
+                        gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Length1").toDouble(),roi.value("Length2").toDouble());
+
+                }
                 if(matList.value(roi.value("index").toString(),NULL)!=NULL&roi.value("func").toInt()!=1)
                 {
                     affine_trans_region(Rectangle,&Rectangle,matList.value(roi.value("index").toString()),"false");
                     HTuple Row,Column;
-                    affine_trans_pixel(matList.value(roi.value("index").toString(),NULL),roi.value("Row").toDouble(),roi.value("Column").toDouble(),&Row,&Column);
+                    affine_trans_pixel(matList.value(roi.value("index").toString(),NULL),roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble(),&Row,&Column);
                     set_rgb(WindowHandle,(int)((roi.value("color").toInt()&(0xff<<16))>>16),(int)((roi.value("color").toInt()&(0xff<<8))>>8),(int)(roi.value("color").toInt()&0xff));
+
                     set_tposition(WindowHandle,Row,Column);
                     write_string(WindowHandle,HTuple(list.at(i).toUtf8().data()));
                 }
                 else
                 {
                     set_rgb(WindowHandle,(int)((roi.value("color").toInt()&(0xff<<16))>>16),(int)((roi.value("color").toInt()&(0xff<<8))>>8),(int)(roi.value("color").toInt()&0xff));
-                    set_tposition(WindowHandle,roi.value("Row").toDouble(),roi.value("Column").toDouble());
+                    if(roi.value("isDraw").toInt()==0)
+                       set_tposition(WindowHandle,roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble());
+                    else
+                        set_tposition(WindowHandle,roi.value("Row").toDouble(),roi.value("Column").toDouble());
                     write_string(WindowHandle,HTuple(list.at(i).toUtf8().data()));
                 }
                     gen_contour_region_xld(Rectangle,&Contours,"border");
@@ -538,8 +555,9 @@ void halconClass::delRect(QString name)
     data.removeAll(name);
 
 
-    dataList.insert(roi.value("team").toString(),data);
-    qDebug()<<dataList;
+    dataList.insert(roi.value("team","0").toString(),data);
+    qDebug()<<"del"<<roi.value("team").toString()<<dataList;
+
     set.setValue("dataList",dataList);
     set.setValue("roiList",roiList);
     set.remove("team/"+name);
@@ -578,13 +596,14 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
     HTuple  Row, Column, Row2, Column2,Phi,Length1,Length2, Max;
     QStringList str;
     QMap<QString,QVariant> roi;
+    //Roi roi;
     //set_color(WindowHandle,color.toUtf8().data());
 
     set_rgb(WindowHandle,(int)((color&(0xff<<16))>>16),(int)((color&(0xff<<8))>>8),(int)(color&0xff));
     //roiList[0]
-
+    //roi.color=color;
     roi.insert("color",color);
-    if(func==2|func==3)
+    if(func==2|func==3|func==4)
     {
         if(drawType)
         {
@@ -596,17 +615,34 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
             roi.insert("Phi",Phi[0].D());
             roi.insert("Length1",Length1[0].D());
             roi.insert("Length2",Length2[0].D());
+            roi.insert("isDraw",1);
 
             qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D()<<Phi[0].D();
         }
         else
         {
+            //手动输入时需要定位点,所以有了x,y
+            double x,y;
+            QStringList point=set.value("locationList").toMap().value(QString::number(index)).toStringList();
+            if(point.size()>0)
+            {
+                x=set.value("locationList").toMap().value(QString::number(index)).toStringList().at(0).toDouble();
+                y=set.value("locationList").toMap().value(QString::number(index)).toStringList().at(1).toDouble();
 
+            }
+            else
+            {
+                x=0;
+                y=0;
+            }
             roi.insert("Row",row);
             roi.insert("Column",column);
             roi.insert("Phi",0);
             roi.insert("Length1",length1);
             roi.insert("Length2",length2);
+            roi.insert("isDraw",0);
+            roi.insert("x",x);
+            roi.insert("y",y);
             qDebug()<<"func"<<row<<column<<length1<<length2;
         }
     }
@@ -628,6 +664,15 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
             gen_rectangle1(&Rectangle,Row,Column,Row2,Column2);
             HTuple Area,r,c;
             area_center(Rectangle,&Area,&r,&c);
+            if(func==0)
+            {
+                QStringList str;
+                str<<QString::number(r[0].D());
+                str<<QString::number(c[0].D());
+                QMap<QString,QVariant> map;
+                map.insert(QString::number(index),str);
+                set.setValue("locationList",map);
+            }
             qDebug()<<"func"<<func<<r[0].D()<<c[0].D();
 
 
@@ -669,90 +714,7 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
     disp_img();
     emit flushRoiList(roiList.keys());
 }
-void halconClass::drawRect(QString name,QString color,int team,double limit,int func)
-{
-    int i=0;
-    Hobject Rectangle;
-    if(name.isEmpty())
-        name="rect";
-    while(set.contains("team/"+name))
-    {
 
-        name=QString("%1_%2").arg(name.mid(0,name.lastIndexOf("_"))).arg(i++);
-    }
-    HTuple  Row, Column, Row2, Column2,Phi,Length1,Length2, Max;
-    QStringList str;
-    QMap<QString,QVariant> roi;
-    //set_color(WindowHandle,color.toUtf8().data());
-	
-    set_rgb(WindowHandle,(int)((color.toULong()&(0xff<<16))>>16),(int)((color.toULong()&(0xff<<8))>>8),(int)(color.toULong()&0xff));
-    //roiList[0]
-
-    roi.insert("color",color);
-    if(func==2|func==3)
-    {
-        draw_rectangle2(WindowHandle,&Row,&Column,&Phi,&Length1,&Length2);
-        //roiList[1-5]
-
-        roi.insert("Row",Row[0].D());
-        roi.insert("Column",Column[0].D());
-        roi.insert("Phi",Phi[0].D());
-        roi.insert("Length1",Length1[0].D());
-        roi.insert("Length2",Length2[0].D());
-
-        qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D()<<Phi[0].D();
-
-    }
-    else
-    {
-        draw_rectangle1(WindowHandle,&Row,&Column,&Row2,&Column2);
-        //roiList[1-5]
-
-        roi.insert("Row",Row[0].D());
-        roi.insert("Column",Column[0].D());
-        roi.insert("Row2",Row2[0].D());
-        roi.insert("Column2",Column2[0].D());
-        Hobject Rectangle;
-        gen_rectangle1(&Rectangle,Row,Column,Row2,Column2);
-        HTuple Area,r,c;
-        area_center(Rectangle,&Area,&r,&c);
-        qDebug()<<"func"<<func<<r[0].D()<<c[0].D();
-    }
-
-
-   //写入配置文件
-    //roiList[6-9]
-
-    roi.insert("team",team);
-    roi.insert("func",func);
-    roi.insert("index",index);
-    roi.insert("limit",limit);
-    set.setValue("team/"+name,roi);
-    roiList.insert(name,QVariant(str));
-
-    QString teamNum=QString::number(team);
-    QStringList data;
-
-
-    data=dataList.value(teamNum).toStringList();
-
-    if(!data.contains(name))
-        data<<name;
-
-    dataList.insert(teamNum,data);
-
-    set.setValue("dataList",dataList);
-    set.setValue("roiList",roiList);
-    set.sync();
-    if(func==0)
-    {
-        write_image(Image,"tiff",0,QString("%1_%2.tif").arg(roi.value("team").toInt()).arg(roi.value("index").toInt()).toUtf8().data());
-        createTemplate(team);
-    }
-    //更新界面
-    disp_img();
-    emit flushRoiList(roiList.keys());
-}
 /*
  *  name:matchTemplate
     type:函数
@@ -896,7 +858,7 @@ void halconClass::createTemplate(int team)
         QString n=dataList.keys().at(team);
 
         QStringList list=dataList.value(n).toStringList();
-        qDebug()<<list;
+        qDebug()<<"create"<<list;
         for(int i=0;i<list.size();i++)
         {
             QStringList str=roiList.value(list.at(i)).toStringList();
@@ -992,8 +954,10 @@ void halconClass::planePoint(int team)
                  }
                 num++;
                 qDebug()<<"start planePoint";
-
-                 gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                if(roi.value("isDraw").toInt()==0)
+                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                else
+                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
 
                  affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
                  disp_obj(RegionAffineTrans,WindowHandle);
@@ -1108,7 +1072,10 @@ void halconClass::RectHeightSub(int team)
                     emit Error(QStringLiteral("定位失败"));
                     return;
                 }
-                gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                if(roi.value("isDraw").toInt()==0)
+                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                else
+                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
 
                 affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
                  disp_obj(RegionAffineTrans,WindowHandle);
@@ -1195,6 +1162,72 @@ void halconClass::RectHeightSub(int team)
 
     qDebug()<<QStringLiteral("计算高差时间:")<<time.elapsed()<<"ms";
 }
+void halconClass::pointToPoint(int team)
+{
+    int num=0;
+    QTime time;
+    time.start();
+   if (HDevWindowStack::IsOpen()&hasData)
+    {
+        Hobject   Rectangle, RegionAffineTrans, ImageReduced,rect;
+        HTuple  tmp, Row, Column, Area, Min=0, Max=0,Indices;
+        HTuple Rows,Columns,Grayval;
+        HTuple  Range,s,Result,Number;
+        Points2Cloud3 cloud=NULL;
+        ComputePointNormal2 comp=NULL;
+        Dis_point2plane dis=NULL;
+        cloud=(Points2Cloud3)GetProcAddress(hInstance,"Points2Cloud3");
+        comp=(ComputePointNormal2)GetProcAddress(hInstance,"ComputePointNormal2");
+        dis=(Dis_point2plane)GetProcAddress(hInstance,"Dis_point2plane");
+        QString n=dataList.keys().at(team);
+
+        QStringList list=dataList.value(n).toStringList();
+
+
+        int in=0;
+        qDebug()<<"pointtoponit list.size"<<list.size();
+
+        for(int i=0;i<list.size();i++)
+        {
+            QMap<QString,QVariant> roi=set.value("team/"+list.at(i)).toMap();
+
+            if(roi.value("func").toInt()==4)
+            {
+                if(imgList.size()<=roi.value("index").toInt())
+                    continue;
+                num++;
+                qDebug()<<"start ptop";
+                if(matList.value(roi.value("index").toString(),NULL)==NULL)
+                {
+                    emit Error(QStringLiteral("定位失败"));
+                    return;
+                }
+                if(roi.value("isDraw").toInt()==0)
+                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                else
+                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+
+                affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
+                 disp_obj(RegionAffineTrans,WindowHandle);
+                qDebug()<<"ptop orginal point"<<roi.value("Row").toDouble()<<roi.value("Column").toDouble();
+                area_center(RegionAffineTrans,&Area,&Row,&Column);
+                qDebug()<<"ptop now point"<<Row[0].D()<<Column[0].D();
+                reduce_domain(*imgList.at(roi.value("index").toInt()), RegionAffineTrans, &ImageReduced);
+                min_max_gray(ImageReduced,ImageReduced,0,&Min,&Max,&Range);
+                if(num%2==0)
+                {
+                    tuple_sub(Max,tmp,&Result);
+                    tuple_abs(Result,&Result);
+                    emit sendHeightSub(list.at(i),0,0,Result[0].D());
+                }
+                else
+                    tmp=Max;
+
+            }
+        }
+
+    }
+}
 /*
     计算所有区域
 */
@@ -1208,7 +1241,7 @@ void halconClass::calculate()
         matchTemplate(i);
         planePoint(i);
         RectHeightSub(i);
-
+        pointToPoint(i);
     }
 
 
@@ -1413,7 +1446,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     xScale=w/win_width;
     yScale=h/win_height;
     //set_part(WindowHandle,0,0,h,w*yScale);
-resizePart();
+
     for (int row=0; row<h; row++)
     {
 
@@ -1433,7 +1466,7 @@ resizePart();
         qDebug()<<"mirror";
     }
     write_image(Imagetemp,"tiff",0,QString("test%1").arg(num).toUtf8().data());
-
+    resizePart();
     copy_obj(Imagetemp,&Image,1,1);
 
     if(h>=set.value("profileCount",1000).toUInt()|isLoadFile)
@@ -1446,7 +1479,7 @@ resizePart();
         //copy_image(Imagetemp,tmp);
         copy_obj(Imagetemp,tmp,1,1);
         imgList.push_back(tmp);
-        qDebug("tmp=%x",tmp);
+
 
         num++;
         emit addImg(tmp);
@@ -1475,6 +1508,9 @@ resizePart();
     emit dispImg();
    
 }
+/*
+合成3D,有缺陷
+*/
 void halconClass::compoundImg(int xOffset,int yOffset)
 {
     HTuple hv_Exception;

@@ -9,12 +9,12 @@
 #include <QTime>
 #include <QFile>
 #include <fstream>
-
+#include <QTextCodec>
 #include <iostream>
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
 #include "pcl/PCL_Library_Dll.h"
-
+#include "calculategroup.h"
 using namespace std;
 using namespace Halcon;
 void CPPExpDefaultExceptionHandler(const Halcon::HException& except);
@@ -131,11 +131,11 @@ public slots:
     void getImagebyPointer1(double *pdValueZ,int width,int height);
      void getImagebyPointer3(double *x,double *y,double *z,int width,int height);
     void close_the_window();
-    void drawRect(QString name,QString color,int team,double limit,int func);
     void drawRect(QMap<QString,QVariant> map);
     void calculate();
     void delRect(QString);
     void RectHeightSub(int team);
+    void pointToPoint(int team);
     void createTemplate(int team);
     void matchTemplate(int team);
     void calculatePlaneness(int team);

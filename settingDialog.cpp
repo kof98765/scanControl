@@ -8,7 +8,9 @@ mySettings::mySettings(QWidget *parent) :
 {
     ui->setupUi(this);
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf8"));
-	
+    imgView=new imgListView();
+    imgView->setGridLayout(5,5,ui->gridLayout_12);
+    connect(imgView,SIGNAL(selectImg(int)),this,SLOT(selectImg(int)));
     flush_settings();
     qDebug()<<"settings system is run";
 }
@@ -135,8 +137,9 @@ void mySettings::on_Button_Yes_clicked()
 void mySettings::on_open_clicked()
 {
 
-     filePath=QFileDialog::getOpenFileName(this,QStringLiteral("打开图像"),".",("image (*.tif *.bmp *.jpg *.jpeg)"));
-     qDebug()<<filePath;
+     //filePath=QFileDialog::getOpenFileName(this,QStringLiteral("打开图像"),".",("image (*.tif *.bmp *.jpg *.jpeg)"));
+    filePath=QFileDialog::getExistingDirectory(this,QStringLiteral("搜索文件夹"),".", QFileDialog::ShowDirsOnly);
+    qDebug()<<filePath;
      ui->path->setText(filePath);
 }
 
@@ -245,4 +248,51 @@ void mySettings::on_rate_valueChanged(int arg1)
 void mySettings::on_readSet_clicked()
 {
     flush_settings();
+}
+
+void mySettings::on_findButton_clicked()
+{
+    QDir dir;
+    QStringList filters;
+    imgView->deleteAllImg();
+    filters <<"*.jpg"<<"*.bmp"<<"*.png"<<"*.tif";
+    dir.setPath(ui->path->text());
+    dir.setNameFilters(filters);
+    //dir.setSorting(QDir::Name);
+    if(!dir.exists())
+    {
+        QMessageBox::warning(this,QStringLiteral("错误"),QStringLiteral("目录不存在,请设置正确的文件路径"));
+        return;
+    }
+
+    QDirIterator iter(dir,QDirIterator::NoIteratorFlags);
+
+    while (iter.hasNext())
+    {
+        iter.next();
+
+        QFileInfo info=iter.fileInfo();
+
+        if (info.isFile())
+        {
+
+            //  QListWidgetItem *item=new QListWidgetItem(info.fileName());
+
+            fileList.append(info.filePath());
+
+            imgView->addImg(info.filePath());
+
+
+        }
+        if(info.isDir())
+            continue;
+       // if(info.isDir())
+        //    searchFile(info.fileName());
+    }
+}
+void mySettings::selectImg(int i)
+{
+    qDebug()<<fileList.at(i);
+    emit openFile(fileList.at(i));
+    close();
 }

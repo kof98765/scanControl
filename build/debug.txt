@@ -26962,3 +26962,1857 @@ Demonstrate the profile transfer via callback function
 14:40:26.930: commandPort 24691
 14:40:26.930: dataPort 24692
 14:40:29.114: start usb
+09:08:43.439: init kings
+09:08:43.697: rowcount 0
+09:08:43.697: roiList size 0
+09:09:14.905: Accepted
+10:58:37.877: init kings
+10:58:38.077: rowcount 0
+10:58:38.077: roiList size 0
+10:58:54.203: "H:/E117/test0.tif"
+10:58:55.173: Accepted
+10:58:56.392: rowcount 0
+10:58:56.392: roiList size 0
+10:58:56.393: read "H:/E117/test0.tif"
+10:58:56.420: 800 1300 real
+10:58:56.476: tmp=700d850
+10:58:56.535: 800 1300
+10:58:56.536: read finish
+10:59:05.353: rowcount 0
+10:59:05.355: roiList size 0
+10:59:05.356: StopHighSpeedDataCommunication,Error: 0x00001001 
+10:59:05.357: HighSpeedDataCommunicationFinalize,Error: 0x00001001 
+10:59:05.358: stop
+10:59:05.359: mode 0
+10:59:05.359: frequency 10
+10:59:05.360: commandPort 24691
+10:59:05.360: dataPort 24692
+10:59:07.484: start usb
+13:39:16.399: init kings
+13:39:16.640: rowcount 0
+13:39:16.641: roiList size 0
+13:39:22.136: mode 0
+13:39:22.136: frequency 10
+13:39:22.136: commandPort 24691
+13:39:22.136: dataPort 24692
+13:39:23.427: start
+13:39:23.428: rowcount 0
+13:39:23.428: clear
+13:39:23.441: rowcount 0
+13:39:23.441: roiList size 0
+13:39:23.441: mode 0
+13:39:23.442: frequency 10
+13:39:23.442: commandPort 24691
+13:39:23.442: dataPort 24692
+13:39:25.124: start usb
+14:36:42.059: init kings
+14:36:42.245: rowcount 0
+14:36:42.246: roiList size 0
+14:37:01.981: Accepted
+14:37:10.169: init kings
+14:37:10.368: rowcount 0
+14:37:10.368: roiList size 0
+14:37:35.995: "D:/"
+14:39:30.716: init kings
+14:39:30.954: rowcount 0
+14:39:30.954: roiList size 0
+14:39:35.202: "D:/360Downloads/1395885958_184481.jpg"
+14:39:35.333: "D:/360Downloads/1395885988_181408.jpg"
+14:39:35.371: "D:/360Downloads/1395885996_646218.jpg"
+14:39:35.458: "D:/360Downloads/51CTO下载-ulipad.4.1/ulipad/dist/doc/en/classes.png"
+14:41:27.418: init kings
+14:41:27.607: rowcount 0
+14:41:27.608: roiList size 0
+14:41:31.391: "D:/360Downloads/1395885958_184481.jpg"
+14:41:31.510: "D:/360Downloads/1395885988_181408.jpg"
+14:41:31.545: "D:/360Downloads/1395885996_646218.jpg"
+14:41:31.632: "D:/360Downloads/51CTO下载-ulipad.4.1/ulipad/dist/doc/en/classes.png"
+14:42:59.806: init kings
+14:43:00.055: rowcount 0
+14:43:00.055: roiList size 0
+14:43:03.028: "D:/360Downloads/1395885958_184481.jpg"
+14:43:03.181: "D:/360Downloads/1395885988_181408.jpg"
+14:43:03.219: "D:/360Downloads/1395885996_646218.jpg"
+14:43:03.310: "D:/360Downloads/51CTO下载-ulipad.4.1/ulipad/dist/doc/en/classes.png"
+14:45:59.057: init kings
+14:45:59.253: rowcount 0
+14:45:59.254: roiList size 0
+14:46:03.796: "D:/QQ图片20150410163642.jpg"
+14:48:12.075: init kings
+14:48:12.283: rowcount 0
+14:48:12.283: roiList size 0
+14:48:14.838: "D:/QQ图片20150410163642.jpg"
+14:49:26.531: init kings
+14:49:26.764: rowcount 0
+14:49:26.764: roiList size 0
+14:49:29.949: "D:/QQ图片20150410163642.jpg"
+14:54:33.022: init kings
+14:54:33.230: rowcount 0
+14:54:33.230: roiList size 0
+14:54:38.175: "D:/QQ图片20150410163642.jpg"
+14:55:39.588: init kings
+14:55:39.828: rowcount 0
+14:55:39.828: roiList size 0
+14:55:42.469: D:/QQ图片20150410163642.jpg
+15:00:08.963: init kings
+15:00:09.194: rowcount 0
+15:00:09.195: roiList size 0
+15:00:11.943: "D:\QQ图片20150410163642.jpg"
+15:02:19.093: init kings
+15:02:19.315: rowcount 0
+15:02:19.316: roiList size 0
+15:02:21.945: "D:\QQ图片20150410163642.jpg"
+15:02:51.927: init kings
+15:02:52.121: rowcount 0
+15:02:52.121: roiList size 0
+15:02:57.924: "D:\QQ图片20150410163642.jpg"
+15:11:49.739: init kings
+15:11:49.957: rowcount 0
+15:11:49.958: roiList size 0
+15:11:52.539: "D:/QQ图片20150410163642.jpg"
+15:11:52.627: "D:/QQ图片20150505164523.jpg"
+15:11:52.704: "D:/QQ截图20150220121030.jpg"
+15:11:52.749: "D:/请柬.jpg"
+15:12:03.137: "D:/QQ图片20150410163642.jpg"
+15:12:03.161: "D:/QQ图片20150505164523.jpg"
+15:12:03.238: "D:/QQ截图20150220121030.jpg"
+15:12:03.294: "D:/请柬.jpg"
+15:12:05.233: "D:/QQ图片20150410163642.jpg"
+15:12:05.254: "D:/QQ图片20150505164523.jpg"
+15:12:05.336: "D:/QQ截图20150220121030.jpg"
+15:12:05.387: "D:/请柬.jpg"
+15:12:06.194: "D:/QQ图片20150410163642.jpg"
+15:12:06.216: "D:/QQ图片20150505164523.jpg"
+15:12:06.295: "D:/QQ截图20150220121030.jpg"
+15:12:06.358: "D:/请柬.jpg"
+15:12:07.874: "D:/QQ图片20150410163642.jpg"
+15:12:07.901: "D:/QQ图片20150505164523.jpg"
+15:12:07.980: "D:/QQ截图20150220121030.jpg"
+15:12:08.028: "D:/请柬.jpg"
+15:12:09.061: "D:/QQ图片20150410163642.jpg"
+15:12:09.086: "D:/QQ图片20150505164523.jpg"
+15:12:09.164: "D:/QQ截图20150220121030.jpg"
+15:12:09.210: "D:/请柬.jpg"
+15:12:10.942: "D:/QQ图片20150410163642.jpg"
+15:12:10.967: "D:/QQ图片20150505164523.jpg"
+15:12:11.046: "D:/QQ截图20150220121030.jpg"
+15:12:11.094: "D:/请柬.jpg"
+15:12:36.842: "D:/QQ图片20150410163642.jpg"
+15:12:36.867: "D:/QQ图片20150505164523.jpg"
+15:12:36.945: "D:/QQ截图20150220121030.jpg"
+15:12:36.993: "D:/请柬.jpg"
+15:12:41.353: "D:/QQ图片20150410163642.jpg"
+15:12:41.376: "D:/QQ图片20150505164523.jpg"
+15:12:41.451: "D:/QQ截图20150220121030.jpg"
+15:12:41.495: "D:/请柬.jpg"
+15:26:33.348: init kings
+15:26:33.577: rowcount 0
+15:26:33.578: roiList size 0
+15:26:36.389: 0
+15:26:36.390: "D:/QQ图片20150410163642.jpg"
+15:26:36.480: "D:/QQ图片20150505164523.jpg"
+15:26:36.561: "D:/QQ截图20150220121030.jpg"
+15:26:36.607: "D:/请柬.jpg"
+15:26:38.262: 4
+15:26:38.271: "D:/QQ图片20150410163642.jpg"
+15:26:38.294: "D:/QQ图片20150505164523.jpg"
+15:26:38.372: "D:/QQ截图20150220121030.jpg"
+15:26:38.416: "D:/请柬.jpg"
+15:26:40.085: 4
+15:26:40.096: "D:/QQ图片20150410163642.jpg"
+15:26:40.119: "D:/QQ图片20150505164523.jpg"
+15:26:40.197: "D:/QQ截图20150220121030.jpg"
+15:26:40.247: "D:/请柬.jpg"
+15:26:41.610: 4
+15:26:41.618: "D:/QQ图片20150410163642.jpg"
+15:26:41.642: "D:/QQ图片20150505164523.jpg"
+15:26:41.720: "D:/QQ截图20150220121030.jpg"
+15:26:41.765: "D:/请柬.jpg"
+15:26:42.934: 4
+15:26:42.942: "D:/QQ图片20150410163642.jpg"
+15:26:42.966: "D:/QQ图片20150505164523.jpg"
+15:26:43.050: "D:/QQ截图20150220121030.jpg"
+15:26:43.096: "D:/请柬.jpg"
+15:26:44.709: 4
+15:26:44.717: "D:/QQ图片20150410163642.jpg"
+15:26:44.740: "D:/QQ图片20150505164523.jpg"
+15:26:44.819: "D:/QQ截图20150220121030.jpg"
+15:26:44.871: "D:/请柬.jpg"
+15:26:47.716: rowcount 0
+15:26:47.716: roiList size 0
+15:26:47.717: read "D:/QQ图片20150410163642.jpg"
+15:26:47.732: 583 432 byte
+15:26:57.030: init kings
+15:26:57.225: rowcount 0
+15:26:57.225: roiList size 0
+15:26:59.265: 0
+15:26:59.266: "D:/QQ图片20150410163642.jpg"
+15:26:59.442: "D:/QQ图片20150505164523.jpg"
+15:26:59.524: "D:/QQ截图20150220121030.jpg"
+15:26:59.570: "D:/请柬.jpg"
+15:27:00.648: rowcount 0
+15:27:00.649: roiList size 0
+15:27:00.649: read "D:/QQ图片20150410163642.jpg"
+15:27:00.664: 583 432 byte
+15:27:00.726: 583 432
+15:27:00.726: read finish
+15:27:03.156: rowcount 0
+15:27:03.156: roiList size 0
+15:27:03.157: read "D:/QQ图片20150505164523.jpg"
+15:27:03.225: 960 1280 byte
+15:28:40.726: init kings
+15:28:40.924: rowcount 0
+15:28:40.925: roiList size 0
+15:28:46.246: 0
+15:28:46.247: "D:/QQ图片20150410163642.jpg"
+15:28:46.367: "D:/QQ图片20150505164523.jpg"
+15:28:46.444: "D:/QQ截图20150220121030.jpg"
+15:28:46.489: "D:/请柬.jpg"
+15:28:48.846: rowcount 0
+15:28:48.847: roiList size 0
+15:28:48.847: read "D:/QQ图片20150410163642.jpg"
+15:28:48.862: 583 432 byte
+15:28:48.920: 583 432
+15:28:48.921: read finish
+15:28:58.691: rowcount 0
+15:28:58.692: roiList size 0
+15:28:58.692: read "D:/QQ图片20150505164523.jpg"
+15:28:58.766: 960 1280 byte
+15:29:42.925: init kings
+15:29:43.139: rowcount 0
+15:29:43.140: roiList size 0
+15:29:45.869: 0
+15:29:47.177: "D:/QQ图片20150410163642.jpg"
+15:29:47.189: rowcount 0
+15:29:47.190: roiList size 0
+15:29:47.190: read "D:/QQ图片20150410163642.jpg"
+15:29:47.206: 583 432 byte
+15:29:47.265: 583 432
+15:29:47.265: read finish
+15:29:49.873: "D:/QQ图片20150505164523.jpg"
+15:29:49.908: rowcount 0
+15:29:49.908: roiList size 0
+15:29:49.909: read "D:/QQ图片20150505164523.jpg"
+15:29:49.976: 960 1280 byte
+15:34:59.421: init kings
+15:34:59.642: rowcount 0
+15:34:59.643: roiList size 0
+15:35:03.495: 0
+15:35:06.710: "D:/QQ图片20150410163642.jpg"
+15:35:06.723: rowcount 0
+15:35:06.723: roiList size 0
+15:35:06.723: read "D:/QQ图片20150410163642.jpg"
+15:35:06.739: 583 432 byte
+15:35:06.797: 583 432
+15:35:06.797: read finish
+15:35:09.713: "D:/QQ图片20150505164523.jpg"
+15:35:09.745: rowcount 0
+15:35:09.745: roiList size 0
+15:35:09.746: read "D:/QQ图片20150505164523.jpg"
+15:35:09.818: 960 1280 byte
+15:35:20.215: init kings
+15:35:20.438: rowcount 0
+15:35:20.439: roiList size 0
+15:35:24.269: 0
+15:35:26.526: "D:/test0.tif"
+15:35:26.538: rowcount 0
+15:35:26.538: roiList size 0
+15:35:26.538: read "D:/test0.tif"
+15:35:26.562: 800 1300 real
+15:35:26.657: 800 1300
+15:35:26.658: read finish
+15:35:29.050: "D:/test1.tif"
+15:35:29.089: rowcount 0
+15:35:29.091: roiList size 0
+15:35:29.091: read "D:/test1.tif"
+15:35:29.115: 800 1300 real
+15:35:29.220: 800 1300
+15:35:29.220: read finish
+15:35:32.070: "D:/test2.tif"
+15:35:32.107: rowcount 0
+15:35:32.107: roiList size 0
+15:35:32.107: read "D:/test2.tif"
+15:35:32.133: 800 1300 real
+15:35:32.248: 800 1300
+15:35:32.248: read finish
+15:35:34.473: "D:/test3.tif"
+15:35:34.511: rowcount 0
+15:35:34.511: roiList size 0
+15:35:34.512: read "D:/test3.tif"
+15:35:34.536: 800 1300 real
+15:35:34.604: plane list.size 0
+15:35:34.604: heightsub list.size 0
+15:35:34.604: plane list.size 0
+15:35:34.604: heightsub list.size 0
+15:35:34.604: plane list.size 0
+15:35:34.605: heightsub list.size 0
+15:35:34.605: plane list.size 0
+15:35:34.605: heightsub list.size 0
+15:35:34.634: 800 1300
+15:35:34.634: read finish
+15:35:36.997: display 0
+15:35:37.979: display 1
+15:35:38.947: display 2
+15:35:39.886: display 3
+15:35:41.265: display 0
+15:35:43.576: display 2
+15:35:44.745: display 1
+15:35:46.597: display 0
+15:35:47.679: display 1
+15:35:48.888: display 0
+15:36:23.896: display 0
+15:36:24.818: display 1
+15:36:25.497: display 0
+15:36:36.740: func 0 1070 528.5
+15:36:36.779: ()
+15:36:36.809: rowcount 0
+15:36:36.810: roiList size 1
+15:36:36.811: ""
+15:36:36.812: 4294901760 0 0
+15:36:45.839: func 1 1027.5 427.5
+15:36:45.871: rowcount 1
+15:36:45.872: roiList size 2
+15:36:45.872: ""
+15:36:45.872: 4294901760 0 1
+15:36:54.943: func 3 294.628 295.842 -0.141366
+15:36:54.978: rowcount 2
+15:36:54.978: roiList size 3
+15:36:54.979: ""
+15:36:54.979: 4294901760 0 3
+15:36:58.421: func 3 955.774 298.282 0
+15:36:58.455: rowcount 3
+15:36:58.455: roiList size 4
+15:36:58.456: ""
+15:36:58.456: 4294901760 0 3
+15:37:01.521: func 3 965.496 756.989 0
+15:37:01.567: rowcount 4
+15:37:01.568: roiList size 5
+15:37:01.568: ""
+15:37:01.569: 4294901760 0 3
+15:37:04.842: func 3 292.197 749.669 0
+15:37:04.880: rowcount 5
+15:37:04.880: roiList size 6
+15:37:04.881: ""
+15:37:04.881: 4294901760 0 3
+15:37:10.664: func 3 527.973 369.04 -0.850084
+15:37:10.701: rowcount 6
+15:37:10.701: roiList size 7
+15:37:10.702: ""
+15:37:10.703: 4294901760 0 3
+15:37:13.048: QPoint(177,208)
+15:37:13.048: QPoint(177,183)
+15:37:13.048: item 6
+15:37:13.723: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:37:24.839: func 3 592.631 219.596 -0.196515
+15:37:24.873: rowcount 6
+15:37:24.873: roiList size 7
+15:37:24.874: ""
+15:37:24.874: 4294901760 0 3
+15:37:29.979: func 3 536.864 217.996 0
+15:37:30.017: rowcount 7
+15:37:30.017: roiList size 8
+15:37:30.018: ""
+15:37:30.018: 4294901760 0 3
+15:37:32.891: func 3 563.951 346.05 -0.320376
+15:37:32.927: rowcount 8
+15:37:32.927: roiList size 9
+15:37:32.928: ""
+15:37:32.928: 4294901760 0 3
+15:37:34.818: plane list.size 0
+15:37:34.818: heightsub list.size 0
+15:37:34.832: start match
+15:37:35.137: ret = -1
+15:37:35.137: at lease one not match
+15:37:36.645: plane list.size 9
+15:37:36.645: heightsub list.size 9
+15:37:36.645: start heightsub
+15:37:37.651: plane list.size 0
+15:37:37.651: heightsub list.size 0
+15:37:37.652: plane list.size 0
+15:37:37.652: heightsub list.size 0
+15:37:53.579: plane list.size 0
+15:37:53.580: heightsub list.size 0
+15:37:53.591: start match
+15:37:53.813: ret = -1
+15:37:53.813: at lease one not match
+15:37:55.513: plane list.size 9
+15:37:55.514: heightsub list.size 9
+15:37:55.514: start heightsub
+15:37:56.523: plane list.size 0
+15:37:56.524: heightsub list.size 0
+15:37:56.524: plane list.size 0
+15:37:56.524: heightsub list.size 0
+15:39:02.036: QPoint(171,46)
+15:39:02.036: QPoint(171,21)
+15:39:02.037: item 0
+15:39:02.603: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:39:03.517: QPoint(152,44)
+15:39:03.517: QPoint(152,19)
+15:39:03.517: item 0
+15:39:14.060: func 3 1042.22 528.893 -0.0261748
+15:39:14.099: rowcount 8
+15:39:14.099: roiList size 9
+15:39:14.100: ""
+15:39:14.100: 4294901760 0 3
+15:39:17.308: plane list.size 0
+15:39:17.308: heightsub list.size 0
+15:39:17.320: start match
+15:39:17.540: ret = -1
+15:39:17.540: at lease one not match
+15:39:19.142: plane list.size 9
+15:39:19.142: heightsub list.size 9
+15:39:19.142: start heightsub
+15:39:19.845: plane list.size 0
+15:39:19.845: heightsub list.size 0
+15:39:19.846: plane list.size 0
+15:39:19.846: heightsub list.size 0
+15:39:25.535: QPoint(167,74)
+15:39:25.535: QPoint(167,49)
+15:39:25.535: item 1
+15:39:26.061: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect000")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:39:33.793: func 3 1061.22 509.793 0.0122817
+15:39:33.833: rowcount 8
+15:39:33.834: roiList size 9
+15:39:33.835: ""
+15:39:33.835: 4294901760 0 3
+15:39:37.307: plane list.size 0
+15:39:37.308: heightsub list.size 0
+15:39:37.308: plane list.size 9
+15:39:37.308: heightsub list.size 9
+15:39:37.308: start heightsub
+15:39:38.570: plane list.size 0
+15:39:38.570: heightsub list.size 0
+15:39:38.570: plane list.size 0
+15:39:38.571: heightsub list.size 0
+15:39:40.286: plane list.size 0
+15:39:40.286: heightsub list.size 0
+15:39:40.286: plane list.size 9
+15:39:40.286: heightsub list.size 9
+15:39:40.286: start heightsub
+15:39:42.643: plane list.size 0
+15:39:42.643: heightsub list.size 0
+15:39:42.644: plane list.size 0
+15:39:42.644: heightsub list.size 0
+15:39:48.211: start
+15:39:48.211: rowcount 0
+15:39:48.215: 4
+15:39:48.227: clear
+15:39:48.242: rowcount 9
+15:39:48.242: roiList size 9
+15:39:48.243: mode 0
+15:39:48.243: frequency 10
+15:39:48.243: commandPort 24691
+15:39:48.243: dataPort 24692
+15:39:49.730: start usb
+15:39:53.456: "D:/test0.tif"
+15:39:53.474: rowcount 9
+15:39:53.474: roiList size 9
+15:39:53.475: read "D:/test0.tif"
+15:39:53.498: 800 1300 real
+15:39:53.597: 800 1300
+15:39:53.597: read finish
+15:39:56.076: "D:/test1.tif"
+15:39:56.135: rowcount 9
+15:39:56.136: roiList size 9
+15:39:56.137: read "D:/test1.tif"
+15:39:56.161: 800 1300 real
+15:39:56.255: 800 1300
+15:39:56.256: read finish
+15:39:58.171: "D:/test2.tif"
+15:39:58.210: rowcount 9
+15:39:58.211: roiList size 9
+15:39:58.212: read "D:/test2.tif"
+15:39:58.235: 800 1300 real
+15:39:58.330: 800 1300
+15:39:58.330: read finish
+15:39:59.928: "D:/test3.tif"
+15:39:59.969: rowcount 9
+15:39:59.970: roiList size 9
+15:39:59.971: read "D:/test3.tif"
+15:40:00.001: 800 1300 real
+15:40:00.095: plane list.size 0
+15:40:00.096: heightsub list.size 0
+15:40:00.096: plane list.size 9
+15:40:00.096: heightsub list.size 9
+15:40:00.096: start heightsub
+15:40:01.968: plane list.size 0
+15:40:01.968: heightsub list.size 0
+15:40:01.968: plane list.size 0
+15:40:01.968: heightsub list.size 0
+15:40:01.997: 800 1300
+15:40:01.997: read finish
+15:40:03.706: display 0
+15:40:57.387: QPoint(154,50)
+15:40:57.387: QPoint(154,25)
+15:40:57.387: item 0
+15:40:58.426: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:41:01.237: QPoint(180,47)
+15:41:01.237: QPoint(180,22)
+15:41:01.237: item 0
+15:41:03.422: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:41:12.423: func 0 1061.5 526.5
+15:41:12.466: ()
+15:41:12.500: rowcount 7
+15:41:12.500: roiList size 8
+15:41:12.501: ""
+15:41:12.501: 4294901760 0 0
+15:41:19.334: func 1 1067.5 497
+15:41:19.370: rowcount 8
+15:41:19.371: roiList size 9
+15:41:19.372: ""
+15:41:19.372: 4294901760 0 1
+15:41:21.160: plane list.size 0
+15:41:21.161: heightsub list.size 0
+15:41:21.172: start match
+15:41:21.288: ret = -1
+15:41:21.288: at lease one not match
+15:41:22.632: plane list.size 9
+15:41:22.632: heightsub list.size 9
+15:41:22.632: start heightsub
+15:41:23.410: plane list.size 0
+15:41:23.411: heightsub list.size 0
+15:41:23.411: plane list.size 0
+15:41:23.411: heightsub list.size 0
+15:41:28.027: QPoint(153,42)
+15:41:28.027: QPoint(153,17)
+15:41:28.027: item 0
+15:41:28.621: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:41:34.752: func 1 1089 535
+15:41:34.789: rowcount 8
+15:41:34.790: roiList size 9
+15:41:34.791: ""
+15:41:34.791: 4294901760 0 1
+15:41:36.919: plane list.size 0
+15:41:36.919: heightsub list.size 0
+15:41:36.931: start match
+15:41:37.054: ret = -1
+15:41:37.054: at lease one not match
+15:41:38.772: plane list.size 9
+15:41:38.772: heightsub list.size 9
+15:41:38.772: start heightsub
+15:41:39.480: plane list.size 0
+15:41:39.480: heightsub list.size 0
+15:41:39.480: plane list.size 0
+15:41:39.480: heightsub list.size 0
+15:42:36.084: QPoint(173,75)
+15:42:36.084: QPoint(173,50)
+15:42:36.084: item 1
+15:42:36.706: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect000")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:42:37.603: QPoint(179,47)
+15:42:37.603: QPoint(179,22)
+15:42:37.604: item 0
+15:42:38.170: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:42:45.585: func 0 487 252.5
+15:42:45.638: ()
+15:42:45.674: rowcount 7
+15:42:45.675: roiList size 8
+15:42:45.675: ""
+15:42:45.676: 4294901760 0 0
+15:42:52.847: func 1 549 225.5
+15:42:52.884: rowcount 8
+15:42:52.884: roiList size 9
+15:42:52.885: ""
+15:42:52.885: 4294901760 0 1
+15:42:54.659: plane list.size 0
+15:42:54.659: heightsub list.size 0
+15:42:54.673: start match
+15:42:54.884: ret = -1
+15:42:54.884: at lease one not match
+15:42:56.253: plane list.size 9
+15:42:56.253: heightsub list.size 9
+15:42:56.253: start heightsub
+15:42:56.823: plane list.size 0
+15:42:56.824: heightsub list.size 0
+15:42:56.824: plane list.size 0
+15:42:56.824: heightsub list.size 0
+15:44:13.597: QPoint(171,41)
+15:44:13.598: QPoint(171,16)
+15:44:13.598: item 0
+15:44:14.714: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:44:15.619: QPoint(144,41)
+15:44:15.621: QPoint(144,16)
+15:44:15.621: item 0
+15:44:16.228: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:44:25.195: 4283826047
+15:44:25.196: 85 255 127
+15:44:29.471: func 0 1075.5 529
+15:44:29.523: ()
+15:44:29.555: rowcount 7
+15:44:29.556: roiList size 8
+15:44:29.558: ""
+15:44:29.559: 4283826047 0 0
+15:44:35.472: func 1 1097.5 466
+15:44:35.509: rowcount 8
+15:44:35.510: roiList size 9
+15:44:35.511: ""
+15:44:35.512: 4283826047 0 1
+15:44:38.439: plane list.size 0
+15:44:38.440: heightsub list.size 0
+15:44:38.454: start match
+15:44:38.565: ret = -1
+15:44:38.566: at lease one not match
+15:44:40.054: plane list.size 9
+15:44:40.055: heightsub list.size 9
+15:44:40.056: start heightsub
+15:44:40.586: plane list.size 0
+15:44:40.587: heightsub list.size 0
+15:44:40.588: plane list.size 0
+15:44:40.589: heightsub list.size 0
+15:46:23.736: QPoint(139,44)
+15:46:23.738: QPoint(139,19)
+15:46:23.739: item 0
+15:46:24.473: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:46:35.383: func 0 1067.5 535
+15:46:35.435: ()
+15:46:35.470: rowcount 8
+15:46:35.470: roiList size 9
+15:46:35.472: ""
+15:46:35.472: 4283826047 0 0
+15:49:00.376: init kings
+15:49:00.571: rowcount 0
+15:49:00.572: roiList size 9
+15:49:06.918: 0
+15:49:09.029: "D:/test0.tif"
+15:49:09.047: rowcount 9
+15:49:09.047: roiList size 9
+15:49:09.048: read "D:/test0.tif"
+15:49:09.073: 800 1300 real
+15:49:09.181: 800 1300
+15:49:09.181: read finish
+15:49:11.502: "D:/test1.tif"
+15:49:11.547: rowcount 9
+15:49:11.547: roiList size 9
+15:49:11.548: read "D:/test1.tif"
+15:49:11.572: 800 1300 real
+15:49:11.675: 800 1300
+15:49:11.675: read finish
+15:49:13.232: "D:/test2.tif"
+15:49:13.272: rowcount 9
+15:49:13.272: roiList size 9
+15:49:13.274: read "D:/test2.tif"
+15:49:13.297: 800 1300 real
+15:49:13.403: 800 1300
+15:49:13.403: read finish
+15:49:15.027: "D:/test3.tif"
+15:49:15.069: rowcount 9
+15:49:15.070: roiList size 9
+15:49:15.071: read "D:/test3.tif"
+15:49:15.100: 800 1300 real
+15:49:15.184: plane list.size 0
+15:49:15.184: heightsub list.size 0
+15:49:15.198: start match
+15:49:15.322: ret = -1
+15:49:15.323: at lease one not match
+15:49:16.934: plane list.size 9
+15:49:16.935: heightsub list.size 9
+15:49:16.935: start heightsub
+15:49:17.774: plane list.size 0
+15:49:17.774: heightsub list.size 0
+15:49:17.775: plane list.size 0
+15:49:17.775: heightsub list.size 0
+15:49:17.804: 800 1300
+15:49:17.804: read finish
+15:49:20.094: display 0
+15:49:23.523: QPoint(200,40)
+15:49:23.523: QPoint(200,15)
+15:49:23.523: item 0
+15:49:24.328: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:49:32.670: func 0 1054.5 521
+15:49:32.718: create ()
+15:49:32.750: rowcount 8
+15:49:32.751: roiList size 9
+15:49:32.752: ""
+15:49:32.752: 4294901760 0 0
+15:56:32.495: QPoint(187,43)
+15:56:32.496: QPoint(187,18)
+15:56:32.497: item 0
+15:56:33.280: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:56:39.471: func 0 1071.5 533.5
+15:56:39.521: create ()
+15:56:39.566: rowcount 8
+15:56:39.567: roiList size 9
+15:56:39.569: ""
+15:56:39.570: 4294901760 0 0
+15:57:08.094: plane list.size 0
+15:57:08.095: heightsub list.size 0
+15:57:08.109: start match
+15:57:08.239: ret = -1
+15:57:08.240: at lease one not match
+15:57:09.303: plane list.size 9
+15:57:09.304: heightsub list.size 9
+15:57:09.305: start heightsub
+15:57:09.885: plane list.size 0
+15:57:09.886: heightsub list.size 0
+15:57:09.886: plane list.size 0
+15:57:09.887: heightsub list.size 0
+15:59:07.260: init kings
+15:59:07.475: rowcount 0
+15:59:07.475: roiList size 9
+15:59:11.293: 0
+15:59:14.202: "D:/test0.tif"
+15:59:14.222: rowcount 9
+15:59:14.222: roiList size 9
+15:59:14.224: read "D:/test0.tif"
+15:59:14.252: 800 1300 real
+15:59:14.356: 800 1300
+15:59:14.357: read finish
+15:59:17.666: "D:/test1.tif"
+15:59:17.706: rowcount 9
+15:59:17.706: roiList size 9
+15:59:17.707: read "D:/test1.tif"
+15:59:17.730: 800 1300 real
+15:59:17.821: 800 1300
+15:59:17.821: read finish
+15:59:19.556: "D:/test2.tif"
+15:59:19.594: rowcount 9
+15:59:19.594: roiList size 9
+15:59:19.595: read "D:/test2.tif"
+15:59:19.620: 800 1300 real
+15:59:19.723: 800 1300
+15:59:19.723: read finish
+15:59:21.667: "D:/test3.tif"
+15:59:21.724: rowcount 9
+15:59:21.725: roiList size 9
+15:59:21.726: read "D:/test3.tif"
+15:59:21.749: 800 1300 real
+15:59:21.822: plane list.size 0
+15:59:21.822: heightsub list.size 0
+15:59:21.837: start match
+15:59:21.963: ret = -1
+15:59:21.963: at lease one not match
+15:59:23.330: plane list.size 9
+15:59:23.330: heightsub list.size 9
+15:59:23.330: start heightsub
+15:59:23.969: plane list.size 0
+15:59:23.969: heightsub list.size 0
+15:59:23.969: plane list.size 0
+15:59:23.969: heightsub list.size 0
+15:59:23.997: 800 1300
+15:59:23.997: read finish
+15:59:25.441: display 0
+15:59:31.129: QPoint(193,50)
+15:59:31.129: QPoint(193,25)
+15:59:31.129: item 0
+15:59:31.715: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+15:59:43.104: Accepted
+15:59:48.234: func 0 1071 543
+15:59:48.273: create ()
+15:59:48.303: rowcount 8
+15:59:48.304: roiList size 9
+15:59:48.306: ""
+15:59:48.307: 4294901760 0 0
+16:01:18.880: init kings
+16:01:19.088: rowcount 0
+16:01:19.089: roiList size 9
+16:01:25.809: 0
+16:01:27.730: "D:/test0.tif"
+16:01:27.750: rowcount 9
+16:01:27.750: roiList size 9
+16:01:27.751: read "D:/test0.tif"
+16:01:27.776: 800 1300 real
+16:01:27.886: 800 1300
+16:01:27.886: read finish
+16:01:30.598: plane list.size 0
+16:01:30.599: heightsub list.size 0
+16:01:30.612: start match
+16:01:30.722: ret = -1
+16:01:30.722: at lease one not match
+16:01:31.686: plane list.size 9
+16:01:31.687: heightsub list.size 9
+16:01:31.687: start heightsub
+16:01:32.200: plane list.size 0
+16:01:32.200: heightsub list.size 0
+16:01:32.200: plane list.size 0
+16:01:32.200: heightsub list.size 0
+16:01:33.570: QPoint(182,37)
+16:01:33.571: QPoint(182,12)
+16:01:33.571: item 0
+16:01:34.156: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+16:01:38.312: func 0 1067.5 519
+16:01:38.312: draw ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001") "0"
+16:01:38.350: create ()
+16:01:38.385: rowcount 8
+16:01:38.386: roiList size 9
+16:01:38.387: ""
+16:01:38.387: 4294901760 0 0
+16:03:06.323: init kings
+16:03:06.517: rowcount 0
+16:03:06.517: roiList size 9
+16:03:08.091: QPoint(144,44)
+16:03:08.091: QPoint(144,19)
+16:03:08.091: item 0
+16:03:08.624: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+16:03:12.002: 0
+16:03:13.632: "D:/test0.tif"
+16:03:13.656: rowcount 8
+16:03:13.656: roiList size 8
+16:03:13.657: read "D:/test0.tif"
+16:03:13.683: 800 1300 real
+16:03:13.793: 800 1300
+16:03:13.793: read finish
+16:03:18.247: func 0 1066.5 516.5
+16:03:18.248: draw ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001", "rect000") "0"
+16:03:18.290: create ()
+16:03:18.324: rowcount 8
+16:03:18.324: roiList size 9
+16:03:18.325: ""
+16:03:18.325: 4294901760 0 0
+16:03:44.995: Accepted
+16:06:34.489: init kings
+16:06:34.723: rowcount 0
+16:06:34.724: roiList size 9
+16:06:40.285: 0
+16:06:42.143: "D:/test0.tif"
+16:06:42.162: rowcount 9
+16:06:42.162: roiList size 9
+16:06:42.163: read "D:/test0.tif"
+16:06:42.188: 800 1300 real
+16:06:42.284: 800 1300
+16:06:42.285: read finish
+16:06:45.995: QPoint(170,38)
+16:06:45.995: QPoint(170,13)
+16:06:45.996: item 0
+16:06:46.588: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+16:06:50.076: func 0 1066.5 514.5
+16:06:50.115: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001", "rect000")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+16:06:50.116: create ()
+16:06:50.146: rowcount 8
+16:06:50.146: roiList size 9
+16:06:50.147: ""
+16:06:50.147: 4294901760 0 0
+20:06:43.631: init kings
+20:06:43.723: rowcount 0
+20:06:43.724: roiList size 9
+20:06:52.288: 0
+20:06:54.087: "D:/test0.tif"
+20:06:54.110: rowcount 9
+20:06:54.110: roiList size 9
+20:06:54.112: read "D:/test0.tif"
+20:06:54.136: 800 1300 real
+20:06:54.238: 800 1300
+20:06:54.239: read finish
+20:06:57.900: plane list.size 0
+20:06:57.900: heightsub list.size 0
+20:06:57.914: start match
+20:06:58.022: ret = -1
+20:06:58.023: at lease one not match
+20:06:59.514: plane list.size 9
+20:06:59.514: heightsub list.size 9
+20:06:59.514: start heightsub
+20:07:01.193: plane list.size 0
+20:07:01.193: heightsub list.size 0
+20:07:01.193: plane list.size 0
+20:07:01.193: heightsub list.size 0
+20:08:10.409: ""
+20:08:10.410: 4294901760 0 0
+20:08:14.639: func 10 10 50 50
+20:08:14.676: rowcount 9
+20:08:14.676: roiList size 10
+20:08:14.679: ""
+20:08:14.680: 4294901760 0 2
+20:08:23.591: func 100 100 50 50
+20:08:23.626: rowcount 10
+20:08:23.627: roiList size 11
+20:08:23.629: ""
+20:08:23.629: 4294901760 0 2
+20:08:38.629: 4278255360
+20:08:38.629: 0 255 0
+20:08:40.150: func 100 100 50 50
+20:08:40.186: rowcount 11
+20:08:40.187: roiList size 12
+20:08:40.188: ""
+20:08:40.189: 4278255360 0 2
+20:08:52.424: func 200 200 50 50
+20:08:52.462: rowcount 12
+20:08:52.462: roiList size 13
+20:08:52.464: ""
+20:08:52.465: 4278255360 0 2
+20:09:00.285: QPoint(164,43)
+20:09:00.286: QPoint(164,18)
+20:09:00.287: item 0
+20:09:00.976: QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001", "rect009", "rect010", "rect011", "rect012")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+20:09:08.600: func 0 1075.5 535
+20:09:08.637: create ()
+20:09:08.670: rowcount 12
+20:09:08.671: roiList size 13
+20:09:08.672: ""
+20:09:08.673: 4278255360 0 0
+20:09:12.588: plane list.size 0
+20:09:12.589: heightsub list.size 0
+20:09:12.602: start match
+20:09:12.710: ret = -1
+20:09:12.710: at lease one not match
+20:09:14.193: plane list.size 13
+20:09:14.673: heightsub list.size 13
+20:09:14.673: start heightsub
+20:09:15.708: plane list.size 0
+20:09:15.709: heightsub list.size 0
+20:09:15.710: plane list.size 0
+20:09:15.711: heightsub list.size 0
+20:17:55.993: init kings
+20:17:56.078: rowcount 0
+20:17:56.079: roiList size 13
+20:18:00.428: QPoint(108,48)
+20:18:00.428: QPoint(108,23)
+20:18:00.428: item 0
+20:18:01.050: del "0" QMap(("", QVariant(QStringList, ()) ) ( "0" ,  QVariant(QStringList, ("rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect001", "rect009", "rect010", "rect011", "rect012")) ) ( "1" ,  QVariant(QStringList, ()) ) ( "7" ,  QVariant(QStringList, ()) ) ) 
+20:18:52.510: CreateLLTDevice OK 
+
+20:18:52.599: rowcount 0
+20:18:52.600: roiList size 0
+20:18:58.781: 0
+20:19:03.766: 0
+20:19:05.524: "D:/test0.tif"
+20:19:05.534: rowcount 0
+20:19:05.534: roiList size 0
+20:19:05.535: read "D:/test0.tif"
+20:19:05.559: 800 1300 real
+20:19:05.652: 800 1300
+20:19:05.652: read finish
+20:19:11.439: func 0 1066 518
+20:19:11.476: create ("rect000")
+20:19:11.476: QMap(("Column", QVariant(double, 415.629) ) ( "Column2" ,  QVariant(double, 620.003) ) ( "Row" ,  QVariant(double, 1018.35) ) ( "Row2" ,  QVariant(double, 1114.47) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+20:19:11.476: create template "rect000" imgList size 1 0
+20:19:11.499: creat point 1018.35 415.629 1114.47 620.003
+20:19:11.563: Create_template 1
+20:19:11.580: templateID get
+20:19:11.580: "生成模板时间:" 104 ms
+20:19:11.606: rowcount 0
+20:19:11.607: roiList size 1
+20:19:11.607: ""
+20:19:11.607: 4294901760 0 0
+20:19:17.263: func 1 1065.5 503
+20:19:17.293: rowcount 1
+20:19:17.294: roiList size 2
+20:19:17.294: ""
+20:19:17.294: 4294901760 0 1
+20:19:35.359: 4278255487
+20:19:35.359: 0 255 127
+20:19:36.647: func 20 20 50 50
+20:19:36.678: rowcount 2
+20:19:36.678: roiList size 3
+20:19:36.679: ""
+20:19:36.679: 4278255487 0 2
+20:21:04.052: CreateLLTDevice OK 
+
+20:21:04.161: rowcount 0
+20:21:04.161: roiList size 3
+20:21:17.213: 0
+20:21:21.774: 0
+20:21:23.901: "D:/test0.tif"
+20:21:23.914: rowcount 3
+20:21:23.915: roiList size 3
+20:21:23.915: read "D:/test0.tif"
+20:21:23.939: 800 1300 real
+20:21:24.030: 800 1300
+20:21:24.030: read finish
+20:21:31.230: QPoint(141,99)
+20:21:31.231: QPoint(141,74)
+20:21:31.231: item 2
+20:21:33.145: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+20:22:03.425: func 0 0 50 50
+20:22:03.457: rowcount 2
+20:22:03.457: roiList size 3
+20:22:03.458: ""
+20:22:03.458: 4294901760 0 2
+20:22:16.532: 4278233855
+20:22:16.532: 0 170 255
+20:22:17.974: func 0 0 50 50
+20:22:18.006: rowcount 3
+20:22:18.009: roiList size 4
+20:22:18.009: ""
+20:22:18.010: 4278233855 0 2
+08:20:36.075: CreateLLTDevice OK 
+
+08:20:36.242: rowcount 0
+08:20:36.243: roiList size 4
+08:20:43.131: 0
+08:20:48.165: 0
+08:20:50.056: "D:/test0.tif"
+08:20:50.070: rowcount 4
+08:20:50.070: roiList size 4
+08:20:50.071: read "D:/test0.tif"
+08:20:50.096: 800 1300 real
+08:20:50.194: 800 1300
+08:20:50.194: read finish
+08:20:57.458: QPoint(154,138)
+08:20:57.458: QPoint(154,113)
+08:20:57.458: item 3
+08:20:57.997: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+08:20:58.769: QPoint(187,103)
+08:20:58.769: QPoint(187,78)
+08:20:58.769: item 2
+08:20:59.357: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+08:24:07.065: CreateLLTDevice OK 
+
+08:24:07.150: rowcount 0
+08:24:07.150: roiList size 2
+08:24:14.972: 0
+08:24:20.487: Accepted
+08:24:24.002: 0
+08:24:26.240: "D:/test0.tif"
+08:24:26.254: rowcount 2
+08:24:26.255: roiList size 2
+08:24:26.255: read "D:/test0.tif"
+08:24:26.280: 800 1300 real
+08:24:26.373: 800 1300
+08:24:26.373: read finish
+08:24:46.473: 4283804160
+08:24:46.473: 85 170 0
+08:24:48.723: func -100 -100 50 50
+08:24:48.754: rowcount 2
+08:24:48.754: roiList size 3
+08:24:48.755: ""
+08:24:48.755: 4283804160 0 3
+08:25:08.635: func -100 100 50 50
+08:25:08.666: rowcount 3
+08:25:08.667: roiList size 4
+08:25:08.667: ""
+08:25:08.667: 4283804160 0 3
+08:25:51.155: func -1000 100 50 50
+08:25:51.186: rowcount 4
+08:25:51.187: roiList size 5
+08:25:51.187: ""
+08:25:51.187: 4283804160 0 3
+08:25:58.414: func -800 100 50 50
+08:25:58.448: rowcount 5
+08:25:58.448: roiList size 6
+08:25:58.449: ""
+08:25:58.449: 4283804160 0 3
+08:26:10.806: func -700 200 50 50
+08:26:10.839: rowcount 6
+08:26:10.840: roiList size 7
+08:26:10.840: ""
+08:26:10.840: 4283804160 0 3
+08:29:39.489: CreateLLTDevice OK 
+
+08:29:39.586: rowcount 0
+08:29:39.587: roiList size 7
+08:29:43.979: 0
+08:29:45.937: "D:/test0.tif"
+08:29:45.961: rowcount 7
+08:29:45.961: roiList size 7
+08:29:45.962: read "D:/test0.tif"
+08:29:45.988: 800 1300 real
+08:29:46.083: 800 1300
+08:29:46.084: read finish
+08:31:39.195: CreateLLTDevice OK 
+
+08:31:39.290: rowcount 0
+08:31:39.291: roiList size 7
+08:31:43.226: 0
+08:31:44.506: "D:/test0.tif"
+08:31:44.524: rowcount 7
+08:31:44.525: roiList size 7
+08:31:44.525: read "D:/test0.tif"
+08:31:44.559: 800 1300 real
+08:31:44.662: 800 1300
+08:31:44.662: read finish
+08:31:46.720: start match
+08:31:46.750: ret = 1
+08:31:46.751: locate ("1065.58", "518.492", "0")
+08:31:46.751: match orginal point 1066 518
+08:31:46.751: "匹配模板时间:" 46 ms
+08:31:46.752: plane list.size 7
+08:31:46.752: heightsub list.size 7
+08:31:46.752: start heightsub
+08:31:46.753: RectHeightSub orginal point -100 -100
+08:31:46.753: RectHeightSub now point 966 418
+08:31:46.753: Grayval Num,Indices Num, sum 101 1 5.1424
+08:31:46.753: xyz -100 -100 0.0509149 0
+08:31:46.753: start heightsub
+08:31:46.754: RectHeightSub orginal point -100 100
+08:31:46.754: RectHeightSub now point 966 618
+08:31:46.754: Grayval Num,Indices Num, sum 101 1 6.7482
+08:31:46.754: xyz -100 100 0.0668139 1
+08:31:46.754: start heightsub
+08:31:46.755: RectHeightSub orginal point -1000 100
+08:31:46.755: RectHeightSub now point 66 618
+08:31:46.755: Grayval Num,Indices Num, sum 101 1 -749.636
+08:31:46.755: xyz -1000 100 -7.42214 2
+08:31:46.755: start heightsub
+08:31:46.755: RectHeightSub orginal point -800 100
+08:31:46.755: RectHeightSub now point 266 618
+08:31:46.756: Grayval Num,Indices Num, sum 101 1 22.2493
+08:31:46.756: xyz -800 100 0.22029 3
+08:31:46.756: start heightsub
+08:31:46.756: RectHeightSub orginal point -700 200
+08:31:46.756: RectHeightSub now point 366 718
+08:31:46.757: Grayval Num,Indices Num, sum 101 1 2.4644
+08:31:46.757: xyz -700 200 0.0244 4
+08:31:46.757: creat cloud
+08:31:46.757: create sussful
+08:31:46.757: comp 1
+08:31:46.757: heightSub "rect006" 1.14814
+08:31:46.759: "计算高差时间:" 7 ms
+08:31:54.009: start match
+08:31:54.036: ret = 1
+08:31:54.036: locate ("1065.58", "518.492", "0")
+08:31:54.037: match orginal point 1066 518
+08:31:54.037: "匹配模板时间:" 42 ms
+08:31:54.037: plane list.size 7
+08:31:54.037: heightsub list.size 7
+08:31:54.037: start heightsub
+08:31:54.038: RectHeightSub orginal point -100 -100
+08:31:54.038: RectHeightSub now point 966 418
+08:31:54.038: Grayval Num,Indices Num, sum 101 1 5.1424
+08:31:54.038: xyz -100 -100 0.0509149 0
+08:31:54.038: start heightsub
+08:31:54.039: RectHeightSub orginal point -100 100
+08:31:54.039: RectHeightSub now point 966 618
+08:31:54.039: Grayval Num,Indices Num, sum 101 1 6.7482
+08:31:54.039: xyz -100 100 0.0668139 1
+08:31:54.039: start heightsub
+08:31:54.040: RectHeightSub orginal point -1000 100
+08:31:54.040: RectHeightSub now point 66 618
+08:31:54.040: Grayval Num,Indices Num, sum 101 1 -749.636
+08:31:54.040: xyz -1000 100 -7.42214 2
+08:31:54.040: start heightsub
+08:31:54.041: RectHeightSub orginal point -800 100
+08:31:54.041: RectHeightSub now point 266 618
+08:31:54.041: Grayval Num,Indices Num, sum 101 1 22.2493
+08:31:54.041: xyz -800 100 0.22029 3
+08:31:54.041: start heightsub
+08:31:54.041: RectHeightSub orginal point -700 200
+08:31:54.042: RectHeightSub now point 366 718
+08:31:54.042: Grayval Num,Indices Num, sum 101 1 2.4644
+08:31:54.042: xyz -700 200 0.0244 4
+08:31:54.042: creat cloud
+08:31:54.042: create sussful
+08:31:54.042: comp 1
+08:31:54.042: heightSub "rect006" 1.14814
+08:31:54.044: "计算高差时间:" 7 ms
+08:35:10.375: CreateLLTDevice OK 
+
+08:35:10.570: 1066 518
+08:35:10.570: 1066 518
+08:35:10.570: 1066 518
+08:35:10.571: 1066 518
+08:35:10.571: 1066 518
+08:35:10.571: rowcount 0
+08:35:10.571: roiList size 7
+08:35:17.586: 0
+08:35:19.083: "D:/test0.tif"
+08:35:19.096: 1066 518
+08:35:19.097: 1066 518
+08:35:19.097: 1066 518
+08:35:19.098: 1066 518
+08:35:19.098: 1066 518
+08:35:19.099: rowcount 7
+08:35:19.099: roiList size 7
+08:35:19.100: read "D:/test0.tif"
+08:35:19.124: 800 1300 real
+08:35:19.218: 1066 518
+08:35:19.218: 1066 518
+08:35:19.220: 1066 518
+08:35:19.220: 1066 518
+08:35:19.221: 1066 518
+08:35:19.221: 800 1300
+08:35:19.222: read finish
+08:35:22.039: start match
+08:35:22.068: ret = 1
+08:35:22.068: locate ("1065.58", "518.492", "0")
+08:35:22.068: match orginal point 1066 518
+08:35:22.068: "匹配模板时间:" 43 ms
+08:35:22.068: plane list.size 7
+08:35:22.069: heightsub list.size 7
+08:35:22.069: start heightsub
+08:35:22.069: RectHeightSub orginal point -100 -100
+08:35:22.069: RectHeightSub now point 966 418
+08:35:22.070: Grayval Num,Indices Num, sum 101 1 5.1424
+08:35:22.070: xyz -100 -100 0.0509149 0
+08:35:22.070: start heightsub
+08:35:22.070: RectHeightSub orginal point -100 100
+08:35:22.070: RectHeightSub now point 966 618
+08:35:22.070: Grayval Num,Indices Num, sum 101 1 6.7482
+08:35:22.071: xyz -100 100 0.0668139 1
+08:35:22.071: start heightsub
+08:35:22.071: RectHeightSub orginal point -1000 100
+08:35:22.071: RectHeightSub now point 66 618
+08:35:22.071: Grayval Num,Indices Num, sum 101 1 -749.636
+08:35:22.071: xyz -1000 100 -7.42214 2
+08:35:22.071: start heightsub
+08:35:22.072: RectHeightSub orginal point -800 100
+08:35:22.072: RectHeightSub now point 266 618
+08:35:22.072: Grayval Num,Indices Num, sum 101 1 22.2493
+08:35:22.072: xyz -800 100 0.22029 3
+08:35:22.072: start heightsub
+08:35:22.073: RectHeightSub orginal point -700 200
+08:35:22.073: RectHeightSub now point 366 718
+08:35:22.073: Grayval Num,Indices Num, sum 101 1 2.4644
+08:35:22.073: xyz -700 200 0.0244 4
+08:35:22.073: creat cloud
+08:35:22.073: create sussful
+08:35:22.073: comp 1
+08:35:22.074: heightSub "rect006" 1.14814
+08:35:22.076: "计算高差时间:" 6 ms
+08:40:25.343: CreateLLTDevice OK 
+
+08:40:25.497: rowcount 0
+08:40:25.498: roiList size 7
+08:40:29.082: 0
+08:40:30.425: "D:/test0.tif"
+08:40:30.439: rowcount 7
+08:40:30.440: roiList size 7
+08:40:30.441: read "D:/test0.tif"
+08:40:30.465: 800 1300 real
+08:40:30.560: 800 1300
+08:40:30.560: read finish
+08:40:36.135: start match
+08:40:36.164: ret = 1
+08:40:36.164: locate ("1065.58", "518.492", "0")
+08:40:36.164: match orginal point 1066 518
+08:40:36.165: "匹配模板时间:" 44 ms
+08:40:36.165: plane list.size 7
+08:40:36.165: heightsub list.size 7
+08:40:36.165: start heightsub
+08:40:36.166: RectHeightSub orginal point -100 -100
+08:40:36.166: RectHeightSub now point 418 966
+08:40:36.166: grayval: 0
+08:40:36.166: start heightsub
+08:40:36.166: RectHeightSub orginal point -100 100
+08:40:36.166: RectHeightSub now point 418 1166
+08:40:36.166: grayval: 0
+08:40:36.167: start heightsub
+08:40:36.167: RectHeightSub orginal point -1000 100
+08:40:36.167: RectHeightSub now point 0 0
+08:40:36.167: grayval: 0
+08:40:36.167: start heightsub
+08:40:36.167: RectHeightSub orginal point -800 100
+08:40:36.167: RectHeightSub now point 0 0
+08:40:36.167: grayval: 0
+08:40:36.167: start heightsub
+08:40:36.168: RectHeightSub orginal point -700 200
+08:40:36.168: RectHeightSub now point 0 0
+08:40:36.168: grayval: 0
+08:40:36.168: creat cloud
+08:40:36.168: create sussful
+08:42:43.970: CreateLLTDevice OK 
+
+08:42:44.125: rowcount 0
+08:42:44.125: roiList size 7
+08:42:47.675: 0
+08:42:49.011: "D:/test0.tif"
+08:42:49.028: rowcount 7
+08:42:49.028: roiList size 7
+08:42:49.029: read "D:/test0.tif"
+08:42:49.054: 800 1300 real
+08:42:49.150: 800 1300
+08:42:49.150: read finish
+08:43:05.136: start match
+08:43:05.173: ret = 1
+08:43:05.173: locate ("1065.58", "518.492", "0")
+08:43:05.174: match orginal point 1066 518
+08:43:05.174: "匹配模板时间:" 53 ms
+08:43:05.174: plane list.size 7
+08:43:05.174: heightsub list.size 7
+08:43:05.174: start heightsub
+08:43:05.175: RectHeightSub orginal point -100 -100
+08:43:05.175: RectHeightSub now point 966 418
+08:43:05.175: Grayval Num,Indices Num, sum 101 1 5.1424
+08:43:05.176: xyz -100 -100 0.0509149 0
+08:43:05.176: start heightsub
+08:43:05.176: RectHeightSub orginal point -100 100
+08:43:05.177: RectHeightSub now point 966 618
+08:43:05.177: Grayval Num,Indices Num, sum 101 1 6.7482
+08:43:05.177: xyz -100 100 0.0668139 1
+08:43:05.177: start heightsub
+08:43:05.178: RectHeightSub orginal point -1000 100
+08:43:05.178: RectHeightSub now point 66 618
+08:43:05.178: Grayval Num,Indices Num, sum 101 1 -749.636
+08:43:05.178: xyz -1000 100 -7.42214 2
+08:43:05.178: start heightsub
+08:43:05.179: RectHeightSub orginal point -800 100
+08:43:05.179: RectHeightSub now point 266 618
+08:43:05.179: Grayval Num,Indices Num, sum 101 1 22.2493
+08:43:05.179: xyz -800 100 0.22029 3
+08:43:05.179: start heightsub
+08:43:05.180: RectHeightSub orginal point -700 200
+08:43:05.180: RectHeightSub now point 366 718
+08:43:05.180: Grayval Num,Indices Num, sum 101 1 2.4644
+08:43:05.180: xyz -700 200 0.0244 4
+08:43:05.180: creat cloud
+08:43:05.180: create sussful
+08:43:05.180: comp 1
+08:43:05.180: heightSub "rect006" 1.14814
+08:43:05.182: "计算高差时间:" 8 ms
+08:47:53.160: CreateLLTDevice OK 
+
+08:47:53.435: rowcount 0
+08:47:53.436: roiList size 7
+08:48:39.715: 0
+08:48:41.089: "D:/test0.tif"
+08:48:41.104: rowcount 7
+08:48:41.104: roiList size 7
+08:48:41.105: read "D:/test0.tif"
+08:48:41.130: 800 1300 real
+08:48:41.225: 800 1300
+08:48:41.226: read finish
+08:48:43.689: start match
+08:48:43.716: ret = 1
+08:48:43.716: locate ("1065.58", "518.492", "0")
+08:48:43.716: match orginal point 1066 518
+08:48:43.717: "匹配模板时间:" 42 ms
+08:48:43.717: plane list.size 7
+08:48:43.717: heightsub list.size 7
+08:48:43.717: start heightsub
+08:48:43.718: RectHeightSub orginal point -100 -100
+08:48:43.718: RectHeightSub now point 966 418
+08:48:43.718: Grayval Num,Indices Num, sum 101 1 5.1424
+08:48:43.718: xyz -100 -100 0.0509149 0
+08:48:43.718: start heightsub
+08:48:43.719: RectHeightSub orginal point -100 100
+08:48:43.719: RectHeightSub now point 966 618
+08:48:43.719: Grayval Num,Indices Num, sum 101 1 6.7482
+08:48:43.719: xyz -100 100 0.0668139 1
+08:48:43.719: start heightsub
+08:48:43.719: RectHeightSub orginal point -1000 100
+08:48:43.720: RectHeightSub now point 66 618
+08:48:43.720: Grayval Num,Indices Num, sum 101 1 -749.636
+08:48:43.720: xyz -1000 100 -7.42214 2
+08:48:43.720: start heightsub
+08:48:43.720: RectHeightSub orginal point -800 100
+08:48:43.720: RectHeightSub now point 266 618
+08:48:43.721: Grayval Num,Indices Num, sum 101 1 22.2493
+08:48:43.721: xyz -800 100 0.22029 3
+08:48:43.721: start heightsub
+08:48:43.721: RectHeightSub orginal point -700 200
+08:48:43.721: RectHeightSub now point 366 718
+08:48:43.721: Grayval Num,Indices Num, sum 101 1 2.4644
+08:48:43.721: xyz -700 200 0.0244 4
+08:48:43.722: creat cloud
+08:48:43.722: create sussful
+08:48:43.722: comp 1
+08:48:43.722: heightSub "rect006" 1.14814
+08:48:43.724: "计算高差时间:" 7 ms
+08:49:08.306: start
+08:49:08.306: rowcount 1
+08:49:08.306: 1
+08:49:08.310: clear
+08:49:08.325: rowcount 7
+08:49:08.325: roiList size 7
+08:49:08.326: Error during SetProfileConfig 
+
+08:49:08.326: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:49:08.326: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+08:49:08.326: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:49:08.327: 
+Demonstrate the profile transfer via callback function
+
+08:49:08.327: Enable the measurement
+
+08:49:08.327: Error during TransferProfiles 
+
+08:49:08.327: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:49:11.489: "D:/test0.tif"
+08:49:11.505: rowcount 7
+08:49:11.505: roiList size 7
+08:49:11.506: read "D:/test0.tif"
+08:49:11.530: 800 1300 real
+08:49:11.628: 800 1300
+08:49:11.629: read finish
+08:49:15.258: start match
+08:49:15.286: ret = 1
+08:49:15.286: locate ("1065.58", "518.492", "0")
+08:49:15.286: match orginal point 1066 518
+08:49:15.286: "匹配模板时间:" 42 ms
+08:49:15.286: plane list.size 7
+08:49:15.287: heightsub list.size 7
+08:49:15.287: start heightsub
+08:49:15.287: RectHeightSub orginal point -100 -100
+08:49:15.287: RectHeightSub now point 966 418
+08:49:15.288: Grayval Num,Indices Num, sum 101 1 5.1424
+08:49:15.288: xyz -100 -100 0.0509149 0
+08:49:15.288: start heightsub
+08:49:15.289: RectHeightSub orginal point -100 100
+08:49:15.289: RectHeightSub now point 966 618
+08:49:15.289: Grayval Num,Indices Num, sum 101 1 6.7482
+08:49:15.289: xyz -100 100 0.0668139 1
+08:49:15.290: start heightsub
+08:49:15.290: RectHeightSub orginal point -1000 100
+08:49:15.290: RectHeightSub now point 66 618
+08:49:15.290: Grayval Num,Indices Num, sum 101 1 -749.636
+08:49:15.291: xyz -1000 100 -7.42214 2
+08:49:15.291: start heightsub
+08:49:15.291: RectHeightSub orginal point -800 100
+08:49:15.291: RectHeightSub now point 266 618
+08:49:15.291: Grayval Num,Indices Num, sum 101 1 22.2493
+08:49:15.291: xyz -800 100 0.22029 3
+08:49:15.291: start heightsub
+08:49:15.292: RectHeightSub orginal point -700 200
+08:49:15.292: RectHeightSub now point 366 718
+08:49:15.292: Grayval Num,Indices Num, sum 101 1 2.4644
+08:49:15.292: xyz -700 200 0.0244 4
+08:49:15.292: creat cloud
+08:49:15.292: create sussful
+08:49:15.293: comp 1
+08:49:15.293: heightSub "rect006" 1.14814
+08:49:15.294: "计算高差时间:" 7 ms
+08:50:38.046: CreateLLTDevice OK 
+
+08:50:38.138: rowcount 0
+08:50:38.138: roiList size 7
+08:50:41.251: 0
+08:50:42.793: "D:/test0.tif"
+08:50:42.808: rowcount 7
+08:50:42.808: roiList size 7
+08:50:42.809: read "D:/test0.tif"
+08:50:42.834: 800 1300 real
+08:50:42.933: 800 1300
+08:50:42.934: read finish
+08:50:46.491: QPoint(148,210)
+08:50:46.491: QPoint(148,185)
+08:50:46.491: item 6
+08:50:47.015: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005")) ) ) 
+08:50:47.785: QPoint(172,197)
+08:50:47.786: QPoint(172,172)
+08:50:47.786: item 5
+08:50:48.262: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004")) ) ) 
+08:50:49.096: QPoint(187,159)
+08:50:49.097: QPoint(187,134)
+08:50:49.097: item 4
+08:50:49.541: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+08:50:50.272: QPoint(175,133)
+08:50:50.273: QPoint(175,108)
+08:50:50.273: item 3
+08:50:50.750: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+08:50:51.584: QPoint(185,108)
+08:50:51.585: QPoint(185,83)
+08:50:51.585: item 2
+08:50:52.127: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+08:59:13.948: CreateLLTDevice OK 
+
+08:59:14.074: rowcount 0
+08:59:14.075: roiList size 2
+08:59:18.890: 0
+08:59:20.241: "D:/test0.tif"
+08:59:20.253: rowcount 2
+08:59:20.254: roiList size 2
+08:59:20.254: read "D:/test0.tif"
+08:59:20.280: 800 1300 real
+08:59:20.376: 800 1300
+08:59:20.377: read finish
+08:59:36.387: 4278255615
+08:59:36.388: 0 255 255
+08:59:38.400: ""
+08:59:38.400: 4278255615 0 0
+08:59:40.756: func -1000 -100 50 50
+08:59:40.790: rowcount 2
+08:59:40.790: roiList size 3
+08:59:40.791: ""
+08:59:40.791: 4278255615 0 3
+09:05:48.072: CreateLLTDevice OK 
+
+09:05:48.235: rowcount 0
+09:05:48.237: roiList size 3
+09:05:52.460: 0
+09:05:53.713: "D:/test0.tif"
+09:05:53.727: rowcount 3
+09:05:53.727: roiList size 3
+09:05:53.728: read "D:/test0.tif"
+09:05:53.752: 800 1300 real
+09:05:53.850: 800 1300
+09:05:53.850: read finish
+09:06:30.850: QPoint(121,94)
+09:06:30.850: QPoint(121,69)
+09:06:30.850: item 2
+09:21:50.321: CreateLLTDevice OK 
+
+09:21:50.431: rowcount 0
+09:21:50.432: roiList size 3
+09:21:56.674: 0
+09:21:58.117: "D:/test0.tif"
+09:21:58.129: rowcount 3
+09:21:58.130: roiList size 3
+09:21:58.130: read "D:/test0.tif"
+09:21:58.155: 800 1300 real
+09:21:58.249: 800 1300
+09:21:58.249: read finish
+09:22:04.871: func 4 750.5 591
+09:22:04.904: rowcount 3
+09:22:04.905: roiList size 4
+09:22:04.905: ""
+09:22:04.905: 4294901760 0 4
+09:22:08.876: func 4 832.5 241
+09:22:08.910: rowcount 4
+09:22:08.911: roiList size 5
+09:22:08.911: ""
+09:22:08.911: 4294901760 0 4
+09:22:15.244: start match
+09:22:15.271: ret = 1
+09:22:15.271: locate ("1065.58", "518.492", "0")
+09:22:15.271: match orginal point 1066 518
+09:22:15.271: "匹配模板时间:" 42 ms
+09:22:15.271: plane list.size 5
+09:22:15.272: heightsub list.size 5
+09:22:15.272: start heightsub
+09:22:15.272: RectHeightSub orginal point -1000 -100
+09:22:15.272: RectHeightSub now point 66 418
+09:22:15.272: Grayval Num,Indices Num, sum 101 1 -757.5
+09:22:15.272: xyz -1000 -100 -7.5 0
+09:22:15.273: creat cloud
+09:22:15.273: create sussful
+09:22:15.273: comp 1
+09:25:18.448: CreateLLTDevice OK 
+
+09:25:18.606: rowcount 0
+09:25:18.606: roiList size 5
+09:25:21.082: 0
+09:25:22.385: "D:/test0.tif"
+09:25:22.398: rowcount 5
+09:25:22.398: roiList size 5
+09:25:22.399: read "D:/test0.tif"
+09:25:22.424: 800 1300 real
+09:25:22.520: 800 1300
+09:25:22.520: read finish
+09:25:32.257: QPoint(168,109)
+09:25:32.257: QPoint(168,84)
+09:25:32.257: item 2
+09:25:33.070: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect004")) ) ) 
+09:25:36.123: start match
+09:25:36.151: ret = 1
+09:25:36.151: locate ("1065.58", "518.492", "0")
+09:25:36.151: match orginal point 1066 518
+09:25:36.151: "匹配模板时间:" 43 ms
+09:25:36.152: plane list.size 4
+09:25:36.152: heightsub list.size 4
+09:25:36.152: pointtoponit list.size 4
+09:25:36.152: start ptop
+09:25:36.153: ptop orginal point 725.193 571.915
+09:25:36.153: ptop now point 725 572
+09:25:36.153: start ptop
+09:25:36.154: ptop orginal point 823.714 235.299
+09:25:36.154: ptop now point 824 235
+09:28:42.235: CreateLLTDevice OK 
+
+09:28:42.347: rowcount 0
+09:28:42.348: roiList size 4
+09:28:45.523: 0
+09:28:46.961: "D:/test0.tif"
+09:28:46.972: rowcount 4
+09:28:46.973: roiList size 4
+09:28:46.973: read "D:/test0.tif"
+09:28:47.001: 800 1300 real
+09:28:47.100: 800 1300
+09:28:47.100: read finish
+09:29:08.201: start match
+09:29:08.227: ret = 1
+09:29:08.227: locate ("1065.58", "518.492", "0")
+09:29:08.227: match orginal point 1066 518
+09:29:08.228: "匹配模板时间:" 42 ms
+09:29:08.228: plane list.size 4
+09:29:08.228: heightsub list.size 4
+09:29:08.228: pointtoponit list.size 4
+09:29:08.228: start ptop
+09:29:08.229: ptop orginal point 725.193 571.915
+09:29:08.229: ptop now point 725 572
+09:29:08.229: start ptop
+09:29:08.229: ptop orginal point 823.714 235.299
+09:29:08.229: ptop now point 824 235
+09:29:56.604: func 3 704.151 377.084 -1.02562
+09:29:56.643: rowcount 4
+09:29:56.643: roiList size 5
+09:29:56.643: ""
+09:29:56.644: 4294901760 0 3
+09:30:05.917: func 4 893.5 465.5
+09:30:05.950: rowcount 5
+09:30:05.951: roiList size 6
+09:30:05.951: ""
+09:30:05.952: 4294901760 0 4
+09:31:32.962: CreateLLTDevice OK 
+
+09:31:33.120: rowcount 0
+09:31:33.121: roiList size 6
+09:31:39.415: 0
+09:31:40.802: "D:/test0.tif"
+09:31:40.814: rowcount 6
+09:31:40.814: roiList size 6
+09:31:40.815: read "D:/test0.tif"
+09:31:40.840: 800 1300 real
+09:31:40.935: 800 1300
+09:31:40.935: read finish
+09:31:43.844: QPoint(137,186)
+09:31:43.844: QPoint(137,161)
+09:31:43.844: item 5
+09:31:44.607: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect004", "rect002")) ) ) 
+09:31:45.344: QPoint(185,159)
+09:31:45.344: QPoint(185,134)
+09:31:45.344: item 4
+09:31:45.849: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect002")) ) ) 
+09:31:46.504: QPoint(164,127)
+09:31:46.504: QPoint(164,102)
+09:31:46.504: item 3
+09:31:47.117: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+09:31:49.044: QPoint(148,101)
+09:31:49.044: QPoint(148,76)
+09:31:49.044: item 2
+09:31:49.519: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+09:31:55.956: func 4 790.073 244.916 -1.5708
+09:31:55.990: rowcount 2
+09:31:55.991: roiList size 3
+09:31:55.991: ""
+09:31:55.991: 4294901760 0 4
+09:31:59.848: func 4 732.402 415.629 -0.566458
+09:31:59.889: rowcount 3
+09:31:59.889: roiList size 4
+09:31:59.890: ""
+09:31:59.890: 4294901760 0 4
+09:32:01.258: start match
+09:32:01.284: ret = 1
+09:32:01.284: locate ("1065.58", "518.492", "0")
+09:32:01.285: match orginal point 1066 518
+09:32:01.285: "匹配模板时间:" 42 ms
+09:32:01.285: plane list.size 4
+09:32:01.285: heightsub list.size 4
+09:32:01.285: pointtoponit list.size 4
+09:32:01.285: start ptop
+09:32:01.286: ptop orginal point 790.073 244.916
+09:32:01.286: ptop now point 790 245
+09:32:01.286: start ptop
+09:32:01.286: ptop orginal point 732.402 415.629
+09:32:01.287: ptop now point 732.5 415.5
+09:32:12.037: func 4 578.613 350.71 0
+09:32:12.074: rowcount 4
+09:32:12.075: roiList size 5
+09:32:12.075: ""
+09:32:12.075: 4294901760 0 4
+09:32:23.741: func 4 586.62 216.745 0
+09:32:23.778: rowcount 5
+09:32:23.778: roiList size 6
+09:32:23.779: ""
+09:32:23.779: 4294901760 0 4
+09:32:26.706: start match
+09:32:26.732: ret = 1
+09:32:26.733: locate ("1065.58", "518.492", "0")
+09:32:26.733: match orginal point 1066 518
+09:32:26.733: "匹配模板时间:" 41 ms
+09:32:26.733: plane list.size 6
+09:32:26.733: heightsub list.size 6
+09:32:26.733: pointtoponit list.size 6
+09:32:26.733: start ptop
+09:32:26.734: ptop orginal point 790.073 244.916
+09:32:26.734: ptop now point 790 245
+09:32:26.734: start ptop
+09:32:26.735: ptop orginal point 732.402 415.629
+09:32:26.735: ptop now point 732.5 415.5
+09:32:26.737: start ptop
+09:32:26.737: ptop orginal point 578.613 350.71
+09:32:26.738: ptop now point 578.5 351
+09:32:26.738: start ptop
+09:32:26.738: ptop orginal point 586.62 216.745
+09:32:26.738: ptop now point 586.5 217
+11:31:52.570: CreateLLTDevice OK 
+
+11:31:52.790: rowcount 0
+11:31:52.790: roiList size 6
+11:31:57.292: 0
+11:31:59.704: "D:/test0.tif"
+11:31:59.720: rowcount 6
+11:31:59.721: roiList size 6
+11:31:59.721: read "D:/test0.tif"
+11:31:59.747: 800 1300 real
+11:31:59.878: 800 1300
+11:31:59.879: read finish
+11:32:07.074: start match
+11:32:07.113: ret = 1
+11:32:07.114: locate ("1065.58", "518.492", "0")
+11:32:07.114: match orginal point 1066 518
+11:32:07.114: "匹配模板时间:" 55 ms
+11:32:07.114: plane list.size 6
+11:32:07.115: heightsub list.size 6
+11:32:07.115: pointtoponit list.size 6
+11:32:07.115: start ptop
+11:32:07.116: ptop orginal point 790.073 244.916
+11:32:07.116: ptop now point 790 245
+11:32:07.117: start ptop
+11:32:07.117: ptop orginal point 732.402 415.629
+11:32:07.117: ptop now point 732.5 415.5
+11:32:07.120: start ptop
+11:32:07.121: ptop orginal point 578.613 350.71
+11:32:07.121: ptop now point 578.5 351
+11:32:07.121: start ptop
+11:32:07.122: ptop orginal point 586.62 216.745
+11:32:07.122: ptop now point 586.5 217
+11:35:39.259: CreateLLTDevice OK 
+
+11:35:39.351: rowcount 0
+11:35:39.352: roiList size 6
+11:36:17.819: 0
+11:36:19.378: "D:/test0.tif"
+11:36:19.390: rowcount 6
+11:36:19.390: roiList size 6
+11:36:19.391: read "D:/test0.tif"
+11:36:19.415: 800 1300 real
+11:36:19.512: 800 1300
+11:36:19.512: read finish
+11:36:24.093: start match
+11:36:24.119: ret = 1
+11:36:24.120: locate ("1065.58", "518.492", "0")
+11:36:24.120: match orginal point 1066 518
+11:36:24.120: "匹配模板时间:" 40 ms
+11:36:24.120: plane list.size 6
+11:36:24.120: heightsub list.size 6
+11:36:24.121: pointtoponit list.size 6
+11:36:24.121: start ptop
+11:36:24.121: ptop orginal point 790.073 244.916
+11:36:24.121: ptop now point 790 245
+11:36:24.121: start ptop
+11:36:24.122: ptop orginal point 732.402 415.629
+11:36:24.122: ptop now point 732.5 415.5
+11:36:24.124: start ptop
+11:36:24.124: ptop orginal point 578.613 350.71
+11:36:24.124: ptop now point 578.5 351
+11:36:24.124: start ptop
+11:36:24.125: ptop orginal point 586.62 216.745
+11:36:24.125: ptop now point 586.5 217
+13:32:30.705: CreateLLTDevice OK 
+
+13:32:30.856: rowcount 0
+13:32:30.856: roiList size 6
+13:32:40.644: A error occured during searching for connected scanCONTROL -253 
+
+13:32:49.553: Accepted
+13:32:50.896: init kings
+13:32:50.897: mode 0
+13:32:50.897: frequency 10
+13:32:50.898: commandPort 24691
+13:32:50.898: dataPort 24692
+13:32:54.646: start
+13:32:54.647: rowcount 0
+13:32:54.647: clear
+13:32:54.661: rowcount 6
+13:32:54.661: roiList size 6
+13:32:54.662: mode 0
+13:32:54.663: frequency 10
+13:32:54.663: commandPort 24691
+13:32:54.664: dataPort 24692
+13:32:55.770: start usb
+13:32:57.270: start
+13:32:57.271: rowcount 0
+13:32:57.271: clear
+13:32:57.282: rowcount 6
+13:32:57.282: roiList size 6
+13:32:57.285: mode 0
+13:32:57.286: frequency 10
+13:32:57.287: commandPort 24691
+13:32:57.288: dataPort 24692
+13:32:58.293: start usb
+13:33:10.729: 0
+13:33:12.809: "D:/test0.tif"
+13:33:12.826: rowcount 6
+13:33:12.827: roiList size 6
+13:33:12.829: read "D:/test0.tif"
+13:33:12.857: 800 1300 real
+13:33:12.963: 800 1300
+13:33:12.964: read finish
+13:33:15.263: start match
+13:33:15.298: ret = 1
+13:33:15.299: locate ("1065.58", "518.492", "0")
+13:33:15.300: match orginal point 1066 518
+13:33:15.301: "匹配模板时间:" 63 ms
+13:33:15.302: plane list.size 6
+13:33:15.302: heightsub list.size 6
+13:33:15.303: pointtoponit list.size 6
+13:33:15.304: start ptop
+13:33:15.305: ptop orginal point 790.073 244.916
+13:33:15.305: ptop now point 790 245
+13:33:15.306: start ptop
+13:33:15.308: ptop orginal point 732.402 415.629
+13:33:15.308: ptop now point 732.5 415.5
+13:33:15.311: start ptop
+13:33:15.312: ptop orginal point 578.613 350.71
+13:33:15.313: ptop now point 578.5 351
+13:33:15.313: start ptop
+13:33:15.314: ptop orginal point 586.62 216.745
+13:33:15.315: ptop now point 586.5 217
+13:33:28.645: QPoint(85,200)
+13:33:28.646: QPoint(85,175)
+13:33:28.646: item 5
+13:33:29.147: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004")) ) ) 
+13:33:29.661: QPoint(139,164)
+13:33:29.662: QPoint(139,139)
+13:33:29.663: item 4
+13:33:30.193: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+13:33:30.909: QPoint(157,132)
+13:33:30.910: QPoint(157,107)
+13:33:30.911: item 3
+13:33:34.890: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+13:33:35.781: QPoint(100,99)
+13:33:35.782: QPoint(100,74)
+13:33:35.783: item 2
+13:33:36.649: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+13:33:37.599: QPoint(120,78)
+13:33:37.601: QPoint(120,53)
+13:33:37.603: item 1
+13:33:38.131: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+13:33:39.030: QPoint(133,50)
+13:33:39.031: QPoint(133,25)
+13:33:39.032: item 0
+13:33:39.689: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+13:33:55.213: Accepted
+13:34:00.161: func 0 1074 541.5
+13:34:00.203: create ("rect000")
+13:34:00.205: QMap(("Column", QVariant(double, 420.437) ) ( "Column2" ,  QVariant(double, 663.282) ) ( "Row" ,  QVariant(double, 1008.74) ) ( "Row2" ,  QVariant(double, 1138.5) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+13:34:00.206: create template "rect000" imgList size 1 0
+13:34:00.230: creat point 1008.74 420.437 1138.5 663.282
+13:34:00.336: Create_template 1
+13:34:00.355: templateID get
+13:34:00.357: "生成模板时间:" 154 ms
+13:34:00.386: rowcount 0
+13:34:00.387: roiList size 1
+13:34:00.388: ""
+13:34:00.389: 4294901760 0 0
+13:43:24.616: init kings
+13:43:24.713: rowcount 0
+13:43:24.714: roiList size 1
+13:43:39.766: 0
+13:43:41.062: "D:/test0.tif"
+13:43:41.074: rowcount 1
+13:43:41.074: roiList size 1
+13:43:41.074: read "D:/test0.tif"
+13:43:41.099: 800 1300 real
+13:43:41.194: 800 1300
+13:43:41.194: read finish
+13:43:43.848: func 2 629.075 336.283 -0.628511
+13:43:43.881: rowcount 1
+13:43:43.881: roiList size 2
+13:43:43.882: ""
+13:43:43.882: 4294901760 0 2
+13:43:46.344: func 2 811.7 499.783 -0.0650862
+13:43:46.377: rowcount 2
+13:43:46.377: roiList size 3
+13:43:46.378: ""
+13:43:46.378: 4294901760 0 2
+13:43:48.608: func 2 953.474 559.893 0.0312211
+13:43:48.641: rowcount 3
+13:43:48.641: roiList size 4
+13:43:48.642: ""
+13:43:48.642: 4294901760 0 2
+13:43:50.744: func 2 403.197 533.444 -0.785098
+13:43:50.818: rowcount 4
+13:43:50.818: roiList size 5
+13:43:50.819: ""
+13:43:50.819: 4294901760 0 2
+13:43:51.885: QPoint(131,102)
+13:43:51.885: QPoint(131,77)
+13:43:51.885: item 2
+13:43:52.927: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+13:43:52.966: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+13:43:53.003: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+13:43:53.043: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+13:43:53.085: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+13:44:02.728: init kings
+13:44:02.845: rowcount 0
+13:44:02.845: roiList size 0
+13:47:09.885: init kings
+13:47:09.980: rowcount 0
+13:47:09.980: roiList size 0
+13:47:12.433: 0
+13:47:14.047: Accepted

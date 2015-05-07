@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[56];
-    char stringdata[774];
+    QByteArrayData data[59];
+    char stringdata[806];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -75,16 +75,19 @@ QT_MOC_LITERAL(42, 552, 10),
 QT_MOC_LITERAL(43, 563, 9),
 QT_MOC_LITERAL(44, 573, 16),
 QT_MOC_LITERAL(45, 590, 15),
-QT_MOC_LITERAL(46, 606, 14),
-QT_MOC_LITERAL(47, 621, 17),
-QT_MOC_LITERAL(48, 639, 18),
-QT_MOC_LITERAL(49, 658, 11),
-QT_MOC_LITERAL(50, 670, 16),
-QT_MOC_LITERAL(51, 687, 18),
-QT_MOC_LITERAL(52, 706, 27),
-QT_MOC_LITERAL(53, 734, 5),
-QT_MOC_LITERAL(54, 740, 16),
-QT_MOC_LITERAL(55, 757, 16)
+QT_MOC_LITERAL(46, 606, 8),
+QT_MOC_LITERAL(47, 615, 4),
+QT_MOC_LITERAL(48, 620, 14),
+QT_MOC_LITERAL(49, 635, 17),
+QT_MOC_LITERAL(50, 653, 17),
+QT_MOC_LITERAL(51, 671, 18),
+QT_MOC_LITERAL(52, 690, 11),
+QT_MOC_LITERAL(53, 702, 16),
+QT_MOC_LITERAL(54, 719, 18),
+QT_MOC_LITERAL(55, 738, 27),
+QT_MOC_LITERAL(56, 766, 5),
+QT_MOC_LITERAL(57, 772, 16),
+QT_MOC_LITERAL(58, 789, 16)
     },
     "MainWindow\0stopMove\0\0E128_detect\0"
     "outputMessage\0QtMsgType\0recvHeightSub\0"
@@ -102,7 +105,8 @@ QT_MOC_LITERAL(55, 757, 16)
     "on_singleFrameButton_clicked\0"
     "on_threeDButton_clicked\0on_twoDButton_clicked\0"
     "startVideo\0stopVideo\0startSingleFrame\0"
-    "stopSingleFrame\0action_delItem\0"
+    "stopSingleFrame\0openFile\0path\0"
+    "action_delItem\0action_delAllItem\0"
     "action_modifyItem\0on_roiDraw_clicked\0"
     "statusCheck\0updataProsessBar\0"
     "on_toExcel_clicked\0on_func_currentIndexChanged\0"
@@ -116,7 +120,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      44,   14, // methods
+      46,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -124,52 +128,54 @@ static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  234,    2, 0x06 /* Public */,
-       3,    0,  235,    2, 0x06 /* Public */,
+       1,    0,  244,    2, 0x06 /* Public */,
+       3,    0,  245,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    2,  236,    2, 0x0a /* Public */,
-       6,    4,  241,    2, 0x0a /* Public */,
-       6,    4,  250,    2, 0x0a /* Public */,
-       7,    2,  259,    2, 0x0a /* Public */,
-       8,    2,  264,    2, 0x0a /* Public */,
-      12,    0,  269,    2, 0x0a /* Public */,
-      13,    0,  270,    2, 0x0a /* Public */,
-      14,    0,  271,    2, 0x0a /* Public */,
-      15,    1,  272,    2, 0x0a /* Public */,
-      17,    0,  275,    2, 0x0a /* Public */,
-      18,    1,  276,    2, 0x0a /* Public */,
-      19,    1,  279,    2, 0x0a /* Public */,
-      20,    1,  282,    2, 0x0a /* Public */,
-      21,    0,  285,    2, 0x0a /* Public */,
-      22,    0,  286,    2, 0x0a /* Public */,
-      23,    0,  287,    2, 0x0a /* Public */,
-      24,    1,  288,    2, 0x0a /* Public */,
-      25,    0,  291,    2, 0x0a /* Public */,
-      26,    0,  292,    2, 0x0a /* Public */,
-      27,    1,  293,    2, 0x0a /* Public */,
-      29,    0,  296,    2, 0x0a /* Public */,
-      30,    0,  297,    2, 0x0a /* Public */,
-      31,    0,  298,    2, 0x0a /* Public */,
-      32,    1,  299,    2, 0x0a /* Public */,
-      35,    2,  302,    2, 0x0a /* Public */,
-      38,    0,  307,    2, 0x0a /* Public */,
-      39,    0,  308,    2, 0x0a /* Public */,
-      40,    0,  309,    2, 0x0a /* Public */,
-      41,    0,  310,    2, 0x0a /* Public */,
-      42,    0,  311,    2, 0x0a /* Public */,
-      43,    0,  312,    2, 0x0a /* Public */,
-      44,    0,  313,    2, 0x0a /* Public */,
-      45,    0,  314,    2, 0x0a /* Public */,
-      46,    0,  315,    2, 0x0a /* Public */,
-      47,    0,  316,    2, 0x0a /* Public */,
-      48,    0,  317,    2, 0x08 /* Private */,
-      49,    0,  318,    2, 0x08 /* Private */,
-      50,    2,  319,    2, 0x08 /* Private */,
-      51,    0,  324,    2, 0x08 /* Private */,
-      52,    1,  325,    2, 0x08 /* Private */,
-      54,    0,  328,    2, 0x08 /* Private */,
-      55,    0,  329,    2, 0x08 /* Private */,
+       4,    2,  246,    2, 0x0a /* Public */,
+       6,    4,  251,    2, 0x0a /* Public */,
+       6,    4,  260,    2, 0x0a /* Public */,
+       7,    2,  269,    2, 0x0a /* Public */,
+       8,    2,  274,    2, 0x0a /* Public */,
+      12,    0,  279,    2, 0x0a /* Public */,
+      13,    0,  280,    2, 0x0a /* Public */,
+      14,    0,  281,    2, 0x0a /* Public */,
+      15,    1,  282,    2, 0x0a /* Public */,
+      17,    0,  285,    2, 0x0a /* Public */,
+      18,    1,  286,    2, 0x0a /* Public */,
+      19,    1,  289,    2, 0x0a /* Public */,
+      20,    1,  292,    2, 0x0a /* Public */,
+      21,    0,  295,    2, 0x0a /* Public */,
+      22,    0,  296,    2, 0x0a /* Public */,
+      23,    0,  297,    2, 0x0a /* Public */,
+      24,    1,  298,    2, 0x0a /* Public */,
+      25,    0,  301,    2, 0x0a /* Public */,
+      26,    0,  302,    2, 0x0a /* Public */,
+      27,    1,  303,    2, 0x0a /* Public */,
+      29,    0,  306,    2, 0x0a /* Public */,
+      30,    0,  307,    2, 0x0a /* Public */,
+      31,    0,  308,    2, 0x0a /* Public */,
+      32,    1,  309,    2, 0x0a /* Public */,
+      35,    2,  312,    2, 0x0a /* Public */,
+      38,    0,  317,    2, 0x0a /* Public */,
+      39,    0,  318,    2, 0x0a /* Public */,
+      40,    0,  319,    2, 0x0a /* Public */,
+      41,    0,  320,    2, 0x0a /* Public */,
+      42,    0,  321,    2, 0x0a /* Public */,
+      43,    0,  322,    2, 0x0a /* Public */,
+      44,    0,  323,    2, 0x0a /* Public */,
+      45,    0,  324,    2, 0x0a /* Public */,
+      46,    1,  325,    2, 0x0a /* Public */,
+      48,    0,  328,    2, 0x0a /* Public */,
+      49,    0,  329,    2, 0x0a /* Public */,
+      50,    0,  330,    2, 0x0a /* Public */,
+      51,    0,  331,    2, 0x08 /* Private */,
+      52,    0,  332,    2, 0x08 /* Private */,
+      53,    2,  333,    2, 0x08 /* Private */,
+      54,    0,  338,    2, 0x08 /* Private */,
+      55,    1,  339,    2, 0x08 /* Private */,
+      57,    0,  342,    2, 0x08 /* Private */,
+      58,    0,  343,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -209,13 +215,15 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   47,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   53,
+    QMetaType::Void, QMetaType::Int,   56,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -262,15 +270,17 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 32: _t->stopVideo(); break;
         case 33: _t->startSingleFrame(); break;
         case 34: _t->stopSingleFrame(); break;
-        case 35: _t->action_delItem(); break;
-        case 36: _t->action_modifyItem(); break;
-        case 37: _t->on_roiDraw_clicked(); break;
-        case 38: _t->statusCheck(); break;
-        case 39: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 40: _t->on_toExcel_clicked(); break;
-        case 41: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 42: _t->on_draw1_clicked(); break;
-        case 43: _t->on_draw2_clicked(); break;
+        case 35: _t->openFile((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 36: _t->action_delItem(); break;
+        case 37: _t->action_delAllItem(); break;
+        case 38: _t->action_modifyItem(); break;
+        case 39: _t->on_roiDraw_clicked(); break;
+        case 40: _t->statusCheck(); break;
+        case 41: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 42: _t->on_toExcel_clicked(); break;
+        case 43: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 44: _t->on_draw1_clicked(); break;
+        case 45: _t->on_draw2_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -316,13 +326,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 44)
+        if (_id < 46)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 44;
+        _id -= 46;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 44)
+        if (_id < 46)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 44;
+        _id -= 46;
     }
     return _id;
 }

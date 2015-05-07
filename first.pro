@@ -65,7 +65,8 @@ SOURCES += main.cpp\
     lua/lua.cpp \
     kings/kingscontrol.cpp \
     laser/laser.cpp \
-    settings.cpp
+    settings.cpp \
+    calculategroup.cpp
 
 
 
@@ -94,7 +95,8 @@ HEADERS  += mainwindow.h \
     lua/lua.h \
     kings/kingscontrol.h \
     laser/laser.h \
-    settings.h
+    settings.h \
+    calculategroup.h
 
 
 

@@ -51,9 +51,11 @@ public:
     QGridLayout *gridLayout_2;
     QGroupBox *groupBox_3;
     QGridLayout *gridLayout_6;
-    QPushButton *open;
-    QLineEdit *path;
+    QGridLayout *gridLayout_12;
     QLabel *label_2;
+    QLineEdit *path;
+    QPushButton *findButton;
+    QPushButton *open;
     QWidget *tab_2;
     QGridLayout *gridLayout_3;
     QGroupBox *groupBox_4;
@@ -255,20 +257,30 @@ public:
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
         gridLayout_6 = new QGridLayout(groupBox_3);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
-        open = new QPushButton(groupBox_3);
-        open->setObjectName(QStringLiteral("open"));
+        gridLayout_12 = new QGridLayout();
+        gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
 
-        gridLayout_6->addWidget(open, 1, 2, 1, 1);
-
-        path = new QLineEdit(groupBox_3);
-        path->setObjectName(QStringLiteral("path"));
-
-        gridLayout_6->addWidget(path, 1, 1, 1, 1);
+        gridLayout_6->addLayout(gridLayout_12, 1, 0, 1, 2);
 
         label_2 = new QLabel(groupBox_3);
         label_2->setObjectName(QStringLiteral("label_2"));
 
-        gridLayout_6->addWidget(label_2, 1, 0, 1, 1);
+        gridLayout_6->addWidget(label_2, 0, 0, 1, 1);
+
+        path = new QLineEdit(groupBox_3);
+        path->setObjectName(QStringLiteral("path"));
+
+        gridLayout_6->addWidget(path, 0, 1, 1, 1);
+
+        findButton = new QPushButton(groupBox_3);
+        findButton->setObjectName(QStringLiteral("findButton"));
+
+        gridLayout_6->addWidget(findButton, 0, 3, 1, 1);
+
+        open = new QPushButton(groupBox_3);
+        open->setObjectName(QStringLiteral("open"));
+
+        gridLayout_6->addWidget(open, 0, 2, 1, 1);
 
 
         gridLayout_2->addWidget(groupBox_3, 0, 0, 1, 1);
@@ -1030,7 +1042,7 @@ public:
         QObject::connect(Button_Yes, SIGNAL(clicked()), mySettings, SLOT(accept()));
         QObject::connect(pushButton_Cancel, SIGNAL(clicked()), mySettings, SLOT(close()));
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(0);
         triggerSource->setCurrentIndex(1);
         triggerPolarity->setCurrentIndex(1);
         digitalInputs->setCurrentIndex(2);
@@ -1046,9 +1058,10 @@ public:
         Button_Yes->setText(QApplication::translate("mySettings", "\347\241\256\345\256\232", 0));
         pushButton_Cancel->setText(QApplication::translate("mySettings", "\345\217\226\346\266\210", 0));
         groupBox_3->setTitle(QString());
-        open->setText(QApplication::translate("mySettings", "\346\211\223\345\274\200", 0));
-        path->setText(QApplication::translate("mySettings", "D:/image", 0));
         label_2->setText(QApplication::translate("mySettings", "\346\226\207\344\273\266\350\267\257\345\276\204\357\274\232", 0));
+        path->setText(QApplication::translate("mySettings", "D:/image", 0));
+        findButton->setText(QApplication::translate("mySettings", "\346\220\234\347\264\242", 0));
+        open->setText(QApplication::translate("mySettings", "\346\211\223\345\274\200", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("mySettings", "\350\267\257\345\276\204\350\256\276\347\275\256", 0));
         groupBox_4->setTitle(QString());
         label->setText(QApplication::translate("mySettings", "\346\234\272\345\217\260IP\345\234\260\345\235\200:", 0));

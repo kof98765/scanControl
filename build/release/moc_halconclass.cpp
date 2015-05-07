@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_halconClass_t {
-    QByteArrayData data[56];
-    char stringdata[499];
+    QByteArrayData data[53];
+    char stringdata[490];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -69,22 +69,19 @@ QT_MOC_LITERAL(36, 303, 18),
 QT_MOC_LITERAL(37, 322, 1),
 QT_MOC_LITERAL(38, 324, 16),
 QT_MOC_LITERAL(39, 341, 8),
-QT_MOC_LITERAL(40, 350, 4),
-QT_MOC_LITERAL(41, 355, 5),
-QT_MOC_LITERAL(42, 361, 4),
-QT_MOC_LITERAL(43, 366, 5),
-QT_MOC_LITERAL(44, 372, 4),
-QT_MOC_LITERAL(45, 377, 3),
-QT_MOC_LITERAL(46, 381, 9),
-QT_MOC_LITERAL(47, 391, 7),
-QT_MOC_LITERAL(48, 399, 13),
-QT_MOC_LITERAL(49, 413, 14),
-QT_MOC_LITERAL(50, 428, 13),
-QT_MOC_LITERAL(51, 442, 18),
-QT_MOC_LITERAL(52, 461, 9),
-QT_MOC_LITERAL(53, 471, 11),
-QT_MOC_LITERAL(54, 483, 7),
-QT_MOC_LITERAL(55, 491, 7)
+QT_MOC_LITERAL(40, 350, 3),
+QT_MOC_LITERAL(41, 354, 9),
+QT_MOC_LITERAL(42, 364, 7),
+QT_MOC_LITERAL(43, 372, 13),
+QT_MOC_LITERAL(44, 386, 4),
+QT_MOC_LITERAL(45, 391, 12),
+QT_MOC_LITERAL(46, 404, 14),
+QT_MOC_LITERAL(47, 419, 13),
+QT_MOC_LITERAL(48, 433, 18),
+QT_MOC_LITERAL(49, 452, 9),
+QT_MOC_LITERAL(50, 462, 11),
+QT_MOC_LITERAL(51, 474, 7),
+QT_MOC_LITERAL(52, 482, 7)
     },
     "halconClass\0detectFinish\0\0stopMove\0"
     "clearMemory\0sumResult\0type\0num\0badResult\0"
@@ -95,9 +92,9 @@ QT_MOC_LITERAL(55, 491, 7)
     "test\0clearData\0disp_img\0zoomIn\0zoomOut\0"
     "read_img\0str\0getImagebyPointer1\0double*\0"
     "pdValueZ\0getImagebyPointer3\0z\0"
-    "close_the_window\0drawRect\0name\0color\0"
-    "team\0limit\0func\0map\0calculate\0delRect\0"
-    "RectHeightSub\0createTemplate\0matchTemplate\0"
+    "close_the_window\0drawRect\0map\0calculate\0"
+    "delRect\0RectHeightSub\0team\0pointToPoint\0"
+    "createTemplate\0matchTemplate\0"
     "calculatePlaneness\0selectImg\0compoundImg\0"
     "xOffset\0yOffset"
 };
@@ -143,16 +140,16 @@ static const uint qt_meta_data_halconClass[] = {
       33,    3,  251,    2, 0x0a /* Public */,
       36,    5,  258,    2, 0x0a /* Public */,
       38,    0,  269,    2, 0x0a /* Public */,
-      39,    5,  270,    2, 0x0a /* Public */,
-      39,    1,  281,    2, 0x0a /* Public */,
-      46,    0,  284,    2, 0x0a /* Public */,
-      47,    1,  285,    2, 0x0a /* Public */,
-      48,    1,  288,    2, 0x0a /* Public */,
-      49,    1,  291,    2, 0x0a /* Public */,
-      50,    1,  294,    2, 0x0a /* Public */,
-      51,    1,  297,    2, 0x0a /* Public */,
-      52,    1,  300,    2, 0x0a /* Public */,
-      53,    2,  303,    2, 0x0a /* Public */,
+      39,    1,  270,    2, 0x0a /* Public */,
+      41,    0,  273,    2, 0x0a /* Public */,
+      42,    1,  274,    2, 0x0a /* Public */,
+      43,    1,  277,    2, 0x0a /* Public */,
+      45,    1,  280,    2, 0x0a /* Public */,
+      46,    1,  283,    2, 0x0a /* Public */,
+      47,    1,  286,    2, 0x0a /* Public */,
+      48,    1,  289,    2, 0x0a /* Public */,
+      49,    1,  292,    2, 0x0a /* Public */,
+      50,    2,  295,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -181,16 +178,16 @@ static const uint qt_meta_data_halconClass[] = {
     QMetaType::Void, 0x80000000 | 34, QMetaType::Int, QMetaType::Int,   35,   11,   12,
     QMetaType::Void, 0x80000000 | 34, 0x80000000 | 34, 0x80000000 | 34, QMetaType::Int, QMetaType::Int,    9,   10,   37,   11,   12,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::Int, QMetaType::Double, QMetaType::Int,   40,   41,   42,   43,   44,
-    QMetaType::Void, QMetaType::QVariantMap,   45,
+    QMetaType::Void, QMetaType::QVariantMap,   40,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
-    QMetaType::Void, QMetaType::Int,   42,
-    QMetaType::Void, QMetaType::Int,   42,
-    QMetaType::Void, QMetaType::Int,   42,
-    QMetaType::Void, QMetaType::Int,   42,
+    QMetaType::Void, QMetaType::Int,   44,
+    QMetaType::Void, QMetaType::Int,   44,
+    QMetaType::Void, QMetaType::Int,   44,
+    QMetaType::Void, QMetaType::Int,   44,
+    QMetaType::Void, QMetaType::Int,   44,
     QMetaType::Void, QMetaType::Int,   23,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   54,   55,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   51,   52,
 
        0        // eod
 };
@@ -224,11 +221,11 @@ void halconClass::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 21: _t->getImagebyPointer1((*reinterpret_cast< double*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 22: _t->getImagebyPointer3((*reinterpret_cast< double*(*)>(_a[1])),(*reinterpret_cast< double*(*)>(_a[2])),(*reinterpret_cast< double*(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
         case 23: _t->close_the_window(); break;
-        case 24: _t->drawRect((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
-        case 25: _t->drawRect((*reinterpret_cast< QMap<QString,QVariant>(*)>(_a[1]))); break;
-        case 26: _t->calculate(); break;
-        case 27: _t->delRect((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 28: _t->RectHeightSub((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 24: _t->drawRect((*reinterpret_cast< QMap<QString,QVariant>(*)>(_a[1]))); break;
+        case 25: _t->calculate(); break;
+        case 26: _t->delRect((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 27: _t->RectHeightSub((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 28: _t->pointToPoint((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 29: _t->createTemplate((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 30: _t->matchTemplate((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 31: _t->calculatePlaneness((*reinterpret_cast< int(*)>(_a[1]))); break;

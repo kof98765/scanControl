@@ -396,7 +396,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 151, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 198, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -443,6 +443,7 @@ public:
         pointX = new QSpinBox(formLayoutWidget);
         pointX->setObjectName(QStringLiteral("pointX"));
         pointX->setEnabled(false);
+        pointX->setMinimum(-10000);
         pointX->setMaximum(10000);
 
         horizontalLayout_2->addWidget(pointX);
@@ -450,6 +451,7 @@ public:
         pointY = new QSpinBox(formLayoutWidget);
         pointY->setObjectName(QStringLiteral("pointY"));
         pointY->setEnabled(false);
+        pointY->setMinimum(-10000);
         pointY->setMaximum(10000);
 
         horizontalLayout_2->addWidget(pointY);
@@ -766,7 +768,8 @@ public:
          << QApplication::translate("MainWindow", "\345\256\232\344\275\215\345\214\272\345\237\237", 0)
          << QApplication::translate("MainWindow", "\346\220\234\347\264\242\345\214\272\345\237\237", 0)
          << QApplication::translate("MainWindow", "\350\256\241\347\256\227\345\271\263\351\235\242\345\272\246", 0)
-         << QApplication::translate("MainWindow", "\350\256\241\347\256\227\351\253\230\345\267\256", 0)
+         << QApplication::translate("MainWindow", "\347\202\271\345\210\260\345\271\263\351\235\242\351\253\230\345\267\256", 0)
+         << QApplication::translate("MainWindow", "\347\202\271\345\210\260\347\202\271\351\253\230\345\267\256", 0)
         );
         label_3->setText(QApplication::translate("MainWindow", "\351\242\234\350\211\262:", 0));
         roiColor->setText(QString());
