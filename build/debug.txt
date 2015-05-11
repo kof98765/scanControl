@@ -28816,3 +28816,4235 @@ Demonstrate the profile transfer via callback function
 13:47:09.980: roiList size 0
 13:47:12.433: 0
 13:47:14.047: Accepted
+14:49:46.757: init kings
+14:49:46.904: rowcount 0
+14:49:46.905: roiList size 0
+14:49:50.411: 0
+14:49:53.105: "D:/test0.tif"
+14:49:53.113: rowcount 0
+14:49:53.114: roiList size 0
+14:49:53.114: read "D:/test0.tif"
+14:49:53.139: 800 1300 real
+14:49:53.238: 800 1300
+14:49:53.239: read finish
+14:50:01.463: func 0 1066.5 527.5
+14:50:01.510: create ("rect000")
+14:50:01.510: QMap(("Column", QVariant(double, 422.842) ) ( "Column2" ,  QVariant(double, 632.025) ) ( "Row" ,  QVariant(double, 1003.94) ) ( "Row2" ,  QVariant(double, 1128.89) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+14:50:01.511: create template "rect000" imgList size 1 0
+14:50:01.533: creat point 1003.94 422.842 1128.89 632.025
+14:50:01.624: Create_template 1
+14:50:01.641: templateID get
+14:50:01.641: "生成模板时间:" 131 ms
+14:50:01.670: rowcount 0
+14:50:01.670: roiList size 1
+14:50:01.671: ""
+14:50:01.671: 4294901760 0 0
+14:50:07.860: func 1 1054.5 528.5
+14:50:07.891: rowcount 1
+14:50:07.892: roiList size 2
+14:50:07.892: ""
+14:50:07.892: 4294901760 0 1
+14:50:15.156: func 4 845.341 230.49 0
+14:50:15.190: rowcount 2
+14:50:15.190: roiList size 3
+14:50:15.190: ""
+14:50:15.191: 4294901760 0 4
+14:50:21.197: func 4 768.446 377.158 -0.19728
+14:50:21.231: rowcount 3
+14:50:21.231: roiList size 4
+14:50:21.231: ""
+14:50:21.232: 4294901760 0 4
+14:50:23.041: start match
+14:50:23.134: ret = 1
+14:50:23.134: locate ("1066.44", "527.895", "0")
+14:50:23.135: match orginal point 1066.5 527.5
+14:50:23.135: "匹配模板时间:" 109 ms
+14:50:23.135: plane list.size 4
+14:50:23.135: heightsub list.size 4
+14:50:23.136: pointtoponit list.size 4
+14:50:23.136: start ptop
+14:50:23.137: ptop orginal point 845.341 230.49
+14:50:23.137: ptop now point 845.5 230
+15:02:52.356: init kings
+15:02:52.473: rowcount 0
+15:02:52.474: roiList size 4
+15:02:59.006: 0
+15:03:00.842: "D:/test0.tif"
+15:03:00.868: rowcount 4
+15:03:00.869: roiList size 4
+15:03:00.869: read "D:/test0.tif"
+15:03:00.898: 800 1300 real
+15:03:01.014: 800 1300
+15:03:01.015: read finish
+15:03:02.394: start match
+15:03:02.493: ret = 1
+15:03:02.493: locate ("1066.44", "527.895", "0")
+15:03:02.493: match orginal point 1066.5 527.5
+15:03:02.493: "匹配模板时间:" 116 ms
+15:03:02.494: plane list.size 4
+15:03:02.494: heightsub list.size 4
+15:03:02.494: pointtoponit list.size 4
+15:03:02.494: start ptop
+15:03:02.495: ptop orginal point 845.341 230.49
+15:03:02.495: ptop now point 845.5 230
+15:05:28.233: init kings
+15:05:28.349: rowcount 0
+15:05:28.349: roiList size 4
+15:05:33.267: 0
+15:05:35.697: "D:/test0.tif"
+15:05:35.714: rowcount 4
+15:05:35.714: roiList size 4
+15:05:35.715: read "D:/test0.tif"
+15:05:35.740: 800 1300 real
+15:05:35.844: 800 1300
+15:05:35.844: read finish
+15:05:37.881: start match
+15:05:37.980: ret = 1
+15:05:37.981: locate ("1066.44", "527.895", "0")
+15:05:37.981: match orginal point 1066.5 527.5
+15:05:37.981: "匹配模板时间:" 116 ms
+15:05:37.981: plane list.size 4
+15:05:37.981: heightsub list.size 4
+15:05:37.981: pointtoponit list.size 4
+15:05:37.981: start ptop
+15:05:37.983: ptop orginal point 845.341 230.49
+15:05:37.983: ptop now point 845.5 230
+15:05:37.983: Grayval 0
+15:06:38.553: init kings
+15:06:38.662: rowcount 0
+15:06:38.663: roiList size 4
+15:06:44.384: rowcount 4
+15:06:44.384: roiList size 4
+15:06:44.385: read "D:/"
+15:06:52.267: init kings
+15:06:52.380: rowcount 0
+15:06:52.380: roiList size 4
+15:07:01.043: 0
+15:07:02.969: "D:/test0.tif"
+15:07:02.984: rowcount 4
+15:07:02.984: roiList size 4
+15:07:02.985: read "D:/test0.tif"
+15:07:03.014: 800 1300 real
+15:07:03.141: 800 1300
+15:07:03.141: read finish
+15:07:36.530: start match
+15:07:36.623: ret = 1
+15:07:36.624: locate ("1066.44", "527.895", "0")
+15:07:36.625: match orginal point 1066.5 527.5
+15:07:36.625: "匹配模板时间:" 111 ms
+15:07:36.625: plane list.size 4
+15:07:36.626: heightsub list.size 4
+15:07:36.626: pointtoponit list.size 4
+15:07:36.626: start ptop
+15:07:36.630: ptop orginal point 845.341 230.49
+15:07:36.630: ptop now point 845.5 230
+15:07:36.630: Grayval 0
+15:07:36.631: Grayval 0
+15:07:36.631: Grayval 0
+15:08:49.926: init kings
+15:08:50.039: rowcount 0
+15:08:50.040: roiList size 4
+15:08:58.061: 0
+15:08:59.521: "D:/test0.tif"
+15:08:59.536: rowcount 4
+15:08:59.536: roiList size 4
+15:08:59.537: read "D:/test0.tif"
+15:08:59.562: 800 1300 real
+15:08:59.659: 800 1300
+15:08:59.659: read finish
+15:09:12.196: start match
+15:09:12.290: ret = 1
+15:09:12.290: locate ("1066.44", "527.895", "0")
+15:09:12.291: match orginal point 1066.5 527.5
+15:09:12.291: "匹配模板时间:" 110 ms
+15:09:12.291: plane list.size 4
+15:09:12.291: heightsub list.size 4
+15:09:12.291: pointtoponit list.size 4
+15:09:12.291: start ptop
+15:09:12.292: ptop orginal point 845.341 230.49
+15:09:12.292: ptop now point 845.5 230
+15:09:12.293: start ptop
+15:09:12.294: ptop orginal point 768.446 377.158
+15:09:12.294: ptop now point 768.5 377
+15:09:22.953: QPoint(122,138)
+15:09:22.953: QPoint(122,113)
+15:09:22.953: item 3
+15:09:23.990: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+15:09:28.781: func 0 845 322
+15:09:28.824: create ("rect000", "rect001", "rect002", "rect003")
+15:09:28.824: QMap(("Column", QVariant(double, 422.842) ) ( "Column2" ,  QVariant(double, 632.025) ) ( "Row" ,  QVariant(double, 1003.94) ) ( "Row2" ,  QVariant(double, 1128.89) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:09:28.824: create template "rect000" imgList size 1 0
+15:09:28.851: creat point 1003.94 422.842 1128.89 632.025
+15:09:28.942: Create_template 1
+15:09:28.959: templateID get
+15:09:28.960: QMap(("Column", QVariant(double, 283.387) ) ( "Column2" ,  QVariant(double, 773.884) ) ( "Row" ,  QVariant(double, 927.042) ) ( "Row2" ,  QVariant(double, 1181.76) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 1) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:09:28.960: QMap(("Column", QVariant(double, 230.49) ) ( "Length1" ,  QVariant(double, 12.022) ) ( "Length2" ,  QVariant(double, 19.2294) ) ( "Phi" ,  QVariant(double, 0) ) ( "Row" ,  QVariant(double, 845.341) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 4) ) ( "index" ,  QVariant(int, 0) ) ( "isDraw" ,  QVariant(int, 1) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:09:28.960: QMap(("Column", QVariant(double, 309.835) ) ( "Column2" ,  QVariant(double, 333.879) ) ( "Row" ,  QVariant(double, 833.326) ) ( "Row2" ,  QVariant(double, 857.356) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:09:28.960: create template "rect003" imgList size 1 0
+15:09:28.985: creat point 833.326 309.835 857.356 333.879
+15:09:28.990: Create_template 1
+15:09:28.993: templateID get
+15:09:28.995: "生成模板时间:" 171 ms
+15:09:29.026: rowcount 3
+15:09:29.026: roiList size 4
+15:09:29.026: ""
+15:09:29.027: 4294901760 0 0
+15:09:30.524: start match
+15:09:30.696: ret = 1
+15:09:30.696: locate ("1107.9", "550.312", "-1.5736")
+15:09:30.696: match orginal point 845 322
+15:09:30.697: "匹配模板时间:" 176 ms
+15:09:30.697: plane list.size 4
+15:09:30.697: heightsub list.size 4
+15:09:30.697: pointtoponit list.size 4
+15:09:30.697: start ptop
+15:09:30.698: ptop orginal point 845.341 230.49
+15:09:30.698: ptop now point 1016 549.5
+15:09:33.652: start match
+15:09:33.827: ret = 1
+15:09:33.828: locate ("1107.9", "550.312", "-1.5736")
+15:09:33.828: match orginal point 845 322
+15:09:33.828: "匹配模板时间:" 179 ms
+15:09:33.828: plane list.size 4
+15:09:33.828: heightsub list.size 4
+15:09:33.828: pointtoponit list.size 4
+15:09:33.829: start ptop
+15:09:33.829: ptop orginal point 845.341 230.49
+15:09:33.830: ptop now point 1016 549.5
+15:09:36.382: start match
+15:09:36.556: ret = 1
+15:09:36.556: locate ("1107.9", "550.312", "-1.5736")
+15:09:36.556: match orginal point 845 322
+15:09:36.557: "匹配模板时间:" 177 ms
+15:09:36.557: plane list.size 4
+15:09:36.557: heightsub list.size 4
+15:09:36.557: pointtoponit list.size 4
+15:09:36.557: start ptop
+15:09:36.558: ptop orginal point 845.341 230.49
+15:09:36.558: ptop now point 1016 549.5
+15:09:43.440: QPoint(154,132)
+15:09:43.441: QPoint(154,107)
+15:09:43.441: item 3
+15:09:44.245: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+15:09:45.188: QPoint(146,40)
+15:09:45.188: QPoint(146,15)
+15:09:45.188: item 0
+15:09:45.814: del "0" QMap(("0", QVariant(QStringList, ("rect001", "rect002")) ) ) 
+15:09:49.583: func 0 1064 525.5
+15:09:49.624: create ("rect001", "rect002", "rect000")
+15:09:49.624: QMap(("Column", QVariant(double, 283.387) ) ( "Column2" ,  QVariant(double, 773.884) ) ( "Row" ,  QVariant(double, 927.042) ) ( "Row2" ,  QVariant(double, 1181.76) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 1) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:09:49.625: QMap(("Column", QVariant(double, 230.49) ) ( "Length1" ,  QVariant(double, 12.022) ) ( "Length2" ,  QVariant(double, 19.2294) ) ( "Phi" ,  QVariant(double, 0) ) ( "Row" ,  QVariant(double, 845.341) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 4) ) ( "index" ,  QVariant(int, 0) ) ( "isDraw" ,  QVariant(int, 1) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:09:49.625: QMap(("Column", QVariant(double, 421.945) ) ( "Column2" ,  QVariant(double, 628.723) ) ( "Row" ,  QVariant(double, 997.907) ) ( "Row2" ,  QVariant(double, 1130.07) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:09:49.625: create template "rect000" imgList size 1 0
+15:09:49.647: creat point 997.907 421.945 1130.07 628.723
+15:09:49.735: Create_template 1
+15:09:49.751: templateID get
+15:09:49.752: "生成模板时间:" 128 ms
+15:09:49.782: rowcount 2
+15:09:49.783: roiList size 3
+15:09:49.783: ""
+15:09:49.783: 4294901760 0 0
+15:10:07.718: 4289374975
+15:10:07.719: 170 170 255
+15:10:10.742: func 0 1067 560
+15:10:10.783: create ("rect001", "rect002", "rect000", "rect003")
+15:10:10.783: QMap(("Column", QVariant(double, 283.387) ) ( "Column2" ,  QVariant(double, 773.884) ) ( "Row" ,  QVariant(double, 927.042) ) ( "Row2" ,  QVariant(double, 1181.76) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 1) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:10:10.784: QMap(("Column", QVariant(double, 230.49) ) ( "Length1" ,  QVariant(double, 12.022) ) ( "Length2" ,  QVariant(double, 19.2294) ) ( "Phi" ,  QVariant(double, 0) ) ( "Row" ,  QVariant(double, 845.341) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 4) ) ( "index" ,  QVariant(int, 0) ) ( "isDraw" ,  QVariant(int, 1) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:10:10.784: QMap(("Column", QVariant(double, 421.945) ) ( "Column2" ,  QVariant(double, 628.723) ) ( "Row" ,  QVariant(double, 997.907) ) ( "Row2" ,  QVariant(double, 1130.07) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:10:10.784: create template "rect000" imgList size 1 0
+15:10:10.811: creat point 997.907 421.945 1130.07 628.723
+15:10:10.904: Create_template 1
+15:10:10.921: templateID get
+15:10:10.922: QMap(("Column", QVariant(double, 416.114) ) ( "Column2" ,  QVariant(double, 703.566) ) ( "Row" ,  QVariant(double, 965.787) ) ( "Row2" ,  QVariant(double, 1167.94) ) ( "color" ,  QVariant(int, -5592321) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:10:10.922: create template "rect003" imgList size 1 0
+15:10:10.946: creat point 965.787 416.114 1167.94 703.566
+15:10:11.147: Create_template 1
+15:10:11.170: templateID get
+15:10:11.171: "生成模板时间:" 388 ms
+15:10:11.201: rowcount 3
+15:10:11.202: roiList size 4
+15:10:11.202: ""
+15:10:11.202: 4289374975 0 0
+15:10:22.994: QPoint(160,138)
+15:10:22.994: QPoint(160,113)
+15:10:22.994: item 3
+15:10:23.695: del "0" QMap(("0", QVariant(QStringList, ("rect001", "rect002", "rect000")) ) ) 
+15:10:24.713: QPoint(171,46)
+15:10:24.713: QPoint(171,21)
+15:10:24.713: item 0
+15:10:25.253: del "0" QMap(("0", QVariant(QStringList, ("rect001", "rect002")) ) ) 
+15:10:26.788: QPoint(139,74)
+15:10:26.789: QPoint(139,49)
+15:10:26.789: item 1
+15:10:27.257: del "0" QMap(("0", QVariant(QStringList, ("rect001")) ) ) 
+15:10:28.041: QPoint(147,49)
+15:10:28.041: QPoint(147,24)
+15:10:28.041: item 0
+15:10:28.713: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+15:10:32.924: func 0 1070 529.5
+15:10:32.965: create ("rect000")
+15:10:32.965: QMap(("Column", QVariant(double, 411.805) ) ( "Column2" ,  QVariant(double, 647.338) ) ( "Row" ,  QVariant(double, 994.714) ) ( "Row2" ,  QVariant(double, 1145.31) ) ( "color" ,  QVariant(int, -5592321) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:10:32.965: create template "rect000" imgList size 1 0
+15:10:32.999: creat point 994.714 411.805 1145.31 647.338
+15:10:33.128: Create_template 1
+15:10:33.147: templateID get
+15:10:33.148: "生成模板时间:" 183 ms
+15:10:33.176: rowcount 0
+15:10:33.176: roiList size 1
+15:10:33.176: ""
+15:10:33.176: 4289374975 0 0
+15:10:42.543: func 1 1107.5 501.5
+15:10:42.575: rowcount 1
+15:10:42.576: roiList size 2
+15:10:42.576: ""
+15:10:42.576: 4289374975 0 1
+15:10:48.605: func 4 830.001 230.444 -0.46326
+15:10:48.640: rowcount 2
+15:10:48.640: roiList size 3
+15:10:48.640: ""
+15:10:48.640: 4289374975 0 4
+15:11:05.060: QPoint(131,106)
+15:11:05.060: QPoint(131,81)
+15:11:05.060: item 2
+15:11:05.665: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+15:11:06.393: QPoint(145,79)
+15:11:06.393: QPoint(145,54)
+15:11:06.393: item 1
+15:11:06.838: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+15:11:07.578: QPoint(157,50)
+15:11:07.579: QPoint(157,25)
+15:11:07.579: item 0
+15:11:08.024: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+15:11:09.983: start
+15:11:09.984: rowcount 1
+15:11:09.984: 1
+15:11:09.988: clear
+15:11:09.999: rowcount 0
+15:11:10.000: roiList size 0
+15:11:10.000: mode 0
+15:11:10.000: frequency 10
+15:11:10.000: commandPort 24691
+15:11:10.000: dataPort 24692
+15:11:11.408: start usb
+15:11:14.529: "D:/test0.tif"
+15:11:14.537: rowcount 0
+15:11:14.538: roiList size 0
+15:11:14.538: read "D:/test0.tif"
+15:11:14.578: 800 1300 real
+15:11:14.676: 800 1300
+15:11:14.677: read finish
+15:11:22.332: func 0 1065.5 525
+15:11:22.373: create ("rect000")
+15:11:22.373: QMap(("Column", QVariant(double, 398.798) ) ( "Column2" ,  QVariant(double, 651.26) ) ( "Row" ,  QVariant(double, 996.727) ) ( "Row2" ,  QVariant(double, 1133.7) ) ( "color" ,  QVariant(int, -5592321) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+15:11:22.373: create template "rect000" imgList size 1 0
+15:11:22.396: creat point 996.727 398.798 1133.7 651.26
+15:11:22.523: Create_template 1
+15:11:22.542: templateID get
+15:11:22.542: "生成模板时间:" 169 ms
+15:11:22.569: rowcount 0
+15:11:22.570: roiList size 1
+15:11:22.570: ""
+15:11:22.570: 4289374975 0 0
+15:11:28.164: func 1 1062.5 507
+15:11:28.195: rowcount 1
+15:11:28.195: roiList size 2
+15:11:28.195: ""
+15:11:28.196: 4289374975 0 1
+15:11:41.084: func 4 858.55 230.468 0
+15:11:41.118: rowcount 2
+15:11:41.118: roiList size 3
+15:11:41.118: ""
+15:11:41.119: 4289374975 0 4
+15:11:50.181: func 4 853.744 292.982 0.141813
+15:11:50.215: rowcount 3
+15:11:50.216: roiList size 4
+15:11:50.216: ""
+15:11:50.216: 4289374975 0 4
+15:11:51.899: start match
+15:11:52.009: ret = 1
+15:11:52.009: locate ("1065.82", "524.737", "0")
+15:11:52.009: match orginal point 1065.5 525
+15:11:52.009: "匹配模板时间:" 127 ms
+15:11:52.010: plane list.size 4
+15:11:52.010: heightsub list.size 4
+15:11:52.010: pointtoponit list.size 4
+15:11:52.010: start ptop
+15:11:52.011: ptop orginal point 858.55 230.468
+15:11:52.011: ptop now point 858.5 230
+15:11:52.011: start ptop
+15:11:52.011: ptop orginal point 853.744 292.982
+15:11:52.011: ptop now point 854 293
+15:12:14.990: func 4 666.313 223.255 0
+15:12:15.025: rowcount 4
+15:12:15.025: roiList size 5
+15:12:15.025: ""
+15:12:15.026: 4289374975 0 4
+15:12:23.381: func 4 661.507 295.387 -1.73604
+15:12:23.419: rowcount 5
+15:12:23.420: roiList size 6
+15:12:23.420: ""
+15:12:23.420: 4289374975 0 4
+15:12:25.449: start match
+15:12:25.579: ret = 1
+15:12:25.580: locate ("1065.82", "524.737", "0")
+15:12:25.580: match orginal point 1065.5 525
+15:12:25.580: "匹配模板时间:" 149 ms
+15:12:25.580: plane list.size 6
+15:12:25.580: heightsub list.size 6
+15:12:25.580: pointtoponit list.size 6
+15:12:25.580: start ptop
+15:12:25.581: ptop orginal point 858.55 230.468
+15:12:25.581: ptop now point 858.5 230
+15:12:25.582: start ptop
+15:12:25.582: ptop orginal point 853.744 292.982
+15:12:25.582: ptop now point 854 293
+15:12:25.584: start ptop
+15:12:25.585: ptop orginal point 666.313 223.255
+15:12:25.585: ptop now point 666.5 223
+15:12:25.585: start ptop
+15:12:25.586: ptop orginal point 661.507 295.387
+15:12:25.586: ptop now point 661.513 295
+15:12:40.430: func 4 507.252 221.5 0
+15:12:40.465: rowcount 6
+15:12:40.465: roiList size 7
+15:12:40.466: ""
+15:12:40.466: 4289374975 0 4
+15:12:45.653: func 4 500.356 287.48 -0.197482
+15:12:45.690: rowcount 7
+15:12:45.690: roiList size 8
+15:12:45.691: ""
+15:12:45.691: 4289374975 0 4
+15:12:47.747: start match
+15:12:47.863: ret = 1
+15:12:47.863: locate ("1065.82", "524.737", "0")
+15:12:47.864: match orginal point 1065.5 525
+15:12:47.864: "匹配模板时间:" 135 ms
+15:12:47.864: plane list.size 8
+15:12:47.864: heightsub list.size 8
+15:12:47.864: pointtoponit list.size 8
+15:12:47.864: start ptop
+15:12:47.867: ptop orginal point 858.55 230.468
+15:12:47.867: ptop now point 858.5 230
+15:12:47.867: start ptop
+15:12:47.868: ptop orginal point 853.744 292.982
+15:12:47.869: ptop now point 854 293
+15:12:47.871: start ptop
+15:12:47.873: ptop orginal point 666.313 223.255
+15:12:47.874: ptop now point 666.5 223
+15:12:47.874: start ptop
+15:12:47.876: ptop orginal point 661.507 295.387
+15:12:47.876: ptop now point 661.513 295
+15:12:47.878: start ptop
+15:12:47.879: ptop orginal point 507.252 221.5
+15:12:47.879: ptop now point 507 222
+15:12:47.879: start ptop
+15:12:47.880: ptop orginal point 500.356 287.48
+15:12:47.880: ptop now point 500.5 287.5
+15:14:00.503: init kings
+15:14:00.604: rowcount 0
+15:14:00.604: roiList size 8
+15:14:04.460: 0
+15:14:05.907: "D:/test0.tif"
+15:14:05.940: rowcount 8
+15:14:05.940: roiList size 8
+15:14:05.941: read "D:/test0.tif"
+15:14:05.968: 800 1300 real
+15:14:06.080: 800 1300
+15:14:06.080: read finish
+15:14:08.008: start match
+15:14:08.128: ret = 1
+15:14:08.129: locate ("1065.82", "524.737", "0")
+15:14:08.130: match orginal point 1065.5 525
+15:14:08.130: "匹配模板时间:" 141 ms
+15:14:08.130: plane list.size 8
+15:14:08.130: heightsub list.size 8
+15:14:08.131: pointtoponit list.size 8
+15:14:08.131: start ptop
+15:14:08.132: ptop orginal point 858.55 230.468
+15:14:08.132: ptop now point 858.5 230
+15:14:08.133: start ptop
+15:14:08.134: ptop orginal point 853.744 292.982
+15:14:08.134: ptop now point 854 293
+15:14:08.137: start ptop
+15:14:08.138: ptop orginal point 666.313 223.255
+15:14:08.138: ptop now point 666.5 223
+15:14:08.138: start ptop
+15:14:08.139: ptop orginal point 661.507 295.387
+15:14:08.139: ptop now point 661.513 295
+15:14:08.141: start ptop
+15:14:08.142: ptop orginal point 507.252 221.5
+15:14:08.142: ptop now point 507 222
+15:14:08.142: start ptop
+15:14:08.143: ptop orginal point 500.356 287.48
+15:14:08.143: ptop now point 500.5 287.5
+15:15:38.724: init kings
+15:15:38.833: rowcount 0
+15:15:38.834: roiList size 8
+15:15:42.204: 0
+15:15:45.561: "D:/test0.tif"
+15:15:45.576: rowcount 8
+15:15:45.576: roiList size 8
+15:15:45.577: read "D:/test0.tif"
+15:15:45.602: 800 1300 real
+15:15:45.706: 800 1300
+15:15:45.706: read finish
+15:16:58.516: init kings
+15:16:58.615: rowcount 0
+15:16:58.615: roiList size 8
+15:17:08.588: 0
+15:17:10.257: "D:/test0.tif"
+15:17:10.297: rowcount 8
+15:17:10.298: roiList size 8
+15:17:10.299: read "D:/test0.tif"
+15:17:10.324: 800 1300 real
+15:17:10.432: 800 1300
+15:17:10.432: read finish
+15:17:15.778: Accepted
+15:17:21.354: rowcount 8
+15:17:21.354: roiList size 8
+15:17:21.355: read "D:/test0.tif"
+15:17:21.377: 800 1300 real
+15:17:21.469: 800 1300
+15:17:21.470: read finish
+15:17:23.487: rowcount 8
+15:17:23.487: roiList size 8
+15:17:23.488: read "D:/test0.tif"
+15:17:23.511: 800 1300 real
+15:17:23.603: 800 1300
+15:17:23.603: read finish
+15:17:24.099: rowcount 8
+15:17:24.099: roiList size 8
+15:17:24.100: read "D:/test0.tif"
+15:17:24.122: 800 1300 real
+15:17:24.215: 800 1300
+15:17:24.216: read finish
+15:17:26.076: rowcount 8
+15:17:26.077: roiList size 8
+15:17:26.078: read "D:/test0.tif"
+15:17:26.100: 800 1300 real
+15:17:26.197: 800 1300
+15:17:26.197: read finish
+15:17:28.612: rowcount 8
+15:17:28.612: roiList size 8
+15:17:28.613: read "D:/test0.tif"
+15:17:28.635: 800 1300 real
+15:17:28.738: 800 1300
+15:17:28.738: read finish
+15:17:29.090: rowcount 8
+15:17:29.090: roiList size 8
+15:17:29.092: read "D:/test0.tif"
+15:17:29.116: 800 1300 real
+15:17:29.222: 800 1300
+15:17:29.222: read finish
+15:17:29.947: rowcount 8
+15:17:29.947: roiList size 8
+15:17:29.948: read "D:/test0.tif"
+15:17:29.971: 800 1300 real
+15:17:30.057: start match
+15:17:30.172: ret = 1
+15:17:30.173: locate ("1065.82", "524.737", "0")
+15:17:30.174: match orginal point 1065.5 525
+15:17:30.174: "匹配模板时间:" 136 ms
+15:17:30.175: plane list.size 8
+15:17:30.175: heightsub list.size 8
+15:17:30.175: pointtoponit list.size 8
+15:17:30.175: start ptop
+15:17:30.177: ptop orginal point 858.55 230.468
+15:17:30.177: ptop now point 858.5 230
+15:17:30.178: start ptop
+15:17:30.178: ptop orginal point 853.744 292.982
+15:17:30.179: ptop now point 854 293
+15:17:30.181: start ptop
+15:17:30.182: ptop orginal point 666.313 223.255
+15:17:30.182: ptop now point 666.5 223
+15:17:30.182: start ptop
+15:17:30.183: ptop orginal point 661.507 295.387
+15:17:30.183: ptop now point 661.513 295
+15:17:30.184: start ptop
+15:17:30.185: ptop orginal point 507.252 221.5
+15:17:30.185: ptop now point 507 222
+15:17:30.185: start ptop
+15:17:30.185: ptop orginal point 500.356 287.48
+15:17:30.186: ptop now point 500.5 287.5
+15:17:30.215: 800 1300
+15:17:30.215: read finish
+15:17:35.020: display 0
+15:18:07.123: init kings
+15:18:07.239: rowcount 0
+15:18:07.239: roiList size 8
+15:18:10.808: 0
+15:18:15.669: 0
+15:18:17.361: "D:/test0.tif"
+15:18:17.436: rowcount 8
+15:18:17.436: roiList size 8
+15:18:17.437: read "D:/test0.tif"
+15:18:17.462: 800 1300 real
+15:18:17.561: 800 1300
+15:18:17.561: read finish
+15:18:22.931: start match
+15:18:23.033: ret = 1
+15:18:23.033: locate ("1065.82", "524.737", "0")
+15:18:23.033: match orginal point 1065.5 525
+15:18:23.034: "匹配模板时间:" 121 ms
+15:18:23.034: plane list.size 8
+15:18:23.034: heightsub list.size 8
+15:18:23.034: pointtoponit list.size 8
+15:18:23.034: start ptop
+15:18:23.035: ptop orginal point 858.55 230.468
+15:18:23.035: ptop now point 858.5 230
+15:18:23.035: start ptop
+15:18:23.035: ptop orginal point 853.744 292.982
+15:18:23.035: ptop now point 854 293
+15:18:23.038: start ptop
+15:18:23.038: ptop orginal point 666.313 223.255
+15:18:23.039: ptop now point 666.5 223
+15:18:23.039: start ptop
+15:18:23.039: ptop orginal point 661.507 295.387
+15:18:23.039: ptop now point 661.513 295
+15:18:23.041: start ptop
+15:18:23.042: ptop orginal point 507.252 221.5
+15:18:23.042: ptop now point 507 222
+15:18:23.042: start ptop
+15:18:23.043: ptop orginal point 500.356 287.48
+15:18:23.043: ptop now point 500.5 287.5
+15:18:57.992: ""
+15:18:57.992: 4294901760 0 0
+15:19:01.421: func 317 221 50 50
+15:19:01.456: rowcount 8
+15:19:01.456: roiList size 9
+15:19:01.457: ""
+15:19:01.457: 4294901760 0 4
+15:19:05.562: start
+15:19:05.562: rowcount 3
+15:19:05.563: 1
+15:19:05.566: clear
+15:19:05.581: rowcount 9
+15:19:05.582: roiList size 9
+15:19:05.583: mode 0
+15:19:05.583: frequency 10
+15:19:05.583: commandPort 24691
+15:19:05.583: dataPort 24692
+15:19:06.926: start usb
+15:19:09.534: rowcount 9
+15:19:09.534: roiList size 9
+15:19:09.535: read "D:/test0.tif"
+15:19:09.559: 800 1300 real
+15:19:09.654: 800 1300
+15:19:09.654: read finish
+15:19:15.730: QPoint(179,215)
+15:19:15.730: QPoint(179,190)
+15:19:15.730: item 8
+15:19:16.386: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007")) ) ) 
+15:19:18.184: func 317 221 50 50
+15:19:18.223: rowcount 8
+15:19:18.224: roiList size 9
+15:19:18.225: ""
+15:19:18.225: 4294901760 0 4
+15:19:55.181: func 100 100 50 50
+15:19:55.215: rowcount 9
+15:19:55.215: roiList size 10
+15:19:55.216: ""
+15:19:55.216: 4294901760 0 4
+15:20:03.983: func -100 -100 50 50
+15:20:04.020: rowcount 10
+15:20:04.020: roiList size 11
+15:20:04.021: ""
+15:20:04.021: 4294901760 0 4
+15:20:10.108: func -100 -200 50 50
+15:20:10.148: rowcount 11
+15:20:10.148: roiList size 12
+15:20:10.149: ""
+15:20:10.149: 4294901760 0 4
+15:20:19.120: func -150 -100 50 50
+15:20:19.168: rowcount 12
+15:20:19.168: roiList size 13
+15:20:19.169: ""
+15:20:19.170: 4294901760 0 4
+15:20:23.780: QPoint(171,188)
+15:20:23.780: QPoint(171,163)
+15:20:23.780: item 11
+15:20:24.432: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect010", "rect012")) ) ) 
+15:20:25.361: QPoint(167,179)
+15:20:25.361: QPoint(167,154)
+15:20:25.361: item 10
+15:20:25.886: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect012")) ) ) 
+15:20:26.673: QPoint(149,174)
+15:20:26.673: QPoint(149,149)
+15:20:26.673: item 9
+15:20:27.304: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect012")) ) ) 
+15:20:28.361: QPoint(156,176)
+15:20:28.361: QPoint(156,151)
+15:20:28.361: item 8
+15:20:29.046: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect012")) ) ) 
+15:20:48.295: func -200 -100 50 50
+15:20:48.331: rowcount 9
+15:20:48.331: roiList size 10
+15:20:48.332: ""
+15:20:48.332: 4294901760 0 4
+15:20:52.691: start match
+15:20:52.796: ret = 1
+15:20:52.796: locate ("1065.82", "524.737", "0")
+15:20:52.797: match orginal point 1065.5 525
+15:20:52.797: "匹配模板时间:" 124 ms
+15:20:52.797: plane list.size 10
+15:20:52.797: heightsub list.size 10
+15:20:52.798: pointtoponit list.size 10
+15:20:52.798: start ptop
+15:20:52.799: ptop orginal point 858.55 230.468
+15:20:52.799: ptop now point 858.5 230
+15:20:52.799: start ptop
+15:20:52.800: ptop orginal point 853.744 292.982
+15:20:52.800: ptop now point 854 293
+15:20:52.802: start ptop
+15:20:52.803: ptop orginal point 666.313 223.255
+15:20:52.803: ptop now point 666.5 223
+15:20:52.804: start ptop
+15:20:52.804: ptop orginal point 661.507 295.387
+15:20:52.804: ptop now point 661.513 295
+15:20:52.806: start ptop
+15:20:52.807: ptop orginal point 507.252 221.5
+15:20:52.807: ptop now point 507 222
+15:20:52.807: start ptop
+15:20:52.808: ptop orginal point 500.356 287.48
+15:20:52.808: ptop now point 500.5 287.5
+15:20:52.810: start ptop
+15:20:52.811: ptop orginal point -150 -100
+15:20:52.811: ptop now point 916 425
+15:20:52.811: start ptop
+15:20:52.812: ptop orginal point -200 -100
+15:20:52.812: ptop now point 866 425
+08:12:58.640: init kings
+08:12:58.833: rowcount 0
+08:12:58.834: roiList size 10
+08:13:02.891: 0
+08:13:06.397: Accepted
+08:13:07.942: rowcount 10
+08:13:07.942: roiList size 10
+08:13:07.943: read "D:/test0.tif"
+08:13:08.066: 800 1300 real
+08:13:08.178: 800 1300
+08:13:08.178: read finish
+08:13:11.022: start match
+08:13:11.153: ret = 1
+08:13:11.153: locate ("1065.82", "524.737", "0")
+08:13:11.154: match orginal point 1065.5 525
+08:13:11.154: "匹配模板时间:" 152 ms
+08:13:11.155: plane list.size 10
+08:13:11.155: heightsub list.size 10
+08:13:11.155: pointtoponit list.size 10
+08:13:11.155: start ptop
+08:13:11.157: ptop orginal point 858.55 230.468
+08:13:11.157: ptop now point 858.5 230
+08:13:11.158: start ptop
+08:13:11.160: ptop orginal point 853.744 292.982
+08:13:11.160: ptop now point 854 293
+08:13:11.163: start ptop
+08:13:11.164: ptop orginal point 666.313 223.255
+08:13:11.164: ptop now point 666.5 223
+08:13:11.164: start ptop
+08:13:11.165: ptop orginal point 661.507 295.387
+08:13:11.165: ptop now point 661.513 295
+08:13:11.167: start ptop
+08:13:11.168: ptop orginal point 507.252 221.5
+08:13:11.168: ptop now point 507 222
+08:13:11.168: start ptop
+08:13:11.168: ptop orginal point 500.356 287.48
+08:13:11.168: ptop now point 500.5 287.5
+08:13:11.170: start ptop
+08:13:11.171: ptop orginal point -150 -100
+08:13:11.171: ptop now point 916 425
+08:13:11.171: start ptop
+08:13:11.172: ptop orginal point -200 -100
+08:13:11.172: ptop now point 866 425
+08:13:43.933: func 2 285.452 293.004 -1.5708
+08:13:43.970: rowcount 10
+08:13:43.970: roiList size 11
+08:13:43.971: ""
+08:13:43.972: 4294901760 0 2
+08:13:49.062: func 2 285.452 769.075 0
+08:13:49.102: rowcount 11
+08:13:49.102: roiList size 12
+08:13:49.104: ""
+08:13:49.104: 4294901760 0 2
+08:13:53.551: func 2 996.727 280.982 0
+08:13:53.591: rowcount 12
+08:13:53.591: roiList size 13
+08:13:53.592: ""
+08:13:53.592: 4294901760 0 2
+08:13:58.365: func 2 982.31 752.245 0
+08:13:58.405: rowcount 13
+08:13:58.405: roiList size 14
+08:13:58.406: ""
+08:13:58.407: 4294901760 0 2
+08:14:01.675: start match
+08:14:01.774: ret = 1
+08:14:01.775: locate ("1065.82", "524.737", "0")
+08:14:01.775: match orginal point 1065.5 525
+08:14:01.775: "匹配模板时间:" 118 ms
+08:14:01.775: plane list.size 14
+08:14:01.775: start planePoint
+08:14:01.776: planePoint orginal point 285.452 293.004
+08:14:01.777: planePoint now point 285 293
+08:14:01.777: xyz 285.452 293.004 0.0713564 0
+08:14:01.777: start planePoint
+08:14:01.777: planePoint orginal point 285.452 769.075
+08:14:01.777: planePoint now point 285.5 769
+08:14:01.777: xyz 285.452 769.075 0.0811975 1
+08:14:01.777: start planePoint
+08:14:01.778: planePoint orginal point 996.727 280.982
+08:14:01.778: planePoint now point 996.5 281
+08:14:01.778: xyz 996.727 280.982 0.108402 2
+08:14:01.778: start planePoint
+08:14:01.778: planePoint orginal point 982.31 752.245
+08:14:01.778: planePoint now point 982.5 752
+08:14:01.779: xyz 982.31 752.245 0.09088 3
+08:14:01.779: cloud
+08:14:01.779: cloud 1
+08:14:01.781: "平面度为:" 0.0135987
+08:14:01.781: heightsub list.size 14
+08:14:01.781: pointtoponit list.size 14
+08:14:01.781: start ptop
+08:14:01.782: ptop orginal point 858.55 230.468
+08:14:01.782: ptop now point 858.5 230
+08:14:01.782: start ptop
+08:14:01.782: ptop orginal point 853.744 292.982
+08:14:01.782: ptop now point 854 293
+08:14:01.785: start ptop
+08:14:01.785: ptop orginal point 666.313 223.255
+08:14:01.785: ptop now point 666.5 223
+08:14:01.786: start ptop
+08:14:01.786: ptop orginal point 661.507 295.387
+08:14:01.786: ptop now point 661.513 295
+08:14:01.788: start ptop
+08:14:01.788: ptop orginal point 507.252 221.5
+08:14:01.788: ptop now point 507 222
+08:14:01.789: start ptop
+08:14:01.789: ptop orginal point 500.356 287.48
+08:14:01.789: ptop now point 500.5 287.5
+08:14:01.791: start ptop
+08:14:01.791: ptop orginal point -150 -100
+08:14:01.792: ptop now point 916 425
+08:14:01.792: start ptop
+08:14:01.792: ptop orginal point -200 -100
+08:14:01.792: ptop now point 866 425
+08:14:45.895: start match
+08:14:45.996: ret = 1
+08:14:45.997: locate ("1065.82", "524.737", "0")
+08:14:45.997: match orginal point 1065.5 525
+08:14:45.997: "匹配模板时间:" 120 ms
+08:14:45.997: plane list.size 14
+08:14:45.998: start planePoint
+08:14:45.999: planePoint orginal point 285.452 293.004
+08:14:45.999: planePoint now point 285 293
+08:14:45.999: xyz 285.452 293.004 0.0713564 0
+08:14:45.999: start planePoint
+08:14:46.000: planePoint orginal point 285.452 769.075
+08:14:46.000: planePoint now point 285.5 769
+08:14:46.000: xyz 285.452 769.075 0.0811975 1
+08:14:46.000: start planePoint
+08:14:46.000: planePoint orginal point 996.727 280.982
+08:14:46.000: planePoint now point 996.5 281
+08:14:46.001: xyz 996.727 280.982 0.108402 2
+08:14:46.001: start planePoint
+08:14:46.001: planePoint orginal point 982.31 752.245
+08:14:46.001: planePoint now point 982.5 752
+08:14:46.001: xyz 982.31 752.245 0.09088 3
+08:14:46.001: cloud
+08:14:46.001: cloud 1
+08:14:46.004: "平面度为:" 0.0135987
+08:14:46.004: heightsub list.size 14
+08:14:46.004: pointtoponit list.size 14
+08:14:46.004: start ptop
+08:14:46.005: ptop orginal point 858.55 230.468
+08:14:46.005: ptop now point 858.5 230
+08:14:46.005: start ptop
+08:14:46.005: ptop orginal point 853.744 292.982
+08:14:46.005: ptop now point 854 293
+08:14:46.007: start ptop
+08:14:46.008: ptop orginal point 666.313 223.255
+08:14:46.008: ptop now point 666.5 223
+08:14:46.008: start ptop
+08:14:46.008: ptop orginal point 661.507 295.387
+08:14:46.009: ptop now point 661.513 295
+08:14:46.010: start ptop
+08:14:46.011: ptop orginal point 507.252 221.5
+08:14:46.011: ptop now point 507 222
+08:14:46.011: start ptop
+08:14:46.011: ptop orginal point 500.356 287.48
+08:14:46.011: ptop now point 500.5 287.5
+08:14:46.013: start ptop
+08:14:46.014: ptop orginal point -150 -100
+08:14:46.014: ptop now point 916 425
+08:14:46.015: start ptop
+08:14:46.015: ptop orginal point -200 -100
+08:14:46.015: ptop now point 866 425
+08:15:14.095: start match
+08:15:14.196: ret = 1
+08:15:14.196: locate ("1065.82", "524.737", "0")
+08:15:14.196: match orginal point 1065.5 525
+08:15:14.196: "匹配模板时间:" 119 ms
+08:15:14.197: plane list.size 14
+08:15:14.197: start planePoint
+08:15:14.198: planePoint orginal point 285.452 293.004
+08:15:14.198: planePoint now point 285 293
+08:15:14.198: xyz 285.452 293.004 0.0713564 0
+08:15:14.198: start planePoint
+08:15:14.199: planePoint orginal point 285.452 769.075
+08:15:14.199: planePoint now point 285.5 769
+08:15:14.199: xyz 285.452 769.075 0.0811975 1
+08:15:14.199: start planePoint
+08:15:14.200: planePoint orginal point 996.727 280.982
+08:15:14.200: planePoint now point 996.5 281
+08:15:14.200: xyz 996.727 280.982 0.108402 2
+08:15:14.200: start planePoint
+08:15:14.200: planePoint orginal point 982.31 752.245
+08:15:14.200: planePoint now point 982.5 752
+08:15:14.201: xyz 982.31 752.245 0.09088 3
+08:15:14.201: cloud
+08:15:14.201: cloud 1
+08:15:14.203: "平面度为:" 0.0135987
+08:15:14.204: heightsub list.size 14
+08:15:14.204: pointtoponit list.size 14
+08:15:14.204: start ptop
+08:15:14.204: ptop orginal point 858.55 230.468
+08:15:14.205: ptop now point 858.5 230
+08:15:14.205: start ptop
+08:15:14.205: ptop orginal point 853.744 292.982
+08:15:14.205: ptop now point 854 293
+08:15:14.208: start ptop
+08:15:14.208: ptop orginal point 666.313 223.255
+08:15:14.209: ptop now point 666.5 223
+08:15:14.209: start ptop
+08:15:14.209: ptop orginal point 661.507 295.387
+08:15:14.209: ptop now point 661.513 295
+08:15:14.212: start ptop
+08:15:14.212: ptop orginal point 507.252 221.5
+08:15:14.212: ptop now point 507 222
+08:15:14.213: start ptop
+08:15:14.213: ptop orginal point 500.356 287.48
+08:15:14.213: ptop now point 500.5 287.5
+08:15:14.216: start ptop
+08:15:14.216: ptop orginal point -150 -100
+08:15:14.216: ptop now point 916 425
+08:15:14.217: start ptop
+08:15:14.217: ptop orginal point -200 -100
+08:15:14.217: ptop now point 866 425
+08:15:23.373: start match
+08:15:23.472: ret = 1
+08:15:23.472: locate ("1065.82", "524.737", "0")
+08:15:23.473: match orginal point 1065.5 525
+08:15:23.473: "匹配模板时间:" 117 ms
+08:15:23.473: plane list.size 14
+08:15:23.473: start planePoint
+08:15:23.474: planePoint orginal point 285.452 293.004
+08:15:23.474: planePoint now point 285 293
+08:15:23.474: xyz 285.452 293.004 0.0713564 0
+08:15:23.474: start planePoint
+08:15:23.475: planePoint orginal point 285.452 769.075
+08:15:23.475: planePoint now point 285.5 769
+08:15:23.475: xyz 285.452 769.075 0.0811975 1
+08:15:23.475: start planePoint
+08:15:23.476: planePoint orginal point 996.727 280.982
+08:15:23.476: planePoint now point 996.5 281
+08:15:23.476: xyz 996.727 280.982 0.108402 2
+08:15:23.476: start planePoint
+08:15:23.476: planePoint orginal point 982.31 752.245
+08:15:23.476: planePoint now point 982.5 752
+08:15:23.476: xyz 982.31 752.245 0.09088 3
+08:15:23.477: cloud
+08:15:23.477: cloud 1
+08:15:23.479: "平面度为:" 0.0135987
+08:15:23.479: heightsub list.size 14
+08:15:23.480: pointtoponit list.size 14
+08:15:23.480: start ptop
+08:15:23.480: ptop orginal point 858.55 230.468
+08:15:23.480: ptop now point 858.5 230
+08:15:23.480: start ptop
+08:15:23.481: ptop orginal point 853.744 292.982
+08:15:23.481: ptop now point 854 293
+08:15:23.484: start ptop
+08:15:23.484: ptop orginal point 666.313 223.255
+08:15:23.484: ptop now point 666.5 223
+08:15:23.484: start ptop
+08:15:23.485: ptop orginal point 661.507 295.387
+08:15:23.485: ptop now point 661.513 295
+08:15:23.488: start ptop
+08:15:23.488: ptop orginal point 507.252 221.5
+08:15:23.488: ptop now point 507 222
+08:15:23.489: start ptop
+08:15:23.489: ptop orginal point 500.356 287.48
+08:15:23.489: ptop now point 500.5 287.5
+08:15:23.492: start ptop
+08:15:23.492: ptop orginal point -150 -100
+08:15:23.492: ptop now point 916 425
+08:15:23.493: start ptop
+08:15:23.493: ptop orginal point -200 -100
+08:15:23.493: ptop now point 866 425
+08:15:53.475: start match
+08:15:53.582: ret = 1
+08:15:53.582: locate ("1065.82", "524.737", "0")
+08:15:53.582: match orginal point 1065.5 525
+08:15:53.583: "匹配模板时间:" 125 ms
+08:15:53.583: plane list.size 14
+08:15:53.583: start planePoint
+08:15:53.584: planePoint orginal point 285.452 293.004
+08:15:53.584: planePoint now point 285 293
+08:15:53.584: xyz 285.452 293.004 0.0713564 0
+08:15:53.585: start planePoint
+08:15:53.585: planePoint orginal point 285.452 769.075
+08:15:53.585: planePoint now point 285.5 769
+08:15:53.585: xyz 285.452 769.075 0.0811975 1
+08:15:53.585: start planePoint
+08:15:53.586: planePoint orginal point 996.727 280.982
+08:15:53.586: planePoint now point 996.5 281
+08:15:53.586: xyz 996.727 280.982 0.108402 2
+08:15:53.586: start planePoint
+08:15:53.587: planePoint orginal point 982.31 752.245
+08:15:53.587: planePoint now point 982.5 752
+08:15:53.587: xyz 982.31 752.245 0.09088 3
+08:15:53.587: cloud
+08:15:53.587: cloud 1
+08:15:53.591: "平面度为:" 0.0135987
+08:15:53.591: heightsub list.size 14
+08:15:53.591: pointtoponit list.size 14
+08:15:53.591: start ptop
+08:15:53.592: ptop orginal point 858.55 230.468
+08:15:53.592: ptop now point 858.5 230
+08:15:53.592: start ptop
+08:15:53.593: ptop orginal point 853.744 292.982
+08:15:53.593: ptop now point 854 293
+08:15:53.597: start ptop
+08:15:53.598: ptop orginal point 666.313 223.255
+08:15:53.598: ptop now point 666.5 223
+08:15:53.598: start ptop
+08:15:53.599: ptop orginal point 661.507 295.387
+08:15:53.599: ptop now point 661.513 295
+08:15:53.603: start ptop
+08:15:53.603: ptop orginal point 507.252 221.5
+08:15:53.603: ptop now point 507 222
+08:15:53.604: start ptop
+08:15:53.604: ptop orginal point 500.356 287.48
+08:15:53.604: ptop now point 500.5 287.5
+08:15:53.608: start ptop
+08:15:53.609: ptop orginal point -150 -100
+08:15:53.609: ptop now point 916 425
+08:15:53.609: start ptop
+08:15:53.610: ptop orginal point -200 -100
+08:15:53.610: ptop now point 866 425
+08:16:28.755: init kings
+08:16:28.972: rowcount 0
+08:16:28.972: roiList size 14
+08:16:32.307: 0
+08:16:34.249: Accepted
+08:16:35.465: rowcount 14
+08:16:35.465: roiList size 14
+08:16:35.467: read "D:/test0.tif"
+08:16:35.492: 800 1300 real
+08:16:35.592: 800 1300
+08:16:35.593: read finish
+08:16:36.698: start match
+08:16:36.800: ret = 1
+08:16:36.800: locate ("1065.82", "524.737", "0")
+08:16:36.801: match orginal point 1065.5 525
+08:16:36.801: "匹配模板时间:" 121 ms
+08:16:36.801: plane list.size 14
+08:16:36.801: start planePoint
+08:16:36.803: planePoint orginal point 285.452 293.004
+08:16:36.803: planePoint now point 285 293
+08:16:36.803: xyz 285.452 293.004 0.0713564 0
+08:16:36.803: start planePoint
+08:16:36.804: planePoint orginal point 285.452 769.075
+08:16:36.804: planePoint now point 285.5 769
+08:16:36.804: xyz 285.452 769.075 0.0811975 1
+08:16:36.804: start planePoint
+08:16:36.805: planePoint orginal point 996.727 280.982
+08:16:36.805: planePoint now point 996.5 281
+08:16:36.805: xyz 996.727 280.982 0.108402 2
+08:16:36.805: start planePoint
+08:16:36.806: planePoint orginal point 982.31 752.245
+08:16:36.806: planePoint now point 982.5 752
+08:16:36.806: xyz 982.31 752.245 0.09088 3
+08:16:36.806: cloud
+08:16:36.806: cloud 1
+08:16:36.808: "平面度为:" 0.0135987
+08:16:36.808: heightsub list.size 14
+08:16:36.809: pointtoponit list.size 14
+08:16:36.809: start ptop
+08:16:36.810: ptop orginal point 858.55 230.468
+08:16:36.810: ptop now point 858.5 230
+08:16:36.810: start ptop
+08:16:36.811: ptop orginal point 853.744 292.982
+08:16:36.811: ptop now point 854 293
+08:16:36.812: start ptop
+08:16:36.813: ptop orginal point 666.313 223.255
+08:16:36.813: ptop now point 666.5 223
+08:16:36.813: start ptop
+08:16:36.814: ptop orginal point 661.507 295.387
+08:16:36.814: ptop now point 661.513 295
+08:16:36.816: start ptop
+08:16:36.817: ptop orginal point 507.252 221.5
+08:16:36.817: ptop now point 507 222
+08:16:36.817: start ptop
+08:16:36.817: ptop orginal point 500.356 287.48
+08:16:36.818: ptop now point 500.5 287.5
+08:16:36.819: start ptop
+08:16:36.820: ptop orginal point -150 -100
+08:16:36.820: ptop now point 916 425
+08:16:36.820: start ptop
+08:16:36.821: ptop orginal point -200 -100
+08:16:36.821: ptop now point 866 425
+08:20:09.578: QPoint(110,74)
+08:20:09.578: QPoint(110,49)
+08:20:09.578: item 1
+08:20:10.622: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect012", "rect008", "rect009", "rect010", "rect011")) ) ) 
+08:20:10.663: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect010", "rect011")) ) ) 
+08:20:10.705: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect010")) ) ) 
+08:20:10.746: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009")) ) ) 
+08:20:10.786: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008")) ) ) 
+08:20:10.826: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007")) ) ) 
+08:20:10.867: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006")) ) ) 
+08:20:10.934: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005")) ) ) 
+08:20:10.974: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004")) ) ) 
+08:20:11.013: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+08:20:11.050: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+08:20:11.086: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+08:20:11.122: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+08:20:11.156: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+08:28:38.025: 0
+08:28:43.666: 0
+08:28:48.489: "D:/test1.tif"
+08:28:48.560: rowcount 0
+08:28:48.560: roiList size 0
+08:28:48.561: read "D:/test1.tif"
+08:28:48.584: 800 1300 real
+08:28:48.684: 800 1300
+08:28:48.684: read finish
+08:28:52.488: display 0
+08:28:53.488: display 1
+08:28:55.997: display 0
+08:28:57.757: display 1
+08:29:03.729: "D:/test3.tif"
+08:29:03.806: rowcount 0
+08:29:03.808: roiList size 0
+08:29:03.808: read "D:/test3.tif"
+08:29:03.831: 800 1300 real
+08:29:03.927: 800 1300
+08:29:03.927: read finish
+08:29:30.710: rowcount 0
+08:29:30.711: roiList size 0
+08:29:43.067: display 1
+08:29:46.114: display 1
+08:29:51.570: display 0
+08:31:08.427: display 0
+08:31:10.158: display 1
+08:35:51.840: init kings
+08:35:52.029: rowcount 0
+08:35:52.029: roiList size 0
+08:35:56.716: rowcount 0
+08:35:56.717: roiList size 0
+08:35:56.717: read "D:/test3.tif"
+08:35:56.742: 800 1300 real
+08:35:56.842: 800 1300
+08:35:56.842: read finish
+08:36:34.136: 0
+08:36:35.857: "D:/test0.tif"
+08:36:35.947: rowcount 0
+08:36:35.947: roiList size 0
+08:36:35.947: read "D:/test0.tif"
+08:36:35.971: 800 1300 real
+08:36:36.061: 800 1300
+08:36:36.061: read finish
+08:38:04.275: display 0
+08:38:17.608: display 1
+08:38:19.146: display 0
+08:38:21.265: display 1
+08:38:24.267: display 0
+08:38:31.215: "D:/test1.tif"
+08:38:31.288: rowcount 0
+08:38:31.288: roiList size 0
+08:38:31.289: read "D:/test1.tif"
+08:38:31.312: 800 1300 real
+08:38:31.403: 800 1300
+08:38:31.403: read finish
+08:38:33.281: "D:/test2.tif"
+08:38:33.364: rowcount 0
+08:38:33.364: roiList size 0
+08:38:33.364: read "D:/test2.tif"
+08:38:33.388: 800 1300 real
+08:38:33.485: 800 1300
+08:38:33.485: read finish
+08:38:51.985: display 0
+08:39:35.476: display 1
+09:39:46.615: display 1
+09:39:48.705: display 3
+09:39:50.567: display 2
+09:39:51.315: display 1
+09:39:52.207: display 0
+10:00:48.957: display 0
+10:00:50.361: display 1
+10:01:05.100: func 4 463.934 221.256 0
+10:01:05.134: rowcount 0
+10:01:05.134: roiList size 1
+10:01:05.136: ""
+10:01:05.136: 4294901760 0 4
+10:01:12.323: func 4 461.999 279.277 0
+10:01:12.354: rowcount 1
+10:01:12.354: roiList size 2
+10:01:12.354: ""
+10:01:12.354: 4294901760 0 4
+10:02:05.772: func 4 569.984 362.571 -0.524046
+10:02:05.805: rowcount 2
+10:02:05.805: roiList size 3
+10:02:05.806: "fai1"
+10:02:05.806: 4294901760 0 4
+10:02:25.460: func 0 1069.5 538
+10:02:25.501: create ("rect000", "rect001", "fai1", "rect002")
+10:02:25.501: QMap(("Column", QVariant(double, 221.256) ) ( "Length1" ,  QVariant(double, 7.09137) ) ( "Length2" ,  QVariant(double, 5.15909) ) ( "Phi" ,  QVariant(double, 0) ) ( "Row" ,  QVariant(double, 463.934) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 4) ) ( "index" ,  QVariant(int, 1) ) ( "isDraw" ,  QVariant(int, 1) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+10:02:25.501: QMap(("Column", QVariant(double, 279.277) ) ( "Length1" ,  QVariant(double, 5.80203) ) ( "Length2" ,  QVariant(double, 5.15909) ) ( "Phi" ,  QVariant(double, 0) ) ( "Row" ,  QVariant(double, 461.999) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 4) ) ( "index" ,  QVariant(int, 1) ) ( "isDraw" ,  QVariant(int, 1) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+10:02:25.502: QMap(("Column", QVariant(double, 362.571) ) ( "Length1" ,  QVariant(double, 29.2971) ) ( "Length2" ,  QVariant(double, 10.671) ) ( "Phi" ,  QVariant(double, -0.524046) ) ( "Row" ,  QVariant(double, 569.984) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 4) ) ( "index" ,  QVariant(int, 1) ) ( "isDraw" ,  QVariant(int, 1) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+10:02:25.502: QMap(("Column", QVariant(double, 413.272) ) ( "Column2" ,  QVariant(double, 662.921) ) ( "Row" ,  QVariant(double, 995.925) ) ( "Row2" ,  QVariant(double, 1142.52) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 1) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+10:02:25.502: create template "rect002" imgList size 4 1
+10:02:25.525: creat point 995.925 413.272 1142.52 662.921
+10:02:25.667: Create_template 1
+10:02:25.688: templateID get
+10:02:25.688: "生成模板时间:" 188 ms
+10:02:25.721: rowcount 3
+10:02:25.721: roiList size 4
+10:02:25.721: "fai1"
+10:02:25.721: 4294901760 0 0
+10:02:38.291: func 1 1020 447.5
+10:02:38.325: rowcount 4
+10:02:38.326: roiList size 5
+10:02:38.326: "fai1"
+10:02:38.326: 4294901760 0 1
+10:02:40.156: start match
+10:02:40.232: ret = 1
+10:02:40.232: locate ("1052.43", "386.815", "0")
+10:02:40.233: match orginal point 1069.5 538
+10:02:40.233: "匹配模板时间:" 97 ms
+10:02:40.233: plane list.size 5
+10:02:40.234: heightsub list.size 5
+10:02:40.234: pointtoponit list.size 5
+10:02:40.234: start ptop
+10:02:40.236: ptop orginal point 463.934 221.256
+10:02:40.236: ptop now point 447 70
+10:02:40.237: start ptop
+10:02:40.238: ptop orginal point 461.999 279.277
+10:02:40.238: ptop now point 445 128
+10:02:40.242: start ptop
+10:02:40.243: ptop orginal point 569.984 362.571
+10:02:40.243: ptop now point 553 211.526
+10:02:47.820: start
+10:02:47.821: rowcount 1
+10:02:47.825: 4
+10:02:47.833: clear
+10:02:47.842: rowcount 5
+10:02:47.842: roiList size 5
+10:02:47.842: mode 0
+10:02:47.843: frequency 10
+10:02:47.843: commandPort 24691
+10:02:47.843: dataPort 24692
+10:02:49.207: start usb
+10:02:51.385: "D:/test0.tif"
+10:02:51.438: rowcount 5
+10:02:51.439: roiList size 5
+10:02:51.439: read "D:/test0.tif"
+10:02:51.471: 800 1300 real
+10:02:51.559: 800 1300
+10:02:51.560: read finish
+10:02:55.655: plane list.size 5
+10:02:55.655: heightsub list.size 5
+10:02:55.655: pointtoponit list.size 5
+10:02:57.147: plane list.size 5
+10:02:57.148: heightsub list.size 5
+10:02:57.148: pointtoponit list.size 5
+10:03:01.433: QPoint(151,30)
+10:03:01.433: QPoint(151,5)
+10:03:01.433: item 0
+10:03:02.260: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "fai1", "rect002")) ) ) 
+10:03:02.292: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "fai1")) ) ) 
+10:03:02.323: del "0" QMap(("0", QVariant(QStringList, ("rect000", "fai1")) ) ) 
+10:03:02.355: del "0" QMap(("0", QVariant(QStringList, ("fai1")) ) ) 
+10:03:02.387: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+10:03:06.468: func 1 1068 463
+10:03:06.500: rowcount 0
+10:03:06.500: roiList size 1
+10:03:06.501: "fai1"
+10:03:06.501: 4294901760 0 1
+10:03:11.285: func 0 1061.5 525
+10:03:11.328: create ("fai1", "rect000")
+10:03:11.328: QMap(("Column", QVariant(double, 141.527) ) ( "Column2" ,  QVariant(double, 783.502) ) ( "Row" ,  QVariant(double, 912.624) ) ( "Row2" ,  QVariant(double, 1222.61) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 1) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+10:03:11.328: QMap(("Column", QVariant(double, 401.202) ) ( "Column2" ,  QVariant(double, 648.855) ) ( "Row" ,  QVariant(double, 996.727) ) ( "Row2" ,  QVariant(double, 1126.49) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+10:03:11.328: create template "rect000" imgList size 1 0
+10:03:11.351: creat point 996.727 401.202 1126.49 648.855
+10:03:11.455: Create_template 1
+10:03:11.474: templateID get
+10:03:11.475: "生成模板时间:" 148 ms
+10:03:11.506: rowcount 1
+10:03:11.506: roiList size 2
+10:03:11.506: "fai1"
+10:03:11.506: 4294901760 0 0
+10:03:21.957: func 4 691.552 297.813 -1.29234
+10:03:21.991: rowcount 2
+10:03:21.992: roiList size 3
+10:03:21.992: "fai1"
+10:03:21.992: 4294901760 0 4
+10:03:36.219: func 4 692.883 217.348 -0.244693
+10:03:36.252: rowcount 3
+10:03:36.253: roiList size 4
+10:03:36.253: "fai1"
+10:03:36.253: 4294901760 0 4
+10:03:37.930: start match
+10:03:38.084: ret = 1
+10:03:38.084: locate ("1061.02", "524.539", "0")
+10:03:38.085: match orginal point 1061.5 525
+10:03:38.085: "匹配模板时间:" 172 ms
+10:03:38.085: plane list.size 4
+10:03:38.085: heightsub list.size 4
+10:03:38.085: pointtoponit list.size 4
+10:03:38.085: start ptop
+10:03:38.086: ptop orginal point 691.552 297.813
+10:03:38.086: ptop now point 691.5 297.5
+10:03:38.087: start ptop
+10:03:38.088: ptop orginal point 692.883 217.348
+10:03:38.088: ptop now point 693 217.533
+10:08:19.558: QPoint(83,96)
+10:08:19.559: QPoint(83,71)
+10:08:19.559: item 2
+10:08:20.423: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect002")) ) ) 
+10:08:29.116: func 4 693.507 292.948 0.0554312
+10:08:29.149: rowcount 3
+10:08:29.149: roiList size 4
+10:08:29.149: "fai1"
+10:08:29.149: 4294901760 0 4
+10:12:47.405: init kings
+10:12:47.592: rowcount 0
+10:12:47.593: roiList size 4
+10:12:54.777: 0
+10:12:59.502: 0
+10:13:02.039: "D:/test0.tif"
+10:13:02.088: rowcount 4
+10:13:02.088: roiList size 4
+10:13:02.089: read "D:/test0.tif"
+10:13:02.121: 800 1300 real
+10:13:02.218: 800 1300
+10:13:02.218: read finish
+10:13:05.965: start match
+10:13:06.120: ret = 1
+10:13:06.121: locate ("1061.02", "524.539", "0")
+10:13:06.121: match orginal point 1061.5 525
+10:13:06.121: "匹配模板时间:" 173 ms
+10:13:06.121: plane list.size 4
+10:13:06.121: heightsub list.size 4
+10:13:06.122: pointtoponit list.size 4
+10:13:06.122: start ptop
+10:13:06.123: ptop orginal point 692.883 217.348
+10:13:06.123: ptop now point 693 217.533
+10:13:06.123: start ptop
+10:13:06.124: ptop orginal point 693.507 292.948
+10:13:06.124: ptop now point 693.5 293
+10:13:08.936: QPoint(104,136)
+10:13:08.936: QPoint(104,111)
+10:13:08.936: item 3
+10:13:13.053: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001")) ) ) 
+10:13:14.599: QPoint(166,97)
+10:13:14.600: QPoint(166,72)
+10:13:14.600: item 2
+10:13:15.141: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000")) ) ) 
+10:13:34.164: func 326 292 50 50
+10:13:34.198: rowcount 2
+10:13:34.198: roiList size 3
+10:13:34.199: ""
+10:13:34.199: 4294901760 0 4
+10:14:07.187: rowcount 3
+10:14:07.188: roiList size 3
+10:14:07.189: StopHighSpeedDataCommunication,Error: 0x00001001 
+10:14:07.189: HighSpeedDataCommunicationFinalize,Error: 0x00001001 
+10:14:07.189: stop
+10:14:07.189: mode 0
+10:14:07.189: frequency 10
+10:14:07.189: commandPort 24691
+10:14:07.189: dataPort 24692
+10:14:08.981: start usb
+10:16:33.424: init kings
+10:16:33.616: rowcount 0
+10:16:33.617: roiList size 3
+10:16:37.544: 0
+10:16:39.852: Accepted
+10:16:41.062: rowcount 3
+10:16:41.062: roiList size 3
+10:16:41.062: read "D:/test0.tif"
+10:16:41.095: 800 1300 real
+10:16:41.192: 800 1300
+10:16:41.192: read finish
+10:16:43.658: QPoint(131,101)
+10:16:43.658: QPoint(131,76)
+10:16:43.659: item 2
+10:16:44.695: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000")) ) ) 
+10:17:05.590: func 319 227 50 50
+10:17:05.623: rowcount 2
+10:17:05.623: roiList size 3
+10:17:05.624: ""
+10:17:05.624: 4294901760 0 4
+10:18:08.386: init kings
+10:18:08.666: rowcount 0
+10:18:08.667: roiList size 3
+10:18:10.962: rowcount 3
+10:18:10.963: roiList size 3
+10:18:10.963: read "D:/test0.tif"
+10:18:10.995: 800 1300 real
+10:18:11.093: 800 1300
+10:18:11.093: read finish
+10:18:23.417: ""
+10:18:23.418: 4294901760 0 0
+10:18:26.443: func 321 222 50 50
+10:18:26.478: rowcount 3
+10:18:26.478: roiList size 4
+10:18:26.478: ""
+10:18:26.478: 4294901760 0 4
+10:18:40.633: func 325 227 50 50
+10:18:40.667: rowcount 4
+10:18:40.667: roiList size 5
+10:18:40.668: ""
+10:18:40.668: 4294901760 0 4
+10:19:06.425: func 420 238 50 50
+10:19:06.461: rowcount 5
+10:19:06.461: roiList size 6
+10:19:06.462: ""
+10:19:06.462: 4294901760 0 4
+10:19:21.231: func 0 0 50 50
+10:19:21.266: rowcount 6
+10:19:21.266: roiList size 7
+10:19:21.267: ""
+10:19:21.267: 4294901760 0 4
+10:19:53.250: func 1 1 50 50
+10:19:53.285: rowcount 7
+10:19:53.285: roiList size 8
+10:19:53.286: ""
+10:19:53.286: 4294901760 0 4
+10:20:32.831: 4294945280
+10:20:32.831: 255 170 0
+10:20:34.379: func 1 1 50 50
+10:20:34.413: rowcount 8
+10:20:34.414: roiList size 9
+10:20:34.415: ""
+10:20:34.415: 4294945280 0 4
+10:21:02.433: func 50 50 50 50
+10:21:02.473: rowcount 9
+10:21:02.474: roiList size 10
+10:21:02.475: ""
+10:21:02.475: 4294945280 0 4
+10:30:48.206: init kings
+10:30:48.429: rowcount 0
+10:30:48.429: roiList size 10
+10:30:51.366: rowcount 10
+10:30:51.366: roiList size 10
+10:30:51.367: read "D:/test0.tif"
+10:30:51.400: 800 1300 real
+10:30:51.501: 800 1300
+10:30:51.501: read finish
+10:31:00.539: 4283825920
+10:31:00.539: 85 255 0
+10:31:03.589: ""
+10:31:03.589: 4283825920 0 0
+10:31:06.389: func 0 0 50 50
+10:31:06.430: rowcount 10
+10:31:06.431: roiList size 11
+10:31:06.432: ""
+10:31:06.432: 4283825920 0 4
+10:46:10.840: init kings
+10:46:11.028: rowcount 0
+10:46:11.028: roiList size 11
+10:46:23.619: rowcount 11
+10:46:23.619: roiList size 11
+10:46:23.621: read "D:/test0.tif"
+10:46:23.743: 800 1300 real
+10:46:23.844: 800 1300
+10:46:23.844: read finish
+10:46:55.748: ""
+10:46:55.749: 4294901760 0 0
+10:46:58.492: func 259 1011 50 50
+10:46:58.531: rowcount 11
+10:46:58.531: roiList size 12
+10:46:58.532: ""
+10:46:58.532: 4294901760 0 4
+10:47:06.377: 4294967040
+10:47:06.377: 255 255 0
+10:47:08.215: func 259 1011 50 50
+10:47:08.253: rowcount 12
+10:47:08.253: roiList size 13
+10:47:08.254: ""
+10:47:08.254: 4294967040 0 4
+10:48:08.505: init kings
+10:48:08.681: rowcount 0
+10:48:08.681: roiList size 13
+10:48:10.959: rowcount 13
+10:48:10.959: roiList size 13
+10:48:10.960: read "D:/test0.tif"
+10:48:10.985: 800 1300 real
+10:48:11.089: 800 1300
+10:48:11.090: read finish
+10:48:40.611: ""
+10:48:40.611: 4294901760 0 0
+10:48:43.356: func 1008 264 50 50
+10:48:43.397: rowcount 13
+10:48:43.397: roiList size 14
+10:48:43.398: ""
+10:48:43.398: 4294901760 0 4
+10:48:53.176: func 1008 264 20 20
+10:48:53.215: rowcount 14
+10:48:53.216: roiList size 15
+10:48:53.217: ""
+10:48:53.217: 4294901760 0 4
+10:49:17.207: func 499 216 10 10
+10:49:17.251: rowcount 15
+10:49:17.251: roiList size 16
+10:49:17.253: ""
+10:49:17.253: 4294901760 0 4
+10:49:39.835: func 753 234 10 10
+10:49:39.873: rowcount 16
+10:49:39.873: roiList size 17
+10:49:39.875: ""
+10:49:39.875: 4294901760 0 4
+10:49:43.871: QPoint(131,117)
+10:49:43.872: QPoint(131,92)
+10:49:43.872: item 3
+10:49:45.486: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect010", "rect011", "rect012", "rect013", "rect014")) ) ) 
+10:49:45.526: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect010", "rect011", "rect012", "rect013")) ) ) 
+10:49:45.567: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect010", "rect011", "rect012")) ) ) 
+10:49:45.611: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect010", "rect011")) ) ) 
+10:49:45.652: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009", "rect010")) ) ) 
+10:49:45.692: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008", "rect009")) ) ) 
+10:49:45.732: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007", "rect008")) ) ) 
+10:49:45.775: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007")) ) ) 
+10:49:45.815: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006")) ) ) 
+10:49:45.854: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004", "rect005")) ) ) 
+10:49:45.890: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003", "rect004")) ) ) 
+10:49:45.927: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002", "rect003")) ) ) 
+10:49:45.963: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001", "rect002")) ) ) 
+10:49:46.000: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000", "rect001")) ) ) 
+10:49:46.035: del "0" QMap(("0", QVariant(QStringList, ("fai1", "rect000")) ) ) 
+10:49:46.070: del "0" QMap(("0", QVariant(QStringList, ("fai1")) ) ) 
+10:49:46.103: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+11:08:30.443: init kings
+11:08:30.660: rowcount 0
+11:08:30.660: roiList size 0
+11:08:34.752: rowcount 0
+11:08:34.753: roiList size 0
+11:08:34.753: read "D:/test0.tif"
+11:08:34.779: 800 1300 real
+11:08:34.876: 800 1300
+11:08:34.876: read finish
+11:12:33.751: init kings
+11:12:33.952: rowcount 0
+11:12:33.952: roiList size 0
+11:12:36.392: rowcount 0
+11:12:36.392: roiList size 0
+11:12:36.393: read "D:/test0.tif"
+11:12:36.417: 800 1300 real
+11:12:36.512: 800 1300
+11:12:36.512: read finish
+11:13:07.835: func 4 740.361 239.607 0.0587198
+11:13:07.869: rowcount 0
+11:13:07.869: roiList size 1
+11:13:07.869: ""
+11:13:07.869: 4294901760 0 4
+11:13:11.452: func 4 734.206 433.001 -0.861866
+11:13:11.486: rowcount 1
+11:13:11.486: roiList size 2
+11:13:11.487: ""
+11:13:11.487: 4294901760 0 4
+11:13:15.944: func 4 652.957 344.31 0.0906045
+11:13:15.976: rowcount 2
+11:13:15.977: roiList size 3
+11:13:15.977: ""
+11:13:15.977: 4294901760 0 4
+11:13:20.555: func 4 377.197 350.092 -0.394847
+11:13:20.589: rowcount 3
+11:13:20.589: roiList size 4
+11:13:20.589: ""
+11:13:20.590: 4294901760 0 4
+11:13:26.395: func 4 876.202 387.246 -1.10774
+11:13:26.429: rowcount 4
+11:13:26.429: roiList size 5
+11:13:26.430: ""
+11:13:26.430: 4294901760 0 4
+11:13:28.419: QPoint(173,121)
+11:13:28.419: QPoint(173,96)
+11:13:28.419: item 3
+11:13:29.326: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+11:13:29.362: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+11:13:29.397: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+11:13:29.431: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+11:13:29.464: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+11:16:38.648: init kings
+11:16:38.826: rowcount 0
+11:16:38.827: roiList size 0
+11:16:41.272: rowcount 0
+11:16:41.272: roiList size 0
+11:16:41.273: read "D:/test0.tif"
+11:16:41.298: 800 1300 real
+11:16:41.396: 800 1300
+11:16:41.396: read finish
+11:28:31.477: init kings
+11:28:31.672: rowcount 0
+11:28:31.673: roiList size 0
+11:28:35.115: rowcount 0
+11:28:35.116: roiList size 0
+11:28:35.116: read "D:/test0.tif"
+11:28:35.141: 800 1300 real
+11:28:35.239: 800 1300
+11:28:35.239: read finish
+11:29:36.933: init kings
+11:29:37.131: rowcount 0
+11:29:37.132: roiList size 0
+11:29:40.141: rowcount 0
+11:29:40.142: roiList size 0
+11:29:40.142: read "D:/test0.tif"
+11:29:40.167: 800 1300 real
+11:29:40.262: 800 1300
+11:29:40.262: read finish
+11:31:58.021: init kings
+11:31:58.224: rowcount 0
+11:31:58.224: roiList size 0
+11:32:19.050: rowcount 0
+11:32:19.050: roiList size 0
+11:32:19.051: read "D:/test0.tif"
+11:32:19.076: 800 1300 real
+11:32:19.170: 800 1300
+11:32:19.170: read finish
+11:32:30.356: init kings
+11:32:30.557: rowcount 0
+11:32:30.558: roiList size 0
+11:32:33.086: rowcount 0
+11:32:33.086: roiList size 0
+11:32:33.086: read "D:/test0.tif"
+11:32:33.112: 800 1300 real
+11:32:33.207: 800 1300
+11:32:33.207: read finish
+11:32:44.564: init kings
+11:32:44.767: rowcount 0
+11:32:44.768: roiList size 0
+11:32:47.323: rowcount 0
+11:32:47.323: roiList size 0
+11:32:47.324: read "D:/test0.tif"
+11:32:47.349: 800 1300 real
+11:32:47.443: 800 1300
+11:32:47.443: read finish
+11:33:40.207: init kings
+11:33:40.389: rowcount 0
+11:33:40.390: roiList size 0
+11:33:42.362: rowcount 0
+11:33:42.362: roiList size 0
+11:33:42.363: read "D:/test0.tif"
+11:33:42.388: 800 1300 real
+11:33:42.481: 800 1300
+11:33:42.482: read finish
+11:34:09.437: init kings
+11:34:09.638: rowcount 0
+11:34:09.639: roiList size 0
+11:34:11.608: rowcount 0
+11:34:11.609: roiList size 0
+11:34:11.609: read "D:/test0.tif"
+11:34:11.634: 800 1300 real
+11:34:11.729: 800 1300
+11:34:11.730: read finish
+11:37:32.812: init kings
+11:37:33.045: rowcount 0
+11:37:33.045: roiList size 0
+11:37:35.608: rowcount 0
+11:37:35.608: roiList size 0
+11:37:35.608: read "D:/test0.tif"
+11:37:35.634: 800 1300 real
+11:37:35.734: 800 1300
+11:37:35.734: read finish
+11:37:47.223: init kings
+11:37:47.436: rowcount 0
+11:37:47.437: roiList size 0
+11:37:49.240: rowcount 0
+11:37:49.240: roiList size 0
+11:37:49.240: read "D:/test0.tif"
+11:37:49.275: 800 1300 real
+11:37:49.374: 800 1300
+11:37:49.375: read finish
+11:42:10.282: init kings
+11:42:10.456: rowcount 0
+11:42:10.456: roiList size 0
+11:42:15.371: rowcount 0
+11:42:15.371: roiList size 0
+11:42:15.372: read "D:/test0.tif"
+11:42:15.397: 800 1300 real
+11:42:15.494: 800 1300
+11:42:15.494: read finish
+11:42:31.361: init kings
+11:42:31.545: rowcount 0
+11:42:31.545: roiList size 0
+11:42:33.160: rowcount 0
+11:42:33.160: roiList size 0
+11:42:33.161: read "D:/test0.tif"
+11:42:33.187: 800 1300 real
+11:42:33.286: 800 1300
+11:42:33.286: read finish
+11:46:30.416: init kings
+11:46:30.603: rowcount 0
+11:46:30.603: roiList size 0
+11:46:37.098: rowcount 0
+11:46:37.098: roiList size 0
+11:46:37.099: read "D:/test0.tif"
+11:46:37.124: 800 1300 real
+11:46:37.216: 800 1300
+11:46:37.216: read finish
+11:46:38.589: QPoint(10,30) QPoint(10,8)
+11:46:38.626: QPoint(10,30) QPoint(10,8)
+11:46:38.664: QPoint(10,30) QPoint(10,8)
+11:46:38.705: QPoint(10,30) QPoint(10,8)
+11:46:38.911: QPoint(10,30) QPoint(10,8)
+11:46:38.939: QPoint(10,30) QPoint(10,8)
+11:49:12.386: init kings
+11:49:12.567: rowcount 0
+11:49:12.567: roiList size 0
+11:49:15.429: rowcount 0
+11:49:15.429: roiList size 0
+11:49:15.430: read "D:/test0.tif"
+11:49:15.455: 800 1300 real
+11:49:15.552: 800 1300
+11:49:15.552: read finish
+11:49:17.228: QPoint(249,198)
+11:49:17.266: QPoint(242,197)
+11:49:17.303: QPoint(227,191)
+11:49:17.340: QPoint(212,187)
+11:49:17.382: QPoint(203,186)
+11:49:17.420: QPoint(197,184)
+11:49:17.457: QPoint(194,181)
+11:49:17.519: QPoint(194,180)
+11:49:17.556: QPoint(195,179)
+11:49:17.592: QPoint(197,177)
+11:49:17.628: QPoint(200,175)
+11:49:17.665: QPoint(201,173)
+11:49:17.701: QPoint(203,172)
+11:49:17.738: QPoint(204,171)
+11:49:17.775: QPoint(206,168)
+11:49:17.812: QPoint(206,165)
+11:49:17.848: QPoint(206,164)
+11:49:17.884: QPoint(207,163)
+11:49:17.956: QPoint(208,159)
+11:49:17.997: QPoint(211,152)
+11:49:18.037: QPoint(213,149)
+11:49:18.075: QPoint(213,145)
+11:49:18.114: QPoint(214,143)
+11:49:18.153: QPoint(214,141)
+11:49:18.191: QPoint(214,138)
+11:49:18.229: QPoint(215,135)
+11:49:18.267: QPoint(215,130)
+11:49:18.303: QPoint(216,127)
+11:49:18.338: QPoint(216,122)
+11:49:18.373: QPoint(216,118)
+11:49:18.408: QPoint(216,113)
+11:57:21.268: init kings
+11:57:21.444: rowcount 0
+11:57:21.445: roiList size 0
+11:57:23.473: rowcount 0
+11:57:23.474: roiList size 0
+11:57:23.474: read "D:/test0.tif"
+11:57:23.499: 800 1300 real
+11:57:23.593: 800 1300
+11:57:23.593: read finish
+11:57:24.560: QPoint(280,191)
+11:57:24.603: QPoint(267,181)
+11:57:24.645: QPoint(224,149)
+11:57:24.707: QPoint(177,120)
+11:57:24.748: QPoint(167,116)
+11:57:24.791: QPoint(136,103)
+11:57:24.829: QPoint(123,95)
+11:57:24.864: QPoint(118,88)
+11:57:24.900: QPoint(117,82)
+11:57:24.935: QPoint(117,76)
+11:57:24.970: QPoint(119,71)
+11:57:25.005: QPoint(123,64)
+11:57:25.040: QPoint(129,58)
+11:57:25.075: QPoint(133,52)
+11:57:25.110: QPoint(134,48)
+11:57:25.146: QPoint(136,42)
+11:57:25.181: QPoint(137,37)
+11:57:25.216: QPoint(139,32)
+11:57:25.251: QPoint(140,30)
+11:57:25.287: QPoint(140,27)
+11:57:25.324: QPoint(142,21)
+11:57:25.361: QPoint(143,15)
+11:57:25.399: QPoint(144,13)
+11:57:25.435: QPoint(146,8)
+11:57:25.472: QPoint(147,3)
+11:57:25.508: QPoint(148,-1)
+12:00:30.738: init kings
+12:00:30.934: rowcount 0
+12:00:30.934: roiList size 0
+12:24:36.443: rowcount 0
+12:24:36.443: roiList size 0
+12:24:36.444: read "D:/test0.tif"
+12:24:36.469: 800 1300 real
+12:24:36.561: 800 1300
+12:24:36.561: read finish
+12:26:14.956: init kings
+12:26:15.143: rowcount 0
+12:26:15.143: roiList size 0
+12:36:18.713: rowcount 0
+12:36:18.714: roiList size 0
+12:36:18.714: read "D:/test0.tif"
+12:36:18.740: 800 1300 real
+12:36:18.843: 800 1300
+12:36:18.844: read finish
+12:36:19.330: QPoint(321,329)
+12:36:19.377: QPoint(324,324)
+12:36:19.418: QPoint(324,308)
+12:36:19.461: QPoint(309,278)
+12:36:19.504: QPoint(277,236)
+12:36:19.545: QPoint(242,197)
+12:36:19.587: QPoint(215,170)
+12:36:19.628: QPoint(195,155)
+12:36:19.674: QPoint(167,150)
+12:36:19.714: QPoint(121,153)
+12:36:19.758: QPoint(78,158)
+12:36:19.800: QPoint(29,158)
+12:36:19.840: QPoint(19,158)
+12:36:19.882: QPoint(6,156)
+12:36:19.890: QPoint(1,156)
+12:36:19.900: QPoint(-2,156)
+12:36:19.908: QPoint(-5,156)
+12:36:19.914: QPoint(-6,156)
+12:36:19.957: QPoint(-8,156)
+12:36:19.960: QPoint(-13,156)
+12:36:19.967: QPoint(-15,157)
+12:36:19.981: QPoint(-16,157)
+12:36:19.994: QPoint(-19,158)
+12:36:20.016: QPoint(-20,158)
+12:36:20.205: QPoint(-20,159)
+12:36:20.231: QPoint(-20,160)
+12:36:20.241: QPoint(-20,161)
+12:36:20.405: QPoint(-20,162)
+12:36:20.415: QPoint(-20,165)
+12:36:20.424: QPoint(-18,168)
+12:36:20.433: QPoint(-15,171)
+12:36:20.441: QPoint(-12,174)
+12:36:20.447: QPoint(-9,178)
+12:36:20.455: QPoint(-6,183)
+12:36:20.464: QPoint(-3,187)
+12:36:20.473: QPoint(-2,194)
+12:36:20.481: QPoint(0,200)
+12:36:20.487: QPoint(1,206)
+12:36:20.495: QPoint(3,213)
+12:36:20.503: QPoint(3,219)
+12:36:20.513: QPoint(3,225)
+12:36:20.523: QPoint(3,231)
+12:36:20.528: QPoint(3,237)
+12:36:20.535: QPoint(3,243)
+12:36:20.543: QPoint(3,249)
+12:36:20.552: QPoint(2,256)
+12:36:20.561: QPoint(1,262)
+12:36:20.567: QPoint(1,268)
+12:36:20.575: QPoint(-1,274)
+12:36:20.583: QPoint(-1,281)
+12:36:20.594: QPoint(-1,285)
+12:36:20.601: QPoint(-1,289)
+12:36:20.607: QPoint(-2,296)
+12:36:20.615: QPoint(-2,300)
+12:36:20.624: QPoint(-4,304)
+12:36:20.631: QPoint(-4,307)
+12:36:20.644: QPoint(-4,311)
+12:36:20.653: QPoint(-5,314)
+12:36:20.655: QPoint(-7,317)
+12:36:20.663: QPoint(-8,320)
+12:36:20.673: QPoint(-8,322)
+12:36:20.681: QPoint(-9,325)
+12:36:20.687: QPoint(-11,328)
+12:36:20.695: QPoint(-12,329)
+12:36:20.703: QPoint(-13,332)
+12:36:20.713: QPoint(-13,333)
+12:36:20.722: QPoint(-14,335)
+12:36:20.727: QPoint(-14,338)
+12:36:20.736: QPoint(-14,341)
+12:36:20.743: QPoint(-14,343)
+12:36:20.751: QPoint(-14,346)
+12:36:20.764: QPoint(-16,349)
+12:36:20.767: QPoint(-16,351)
+12:36:20.776: QPoint(-16,353)
+12:36:20.783: QPoint(-17,355)
+12:36:20.794: QPoint(-18,356)
+12:36:20.801: QPoint(-18,357)
+12:36:20.807: QPoint(-20,360)
+12:36:20.815: QPoint(-20,361)
+12:36:20.823: QPoint(-20,362)
+12:36:20.831: QPoint(-20,363)
+12:36:20.843: QPoint(-20,365)
+12:36:20.847: QPoint(-20,366)
+12:36:20.855: QPoint(-20,367)
+12:36:20.863: QPoint(-20,368)
+12:36:20.874: QPoint(-20,369)
+12:36:20.881: QPoint(-20,370)
+12:36:20.887: QPoint(-17,373)
+12:36:20.895: QPoint(-13,375)
+12:36:20.904: QPoint(-10,376)
+12:36:20.912: QPoint(-5,378)
+12:36:20.923: QPoint(1,381)
+12:36:20.927: QPoint(7,382)
+12:36:20.950: QPoint(14,384)
+12:36:20.989: QPoint(45,389)
+12:36:21.030: QPoint(56,390)
+12:36:21.066: QPoint(58,391)
+12:36:21.102: QPoint(50,399)
+12:36:21.139: QPoint(5,414)
+12:36:21.146: QPoint(-5,417)
+12:36:21.148: QPoint(-11,419)
+12:36:21.155: QPoint(-15,420)
+12:36:21.161: QPoint(-18,422)
+12:36:21.241: QPoint(-19,423)
+12:36:21.247: QPoint(-20,423)
+12:36:21.263: QPoint(-20,424)
+12:36:21.276: QPoint(-20,425)
+12:36:21.288: QPoint(-20,426)
+12:36:21.295: QPoint(-20,428)
+12:36:21.314: QPoint(-20,429)
+12:36:21.337: QPoint(-20,430)
+12:36:21.361: QPoint(-20,431)
+12:36:21.375: QPoint(-20,432)
+12:36:21.383: QPoint(-20,433)
+12:36:21.394: QPoint(-20,435)
+12:36:21.405: QPoint(-20,436)
+12:36:21.407: QPoint(-20,437)
+12:36:21.415: QPoint(-20,438)
+12:36:21.423: QPoint(-20,439)
+12:36:21.431: QPoint(-20,441)
+12:36:21.447: QPoint(-20,442)
+12:36:21.455: QPoint(-20,443)
+12:36:21.464: QPoint(-20,444)
+12:36:21.471: QPoint(-20,445)
+12:36:21.481: QPoint(-20,446)
+12:36:21.487: QPoint(-20,448)
+12:36:21.495: QPoint(-17,449)
+12:36:21.503: QPoint(-14,450)
+12:36:21.514: QPoint(-10,453)
+12:36:21.524: QPoint(-3,457)
+12:36:21.531: QPoint(6,460)
+12:36:21.535: QPoint(18,466)
+12:36:21.571: QPoint(44,479)
+12:36:21.607: QPoint(57,489)
+12:36:21.645: QPoint(66,492)
+12:36:21.681: QPoint(71,495)
+12:36:21.719: QPoint(77,498)
+12:36:21.756: QPoint(78,499)
+12:36:21.795: QPoint(75,503)
+12:36:21.832: QPoint(55,509)
+12:36:21.860: QPoint(51,509)
+12:36:21.898: QPoint(12,513)
+12:36:21.908: QPoint(8,513)
+12:36:21.914: QPoint(3,513)
+12:36:21.914: QPoint(-1,513)
+12:36:21.921: QPoint(-4,513)
+12:36:21.927: QPoint(-8,515)
+12:36:21.935: QPoint(-13,515)
+12:36:21.972: QPoint(-17,515)
+12:36:22.114: QPoint(-20,517)
+12:36:22.127: QPoint(-19,517)
+12:36:22.135: QPoint(-17,517)
+12:36:22.144: QPoint(-12,519)
+12:36:22.154: QPoint(-8,519)
+12:36:22.163: QPoint(-1,521)
+12:36:22.167: QPoint(7,521)
+12:36:22.175: QPoint(16,522)
+12:36:22.183: QPoint(24,522)
+12:36:22.191: QPoint(36,522)
+12:36:22.203: QPoint(47,522)
+12:36:22.207: QPoint(58,522)
+12:36:22.215: QPoint(72,522)
+12:36:22.223: QPoint(83,522)
+12:36:22.234: QPoint(91,522)
+12:36:22.241: QPoint(97,522)
+12:36:22.247: QPoint(102,522)
+12:36:22.361: QPoint(103,523)
+12:36:22.367: QPoint(104,525)
+12:36:22.375: QPoint(104,526)
+12:36:22.383: QPoint(104,527)
+12:36:22.393: QPoint(104,528)
+12:36:22.403: QPoint(103,529)
+12:36:22.407: QPoint(101,532)
+12:36:22.415: QPoint(100,535)
+12:36:22.423: QPoint(98,537)
+12:36:22.434: QPoint(97,540)
+12:36:22.441: QPoint(96,543)
+12:36:22.447: QPoint(94,548)
+12:36:22.455: QPoint(93,552)
+12:36:22.463: QPoint(91,555)
+12:36:22.474: QPoint(90,559)
+12:36:22.483: QPoint(88,562)
+12:36:22.487: QPoint(88,565)
+12:36:22.495: QPoint(88,567)
+12:36:22.503: QPoint(88,570)
+12:36:22.511: QPoint(88,573)
+12:36:22.524: QPoint(88,574)
+12:36:22.527: QPoint(88,575)
+12:36:22.535: QPoint(88,576)
+12:36:22.551: QPoint(88,577)
+12:36:22.575: QPoint(89,577)
+12:36:22.593: QPoint(90,577)
+12:36:22.604: QPoint(91,577)
+12:36:22.607: QPoint(92,577)
+12:36:22.615: QPoint(93,577)
+12:36:22.623: QPoint(96,577)
+12:36:22.631: QPoint(98,577)
+12:36:22.643: QPoint(101,577)
+12:36:22.647: QPoint(104,577)
+12:36:22.655: QPoint(105,576)
+12:36:22.663: QPoint(107,574)
+12:36:22.671: QPoint(109,573)
+12:36:22.683: QPoint(110,572)
+12:36:22.687: QPoint(111,570)
+12:36:22.695: QPoint(114,567)
+12:36:22.703: QPoint(119,562)
+12:36:22.712: QPoint(124,555)
+12:36:22.721: QPoint(129,548)
+12:36:22.727: QPoint(137,540)
+12:36:22.735: QPoint(145,530)
+12:36:22.743: QPoint(155,520)
+12:36:22.751: QPoint(162,513)
+12:36:22.764: QPoint(167,506)
+12:36:22.802: QPoint(184,482)
+12:36:22.839: QPoint(193,469)
+12:36:22.878: QPoint(194,468)
+12:36:22.915: QPoint(203,469)
+12:36:22.954: QPoint(230,472)
+12:36:23.004: QPoint(238,475)
+12:36:23.054: QPoint(257,504)
+12:36:23.092: QPoint(274,536)
+12:36:23.100: QPoint(274,540)
+12:36:23.104: QPoint(274,545)
+12:36:23.105: QPoint(274,547)
+12:36:23.111: QPoint(274,550)
+12:36:23.121: QPoint(274,551)
+12:36:23.127: QPoint(275,554)
+12:36:23.135: QPoint(277,555)
+12:36:23.144: QPoint(278,556)
+12:36:23.154: QPoint(279,557)
+12:36:23.162: QPoint(280,557)
+12:36:23.167: QPoint(281,557)
+12:36:23.175: QPoint(282,558)
+12:36:23.183: QPoint(284,558)
+12:36:23.191: QPoint(285,558)
+12:36:23.201: QPoint(286,558)
+12:36:23.213: QPoint(287,558)
+12:36:23.215: QPoint(288,558)
+12:36:23.224: QPoint(289,558)
+12:36:23.231: QPoint(291,558)
+12:36:23.241: QPoint(292,558)
+12:36:23.247: QPoint(294,558)
+12:36:23.255: QPoint(297,557)
+12:36:23.263: QPoint(300,555)
+12:36:23.275: QPoint(303,554)
+12:36:23.282: QPoint(307,551)
+12:36:23.287: QPoint(310,548)
+12:36:23.295: QPoint(315,545)
+12:36:23.303: QPoint(319,540)
+12:36:23.313: QPoint(324,536)
+12:36:23.321: QPoint(331,530)
+12:36:23.327: QPoint(337,523)
+12:36:23.335: QPoint(342,516)
+12:36:23.343: QPoint(347,509)
+12:36:23.384: QPoint(362,485)
+12:36:23.423: QPoint(380,455)
+12:36:23.462: QPoint(386,445)
+12:36:23.498: QPoint(388,442)
+12:36:23.555: QPoint(389,442)
+12:36:23.592: QPoint(395,459)
+12:36:23.630: QPoint(407,512)
+12:36:23.638: QPoint(411,537)
+12:36:23.646: QPoint(411,548)
+12:36:23.655: QPoint(411,557)
+12:36:23.661: QPoint(411,565)
+12:36:23.663: QPoint(411,571)
+12:36:23.675: QPoint(411,577)
+12:36:23.681: QPoint(411,582)
+12:36:23.687: QPoint(411,584)
+12:36:23.695: QPoint(411,586)
+12:36:23.703: QPoint(411,587)
+12:36:23.767: QPoint(411,588)
+12:36:23.783: QPoint(411,589)
+12:36:23.805: QPoint(412,589)
+12:36:23.823: QPoint(413,589)
+12:36:23.833: QPoint(414,589)
+12:36:23.847: QPoint(415,589)
+12:36:23.855: QPoint(416,589)
+12:36:23.863: QPoint(418,589)
+12:36:23.872: QPoint(419,589)
+12:36:23.885: QPoint(420,589)
+12:36:23.887: QPoint(422,588)
+12:36:23.895: QPoint(425,585)
+12:36:23.905: QPoint(428,582)
+12:36:23.914: QPoint(433,579)
+12:36:23.923: QPoint(436,574)
+12:36:23.927: QPoint(441,567)
+12:36:23.935: QPoint(445,558)
+12:36:23.943: QPoint(448,549)
+12:36:23.951: QPoint(452,537)
+12:36:23.961: QPoint(456,525)
+12:36:23.967: QPoint(458,511)
+12:36:24.020: QPoint(458,451)
+12:36:24.062: QPoint(468,400)
+12:36:24.098: QPoint(469,399)
+12:36:24.139: QPoint(472,398)
+12:36:24.176: QPoint(481,412)
+12:36:24.213: QPoint(502,461)
+12:36:24.250: QPoint(508,533)
+12:36:24.259: QPoint(510,547)
+12:36:24.266: QPoint(512,559)
+12:36:24.275: QPoint(515,568)
+12:36:24.276: QPoint(519,580)
+12:36:24.281: QPoint(521,586)
+12:36:24.287: QPoint(524,591)
+12:36:24.295: QPoint(525,595)
+12:36:24.303: QPoint(527,596)
+12:36:24.311: QPoint(527,598)
+12:36:24.385: QPoint(528,599)
+12:36:24.404: QPoint(529,599)
+12:36:24.415: QPoint(530,597)
+12:36:24.423: QPoint(531,596)
+12:36:24.431: QPoint(531,595)
+12:36:24.445: QPoint(533,592)
+12:36:24.447: QPoint(534,590)
+12:36:24.455: QPoint(534,587)
+12:36:24.465: QPoint(534,583)
+12:36:24.475: QPoint(534,578)
+12:36:24.481: QPoint(534,572)
+12:36:24.487: QPoint(534,566)
+12:36:24.495: QPoint(534,558)
+12:36:24.505: QPoint(534,547)
+12:36:24.514: QPoint(534,530)
+12:36:24.524: QPoint(533,514)
+12:36:24.527: QPoint(529,499)
+12:36:24.562: QPoint(517,464)
+12:36:24.598: QPoint(510,441)
+12:36:24.637: QPoint(510,435)
+12:36:24.674: QPoint(513,430)
+12:36:24.721: QPoint(514,430)
+12:36:24.762: QPoint(518,433)
+12:36:24.798: QPoint(537,475)
+12:36:24.834: QPoint(561,557)
+12:36:24.842: QPoint(567,572)
+12:36:24.847: QPoint(573,584)
+12:36:24.852: QPoint(579,594)
+12:36:24.855: QPoint(582,600)
+12:36:24.864: QPoint(585,603)
+12:36:24.874: QPoint(586,606)
+12:36:24.884: QPoint(588,607)
+12:36:25.066: QPoint(588,606)
+12:36:25.073: QPoint(587,605)
+12:36:25.083: QPoint(586,602)
+12:36:25.087: QPoint(585,599)
+12:36:25.095: QPoint(583,595)
+12:36:25.103: QPoint(582,589)
+12:36:25.111: QPoint(578,579)
+12:36:25.121: QPoint(574,570)
+12:36:25.127: QPoint(568,556)
+12:36:25.135: QPoint(562,541)
+12:36:25.145: QPoint(556,529)
+12:36:25.153: QPoint(550,517)
+12:36:25.161: QPoint(544,507)
+12:36:25.196: QPoint(532,486)
+12:36:25.231: QPoint(526,476)
+12:36:25.259: QPoint(526,475)
+12:36:25.294: QPoint(525,468)
+12:36:25.330: QPoint(527,464)
+12:36:25.365: QPoint(536,462)
+12:36:25.408: QPoint(570,461)
+13:34:14.770: init kings
+13:34:14.973: rowcount 0
+13:34:14.974: roiList size 0
+13:34:16.880: rowcount 0
+13:34:16.881: roiList size 0
+13:34:16.881: read "D:/test0.tif"
+13:34:16.913: 800 1300 real
+13:34:17.031: 800 1300
+13:34:17.031: read finish
+13:34:32.414: func 0 1067.5 531
+13:34:32.454: create ("rect000")
+13:34:32.454: QMap(("Column", QVariant(double, 418.843) ) ( "Column2" ,  QVariant(double, 642.718) ) ( "Row" ,  QVariant(double, 1012.13) ) ( "Row2" ,  QVariant(double, 1122.85) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+13:34:32.454: create template "rect000" imgList size 1 0
+13:34:32.477: creat point 1012.13 418.843 1122.85 642.718
+13:34:32.564: Create_template 1
+13:34:32.581: templateID get
+13:34:32.581: "生成模板时间:" 127 ms
+13:34:32.611: rowcount 0
+13:34:32.611: roiList size 1
+13:34:32.611: ""
+13:34:32.611: 4294901760 0 0
+13:34:36.923: func 1 971.5 450
+13:34:36.958: rowcount 1
+13:34:36.958: roiList size 2
+13:34:36.959: ""
+13:34:36.959: 4294901760 0 1
+13:35:14.865: func 698 220 10 10
+13:35:14.898: rowcount 2
+13:35:14.899: roiList size 3
+13:35:14.899: ""
+13:35:14.899: 4294901760 0 4
+13:35:24.964: func 698 250 10 10
+13:35:24.998: rowcount 3
+13:35:24.998: roiList size 4
+13:35:24.999: ""
+13:35:24.999: 4294901760 0 4
+13:35:29.528: QPoint(153,129)
+13:35:29.528: QPoint(153,104)
+13:35:29.528: item 3
+13:35:31.354: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+13:36:18.514: func 698 300 10 10
+13:36:18.549: rowcount 3
+13:36:18.549: roiList size 4
+13:36:18.550: ""
+13:36:18.550: 4294901760 0 4
+13:36:21.429: start match
+13:36:21.779: ret = 1
+13:36:21.779: locate ("1067.6", "531.096", "0")
+13:36:21.780: match orginal point 1067.5 531
+13:36:21.780: "匹配模板时间:" 367 ms
+13:36:21.780: plane list.size 4
+13:36:21.780: heightsub list.size 4
+13:36:21.781: pointtoponit list.size 4
+13:36:21.781: start ptop
+13:36:21.782: ptop orginal point 698 220
+13:36:21.783: ptop now point 698 220
+13:36:21.784: start ptop
+13:36:21.785: ptop orginal point 698 300
+13:36:21.785: ptop now point 698 300
+13:37:01.615: 4294967167
+13:37:01.615: 255 255 127
+13:37:02.383: func 698 300 10 10
+13:37:02.418: rowcount 4
+13:37:02.419: roiList size 5
+13:37:02.419: ""
+13:37:02.419: 4294967167 0 4
+13:39:30.689: init kings
+13:39:30.872: rowcount 0
+13:39:30.872: roiList size 5
+13:39:33.498: rowcount 5
+13:39:33.498: roiList size 5
+13:39:33.499: read "D:/test0.tif"
+13:39:33.523: 800 1300 real
+13:39:33.623: 800 1300
+13:39:33.623: read finish
+13:40:06.557: QPoint(86,136)
+13:40:06.557: QPoint(86,111)
+13:40:06.557: item 3
+13:40:07.631: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect004")) ) ) 
+13:40:12.153: start match
+13:40:12.454: ret = 1
+13:40:12.454: locate ("1067.6", "531.096", "0")
+13:40:12.454: match orginal point 1067.5 531
+13:40:12.454: "匹配模板时间:" 316 ms
+13:40:12.454: plane list.size 4
+13:40:12.455: heightsub list.size 4
+13:40:12.455: pointtoponit list.size 4
+13:40:12.455: start ptop
+13:40:12.456: ptop orginal point 698 220
+13:40:12.456: ptop now point 698 220
+13:40:12.456: start ptop
+13:40:12.457: ptop orginal point 698 300
+13:40:12.457: ptop now point 698 300
+17:25:42.261: init kings
+17:25:42.465: rowcount 0
+17:25:42.466: roiList size 4
+17:25:44.795: rowcount 4
+17:25:44.796: roiList size 4
+17:25:44.796: read "D:/test0.tif"
+17:25:44.925: 800 1300 real
+17:25:45.036: 800 1300
+17:25:45.036: read finish
+17:25:49.900: start match
+17:25:50.231: ret = 1
+17:25:50.231: locate ("1067.6", "531.096", "0")
+17:25:50.232: match orginal point 1067.5 531
+17:25:50.232: "匹配模板时间:" 350 ms
+17:25:50.232: plane list.size 4
+17:25:50.232: heightsub list.size 4
+17:25:50.232: pointtoponit list.size 4
+17:25:50.232: start ptop
+17:25:50.234: ptop orginal point 698 220
+17:25:50.234: ptop now point 698 220
+17:25:50.235: start ptop
+17:25:50.235: ptop orginal point 698 300
+17:25:50.236: ptop now point 698 300
+17:29:43.251: init kings
+17:29:43.479: rowcount 0
+17:29:43.480: roiList size 4
+17:29:45.519: rowcount 4
+17:29:45.519: roiList size 4
+17:29:45.520: read "D:/test0.tif"
+17:29:45.546: 800 1300 real
+17:29:45.665: 800 1300
+17:29:45.665: read finish
+17:29:46.726: start match
+17:29:47.038: ret = 1
+17:29:47.038: locate ("1067.6", "531.096", "0")
+17:29:47.039: match orginal point 1067.5 531
+17:29:47.039: "匹配模板时间:" 328 ms
+17:29:47.039: plane list.size 4
+17:29:47.039: heightsub list.size 4
+17:29:47.039: pointtoponit list.size 4
+17:29:47.039: start ptop
+17:29:47.040: ptop orginal point 698 220
+17:29:47.040: ptop now point 698 220
+17:29:47.040: start ptop
+17:29:47.041: ptop orginal point 698 300
+17:29:47.041: ptop now point 698 300
+17:30:02.934: func 2 295.064 293.004 0.540155
+17:30:02.970: rowcount 4
+17:30:02.970: roiList size 5
+17:30:02.970: ""
+17:30:02.970: 4294901760 0 2
+17:30:06.870: func 2 299.87 757.053 -0.785098
+17:30:06.915: rowcount 5
+17:30:06.916: roiList size 6
+17:30:06.916: ""
+17:30:06.916: 4294901760 0 2
+17:30:09.838: func 2 976.907 291.217 0
+17:30:09.874: rowcount 6
+17:30:09.875: roiList size 7
+17:30:09.875: ""
+17:30:09.876: 4294901760 0 2
+17:30:13.182: func 2 969.698 743.245 -0.19728
+17:30:13.220: rowcount 7
+17:30:13.220: roiList size 8
+17:30:13.221: ""
+17:30:13.221: 4294901760 0 2
+17:30:15.232: start match
+17:30:15.529: ret = 1
+17:30:15.530: locate ("1067.6", "531.096", "0")
+17:30:15.530: match orginal point 1067.5 531
+17:30:15.530: "匹配模板时间:" 314 ms
+17:30:15.530: plane list.size 8
+17:30:15.530: start planePoint
+17:30:15.531: planePoint orginal point 295.064 293.004
+17:30:15.531: planePoint now point 295.5 293
+17:30:15.532: xyz 295.064 293.004 0.0667441 0
+17:30:15.532: start planePoint
+17:30:15.532: planePoint orginal point 299.87 757.053
+17:30:15.532: planePoint now point 299.517 757
+17:30:15.532: xyz 299.87 757.053 0.0575552 1
+17:30:15.532: start planePoint
+17:30:15.533: planePoint orginal point 976.907 291.217
+17:30:15.533: planePoint now point 977 291
+17:30:15.533: xyz 976.907 291.217 0.0639821 2
+17:30:15.533: start planePoint
+17:30:15.534: planePoint orginal point 969.698 743.245
+17:30:15.534: planePoint now point 970 743
+17:30:15.534: xyz 969.698 743.245 0.0678282 3
+17:30:15.534: cloud
+17:30:15.534: cloud 1
+17:30:15.536: "平面度为:" 1
+17:30:15.536: heightsub list.size 8
+17:30:15.536: pointtoponit list.size 8
+17:30:15.536: start ptop
+17:30:15.537: ptop orginal point 698 220
+17:30:15.537: ptop now point 698 220
+17:30:15.537: start ptop
+17:30:15.537: ptop orginal point 698 300
+17:30:15.537: ptop now point 698 300
+17:33:03.921: init kings
+17:33:04.121: rowcount 0
+17:33:04.122: roiList size 8
+17:33:06.443: rowcount 8
+17:33:06.443: roiList size 8
+17:33:06.444: read "D:/test0.tif"
+17:33:06.471: 800 1300 real
+17:33:06.573: 800 1300
+17:33:06.573: read finish
+17:33:08.185: start match
+17:33:08.513: ret = 1
+17:33:08.513: locate ("1067.6", "531.096", "0")
+17:33:08.513: match orginal point 1067.5 531
+17:33:08.514: "匹配模板时间:" 343 ms
+17:33:08.514: plane list.size 8
+17:33:08.514: start planePoint
+17:33:08.515: planePoint orginal point 295.064 293.004
+17:33:08.515: planePoint now point 295.5 293
+17:33:08.516: xyz 295.064 293.004 0.0667441 0
+17:33:08.516: start planePoint
+17:33:08.516: planePoint orginal point 299.87 757.053
+17:33:08.516: planePoint now point 299.517 757
+17:33:08.516: xyz 299.87 757.053 0.0575552 1
+17:33:08.517: start planePoint
+17:33:08.517: planePoint orginal point 976.907 291.217
+17:33:08.517: planePoint now point 977 291
+17:33:08.517: xyz 976.907 291.217 0.0639821 2
+17:33:08.517: start planePoint
+17:33:08.518: planePoint orginal point 969.698 743.245
+17:33:08.518: planePoint now point 970 743
+17:33:08.518: xyz 969.698 743.245 0.0678282 3
+17:33:08.518: cloud
+17:33:08.518: cloud 1
+17:33:08.520: "平面度为:" 1
+17:33:08.520: heightsub list.size 8
+17:33:08.520: pointtoponit list.size 8
+17:33:08.520: start ptop
+17:33:08.521: ptop orginal point 698 220
+17:33:08.521: ptop now point 698 220
+17:33:08.521: start ptop
+17:33:08.522: ptop orginal point 698 300
+17:33:08.522: ptop now point 698 300
+17:35:03.192: init kings
+17:35:03.383: rowcount 0
+17:35:03.383: roiList size 8
+17:35:04.791: rowcount 8
+17:35:04.791: roiList size 8
+17:35:04.792: read "D:/test0.tif"
+17:35:04.817: 800 1300 real
+17:35:04.917: 800 1300
+17:35:04.918: read finish
+17:35:05.277: start match
+17:35:05.598: ret = 1
+17:35:05.598: locate ("1067.6", "531.096", "0")
+17:35:05.599: match orginal point 1067.5 531
+17:35:05.599: "匹配模板时间:" 337 ms
+17:35:05.599: plane list.size 8
+17:35:05.599: start planePoint
+17:35:05.600: planePoint orginal point 295.064 293.004
+17:35:05.600: planePoint now point 295.5 293
+17:35:05.600: xyz 295.064 293.004 0.0667441 0
+17:35:05.600: start planePoint
+17:35:05.601: planePoint orginal point 299.87 757.053
+17:35:05.601: planePoint now point 299.517 757
+17:35:05.602: xyz 299.87 757.053 0.0575552 1
+17:35:05.602: start planePoint
+17:35:05.602: planePoint orginal point 976.907 291.217
+17:35:05.603: planePoint now point 977 291
+17:35:05.603: xyz 976.907 291.217 0.0639821 2
+17:35:05.603: start planePoint
+17:35:05.603: planePoint orginal point 969.698 743.245
+17:35:05.603: planePoint now point 970 743
+17:35:05.603: xyz 969.698 743.245 0.0678282 3
+17:35:05.604: cloud
+17:35:05.604: cloud 0.00660037
+17:35:05.606: "平面度为:" 0.00660037
+17:35:05.606: heightsub list.size 8
+17:35:05.606: pointtoponit list.size 8
+17:35:05.606: start ptop
+17:35:05.607: ptop orginal point 698 220
+17:35:05.607: ptop now point 698 220
+17:35:05.607: start ptop
+17:35:05.607: ptop orginal point 698 300
+17:35:05.608: ptop now point 698 300
+08:36:48.035: init kings
+08:38:01.662: CreateLLTDevice OK 
+
+08:38:01.930: rowcount 0
+08:38:01.931: roiList size 0
+08:38:06.128: rowcount 0
+08:38:06.128: roiList size 0
+08:38:06.130: read "test.tif"
+08:38:06.308: 1280 1000 real
+08:38:06.443: 1280 1000
+08:38:06.443: read finish
+08:38:16.495: 0
+08:38:18.885: "D:/test0.tif"
+08:38:18.977: rowcount 0
+08:38:18.978: roiList size 0
+08:38:18.978: read "D:/test0.tif"
+08:38:19.005: 800 1300 real
+08:38:19.108: 800 1300
+08:38:19.109: read finish
+08:38:26.339: start
+08:38:26.339: rowcount 0
+08:38:26.341: 2
+08:38:26.349: clear
+08:38:26.361: rowcount 0
+08:38:26.362: roiList size 0
+08:38:26.362: Error during SetProfileConfig 
+
+08:38:26.362: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:26.362: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+08:38:26.362: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:26.362: 
+Demonstrate the profile transfer via callback function
+
+08:38:26.363: Enable the measurement
+
+08:38:26.363: Error during TransferProfiles 
+
+08:38:26.363: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:28.027: rowcount 0
+08:38:28.027: roiList size 0
+08:38:28.028: read "D:/test0.tif"
+08:38:28.050: 800 1300 real
+08:38:28.158: 800 1300
+08:38:28.159: read finish
+08:38:33.174: func 0 1013.55 415.629
+08:38:33.218: create ("rect000")
+08:38:33.219: QMap(("Column", QVariant(double, 415.629) ) ( "Column2" ,  QVariant(double, 636.833) ) ( "Row" ,  QVariant(double, 1013.55) ) ( "Row2" ,  QVariant(double, 1138.5) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+08:38:33.219: create template "rect000" imgList size 1 0
+08:38:33.241: creat point 1013.55 415.629 1138.5 636.833
+08:38:33.453: Create_template 1
+08:38:33.487: templateID get
+08:38:33.487: "生成模板时间:" 269 ms
+08:38:33.515: rowcount 0
+08:38:33.515: roiList size 1
+08:38:33.516: ""
+08:38:33.516: 4294901760 0 0
+08:38:42.313: start
+08:38:42.313: rowcount 0
+08:38:42.313: 1
+08:38:42.326: clear
+08:38:42.342: rowcount 1
+08:38:42.342: roiList size 1
+08:38:42.342: Error during SetProfileConfig 
+
+08:38:42.342: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:42.343: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+08:38:42.343: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:42.343: 
+Demonstrate the profile transfer via callback function
+
+08:38:42.343: Enable the measurement
+
+08:38:42.343: Error during TransferProfiles 
+
+08:38:42.343: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:44.433: rowcount 1
+08:38:44.433: roiList size 1
+08:38:44.434: read "D:/test0.tif"
+08:38:44.456: 800 1300 real
+08:38:44.552: 800 1300
+08:38:44.552: read finish
+08:38:50.996: start
+08:38:50.997: rowcount 0
+08:38:50.997: 1
+08:38:51.001: clear
+08:38:51.012: rowcount 1
+08:38:51.012: roiList size 1
+08:38:51.012: Error during SetProfileConfig 
+
+08:38:51.012: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:51.012: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+08:38:51.013: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:51.013: 
+Demonstrate the profile transfer via callback function
+
+08:38:51.013: Enable the measurement
+
+08:38:51.013: Error during TransferProfiles 
+
+08:38:51.013: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:38:52.853: rowcount 1
+08:38:52.853: roiList size 1
+08:38:52.853: read "D:/test0.tif"
+08:38:52.876: 800 1300 real
+08:38:52.970: 800 1300
+08:38:52.971: read finish
+08:38:56.327: func 0 520.942 605.576
+08:38:56.366: create ("rect000", "rect001")
+08:38:56.366: QMap(("Column", QVariant(double, 415.629) ) ( "Column2" ,  QVariant(double, 636.833) ) ( "Row" ,  QVariant(double, 1013.55) ) ( "Row2" ,  QVariant(double, 1138.5) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+08:38:56.367: create template "rect000" imgList size 1 0
+08:38:56.389: creat point 1013.55 415.629 1138.5 636.833
+08:38:56.606: Create_template 1
+08:38:56.640: templateID get
+08:38:56.640: QMap(("Column", QVariant(double, 605.576) ) ( "Column2" ,  QVariant(double, 636.833) ) ( "Row" ,  QVariant(double, 520.942) ) ( "Row2" ,  QVariant(double, 564.195) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+08:38:56.640: create template "rect001" imgList size 1 0
+08:38:56.665: creat point 520.942 605.576 564.195 636.833
+08:38:56.675: Create_template 1
+08:38:56.682: templateID get
+08:38:56.683: "生成模板时间:" 317 ms
+08:38:56.711: rowcount 1
+08:38:56.711: roiList size 2
+08:38:56.712: ""
+08:38:56.712: 4294901760 0 0
+08:38:58.625: QPoint(123,82)
+08:38:58.625: QPoint(123,57)
+08:38:58.625: item 1
+08:38:59.808: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+08:39:01.456: QPoint(167,41)
+08:39:01.456: QPoint(167,16)
+08:39:01.456: item 0
+08:39:02.108: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+08:39:06.177: func 0 1006.34 393.989
+08:39:06.216: create ("rect000")
+08:39:06.216: QMap(("Column", QVariant(double, 393.989) ) ( "Column2" ,  QVariant(double, 672.899) ) ( "Row" ,  QVariant(double, 1006.34) ) ( "Row2" ,  QVariant(double, 1145.71) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+08:39:06.216: create template "rect000" imgList size 1 0
+08:39:06.238: creat point 1006.34 393.989 1145.71 672.899
+08:39:06.671: Create_template 1
+08:39:06.712: templateID get
+08:39:06.713: "生成模板时间:" 497 ms
+08:39:06.741: rowcount 0
+08:39:06.741: roiList size 1
+08:39:06.741: ""
+08:39:06.741: 4294901760 0 0
+08:39:15.076: func 1 898.206 134.314
+08:39:15.107: rowcount 1
+08:39:15.108: roiList size 2
+08:39:15.108: ""
+08:39:15.108: 4294901760 0 1
+08:40:56.270: CreateLLTDevice OK 
+
+08:40:56.472: rowcount 0
+08:40:56.472: roiList size 2
+08:40:59.171: rowcount 2
+08:40:59.171: roiList size 2
+08:40:59.172: read "D:/test0.tif"
+08:40:59.197: 800 1300 real
+08:40:59.295: 800 1300
+08:40:59.295: read finish
+08:46:01.884: CreateLLTDevice OK 
+
+08:46:02.129: rowcount 0
+08:46:02.130: roiList size 2
+08:46:05.248: rowcount 2
+08:46:05.249: roiList size 2
+08:46:05.249: read "D:/test0.tif"
+08:46:05.274: 800 1300 real
+08:46:05.377: 800 1300
+08:46:05.377: read finish
+08:46:12.467: 4294967167
+08:46:12.467: 255 255 127
+08:46:22.595: ""
+08:46:22.596: 4294967167 0 2
+08:46:27.079: start
+08:46:27.079: rowcount 0
+08:46:27.079: 1
+08:46:27.083: clear
+08:46:27.096: rowcount 2
+08:46:27.096: roiList size 2
+08:46:27.096: Error during SetProfileConfig 
+
+08:46:27.097: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:46:27.097: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+08:46:27.097: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:46:27.097: 
+Demonstrate the profile transfer via callback function
+
+08:46:27.097: Enable the measurement
+
+08:46:27.097: Error during TransferProfiles 
+
+08:46:27.097: There is no connection to the scanCONTROL -> call Connect  
+
+
+08:46:45.786: rowcount 2
+08:46:45.787: roiList size 2
+08:46:45.788: read "D:/test0.tif"
+08:46:45.811: 800 1300 real
+08:46:45.907: 800 1300
+08:46:45.908: read finish
+08:46:54.869: ""
+08:46:54.870: 4294967167 0 2
+08:47:01.649: ""
+08:47:01.650: 4294967167 0 2
+08:50:08.147: CreateLLTDevice OK 
+
+08:50:08.352: rowcount 0
+08:50:08.353: roiList size 2
+08:50:47.307: rowcount 2
+08:50:47.307: roiList size 2
+08:50:47.307: read "D:/test0.tif"
+08:50:47.332: 800 1300 real
+08:50:47.434: 800 1300
+08:50:47.434: read finish
+08:50:55.515: obj count 0
+08:50:57.039: ""
+08:50:57.039: 4294901760 0 2
+08:51:18.043: obj count 0
+08:51:19.643: ""
+08:51:19.644: 4294901760 0 2
+08:56:51.822: CreateLLTDevice OK 
+
+08:56:52.023: rowcount 0
+08:56:52.023: roiList size 2
+08:56:54.216: rowcount 2
+08:56:54.216: roiList size 2
+08:56:54.216: read "D:/test0.tif"
+08:56:54.242: 800 1300 real
+08:56:54.341: 800 1300
+08:56:54.341: read finish
+08:57:12.242: 196.543 167.975 1066.41 235.299
+08:57:15.021: ""
+08:57:15.021: 4294901760 0 2
+08:57:36.302: 996.727 285.791 1039.98 360.327
+08:57:37.808: ""
+08:57:37.808: 4294901760 0 2
+09:20:13.799: CreateLLTDevice OK 
+
+09:20:13.995: rowcount 0
+09:20:13.996: roiList size 2
+09:20:16.246: rowcount 2
+09:20:16.246: roiList size 2
+09:20:16.247: read "D:/test0.tif"
+09:20:16.273: 800 1300 real
+09:20:16.370: 800 1300
+09:20:16.370: read finish
+09:20:22.196: 196.543 167.975 1064.01 218.468
+09:20:22.196: func 0 196.543 167.975
+09:20:22.234: create ("rect000", "rect001", "rect002")
+09:20:22.235: QMap(("Column", QVariant(double, 393.989) ) ( "Column2" ,  QVariant(double, 672.899) ) ( "Row" ,  QVariant(double, 1006.34) ) ( "Row2" ,  QVariant(double, 1145.71) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+09:20:22.235: create template "rect000" imgList size 1 0
+09:20:22.257: creat point 1006.34 393.989 1145.71 672.899
+09:20:22.691: Create_template 1
+09:20:22.740: templateID get
+09:20:22.740: QMap(("Column", QVariant(double, 134.314) ) ( "Column2" ,  QVariant(double, 783.502) ) ( "Row" ,  QVariant(double, 898.206) ) ( "Row2" ,  QVariant(double, 1285.08) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 1) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+09:20:22.741: QMap(("Column", QVariant(double, 167.975) ) ( "Column2" ,  QVariant(double, 218.468) ) ( "Row" ,  QVariant(double, 196.543) ) ( "Row2" ,  QVariant(double, 1064.01) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+09:20:22.741: create template "rect002" imgList size 1 0
+09:20:22.767: creat point 196.543 167.975 1064.01 218.468
+09:20:24.700: Create_template 1
+09:20:25.120: templateID get
+09:20:25.121: "生成模板时间:" 2887 ms
+09:20:25.151: rowcount 2
+09:20:25.151: roiList size 3
+09:20:25.152: ""
+09:20:25.152: 4294901760 0 0
+09:20:38.051: QPoint(143,96)
+09:20:38.051: QPoint(143,71)
+09:20:38.052: item 2
+09:20:39.150: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+09:20:39.185: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+09:20:39.218: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+09:20:43.385: 978.042 342.666 1141.44 667.26
+09:20:43.385: func 0 978.042 342.666
+09:20:43.424: create ("rect000")
+09:20:43.424: QMap(("Column", QVariant(double, 342.666) ) ( "Column2" ,  QVariant(double, 667.26) ) ( "Row" ,  QVariant(double, 978.042) ) ( "Row2" ,  QVariant(double, 1141.44) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+09:20:43.425: create template "rect000" imgList size 1 0
+09:20:43.447: creat point 978.042 342.666 1141.44 667.26
+09:20:44.077: Create_template 1
+09:20:44.135: templateID get
+09:20:44.135: "生成模板时间:" 711 ms
+09:20:44.165: rowcount 0
+09:20:44.165: roiList size 1
+09:20:44.165: ""
+09:20:44.165: 4294901760 0 0
+09:21:09.626: CreateLLTDevice OK 
+
+09:21:09.831: rowcount 0
+09:21:09.831: roiList size 1
+09:21:11.809: rowcount 1
+09:21:11.809: roiList size 1
+09:21:11.809: read "D:/test0.tif"
+09:21:11.835: 800 1300 real
+09:21:11.933: 800 1300
+09:21:11.933: read finish
+09:21:15.345: QPoint(137,42)
+09:21:15.345: QPoint(137,17)
+09:21:15.345: item 0
+09:21:16.580: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+09:21:20.228: 987.116 381.967 1148.11 665.686
+09:21:20.228: func 0 987.116 381.967
+09:21:20.266: create ("rect000")
+09:21:20.266: QMap(("Column", QVariant(double, 381.967) ) ( "Column2" ,  QVariant(double, 665.686) ) ( "Row" ,  QVariant(double, 987.116) ) ( "Row2" ,  QVariant(double, 1148.11) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+09:21:20.266: create template "rect000" imgList size 1 0
+09:21:20.288: creat point 987.116 381.967 1148.11 665.686
+09:21:20.797: Create_template 1
+09:21:20.845: templateID get
+09:21:20.845: "生成模板时间:" 579 ms
+09:21:20.874: rowcount 0
+09:21:20.874: roiList size 1
+09:21:20.874: ""
+09:21:20.874: 4294901760 0 0
+09:21:30.500: 862.162 91.0347 1205.78 759.458
+09:21:30.500: func 1 862.162 91.0347
+09:21:30.532: rowcount 1
+09:21:30.533: roiList size 2
+09:21:30.533: ""
+09:21:30.533: 4294901760 0 1
+09:21:44.489: 174.916 148.74 1073.62 225.681
+09:21:46.166: ""
+09:21:46.166: 4294901760 0 2
+09:23:19.793: CreateLLTDevice OK 
+
+09:23:20.003: rowcount 0
+09:23:20.003: roiList size 2
+09:23:22.247: rowcount 2
+09:23:22.247: roiList size 2
+09:23:22.248: read "D:/test0.tif"
+09:23:22.275: 800 1300 real
+09:23:22.391: 800 1300
+09:23:22.392: read finish
+09:23:33.452: 196.543 172.784 1080.83 230.49
+09:26:00.905: CreateLLTDevice OK 
+
+09:26:01.107: rowcount 0
+09:26:01.108: roiList size 2
+09:26:31.742: rowcount 2
+09:26:31.742: roiList size 2
+09:26:31.743: read "D:/test0.tif"
+09:26:31.768: 800 1300 real
+09:26:31.883: 800 1300
+09:26:31.884: read finish
+09:26:39.478: 194.14 148.74 1102.46 244.916
+09:27:11.437: CreateLLTDevice OK 
+
+09:27:11.638: rowcount 0
+09:27:11.639: roiList size 2
+09:27:13.813: rowcount 2
+09:27:13.814: roiList size 2
+09:27:13.814: read "D:/test0.tif"
+09:27:13.839: 800 1300 real
+09:27:13.936: 800 1300
+09:27:13.937: read finish
+09:27:22.175: 177.319 143.931 1097.65 242.512
+09:32:45.756: CreateLLTDevice OK 
+
+09:32:45.946: rowcount 0
+09:32:45.946: roiList size 2
+09:32:48.327: rowcount 2
+09:32:48.327: roiList size 2
+09:32:48.328: read "D:/test0.tif"
+09:32:48.353: 800 1300 real
+09:32:48.452: 800 1300
+09:32:48.452: read finish
+09:32:58.060: 208.557 163.167 1097.65 228.085
+09:36:34.966: CreateLLTDevice OK 
+
+09:36:35.170: rowcount 0
+09:36:35.171: roiList size 2
+09:37:01.700: CreateLLTDevice OK 
+
+09:37:01.923: rowcount 0
+09:37:01.924: roiList size 2
+09:37:04.665: rowcount 2
+09:37:04.666: roiList size 2
+09:37:04.666: read "D:/test0.tif"
+09:37:04.691: 800 1300 real
+09:37:04.801: 800 1300
+09:37:04.802: read finish
+09:39:57.316: 201.348 170.38 1068.82 225.681
+09:40:38.421: CreateLLTDevice OK 
+
+09:40:38.612: rowcount 0
+09:40:38.612: roiList size 2
+09:40:40.100: rowcount 2
+09:40:40.100: roiList size 2
+09:40:40.100: read "D:/test0.tif"
+09:40:40.125: 800 1300 real
+09:40:40.223: 800 1300
+09:40:40.223: read finish
+09:40:46.539: 987.116 278.578 1044.79 350.71
+09:41:48.381: CreateLLTDevice OK 
+
+09:41:48.570: rowcount 0
+09:41:48.570: roiList size 2
+09:41:49.975: rowcount 2
+09:41:49.975: roiList size 2
+09:41:49.975: read "D:/test0.tif"
+09:41:50.002: 800 1300 real
+09:41:50.107: 800 1300
+09:41:50.107: read finish
+09:41:58.113: 182.125 134.314 1066.41 228.085
+09:41:59.573: ""
+09:41:59.574: 4294901760 0 2
+09:42:25.642: CreateLLTDevice OK 
+
+09:42:25.823: rowcount 0
+09:42:25.824: roiList size 2
+09:42:27.798: rowcount 2
+09:42:27.798: roiList size 2
+09:42:27.798: read "D:/test0.tif"
+09:42:27.824: 800 1300 real
+09:42:27.924: 800 1300
+09:42:27.924: read finish
+09:42:37.431: 727.596 184.806 833.326 223.277
+09:45:35.701: CreateLLTDevice OK 
+
+09:45:35.917: rowcount 0
+09:45:35.917: roiList size 2
+09:45:37.636: rowcount 2
+09:45:37.636: roiList size 2
+09:45:37.636: read "D:/test0.tif"
+09:45:37.662: 800 1300 real
+09:45:37.765: 800 1300
+09:45:37.765: read finish
+09:45:44.896: 751.626 187.211 821.311 237.703
+09:45:47.049: ""
+09:45:47.049: 4294901760 0 2
+09:46:03.706: 1001.68 286.189 1037.73 341.49
+09:46:07.292: ""
+09:46:07.292: 4294901760 0 2
+09:47:43.966: CreateLLTDevice OK 
+
+09:47:44.154: rowcount 0
+09:47:44.155: roiList size 2
+09:47:47.712: rowcount 2
+09:47:47.712: roiList size 2
+09:47:47.713: read "D:/test0.tif"
+09:47:47.738: 800 1300 real
+09:47:47.848: 800 1300
+09:47:47.848: read finish
+09:47:56.549: 578.613 165.571 737.208 220.872
+09:48:54.936: CreateLLTDevice OK 
+
+09:48:55.135: rowcount 0
+09:48:55.135: roiList size 2
+09:49:01.795: rowcount 2
+09:49:01.795: roiList size 2
+09:49:01.796: read "D:/test0.tif"
+09:49:01.821: 800 1300 real
+09:49:01.938: 800 1300
+09:49:01.938: read finish
+09:49:11.757: 742.014 172.784 804.491 244.916
+09:51:30.475: CreateLLTDevice OK 
+
+09:51:30.664: rowcount 0
+09:51:30.665: roiList size 2
+09:51:32.392: rowcount 2
+09:51:32.392: roiList size 2
+09:51:32.393: read "D:/test0.tif"
+09:51:32.420: 800 1300 real
+09:51:32.525: 800 1300
+09:51:32.525: read finish
+09:51:39.805: 172.513 151.145 1064.01 228.085
+09:51:43.258: ""
+09:51:43.259: 4294901760 0 2
+09:51:46.866: 970.295 290.6 1059.2 341.092
+09:51:48.875: ""
+09:51:48.875: 4294901760 0 2
+09:51:53.716: 749.223 153.549 833.326 247.321
+09:51:55.013: ""
+09:51:55.013: 4294901760 0 2
+09:52:50.641: CreateLLTDevice OK 
+
+09:52:50.836: rowcount 0
+09:52:50.836: roiList size 2
+09:56:31.171: rowcount 2
+09:56:31.172: roiList size 2
+09:56:31.172: read "D:/test0.tif"
+09:56:31.198: 800 1300 real
+09:56:31.296: 800 1300
+09:56:31.296: read finish
+09:56:39.856: 758.835 177.593 823.714 244.916
+09:56:39.866: obj count 0
+09:56:41.254: ""
+09:56:41.254: 4294901760 0 2
+09:56:57.533: 605.045 -48.4205 732.402 45.3511
+09:56:57.534: obj count 0
+09:56:59.001: ""
+09:56:59.002: 4294901760 0 2
+09:57:02.916: 542.568 170.38 657.91 223.277
+09:57:02.917: obj count 0
+09:57:04.525: ""
+09:57:04.525: 4294901760 0 2
+09:57:07.385: 218.169 485.356 319.093 617.598
+09:57:07.387: obj count 0
+09:57:08.574: ""
+09:57:08.574: 4294901760 0 2
+09:57:12.286: 979.907 288.195 1044.79 350.71
+09:57:12.287: obj count 0
+09:57:13.400: ""
+09:57:13.401: 4294901760 0 2
+10:02:15.677: 790.073 177.593 828.52 237.703
+10:02:15.678: obj count 0
+10:02:16.938: ""
+10:02:16.939: 4294901760 0 2
+10:02:25.476: 196.543 506.996 295.064 735.414
+10:02:25.478: obj count 0
+10:02:26.890: ""
+10:02:26.892: 4294901760 0 2
+10:09:28.316: 717.984 134.314 862.162 264.151
+10:09:28.318: obj count 0
+10:09:29.532: ""
+10:09:29.532: 4294901760 0 2
+10:39:21.208: CreateLLTDevice OK 
+
+10:39:21.439: rowcount 0
+10:39:21.439: roiList size 2
+10:39:23.068: rowcount 2
+10:39:23.068: roiList size 2
+10:39:23.069: read "D:/test0.tif"
+10:39:23.196: 800 1300 real
+10:39:23.304: 800 1300
+10:39:23.304: read finish
+10:39:27.812: 749.223 170.38 816.506 261.747
+10:39:27.814: obj count 0
+10:39:28.959: ""
+10:39:28.959: 4294901760 0 2
+10:40:53.730: CreateLLTDevice OK 
+
+10:40:53.958: rowcount 0
+10:40:53.959: roiList size 2
+10:40:55.675: rowcount 2
+10:40:55.676: roiList size 2
+10:40:55.676: read "D:/test0.tif"
+10:40:55.701: 800 1300 real
+10:40:55.809: 800 1300
+10:40:55.809: read finish
+10:41:02.566: 727.596 146.336 806.894 247.321
+10:41:02.568: obj count 0
+10:41:03.813: ""
+10:41:03.814: 4294901760 0 2
+10:44:42.263: CreateLLTDevice OK 
+
+10:44:42.473: rowcount 0
+10:44:42.473: roiList size 2
+10:44:56.524: rowcount 2
+10:44:56.524: roiList size 2
+10:44:56.525: read "D:/test0.tif"
+10:44:56.551: 800 1300 real
+10:44:56.657: 800 1300
+10:44:56.657: read finish
+10:45:05.705: 129.26 117.483 1232.22 408.415
+10:45:05.720: obj count 0
+10:45:07.142: ""
+10:45:07.142: 4294901760 0 2
+10:45:10.277: 910.221 295.409 1102.46 745.031
+10:45:10.278: obj count 0
+10:45:11.812: ""
+10:45:11.812: 4294901760 0 2
+10:53:09.127: CreateLLTDevice OK 
+
+10:53:09.427: rowcount 0
+10:53:09.427: roiList size 2
+10:53:11.269: rowcount 2
+10:53:11.270: roiList size 2
+10:53:11.270: read "D:/test0.tif"
+10:53:11.295: 800 1300 real
+10:53:11.394: 800 1300
+10:53:11.394: read finish
+10:53:18.324: 979.907 290.6 1052 365.136
+10:53:18.325: obj count 0
+10:53:19.755: ""
+10:53:19.755: 4294901760 0 2
+10:55:02.777: CreateLLTDevice OK 
+
+10:55:02.998: rowcount 0
+10:55:02.998: roiList size 2
+10:55:06.407: rowcount 2
+10:55:06.408: roiList size 2
+10:55:06.408: read "D:/test0.tif"
+10:55:06.434: 800 1300 real
+10:55:06.533: 800 1300
+10:55:06.533: read finish
+10:55:12.689: 749.223 172.784 840.535 249.725
+10:56:04.686: CreateLLTDevice OK 
+
+10:56:04.880: rowcount 0
+10:56:04.881: roiList size 2
+10:56:18.163: rowcount 2
+10:56:18.163: roiList size 2
+10:56:18.164: read "D:/test0.tif"
+10:56:18.190: 800 1300 real
+10:56:18.300: 800 1300
+10:56:18.300: read finish
+10:57:17.945: 756.432 182.402 821.311 237.703
+11:08:09.649: CreateLLTDevice OK 
+
+11:08:09.905: rowcount 0
+11:08:09.905: roiList size 2
+11:08:12.061: rowcount 2
+11:08:12.061: roiList size 2
+11:08:12.062: read "D:/test0.tif"
+11:08:12.188: 800 1300 real
+11:08:12.291: 800 1300
+11:08:12.291: read finish
+11:08:19.990: 542.568 -84.4865 653.104 42.9467
+11:17:25.371: CreateLLTDevice OK 
+
+11:17:25.571: rowcount 0
+11:17:25.571: roiList size 2
+11:26:41.302: rowcount 2
+11:26:41.302: roiList size 2
+11:26:41.303: read "D:/test0.tif"
+11:26:41.427: 800 1300 real
+11:26:41.532: 800 1300
+11:26:41.532: read finish
+11:26:47.420: 679.537 112.674 823.714 285.791
+11:28:46.585: CreateLLTDevice OK 
+
+11:28:46.805: rowcount 0
+11:28:46.806: roiList size 2
+11:28:48.979: rowcount 2
+11:28:48.980: roiList size 2
+11:28:48.980: read "D:/test0.tif"
+11:28:49.006: 800 1300 real
+11:28:49.111: 800 1300
+11:28:49.111: read finish
+11:28:56.248: 638.687 88.6303 746.82 280.982
+11:29:33.393: CreateLLTDevice OK 
+
+11:29:33.615: rowcount 0
+11:29:33.615: roiList size 2
+11:29:35.965: rowcount 2
+11:29:35.965: roiList size 2
+11:29:35.966: read "D:/test0.tif"
+11:29:35.993: 800 1300 real
+11:29:36.109: 800 1300
+11:29:36.110: read finish
+11:29:41.580: 722.79 107.865 886.191 353.114
+11:29:41.625: obj count 0
+11:29:46.310: ""
+11:29:46.310: 4294901760 0 2
+11:29:56.295: 184.528 141.527 1073.62 228.085
+11:29:56.335: obj count 0
+11:29:59.086: ""
+11:29:59.086: 4294901760 0 2
+11:31:23.847: 989.518 290.6 1059.2 369.945
+11:31:23.892: obj count 0
+11:31:27.085: ""
+11:31:27.086: 4294901760 0 2
+11:32:04.125: 742.014 136.718 842.938 237.703
+11:32:04.171: obj count 0
+11:32:05.636: ""
+11:32:05.636: 4294901760 0 2
+11:34:51.284: CreateLLTDevice OK 
+
+11:34:51.467: rowcount 0
+11:34:51.467: roiList size 2
+11:34:52.951: rowcount 2
+11:34:52.951: roiList size 2
+11:34:52.951: read "D:/test0.tif"
+11:34:52.977: 800 1300 real
+11:34:53.092: 800 1300
+11:34:53.093: read finish
+11:34:59.952: 746.82 155.953 850.147 256.938
+11:34:59.952: center area 746.82 155.953 850.147 155.953
+11:34:59.953: obj count 0
+11:35:01.213: ""
+11:35:01.213: 4294901760 0 2
+11:35:25.254: 254.213 167.975 1015.95 240.107
+11:35:25.254: center area 254.213 167.975 1015.95 167.975
+11:35:25.260: obj count 0
+11:35:26.656: ""
+11:35:26.658: 4294901760 0 2
+11:35:42.312: 994.324 280.982 1039.98 357.923
+11:35:42.313: center area 994.324 280.982 1039.98 280.982
+11:35:42.317: obj count 0
+11:35:43.430: ""
+11:35:43.431: 4294901760 0 2
+11:39:10.338: CreateLLTDevice OK 
+
+11:39:10.527: rowcount 0
+11:39:10.528: roiList size 2
+11:39:12.079: rowcount 2
+11:39:12.079: roiList size 2
+11:39:12.080: read "D:/test0.tif"
+11:39:12.105: 800 1300 real
+11:39:12.218: 800 1300
+11:39:12.218: read finish
+11:39:18.245: 989.518 290.6 1042.38 357.923
+11:39:18.245: center area 989.518 290.6 1042.38 290.6
+11:39:18.246: obj count 0
+11:39:19.420: ""
+11:39:19.420: 4294901760 0 2
+11:40:43.083: CreateLLTDevice OK 
+
+11:40:43.289: rowcount 0
+11:40:43.289: roiList size 2
+11:40:45.137: rowcount 2
+11:40:45.138: roiList size 2
+11:40:45.138: read "D:/test0.tif"
+11:40:45.164: 800 1300 real
+11:40:45.277: 800 1300
+11:40:45.278: read finish
+11:40:53.372: 172.513 163.167 1071.22 232.894
+11:40:53.403: center QPoint(611,208)
+11:40:53.403: func 2 172.513 163.167
+11:40:53.436: rowcount 2
+11:40:53.436: roiList size 3
+11:40:53.437: ""
+11:40:53.437: 4294901760 0 2
+13:46:57.178: CreateLLTDevice OK 
+
+13:46:57.525: rowcount 0
+13:46:57.529: roiList size 3
+13:46:59.756: rowcount 3
+13:46:59.756: roiList size 3
+13:46:59.756: read "D:/test0.tif"
+13:46:59.883: 800 1300 real
+13:47:00.001: 800 1300
+13:47:00.001: read finish
+13:47:16.858: func 3 528.151 547.871 -0.837683
+13:47:16.891: rowcount 3
+13:47:16.892: roiList size 4
+13:47:16.892: ""
+13:47:16.892: 4294901760 0 3
+13:47:18.983: QPoint(103,132)
+13:47:18.983: QPoint(103,107)
+13:47:18.983: item 3
+13:47:20.069: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+13:47:27.146: 4283826047
+13:47:27.146: 85 255 127
+13:47:29.560: func 0 0 50 50
+13:47:29.597: rowcount 3
+13:47:29.597: roiList size 4
+13:47:29.597: ""
+13:47:29.597: 4283826047 0 3
+13:48:12.445: CreateLLTDevice OK 
+
+13:48:12.642: rowcount 0
+13:48:12.643: roiList size 4
+13:48:14.408: rowcount 4
+13:48:14.408: roiList size 4
+13:48:14.409: read "D:/test0.tif"
+13:48:14.436: 800 1300 real
+13:48:14.544: 800 1300
+13:48:14.544: read finish
+13:48:20.734: ""
+13:48:20.734: 4294901760 0 0
+13:48:23.448: func 0 0 50 50
+13:48:23.484: rowcount 4
+13:48:23.485: roiList size 5
+13:48:23.485: ""
+13:48:23.485: 4294901760 0 4
+13:48:27.153: QPoint(133,168)
+13:48:27.153: QPoint(133,143)
+13:48:27.153: item 4
+13:48:28.258: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+13:48:29.042: QPoint(168,128)
+13:48:29.042: QPoint(168,103)
+13:48:29.042: item 3
+13:48:29.579: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+13:48:30.452: QPoint(173,109)
+13:48:30.452: QPoint(173,84)
+13:48:30.452: item 2
+13:48:31.049: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+13:48:33.725: 4283826047
+13:48:33.725: 85 255 127
+13:48:35.177: func 0 0 50 50
+13:48:35.210: rowcount 2
+13:48:35.210: roiList size 3
+13:48:35.211: ""
+13:48:35.211: 4283826047 0 4
+13:48:43.019: start
+13:48:43.019: rowcount 0
+13:48:43.020: 1
+13:48:43.025: clear
+13:48:43.045: rowcount 3
+13:48:43.045: roiList size 3
+13:48:43.045: Error during SetProfileConfig 
+
+13:48:43.045: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:43.046: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+13:48:43.046: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:43.046: 
+Demonstrate the profile transfer via callback function
+
+13:48:43.046: Enable the measurement
+
+13:48:43.046: Error during TransferProfiles 
+
+13:48:43.046: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:48:44.060: rowcount 3
+13:48:44.061: roiList size 3
+13:48:44.061: read "D:/test0.tif"
+13:48:44.085: 800 1300 real
+13:48:44.184: 800 1300
+13:48:44.184: read finish
+13:48:47.134: QPoint(142,106)
+13:48:47.134: QPoint(142,81)
+13:48:47.134: item 2
+13:48:49.285: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+13:49:00.640: center QPoint(611,208)
+13:49:00.641: func 2 184.528 122.292
+13:49:00.677: rowcount 2
+13:49:00.677: roiList size 3
+13:49:00.677: ""
+13:49:00.677: 4283826047 0 2
+13:49:19.075: start
+13:49:19.075: rowcount 0
+13:49:19.076: 1
+13:49:19.080: clear
+13:49:19.094: rowcount 3
+13:49:19.094: roiList size 3
+13:49:19.095: Error during SetProfileConfig 
+
+13:49:19.095: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:49:19.095: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+13:49:19.095: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:49:19.095: 
+Demonstrate the profile transfer via callback function
+
+13:49:19.095: Enable the measurement
+
+13:49:19.096: Error during TransferProfiles 
+
+13:49:19.096: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:49:20.275: rowcount 3
+13:49:20.275: roiList size 3
+13:49:20.276: read "D:/test0.tif"
+13:49:20.301: 800 1300 real
+13:49:20.405: 800 1300
+13:49:20.405: read finish
+13:49:21.653: QPoint(168,108)
+13:49:21.654: QPoint(168,83)
+13:49:21.654: item 2
+13:49:22.768: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+13:49:38.027: center QPoint(611,208)
+13:49:38.027: func 2 206.154 153.549
+13:49:38.060: rowcount 2
+13:49:38.060: roiList size 3
+13:49:38.061: ""
+13:49:38.061: 4283826047 0 2
+13:50:18.898: func 100 0 50 50
+13:50:18.932: rowcount 3
+13:50:18.933: roiList size 4
+13:50:18.933: ""
+13:50:18.934: 4283826047 0 3
+13:50:33.692: func 300 0 50 50
+13:50:33.728: rowcount 4
+13:50:33.729: roiList size 5
+13:50:33.730: ""
+13:50:33.730: 4283826047 0 3
+13:50:49.684: func 300 100 50 50
+13:50:49.722: rowcount 5
+13:50:49.723: roiList size 6
+13:50:49.724: ""
+13:50:49.724: 4283826047 0 3
+13:51:11.087: start
+13:51:11.087: rowcount 0
+13:51:11.089: 1
+13:51:11.094: clear
+13:51:11.112: rowcount 6
+13:51:11.113: roiList size 6
+13:51:11.114: Error during SetProfileConfig 
+
+13:51:11.114: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:51:11.115: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+13:51:11.115: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:51:11.116: 
+Demonstrate the profile transfer via callback function
+
+13:51:11.116: Enable the measurement
+
+13:51:11.117: Error during TransferProfiles 
+
+13:51:11.117: There is no connection to the scanCONTROL -> call Connect  
+
+
+13:51:12.282: rowcount 6
+13:51:12.284: roiList size 6
+13:51:12.286: read "D:/test0.tif"
+13:51:12.310: 800 1300 real
+13:51:12.417: 800 1300
+13:51:12.419: read finish
+13:51:14.272: QPoint(179,137)
+13:51:14.272: QPoint(179,112)
+13:51:14.273: item 3
+13:51:15.178: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect004", "rect005")) ) ) 
+13:51:15.982: QPoint(185,142)
+13:51:15.983: QPoint(185,117)
+13:51:15.983: item 3
+13:51:16.479: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect005")) ) ) 
+13:51:17.534: QPoint(174,134)
+13:51:17.535: QPoint(174,109)
+13:51:17.536: item 3
+13:51:18.030: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+13:51:18.854: QPoint(190,108)
+13:51:18.855: QPoint(190,83)
+13:51:18.855: item 2
+13:51:19.417: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+13:51:28.890: center QPoint(1014,324)
+13:51:28.892: func 2 991.921 288.195
+13:51:28.927: rowcount 2
+13:51:28.928: roiList size 3
+13:51:28.930: ""
+13:51:28.931: 4283826047 0 2
+13:51:52.544: func -100 0 50 50
+13:51:52.580: rowcount 3
+13:51:52.581: roiList size 4
+13:51:52.582: ""
+13:51:52.582: 4283826047 0 5
+13:52:11.837: func 20 0 20 20
+13:52:11.872: rowcount 4
+13:52:11.873: roiList size 5
+13:52:11.875: ""
+13:52:11.876: 4283826047 0 5
+13:52:23.262: QPoint(155,160)
+13:52:23.264: QPoint(155,135)
+13:52:23.264: item 4
+13:52:24.116: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+13:52:28.697: func 40 0 20 20
+13:52:28.734: rowcount 4
+13:52:28.735: roiList size 5
+13:52:28.736: ""
+13:52:28.737: 4283826047 0 5
+13:52:32.632: start match
+13:52:33.018: ret = 1
+13:52:33.019: locate ("1067.39", "524.03", "-0.00012429")
+13:52:33.021: match orginal point 1067.5 524
+13:52:33.022: "匹配模板时间:" 441 ms
+13:52:33.023: plane list.size 5
+13:52:33.024: heightsub list.size 5
+13:52:33.025: pointtoponit list.size 5
+13:52:33.025: start ptop
+13:52:33.027: ptop orginal point 914 324
+13:52:33.028: ptop now point 914 324
+13:52:33.029: start ptop
+13:52:33.030: ptop orginal point 1054 324
+13:52:33.031: ptop now point 1054 324
+13:52:47.246: rowcount 1
+13:52:47.248: 1
+13:52:47.255: clear
+14:07:41.030: CreateLLTDevice OK 
+
+14:08:56.051: CreateLLTDevice OK 
+
+14:08:56.254: rowcount 0
+14:08:56.255: roiList size 5
+14:08:58.156: rowcount 5
+14:08:58.156: roiList size 5
+14:08:58.157: read "D:/test0.tif"
+14:08:58.182: 800 1300 real
+14:08:58.326: 800 1300
+14:08:58.326: read finish
+14:08:59.710: start match
+14:09:00.063: ret = 1
+14:09:00.064: locate ("1067.39", "524.03", "-0.00012429")
+14:09:00.064: match orginal point 1067.5 524
+14:09:00.064: "匹配模板时间:" 401 ms
+14:09:00.064: plane list.size 5
+14:09:00.064: heightsub list.size 5
+14:09:00.065: pointtoponit list.size 5
+14:09:00.065: start ptop
+14:09:00.066: ptop orginal point 914 324
+14:09:00.066: ptop now point 914 324
+14:09:00.066: start ptop
+14:09:00.067: ptop orginal point 1054 324
+14:09:00.067: ptop now point 1054 324
+14:09:39.261: QPoint(198,97)
+14:09:39.261: QPoint(198,72)
+14:09:39.261: item 2
+14:09:40.316: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect004")) ) ) 
+14:09:52.005: center QPoint(799,207)
+14:09:52.005: func 2 726.435 178.855
+14:09:52.072: rowcount 4
+14:09:52.072: roiList size 5
+14:09:52.073: ""
+14:09:52.073: 4294901760 0 2
+14:09:55.818: 4283804415
+14:09:55.818: 85 170 255
+14:10:02.137: center QPoint(522,207)
+14:10:02.137: func 2 485.482 182.26
+14:10:02.201: rowcount 5
+14:10:02.201: roiList size 6
+14:10:02.202: ""
+14:10:02.202: 4283804415 0 2
+14:10:10.487: 4294967040
+14:10:10.487: 255 255 0
+14:10:13.538: center QPoint(266,358)
+14:10:13.538: func 2 221.578 317.202
+14:10:13.612: rowcount 6
+14:10:13.612: roiList size 7
+14:10:13.613: ""
+14:10:13.613: 4294967040 0 2
+14:10:17.966: center QPoint(400,207)
+14:10:17.966: func 2 381.755 184.119
+14:10:18.031: rowcount 7
+14:10:18.031: roiList size 8
+14:10:18.032: ""
+14:10:18.032: 4294967040 0 2
+14:10:30.022: QPoint(172,211)
+14:10:30.022: QPoint(172,186)
+14:10:30.022: item 7
+14:10:31.265: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect004", "rect002", "rect005", "rect006")) ) ) 
+14:10:32.150: QPoint(157,183)
+14:10:32.150: QPoint(157,158)
+14:10:32.150: item 5
+14:10:32.736: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect004", "rect002", "rect006")) ) ) 
+14:10:33.729: QPoint(166,198)
+14:10:33.729: QPoint(166,173)
+14:10:33.729: item 5
+14:10:34.406: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect004", "rect002")) ) ) 
+14:10:42.382: QPoint(138,104)
+14:10:42.383: QPoint(138,79)
+14:10:42.383: item 2
+14:10:43.188: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect004")) ) ) 
+14:11:03.759: center QPoint(797,263)
+14:11:03.759: func 2 739.836 222.632
+14:11:03.820: rowcount 4
+14:11:03.821: roiList size 5
+14:11:03.821: ""
+14:11:03.821: 4294967040 0 2
+14:11:07.032: start
+14:11:07.033: rowcount 1
+14:11:07.034: 1
+14:11:07.039: clear
+14:11:07.053: rowcount 5
+14:11:07.053: roiList size 5
+14:11:07.054: Error during SetProfileConfig 
+
+14:11:07.054: There is no connection to the scanCONTROL -> call Connect  
+
+
+14:11:07.054: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+14:11:07.054: There is no connection to the scanCONTROL -> call Connect  
+
+
+14:11:07.055: 
+Demonstrate the profile transfer via callback function
+
+14:11:07.055: Enable the measurement
+
+14:11:07.055: Error during TransferProfiles 
+
+14:11:07.055: There is no connection to the scanCONTROL -> call Connect  
+
+
+14:11:08.071: rowcount 5
+14:11:08.071: roiList size 5
+14:11:08.072: read "D:/test0.tif"
+14:11:08.095: 800 1300 real
+14:11:08.237: 800 1300
+14:11:08.237: read finish
+14:11:09.578: start match
+14:11:09.922: ret = 1
+14:11:09.922: locate ("1067.39", "524.03", "-0.00012429")
+14:11:09.923: match orginal point 1067.5 524
+14:11:09.923: "匹配模板时间:" 394 ms
+14:11:09.923: plane list.size 5
+14:11:09.923: heightsub list.size 5
+14:11:09.923: pointtoponit list.size 5
+14:11:09.923: start ptop
+14:11:09.925: ptop orginal point 914 324
+14:11:09.925: ptop now point 914 324
+14:11:09.926: start ptop
+14:11:09.927: ptop orginal point 1054 324
+14:11:09.927: ptop now point 1054 324
+14:20:08.175: CreateLLTDevice OK 
+
+14:20:08.376: rowcount 0
+14:20:08.377: roiList size 5
+14:20:10.344: rowcount 5
+14:20:10.344: roiList size 5
+14:20:10.345: read "D:/test0.tif"
+14:20:10.370: 800 1300 real
+14:20:10.505: 800 1300
+14:20:10.505: read finish
+14:20:14.960: start match
+14:20:15.297: ret = 1
+14:20:15.297: locate ("1067.39", "524.03", "-0.00012429")
+14:20:15.298: match orginal point 1067.5 524
+14:20:15.298: "匹配模板时间:" 386 ms
+14:20:15.298: plane list.size 5
+14:20:15.298: heightsub list.size 5
+14:20:15.298: pointtoponit list.size 5
+14:20:15.298: start ptop
+14:20:15.300: ptop orginal point 914 324
+14:20:15.300: ptop now point 914 324
+14:20:15.300: start ptop
+14:20:15.301: ptop orginal point 1054 324
+14:20:15.301: ptop now point 1054 324
+14:20:19.111: QPoint(190,119)
+14:20:19.111: QPoint(190,94)
+14:20:19.111: item 3
+14:20:20.136: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect003", "rect002")) ) ) 
+14:20:20.196: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+14:20:20.259: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+14:20:20.316: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+14:20:20.355: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+14:20:27.884: func 0 1006.34 396.393
+14:20:27.922: create ("rect000")
+14:20:27.922: QMap(("Column", QVariant(double, 396.393) ) ( "Column2" ,  QVariant(double, 653.664) ) ( "Row" ,  QVariant(double, 1006.34) ) ( "Row2" ,  QVariant(double, 1143.31) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+14:20:27.922: create template "rect000" imgList size 1 0
+14:20:27.945: creat point 1006.34 396.393 1143.31 653.664
+14:20:28.308: Create_template 1
+14:20:28.347: templateID get
+14:20:28.348: "生成模板时间:" 426 ms
+14:20:28.386: rowcount 0
+14:20:28.387: roiList size 1
+14:20:28.387: ""
+14:20:28.387: 4294901760 0 0
+14:21:56.425: CreateLLTDevice OK 
+
+14:21:56.693: rowcount 0
+14:21:56.693: roiList size 1
+14:22:00.067: rowcount 1
+14:22:00.068: roiList size 1
+14:22:00.068: read "D:/test0.tif"
+14:22:00.093: 800 1300 real
+14:22:00.197: 800 1300
+14:22:00.197: read finish
+14:22:12.309: func 1 912.624 136.718
+14:22:12.343: rowcount 1
+14:22:12.343: roiList size 2
+14:22:12.343: ""
+14:22:12.343: 4294901760 0 1
+14:22:30.787: center QPoint(611,208)
+14:22:30.787: func 2 194.14 139.123
+14:22:30.828: rowcount 2
+14:22:30.829: roiList size 3
+14:22:30.829: ""
+14:22:30.830: 4294901760 0 2
+14:24:00.597: 4283804160
+14:24:00.597: 85 170 0
+14:24:46.579: func 0 0 50 50
+14:24:46.620: rowcount 3
+14:24:46.620: roiList size 4
+14:24:46.621: ""
+14:24:46.621: 4283804160 0 5
+14:25:08.128: QPoint(128,129)
+14:25:08.129: QPoint(128,104)
+14:25:08.129: item 3
+14:25:08.931: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+14:25:11.589: func 0 10 10 10
+14:25:11.634: rowcount 3
+14:25:11.634: roiList size 4
+14:25:11.635: ""
+14:25:11.635: 4283804160 0 5
+14:25:25.930: func 0 100 10 10
+14:25:25.977: rowcount 4
+14:25:25.978: roiList size 5
+14:25:25.978: ""
+14:25:25.978: 4283804160 0 5
+14:25:36.591: func 30 100 10 10
+14:25:36.639: rowcount 5
+14:25:36.639: roiList size 6
+14:25:36.640: ""
+14:25:36.640: 4283804160 0 5
+14:25:41.822: func 50 100 10 10
+14:25:41.865: rowcount 6
+14:25:41.865: roiList size 7
+14:25:41.866: ""
+14:25:41.866: 4283804160 0 5
+14:25:52.737: func 100 100 10 10
+14:25:52.781: rowcount 7
+14:25:52.781: roiList size 8
+14:25:52.782: ""
+14:25:52.782: 4283804160 0 5
+14:26:06.384: QPoint(115,215)
+14:26:06.384: QPoint(115,190)
+14:26:06.384: item 7
+14:26:07.498: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006")) ) ) 
+14:26:08.505: QPoint(148,204)
+14:26:08.505: QPoint(148,179)
+14:26:08.505: item 6
+14:26:09.005: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005")) ) ) 
+14:26:10.046: QPoint(153,196)
+14:26:10.046: QPoint(153,171)
+14:26:10.046: item 5
+14:26:10.742: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004")) ) ) 
+14:26:37.717: func 20 10 10 10
+14:26:37.763: rowcount 5
+14:26:37.763: roiList size 6
+14:26:37.764: ""
+14:26:37.764: 4283804160 0 5
+14:26:42.908: QPoint(178,195)
+14:26:42.909: QPoint(178,170)
+14:26:42.909: item 5
+14:26:43.671: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004")) ) ) 
+14:26:44.668: func 50 10 10 10
+14:26:44.712: rowcount 5
+14:26:44.712: roiList size 6
+14:26:44.713: ""
+14:26:44.713: 4283804160 0 5
+14:26:52.683: func 50 100 10 10
+14:26:52.729: rowcount 6
+14:26:52.729: roiList size 7
+14:26:52.730: ""
+14:26:52.730: 4283804160 0 5
+14:27:17.062: func 100 10 10 10
+14:27:17.110: rowcount 7
+14:27:17.110: roiList size 8
+14:27:17.111: ""
+14:27:17.111: 4283804160 0 5
+14:27:25.239: func 100 100 10 10
+14:27:25.284: rowcount 8
+14:27:25.285: roiList size 9
+14:27:25.286: ""
+14:27:25.286: 4283804160 0 5
+14:27:28.242: start match
+14:27:28.538: ret = 1
+14:27:28.538: locate ("1073.87", "524.728", "-0.000518958")
+14:27:28.538: match orginal point 1074.5 525
+14:27:28.538: "匹配模板时间:" 332 ms
+14:27:28.539: plane list.size 9
+14:27:28.539: heightsub list.size 9
+14:27:28.539: pointtoponit list.size 9
+14:27:28.539: start ptop
+14:27:28.541: ptop orginal point 611 218
+14:27:28.541: ptop now point 610 218
+14:27:28.542: start ptop
+14:27:28.543: ptop orginal point 611 308
+14:27:28.543: ptop now point 610 308
+14:27:28.545: start ptop
+14:27:28.546: ptop orginal point 661 218
+14:27:28.546: ptop now point 660 218
+14:27:28.547: start ptop
+14:27:28.548: ptop orginal point 661 308
+14:27:28.548: ptop now point 660 308
+14:27:28.551: start ptop
+14:27:28.552: ptop orginal point 711 218
+14:27:28.552: ptop now point 710 218
+14:27:28.552: start ptop
+14:27:28.553: ptop orginal point 711 308
+14:27:28.553: ptop now point 710 308
+14:33:21.865: CreateLLTDevice OK 
+
+14:33:22.126: rowcount 0
+14:33:22.126: roiList size 9
+14:33:23.983: rowcount 9
+14:33:23.983: roiList size 9
+14:33:23.984: read "D:/test0.tif"
+14:33:24.119: 800 1300 real
+14:33:24.276: 800 1300
+14:33:24.277: read finish
+14:40:23.029: CreateLLTDevice OK 
+
+14:40:23.221: rowcount 0
+14:40:23.221: roiList size 9
+14:40:24.808: rowcount 9
+14:40:24.808: roiList size 9
+14:40:24.809: read "D:/test0.tif"
+14:40:24.833: 800 1300 real
+14:40:24.981: 800 1300
+14:40:24.981: read finish
+14:40:25.408: start match
+14:40:25.803: ret = 1
+14:40:25.804: locate ("1073.87", "524.728", "-0.000518958")
+14:40:25.804: match orginal point 1074.5 525
+14:40:25.804: "匹配模板时间:" 437 ms
+14:40:25.804: plane list.size 9
+14:40:25.804: heightsub list.size 9
+14:40:25.805: pointtoponit list.size 9
+14:40:25.805: start ptop
+14:40:25.806: ptop orginal point 611 218
+14:40:25.806: ptop now point 610 218
+14:40:25.807: start ptop
+14:40:25.807: ptop orginal point 611 308
+14:40:25.807: ptop now point 610 308
+14:40:25.809: start ptop
+14:40:25.810: ptop orginal point 661 218
+14:40:25.810: ptop now point 660 218
+14:40:25.810: start ptop
+14:40:25.810: ptop orginal point 661 308
+14:40:25.810: ptop now point 660 308
+14:40:25.813: start ptop
+14:40:25.813: ptop orginal point 711 218
+14:40:25.814: ptop now point 710 218
+14:40:25.814: start ptop
+14:40:25.814: ptop orginal point 711 308
+14:40:25.814: ptop now point 710 308
+14:40:37.403: QPoint(124,124)
+14:40:37.403: QPoint(124,99)
+14:40:37.403: item 3
+14:40:38.481: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006", "rect007")) ) ) 
+14:40:38.532: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005", "rect006")) ) ) 
+14:40:38.578: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004", "rect005")) ) ) 
+14:40:38.625: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003", "rect004")) ) ) 
+14:40:38.671: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+14:40:38.716: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+14:40:38.760: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+14:40:38.795: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+14:40:38.830: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+14:40:42.599: func 0 979.907 413.224
+14:40:42.638: create ("rect000")
+14:40:42.639: QMap(("Column", QVariant(double, 413.224) ) ( "Column2" ,  QVariant(double, 644.047) ) ( "Row" ,  QVariant(double, 979.907) ) ( "Row2" ,  QVariant(double, 1148.11) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+14:40:42.639: create template "rect000" imgList size 1 0
+14:40:42.662: creat point 979.907 413.224 1148.11 644.047
+14:40:43.052: Create_template 1
+14:40:43.094: templateID get
+14:40:43.094: "生成模板时间:" 456 ms
+14:40:43.123: rowcount 0
+14:40:43.123: roiList size 1
+14:40:43.123: ""
+14:40:43.123: 4294901760 0 0
+14:40:53.556: CreateLLTDevice OK 
+
+14:40:53.761: rowcount 0
+14:40:53.761: roiList size 1
+14:40:55.258: rowcount 1
+14:40:55.258: roiList size 1
+14:40:55.259: read "D:/test0.tif"
+14:40:55.284: 800 1300 real
+14:40:55.388: 800 1300
+14:40:55.389: read finish
+14:41:01.500: func 0 975.101 389.18
+14:41:01.539: create ("rect000", "rect001")
+14:41:01.539: QMap(("Column", QVariant(double, 413.224) ) ( "Column2" ,  QVariant(double, 644.047) ) ( "Row" ,  QVariant(double, 979.907) ) ( "Row2" ,  QVariant(double, 1148.11) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+14:41:01.540: create template "rect000" imgList size 1 0
+14:41:01.562: creat point 979.907 413.224 1148.11 644.047
+14:41:01.950: Create_template 1
+14:41:01.993: templateID get
+14:41:01.993: QMap(("Column", QVariant(double, 389.18) ) ( "Column2" ,  QVariant(double, 653.664) ) ( "Row" ,  QVariant(double, 975.101) ) ( "Row2" ,  QVariant(double, 1143.31) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+14:41:01.993: create template "rect001" imgList size 1 0
+14:41:02.018: creat point 975.101 389.18 1143.31 653.664
+14:41:02.512: Create_template 1
+14:41:02.559: templateID get
+14:41:02.560: "生成模板时间:" 1021 ms
+14:41:02.590: rowcount 1
+14:41:02.590: roiList size 2
+14:41:02.590: ""
+14:41:02.590: 4294901760 0 0
+14:41:10.300: CreateLLTDevice OK 
+
+14:41:10.491: rowcount 0
+14:41:10.491: roiList size 2
+14:41:12.177: rowcount 2
+14:41:12.178: roiList size 2
+14:41:12.178: read "D:/test0.tif"
+14:41:12.204: 800 1300 real
+14:41:12.310: 800 1300
+14:41:12.310: read finish
+14:41:13.442: QPoint(121,74)
+14:41:13.443: QPoint(121,49)
+14:41:13.443: item 1
+14:41:14.468: del "0" QMap(("0", QVariant(QStringList, ("rect000")) ) ) 
+14:41:15.222: QPoint(164,37)
+14:41:15.223: QPoint(164,12)
+14:41:15.223: item 0
+14:41:15.701: del "0" QMap(("0", QVariant(QStringList, ()) ) ) 
+14:41:19.387: func 0 996.727 413.224
+14:41:19.426: create ("rect000")
+14:41:19.426: QMap(("Column", QVariant(double, 413.224) ) ( "Column2" ,  QVariant(double, 648.855) ) ( "Row" ,  QVariant(double, 996.727) ) ( "Row2" ,  QVariant(double, 1138.5) ) ( "color" ,  QVariant(int, -65536) ) ( "func" ,  QVariant(int, 0) ) ( "index" ,  QVariant(int, 0) ) ( "max" ,  QVariant(double, 10) ) ( "min" ,  QVariant(double, 0) ) ( "team" ,  QVariant(int, 0) ) ) 
+14:41:19.426: create template "rect000" imgList size 1 0
+14:41:19.449: creat point 996.727 413.224 1138.5 648.855
+14:41:19.775: Create_template 1
+14:41:19.812: templateID get
+14:41:19.813: "生成模板时间:" 387 ms
+14:41:19.840: rowcount 0
+14:41:19.840: roiList size 1
+14:41:19.841: ""
+14:41:19.841: 4294901760 0 0
+14:42:16.406: CreateLLTDevice OK 
+
+14:42:16.657: rowcount 0
+14:42:16.658: roiList size 1
+14:42:18.220: rowcount 1
+14:42:18.221: roiList size 1
+14:42:18.221: read "D:/test0.tif"
+14:42:18.246: 800 1300 real
+14:42:18.351: 800 1300
+14:42:18.351: read finish
+14:42:27.373: func 1 912.624 71.7995
+14:42:27.405: rowcount 1
+14:42:27.405: roiList size 2
+14:42:27.406: ""
+14:42:27.406: 4294901760 0 1
+14:42:35.651: center QPoint(611,208)
+14:42:35.651: func 2 201.945 144.123
+14:42:35.695: rowcount 2
+14:42:35.695: roiList size 3
+14:42:35.696: ""
+14:42:35.696: 4294901760 0 2
+14:42:44.269: center QPoint(1014,344)
+14:42:44.270: func 2 994.921 293.195
+14:42:44.314: rowcount 3
+14:42:44.314: roiList size 4
+14:42:44.315: ""
+14:42:44.315: 4294901760 0 2
+14:43:48.792: CreateLLTDevice OK 
+
+14:43:49.037: rowcount 0
+14:43:49.038: roiList size 4
+14:43:51.172: rowcount 4
+14:43:51.172: roiList size 4
+14:43:51.173: read "D:/test0.tif"
+14:43:51.198: 800 1300 real
+14:43:51.351: 800 1300
+14:43:51.351: read finish
+14:49:39.149: CreateLLTDevice OK 
+
+14:49:39.352: rowcount 0
+14:49:39.352: roiList size 4
+14:49:41.302: rowcount 4
+14:49:41.302: roiList size 4
+14:49:41.303: read "D:/test0.tif"
+14:49:41.328: 800 1300 real
+14:49:41.490: 800 1300
+14:49:41.490: read finish
+14:54:17.646: CreateLLTDevice OK 
+
+14:54:17.868: rowcount 0
+14:54:17.869: roiList size 4
+14:54:19.441: rowcount 4
+14:54:19.441: roiList size 4
+14:54:19.442: read "D:/test0.tif"
+14:54:19.467: 800 1300 real
+14:54:19.616: 800 1300
+14:54:19.616: read finish
+14:54:46.378: QPoint(83,135)
+14:54:46.378: QPoint(83,110)
+14:54:46.378: item 3
+14:54:47.403: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+14:54:48.390: QPoint(84,110)
+14:54:48.390: QPoint(84,85)
+14:54:48.391: item 2
+14:54:48.943: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+15:15:42.915: CreateLLTDevice OK 
+
+15:15:43.136: rowcount 0
+15:15:43.136: roiList size 2
+15:30:59.224: rowcount 2
+15:30:59.224: roiList size 2
+15:30:59.224: read "D:/test0.tif"
+15:30:59.250: 800 1300 real
+15:30:59.356: 800 1300
+15:30:59.357: read finish
+15:35:33.573: 4283804160
+15:35:33.573: 85 170 0
+15:35:40.671: center QPoint(611,208)
+15:35:40.671: func 2 189.334 148.74
+15:35:40.720: rowcount 2
+15:35:40.720: roiList size 3
+15:35:40.721: ""
+15:35:40.721: 4283804160 0 2
+15:43:52.606: 0
+15:43:55.693: "D:/test1.tif"
+15:43:55.801: rowcount 3
+15:43:55.802: roiList size 3
+15:43:55.802: read "D:/test1.tif"
+15:43:55.826: 800 1300 real
+15:43:55.930: 800 1300
+15:43:55.931: read finish
+15:43:59.452: "D:/test2.tif"
+15:43:59.538: rowcount 3
+15:43:59.538: roiList size 3
+15:43:59.539: read "D:/test2.tif"
+15:43:59.563: 800 1300 real
+15:43:59.675: 800 1300
+15:43:59.676: read finish
+15:44:02.305: "D:/test3.tif"
+15:44:02.389: rowcount 3
+15:44:02.389: roiList size 3
+15:44:02.390: read "D:/test3.tif"
+15:44:02.413: 800 1300 real
+15:44:02.520: 800 1300
+15:44:02.520: read finish
+15:44:04.500: display 3
+15:44:05.556: display 2
+15:44:06.351: display 1
+15:44:07.232: display 0
+15:44:07.962: display 1
+15:44:08.810: display 2
+15:44:09.300: display 3
+15:44:10.082: display 0
+15:44:13.042: display 1
+15:44:14.401: display 0
+16:03:00.758: display 1
+16:03:03.722: display 0
+16:03:07.562: display 1
+16:03:24.578: display 3
+16:03:40.617: rowcount 3
+16:03:40.617: roiList size 3
+16:03:40.619: Error during SetProfileConfig 
+
+16:03:40.619: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:03:40.619: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+16:03:40.619: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:03:40.619: 
+Demonstrate the profile transfer via callback function
+
+16:03:40.620: Enable the measurement
+
+16:03:40.620: Error during TransferProfiles 
+
+16:03:40.620: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:03:49.883: display 2
+16:03:57.578: display 1
+16:03:58.507: display 0
+16:04:10.858: display 0
+16:04:11.842: display 1
+16:04:17.027: display 0
+16:04:18.118: display 1
+16:04:18.879: display 0
+16:05:02.548: display 3
+16:05:10.282: display 0
+16:05:11.658: display 3
+16:05:41.027: display 2
+16:05:46.957: display 3
+16:06:00.402: display 1
+16:06:02.642: display 0
+16:06:05.491: display 1
+16:06:06.878: display 2
+16:06:07.700: display 3
+16:06:11.221: display 0
+16:18:36.598: display 1
+16:19:23.427: display 0
+16:19:26.557: display 1
+16:19:27.597: display 0
+16:19:29.323: display 1
+16:19:31.523: display 0
+16:19:34.227: display 1
+16:19:48.843: display 1
+16:19:49.353: display 1
+16:19:50.267: display 0
+16:19:51.596: display 1
+16:19:52.868: display 0
+16:20:34.810: display 1
+16:20:42.739: display 3
+16:20:48.783: display 0
+16:20:50.237: display 1
+16:20:50.883: display 0
+16:20:51.797: display 1
+16:22:58.237: display 1
+16:22:59.843: display 0
+16:23:01.558: display 1
+16:23:02.747: display 0
+16:23:04.078: display 1
+16:23:06.643: display 0
+16:23:09.754: display 1
+16:23:17.695: Accepted
+16:23:21.452: start
+16:23:21.453: rowcount 0
+16:23:21.458: 4
+16:23:21.469: clear
+16:23:21.487: rowcount 3
+16:23:21.488: roiList size 3
+16:23:21.490: Error during SetProfileConfig 
+
+16:23:21.491: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:23:21.492: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+16:23:21.493: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:23:21.494: 
+Demonstrate the profile transfer via callback function
+
+16:23:21.494: Enable the measurement
+
+16:23:21.495: Error during TransferProfiles 
+
+16:23:21.495: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:23:26.122: "D:/test0.tif"
+16:23:26.166: rowcount 3
+16:23:26.167: roiList size 3
+16:23:26.168: read "D:/test0.tif"
+16:23:26.289: 800 1300 real
+16:23:26.402: 800 1300
+16:23:26.402: read finish
+16:23:29.685: "D:/test1.tif"
+16:23:29.790: rowcount 3
+16:23:29.791: roiList size 3
+16:23:29.792: read "D:/test1.tif"
+16:23:29.914: 800 1300 real
+16:23:29.927: mirror
+16:23:30.022: 800 1300
+16:23:30.023: read finish
+16:23:33.578: display 0
+16:23:34.428: display 1
+16:23:35.451: display 0
+16:23:40.100: "D:/test2.tif"
+16:23:40.219: rowcount 3
+16:23:40.219: roiList size 3
+16:23:40.221: read "D:/test2.tif"
+16:23:40.342: 800 1300 real
+16:23:40.442: 800 1300
+16:23:40.443: read finish
+16:23:42.348: "D:/test3.tif"
+16:23:42.429: rowcount 3
+16:23:42.430: roiList size 3
+16:23:42.431: read "D:/test3.tif"
+16:23:42.556: 800 1300 real
+16:23:42.569: mirror
+16:23:42.661: 800 1300
+16:23:42.662: read finish
+16:24:01.098: display 0
+16:24:02.348: display 1
+16:24:03.788: display 0
+16:24:04.690: display 1
+16:24:05.357: display 0
+16:24:07.042: display 1
+16:24:08.338: display 0
+16:24:10.139: display 1
+16:24:11.339: display 0
+16:24:12.259: display 1
+16:24:12.963: display 0
+16:24:13.579: display 1
+16:24:14.142: display 0
+16:24:14.603: display 1
+16:24:15.001: display 0
+16:24:15.360: display 1
+16:24:16.267: display 1
+16:24:16.668: display 0
+16:24:17.078: display 1
+16:24:17.458: display 0
+16:24:18.628: display 1
+16:24:19.944: display 0
+16:24:21.117: display 1
+16:24:22.882: display 0
+16:24:24.467: display 1
+16:24:31.198: display 0
+16:24:47.039: display 1
+16:24:54.138: display 0
+16:24:55.571: display 1
+16:24:56.718: display 0
+16:24:57.442: display 1
+16:24:58.027: display 0
+16:24:59.402: display 1
+16:27:05.491: display 0
+16:27:07.139: display 1
+16:27:08.758: display 0
+16:47:11.007: start
+16:47:11.008: rowcount 0
+16:47:11.013: 4
+16:47:11.027: clear
+16:47:11.043: rowcount 3
+16:47:11.044: roiList size 3
+16:47:11.045: Error during SetProfileConfig 
+
+16:47:11.047: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:47:11.048: Error during SetFeature(FEATURE_FUNCTION_TRIGGER) 
+
+16:47:11.048: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:47:11.049: 
+Demonstrate the profile transfer via callback function
+
+16:47:11.050: Enable the measurement
+
+16:47:11.051: Error during TransferProfiles 
+
+16:47:11.052: There is no connection to the scanCONTROL -> call Connect  
+
+
+16:47:12.389: A error occured during searching for connected scanCONTROL -253 
+
+16:49:21.079: CreateLLTDevice OK 
+
+16:49:21.304: rowcount 0
+16:49:21.304: roiList size 3
+16:50:12.174: start
+16:50:12.174: rowcount 0
+16:50:12.174: clear
+16:50:12.187: rowcount 3
+16:50:12.187: roiList size 3
+16:56:12.738: CreateLLTDevice OK 
+
+16:56:13.050: rowcount 0
+16:56:13.050: roiList size 3
+16:56:15.915: rowcount 3
+16:56:15.915: roiList size 3
+16:56:15.916: read "D:/test3.tif"
+16:56:15.941: 800 1300 real
+16:56:16.064: 800 1300
+16:56:16.064: read finish
+16:56:27.900: 0
+16:56:32.030: start
+16:56:32.030: rowcount 0
+16:56:32.032: 1
+16:56:32.036: clear
+16:56:32.071: rowcount 3
+16:56:32.072: roiList size 3
+16:56:39.509: 0
+16:56:42.244: "D:/test0.tif"
+16:56:42.302: rowcount 3
+16:56:42.302: roiList size 3
+16:56:42.303: read "D:/test0.tif"
+16:56:42.330: 800 1300 real
+16:56:42.483: 800 1300
+16:56:42.484: read finish
+17:03:44.902: "D:/test1.tif"
+17:03:44.994: rowcount 3
+17:03:44.994: roiList size 3
+17:03:44.994: read "D:/test1.tif"
+17:03:45.017: 800 1300 real
+17:03:45.030: mirror
+17:03:45.130: 800 1300
+17:03:45.130: read finish
+17:03:46.943: display 0
+17:03:48.682: display 1
+17:03:49.752: display 0
+17:03:51.292: display 1
+17:03:53.492: display 0
+17:04:01.711: display 1
+17:04:22.754: display 0
+17:14:52.772: display 0
+17:15:00.403: Accepted
+17:15:02.052: start
+17:15:02.052: rowcount 0
+17:15:02.055: 2
+17:15:02.062: clear
+17:15:02.078: rowcount 3
+17:15:02.078: roiList size 3
+17:15:07.809: "D:/test0.tif"
+17:15:07.867: rowcount 3
+17:15:07.867: roiList size 3
+17:15:07.868: read "D:/test0.tif"
+17:15:07.993: 800 1300 real
+17:15:08.112: 800 1300
+17:15:08.112: read finish
+17:15:10.082: "D:/test1.tif"
+17:15:10.168: rowcount 3
+17:15:10.168: roiList size 3
+17:15:10.169: read "D:/test1.tif"
+17:15:10.191: 800 1300 real
+17:15:10.291: 800 1300
+17:15:10.292: read finish
+17:15:13.402: display 0
+17:15:20.001: display 1
+17:15:24.332: display 0
+17:15:25.782: display 1
+17:15:26.820: display 0
+17:15:47.131: display 0
+17:15:53.753: Accepted
+17:15:55.026: start
+17:15:55.026: rowcount 0
+17:15:55.028: 2
+17:15:55.036: clear
+17:15:55.049: rowcount 3
+17:15:55.049: roiList size 3
+17:15:59.451: "D:/test0.tif"
+17:15:59.499: rowcount 3
+17:15:59.500: roiList size 3
+17:15:59.500: read "D:/test0.tif"
+17:15:59.523: 800 1300 real
+17:15:59.636: 800 1300
+17:15:59.636: read finish
+17:16:01.766: "D:/test1.tif"
+17:16:01.858: rowcount 3
+17:16:01.858: roiList size 3
+17:16:01.859: read "D:/test1.tif"
+17:16:01.882: 800 1300 real
+17:16:01.895: mirror
+17:16:01.989: 800 1300
+17:16:01.989: read finish
+17:16:03.834: display 0
+17:16:09.621: display 1
+17:16:26.633: display 0

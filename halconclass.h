@@ -11,10 +11,7 @@
 #include <fstream>
 #include <QTextCodec>
 #include <iostream>
-#include <pcl/point_types.h>
-#include <pcl/io/pcd_io.h>
-#include "pcl/PCL_Library_Dll.h"
-#include "calculategroup.h"
+
 using namespace std;
 using namespace Halcon;
 void CPPExpDefaultExceptionHandler(const Halcon::HException& except);
@@ -28,16 +25,35 @@ class halconClass:public QThread
 public:
 
     halconClass(QObject *parent = 0);
-    typedef int (*ComputePointNormal2)(PointCloud::Ptr &cloud, Vector4f &normal_vec);
-    typedef int (*Dis_point2plane)(PointT &point,Vector4f &normal_vec,double &_result);
-    typedef int (*Calculate)(PointCloud::Ptr &, double &);
-    typedef int (*CalculateFlatness2) (PointCloud::Ptr &cloud, double &);
-    typedef int (*GetChildPoint)(PointCloud::Ptr &inCloud,Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,PointCloud::Ptr outCloud);
-    typedef int (*Points2Cloud3)(float* iX,float* iY,float* iZ,int iLength,PointCloud::Ptr inCloud);
-    typedef int (*CalculateFlatness)(PointCloud::Ptr &inCloud, double &_result);
+    struct VectorInfo{
+        float _ratioX;
+        float _ratioY;
+        float _ratioZ;
+        float _constant;
+        float _curvature;
+        float _reserve;
+    };
+
+    struct pointXYZ
+    {
+        float _PointX;
+        float _PointY;
+        float _PointZ;
+    };
+
+
     typedef int (*CT)(Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,HTuple hv_mode,HTuple hv__min,HTuple hv__max,HTuple *hv_TemplateID);
     typedef int (*byteMapperTable)(Halcon::Hobject ho_inImage,Halcon::Hobject *ho_outImage,HTuple hv__min,HTuple hv__max);
+    typedef int (*compute_PointNormal)(float iX[],float iY[],float iZ[],int length,VectorInfo* _vectorInfo);
+    /*使用网友改编的算法 返回平面方程，Z值永远为1*/
+    typedef int (*compute_PointNormal2)(float iX[],float iY[],float iZ[],int length,VectorInfo* _vectorInfo);
 
+    /*用第一种方法计算平面度*/
+    typedef int (*Calculate_Flatness)(float iX[],float iY[],float iZ[],int length, double &_result);
+    /*用第二种方法计算平面度*/
+    typedef int (*Calculate_Flatness2)(float iX[],float iY[],float iZ[],int length, double &_result);
+    /*计算点到面的距离*/
+    typedef int (*Distance_point2plane)(pointXYZ _point,VectorInfo _vectorInfo,double &_result);
 
     void startThread();
     void readMTX(QString str);
@@ -77,7 +93,7 @@ private:
     bool is3D;
     double *imgData;
     int recvCount;
-    PointCloud::Ptr *inCloud;
+
     Hobject result_img,Image,RGBImage,tmpImage;
 
     HTuple minLength;
@@ -127,6 +143,9 @@ public slots:
      void disp_img();
      void zoomIn();
      void zoomOut();
+     QPoint getPoint();
+     QPoint findCenter(HTuple Row,HTuple Column,HTuple Row2,HTuple Column2);
+     QPoint findCenter(double Row,double Column,double Row2,double Column2);
     void read_img(QString str);
     void getImagebyPointer1(double *pdValueZ,int width,int height);
      void getImagebyPointer3(double *x,double *y,double *z,int width,int height);

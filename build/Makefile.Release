@@ -715,27 +715,38 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HTextResult.h" \
 		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HInterfaceCPP.h" \
 		"C:\Program Files\MVTec\HALCON-10.0\include\hlib\HInstance.h" \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtSerialPort\QSerialPort \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtSerialPort\qserialport.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtSerialPort\qserialportglobal.h \
-		..\filedialog.h \
+		..\settingDialog.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QDialog \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qdialog.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QFileDialog \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qfiledialog.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdir.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfileinfo.h \
-		..\dialogcameralight.h \
-		..\settingDialog.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSettings \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDirIterator \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdiriterator.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QMessageBox \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qmessagebox.h \
+		..\imglistview.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\Qlabel \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlabel.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QHBoxLayout \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTextCodec \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtextcodec.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QEvent \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QMouseEvent \
 		..\halconclass.h \
 		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HIOStream.h" \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QWindow \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qwindow.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QEvent \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QMargins \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QRect \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qsurface.h \
@@ -743,1038 +754,9 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTime \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdatetime.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QFile \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\point_types.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\pcl_macros.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\pcl_config.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\cstdint.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\select_compiler_config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\select_stdlib_config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\no_tr1\utility.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\select_platform_config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\posix_features.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\suffix.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\non_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\limits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\limits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\endian.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\eigen.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\StdVector" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Core" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\DisableStupidWarnings.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\Macros.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\Constants.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\ForwardDeclarations.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\Meta.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\XprHelper.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\StaticAssert.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\Memory.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\NumTraits.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\MathFunctions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\GenericPacketMath.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\SSE\PacketMath.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\SSE\MathFunctions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\SSE\Complex.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\AltiVec\PacketMath.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\AltiVec\Complex.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\NEON\PacketMath.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\NEON\Complex.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\Default\Settings.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Functors.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DenseCoeffsBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DenseBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\BlockMethods.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\MatrixBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\CommonCwiseUnaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\CommonCwiseBinaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\MatrixCwiseUnaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\MatrixCwiseBinaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\EigenBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Assign.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\BlasUtil.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DenseStorage.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\NestByValue.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ForceAlignedAccess.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ReturnByValue.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\NoAlias.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\PlainObjectBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Matrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Array.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CwiseBinaryOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CwiseUnaryOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CwiseNullaryOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CwiseUnaryView.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\SelfCwiseBinaryOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Dot.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\StableNorm.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\MapBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Stride.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Map.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Block.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\VectorBlock.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Transpose.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DiagonalMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Diagonal.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DiagonalProduct.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\PermutationMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Transpositions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Redux.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Visitor.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Fuzzy.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\IO.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Swap.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CommaInitializer.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Flagged.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ProductBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Product.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\TriangularMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\SelfAdjointView.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\SolveTriangular.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\Parallelizer.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\CoeffBasedProduct.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\GeneralBlockPanelKernel.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\GeneralMatrixVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\GeneralMatrixMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\GeneralMatrixMatrixTriangular.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\SelfadjointMatrixVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\SelfadjointMatrixMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\SelfadjointProduct.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\SelfadjointRank2Update.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\TriangularMatrixVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\TriangularMatrixMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\TriangularSolverMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\TriangularSolverVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\BandMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\BooleanRedux.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Select.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\VectorwiseOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Random.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Replicate.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Reverse.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ArrayBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\ArrayCwiseUnaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\ArrayCwiseBinaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ArrayWrapper.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\GlobalFunctions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\ReenableStupidWarnings.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Eigen2Support" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Macros.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Memory.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Meta.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Lazy.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Cwise.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\CwiseOperators.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\TriangularSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Block.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\VectorBlock.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Minor.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\MathFunctions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\StlSupport\StdVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\StlSupport\details.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Eigenvalues" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Cholesky" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\misc\Solve.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Cholesky\LLT.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Cholesky\LDLT.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Jacobi" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Jacobi\Jacobi.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Householder" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Householder\Householder.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Householder\HouseholderSequence.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Householder\BlockHouseholder.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\LU" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\misc\Kernel.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\misc\Image.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\FullPivLU.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\PartialPivLU.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\Determinant.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\Inverse.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\arch\Inverse_SSE.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\LU.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\Tridiagonalization.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\RealSchur.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\EigenvaluesCommon.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\HessenbergDecomposition.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\EigenSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\SelfAdjointEigenSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\GeneralizedSelfAdjointEigenSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\ComplexSchur.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\ComplexEigenSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\MatrixBaseEigenvalues.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Geometry" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\SVD" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\QR" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\QR\HouseholderQR.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\QR\FullPivHouseholderQR.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\QR\ColPivHouseholderQR.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\QR.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\SVD\JacobiSVD.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\SVD\UpperBidiagonalization.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\SVD.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\OrthoMethods.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\EulerAngles.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Homogeneous.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\RotationBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Rotation2D.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Quaternion.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\AngleAxis.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Transform.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Translation.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Scaling.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Hyperplane.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\ParametrizedLine.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\AlignedBox.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Umeyama.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\arch\Geometry_SSE.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\All.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\RotationBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Rotation2D.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Quaternion.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\AngleAxis.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Transform.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Translation.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Scaling.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\AlignedBox.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Hyperplane.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\ParametrizedLine.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Dense" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\impl\eigen.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\ros\register_point_struct.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\point_traits.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\sensor_msgs\PointField.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\shared_ptr.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\shared_ptr.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\shared_ptr_nmt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\current_function.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\checked_delete.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\throw_exception.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\exception\detail\attribute_noreturn.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\workaround.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\exception\exception.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_has_sync.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_pthreads.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_gcc_x86.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_win32.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\interlocked.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_sync.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_gcc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\no_tr1\memory.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\shared_count.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\bad_weak_ptr.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_nt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\sp_typeinfo.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_spin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_pool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_pt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_gcc_arm.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\yield_k.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_sync.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_w32.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_nt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_pt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_x86.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_ia64.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_acc_ia64.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_cw_ppc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_ppc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_mips.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_sync.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_sparc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_w32.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_aix.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\quick_allocator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\lightweight_mutex.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\lwm_nop.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\lwm_pthreads.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\lwm_win32_cs.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\type_with_alignment.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\value_wknd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\static_cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\workaround.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\integral.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\msvc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\eti.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\int.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\int_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\adl_barrier.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\adl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\intel.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\gcc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\nttp_decl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\nttp.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\cat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\config\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\integral_wrapper.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\integral_c_tag.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\static_constant.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\na_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\lambda_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\void_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\na.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\bool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\bool_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\na_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\ctps.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\lambda.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\ttp.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\lambda_arity_param.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\template_arity_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\arity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\dtp.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\preprocessor.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\comma_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\punctuation\comma_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\iif.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\bool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\facilities\empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\punctuation\comma.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repeat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\repeat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\debug\error.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\detail\auto_rec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\detail\dmc\auto_rec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\tuple\eat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\inc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\inc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\def_params_tail.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\limits\arity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\and.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\bitand.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\identity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\facilities\identity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\filter_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\sub.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\tuple.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\sub.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\dec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\edg\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\expr_iif.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\adt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\detail\is_binary.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\detail\check.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\compl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\dmc\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\tuple\elem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\facilities\overload.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\variadic\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\tuple\rem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\variadic\elem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\fold_right.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\edg\fold_right.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\fold_right.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\reverse.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\detail\edg\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\detail\msvc\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\detail\dmc\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\detail\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\add.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\overload_resolution.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\lambda_support.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\yes_no.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\arrays.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\tuple\to_list.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\for_each_i.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\detail\edg\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\detail\msvc\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\detail\dmc\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\detail\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\transform.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\append.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\alignment_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\intrinsics.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_same.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\yes_no_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\ice_and.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_lvalue_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\wrap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\bool_trait_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\template_arity_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\integral_constant.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\integral_c.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\integral_c_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\bool_trait_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_rvalue_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\ice.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\ice_or.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\ice_not.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\ice_eq.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_volatile.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\cv_traits_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_bounds.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_bounds.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\typeof.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_array.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\type_trait_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\type_trait_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\false_result.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_abstract.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\static_assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_class.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_union.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_cv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\broken_compiler_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_cv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_const.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_member_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_member_function_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\is_mem_fun_pointer_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\iterate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\iteration\iterate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\array\elem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\array\data.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\array\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\slot\slot.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\slot\detail\def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\enum_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\is_mem_fun_pointer_tester.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\is_function_ptr_tester.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_scalar.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_arithmetic.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_integral.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_float.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_convertible.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_void.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_rvalue_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_function.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\is_function_ptr_helper.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_polymorphic.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\size_t_trait_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\size_t.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\size_t_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\size_t_trait_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_pod.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_convertible.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\memory_order.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\operator_bool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_all_extents.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_all_extents.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\not.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\nested_type_wknd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\pp_counter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\vector.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\limits\vector.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\stringize.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\use_preprocessed.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\include_preprocessed.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\compiler.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\sequence_wrapper.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\enum_params_with_a_default.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_params_with_a_default.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\facilities\intercept.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_binary_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\count_args.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\expr_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\expr_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\repeat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\enum_shifted_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_shifted_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\for_each.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\is_sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\and.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\logical_op.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\ext_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\dec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\begin_end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\begin_end_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\begin_end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\sequence_tag_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\void.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\eval_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\has_xxx.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\type_wrapper.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\has_xxx.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\msvc_typename.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_trailing_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\traits_lambda_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\sequence_tag.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_tag.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\is_msvc_eti_arg.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\identity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_is_class.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\apply.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\apply_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\default_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\apply_wrap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_apply.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\has_apply.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_never_true.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\add.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\bcc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_dtw.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\placeholders.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\arg.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\arg_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\na_assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\arity_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\arg_typedef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\lambda.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\bind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\bind_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\bind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\dmc_ambiguous_ctps.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\next.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\next_prior.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\common_name_wknd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\protect.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\partial_spec_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\full_lambda.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\quote.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\template_arity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_rebind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\subseq.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\first_n.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\detail\split.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\rest_n.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\seq.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\elem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\lambda_no_ctps.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\is_placeholder.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\deref.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\unwrap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\ref.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\addressof.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\value_init.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\aligned_storage.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\cv_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_const.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_volatile.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_cv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_const.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_const.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_volatile.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_volatile.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\swap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\swap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\for_each.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\transform.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\repeat_from_to.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\distances.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\common.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\pcl_base.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\sensor_msgs\PointCloud2.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\std_msgs\Header.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\point_cloud.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\exceptions.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\cloud_properties.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\channel_properties.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\for_each_type.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\remove_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\fold.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\O1_size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\O1_size_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\O1_size_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\long.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\long_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\forwarding.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\fold_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\fold_impl_body.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\limits\unrolling.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\reverse_fold.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\reverse_fold_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\reverse_fold_impl_body.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\inserter_algorithm.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\back_inserter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\push_back.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\push_back_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\push_back_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\inserter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\front_inserter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\push_front.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\push_front_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\push_front_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\clear.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\clear_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\clear_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\contains.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\contains_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\contains_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\find_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\find_if_pred.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\iter_apply.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\iter_fold_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\logical.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\or.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\always.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\pair.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_eti_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\iter_fold_if_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\same_as.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\lambda_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\size_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\size_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\distance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\distance_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\iter_fold.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\iter_fold_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\tag.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\PointIndices.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\console\print.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\impl\common.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\io\pcd_io.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\io\file_io.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\io.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\at_key.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\enable_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\is_sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\sequence_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\tag_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\tag_of_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\is_mpl_sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\find_if_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\detail\find_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\advance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\advance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\next.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\prior.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\category_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\category_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_base_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_base_and_derived.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\distance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\distance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\equal_to.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\is_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\blank.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\blank_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\templated_streams.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_stateless.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\has_trivial_constructor.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\has_trivial_copy.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\has_trivial_destructor.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\is_segmented.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\cons_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\segmented_fold_until_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\result_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\declval.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\void.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\deref.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\iterator_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\segments.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\segmented_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\segmented_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\iterator_facade.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\deref_data.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\key_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\value_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\value_of_data.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\segmented_equal_to.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\segmented_next_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\cons.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\access.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\cons_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\deref_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\next_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\value_of_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\equal_to_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\equal_to.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\comparison_op.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\numeric_op.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\numeric_cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\numeric_cast_utils.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\list_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\limits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list10_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list20_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list30_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list40_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list50_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\value_at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\empty_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\mpl\convert_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\size_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\value_at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\is_segmented_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\segments_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\segmented_iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\transformation\push_back.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\as_fusion_element.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\joint_view.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\joint_view_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\is_view.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\is_view.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\plus.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\arithmetic_op.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\largest_int.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\mpl\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\adapted\mpl\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\adapted\mpl\mpl_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\mpl_iterator_category.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\prior.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\advance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\advance_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\less.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\negate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\advance_forward.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\advance_backward.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\mpl\fusion_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\iterator_tags.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\mpl\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\adapted\mpl\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\joint_view_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\deref_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\adapt_deref_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\next_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\value_of_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\adapt_value_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\deref_data_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\value_of_data_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\key_of_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\inherit.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\empty_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\single_view.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\single_view_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\deref_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\next_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\prior_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\advance_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\distance_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\minus.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\equal_to_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\value_of_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\size_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\value_at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\value_at.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\transformation\push_front.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\reverse_cons.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\segment_sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\detail\segmented_find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\find_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\segmented_fold_until.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\ros\conversions.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\sensor_msgs\Image.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\foreach.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\noncopyable.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\vc6\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\implementation_help.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\common.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\sfinae.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\result_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\mutable_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\remove_extent.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\extract_optional_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\const_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\const_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\value_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\rend.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\reverse_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\reverse_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\base_from_member.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\binary.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\deduce_d.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\cat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\mod.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\detail\div_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\comparison\less_equal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\not.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\next_prior.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_adaptor.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_categories.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\detail\config_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\detail\config_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_facade.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\interoperable.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\detail\facade_iterator_category.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\indirect_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\is_function_ref_tester.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\detail\enable_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\implicit_cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\rbegin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\foreach_fwd.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\impl\io.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\concatenate.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\old_numeric_cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\converter_policies.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\no_tr1\cmath.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\converter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\conversion_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\conversion_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\meta.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\int_float_mixture.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\int_float_mixture_enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\sign_mixture.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\sign_mixture_enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\udt_builtin_mixture.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\udt_builtin_mixture_enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\is_subranged.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\multiplies.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\times.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\converter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\bounds.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\bounds.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\numeric_cast_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\numeric_cast_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\preprocessed\numeric_cast_traits_common.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\preprocessed\numeric_cast_traits_long_long.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\io\impl\pcd_io.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\std_containers_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\std\string_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\yes_no_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\sequence_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\std\list_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\std\slist_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\trim.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\as_literal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\as_literal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\detail_str.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\size_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\value_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\iterator_range_core.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\functions.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\difference_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\distance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\algorithm\equal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\concepts.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept_check.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\msvc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\backward_compatibility.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\has_constraints.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\borland.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\general.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\conversion_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\usage.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\concept_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\for_each_i.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\concept_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_concepts.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\misc_concept.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\safe_bool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\iterator_range_io.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\str_types.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\size_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\trim.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\classification.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\classification.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\predicate_facade.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\case_conv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\transform_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\function_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\case_conv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\make_unsigned.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_signed.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_unsigned.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\predicate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\compare.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\finder.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\constants.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\finder.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\predicate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\split.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\iter_find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\concept.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\find_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\find_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\detail\prologue.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\no_tr1\functional.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\integer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\integer_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\integer_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\composite_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function_equal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mem_fn.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\mem_fn.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\get_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\mem_fn_template.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\mem_fn_vw.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\mem_fn_cc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function0.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\detail\maybe_include.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function_template.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\no_exceptions_support.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function1.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function2.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function3.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function4.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function5.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function6.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function7.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function8.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function9.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function10.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\util.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\join.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\replace.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\find_format.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\find_format.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\find_format_store.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\replace_storage.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\find_format_all.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\formatter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\formatter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\erase.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\io\lzf.h" \
-		..\pcl\PCL_Library_Dll.h \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\features\normal_3d.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\features\feature.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\is_placeholder.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\arg.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\visit_each.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\storage.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind_template.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind_cc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind_mf_cc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind_mf2_cc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\placeholders.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\centroid.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\impl\centroid.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\search.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\features\impl\feature.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\pcl_search.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\kdtree.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\kdtree\kdtree.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\point_representation.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\kdtree\kdtree_flann.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\kdtree\flann.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\flann.hpp" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\general.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\defines.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\config.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\matrix.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\params.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\any.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\saving.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\nn_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\result_set.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\tbb\bodies.hpp" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\all_indices.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\kdtree_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\dynamic_bitset.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\dynamic_bitset.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\dynamic_bitset\dynamic_bitset.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\dynamic_bitset\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\dynamic_bitset_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\dynamic_bitset.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\pending\lowest_bit.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\pending\integer_log2.hpp" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\dist.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\heap.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\allocator.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\random.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\kdtree_single_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\kdtree_cuda_3d_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\kmeans_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\logger.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\composite_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\linear_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\hierarchical_clustering_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\lsh_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\lsh_table.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\autotuned_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\nn\ground_truth.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\nn\index_testing.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\timer.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\sampling.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\octree.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_search.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_pointcloud.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_base.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_nodes.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_container.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_key.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_iterator.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_node_pool.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree2buf_base.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\organized.h" \
-		"C:\Program Files\MVTec\HALCON-10.0\include\CPP\HalconCpp.h" \
-		"C:\Program Files\MVTec\HALCON-10.0\include\CPP\HIOStream.h" \
-		..\dialogimgparam.h \
 		..\imgview.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QFrame \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qframe.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QGraphicsView \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgraphicsview.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qpainter.h \
@@ -1784,20 +766,11 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgraphicsscene.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDir \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDirIterator \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdiriterator.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QPixmap \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlabel.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QtMath \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qmath.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QMouseEvent \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QVBoxLayout \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayout.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QHBoxLayout \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QListWidget \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlistwidget.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlistview.h \
@@ -1823,7 +796,6 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qtablewidget.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qtableview.h \
 		..\imgListView.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\Qlabel \
 		..\reflectcontrol.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\QUdpSocket \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\qudpsocket.h \
@@ -1834,8 +806,6 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\qtcpserver.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\QTcpSocket \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtNetwork\qtcpsocket.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QMessageBox \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qmessagebox.h \
 		..\summarizing.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QTableWidgetItem \
 		..\record.h \
@@ -1859,7 +829,6 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QStringListModel \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qstringlistmodel.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QWheelEvent \
-		..\settings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QtGui \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QtGuiDepends \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QtCore \
@@ -1872,7 +841,6 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qvariantanimation.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qeasingcurve.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsequentialanimationgroup.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtextcodec.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qendian.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlibraryinfo.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qbuffer.h \
@@ -2063,6 +1031,24 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_marker.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_symbol.h \
 		release\ui_data_analyze.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qaction.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QGridLayout \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QGroupBox \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgroupbox.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QPushButton \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qpushbutton.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QSpacerItem \
 		..\pointanalyze.h \
 		..\plot.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot_zoomer.h \
@@ -2075,8 +1061,6 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_panner.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QMenu \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qmenu.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QIODevice \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QLinkedList \
 		..\profileget.h \
@@ -2647,1033 +1631,8 @@ release\moc_halconclass.cpp: "C:\Program Files\MVTec\HALCON-10.0\include\cpp\Hal
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QFile \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfile.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qfiledevice.h \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\point_types.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\pcl_macros.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\pcl_config.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\cstdint.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\select_compiler_config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\select_stdlib_config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\no_tr1\utility.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\select_platform_config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\posix_features.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\suffix.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\non_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\limits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\limits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\endian.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\eigen.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\StdVector" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Core" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\DisableStupidWarnings.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\Macros.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\Constants.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\ForwardDeclarations.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\Meta.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\XprHelper.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\StaticAssert.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\Memory.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\NumTraits.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\MathFunctions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\GenericPacketMath.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\SSE\PacketMath.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\SSE\MathFunctions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\SSE\Complex.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\AltiVec\PacketMath.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\AltiVec\Complex.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\NEON\PacketMath.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\NEON\Complex.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\arch\Default\Settings.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Functors.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DenseCoeffsBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DenseBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\BlockMethods.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\MatrixBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\CommonCwiseUnaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\CommonCwiseBinaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\MatrixCwiseUnaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\MatrixCwiseBinaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\EigenBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Assign.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\BlasUtil.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DenseStorage.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\NestByValue.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ForceAlignedAccess.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ReturnByValue.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\NoAlias.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\PlainObjectBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Matrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Array.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CwiseBinaryOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CwiseUnaryOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CwiseNullaryOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CwiseUnaryView.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\SelfCwiseBinaryOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Dot.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\StableNorm.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\MapBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Stride.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Map.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Block.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\VectorBlock.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Transpose.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DiagonalMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Diagonal.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\DiagonalProduct.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\PermutationMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Transpositions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Redux.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Visitor.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Fuzzy.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\IO.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Swap.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\CommaInitializer.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Flagged.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ProductBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Product.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\TriangularMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\SelfAdjointView.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\SolveTriangular.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\Parallelizer.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\CoeffBasedProduct.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\GeneralBlockPanelKernel.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\GeneralMatrixVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\GeneralMatrixMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\GeneralMatrixMatrixTriangular.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\SelfadjointMatrixVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\SelfadjointMatrixMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\SelfadjointProduct.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\SelfadjointRank2Update.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\TriangularMatrixVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\TriangularMatrixMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\TriangularSolverMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\products\TriangularSolverVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\BandMatrix.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\BooleanRedux.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Select.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\VectorwiseOp.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Random.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Replicate.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\Reverse.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ArrayBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\ArrayCwiseUnaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\plugins\ArrayCwiseBinaryOps.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\ArrayWrapper.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\GlobalFunctions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Core\util\ReenableStupidWarnings.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Eigen2Support" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Macros.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Memory.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Meta.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Lazy.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Cwise.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\CwiseOperators.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\TriangularSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Block.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\VectorBlock.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Minor.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\MathFunctions.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\StlSupport\StdVector.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\StlSupport\details.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Eigenvalues" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Cholesky" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\misc\Solve.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Cholesky\LLT.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Cholesky\LDLT.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Jacobi" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Jacobi\Jacobi.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Householder" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Householder\Householder.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Householder\HouseholderSequence.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Householder\BlockHouseholder.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\LU" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\misc\Kernel.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\misc\Image.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\FullPivLU.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\PartialPivLU.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\Determinant.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\Inverse.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\LU\arch\Inverse_SSE.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\LU.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\Tridiagonalization.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\RealSchur.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\EigenvaluesCommon.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\HessenbergDecomposition.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\EigenSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\SelfAdjointEigenSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\GeneralizedSelfAdjointEigenSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\ComplexSchur.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\ComplexEigenSolver.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigenvalues\MatrixBaseEigenvalues.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Geometry" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\SVD" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\QR" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\QR\HouseholderQR.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\QR\FullPivHouseholderQR.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\QR\ColPivHouseholderQR.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\QR.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\SVD\JacobiSVD.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\SVD\UpperBidiagonalization.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\SVD.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\OrthoMethods.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\EulerAngles.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Homogeneous.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\RotationBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Rotation2D.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Quaternion.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\AngleAxis.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Transform.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Translation.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Scaling.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Hyperplane.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\ParametrizedLine.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\AlignedBox.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\Umeyama.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Geometry\arch\Geometry_SSE.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\All.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\RotationBase.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Rotation2D.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Quaternion.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\AngleAxis.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Transform.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Translation.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Scaling.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\AlignedBox.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\Hyperplane.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\src\Eigen2Support\Geometry\ParametrizedLine.h" \
-		"F:\PCL 1.6.0\3rdParty\Eigen\include\Eigen\Dense" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\impl\eigen.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\ros\register_point_struct.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\point_traits.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\sensor_msgs\PointField.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\shared_ptr.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\shared_ptr.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\shared_ptr_nmt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\current_function.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\checked_delete.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\throw_exception.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\exception\detail\attribute_noreturn.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\workaround.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\exception\exception.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_has_sync.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_pthreads.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_gcc_x86.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_win32.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\interlocked.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_sync.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\atomic_count_gcc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\no_tr1\memory.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\shared_count.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\bad_weak_ptr.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_nt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\sp_typeinfo.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_spin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_pool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_pt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_gcc_arm.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\yield_k.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_sync.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_w32.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\spinlock_nt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_pt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_x86.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_ia64.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_acc_ia64.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_cw_ppc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_ppc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_mips.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_sync.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_gcc_sparc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_w32.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_base_aix.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_counted_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\quick_allocator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\lightweight_mutex.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\lwm_nop.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\lwm_pthreads.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\lwm_win32_cs.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\type_with_alignment.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\value_wknd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\static_cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\workaround.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\integral.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\msvc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\eti.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\int.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\int_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\adl_barrier.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\adl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\intel.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\gcc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\nttp_decl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\nttp.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\cat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\config\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\integral_wrapper.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\integral_c_tag.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\static_constant.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\na_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\lambda_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\void_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\na.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\bool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\bool_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\na_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\ctps.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\lambda.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\ttp.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\lambda_arity_param.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\template_arity_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\arity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\dtp.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\preprocessor.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\comma_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\punctuation\comma_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\iif.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\bool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\facilities\empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\punctuation\comma.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repeat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\repeat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\debug\error.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\detail\auto_rec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\detail\dmc\auto_rec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\tuple\eat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\inc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\inc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\def_params_tail.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\limits\arity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\and.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\bitand.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\identity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\facilities\identity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\filter_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\sub.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\tuple.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\sub.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\dec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\edg\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\expr_iif.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\adt.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\detail\is_binary.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\detail\check.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\compl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\dmc\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\tuple\elem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\facilities\overload.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\variadic\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\tuple\rem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\variadic\elem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\fold_right.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\edg\fold_right.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\detail\fold_right.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\reverse.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\detail\edg\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\detail\msvc\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\detail\dmc\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\detail\while.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\add.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\overload_resolution.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\lambda_support.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\yes_no.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\arrays.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\tuple\to_list.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\for_each_i.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\detail\edg\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\detail\msvc\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\detail\dmc\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\detail\for.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\transform.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\list\append.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\alignment_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\intrinsics.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_same.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\yes_no_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\ice_and.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_lvalue_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\wrap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\bool_trait_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\template_arity_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\integral_constant.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\integral_c.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\integral_c_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\bool_trait_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_rvalue_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\ice.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\ice_or.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\ice_not.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\ice_eq.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_volatile.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\cv_traits_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_bounds.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_bounds.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\typeof.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_array.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\type_trait_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\type_trait_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\false_result.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_abstract.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\static_assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_class.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_union.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_cv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\broken_compiler_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_cv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_const.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_member_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_member_function_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\is_mem_fun_pointer_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\iterate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\iteration\iterate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\array\elem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\array\data.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\array\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\slot\slot.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\slot\detail\def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\enum_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\is_mem_fun_pointer_tester.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\is_function_ptr_tester.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_scalar.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_arithmetic.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_integral.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_float.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_convertible.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_void.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_rvalue_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_function.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\is_function_ptr_helper.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_reference.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_polymorphic.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\size_t_trait_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\size_t.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\size_t_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\detail\size_t_trait_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_pod.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\sp_convertible.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\memory_order.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\smart_ptr\detail\operator_bool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_all_extents.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_all_extents.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\not.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\nested_type_wknd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\pp_counter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\vector.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\limits\vector.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\stringize.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\use_preprocessed.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\include_preprocessed.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\compiler.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\sequence_wrapper.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\enum_params_with_a_default.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_params_with_a_default.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\facilities\intercept.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_binary_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\count_args.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\expr_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\expr_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\repeat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\enum_shifted_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_shifted_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\for_each.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\is_sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\and.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\logical_op.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\ext_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\dec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\begin_end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\begin_end_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\begin_end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\sequence_tag_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\void.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\eval_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\has_xxx.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\type_wrapper.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\has_xxx.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\msvc_typename.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\enum_trailing_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\traits_lambda_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\sequence_tag.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_tag.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\is_msvc_eti_arg.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\identity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_is_class.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\apply.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\apply_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\default_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\apply_wrap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_apply.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\has_apply.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_never_true.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\add.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\bcc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_dtw.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\placeholders.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\arg.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\arg_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\na_assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\arity_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\arg_typedef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\lambda.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\bind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\bind_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\bind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\dmc_ambiguous_ctps.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\next.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\next_prior.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\common_name_wknd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\protect.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\partial_spec_params.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\full_lambda.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\quote.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\template_arity.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_rebind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\preprocessor\range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\subseq.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\first_n.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\detail\split.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\rest_n.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\fold_left.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\seq.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\elem.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\lambda_no_ctps.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\is_placeholder.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\deref.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\unwrap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\ref.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\addressof.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\value_init.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\aligned_storage.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\cv_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_const.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_volatile.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_cv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_const.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_const.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_volatile.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_volatile.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\swap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\swap.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\for_each.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\transform.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\repetition\repeat_from_to.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\impl\point_types.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\distances.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\common.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\pcl_base.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\sensor_msgs\PointCloud2.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\std_msgs\Header.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\point_cloud.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\exceptions.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\cloud_properties.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\channel_properties.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\for_each_type.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\remove_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\fold.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\O1_size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\O1_size_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\O1_size_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\long.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\long_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\has_size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\config\forwarding.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\fold_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\fold_impl_body.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\limits\unrolling.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\reverse_fold.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\reverse_fold_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\reverse_fold_impl_body.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\inserter_algorithm.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\back_inserter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\push_back.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\push_back_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\push_back_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\inserter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\front_inserter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\push_front.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\push_front_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\push_front_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\clear.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\clear_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\clear_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\contains.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\contains_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\contains_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\find_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\find_if_pred.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\iter_apply.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\iter_fold_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\logical.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\or.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\always.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\pair.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\msvc_eti_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\iter_fold_if_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\same_as.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\lambda_spec.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\size_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\size_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\distance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\distance_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\iter_fold.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\iter_fold_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\tag.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\PointIndices.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\console\print.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\impl\common.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\io\pcd_io.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\io\file_io.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\io.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\at_key.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\enable_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\is_sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\sequence_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\tag_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\tag_of_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\is_mpl_sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\find_if_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\detail\find_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\advance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\advance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\next.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\prior.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\category_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\category_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_base_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_base_and_derived.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\distance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\distance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\equal_to.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\is_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\blank.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\blank_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\templated_streams.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_stateless.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\has_trivial_constructor.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\has_trivial_copy.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\has_trivial_destructor.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\is_segmented.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\cons_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\segmented_fold_until_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\result_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\declval.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\void.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\deref.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\iterator_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\segments.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\segmented_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\segmented_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\iterator_facade.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\deref_data.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\key_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\value_of.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\value_of_data.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\segmented_equal_to.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\segmented_next_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\cons.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\access.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\cons_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\deref_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\next_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\value_of_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\equal_to_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\equal_to.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\comparison_op.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\numeric_op.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\numeric_cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\numeric_cast_utils.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\list_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\limits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list10_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list20_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list30_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list40_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\preprocessed\list50_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\value_at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\empty_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\mpl\convert_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\size_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\value_at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\is_segmented_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\segments_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\iterator_range\detail\segmented_iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\transformation\push_back.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\as_fusion_element.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\joint_view.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\joint_view_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\is_view.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\is_view.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\detail\segmented_size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\plus.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\arithmetic_op.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\largest_int.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\mpl\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\adapted\mpl\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\adapted\mpl\mpl_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\detail\mpl_iterator_category.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\prior.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\advance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\advance_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\less.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\negate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\advance_forward.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\aux_\advance_backward.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\mpl\fusion_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\iterator_tags.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\mpl\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\adapted\mpl\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\joint_view_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\deref_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\adapt_deref_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\next_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\value_of_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\adapt_value_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\deref_data_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\value_of_data_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\key_of_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\joint_view\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\inherit.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\empty_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\single_view.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\single_view_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\deref_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\next_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\prior_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\advance_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\distance_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\minus.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\equal_to_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\value_of_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\begin_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\end_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\size_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\view\single_view\detail\value_at_impl.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\value_at.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\transformation\push_front.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\container\list\detail\reverse_cons.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\iterator\detail\segment_sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\sequence\intrinsic\empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\detail\segmented_find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\algorithm\query\find_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\fusion\support\segmented_fold_until.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\ros\conversions.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\sensor_msgs\Image.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\foreach.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\noncopyable.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\vc6\end.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\implementation_help.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\common.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\sfinae.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\result_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\mutable_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\remove_extent.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\extract_optional_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\remove_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\msvc\remove_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\const_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\const_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\begin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\value_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\rend.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\reverse_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\reverse_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\base_from_member.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\utility\binary.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\control\deduce_d.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\cat.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\mod.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\arithmetic\detail\div_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\comparison\less_equal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\logical\not.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\next_prior.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_adaptor.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_categories.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\detail\config_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\detail\config_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_facade.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\interoperable.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\detail\facade_iterator_category.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\indirect_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\is_function_ref_tester.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\detail\enable_if.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\implicit_cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\add_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\rbegin.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\foreach_fwd.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\impl\io.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\concatenate.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\old_numeric_cast.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\converter_policies.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\no_tr1\cmath.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\converter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\conversion_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\conversion_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\meta.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\int_float_mixture.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\int_float_mixture_enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\sign_mixture.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\sign_mixture_enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\udt_builtin_mixture.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\udt_builtin_mixture_enum.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\is_subranged.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\multiplies.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mpl\times.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\converter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\bounds.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\bounds.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\numeric_cast_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\numeric_cast_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\preprocessed\numeric_cast_traits_common.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\numeric\conversion\detail\preprocessed\numeric_cast_traits_long_long.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\io\impl\pcd_io.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\std_containers_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\std\string_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\yes_no_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\sequence_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\std\list_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\std\slist_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\trim.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\as_literal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\as_literal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\detail_str.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\size_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\value_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\iterator_range.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\iterator_range_core.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\functions.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\size.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\difference_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\distance.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\empty.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\algorithm\equal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\concepts.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept_check.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\assert.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\msvc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\backward_compatibility.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\has_constraints.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\borland.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\general.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\conversion_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\usage.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\concept_def.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\preprocessor\seq\for_each_i.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\concept\detail\concept_undef.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\iterator_concepts.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\misc_concept.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\safe_bool.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\iterator_range_io.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\detail\str_types.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\range\size_type.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\trim.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\classification.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\classification.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\predicate_facade.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\case_conv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\iterator\transform_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\function_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\case_conv.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\make_unsigned.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_signed.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\is_unsigned.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\predicate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\compare.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\finder.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\constants.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\finder.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\predicate.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\split.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\iter_find.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\concept.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\find_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\find_iterator.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\detail\prologue.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\config\no_tr1\functional.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function_base.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\integer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\integer_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\integer_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\type_traits\composite_traits.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function_equal.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\mem_fn.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\mem_fn.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\get_pointer.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\mem_fn_template.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\mem_fn_vw.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\mem_fn_cc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function0.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\detail\maybe_include.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function_template.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\no_exceptions_support.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function1.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function2.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function3.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function4.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function5.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function6.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function7.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function8.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function9.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\function\function10.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\util.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\join.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\sequence.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\replace.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\find_format.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\find_format.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\find_format_store.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\replace_storage.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\find_format_all.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\formatter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\detail\formatter.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\algorithm\string\erase.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\io\lzf.h" \
-		..\pcl\PCL_Library_Dll.h \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\features\normal_3d.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\features\feature.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\is_placeholder.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\arg.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\visit_each.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\storage.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind_template.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind_cc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind_mf_cc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\bind_mf2_cc.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\bind\placeholders.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\centroid.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\common\impl\centroid.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\search.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\features\impl\feature.hpp" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\pcl_search.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\kdtree.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\kdtree\kdtree.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\point_representation.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\kdtree\kdtree_flann.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\kdtree\flann.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\flann.hpp" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\general.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\defines.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\config.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\matrix.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\params.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\any.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\saving.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\nn_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\result_set.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\tbb\bodies.hpp" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\all_indices.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\kdtree_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\dynamic_bitset.h" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\dynamic_bitset.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\dynamic_bitset\dynamic_bitset.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\dynamic_bitset\config.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\dynamic_bitset_fwd.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\detail\dynamic_bitset.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\pending\lowest_bit.hpp" \
-		"F:\PCL 1.6.0\3rdParty\Boost\include\boost\pending\integer_log2.hpp" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\dist.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\heap.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\allocator.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\random.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\kdtree_single_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\kdtree_cuda_3d_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\kmeans_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\logger.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\composite_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\linear_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\hierarchical_clustering_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\lsh_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\lsh_table.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\algorithms\autotuned_index.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\nn\ground_truth.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\nn\index_testing.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\timer.h" \
-		"F:\PCL 1.6.0\3rdParty\FLANN\include\flann\util\sampling.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\octree.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_search.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_pointcloud.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_base.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_nodes.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_container.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_key.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_iterator.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree_node_pool.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\octree\octree2buf_base.h" \
-		"F:\PCL 1.6.0\include\pcl-1.6\pcl\search\organized.h" \
-		"C:\Program Files\MVTec\HALCON-10.0\include\CPP\HalconCpp.h" \
-		"C:\Program Files\MVTec\HALCON-10.0\include\CPP\HIOStream.h" \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTextCodec \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtextcodec.h \
 		..\halconclass.h
 	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtSql -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\halconclass.h -o release\moc_halconclass.cpp
 
@@ -4503,6 +2462,125 @@ release\moc_settingDialog.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidge
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSettings \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsettings.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDirIterator \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qdiriterator.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QMessageBox \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qmessagebox.h \
+		..\imglistview.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QObject \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HalconCpp.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HIntDef.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HDeclSpec.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HConst.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HErrorDef.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HBase.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\IPType.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HCtype.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HMacro.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HExtern.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\hlib\HError.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HException.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\HSync.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HCPPUtil.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HTuple.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HOperator.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HNumeric.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HPixVal.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HTools.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HPrimitives.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HRectangle.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HDRegion.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HCPPGlobal.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HWindow.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HDevWindowStack.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HImage.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HByteImage.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HImageArray.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HRLRegion.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HFloatImage.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HComplexImage.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HInt1Image.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HInt2Image.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HUInt2Image.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HInt4Image.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HConvol.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HIterator.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HRegion.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HRegionArray.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLD.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDArray.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDCont.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDContArray.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDPoly.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDPolyArray.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDPara.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDParaArray.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDModPara.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDModParaArray.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDExtPara.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HXLDExtParaArray.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HFramegrabber.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HCPPToolRef.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HNCCModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HShapeModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HComponentModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HComponentTraining.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HObjectModel3D.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HSurfaceModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HSurfaceMatchingResult.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HShapeModel3D.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HDeformableModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HDescriptorModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HVariationModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HCalibData.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HCameraSetupModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HStereoModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HTemplate.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HMeasure.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HMatrix.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HFile.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HSerial.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HSocket.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HBgEsti.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HOCRBox.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HOCRMlp.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HOCRSvm.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HLexicon.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HOCV.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HClassBox.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HClassMlp.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HClassSvm.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HClassGmm.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HClassLUT.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HColorTransLUT.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HFunction1D.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HGnuplot.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HBarCode.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HBarCode1D.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HBarCode2D.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HDataCode2D.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HSheetOfLightModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HComputeDevice.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HMutex.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HEvent.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HCondition.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HBarrier.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HTextModel.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HTextResult.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\cpp\HInterfaceCPP.h" \
+		"C:\Program Files\MVTec\HALCON-10.0\include\hlib\HInstance.h" \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\Qlabel \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlabel.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QHBoxLayout \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTextCodec \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtextcodec.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QEvent \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QMouseEvent \
 		..\settingDialog.h
 	C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/qt/first -I"C:/Program Files/MVTec/HALCON-10.0/include" -I"C:/Program Files/MVTec/HALCON-10.0/include/cpp" -I"F:/PCL 1.6.0/3rdParty/Boost/include" -I"F:/PCL 1.6.0/3rdParty/Eigen/include" -I"F:/PCL 1.6.0/3rdParty/FLANN/include" -I"F:/PCL 1.6.0/include/pcl-1.6" -I"F:/PCL 1.6.0/3rdParty/Qhull/include" -ID:/qt/first/lua/include -ID:/qt/first/kings -ID:/qt/first/laser -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtOpenGL -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/ActiveQt -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtSql -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/Qt5.3.2/5.3/msvc2010_opengl/include/QtCore -I. ..\settingDialog.h -o release\moc_settingDialog.cpp
 
@@ -4832,6 +2910,8 @@ release\moc_imgListView.cpp: C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QO
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayout.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTextCodec \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtextcodec.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QEvent \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QMouseEvent \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug \
@@ -5555,7 +3635,51 @@ release\pointanalyze.obj: ..\pointanalyze.cpp ..\pointanalyze.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qlinkedlist.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QSemaphore \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qsemaphore.h \
-		release\ui_pointanalyze.h
+		release\ui_pointanalyze.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QGraphicsView \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qscrollarea.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QGridLayout \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QGroupBox \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgroupbox.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QPushButton \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qpushbutton.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QSpinBox \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qspinbox.h
 
 release\plot.obj: ..\plot.cpp ..\plot.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\qwt_plot.h \
@@ -6259,6 +4383,8 @@ release\imgListView.obj: ..\imgListView.cpp ..\imglistview.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayout.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QTextCodec \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qtextcodec.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QEvent \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\QMouseEvent \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QDebug

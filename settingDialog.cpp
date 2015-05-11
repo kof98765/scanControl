@@ -293,6 +293,8 @@ void mySettings::on_findButton_clicked()
 void mySettings::selectImg(int i)
 {
     qDebug()<<fileList.at(i);
+    ui->path->setText(fileList.at(i));
+    on_Button_Yes_clicked();
     emit openFile(fileList.at(i));
     close();
 }

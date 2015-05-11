@@ -65,8 +65,8 @@ SOURCES += main.cpp\
     lua/lua.cpp \
     kings/kingscontrol.cpp \
     laser/laser.cpp \
-    settings.cpp \
-    calculategroup.cpp
+    settings.cpp
+
 
 
 
@@ -89,14 +89,13 @@ HEADERS  += mainwindow.h \
     msghandlerwapper.h \
     settingDialog.h \
     glwidget.h \
-    pcl/PCL_Library_Dll.h \
     imgListView.h \
     profileget.h \
     lua/lua.h \
     kings/kingscontrol.h \
     laser/laser.h \
-    settings.h \
-    calculategroup.h
+    settings.h
+
 
 
 

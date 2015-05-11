@@ -229,6 +229,11 @@ public:
         groupBox_4 = new QGroupBox(centralWidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         groupBox_4->setGeometry(QRect(760, 10, 521, 601));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(groupBox_4->sizePolicy().hasHeightForWidth());
+        groupBox_4->setSizePolicy(sizePolicy1);
         groupBox_4->setStyleSheet(QStringLiteral(""));
         startButton = new QPushButton(groupBox_4);
         startButton->setObjectName(QStringLiteral("startButton"));
@@ -299,8 +304,8 @@ public:
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         roiList = new QTableWidget(groupBox);
-        if (roiList->columnCount() < 5)
-            roiList->setColumnCount(5);
+        if (roiList->columnCount() < 6)
+            roiList->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         roiList->setHorizontalHeaderItem(0, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
@@ -311,6 +316,8 @@ public:
         roiList->setHorizontalHeaderItem(3, __qtablewidgetitem8);
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
         roiList->setHorizontalHeaderItem(4, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(5, __qtablewidgetitem10);
         roiList->setObjectName(QStringLiteral("roiList"));
         roiList->setSelectionBehavior(QAbstractItemView::SelectRows);
         roiList->setSortingEnabled(true);
@@ -396,7 +403,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 198, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 151, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -416,7 +423,7 @@ public:
         roiLength1->setEnabled(false);
         roiLength1->setMinimum(1);
         roiLength1->setMaximum(500);
-        roiLength1->setValue(50);
+        roiLength1->setValue(10);
 
         horizontalLayout_3->addWidget(roiLength1);
 
@@ -425,7 +432,7 @@ public:
         roiLength2->setEnabled(false);
         roiLength2->setMinimum(1);
         roiLength2->setMaximum(500);
-        roiLength2->setValue(50);
+        roiLength2->setValue(10);
 
         horizontalLayout_3->addWidget(roiLength2);
 
@@ -749,6 +756,8 @@ public:
         ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\344\270\213\351\231\220", 0));
         QTableWidgetItem *___qtablewidgetitem9 = roiList->horizontalHeaderItem(4);
         ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
+        QTableWidgetItem *___qtablewidgetitem10 = roiList->horizontalHeaderItem(5);
+        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", " \345\237\272\345\207\206\347\202\271", 0));
         label_2->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215:", 0));
         label_4->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204:", 0));
         team->clear();
@@ -767,6 +776,7 @@ public:
         func->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "\345\256\232\344\275\215\345\214\272\345\237\237", 0)
          << QApplication::translate("MainWindow", "\346\220\234\347\264\242\345\214\272\345\237\237", 0)
+         << QApplication::translate("MainWindow", "\345\256\232\345\237\272\345\207\206\347\202\271", 0)
          << QApplication::translate("MainWindow", "\350\256\241\347\256\227\345\271\263\351\235\242\345\272\246", 0)
          << QApplication::translate("MainWindow", "\347\202\271\345\210\260\345\271\263\351\235\242\351\253\230\345\267\256", 0)
          << QApplication::translate("MainWindow", "\347\202\271\345\210\260\347\202\271\351\253\230\345\267\256", 0)

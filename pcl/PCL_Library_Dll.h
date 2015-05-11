@@ -25,6 +25,22 @@ using namespace Halcon;
 typedef pcl::PointXYZ PointT;
 typedef pcl::PointCloud<PointT> PointCloud;
 
+struct VectorInfo{
+	float _ratioX;
+	float _ratioY;
+	float _ratioZ;
+	float _constant;
+	float _curvature;
+	float _reserve;
+};
+
+struct pointXYZ
+{
+	float _PointX;
+	float _PointY;
+	float _PointZ;
+};
+
 	   /** \brief 将坐标存入点云，
 	     * \param[in] 输入点X坐标
 		 * \param[in] 输入点Y坐标
@@ -202,6 +218,21 @@ PCLLIBRARYDLL int byteMapperTable(Halcon::Hobject ho_inImage,Halcon::Hobject* ho
 	     */
 
 //PCLLIBRARYDLL int GetChildPoint2(PointCloud::Ptr &inCloud,Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,float Percent,int f_type,PointCloud::Ptr outCloud);
+
+
+//由于类型的无法变换，重新写计算平面度的方法给C#环境下使用
+/*使用pcl内部算法 返回平面方程和曲率，但根据使用经验，当点趋于平面是效果不好*/
+PCLLIBRARYDLL int compute_PointNormal(float iX[],float iY[],float iZ[],int length,VectorInfo* _vectorInfo);
+/*使用网友改编的算法 返回平面方程，Z值永远为1*/
+PCLLIBRARYDLL int compute_PointNormal2(float iX[],float iY[],float iZ[],int length,VectorInfo* _vectorInfo);
+
+/*用第一种方法计算平面度*/
+PCLLIBRARYDLL int Calculate_Flatness(float iX[],float iY[],float iZ[],int length, double &_result);
+/*用第二种方法计算平面度*/
+PCLLIBRARYDLL int Calculate_Flatness2(float iX[],float iY[],float iZ[],int length, double &_result);
+/*计算点到面的距离*/
+PCLLIBRARYDLL int Distance_point2plane(pointXYZ _point,VectorInfo _vectorInfo,double &_result);
+
 
 //You can also write like this:
 //extern "C" {

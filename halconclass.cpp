@@ -26,7 +26,7 @@ halconClass::halconClass(QObject *parent) :
         qDebug()<<"pcl dll load fail";
 
 
-    inCloud=new PointCloud::Ptr(new PointCloud );
+
     memcpy(menu,tmp,sizeof(tmp));
     roiList=set.value("roiList").toMap();
     dataList=set.value("dataList").toMap();
@@ -289,21 +289,24 @@ void halconClass::disp_img()
 
                 Hobject Rectangle,Contours;
 
-                if(roi.value("func").toInt()==1|roi.value("func").toInt()==0) 
+                if(roi.value("func").toInt()==1|roi.value("func").toInt()==0|roi.value("func").toInt()==2)
+                {
                     gen_rectangle1(&Rectangle, (Hlong)roi.value("Row").toDouble(), (Hlong)roi.value("Column").toDouble(),(Hlong)roi.value("Row2").toDouble(), (Hlong)roi.value("Column2").toDouble());
+                    if(hasData&roi.value("func").toInt()==2)
+                        findCenter(roi.value("Row").toDouble(), roi.value("Column").toDouble(),roi.value("Row2").toDouble(), roi.value("Column2").toDouble());
+                }
                 else
                 {
-                    if(roi.value("isDraw").toInt()==0)
-                        gen_rectangle2(&Rectangle,roi.value("x").toDouble()+roi.value("Row").toDouble(),roi.value("y").toDouble()+roi.value("Column").toDouble(),0,roi.value("Length1").toDouble(),roi.value("Length2").toDouble());
-                    else
+
                         gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Length1").toDouble(),roi.value("Length2").toDouble());
 
                 }
+
                 if(matList.value(roi.value("index").toString(),NULL)!=NULL&roi.value("func").toInt()!=1)
                 {
                     affine_trans_region(Rectangle,&Rectangle,matList.value(roi.value("index").toString()),"false");
                     HTuple Row,Column;
-                    affine_trans_pixel(matList.value(roi.value("index").toString(),NULL),roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble(),&Row,&Column);
+                    affine_trans_pixel(matList.value(roi.value("index").toString(),NULL),roi.value("Row").toDouble(),roi.value("Column").toDouble(),&Row,&Column);
                     set_rgb(WindowHandle,(int)((roi.value("color").toInt()&(0xff<<16))>>16),(int)((roi.value("color").toInt()&(0xff<<8))>>8),(int)(roi.value("color").toInt()&0xff));
 
                     set_tposition(WindowHandle,Row,Column);
@@ -312,10 +315,8 @@ void halconClass::disp_img()
                 else
                 {
                     set_rgb(WindowHandle,(int)((roi.value("color").toInt()&(0xff<<16))>>16),(int)((roi.value("color").toInt()&(0xff<<8))>>8),(int)(roi.value("color").toInt()&0xff));
-                    if(roi.value("isDraw").toInt()==0)
-                       set_tposition(WindowHandle,roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble());
-                    else
-                        set_tposition(WindowHandle,roi.value("Row").toDouble(),roi.value("Column").toDouble());
+
+                    set_tposition(WindowHandle,roi.value("Row").toDouble(),roi.value("Column").toDouble());
                     write_string(WindowHandle,HTuple(list.at(i).toUtf8().data()));
                 }
                     gen_contour_region_xld(Rectangle,&Contours,"border");
@@ -438,7 +439,17 @@ void halconClass::threedControl(double lastRow, double lastCol, double Row, doub
 
 
 }
+QPoint halconClass::getPoint()
+{
+    double x,y;
+    Hlong button;
+    HTuple hv_Exception;
 
+    get_mposition_sub_pix(WindowHandle,&y,&x,&button);
+
+    QPoint p(x,y);
+    return p;
+}
 
 
 void halconClass::run()
@@ -603,7 +614,7 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
     //roiList[0]
     //roi.color=color;
     roi.insert("color",color);
-    if(func==2|func==3|func==4)
+    if(func==3|func==4|func==5)
     {
         if(drawType)
         {
@@ -616,27 +627,23 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
             roi.insert("Length1",Length1[0].D());
             roi.insert("Length2",Length2[0].D());
             roi.insert("isDraw",1);
-
+            roi.insert("x",0);
+            roi.insert("y",0);
             qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D()<<Phi[0].D();
         }
         else
         {
             //手动输入时需要定位点,所以有了x,y
             double x,y;
-            QStringList point=set.value("locationList").toMap().value(QString::number(index)).toStringList();
-            if(point.size()>0)
-            {
-                x=set.value("locationList").toMap().value(QString::number(index)).toStringList().at(0).toDouble();
-                y=set.value("locationList").toMap().value(QString::number(index)).toStringList().at(1).toDouble();
+            QPoint point=set.value("locationList").toMap().value(QString::number(index)).toPoint();
 
-            }
-            else
-            {
-                x=0;
-                y=0;
-            }
-            roi.insert("Row",row);
-            roi.insert("Column",column);
+            x=point.x();
+            y=point.y();
+
+
+
+            roi.insert("Row",row+x);
+            roi.insert("Column",column+y);
             roi.insert("Phi",0);
             roi.insert("Length1",length1);
             roi.insert("Length2",length2);
@@ -648,7 +655,7 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
     }
     else
     {
-            if(!drawType)
+            if(!drawType&(func==0|func==1))
             {
                 Error(QStringLiteral("定位与搜索不支持键入区域!!"));
                 return;
@@ -656,24 +663,28 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
             draw_rectangle1(WindowHandle,&Row,&Column,&Row2,&Column2);
             //roiList[1-5]
 
+
+
+            //找基准点
+            if(func==2)
+            {
+                //失败返回负数
+                QPoint p=findCenter(Row,Column,Row2,Column2);
+                QMap<QString,QVariant> map;
+                if(p.x()<0)
+                    return;
+                map.insert(QString::number(index),p);
+                set.setValue("locationList",map);
+                qDebug()<<"center"<<p;
+                roi.insert("x",p.x());
+                roi.insert("y",p.y());
+            }
             roi.insert("Row",Row[0].D());
             roi.insert("Column",Column[0].D());
             roi.insert("Row2",Row2[0].D());
             roi.insert("Column2",Column2[0].D());
-            Hobject Rectangle;
-            gen_rectangle1(&Rectangle,Row,Column,Row2,Column2);
-            HTuple Area,r,c;
-            area_center(Rectangle,&Area,&r,&c);
-            if(func==0)
-            {
-                QStringList str;
-                str<<QString::number(r[0].D());
-                str<<QString::number(c[0].D());
-                QMap<QString,QVariant> map;
-                map.insert(QString::number(index),str);
-                set.setValue("locationList",map);
-            }
-            qDebug()<<"func"<<func<<r[0].D()<<c[0].D();
+
+            qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D();
 
 
     }
@@ -921,14 +932,14 @@ void halconClass::planePoint(int team)
          HTuple Rows,Columns,Grayval;
          HTuple  Range,String,s,Result;
 
-         Points2Cloud3 cloud=NULL;
-         CalculateFlatness cal=NULL;
-         ComputePointNormal2 comp=NULL;
-         Dis_point2plane dis=NULL;
-         cal=(CalculateFlatness)GetProcAddress(hInstance,"CalculateFlatness");
-         cloud=(Points2Cloud3)GetProcAddress(hInstance,"Points2Cloud3");
-         comp=(ComputePointNormal2)GetProcAddress(hInstance,"ComputePointNormal2");
-         dis=(Dis_point2plane)GetProcAddress(hInstance,"Dis_point2plane");
+
+         Calculate_Flatness2 cal=NULL;
+
+
+         cal=(Calculate_Flatness2)GetProcAddress(hInstance,"Calculate_Flatness2");
+
+
+
          QString n=dataList.keys().at(team);
 
          QStringList list=dataList.value(n).toStringList();
@@ -944,7 +955,7 @@ void halconClass::planePoint(int team)
 
             QMap<QString,QVariant> roi=set.value("team/"+list.at(i)).toMap();
 
-             if(roi.value("func").toInt()==2)
+             if(roi.value("func").toInt()==3)
              {
 
                  if(matList.value(roi.value("index").toString(),NULL)==NULL)
@@ -954,9 +965,7 @@ void halconClass::planePoint(int team)
                  }
                 num++;
                 qDebug()<<"start planePoint";
-                if(roi.value("isDraw").toInt()==0)
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
-                else
+
                     gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
 
                  affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
@@ -1005,23 +1014,108 @@ void halconClass::planePoint(int team)
          if(num==0)
              return;
 
-         PointCloud::Ptr newCloud(new PointCloud);
+
          double result;
+
          if(in<set.value("check_num",4).toInt())
          {
              emit Error(QString("not enough four point,at lease %1 point").arg(set.value("check_num",4).toInt()));
              return;
          }
          qDebug()<<"cloud";
-         result=(*cloud)(&x[0],&y[0],&z[0],in,newCloud);
+
+         (*cal)(&x[0],&y[0],&z[0],in,result);
          qDebug()<<"cloud"<<result;
-         (*cal)(newCloud,result);
          emit sendPlaneness(n.toInt(),result);
          qDebug()<<QStringLiteral("平面度为:")<<result;
 
 
 
     }
+}
+QPoint halconClass::findCenter(double Row,double Column,double Row2,double Column2)
+{
+
+    Hobject Rectangle,image;
+    Hobject ImageReduced, Edges, ObjectSelected;
+
+
+    // Local control variables
+    HTuple  Length, Max, Indices, Area;
+    HTuple  PointOrder;
+    Hlong num;
+    byteMapperTable byte=NULL;
+    byte=(byteMapperTable)GetProcAddress(hInstance,"byteMapperTable");
+    double minRange,maxRange;
+    minRange=set.value("minMeasuringRange","-7.5").toDouble();
+    maxRange=set.value("maxMeasuringRange","7.5").toDouble();
+    gen_rectangle1(&Rectangle,Row,Column,Row2,Column2);
+
+    HTuple low=0.01,hight=0.02;
+    reduce_domain(Image, Rectangle, &ImageReduced);
+
+    edges_sub_pix(ImageReduced, &Edges, "canny", 1, low,hight);
+    length_xld(Edges, &Length);
+    count_obj(Edges,&num);
+
+    if(Length.Num()<1)
+    {
+        qDebug()<<"obj count"<<num;
+        emit Error(QStringLiteral("没找到基准点!!"));
+        return QPoint(-1,-1);
+    }
+    tuple_max(Length, &Max);
+    tuple_find(Length, Max, &Indices);
+    select_obj(Edges, &ObjectSelected, Indices+1);
+    HTuple R,C;
+    area_center_xld(ObjectSelected, &Area, &R, &C, &PointOrder);
+    disp_obj(ObjectSelected,WindowHandle);
+
+
+
+    return QPoint(R[0].D(),C[0].D());
+
+}
+QPoint halconClass::findCenter(HTuple Row,HTuple Column,HTuple Row2,HTuple Column2)
+{
+    Hobject Rectangle,image;
+    Hobject ImageReduced, Edges, ObjectSelected;
+
+
+    // Local control variables
+    HTuple  Length, Max, Indices, Area;
+    HTuple  PointOrder;
+    Hlong num;
+    byteMapperTable byte=NULL;
+    byte=(byteMapperTable)GetProcAddress(hInstance,"byteMapperTable");
+    double minRange,maxRange;
+    minRange=set.value("minMeasuringRange","-7.5").toDouble();
+    maxRange=set.value("maxMeasuringRange","7.5").toDouble();
+    gen_rectangle1(&Rectangle,Row,Column,Row2,Column2);
+
+    HTuple low=0.01,hight=0.02;
+    reduce_domain(Image, Rectangle, &ImageReduced);
+
+    edges_sub_pix(ImageReduced, &Edges, "canny", 1, low,hight);
+    length_xld(Edges, &Length);
+    count_obj(Edges,&num);
+
+    if(Length.Num()<1)
+    {
+        qDebug()<<"obj count"<<num;
+        emit Error(QStringLiteral("没找到基准点!!"));
+        return QPoint(-1,-1);
+    }
+    tuple_max(Length, &Max);
+    tuple_find(Length, Max, &Indices);
+    select_obj(Edges, &ObjectSelected, Indices+1);
+    area_center_xld(ObjectSelected, &Area, &Row, &Column, &PointOrder);
+    disp_obj(ObjectSelected,WindowHandle);
+
+
+
+    return QPoint(Row[0].D(),Column[0].D());
+
 }
 /*
     计算高差
@@ -1037,12 +1131,12 @@ void halconClass::RectHeightSub(int team)
         HTuple  tmp, Row, Column, Area, Min=0, Max=0,Indices;
         HTuple Rows,Columns,Grayval;
         HTuple  Range,s,Result,Number;
-        Points2Cloud3 cloud=NULL;
-        ComputePointNormal2 comp=NULL;
-        Dis_point2plane dis=NULL;
-        cloud=(Points2Cloud3)GetProcAddress(hInstance,"Points2Cloud3");
-        comp=(ComputePointNormal2)GetProcAddress(hInstance,"ComputePointNormal2");
-        dis=(Dis_point2plane)GetProcAddress(hInstance,"Dis_point2plane");
+
+        compute_PointNormal2 comp=NULL;
+        Distance_point2plane dis=NULL;
+
+        comp=(compute_PointNormal2)GetProcAddress(hInstance,"compute_PointNormal2");
+        dis=(Distance_point2plane)GetProcAddress(hInstance,"Distance_point2plane");
         QString n=dataList.keys().at(team);
 
         QStringList list=dataList.value(n).toStringList();
@@ -1061,7 +1155,7 @@ void halconClass::RectHeightSub(int team)
 
             QMap<QString,QVariant> roi=set.value("team/"+list.at(i)).toMap();
 
-            if(roi.value("func").toInt()==3)
+            if(roi.value("func").toInt()==4)
             {
                 if(imgList.size()<=roi.value("index").toInt())
                     continue;
@@ -1072,10 +1166,8 @@ void halconClass::RectHeightSub(int team)
                     emit Error(QStringLiteral("定位失败"));
                     return;
                 }
-                if(roi.value("isDraw").toInt()==0)
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
-                else
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+
+                gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
 
                 affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
                  disp_obj(RegionAffineTrans,WindowHandle);
@@ -1122,14 +1214,10 @@ void halconClass::RectHeightSub(int team)
 
         qDebug()<<"creat cloud";
         double result;
-        PointCloud::Ptr newCloud(new PointCloud);
-        result=(*cloud)(&x[0],&y[0],&z[0],in,newCloud);
-        qDebug()<<(result==-1?"creat fail":"create sussful");
-        Vector4f vec;
 
-
-
-        result=(*comp)(newCloud,vec);
+        VectorInfo vec;
+        result=(*comp)(&x[0],&y[0],&z[0],in,&vec);
+        qDebug()<<"vec"<<vec._constant<<vec._curvature<<vec._ratioX<<vec._ratioY<<vec._ratioZ;
         qDebug()<<"comp"<<result;
         if(in<set.value("check_num",4).toInt()+1)
         {
@@ -1145,12 +1233,13 @@ void halconClass::RectHeightSub(int team)
 
            if(roi.value("func").toInt()==3)
            {
-               PointT p;
-               p.x=x[j];
-               p.y=y[j];
-               p.z=z[j];
+               pointXYZ p;
+               p._PointX=x[j];
+               p._PointY=y[j];
+               p._PointZ=z[j];
 
-              (*dis)(p,vec,result);
+
+               (*dis)(p,vec,result);
                qDebug()<<"heightSub"<<list.at(temp[j])<<abs(result);
                emit sendHeightSub(list.at(temp[j]),0,0,abs(result));
            }
@@ -1167,18 +1256,16 @@ void halconClass::pointToPoint(int team)
     int num=0;
     QTime time;
     time.start();
-   if (HDevWindowStack::IsOpen()&hasData)
+    if (HDevWindowStack::IsOpen()&hasData)
     {
         Hobject   Rectangle, RegionAffineTrans, ImageReduced,rect;
         HTuple  tmp, Row, Column, Area, Min=0, Max=0,Indices;
         HTuple Rows,Columns,Grayval;
         HTuple  Range,s,Result,Number;
-        Points2Cloud3 cloud=NULL;
-        ComputePointNormal2 comp=NULL;
-        Dis_point2plane dis=NULL;
-        cloud=(Points2Cloud3)GetProcAddress(hInstance,"Points2Cloud3");
-        comp=(ComputePointNormal2)GetProcAddress(hInstance,"ComputePointNormal2");
-        dis=(Dis_point2plane)GetProcAddress(hInstance,"Dis_point2plane");
+
+
+        Distance_point2plane dis=NULL;
+        dis=(Distance_point2plane)GetProcAddress(hInstance,"Distance_point2plane");
         QString n=dataList.keys().at(team);
 
         QStringList list=dataList.value(n).toStringList();
@@ -1191,7 +1278,7 @@ void halconClass::pointToPoint(int team)
         {
             QMap<QString,QVariant> roi=set.value("team/"+list.at(i)).toMap();
 
-            if(roi.value("func").toInt()==4)
+            if(roi.value("func").toInt()==5)
             {
                 if(imgList.size()<=roi.value("index").toInt())
                     continue;
@@ -1202,10 +1289,8 @@ void halconClass::pointToPoint(int team)
                     emit Error(QStringLiteral("定位失败"));
                     return;
                 }
-                if(roi.value("isDraw").toInt()==0)
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+roi.value("x").toDouble(),roi.value("Column").toDouble()+roi.value("y").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
-                else
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+
+                gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
 
                 affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
                  disp_obj(RegionAffineTrans,WindowHandle);
@@ -1213,7 +1298,15 @@ void halconClass::pointToPoint(int team)
                 area_center(RegionAffineTrans,&Area,&Row,&Column);
                 qDebug()<<"ptop now point"<<Row[0].D()<<Column[0].D();
                 reduce_domain(*imgList.at(roi.value("index").toInt()), RegionAffineTrans, &ImageReduced);
-                min_max_gray(ImageReduced,ImageReduced,0,&Min,&Max,&Range);
+                get_region_points(ImageReduced, &Rows, &Columns);
+                get_grayval(ImageReduced, Rows, Columns, &Grayval);
+
+                tuple_sort(-Grayval,&Grayval);
+
+                tuple_select_range(Grayval,0,5,&Grayval);
+
+                tuple_mean(-Grayval,&Max);
+                //min_max_gray(ImageReduced,ImageReduced,0,&Min,&Max,&Range);
                 if(num%2==0)
                 {
                     tuple_sub(Max,tmp,&Result);
@@ -1257,22 +1350,12 @@ void halconClass::calculatePlaneness(int team)
     double result1,result2;
     int num=0;
 
-    Calculate cal=NULL;
-    CalculateFlatness2 Comp=NULL;
-	GetChildPoint child=NULL;
-    cal=(Calculate)GetProcAddress(hInstance,"CalculateFlatness");
-    Comp=(CalculateFlatness2)GetProcAddress(hInstance,"CalculateFlatness2");
-	child=(GetChildPoint)GetProcAddress(hInstance,"GetChildPoint");
 
 	QTime time;
 	time.start();
-    if(cal==NULL|child==NULL)
-    {
-        qDebug()<<"func is NULL";
-        return;
-    }
 
-    PointCloud::Ptr globleCloud(new PointCloud);
+
+
     if (HDevWindowStack::IsOpen()&hasData)
     {
 
@@ -1299,20 +1382,19 @@ void halconClass::calculatePlaneness(int team)
                 p2.x=roi.value("Column2").toInt()+roi.value("index").toInt()*img_width;
                 p2.y=roi.value("Row2").toInt();
                 qDebug()<<"start and end"<<p1.x<<p1.y<<p2.x<<p2.y;
-                PointCloud::Ptr newCloud(new PointCloud);
+
 				
-                (*child)(*inCloud,*imgList.at(roi.value("index").toInt()),HTuple(p1.y),HTuple(p1.x),HTuple(p2.y),HTuple(p2.x),newCloud);
+
 				qDebug()<<"cacule flatness"<<num;
                // pcl::io::savePCDFile(QString("roi%1.pcd").arg(i).toUtf8().data(),*(newCloud.get()));
 
-                *globleCloud+=*newCloud;    
+
             }
          }
 
         if(num==0)
             return;
-        (*cal)(globleCloud,result1);
-        (*Comp)(globleCloud,result2);
+
         //delete newCloud.get();
         qDebug()<<"team"<<team<<QStringLiteral("总平整度为")<<result1<<result2<<time.elapsed()<<"ms";
         emit sendPlaneness(n.toInt(),result1);
@@ -1341,15 +1423,8 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
     HTuple Row,Column;
    
     qDebug()<<"start pointCloud"<<w<<h;
-    typedef void (*Transfer2Cloud)(double* ,double* ,double* ,unsigned short* ,const int ,const int ,PointCloud::Ptr );
-    Transfer2Cloud test_function =NULL;
-    test_function = (Transfer2Cloud)GetProcAddress(hInstance, "Transfer2Cloud");
-    qDebug("%x,test_function",test_function);
-    if(test_function==NULL)
-    {
-        qDebug()<<"func is NULL";
-        return;
-    }
+
+
     double *yy=new double[h*w];
     for(int i=0;i<h;i++)
     {
@@ -1359,10 +1434,7 @@ void halconClass::getImagebyPointer3(double *x,double *y,double *z,const int w,c
 		
     }
 	qDebug()<<"run";
-	if(x==0)
-        (*test_function)(yy,yy,z,0,w,h,*inCloud);
-	else
-        (*test_function)(x,yy,z,0,w,h,*inCloud);
+
    // pcl::io::savePCDFile("out.pcd",*(inCloud->get()));
     qDebug()<<"end pointCloud,prossess time:"<<time.elapsed()<<"ms";
     delete yy;
@@ -1467,7 +1539,8 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
     }
     write_image(Imagetemp,"tiff",0,QString("test%1").arg(num).toUtf8().data());
     resizePart();
-    copy_obj(Imagetemp,&Image,1,1);
+    copy_image(Imagetemp,&Image);
+    //copy_obj(Imagetemp,&Image,1,1);
 
     if(h>=set.value("profileCount",1000).toUInt()|isLoadFile)
 	{

@@ -119,6 +119,7 @@ private:
     Laser *laser;
     Plot *plot;
     QFile out;
+
     QDialog *dataDialog;
     profileGet *profile;
     summarizing *sum;
@@ -173,6 +174,7 @@ private slots:
     void on_func_currentIndexChanged(int index);
     void on_draw1_clicked();
     void on_draw2_clicked();
+    void on_loadData_clicked();
 };
 
 #endif // MAINWINDOW_H

@@ -14,3 +14,8 @@ gen_region2xld @11
 fit_line @12
 Points2Cloud3 @13
 byteMapperTable @14
+compute_PointNormal @15
+compute_PointNormal2 @16
+Calculate_Flatness @17
+Calculate_Flatness2 @18
+Distance_point2plane @19

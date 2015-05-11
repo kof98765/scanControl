@@ -7,7 +7,7 @@ calculateGroup::calculateGroup()
 calculateGroup::calculateGroup(int no)
 {
     teamNo=no;
-    QList<QString> data=set.value("dataList").toMap().value(QString::number(no));
+    QList<QString> data=set.value("dataList").toMap().value(QString::number(no)).toList();
 
     for(int i=0;i<data.size();i++)
     {

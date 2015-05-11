@@ -32,6 +32,12 @@
       <height>601</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -209,7 +215,7 @@
        <string>区域列表</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="QTableWidget" name="roiList">
          <property name="selectionBehavior">
           <enum>QAbstractItemView::SelectRows</enum>
@@ -245,6 +251,18 @@
            <string>最大上限</string>
           </property>
          </column>
+         <column>
+          <property name="text">
+           <string> 基准点</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="loadData">
+         <property name="text">
+          <string>一键导入</string>
+         </property>
         </widget>
        </item>
       </layout>
@@ -254,7 +272,7 @@
        <rect>
         <x>310</x>
         <y>120</y>
-        <width>151</width>
+        <width>154</width>
         <height>155</height>
        </rect>
       </property>
@@ -340,6 +358,11 @@
          <item>
           <property name="text">
            <string>搜索区域</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>定基准点</string>
           </property>
          </item>
          <item>
@@ -433,7 +456,7 @@
        <rect>
         <x>310</x>
         <y>40</y>
-        <width>198</width>
+        <width>151</width>
         <height>81</height>
        </rect>
       </property>
@@ -462,7 +485,7 @@
             <number>500</number>
            </property>
            <property name="value">
-            <number>50</number>
+            <number>10</number>
            </property>
           </widget>
          </item>
@@ -478,7 +501,7 @@
             <number>500</number>
            </property>
            <property name="value">
-            <number>50</number>
+            <number>10</number>
            </property>
           </widget>
          </item>

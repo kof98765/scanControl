@@ -137,7 +137,8 @@ void MainWindow::initLaser()
 }
 bool MainWindow::eventFilter(QObject *target, QEvent *event)
 {
-    static QPoint start,end,threeDstart,threeDend;
+    static QPoint start,end,threeDstart,threeDend,hps,hpe;
+
     if (clickLabel* label = dynamic_cast<clickLabel*>(sender())){
         qDebug()<<ui->imgList->indexOf(label);
     }
@@ -154,7 +155,8 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
                 leftPress=true;
             if(mouse->button()==Qt::RightButton)
                 rightPress=true;
-            threeDstart=start=mouse->pos();
+            threeDstart=start=hal->getPoint();
+
             ui->pos->setText(QString("%1,%2").arg(start.x()).arg(start.y()));
             isDrag=true;
 
@@ -167,10 +169,14 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
             QPoint m=mapFromGlobal(mouse->globalPos());
 
 
-            end=mouse->pos();
-            if(end.x()<0|end.y()<0|end.x()>ui->base->width()|end.y()>ui->base->height())
+            QPoint mp=mouse->pos();
+
+            if(mp.x()<10|mp.y()<30|mp.x()>ui->base->width()-10|mp.y()>ui->base->height()-30)
                 return QWidget::eventFilter(target,event);
-            ui->pos->setText(QString("%1,%2").arg(end.x()).arg(end.y()));
+            if(!isDrawing)
+                end=hal->getPoint();
+
+            //ui->pos->setText(QString("%1,%2").arg(end.x()).arg(end.y()));
             //start=mouse->pos();
             if(isDrag)
             {
@@ -208,11 +214,14 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
         {
             QMouseEvent *mouse=static_cast<QMouseEvent *>(event);
             QPoint m=mapFromGlobal(mouse->globalPos());
+            QPoint mp=mouse->pos();
 
 
-            end=mouse->pos();
-            if(end.x()<0|end.y()<0|end.x()>ui->base->width()|end.y()>ui->base->height())
+            if(mp.x()<10|mp.y()<30|mp.x()>ui->base->width()-10|mp.y()>ui->base->height()-30)
                 return QWidget::eventFilter(target,event);
+            if(!isDrawing)
+                end=hal->getPoint();
+
             isDrag=false;
             if(mouse->button()==Qt::LeftButton)
                 leftPress=false;
@@ -1108,19 +1117,29 @@ void MainWindow::flushRoiList(QStringList ll)
             roiList->add_item(2,QStringLiteral("搜索"));
             break;
         case 2:
-            roiList->add_item(2,QStringLiteral("计算平面度"));
-            roiList->add_item(3,roi.value("min").toString());
-            roiList->add_item(4,roi.value("max").toString());
+            roiList->add_item(2,QStringLiteral("定基准点"));
+
             break;
         case 3:
-            roiList->add_item(2,QStringLiteral("点到平面高差"));
-            roiList->add_item(3,roi.value("min").toString());
-            roiList->add_item(4,roi.value("max").toString());
+            roiList->add_item(2,QStringLiteral("计算平面度"));         
             break;
         case 4:
+            roiList->add_item(2,QStringLiteral("点到平面高差"));
+            break;
+        case 5:
             roiList->add_item(2,QStringLiteral("点到点高差"));
+            break;
+        }
+        switch(roi.value("func").toInt())
+        {
+        case 2:
+        case 3:
+        case 4:
+        case 5:
             roiList->add_item(3,roi.value("min").toString());
             roiList->add_item(4,roi.value("max").toString());
+            if(roi.value("isDraw").toInt()==0)
+                roiList->add_item(5,roi.value("x").toString()+","+roi.value("y").toString());
             break;
         }
 
@@ -1299,4 +1318,9 @@ void MainWindow::on_draw2_clicked()
     ui->pointX->setEnabled(true);
     ui->pointY->setEnabled(true);
     ui->unit->setEnabled(true);
+}
+
+void MainWindow::on_loadData_clicked()
+{
+
 }
