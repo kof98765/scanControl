@@ -75,6 +75,7 @@ public:
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
     QTableWidget *roiList;
+    QPushButton *loadData;
     QWidget *layoutWidget_2;
     QFormLayout *formLayout;
     QLabel *label_2;
@@ -130,6 +131,8 @@ public:
     QLabel *pos;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *imgList;
+    QLabel *label;
+    QLabel *lableXY;
     QMenuBar *menuBar;
     QMenu *menu_S;
     QMenu *menu;
@@ -323,11 +326,16 @@ public:
         roiList->setSortingEnabled(true);
         roiList->horizontalHeader()->setDefaultSectionSize(55);
 
-        gridLayout_2->addWidget(roiList, 0, 0, 1, 1);
+        gridLayout_2->addWidget(roiList, 1, 0, 1, 1);
+
+        loadData = new QPushButton(groupBox);
+        loadData->setObjectName(QStringLiteral("loadData"));
+
+        gridLayout_2->addWidget(loadData, 0, 0, 1, 1);
 
         layoutWidget_2 = new QWidget(groupBox_3);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(310, 120, 151, 155));
+        layoutWidget_2->setGeometry(QRect(310, 120, 154, 155));
         formLayout = new QFormLayout(layoutWidget_2);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
@@ -403,7 +411,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 151, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 198, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -639,6 +647,12 @@ public:
         imgList->setContentsMargins(11, 11, 11, 11);
         imgList->setObjectName(QStringLiteral("imgList"));
         imgList->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(540, 10, 54, 12));
+        lableXY = new QLabel(centralWidget);
+        lableXY->setObjectName(QStringLiteral("lableXY"));
+        lableXY->setGeometry(QRect(590, 10, 121, 16));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -758,6 +772,7 @@ public:
         ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
         QTableWidgetItem *___qtablewidgetitem10 = roiList->horizontalHeaderItem(5);
         ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", " \345\237\272\345\207\206\347\202\271", 0));
+        loadData->setText(QApplication::translate("MainWindow", "\344\270\200\351\224\256\345\257\274\345\205\245", 0));
         label_2->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215:", 0));
         label_4->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204:", 0));
         team->clear();
@@ -835,6 +850,8 @@ public:
         threeDButton->setText(QApplication::translate("MainWindow", "3D\346\230\276\347\244\272", 0));
         rate->setText(QApplication::translate("MainWindow", "0", 0));
         pos->setText(QApplication::translate("MainWindow", "0,0", 0));
+        label->setText(QApplication::translate("MainWindow", "\345\237\272\345\207\206\347\202\271:", 0));
+        lableXY->setText(QApplication::translate("MainWindow", "0,0", 0));
         menu_S->setTitle(QApplication::translate("MainWindow", "\350\256\276\347\275\256(&S)", 0));
         menu->setTitle(QApplication::translate("MainWindow", "\345\270\256\345\212\251(&H)", 0));
         menu_2->setTitle(QApplication::translate("MainWindow", "\344\273\273\345\212\241(&N)", 0));

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_halconClass_t {
-    QByteArrayData data[60];
-    char stringdata[541];
+    QByteArrayData data[66];
+    char stringdata[589];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -61,34 +61,40 @@ QT_MOC_LITERAL(28, 230, 8),
 QT_MOC_LITERAL(29, 239, 6),
 QT_MOC_LITERAL(30, 246, 7),
 QT_MOC_LITERAL(31, 254, 8),
-QT_MOC_LITERAL(32, 263, 10),
-QT_MOC_LITERAL(33, 274, 6),
-QT_MOC_LITERAL(34, 281, 3),
-QT_MOC_LITERAL(35, 285, 6),
-QT_MOC_LITERAL(36, 292, 4),
-QT_MOC_LITERAL(37, 297, 7),
-QT_MOC_LITERAL(38, 305, 8),
-QT_MOC_LITERAL(39, 314, 3),
-QT_MOC_LITERAL(40, 318, 18),
-QT_MOC_LITERAL(41, 337, 7),
-QT_MOC_LITERAL(42, 345, 8),
-QT_MOC_LITERAL(43, 354, 18),
-QT_MOC_LITERAL(44, 373, 1),
-QT_MOC_LITERAL(45, 375, 16),
-QT_MOC_LITERAL(46, 392, 8),
-QT_MOC_LITERAL(47, 401, 3),
-QT_MOC_LITERAL(48, 405, 9),
-QT_MOC_LITERAL(49, 415, 7),
-QT_MOC_LITERAL(50, 423, 13),
-QT_MOC_LITERAL(51, 437, 4),
-QT_MOC_LITERAL(52, 442, 12),
-QT_MOC_LITERAL(53, 455, 14),
-QT_MOC_LITERAL(54, 470, 13),
-QT_MOC_LITERAL(55, 484, 18),
-QT_MOC_LITERAL(56, 503, 9),
-QT_MOC_LITERAL(57, 513, 11),
-QT_MOC_LITERAL(58, 525, 7),
-QT_MOC_LITERAL(59, 533, 7)
+QT_MOC_LITERAL(32, 263, 11),
+QT_MOC_LITERAL(33, 275, 3),
+QT_MOC_LITERAL(34, 279, 3),
+QT_MOC_LITERAL(35, 283, 3),
+QT_MOC_LITERAL(36, 287, 18),
+QT_MOC_LITERAL(37, 306, 6),
+QT_MOC_LITERAL(38, 313, 4),
+QT_MOC_LITERAL(39, 318, 6),
+QT_MOC_LITERAL(40, 325, 4),
+QT_MOC_LITERAL(41, 330, 7),
+QT_MOC_LITERAL(42, 338, 10),
+QT_MOC_LITERAL(43, 349, 3),
+QT_MOC_LITERAL(44, 353, 8),
+QT_MOC_LITERAL(45, 362, 3),
+QT_MOC_LITERAL(46, 366, 18),
+QT_MOC_LITERAL(47, 385, 7),
+QT_MOC_LITERAL(48, 393, 8),
+QT_MOC_LITERAL(49, 402, 18),
+QT_MOC_LITERAL(50, 421, 1),
+QT_MOC_LITERAL(51, 423, 16),
+QT_MOC_LITERAL(52, 440, 8),
+QT_MOC_LITERAL(53, 449, 3),
+QT_MOC_LITERAL(54, 453, 9),
+QT_MOC_LITERAL(55, 463, 7),
+QT_MOC_LITERAL(56, 471, 13),
+QT_MOC_LITERAL(57, 485, 4),
+QT_MOC_LITERAL(58, 490, 12),
+QT_MOC_LITERAL(59, 503, 14),
+QT_MOC_LITERAL(60, 518, 13),
+QT_MOC_LITERAL(61, 532, 18),
+QT_MOC_LITERAL(62, 551, 9),
+QT_MOC_LITERAL(63, 561, 11),
+QT_MOC_LITERAL(64, 573, 7),
+QT_MOC_LITERAL(65, 581, 7)
     },
     "halconClass\0detectFinish\0\0stopMove\0"
     "clearMemory\0sumResult\0type\0num\0badResult\0"
@@ -97,12 +103,14 @@ QT_MOC_LITERAL(59, 533, 7)
     "sendPlaneness\0Error\0addImg\0Hobject*\0"
     "deleteImg\0index\0deleteAllImg\0reConnect\0"
     "test\0clearData\0disp_img\0zoomIn\0zoomOut\0"
-    "getPoint\0findCenter\0HTuple\0Row\0Column\0"
-    "Row2\0Column2\0read_img\0str\0getImagebyPointer1\0"
-    "double*\0pdValueZ\0getImagebyPointer3\0"
-    "z\0close_the_window\0drawRect\0map\0"
-    "calculate\0delRect\0RectHeightSub\0team\0"
-    "pointToPoint\0createTemplate\0matchTemplate\0"
+    "getPoint\0pointToLine\0pt1\0pt2\0pt3\0"
+    "calculateBasePoint\0HTuple\0Row1\0Column\0"
+    "Row2\0Column2\0findCenter\0Row\0read_img\0"
+    "str\0getImagebyPointer1\0double*\0pdValueZ\0"
+    "getImagebyPointer3\0z\0close_the_window\0"
+    "drawRect\0map\0calculate\0delRect\0"
+    "RectHeightSub\0team\0pointToPoint\0"
+    "createTemplate\0matchTemplate\0"
     "calculatePlaneness\0selectImg\0compoundImg\0"
     "xOffset\0yOffset"
 };
@@ -114,7 +122,7 @@ static const uint qt_meta_data_halconClass[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      37,   14, // methods
+      39,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -122,45 +130,47 @@ static const uint qt_meta_data_halconClass[] = {
       15,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  199,    2, 0x06 /* Public */,
-       3,    0,  200,    2, 0x06 /* Public */,
-       4,    0,  201,    2, 0x06 /* Public */,
-       5,    2,  202,    2, 0x06 /* Public */,
-       8,    6,  207,    2, 0x06 /* Public */,
-      14,    0,  220,    2, 0x06 /* Public */,
-      15,    4,  221,    2, 0x06 /* Public */,
-      15,    4,  230,    2, 0x06 /* Public */,
-      16,    1,  239,    2, 0x06 /* Public */,
-      18,    2,  242,    2, 0x06 /* Public */,
-      19,    1,  247,    2, 0x06 /* Public */,
-      20,    1,  250,    2, 0x06 /* Public */,
-      22,    1,  253,    2, 0x06 /* Public */,
-      24,    0,  256,    2, 0x06 /* Public */,
-      25,    0,  257,    2, 0x06 /* Public */,
+       1,    0,  209,    2, 0x06 /* Public */,
+       3,    0,  210,    2, 0x06 /* Public */,
+       4,    0,  211,    2, 0x06 /* Public */,
+       5,    2,  212,    2, 0x06 /* Public */,
+       8,    6,  217,    2, 0x06 /* Public */,
+      14,    0,  230,    2, 0x06 /* Public */,
+      15,    4,  231,    2, 0x06 /* Public */,
+      15,    4,  240,    2, 0x06 /* Public */,
+      16,    1,  249,    2, 0x06 /* Public */,
+      18,    2,  252,    2, 0x06 /* Public */,
+      19,    1,  257,    2, 0x06 /* Public */,
+      20,    1,  260,    2, 0x06 /* Public */,
+      22,    1,  263,    2, 0x06 /* Public */,
+      24,    0,  266,    2, 0x06 /* Public */,
+      25,    0,  267,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      26,    0,  258,    2, 0x0a /* Public */,
-      27,    0,  259,    2, 0x0a /* Public */,
-      28,    0,  260,    2, 0x0a /* Public */,
-      29,    0,  261,    2, 0x0a /* Public */,
-      30,    0,  262,    2, 0x0a /* Public */,
-      31,    0,  263,    2, 0x0a /* Public */,
-      32,    4,  264,    2, 0x0a /* Public */,
-      32,    4,  273,    2, 0x0a /* Public */,
-      38,    1,  282,    2, 0x0a /* Public */,
-      40,    3,  285,    2, 0x0a /* Public */,
-      43,    5,  292,    2, 0x0a /* Public */,
-      45,    0,  303,    2, 0x0a /* Public */,
-      46,    1,  304,    2, 0x0a /* Public */,
-      48,    0,  307,    2, 0x0a /* Public */,
-      49,    1,  308,    2, 0x0a /* Public */,
-      50,    1,  311,    2, 0x0a /* Public */,
-      52,    1,  314,    2, 0x0a /* Public */,
-      53,    1,  317,    2, 0x0a /* Public */,
-      54,    1,  320,    2, 0x0a /* Public */,
-      55,    1,  323,    2, 0x0a /* Public */,
-      56,    1,  326,    2, 0x0a /* Public */,
-      57,    2,  329,    2, 0x0a /* Public */,
+      26,    0,  268,    2, 0x0a /* Public */,
+      27,    0,  269,    2, 0x0a /* Public */,
+      28,    0,  270,    2, 0x0a /* Public */,
+      29,    0,  271,    2, 0x0a /* Public */,
+      30,    0,  272,    2, 0x0a /* Public */,
+      31,    0,  273,    2, 0x0a /* Public */,
+      32,    3,  274,    2, 0x0a /* Public */,
+      36,    4,  281,    2, 0x0a /* Public */,
+      42,    4,  290,    2, 0x0a /* Public */,
+      42,    4,  299,    2, 0x0a /* Public */,
+      44,    1,  308,    2, 0x0a /* Public */,
+      46,    3,  311,    2, 0x0a /* Public */,
+      49,    5,  318,    2, 0x0a /* Public */,
+      51,    0,  329,    2, 0x0a /* Public */,
+      52,    1,  330,    2, 0x0a /* Public */,
+      54,    0,  333,    2, 0x0a /* Public */,
+      55,    1,  334,    2, 0x0a /* Public */,
+      56,    1,  337,    2, 0x0a /* Public */,
+      58,    1,  340,    2, 0x0a /* Public */,
+      59,    1,  343,    2, 0x0a /* Public */,
+      60,    1,  346,    2, 0x0a /* Public */,
+      61,    1,  349,    2, 0x0a /* Public */,
+      62,    1,  352,    2, 0x0a /* Public */,
+      63,    2,  355,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -186,22 +196,24 @@ static const uint qt_meta_data_halconClass[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::QPoint,
-    QMetaType::QPoint, 0x80000000 | 33, 0x80000000 | 33, 0x80000000 | 33, 0x80000000 | 33,   34,   35,   36,   37,
-    QMetaType::QPoint, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,   34,   35,   36,   37,
-    QMetaType::Void, QMetaType::QString,   39,
-    QMetaType::Void, 0x80000000 | 41, QMetaType::Int, QMetaType::Int,   42,   11,   12,
-    QMetaType::Void, 0x80000000 | 41, 0x80000000 | 41, 0x80000000 | 41, QMetaType::Int, QMetaType::Int,    9,   10,   44,   11,   12,
+    QMetaType::QPointF, QMetaType::QPointF, QMetaType::QPointF, QMetaType::QPointF,   33,   34,   35,
+    QMetaType::QPointF, 0x80000000 | 37, 0x80000000 | 37, 0x80000000 | 37, 0x80000000 | 37,   38,   39,   40,   41,
+    QMetaType::QPoint, 0x80000000 | 37, 0x80000000 | 37, 0x80000000 | 37, 0x80000000 | 37,   43,   39,   40,   41,
+    QMetaType::QPoint, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,   43,   39,   40,   41,
+    QMetaType::Void, QMetaType::QString,   45,
+    QMetaType::Void, 0x80000000 | 47, QMetaType::Int, QMetaType::Int,   48,   11,   12,
+    QMetaType::Void, 0x80000000 | 47, 0x80000000 | 47, 0x80000000 | 47, QMetaType::Int, QMetaType::Int,    9,   10,   50,   11,   12,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QVariantMap,   47,
+    QMetaType::Void, QMetaType::QVariantMap,   53,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
-    QMetaType::Void, QMetaType::Int,   51,
-    QMetaType::Void, QMetaType::Int,   51,
-    QMetaType::Void, QMetaType::Int,   51,
-    QMetaType::Void, QMetaType::Int,   51,
-    QMetaType::Void, QMetaType::Int,   51,
+    QMetaType::Void, QMetaType::Int,   57,
+    QMetaType::Void, QMetaType::Int,   57,
+    QMetaType::Void, QMetaType::Int,   57,
+    QMetaType::Void, QMetaType::Int,   57,
+    QMetaType::Void, QMetaType::Int,   57,
     QMetaType::Void, QMetaType::Int,   23,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   58,   59,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   64,   65,
 
        0        // eod
 };
@@ -233,24 +245,28 @@ void halconClass::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 19: _t->zoomOut(); break;
         case 20: { QPoint _r = _t->getPoint();
             if (_a[0]) *reinterpret_cast< QPoint*>(_a[0]) = _r; }  break;
-        case 21: { QPoint _r = _t->findCenter((*reinterpret_cast< HTuple(*)>(_a[1])),(*reinterpret_cast< HTuple(*)>(_a[2])),(*reinterpret_cast< HTuple(*)>(_a[3])),(*reinterpret_cast< HTuple(*)>(_a[4])));
+        case 21: { QPointF _r = _t->pointToLine((*reinterpret_cast< const QPointF(*)>(_a[1])),(*reinterpret_cast< const QPointF(*)>(_a[2])),(*reinterpret_cast< const QPointF(*)>(_a[3])));
+            if (_a[0]) *reinterpret_cast< QPointF*>(_a[0]) = _r; }  break;
+        case 22: { QPointF _r = _t->calculateBasePoint((*reinterpret_cast< HTuple(*)>(_a[1])),(*reinterpret_cast< HTuple(*)>(_a[2])),(*reinterpret_cast< HTuple(*)>(_a[3])),(*reinterpret_cast< HTuple(*)>(_a[4])));
+            if (_a[0]) *reinterpret_cast< QPointF*>(_a[0]) = _r; }  break;
+        case 23: { QPoint _r = _t->findCenter((*reinterpret_cast< HTuple(*)>(_a[1])),(*reinterpret_cast< HTuple(*)>(_a[2])),(*reinterpret_cast< HTuple(*)>(_a[3])),(*reinterpret_cast< HTuple(*)>(_a[4])));
             if (_a[0]) *reinterpret_cast< QPoint*>(_a[0]) = _r; }  break;
-        case 22: { QPoint _r = _t->findCenter((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])));
+        case 24: { QPoint _r = _t->findCenter((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])));
             if (_a[0]) *reinterpret_cast< QPoint*>(_a[0]) = _r; }  break;
-        case 23: _t->read_img((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 24: _t->getImagebyPointer1((*reinterpret_cast< double*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 25: _t->getImagebyPointer3((*reinterpret_cast< double*(*)>(_a[1])),(*reinterpret_cast< double*(*)>(_a[2])),(*reinterpret_cast< double*(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
-        case 26: _t->close_the_window(); break;
-        case 27: _t->drawRect((*reinterpret_cast< QMap<QString,QVariant>(*)>(_a[1]))); break;
-        case 28: _t->calculate(); break;
-        case 29: _t->delRect((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 30: _t->RectHeightSub((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 31: _t->pointToPoint((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 32: _t->createTemplate((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 33: _t->matchTemplate((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 34: _t->calculatePlaneness((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 35: _t->selectImg((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 36: _t->compoundImg((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 25: _t->read_img((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 26: _t->getImagebyPointer1((*reinterpret_cast< double*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 27: _t->getImagebyPointer3((*reinterpret_cast< double*(*)>(_a[1])),(*reinterpret_cast< double*(*)>(_a[2])),(*reinterpret_cast< double*(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 28: _t->close_the_window(); break;
+        case 29: _t->drawRect((*reinterpret_cast< QMap<QString,QVariant>(*)>(_a[1]))); break;
+        case 30: _t->calculate(); break;
+        case 31: _t->delRect((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 32: _t->RectHeightSub((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 33: _t->pointToPoint((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 34: _t->createTemplate((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 35: _t->matchTemplate((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 36: _t->calculatePlaneness((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 37: _t->selectImg((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 38: _t->compoundImg((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -374,13 +390,13 @@ int halconClass::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 37)
+        if (_id < 39)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 37;
+        _id -= 39;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 37)
+        if (_id < 39)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 37;
+        _id -= 39;
     }
     return _id;
 }

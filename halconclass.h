@@ -96,28 +96,7 @@ private:
 
     Hobject result_img,Image,RGBImage,tmpImage;
 
-    HTuple minLength;
-    HTuple maxLength;
-    HTuple minArea;
-    HTuple maxArea;
-
-    int badMinArea;
-    int badMaxArea;
-    int badMaxHeight;
-    int badMaxWidth;
-    int badMinHeight;
-    double contrast;
-    int grayDvalue;
-    int checkMinArea;
-    int badMinWidth;
-    int checkMaxArea;
-    int erosion;
-    int badMaxradius;
-    int minGray;
-    int maxGray;
-    int badMinRadius;
-    int smothWidth;
-    int smothHeight;
+    QPoint basePoint;
     bool hasData;
     bool isLoadFile;
     int index;
@@ -144,6 +123,8 @@ public slots:
      void zoomIn();
      void zoomOut();
      QPoint getPoint();
+     QPointF pointToLine(const QPointF &pt1, const QPointF &pt2, const QPointF &pt3);
+     QPointF calculateBasePoint(HTuple Row1,HTuple Column,HTuple Row2,HTuple Column2);
      QPoint findCenter(HTuple Row,HTuple Column,HTuple Row2,HTuple Column2);
      QPoint findCenter(double Row,double Column,double Row2,double Column2);
     void read_img(QString str);

@@ -33048,3 +33048,430 @@ Demonstrate the profile transfer via callback function
 17:16:03.834: display 0
 17:16:09.621: display 1
 17:16:26.633: display 0
+09:26:57.416: CreateLLTDevice OK 
+
+09:26:57.463: rowcount 0
+09:26:57.464: roiList size 3
+09:26:59.673: rowcount 3
+09:26:59.673: roiList size 3
+09:26:59.674: read "D:/test1.tif"
+09:26:59.707: 800 1300 real
+09:26:59.829: 800 1300
+09:26:59.829: read finish
+09:27:25.132: start
+09:27:25.132: rowcount 0
+09:27:25.133: 1
+09:27:25.135: clear
+09:27:25.144: rowcount 3
+09:27:25.144: roiList size 3
+09:27:47.263: 0
+09:27:56.327: CreateLLTDevice OK 
+
+09:27:56.373: rowcount 0
+09:27:56.374: roiList size 3
+09:28:02.468: 0
+09:28:09.179: "D:/test0.tif"
+09:28:09.207: rowcount 3
+09:28:09.207: roiList size 3
+09:28:09.208: read "D:/test0.tif"
+09:28:09.239: 800 1300 real
+09:28:09.403: 800 1300
+09:28:09.404: read finish
+09:29:48.227: "D:/test1.tif"
+09:29:48.285: rowcount 3
+09:29:48.285: roiList size 3
+09:29:48.285: read "D:/test1.tif"
+09:29:48.315: 800 1300 real
+09:29:48.327: mirror
+09:29:48.406: 800 1300
+09:29:48.406: read finish
+09:30:07.627: display 0
+16:49:42.128: CreateLLTDevice OK 
+
+16:49:42.222: rowcount 0
+16:49:42.222: roiList size 3
+16:49:43.839: rowcount 3
+16:49:43.839: roiList size 3
+16:49:43.840: read "D:/test1.tif"
+16:49:43.962: 800 1300 real
+16:49:44.070: 800 1300
+16:49:44.070: read finish
+16:49:46.771: QPoint(192,105)
+16:49:46.771: QPoint(192,80)
+16:49:46.771: item 2
+16:49:47.460: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+16:50:10.768: CreateLLTDevice OK 
+
+16:50:10.832: rowcount 0
+16:50:10.833: roiList size 2
+16:50:16.265: 0
+16:50:18.008: "D:/test0.tif"
+16:50:18.035: rowcount 2
+16:50:18.035: roiList size 2
+16:50:18.036: read "D:/test0.tif"
+16:50:18.060: 800 1300 real
+16:50:18.162: 800 1300
+16:50:18.162: read finish
+16:51:37.189: CreateLLTDevice OK 
+
+16:51:37.254: rowcount 0
+16:51:37.254: roiList size 2
+16:51:38.647: rowcount 2
+16:51:38.648: roiList size 2
+16:51:38.648: read "D:/test0.tif"
+16:51:38.673: 800 1300 real
+16:51:38.776: 800 1300
+16:51:38.776: read finish
+16:51:42.488: 4290772830
+16:51:42.489: 191 255 94
+16:55:14.754: CreateLLTDevice OK 
+
+16:55:14.817: rowcount 0
+16:55:14.817: roiList size 2
+16:55:16.372: rowcount 2
+16:55:16.372: roiList size 2
+16:55:16.373: read "D:/test0.tif"
+16:55:16.398: 800 1300 real
+16:55:16.495: 800 1300
+16:55:16.495: read finish
+16:55:24.111: 4286644061
+16:55:24.111: 128 255 93
+16:56:18.431: CreateLLTDevice OK 
+
+16:56:18.507: rowcount 0
+16:56:18.507: roiList size 2
+16:56:19.991: rowcount 2
+16:56:19.991: roiList size 2
+16:56:19.992: read "D:/test0.tif"
+16:56:20.017: 800 1300 real
+16:56:20.116: 800 1300
+16:56:20.116: read finish
+16:56:28.454: 4285902079
+16:56:28.454: 117 172 255
+16:56:34.519: center QPointF(221.054, 620.5)
+16:56:34.519: func 2 49.9621 66.9907
+16:56:34.558: rowcount 2
+16:56:34.558: roiList size 3
+16:56:34.559: ""
+16:56:34.559: 4285902079 0 2
+16:58:56.908: CreateLLTDevice OK 
+
+16:58:56.971: rowcount 0
+16:58:56.971: roiList size 3
+16:58:58.555: rowcount 3
+16:58:58.556: roiList size 3
+16:58:58.556: read "D:/test0.tif"
+16:58:58.581: 800 1300 real
+16:58:58.762: 800 1300
+16:58:58.763: read finish
+16:59:10.497: QPoint(129,101)
+16:59:10.498: QPoint(129,76)
+16:59:10.498: item 2
+16:59:11.275: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+16:59:16.807: 4284284854
+16:59:16.807: 92 255 182
+16:59:23.754: center QPointF(217.033, 620)
+16:59:23.754: func 2 61.9769 141.527
+16:59:23.849: rowcount 2
+16:59:23.849: roiList size 3
+16:59:23.850: ""
+16:59:23.850: 4284284854 0 2
+17:00:32.947: CreateLLTDevice OK 
+
+17:00:33.015: rowcount 0
+17:00:33.015: roiList size 3
+17:00:35.309: rowcount 3
+17:00:35.309: roiList size 3
+17:00:35.310: read "D:/test0.tif"
+17:00:35.335: 800 1300 real
+17:00:35.512: 800 1300
+17:00:35.512: read finish
+17:00:36.791: QPoint(128,95)
+17:00:36.791: QPoint(128,70)
+17:00:36.791: item 2
+17:00:37.443: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+17:00:43.674: 4288020367
+17:00:43.675: 149 255 143
+17:00:50.710: center QPointF(217, 160800)
+17:00:50.710: func 2 61.9769 160.762
+17:00:50.801: rowcount 2
+17:00:50.802: roiList size 3
+17:00:50.802: ""
+17:00:50.802: 4288020367 0 2
+17:01:40.085: CreateLLTDevice OK 
+
+17:01:40.153: rowcount 0
+17:01:40.154: roiList size 3
+17:01:43.982: rowcount 3
+17:01:43.983: roiList size 3
+17:01:43.983: read "D:/test0.tif"
+17:01:44.008: 800 1300 real
+17:01:44.185: 800 1300
+17:01:44.186: read finish
+17:01:45.880: QPoint(202,101)
+17:01:45.880: QPoint(202,76)
+17:01:45.881: item 2
+17:01:47.467: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+17:01:53.666: 4287287807
+17:01:53.666: 138 209 255
+17:02:06.287: CreateLLTDevice OK 
+
+17:02:06.355: rowcount 0
+17:02:06.356: roiList size 2
+17:02:07.603: rowcount 2
+17:02:07.603: roiList size 2
+17:02:07.603: read "D:/test0.tif"
+17:02:07.629: 800 1300 real
+17:02:07.726: 800 1300
+17:02:07.726: read finish
+17:02:11.464: 4287409151
+17:02:11.464: 140 171 255
+17:02:20.050: center QPointF(217, 160800)
+17:02:20.050: func 2 83.6035 165.571
+17:02:20.139: rowcount 2
+17:02:20.140: roiList size 3
+17:02:20.140: ""
+17:02:20.140: 4287409151 0 2
+17:04:52.861: CreateLLTDevice OK 
+
+17:04:52.925: rowcount 0
+17:04:52.926: roiList size 3
+17:05:57.683: QPoint(60,102)
+17:05:57.683: QPoint(60,77)
+17:05:57.683: item 2
+17:05:58.346: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+17:06:00.124: rowcount 2
+17:06:00.125: roiList size 2
+17:06:00.125: read "D:/test0.tif"
+17:06:00.150: 800 1300 real
+17:06:00.252: 800 1300
+17:06:00.252: read finish
+17:06:03.979: 4285564415
+17:06:03.979: 112 133 255
+17:06:17.251: CreateLLTDevice OK 
+
+17:06:17.316: rowcount 0
+17:06:17.316: roiList size 2
+17:06:18.543: rowcount 2
+17:06:18.543: roiList size 2
+17:06:18.544: read "D:/test0.tif"
+17:06:18.569: 800 1300 real
+17:06:18.666: 800 1300
+17:06:18.666: read finish
+17:06:23.820: 4282867711
+17:06:23.820: 71 95 255
+17:06:30.350: center QPoint(217,160800)
+17:06:30.351: func 2 83.6035 146.336
+17:06:30.448: rowcount 2
+17:06:30.448: roiList size 3
+17:06:30.449: ""
+17:06:30.449: 4282867711 0 2
+17:10:06.892: CreateLLTDevice OK 
+
+17:10:06.963: rowcount 0
+17:10:06.963: roiList size 3
+17:10:09.109: rowcount 3
+17:10:09.109: roiList size 3
+17:10:09.110: read "D:/test0.tif"
+17:10:09.135: 800 1300 real
+17:10:09.342: 800 1300
+17:10:09.343: read finish
+17:10:11.392: QPoint(131,104)
+17:10:11.393: QPoint(131,79)
+17:10:11.393: item 2
+17:10:12.755: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+17:10:19.034: 4288741263
+17:10:19.034: 160 255 143
+17:10:31.519: CreateLLTDevice OK 
+
+17:10:31.586: rowcount 0
+17:10:31.586: roiList size 2
+17:10:32.764: rowcount 2
+17:10:32.765: roiList size 2
+17:10:32.765: read "D:/test0.tif"
+17:10:32.790: 800 1300 real
+17:10:32.888: 800 1300
+17:10:32.889: read finish
+17:10:36.048: 4285661039
+17:10:36.048: 113 255 111
+17:10:43.218: center QPointF(217.033, 620)
+17:10:43.218: func 2 86.0065 134.314
+17:10:43.314: rowcount 2
+17:10:43.314: roiList size 3
+17:10:43.314: ""
+17:10:43.314: 4285661039 0 2
+17:16:01.247: CreateLLTDevice OK 
+
+17:16:01.314: rowcount 0
+17:16:01.314: roiList size 3
+17:16:03.240: rowcount 3
+17:16:03.241: roiList size 3
+17:16:03.241: read "D:/test0.tif"
+17:16:03.266: 800 1300 real
+17:16:03.465: 800 1300
+17:16:03.465: read finish
+17:16:07.352: QPoint(165,101)
+17:16:07.352: QPoint(165,76)
+17:16:07.352: item 2
+17:16:08.363: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+17:16:13.520: 4284874695
+17:16:13.520: 101 255 199
+17:16:18.300: center QPointF(217.033, 619.5)
+17:16:18.300: func 2 49.9621 124.696
+17:16:18.394: rowcount 2
+17:16:18.394: roiList size 3
+17:16:18.395: ""
+17:16:18.395: 4284874695 0 2
+17:16:44.665: CreateLLTDevice OK 
+
+17:16:44.731: rowcount 0
+17:16:44.731: roiList size 3
+17:16:46.182: rowcount 3
+17:16:46.182: roiList size 3
+17:16:46.183: read "D:/test0.tif"
+17:16:46.208: 800 1300 real
+17:16:46.388: 800 1300
+17:16:46.388: read finish
+17:18:32.046: CreateLLTDevice OK 
+
+17:18:32.121: rowcount 0
+17:18:32.122: roiList size 3
+17:18:33.592: rowcount 3
+17:18:33.592: roiList size 3
+17:18:33.593: read "D:/test0.tif"
+17:18:33.618: 800 1300 real
+17:18:33.803: 800 1300
+17:18:33.803: read finish
+17:18:36.130: QPoint(139,105)
+17:18:36.130: QPoint(139,80)
+17:18:36.130: item 2
+17:18:36.972: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+17:18:47.394: CreateLLTDevice OK 
+
+17:18:47.460: rowcount 0
+17:18:47.460: roiList size 2
+17:18:49.058: rowcount 2
+17:18:49.058: roiList size 2
+17:18:49.058: read "D:/test0.tif"
+17:18:49.083: 800 1300 real
+17:18:49.184: 800 1300
+17:18:49.184: read finish
+17:18:52.566: 4286447546
+17:18:52.566: 125 255 186
+17:19:01.818: center QPointF(217.033, 619.5)
+17:19:01.818: func 2 52.3651 131.909
+17:19:01.912: rowcount 2
+17:19:01.912: roiList size 3
+17:19:01.912: ""
+17:19:01.913: 4286447546 0 2
+08:43:40.910: CreateLLTDevice OK 
+
+08:43:40.985: rowcount 0
+08:43:40.986: roiList size 3
+08:45:15.568: CreateLLTDevice OK 
+
+08:45:15.636: rowcount 0
+08:45:15.636: roiList size 3
+08:45:18.059: rowcount 3
+08:45:18.060: roiList size 3
+08:45:18.060: read "D:/test0.tif"
+08:45:18.184: 800 1300 real
+08:45:18.370: 800 1300
+08:45:18.370: read finish
+08:45:27.433: point QPoint(111,0)
+08:47:15.471: CreateLLTDevice OK 
+
+08:47:15.543: rowcount 0
+08:47:15.544: roiList size 3
+08:47:24.224: point QPoint(111,0) 7
+08:48:50.714: CreateLLTDevice OK 
+
+08:48:50.784: rowcount 0
+08:48:50.784: roiList size 3
+08:48:59.354: point QPoint(111,222)
+08:49:06.579: Accepted
+08:49:31.186: point QPoint(111,222)
+08:49:31.187: point QPoint(333,221)
+08:51:59.547: CreateLLTDevice OK 
+
+08:51:59.617: rowcount 0
+08:51:59.617: roiList size 3
+08:52:01.211: rowcount 3
+08:52:01.212: roiList size 3
+08:52:01.212: read "D:/test0.tif"
+08:52:01.240: 800 1300 real
+08:52:01.490: 800 1300
+08:52:01.490: read finish
+08:52:03.196: QPoint(152,100)
+08:52:03.196: QPoint(152,75)
+08:52:03.196: item 2
+08:52:03.984: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+08:52:12.881: center QPointF(217.033, 620)
+08:52:12.882: func 2 88.4094 103.057
+08:52:12.972: rowcount 2
+08:52:12.972: roiList size 3
+08:52:12.973: ""
+08:52:12.973: 4294901760 0 2
+08:52:19.364: QPoint(127,96)
+08:52:19.364: QPoint(127,71)
+08:52:19.364: item 2
+08:52:19.967: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+08:52:24.473: center QPointF(217.033, 620.5)
+08:52:24.474: func 2 73.9917 117.483
+08:52:24.568: rowcount 2
+08:52:24.568: roiList size 3
+08:52:24.569: ""
+08:52:24.569: 4294901760 0 2
+08:52:31.930: center QPointF(805.754, 212.384)
+08:52:31.930: func 2 71.5887 103.057
+08:52:32.049: rowcount 3
+08:52:32.049: roiList size 4
+08:52:32.050: ""
+08:52:32.050: 4294901760 0 2
+08:52:41.676: center QPointF(700.228, 621.051)
+08:52:41.676: func 2 42.7532 218.468
+08:52:41.842: rowcount 4
+08:52:41.842: roiList size 5
+08:52:41.844: ""
+08:52:41.844: 4294901760 0 2
+08:52:44.955: QPoint(158,154)
+08:52:44.956: QPoint(158,129)
+08:52:44.956: item 4
+08:52:45.518: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002", "rect003")) ) ) 
+08:52:46.285: QPoint(171,137)
+08:52:46.285: QPoint(171,112)
+08:52:46.285: item 3
+08:52:46.846: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001", "rect002")) ) ) 
+08:52:47.697: QPoint(183,106)
+08:52:47.697: QPoint(183,81)
+08:52:47.697: item 2
+08:52:48.177: del "0" QMap(("0", QVariant(QStringList, ("rect000", "rect001")) ) ) 
+08:57:00.624: CreateLLTDevice OK 
+
+08:57:00.697: rowcount 0
+08:57:00.697: roiList size 2
+08:57:02.859: rowcount 2
+08:57:02.860: roiList size 2
+08:57:02.860: read "D:/test0.tif"
+08:57:02.885: 800 1300 real
+08:57:02.988: 800 1300
+08:57:02.988: read finish
+08:57:12.861: ""
+08:57:12.862: 4294901760 0 2
+08:57:21.501: center QPointF(217.033, 620.5)
+08:57:21.501: func 2 47.9159 132.799
+08:57:21.596: rowcount 2
+08:57:21.596: roiList size 3
+08:57:21.597: ""
+08:57:21.597: 4294901760 0 2
+09:59:06.707: CreateLLTDevice OK 
+
+09:59:06.788: rowcount 0
+09:59:06.788: roiList size 3
+09:59:25.375: QTextCursor::setPosition: Position '58' out of range
+10:04:51.882: rowcount 3
+10:04:51.883: roiList size 3
+10:04:51.884: read "D:/test0.tif"
+10:04:52.012: 800 1300 real
+10:04:52.255: 800 1300
+10:04:52.255: read finish

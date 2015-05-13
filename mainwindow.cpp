@@ -1139,7 +1139,7 @@ void MainWindow::flushRoiList(QStringList ll)
             roiList->add_item(3,roi.value("min").toString());
             roiList->add_item(4,roi.value("max").toString());
             if(roi.value("isDraw").toInt()==0)
-                roiList->add_item(5,roi.value("x").toString()+","+roi.value("y").toString());
+                ui->lableXY->setText(QString("%1,%2").arg(roi.value("x").toFloat()).arg(roi.value("y").toFloat()));
             break;
         }
 
@@ -1322,5 +1322,22 @@ void MainWindow::on_draw2_clicked()
 
 void MainWindow::on_loadData_clicked()
 {
+
+    QString filePath=QFileDialog::getOpenFileName(this,QStringLiteral("点位文件"),".","txt (*.txt)");
+    if(filePath.isEmpty())
+        return;
+    QFile f(filePath);
+    f.open(QFile::ReadOnly);
+    QTextStream txtInput(&f);
+    QString buf;
+    while(!txtInput.atEnd())
+    {
+        buf=txtInput.readLine();
+        QPoint p;
+        p.setX(buf.mid(0,buf.indexOf(",")).toFloat());
+        p.setY(buf.mid(buf.indexOf(",")+1,buf.length()).toFloat());
+        qDebug()<<"point"<<p;
+
+    }
 
 }

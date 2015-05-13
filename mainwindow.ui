@@ -456,7 +456,7 @@
        <rect>
         <x>310</x>
         <y>40</y>
-        <width>151</width>
+        <width>198</width>
         <height>81</height>
        </rect>
       </property>
@@ -945,6 +945,32 @@ border-radius:25px</string>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="imgList"/>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>10</y>
+      <width>54</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>基准点:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lableXY">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>10</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0,0</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
