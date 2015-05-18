@@ -28,17 +28,7 @@ public:
 protected:
 
 private slots:
-    void on_loadButton_clicked();
 
-    void on_nextFrame_clicked();
-
-
-    void on_preFrame_clicked();
-    void on_reset_clicked();
-
-    void on_numFrame_valueChanged(int arg1);
-
-    void on_pushButton_clicked();
     void timer_timeout();
 
 public:

@@ -95,7 +95,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setDialog->setModal(true);
     pointData=new pointDataDialog();
 
-    //point=new pointAnalyze;
+    point=new pointAnalyze;
 
     //激活鼠标跟踪功能
     setMouseTracking(true);
@@ -1332,4 +1332,9 @@ void MainWindow::on_loadData_clicked()
 {
 
    pointData->show();
+}
+
+void MainWindow::on_chart_clicked()
+{
+    point->show();
 }

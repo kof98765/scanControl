@@ -1080,7 +1080,7 @@ void halconClass::planePoint(int team)
 
          QStringList list=dataList.value(n).toStringList();
 
-         std::vector<float> x,y,z;
+         std::vector<double> x,y,z;
          x.resize(100);
          y.resize(100);
          z.resize(100);
@@ -1102,12 +1102,13 @@ void halconClass::planePoint(int team)
                //  }
                 num++;
                  QMap<QString,QVariant> point=set.value("basePoint").toMap();
-                qDebug()<<"start planePoint";
 
-                    if(roi.value("isDraw").toInt()==0)
-                        gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+point.value(roi.value("index").toString()).toPointF().y(),roi.value("Column").toDouble()+point.value(roi.value("index").toString()).toPointF().x(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
-                    else
-                        gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                 qDebug()<<"start planePoint";
+                 qDebug()<<roi.value("index").toString();
+                 if(roi.value("isDraw").toInt()==0)
+                     gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+point.value(roi.value("index").toString()).toPointF().y(),roi.value("Column").toDouble()+point.value(roi.value("index").toString()).toPointF().x(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                 else
+                     gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
                  //affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
                 // disp_obj(RegionAffineTrans,WindowHandle);
                 // qDebug()<<"planePoint orginal point"<<roi.value("Row").toDouble()<<roi.value("Column").toDouble();
@@ -1130,7 +1131,7 @@ void halconClass::planePoint(int team)
                  tuple_find(Grayval,0,&Indices);
                  double sumResult;
                  tuple_sum(Grayval,&sumResult);
-                 double mean=sumResult/(Grayval.Num())*1000;
+                 double mean=sumResult/(Grayval.Num());
                  /*
                  if(Indices[0].I()!=-1)
                  {
@@ -1142,9 +1143,9 @@ void halconClass::planePoint(int team)
                  }
                  tuple_mean(Grayval,&mean);
                  */
-                 x[in]=roi.value("Row").toFloat();
-                 y[in]=roi.value("Column").toFloat();
-                 z[in]=(float)mean;
+                 x[in]=roi.value("Column").toFloat()+point.value(roi.value("index").toString()).toPointF().y();
+                 y[in]=roi.value("Row").toFloat()+point.value(roi.value("index").toString()).toPointF().x();
+                 z[in]=mean;
                  qDebug()<<"xyz"<<x[in]<<y[in]<<z[in]<<in;
                  in++;
 
@@ -1163,14 +1164,26 @@ void halconClass::planePoint(int team)
              return;
          }
          qDebug()<<"cloud";
+         tagPoint p;
          tagPlane Plane;
 
-         PlaneSet(listToPoint((double *)&x[0],(double *)&y[0],(double *)&z[0],in),Plane,in);
+         HTuple dist;
+         tagPoint *pointList=listToPoint((double *)&x[0],(double *)&y[0],(double *)&z[0],in);
+         PlaneSet(pointList,Plane,in);
+         for(int i=0;i<in;i++)
+         {
+             result=PointToPlane(pointList[i],Plane,result);
+             dist.Append(result);
+             qDebug()<<result;
+         }
 
+         tuple_max(dist,&Max);
+         tuple_min(dist,&Min);
+         result=abs(Max[0].D()-Min[0].D());
          /// (*cal)(&x[0],&y[0],&z[0],in,result);
          qDebug()<<"cloud"<<result;
-         emit sendPlaneness(n.toInt(),Plane.Flat);
-         qDebug()<<QStringLiteral("平面度为:")<<Plane.Flat<<Plane.MinFlat<<Plane.MaxFlat;
+         emit sendPlaneness(n.toInt(),result);
+         qDebug()<<QStringLiteral("平面度为:")<<result<<Max[0].D()<<Min[0].D();
 
 
 
@@ -1246,7 +1259,7 @@ void halconClass::RectHeightSub(int team)
 
         QStringList list=dataList.value(n).toStringList();
 
-        std::vector<float> x,y,z,temp;
+        std::vector<double> x,y,z,temp;
         x.resize(100);
         y.resize(100);
         z.resize(100);
@@ -1294,22 +1307,11 @@ void halconClass::RectHeightSub(int team)
                 tuple_find(Grayval,0,&Indices);
                 double sumResult;
                 tuple_sum(Grayval,&sumResult);
-                qDebug()<<"Grayval Num,Indices Num, sum"<<Grayval.Num()<<Indices.Num()<<sumResult;
                 double mean=sumResult/(Grayval.Num());
-                /*
-                if(Indices[0].I()!=-1)
-                {
-                    for(int i=0;i<Indices.Num();i++)
-                    {
 
-                        Grayval[Indices[i].I()]=tmp;
-                    }
-                }
-                tuple_mean(Grayval,&mean);
-                */
-                x[in]=roi.value("Row").toFloat();
-                y[in]=roi.value("Column").toFloat();
-                z[in]=(float)mean;
+                x[in]=roi.value("Row").toFloat()+point.value(roi.value("index").toString()).toPointF().y();
+                y[in]=roi.value("Column").toFloat()+point.value(roi.value("index").toString()).toPointF().x();
+                z[in]=mean;
                 temp[in]=i;
                 qDebug()<<"xyz"<<x[in]<<y[in]<<z[in]<<in;
                 in++;
@@ -1323,32 +1325,36 @@ void halconClass::RectHeightSub(int team)
         double result;
 
         VectorInfo vec;
-        result=(*comp)(&x[0],&y[0],&z[0],in,&vec);
-        qDebug()<<"vec"<<vec._constant<<vec._curvature<<vec._ratioX<<vec._ratioY<<vec._ratioZ;
-        qDebug()<<"comp"<<result;
+       // result=(*comp)(&x[0],&y[0],&z[0],in,&vec);
+
         if(in<set.value("check_num",4).toInt()+1)
         {
             emit Error(QString("not enough four point,at least %1 point!!").arg(set.value("check_num",4).toInt()+1));
             return;
         }
-        for(int j=set.value("check_num",4).toInt();j<in;j++)
+        tagPlane Plane;
+        tagPoint *pointList=listToPoint((double *)&x[0],(double *)&y[0],(double *)&z[0],in);
+        PlaneSet(pointList,Plane,in);
+        for(int j=0;j<in;j++)
         {
 
             QMap<QString,QVariant> roi=set.value("team/"+list.at(temp[j])).toMap();
 
+            HTuple dist;
 
 
            if(roi.value("func").toInt()==4)
            {
-               pointXYZ p;
-               p._PointX=x[j];
-               p._PointY=y[j];
-               p._PointZ=z[j];
+               tagPoint p;
+               p.x=x[j];
+               p.y=y[j];
+               p.z=z[j];
+               result=PointToPlane(pointList[j],Plane,result);
+               dist.Append(result);
 
-
-               (*dis)(p,vec,result);
-               qDebug()<<"heightSub"<<list.at(temp[j])<<abs(result);
-               emit sendHeightSub(list.at(temp[j]),0,0,abs(result));
+              // (*dis)(p,vec,result);
+               qDebug()<<"heightSub"<<list.at(temp[j])<<result;
+               emit sendHeightSub(list.at(temp[j]),0,0,result);
            }
 
 

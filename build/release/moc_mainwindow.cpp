@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[62];
-    char stringdata[838];
+    QByteArrayData data[63];
+    char stringdata[855];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -90,7 +90,8 @@ QT_MOC_LITERAL(57, 750, 27),
 QT_MOC_LITERAL(58, 778, 5),
 QT_MOC_LITERAL(59, 784, 16),
 QT_MOC_LITERAL(60, 801, 16),
-QT_MOC_LITERAL(61, 818, 19)
+QT_MOC_LITERAL(61, 818, 19),
+QT_MOC_LITERAL(62, 838, 16)
     },
     "MainWindow\0stopMove\0\0E128_detect\0"
     "outputMessage\0QtMsgType\0recvHeightSub\0"
@@ -114,7 +115,7 @@ QT_MOC_LITERAL(61, 818, 19)
     "statusCheck\0updataProsessBar\0"
     "on_toExcel_clicked\0on_func_currentIndexChanged\0"
     "index\0on_draw1_clicked\0on_draw2_clicked\0"
-    "on_loadData_clicked"
+    "on_loadData_clicked\0on_chart_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -124,7 +125,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      48,   14, // methods
+      49,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -132,56 +133,57 @@ static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  254,    2, 0x06 /* Public */,
-       3,    0,  255,    2, 0x06 /* Public */,
+       1,    0,  259,    2, 0x06 /* Public */,
+       3,    0,  260,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    2,  256,    2, 0x0a /* Public */,
-       6,    4,  261,    2, 0x0a /* Public */,
-       6,    4,  270,    2, 0x0a /* Public */,
-       7,    2,  279,    2, 0x0a /* Public */,
-       8,    2,  284,    2, 0x0a /* Public */,
-      12,    0,  289,    2, 0x0a /* Public */,
-      13,    0,  290,    2, 0x0a /* Public */,
-      14,    0,  291,    2, 0x0a /* Public */,
-      15,    1,  292,    2, 0x0a /* Public */,
-      17,    1,  295,    2, 0x0a /* Public */,
-      19,    0,  298,    2, 0x0a /* Public */,
-      20,    1,  299,    2, 0x0a /* Public */,
-      21,    1,  302,    2, 0x0a /* Public */,
-      22,    1,  305,    2, 0x0a /* Public */,
-      23,    0,  308,    2, 0x0a /* Public */,
-      24,    0,  309,    2, 0x0a /* Public */,
-      25,    0,  310,    2, 0x0a /* Public */,
-      26,    1,  311,    2, 0x0a /* Public */,
-      27,    0,  314,    2, 0x0a /* Public */,
-      28,    0,  315,    2, 0x0a /* Public */,
-      29,    1,  316,    2, 0x0a /* Public */,
-      31,    0,  319,    2, 0x0a /* Public */,
-      32,    0,  320,    2, 0x0a /* Public */,
-      33,    0,  321,    2, 0x0a /* Public */,
-      34,    1,  322,    2, 0x0a /* Public */,
-      37,    2,  325,    2, 0x0a /* Public */,
-      40,    0,  330,    2, 0x0a /* Public */,
-      41,    0,  331,    2, 0x0a /* Public */,
-      42,    0,  332,    2, 0x0a /* Public */,
-      43,    0,  333,    2, 0x0a /* Public */,
-      44,    0,  334,    2, 0x0a /* Public */,
-      45,    0,  335,    2, 0x0a /* Public */,
-      46,    0,  336,    2, 0x0a /* Public */,
-      47,    0,  337,    2, 0x0a /* Public */,
-      48,    1,  338,    2, 0x0a /* Public */,
-      50,    0,  341,    2, 0x0a /* Public */,
-      51,    0,  342,    2, 0x0a /* Public */,
-      52,    0,  343,    2, 0x0a /* Public */,
-      53,    0,  344,    2, 0x08 /* Private */,
-      54,    0,  345,    2, 0x08 /* Private */,
-      55,    2,  346,    2, 0x08 /* Private */,
-      56,    0,  351,    2, 0x08 /* Private */,
-      57,    1,  352,    2, 0x08 /* Private */,
-      59,    0,  355,    2, 0x08 /* Private */,
-      60,    0,  356,    2, 0x08 /* Private */,
-      61,    0,  357,    2, 0x08 /* Private */,
+       4,    2,  261,    2, 0x0a /* Public */,
+       6,    4,  266,    2, 0x0a /* Public */,
+       6,    4,  275,    2, 0x0a /* Public */,
+       7,    2,  284,    2, 0x0a /* Public */,
+       8,    2,  289,    2, 0x0a /* Public */,
+      12,    0,  294,    2, 0x0a /* Public */,
+      13,    0,  295,    2, 0x0a /* Public */,
+      14,    0,  296,    2, 0x0a /* Public */,
+      15,    1,  297,    2, 0x0a /* Public */,
+      17,    1,  300,    2, 0x0a /* Public */,
+      19,    0,  303,    2, 0x0a /* Public */,
+      20,    1,  304,    2, 0x0a /* Public */,
+      21,    1,  307,    2, 0x0a /* Public */,
+      22,    1,  310,    2, 0x0a /* Public */,
+      23,    0,  313,    2, 0x0a /* Public */,
+      24,    0,  314,    2, 0x0a /* Public */,
+      25,    0,  315,    2, 0x0a /* Public */,
+      26,    1,  316,    2, 0x0a /* Public */,
+      27,    0,  319,    2, 0x0a /* Public */,
+      28,    0,  320,    2, 0x0a /* Public */,
+      29,    1,  321,    2, 0x0a /* Public */,
+      31,    0,  324,    2, 0x0a /* Public */,
+      32,    0,  325,    2, 0x0a /* Public */,
+      33,    0,  326,    2, 0x0a /* Public */,
+      34,    1,  327,    2, 0x0a /* Public */,
+      37,    2,  330,    2, 0x0a /* Public */,
+      40,    0,  335,    2, 0x0a /* Public */,
+      41,    0,  336,    2, 0x0a /* Public */,
+      42,    0,  337,    2, 0x0a /* Public */,
+      43,    0,  338,    2, 0x0a /* Public */,
+      44,    0,  339,    2, 0x0a /* Public */,
+      45,    0,  340,    2, 0x0a /* Public */,
+      46,    0,  341,    2, 0x0a /* Public */,
+      47,    0,  342,    2, 0x0a /* Public */,
+      48,    1,  343,    2, 0x0a /* Public */,
+      50,    0,  346,    2, 0x0a /* Public */,
+      51,    0,  347,    2, 0x0a /* Public */,
+      52,    0,  348,    2, 0x0a /* Public */,
+      53,    0,  349,    2, 0x08 /* Private */,
+      54,    0,  350,    2, 0x08 /* Private */,
+      55,    2,  351,    2, 0x08 /* Private */,
+      56,    0,  356,    2, 0x08 /* Private */,
+      57,    1,  357,    2, 0x08 /* Private */,
+      59,    0,  360,    2, 0x08 /* Private */,
+      60,    0,  361,    2, 0x08 /* Private */,
+      61,    0,  362,    2, 0x08 /* Private */,
+      62,    0,  363,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -231,6 +233,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   58,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -291,6 +294,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 45: _t->on_draw1_clicked(); break;
         case 46: _t->on_draw2_clicked(); break;
         case 47: _t->on_loadData_clicked(); break;
+        case 48: _t->on_chart_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -336,13 +340,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 48)
+        if (_id < 49)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 48;
+        _id -= 49;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 48)
+        if (_id < 49)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 48;
+        _id -= 49;
     }
     return _id;
 }

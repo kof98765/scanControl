@@ -178,6 +178,7 @@ private slots:
     void on_draw1_clicked();
     void on_draw2_clicked();
     void on_loadData_clicked();
+    void on_chart_clicked();
 };
 
 #endif // MAINWINDOW_H

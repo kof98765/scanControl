@@ -71,6 +71,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *toExcel;
     QTableWidget *tableWidget;
+    QPushButton *chart;
     QGroupBox *groupBox_3;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
@@ -260,7 +261,7 @@ public:
         launchDevice->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         groupBox_2 = new QGroupBox(groupBox_4);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(10, 370, 491, 224));
+        groupBox_2->setGeometry(QRect(10, 370, 531, 224));
         gridLayout_3 = new QGridLayout(groupBox_2);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -272,7 +273,7 @@ public:
         toExcel = new QPushButton(groupBox_2);
         toExcel->setObjectName(QStringLiteral("toExcel"));
 
-        gridLayout_3->addWidget(toExcel, 0, 1, 1, 1);
+        gridLayout_3->addWidget(toExcel, 0, 2, 1, 1);
 
         tableWidget = new QTableWidget(groupBox_2);
         if (tableWidget->columnCount() < 5)
@@ -295,7 +296,12 @@ public:
         tableWidget->horizontalHeader()->setCascadingSectionResizes(false);
         tableWidget->horizontalHeader()->setDefaultSectionSize(70);
 
-        gridLayout_3->addWidget(tableWidget, 1, 0, 1, 1);
+        gridLayout_3->addWidget(tableWidget, 1, 0, 1, 3);
+
+        chart = new QPushButton(groupBox_2);
+        chart->setObjectName(QStringLiteral("chart"));
+
+        gridLayout_3->addWidget(chart, 0, 1, 1, 1);
 
         groupBox_3 = new QGroupBox(groupBox_4);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
@@ -763,6 +769,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "\350\256\241\347\256\227\347\273\223\346\236\234", 0));
+        chart->setText(QApplication::translate("MainWindow", "\346\237\245\347\234\213\345\233\276\350\241\250", 0));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221\346\265\213\351\207\217\345\214\272\345\237\237", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\210\227\350\241\250", 0));
         QTableWidgetItem *___qtablewidgetitem5 = roiList->horizontalHeaderItem(0);

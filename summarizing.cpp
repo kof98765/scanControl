@@ -47,15 +47,11 @@ void summarizing::add_item(int type, QString str)
 
 
     item=new QTableWidgetItem(str);
-
     if(str=="NG")
         item->setTextColor(QColor("red"));
-    //item2=new QTableWidgetItem("NG");
     table->setItem(table->rowCount()-1,type,item);
-   // qDebug()<<table->rowCount()-1<<type<<str;
-  //  table->setItem(table->rowCount()-1,0,item2);
     item->setTextAlignment(Qt::AlignCenter);
-   // item2->setTextAlignment(Qt::AlignCenter);
+
 
 
 
