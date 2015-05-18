@@ -133,6 +133,7 @@ public:
     QVBoxLayout *imgList;
     QLabel *label;
     QLabel *lableXY;
+    QLabel *prompt;
     QMenuBar *menuBar;
     QMenu *menu_S;
     QMenu *menu;
@@ -380,7 +381,7 @@ public:
         roiColor = new QPushButton(layoutWidget_2);
         roiColor->setObjectName(QStringLiteral("roiColor"));
         roiColor->setAutoFillBackground(false);
-        roiColor->setStyleSheet(QStringLiteral("background-color: rgb(255, 0, 0);"));
+        roiColor->setStyleSheet(QStringLiteral("background-color: rgb(0, 255, 255);"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, roiColor);
 
@@ -411,7 +412,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 198, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 151, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -653,6 +654,10 @@ public:
         lableXY = new QLabel(centralWidget);
         lableXY->setObjectName(QStringLiteral("lableXY"));
         lableXY->setGeometry(QRect(590, 10, 121, 16));
+        prompt = new QLabel(centralWidget);
+        prompt->setObjectName(QStringLiteral("prompt"));
+        prompt->setGeometry(QRect(180, 10, 221, 16));
+        prompt->setStyleSheet(QStringLiteral("color: rgb(255, 0, 0);"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -852,6 +857,7 @@ public:
         pos->setText(QApplication::translate("MainWindow", "0,0", 0));
         label->setText(QApplication::translate("MainWindow", "\345\237\272\345\207\206\347\202\271:", 0));
         lableXY->setText(QApplication::translate("MainWindow", "0,0", 0));
+        prompt->setText(QString());
         menu_S->setTitle(QApplication::translate("MainWindow", "\350\256\276\347\275\256(&S)", 0));
         menu->setTitle(QApplication::translate("MainWindow", "\345\270\256\345\212\251(&H)", 0));
         menu_2->setTitle(QApplication::translate("MainWindow", "\344\273\273\345\212\241(&N)", 0));

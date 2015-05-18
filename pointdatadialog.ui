@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>pointDataDialog</class>
+ <widget class="QDialog" name="pointDataDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>248</width>
+    <height>237</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 12pt &quot;微软雅黑&quot;;</string>
+     </property>
+     <property name="text">
+      <string>测量点读取设置</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="Label">
+       <property name="text">
+        <string>点大小</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="roiSize">
+       <property name="minimum">
+        <number>5</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>5</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="Label_2">
+       <property name="text">
+        <string>前缀名</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="roiName"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="Label_3">
+       <property name="text">
+        <string>分组</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="roiTeam">
+       <item>
+        <property name="text">
+         <string>分组1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>分组2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>分组3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>分组4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>分组5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>分组6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>分组7</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>分组8</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="Label_4">
+       <property name="text">
+        <string>计算方法</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="func">
+       <item>
+        <property name="text">
+         <string>平面度</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>点到平面高差</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>点到点高差</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="Label_5">
+       <property name="text">
+        <string>颜色</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="roiColor">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(133, 249, 255);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="loadPoint">
+     <property name="text">
+      <string>载入点数据</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

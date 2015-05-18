@@ -65,7 +65,9 @@ SOURCES += main.cpp\
     lua/lua.cpp \
     kings/kingscontrol.cpp \
     laser/laser.cpp \
-    settings.cpp
+    settings.cpp \
+    pointdatadialog.cpp \
+    Flatness.cpp
 
 
 
@@ -94,7 +96,9 @@ HEADERS  += mainwindow.h \
     lua/lua.h \
     kings/kingscontrol.h \
     laser/laser.h \
-    settings.h
+    settings.h \
+    pointdatadialog.h \
+    Flatness.h
 
 
 
@@ -102,7 +106,8 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     data_analyze.ui \
     pointanalyze.ui \
-    settingDialog.ui
+    settingDialog.ui \
+    pointdatadialog.ui
 
 RESOURCES += \
     icons.qrc \

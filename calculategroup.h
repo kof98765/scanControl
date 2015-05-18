@@ -33,6 +33,7 @@ public:
     QSettings set;
 
     QList<QString> calculateGroup::getRoiList();
+
 };
 
 #endif // CALCULATEGROUP_H

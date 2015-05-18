@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[60];
-    char stringdata[826];
+    QByteArrayData data[62];
+    char stringdata[838];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,56 +47,58 @@ QT_MOC_LITERAL(14, 135, 24),
 QT_MOC_LITERAL(15, 160, 5),
 QT_MOC_LITERAL(16, 166, 5),
 QT_MOC_LITERAL(17, 172, 7),
-QT_MOC_LITERAL(18, 180, 10),
-QT_MOC_LITERAL(19, 191, 9),
-QT_MOC_LITERAL(20, 201, 10),
-QT_MOC_LITERAL(21, 212, 19),
-QT_MOC_LITERAL(22, 232, 6),
-QT_MOC_LITERAL(23, 239, 19),
-QT_MOC_LITERAL(24, 259, 7),
-QT_MOC_LITERAL(25, 267, 14),
-QT_MOC_LITERAL(26, 282, 13),
-QT_MOC_LITERAL(27, 296, 12),
-QT_MOC_LITERAL(28, 309, 4),
-QT_MOC_LITERAL(29, 314, 19),
-QT_MOC_LITERAL(30, 334, 23),
-QT_MOC_LITERAL(31, 358, 24),
-QT_MOC_LITERAL(32, 383, 10),
-QT_MOC_LITERAL(33, 394, 12),
-QT_MOC_LITERAL(34, 407, 5),
-QT_MOC_LITERAL(35, 413, 26),
-QT_MOC_LITERAL(36, 440, 3),
-QT_MOC_LITERAL(37, 444, 6),
-QT_MOC_LITERAL(38, 451, 25),
-QT_MOC_LITERAL(39, 477, 28),
-QT_MOC_LITERAL(40, 506, 23),
-QT_MOC_LITERAL(41, 530, 21),
-QT_MOC_LITERAL(42, 552, 10),
-QT_MOC_LITERAL(43, 563, 9),
-QT_MOC_LITERAL(44, 573, 16),
-QT_MOC_LITERAL(45, 590, 15),
-QT_MOC_LITERAL(46, 606, 8),
-QT_MOC_LITERAL(47, 615, 4),
-QT_MOC_LITERAL(48, 620, 14),
-QT_MOC_LITERAL(49, 635, 17),
-QT_MOC_LITERAL(50, 653, 17),
-QT_MOC_LITERAL(51, 671, 18),
-QT_MOC_LITERAL(52, 690, 11),
-QT_MOC_LITERAL(53, 702, 16),
-QT_MOC_LITERAL(54, 719, 18),
-QT_MOC_LITERAL(55, 738, 27),
-QT_MOC_LITERAL(56, 766, 5),
-QT_MOC_LITERAL(57, 772, 16),
-QT_MOC_LITERAL(58, 789, 16),
-QT_MOC_LITERAL(59, 806, 19)
+QT_MOC_LITERAL(18, 180, 3),
+QT_MOC_LITERAL(19, 184, 7),
+QT_MOC_LITERAL(20, 192, 10),
+QT_MOC_LITERAL(21, 203, 9),
+QT_MOC_LITERAL(22, 213, 10),
+QT_MOC_LITERAL(23, 224, 19),
+QT_MOC_LITERAL(24, 244, 6),
+QT_MOC_LITERAL(25, 251, 19),
+QT_MOC_LITERAL(26, 271, 7),
+QT_MOC_LITERAL(27, 279, 14),
+QT_MOC_LITERAL(28, 294, 13),
+QT_MOC_LITERAL(29, 308, 12),
+QT_MOC_LITERAL(30, 321, 4),
+QT_MOC_LITERAL(31, 326, 19),
+QT_MOC_LITERAL(32, 346, 23),
+QT_MOC_LITERAL(33, 370, 24),
+QT_MOC_LITERAL(34, 395, 10),
+QT_MOC_LITERAL(35, 406, 12),
+QT_MOC_LITERAL(36, 419, 5),
+QT_MOC_LITERAL(37, 425, 26),
+QT_MOC_LITERAL(38, 452, 3),
+QT_MOC_LITERAL(39, 456, 6),
+QT_MOC_LITERAL(40, 463, 25),
+QT_MOC_LITERAL(41, 489, 28),
+QT_MOC_LITERAL(42, 518, 23),
+QT_MOC_LITERAL(43, 542, 21),
+QT_MOC_LITERAL(44, 564, 10),
+QT_MOC_LITERAL(45, 575, 9),
+QT_MOC_LITERAL(46, 585, 16),
+QT_MOC_LITERAL(47, 602, 15),
+QT_MOC_LITERAL(48, 618, 8),
+QT_MOC_LITERAL(49, 627, 4),
+QT_MOC_LITERAL(50, 632, 14),
+QT_MOC_LITERAL(51, 647, 17),
+QT_MOC_LITERAL(52, 665, 17),
+QT_MOC_LITERAL(53, 683, 18),
+QT_MOC_LITERAL(54, 702, 11),
+QT_MOC_LITERAL(55, 714, 16),
+QT_MOC_LITERAL(56, 731, 18),
+QT_MOC_LITERAL(57, 750, 27),
+QT_MOC_LITERAL(58, 778, 5),
+QT_MOC_LITERAL(59, 784, 16),
+QT_MOC_LITERAL(60, 801, 16),
+QT_MOC_LITERAL(61, 818, 19)
     },
     "MainWindow\0stopMove\0\0E128_detect\0"
     "outputMessage\0QtMsgType\0recvHeightSub\0"
     "recvPlaneness\0dispFrame\0unsigned char*\0"
     "buf\0size\0Net_Param\0about\0"
     "on_action_Quit_triggered\0Error\0error\0"
-    "dispImg\0controlImg\0selectImg\0modeSelect\0"
-    "on_loadFile_clicked\0detect\0"
+    "Warning\0str\0dispImg\0controlImg\0selectImg\0"
+    "modeSelect\0on_loadFile_clicked\0detect\0"
     "startButton_clicked\0netTest\0on_textChanged\0"
     "recvHeartPack\0flushRoiList\0list\0"
     "on_roiColor_clicked\0on_launchDevice_clicked\0"
@@ -122,7 +124,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      47,   14, // methods
+      48,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -130,55 +132,56 @@ static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  249,    2, 0x06 /* Public */,
-       3,    0,  250,    2, 0x06 /* Public */,
+       1,    0,  254,    2, 0x06 /* Public */,
+       3,    0,  255,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    2,  251,    2, 0x0a /* Public */,
-       6,    4,  256,    2, 0x0a /* Public */,
-       6,    4,  265,    2, 0x0a /* Public */,
-       7,    2,  274,    2, 0x0a /* Public */,
-       8,    2,  279,    2, 0x0a /* Public */,
-      12,    0,  284,    2, 0x0a /* Public */,
-      13,    0,  285,    2, 0x0a /* Public */,
-      14,    0,  286,    2, 0x0a /* Public */,
-      15,    1,  287,    2, 0x0a /* Public */,
-      17,    0,  290,    2, 0x0a /* Public */,
-      18,    1,  291,    2, 0x0a /* Public */,
-      19,    1,  294,    2, 0x0a /* Public */,
-      20,    1,  297,    2, 0x0a /* Public */,
-      21,    0,  300,    2, 0x0a /* Public */,
-      22,    0,  301,    2, 0x0a /* Public */,
-      23,    0,  302,    2, 0x0a /* Public */,
-      24,    1,  303,    2, 0x0a /* Public */,
-      25,    0,  306,    2, 0x0a /* Public */,
-      26,    0,  307,    2, 0x0a /* Public */,
-      27,    1,  308,    2, 0x0a /* Public */,
-      29,    0,  311,    2, 0x0a /* Public */,
-      30,    0,  312,    2, 0x0a /* Public */,
-      31,    0,  313,    2, 0x0a /* Public */,
-      32,    1,  314,    2, 0x0a /* Public */,
-      35,    2,  317,    2, 0x0a /* Public */,
-      38,    0,  322,    2, 0x0a /* Public */,
-      39,    0,  323,    2, 0x0a /* Public */,
-      40,    0,  324,    2, 0x0a /* Public */,
-      41,    0,  325,    2, 0x0a /* Public */,
-      42,    0,  326,    2, 0x0a /* Public */,
-      43,    0,  327,    2, 0x0a /* Public */,
-      44,    0,  328,    2, 0x0a /* Public */,
-      45,    0,  329,    2, 0x0a /* Public */,
-      46,    1,  330,    2, 0x0a /* Public */,
-      48,    0,  333,    2, 0x0a /* Public */,
-      49,    0,  334,    2, 0x0a /* Public */,
-      50,    0,  335,    2, 0x0a /* Public */,
-      51,    0,  336,    2, 0x08 /* Private */,
-      52,    0,  337,    2, 0x08 /* Private */,
-      53,    2,  338,    2, 0x08 /* Private */,
-      54,    0,  343,    2, 0x08 /* Private */,
-      55,    1,  344,    2, 0x08 /* Private */,
-      57,    0,  347,    2, 0x08 /* Private */,
-      58,    0,  348,    2, 0x08 /* Private */,
-      59,    0,  349,    2, 0x08 /* Private */,
+       4,    2,  256,    2, 0x0a /* Public */,
+       6,    4,  261,    2, 0x0a /* Public */,
+       6,    4,  270,    2, 0x0a /* Public */,
+       7,    2,  279,    2, 0x0a /* Public */,
+       8,    2,  284,    2, 0x0a /* Public */,
+      12,    0,  289,    2, 0x0a /* Public */,
+      13,    0,  290,    2, 0x0a /* Public */,
+      14,    0,  291,    2, 0x0a /* Public */,
+      15,    1,  292,    2, 0x0a /* Public */,
+      17,    1,  295,    2, 0x0a /* Public */,
+      19,    0,  298,    2, 0x0a /* Public */,
+      20,    1,  299,    2, 0x0a /* Public */,
+      21,    1,  302,    2, 0x0a /* Public */,
+      22,    1,  305,    2, 0x0a /* Public */,
+      23,    0,  308,    2, 0x0a /* Public */,
+      24,    0,  309,    2, 0x0a /* Public */,
+      25,    0,  310,    2, 0x0a /* Public */,
+      26,    1,  311,    2, 0x0a /* Public */,
+      27,    0,  314,    2, 0x0a /* Public */,
+      28,    0,  315,    2, 0x0a /* Public */,
+      29,    1,  316,    2, 0x0a /* Public */,
+      31,    0,  319,    2, 0x0a /* Public */,
+      32,    0,  320,    2, 0x0a /* Public */,
+      33,    0,  321,    2, 0x0a /* Public */,
+      34,    1,  322,    2, 0x0a /* Public */,
+      37,    2,  325,    2, 0x0a /* Public */,
+      40,    0,  330,    2, 0x0a /* Public */,
+      41,    0,  331,    2, 0x0a /* Public */,
+      42,    0,  332,    2, 0x0a /* Public */,
+      43,    0,  333,    2, 0x0a /* Public */,
+      44,    0,  334,    2, 0x0a /* Public */,
+      45,    0,  335,    2, 0x0a /* Public */,
+      46,    0,  336,    2, 0x0a /* Public */,
+      47,    0,  337,    2, 0x0a /* Public */,
+      48,    1,  338,    2, 0x0a /* Public */,
+      50,    0,  341,    2, 0x0a /* Public */,
+      51,    0,  342,    2, 0x0a /* Public */,
+      52,    0,  343,    2, 0x0a /* Public */,
+      53,    0,  344,    2, 0x08 /* Private */,
+      54,    0,  345,    2, 0x08 /* Private */,
+      55,    2,  346,    2, 0x08 /* Private */,
+      56,    0,  351,    2, 0x08 /* Private */,
+      57,    1,  352,    2, 0x08 /* Private */,
+      59,    0,  355,    2, 0x08 /* Private */,
+      60,    0,  356,    2, 0x08 /* Private */,
+      61,    0,  357,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -194,6 +197,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   16,
+    QMetaType::Void, QMetaType::QString,   18,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
@@ -204,21 +208,21 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QStringList,   28,
+    QMetaType::Void, QMetaType::QStringList,   30,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 33,   34,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   36,   37,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 35,   36,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   38,   39,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   47,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   49,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -226,7 +230,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   56,
+    QMetaType::Void, QMetaType::Int,   58,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -250,42 +254,43 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 8: _t->about(); break;
         case 9: _t->on_action_Quit_triggered(); break;
         case 10: _t->Error((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 11: _t->dispImg(); break;
-        case 12: _t->controlImg((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: _t->selectImg((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->modeSelect((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 15: _t->on_loadFile_clicked(); break;
-        case 16: _t->detect(); break;
-        case 17: _t->startButton_clicked(); break;
-        case 18: _t->netTest((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 19: _t->on_textChanged(); break;
-        case 20: _t->recvHeartPack(); break;
-        case 21: _t->flushRoiList((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
-        case 22: _t->on_roiColor_clicked(); break;
-        case 23: _t->on_launchDevice_clicked(); break;
-        case 24: _t->on_actionReset_triggered(); break;
-        case 25: _t->paintEvent((*reinterpret_cast< QPaintEvent*(*)>(_a[1]))); break;
-        case 26: _t->on_tableWidget_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 27: _t->on_realTimeButton_clicked(); break;
-        case 28: _t->on_singleFrameButton_clicked(); break;
-        case 29: _t->on_threeDButton_clicked(); break;
-        case 30: _t->on_twoDButton_clicked(); break;
-        case 31: _t->startVideo(); break;
-        case 32: _t->stopVideo(); break;
-        case 33: _t->startSingleFrame(); break;
-        case 34: _t->stopSingleFrame(); break;
-        case 35: _t->openFile((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 36: _t->action_delItem(); break;
-        case 37: _t->action_delAllItem(); break;
-        case 38: _t->action_modifyItem(); break;
-        case 39: _t->on_roiDraw_clicked(); break;
-        case 40: _t->statusCheck(); break;
-        case 41: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 42: _t->on_toExcel_clicked(); break;
-        case 43: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 44: _t->on_draw1_clicked(); break;
-        case 45: _t->on_draw2_clicked(); break;
-        case 46: _t->on_loadData_clicked(); break;
+        case 11: _t->Warning((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 12: _t->dispImg(); break;
+        case 13: _t->controlImg((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->selectImg((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->modeSelect((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: _t->on_loadFile_clicked(); break;
+        case 17: _t->detect(); break;
+        case 18: _t->startButton_clicked(); break;
+        case 19: _t->netTest((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 20: _t->on_textChanged(); break;
+        case 21: _t->recvHeartPack(); break;
+        case 22: _t->flushRoiList((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
+        case 23: _t->on_roiColor_clicked(); break;
+        case 24: _t->on_launchDevice_clicked(); break;
+        case 25: _t->on_actionReset_triggered(); break;
+        case 26: _t->paintEvent((*reinterpret_cast< QPaintEvent*(*)>(_a[1]))); break;
+        case 27: _t->on_tableWidget_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 28: _t->on_realTimeButton_clicked(); break;
+        case 29: _t->on_singleFrameButton_clicked(); break;
+        case 30: _t->on_threeDButton_clicked(); break;
+        case 31: _t->on_twoDButton_clicked(); break;
+        case 32: _t->startVideo(); break;
+        case 33: _t->stopVideo(); break;
+        case 34: _t->startSingleFrame(); break;
+        case 35: _t->stopSingleFrame(); break;
+        case 36: _t->openFile((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 37: _t->action_delItem(); break;
+        case 38: _t->action_delAllItem(); break;
+        case 39: _t->action_modifyItem(); break;
+        case 40: _t->on_roiDraw_clicked(); break;
+        case 41: _t->statusCheck(); break;
+        case 42: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 43: _t->on_toExcel_clicked(); break;
+        case 44: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 45: _t->on_draw1_clicked(); break;
+        case 46: _t->on_draw2_clicked(); break;
+        case 47: _t->on_loadData_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -331,13 +336,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 47)
+        if (_id < 48)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 47;
+        _id -= 48;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 47)
+        if (_id < 48)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 47;
+        _id -= 48;
     }
     return _id;
 }

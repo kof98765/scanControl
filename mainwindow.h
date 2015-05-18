@@ -35,7 +35,7 @@
 #include <QColorDialog>
 #include "kingscontrol.h"
 #include "laser/laser.h"
-
+#include "pointdatadialog.h"
 using namespace Halcon;
 
 
@@ -75,7 +75,9 @@ public slots:
     void about();
     void on_action_Quit_triggered();
     void Error(QString error);
+    void Warning(QString str);
     void dispImg();
+
     void controlImg(int);
     void selectImg(int);
     void modeSelect(int);
@@ -135,6 +137,7 @@ private:
     int serverPort;
     QSettings set;
     Robot *robot;
+    pointDataDialog *pointData;
     pointAnalyze *point;
     imgListView *imgView;
     bool isRunning;

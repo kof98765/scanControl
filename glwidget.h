@@ -42,7 +42,8 @@
 #define GLWIDGET_H
 
 #include <QGLWidget>
-#include <QDebug>
+#include <QDebug>>
+
 
 class GLWidget : public QGLWidget
 {

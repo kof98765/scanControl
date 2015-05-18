@@ -69,7 +69,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->progressBar->setMaximum(100);
     palette=ui->videoFrame->palette();
-
+    pointData=new pointDataDialog;
 
     ui->videoFrame->setAutoFillBackground(true);
 
@@ -93,6 +93,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //设置对话框
     setDialog = new mySettings;
     setDialog->setModal(true);
+    pointData=new pointDataDialog();
 
     //point=new pointAnalyze;
 
@@ -295,7 +296,7 @@ void MainWindow::init_connect()
     connect(ui->action_Net_Param,SIGNAL(triggered()),this,SLOT(Net_Param()));
 
     connect(ui->action_Quit,SIGNAL(triggered()),this,SLOT(on_action_Quit_triggered()));
-
+    connect(pointData,SIGNAL(addRoi(QMap<QString,QVariant>)),hal,SLOT(drawRect(QMap<QString,QVariant>)));
     connect(ui->action_big,SIGNAL(triggered()),hal,SLOT(zoomOut()));
     connect(ui->action_small,SIGNAL(triggered()),hal,SLOT(zoomIn()));
     connect(ui->reset,SIGNAL(clicked()),this,SLOT(on_actionReset_triggered()));
@@ -324,7 +325,7 @@ void MainWindow::init_connect()
     //接收显示信号
     //connect(hal,SIGNAL(clearMemory()),laser,SLOT(clearMemory()));
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
-
+    connect(hal,SIGNAL(Warning(QString)),this,SLOT(Warning(QString)));
     connect(hal,SIGNAL(sendPlaneness(int,double)),this,SLOT(recvPlaneness(int,double)));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
     connect(hal,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
@@ -367,6 +368,10 @@ void MainWindow::Error(QString str)
                          QStringLiteral("错误"),
                          str,
                          QMessageBox::Yes );
+}
+void MainWindow::Warning(QString str)
+{
+    ui->prompt->setText(str);
 }
 void MainWindow::modeSelect(int i)
 {
@@ -1319,25 +1324,12 @@ void MainWindow::on_draw2_clicked()
     ui->pointY->setEnabled(true);
     ui->unit->setEnabled(true);
 }
+/*
+    读取点位
 
+*/
 void MainWindow::on_loadData_clicked()
 {
 
-    QString filePath=QFileDialog::getOpenFileName(this,QStringLiteral("点位文件"),".","txt (*.txt)");
-    if(filePath.isEmpty())
-        return;
-    QFile f(filePath);
-    f.open(QFile::ReadOnly);
-    QTextStream txtInput(&f);
-    QString buf;
-    while(!txtInput.atEnd())
-    {
-        buf=txtInput.readLine();
-        QPoint p;
-        p.setX(buf.mid(0,buf.indexOf(",")).toFloat());
-        p.setY(buf.mid(buf.indexOf(",")+1,buf.length()).toFloat());
-        qDebug()<<"point"<<p;
-
-    }
-
+   pointData->show();
 }
