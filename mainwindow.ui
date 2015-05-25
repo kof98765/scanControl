@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>ScanControl</string>
+   <string>E117</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -222,7 +222,7 @@
        <string>区域列表</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QTableWidget" name="roiList">
          <property name="selectionBehavior">
           <enum>QAbstractItemView::SelectRows</enum>
@@ -265,10 +265,17 @@
          </column>
         </widget>
        </item>
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="QPushButton" name="loadData">
          <property name="text">
           <string>一键导入</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="fastInput">
+         <property name="text">
+          <string>快速录入</string>
          </property>
         </widget>
        </item>
@@ -364,12 +371,12 @@
          </item>
          <item>
           <property name="text">
-           <string>搜索区域</string>
+           <string>定基准点(中心点)</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>定基准点</string>
+           <string>定基准点(两点一线)</string>
           </property>
          </item>
          <item>
@@ -946,12 +953,12 @@ border-radius:25px</string>
     <property name="geometry">
      <rect>
       <x>630</x>
-      <y>30</y>
+      <y>10</y>
       <width>121</width>
-      <height>571</height>
+      <height>611</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="imgList"/>
+    <layout class="QVBoxLayout" name="imgList" stretch=""/>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">

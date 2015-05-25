@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network axcontainer widgets opengl sql
+QT       += core gui network axcontainer widgets opengl sql printsupport
 
 #greaterThan(QT_MAJOR_VERSION, 4): QT +=
 
@@ -67,7 +67,9 @@ SOURCES += main.cpp\
     laser/laser.cpp \
     settings.cpp \
     pointdatadialog.cpp \
-    Flatness.cpp
+    Flatness.cpp \
+    qcustomplot.cpp \
+    getpointdialog.cpp
 
 
 
@@ -98,7 +100,9 @@ HEADERS  += mainwindow.h \
     laser/laser.h \
     settings.h \
     pointdatadialog.h \
-    Flatness.h
+    Flatness.h \
+    qcustomplot.h \
+    getpointdialog.h
 
 
 
@@ -107,7 +111,8 @@ FORMS    += mainwindow.ui \
     data_analyze.ui \
     pointanalyze.ui \
     settingDialog.ui \
-    pointdatadialog.ui
+    pointdatadialog.ui \
+    getpointdialog.ui
 
 RESOURCES += \
     icons.qrc \

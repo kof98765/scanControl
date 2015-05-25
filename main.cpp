@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     //QLibrary mylib("halconclass.dll");
+   // qRegisterMetaType<QMap<QString,QVariant>> ("QMap<QString,QVariant>");
     QCoreApplication::setOrganizationName("EDAC");
     QCoreApplication::setApplicationName("ipad");
     QSettings::setDefaultFormat(QSettings::IniFormat);

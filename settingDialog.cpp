@@ -256,7 +256,16 @@ void mySettings::on_findButton_clicked()
     QStringList filters;
     imgView->deleteAllImg();
     filters <<"*.jpg"<<"*.bmp"<<"*.png"<<"*.tif";
-    dir.setPath(ui->path->text());
+    QFileInfo info(ui->path->text());
+    if(info.isDir())
+        dir.setPath(ui->path->text());
+    else
+    {
+        if(info.isFile())
+        {
+            dir.setPath(info.path());
+        }
+    }
     dir.setNameFilters(filters);
     //dir.setSorting(QDir::Name);
     if(!dir.exists())

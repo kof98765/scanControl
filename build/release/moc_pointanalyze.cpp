@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_pointAnalyze_t {
-    QByteArrayData data[4];
-    char stringdata[39];
+    QByteArrayData data[9];
+    char stringdata[67];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,9 +32,15 @@ static const qt_meta_stringdata_pointAnalyze_t qt_meta_stringdata_pointAnalyze =
 QT_MOC_LITERAL(0, 0, 12),
 QT_MOC_LITERAL(1, 13, 10),
 QT_MOC_LITERAL(2, 24, 0),
-QT_MOC_LITERAL(3, 25, 13)
+QT_MOC_LITERAL(3, 25, 13),
+QT_MOC_LITERAL(4, 39, 8),
+QT_MOC_LITERAL(5, 48, 7),
+QT_MOC_LITERAL(6, 56, 1),
+QT_MOC_LITERAL(7, 58, 1),
+QT_MOC_LITERAL(8, 60, 6)
     },
-    "pointAnalyze\0initDevice\0\0timer_timeout"
+    "pointAnalyze\0initDevice\0\0timer_timeout\0"
+    "showData\0double*\0x\0y\0length"
 };
 #undef QT_MOC_LITERAL
 
@@ -44,7 +50,7 @@ static const uint qt_meta_data_pointAnalyze[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -52,16 +58,18 @@ static const uint qt_meta_data_pointAnalyze[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x06 /* Public */,
+       1,    0,   29,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   25,    2, 0x08 /* Private */,
+       3,    0,   30,    2, 0x08 /* Private */,
+       4,    3,   31,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 5, 0x80000000 | 5, QMetaType::Int,    6,    7,    8,
 
        0        // eod
 };
@@ -73,6 +81,7 @@ void pointAnalyze::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         switch (_id) {
         case 0: _t->initDevice(); break;
         case 1: _t->timer_timeout(); break;
+        case 2: _t->showData((*reinterpret_cast< double*(*)>(_a[1])),(*reinterpret_cast< double*(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -85,7 +94,6 @@ void pointAnalyze::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
             }
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject pointAnalyze::staticMetaObject = {
@@ -113,13 +121,13 @@ int pointAnalyze::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

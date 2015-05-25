@@ -77,6 +77,7 @@ public:
     QGridLayout *gridLayout_2;
     QTableWidget *roiList;
     QPushButton *loadData;
+    QPushButton *fastInput;
     QWidget *layoutWidget_2;
     QFormLayout *formLayout;
     QLabel *label_2;
@@ -333,12 +334,17 @@ public:
         roiList->setSortingEnabled(true);
         roiList->horizontalHeader()->setDefaultSectionSize(55);
 
-        gridLayout_2->addWidget(roiList, 1, 0, 1, 1);
+        gridLayout_2->addWidget(roiList, 2, 0, 1, 1);
 
         loadData = new QPushButton(groupBox);
         loadData->setObjectName(QStringLiteral("loadData"));
 
-        gridLayout_2->addWidget(loadData, 0, 0, 1, 1);
+        gridLayout_2->addWidget(loadData, 1, 0, 1, 1);
+
+        fastInput = new QPushButton(groupBox);
+        fastInput->setObjectName(QStringLiteral("fastInput"));
+
+        gridLayout_2->addWidget(fastInput, 0, 0, 1, 1);
 
         layoutWidget_2 = new QWidget(groupBox_3);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
@@ -648,7 +654,7 @@ public:
         pos->setGeometry(QRect(470, 10, 54, 12));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(630, 30, 121, 571));
+        verticalLayoutWidget->setGeometry(QRect(630, 10, 121, 611));
         imgList = new QVBoxLayout(verticalLayoutWidget);
         imgList->setSpacing(6);
         imgList->setContentsMargins(11, 11, 11, 11);
@@ -715,7 +721,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "ScanControl", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "E117", 0));
         action_Net_Param->setText(QApplication::translate("MainWindow", "\347\263\273\347\273\237\350\256\276\347\275\256", 0));
         action_about->setText(QApplication::translate("MainWindow", "\345\205\263\344\272\216", 0));
         action_CameraLight_Param->setText(QApplication::translate("MainWindow", "\347\233\270\346\234\272\345\222\214\345\205\211\346\272\220\345\217\202\346\225\260", 0));
@@ -785,6 +791,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem10 = roiList->horizontalHeaderItem(5);
         ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", " \345\237\272\345\207\206\347\202\271", 0));
         loadData->setText(QApplication::translate("MainWindow", "\344\270\200\351\224\256\345\257\274\345\205\245", 0));
+        fastInput->setText(QApplication::translate("MainWindow", "\345\277\253\351\200\237\345\275\225\345\205\245", 0));
         label_2->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215:", 0));
         label_4->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204:", 0));
         team->clear();
@@ -802,8 +809,8 @@ public:
         func->clear();
         func->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "\345\256\232\344\275\215\345\214\272\345\237\237", 0)
-         << QApplication::translate("MainWindow", "\346\220\234\347\264\242\345\214\272\345\237\237", 0)
-         << QApplication::translate("MainWindow", "\345\256\232\345\237\272\345\207\206\347\202\271", 0)
+         << QApplication::translate("MainWindow", "\345\256\232\345\237\272\345\207\206\347\202\271(\344\270\255\345\277\203\347\202\271)", 0)
+         << QApplication::translate("MainWindow", "\345\256\232\345\237\272\345\207\206\347\202\271(\344\270\244\347\202\271\344\270\200\347\272\277)", 0)
          << QApplication::translate("MainWindow", "\350\256\241\347\256\227\345\271\263\351\235\242\345\272\246", 0)
          << QApplication::translate("MainWindow", "\347\202\271\345\210\260\345\271\263\351\235\242\351\253\230\345\267\256", 0)
          << QApplication::translate("MainWindow", "\347\202\271\345\210\260\347\202\271\351\253\230\345\267\256", 0)

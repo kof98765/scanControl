@@ -46,7 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // plot->resize(ui->base->widget(2)->size());
     imgView=new imgListView();
     imgView->setHBoxLayout(ui->imgList);
-
+    getPoint=new getPointDialog();
     //qDebug()<<settings::team::roiList::roi.name;
 
     timer=new QTimer();
@@ -324,6 +324,7 @@ void MainWindow::init_connect()
             SLOT(outputMessage(QtMsgType,QString)));
     //接收显示信号
     //connect(hal,SIGNAL(clearMemory()),laser,SLOT(clearMemory()));
+    connect(getPoint,SIGNAL(addRoi(QMap<QString,QVariant>)),hal,SLOT(drawRect(QMap<QString,QVariant>)));
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
     connect(hal,SIGNAL(Warning(QString)),this,SLOT(Warning(QString)));
     connect(hal,SIGNAL(sendPlaneness(int,double)),this,SLOT(recvPlaneness(int,double)));
@@ -831,6 +832,8 @@ void MainWindow::recvHeightSub(QString name,double min1,double max1,double range
     status=0;
     int i;
     double min,max;
+    if(ui->tableWidget->rowCount()>1000)
+        sum->clear_table();
     QMap<QString,QVariant> data=set.value("dataList").toMap();
     for(i=0;i<data.keys().size();i++)
     {
@@ -896,7 +899,8 @@ void MainWindow::recvPlaneness(int team,double result1)
 
 
     QMap<QString,QVariant> data=set.value("dataList").toMap();
-
+    if(ui->tableWidget->rowCount()>1000)
+        sum->clear_table();
     ui->tableWidget->setSortingEnabled(false);
     sum->add_row();
     QMap<QString,QVariant> map=set.value("limit").toMap();
@@ -1336,5 +1340,11 @@ void MainWindow::on_loadData_clicked()
 
 void MainWindow::on_chart_clicked()
 {
+
     point->show();
+}
+
+void MainWindow::on_fastInput_clicked()
+{
+    getPoint->show();
 }

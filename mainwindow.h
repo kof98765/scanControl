@@ -36,6 +36,7 @@
 #include "kingscontrol.h"
 #include "laser/laser.h"
 #include "pointdatadialog.h"
+#include "getpointdialog.h"
 using namespace Halcon;
 
 
@@ -121,7 +122,7 @@ private:
     Laser *laser;
     Plot *plot;
     QFile out;
-
+    getPointDialog *getPoint;
     QDialog *dataDialog;
     profileGet *profile;
     summarizing *sum;
@@ -179,6 +180,7 @@ private slots:
     void on_draw2_clicked();
     void on_loadData_clicked();
     void on_chart_clicked();
+    void on_fastInput_clicked();
 };
 
 #endif // MAINWINDOW_H

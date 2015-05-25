@@ -59,7 +59,7 @@ public:
 
     void startThread();
     void readMTX(QString str);
-    void planePoint(int team);
+
     void stopThread();
     void open_the_window(int handle,int width,int height);
     HTuple WindowHandle;
@@ -130,13 +130,16 @@ public slots:
 
      QPoint findCenter(Hobject image,HTuple Row,HTuple Column,HTuple Row2,HTuple Column2);
      QPoint findCenter(Hobject image,double Row,double Column,double Row2,double Column2);
+     QPointF findRectCenter(Hobject image,double Row,double Column,double Row2,double Column2);
+     void twoPointOneLineBasePoint(QMap<QString,QVariant> map);
+     void oneRectBasePoint(QMap<QString,QVariant> map);
      void disp_xld(HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2);
      void disp_xld(double Row,double Column,double Row1,double Column1);
      void disp_xld(HTuple Row,HTuple Column,HTuple Phi,HTuple Length1,HTuple Length2);
      void disp_xld(double Row,double Column,double Phi,double Length1,double Length2);
     void read_img(QString str);
     void getImagebyPointer1(double *pdValueZ,int width,int height);
-     void getImagebyPointer3(double *x,double *y,double *z,int width,int height);
+
     void close_the_window();
     void drawRect(QMap<QString,QVariant> map);
     void drawToFindBasePoint(QMap<QString,QVariant> map);

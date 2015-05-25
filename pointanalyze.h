@@ -12,6 +12,8 @@
 #include <QTimer>
 #include <QLinkedList>
 #include <QSemaphore>
+#include "qcustomplot.h"
+#include <QVector>
 #define FRAME_LENGTH 1280
 namespace Ui {
 class pointAnalyze;
@@ -30,6 +32,8 @@ protected:
 private slots:
 
     void timer_timeout();
+public slots:
+    void showData(double *x,double *y,int length);
 
 public:
     void readFrame();
@@ -48,6 +52,7 @@ private:
     QSemaphore sem;
     QMutex mux;
     QTimer *timer;
+    QCustomPlot *customPlot;
 signals:
     void initDevice();
 };
