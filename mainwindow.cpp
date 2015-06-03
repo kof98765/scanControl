@@ -54,6 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(eventTimer,SIGNAL(timeout()),this,SLOT(statusCheck()));
     eventTimer->start(10);
     sum=new summarizing;
+    repeat=new repeatabilityDialog;
     sum->set_table(ui->tableWidget);
     roiList=new summarizing;
     roiList->set_table(ui->roiList);
@@ -140,9 +141,7 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
 {
     static QPoint start,end,threeDstart,threeDend,hps,hpe;
 
-    if (clickLabel* label = dynamic_cast<clickLabel*>(sender())){
-        qDebug()<<ui->imgList->indexOf(label);
-    }
+
     if(target==ui->base)
     {
 
@@ -156,7 +155,10 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
                 leftPress=true;
             if(mouse->button()==Qt::RightButton)
                 rightPress=true;
-            threeDstart=start=hal->getPoint();
+             if(ui->base->currentIndex()==0)
+                 threeDstart=start=mouse->pos();
+             else
+                 threeDstart=start=hal->getPoint();
 
             ui->pos->setText(QString("%1,%2").arg(start.x()).arg(start.y()));
             isDrag=true;
@@ -175,7 +177,10 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
             if(mp.x()<10|mp.y()<30|mp.x()>ui->base->width()-10|mp.y()>ui->base->height()-30)
                 return QWidget::eventFilter(target,event);
             if(!isDrawing)
-                end=hal->getPoint();
+                if(ui->base->currentIndex()==0)
+                    end=mouse->pos();
+                else
+                    end=hal->getPoint();
 
             //ui->pos->setText(QString("%1,%2").arg(end.x()).arg(end.y()));
             //start=mouse->pos();
@@ -221,7 +226,10 @@ bool MainWindow::eventFilter(QObject *target, QEvent *event)
             if(mp.x()<10|mp.y()<30|mp.x()>ui->base->width()-10|mp.y()>ui->base->height()-30)
                 return QWidget::eventFilter(target,event);
             if(!isDrawing)
-                end=hal->getPoint();
+                if(ui->base->currentIndex()==0)
+                    end=mouse->pos();
+                else
+                    end=hal->getPoint();
 
             isDrag=false;
             if(mouse->button()==Qt::LeftButton)
@@ -319,7 +327,8 @@ void MainWindow::init_connect()
     connect(ref,SIGNAL(recvData(char*)),setDialog,SLOT(recvData(char*)));
     //connect(ui->roiColor,SIGNAL(clicked()),this,SLOT(on_roiColor_clicked()));
 
-
+    connect(sum,SIGNAL(reportRepeatability(QMap<QString,double>,QMap<QString,double>)),
+            repeat,SLOT(recvRepeatability(QMap<QString,double>,QMap<QString,double>)));
     connect(MsgHandlerWapper::instance(),SIGNAL(message(QtMsgType,QString)),this,
             SLOT(outputMessage(QtMsgType,QString)));
     //接收显示信号
@@ -1171,6 +1180,7 @@ void MainWindow::action_delItem()
     ui->roiList->update();
     hal->delRect(name);
 }
+/* 删除所有item*/
 void MainWindow::action_delAllItem()
 {
     int i,maxrow = ui->roiList->rowCount();
@@ -1340,8 +1350,8 @@ void MainWindow::on_loadData_clicked()
 
 void MainWindow::on_chart_clicked()
 {
-
-    point->show();
+    sum->calculateRepeatability(3,4);
+    repeat->show();
 }
 
 void MainWindow::on_fastInput_clicked()

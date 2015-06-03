@@ -35,10 +35,10 @@ float pointDataDialog::convertPoint(float num,int xy)
     switch(xy)
     {
         case 0:
-        num=num/0.02;
+        num=num/ui->scaleX->value();
         break;
     case 1:
-        num=num/0.1355;
+        num=num/ui->scaleY->value();
         break;
     }
     return num;
@@ -53,7 +53,7 @@ void pointDataDialog::on_loadPoint_clicked()
     QPoint p,p2;
     QTextStream txtInput(&f);
     QString buf;
-
+    int i=0;
     while(!txtInput.atEnd())
     {
         buf=txtInput.readLine();
@@ -85,7 +85,7 @@ void pointDataDialog::on_loadPoint_clicked()
 
         map.insert("Length1",ui->roiSize->value());
         map.insert("Length2",ui->roiSize->value());
-        map.insert("name",ui->roiName->text());
+        map.insert("name",ui->roiName->text()+QString("00%1").arg(++i));
         map.insert("color",ui->roiColor->palette().background().color().rgb());
         map.insert("team",ui->roiTeam->currentIndex());
         switch(ui->func->currentIndex())

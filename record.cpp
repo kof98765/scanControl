@@ -133,7 +133,7 @@ void Record::save_excel()
         write_excel();
 
     }
-    workbook->dynamicCall("SaveAs(const QString&)",path+fileName);
+    workbook->dynamicCall("SaveAs(const QString&)",path+"/"+fileName);
     workbook->dynamicCall("Close()"); //关闭工作簿
     excel->dynamicCall("Quit()");     //关闭excel
 

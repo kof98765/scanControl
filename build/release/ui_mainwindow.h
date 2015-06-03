@@ -131,11 +131,12 @@ public:
     QPushButton *threeDButton;
     QLabel *rate;
     QLabel *pos;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *imgList;
     QLabel *label;
     QLabel *lableXY;
     QLabel *prompt;
+    QGroupBox *groupBox_5;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *imgList;
     QMenuBar *menuBar;
     QMenu *menu_S;
     QMenu *menu;
@@ -147,7 +148,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1280, 748);
+        MainWindow->resize(1308, 748);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -234,7 +235,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox_4 = new QGroupBox(centralWidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(760, 10, 521, 601));
+        groupBox_4->setGeometry(QRect(760, 10, 541, 601));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -301,6 +302,7 @@ public:
 
         chart = new QPushButton(groupBox_2);
         chart->setObjectName(QStringLiteral("chart"));
+        chart->setEnabled(true);
 
         gridLayout_3->addWidget(chart, 0, 1, 1, 1);
 
@@ -348,7 +350,7 @@ public:
 
         layoutWidget_2 = new QWidget(groupBox_3);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(310, 120, 154, 155));
+        layoutWidget_2->setGeometry(QRect(310, 120, 211, 155));
         formLayout = new QFormLayout(layoutWidget_2);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
@@ -424,7 +426,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 151, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 211, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -528,7 +530,7 @@ public:
 "}"));
         progressBar = new QProgressBar(view_box);
         progressBar->setObjectName(QStringLiteral("progressBar"));
-        progressBar->setGeometry(QRect(10, 570, 501, 20));
+        progressBar->setGeometry(QRect(10, 570, 591, 20));
         progressBar->setStyleSheet(QLatin1String("border:2px;\n"
 "border-radius:25px"));
         progressBar->setValue(0);
@@ -642,24 +644,16 @@ public:
 
         twoDButton = new QPushButton(centralWidget);
         twoDButton->setObjectName(QStringLiteral("twoDButton"));
-        twoDButton->setGeometry(QRect(10, 0, 75, 23));
+        twoDButton->setGeometry(QRect(20, 0, 75, 23));
         threeDButton = new QPushButton(centralWidget);
         threeDButton->setObjectName(QStringLiteral("threeDButton"));
-        threeDButton->setGeometry(QRect(90, 0, 75, 23));
+        threeDButton->setGeometry(QRect(100, 0, 75, 23));
         rate = new QLabel(centralWidget);
         rate->setObjectName(QStringLiteral("rate"));
         rate->setGeometry(QRect(410, 10, 54, 12));
         pos = new QLabel(centralWidget);
         pos->setObjectName(QStringLiteral("pos"));
         pos->setGeometry(QRect(470, 10, 54, 12));
-        verticalLayoutWidget = new QWidget(centralWidget);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(630, 10, 121, 611));
-        imgList = new QVBoxLayout(verticalLayoutWidget);
-        imgList->setSpacing(6);
-        imgList->setContentsMargins(11, 11, 11, 11);
-        imgList->setObjectName(QStringLiteral("imgList"));
-        imgList->setContentsMargins(0, 0, 0, 0);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(540, 10, 54, 12));
@@ -670,10 +664,21 @@ public:
         prompt->setObjectName(QStringLiteral("prompt"));
         prompt->setGeometry(QRect(180, 10, 221, 16));
         prompt->setStyleSheet(QStringLiteral("color: rgb(255, 0, 0);"));
+        groupBox_5 = new QGroupBox(centralWidget);
+        groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
+        groupBox_5->setGeometry(QRect(630, 20, 120, 591));
+        verticalLayoutWidget = new QWidget(groupBox_5);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 91, 591));
+        imgList = new QVBoxLayout(verticalLayoutWidget);
+        imgList->setSpacing(6);
+        imgList->setContentsMargins(11, 11, 11, 11);
+        imgList->setObjectName(QStringLiteral("imgList"));
+        imgList->setContentsMargins(0, 0, 0, 0);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1280, 23));
+        menuBar->setGeometry(QRect(0, 0, 1308, 23));
         menu_S = new QMenu(menuBar);
         menu_S->setObjectName(QStringLiteral("menu_S"));
         menu = new QMenu(menuBar);
@@ -687,7 +692,7 @@ public:
         MainWindow->setStatusBar(statusBar);
         toolBar = new QToolBar(MainWindow);
         toolBar->setObjectName(QStringLiteral("toolBar"));
-        toolBar->setStyleSheet(QStringLiteral(""));
+        toolBar->setStyleSheet(QStringLiteral("background-color: rgb(197, 197, 197);"));
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menuBar->addAction(menu_2->menuAction());
@@ -775,7 +780,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "\350\256\241\347\256\227\347\273\223\346\236\234", 0));
-        chart->setText(QApplication::translate("MainWindow", "\346\237\245\347\234\213\345\233\276\350\241\250", 0));
+        chart->setText(QApplication::translate("MainWindow", "\346\237\245\347\234\213\351\207\215\345\244\215\346\200\247", 0));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221\346\265\213\351\207\217\345\214\272\345\237\237", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\210\227\350\241\250", 0));
         QTableWidgetItem *___qtablewidgetitem5 = roiList->horizontalHeaderItem(0);
@@ -872,6 +877,7 @@ public:
         label->setText(QApplication::translate("MainWindow", "\345\237\272\345\207\206\347\202\271:", 0));
         lableXY->setText(QApplication::translate("MainWindow", "0,0", 0));
         prompt->setText(QString());
+        groupBox_5->setTitle(QString());
         menu_S->setTitle(QApplication::translate("MainWindow", "\350\256\276\347\275\256(&S)", 0));
         menu->setTitle(QApplication::translate("MainWindow", "\345\270\256\345\212\251(&H)", 0));
         menu_2->setTitle(QApplication::translate("MainWindow", "\344\273\273\345\212\241(&N)", 0));

@@ -7,7 +7,7 @@ getPointDialog::getPointDialog(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    qDebug()<<ui->groupBox->children();
+
 }
 
 getPointDialog::~getPointDialog()

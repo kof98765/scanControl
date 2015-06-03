@@ -356,7 +356,10 @@ void profileGet::flushSettings()
     qDebug("trigger:%x",trigger);
     int t=(set.value("trigger",0).toInt());
     qDebug()<<"trigger mode"<<t;
-
+    if(t)
+        mode=0;
+    else
+        mode=1;
    // if((iRetValue = m_pLLT->SetFeature(FEATURE_FUNCTION_TRIGGER, trigger)) < GENERAL_FUNCTION_OK)
    // {
    //     OnError("Error during SetFeature(FEATURE_FUNCTION_TRIGGER)", iRetValue);

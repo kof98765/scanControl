@@ -27,10 +27,12 @@ private:
 signals:
     void write_excel(int row,int count,QString);
     void Error(QString str);
+    void reportRepeatability(QMap<QString,double>,QMap<QString,double>);
 
 public slots:
     void add_item(int type,QString str);
     void set_table(QTableWidget *t);
+    void calculateRepeatability(int keyColumn,int valueColumn );
     void add_row();
     void init();
     void clear_table();

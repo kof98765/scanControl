@@ -16,7 +16,40 @@
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
+     <item row="3" column="0">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="3" column="3">
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="creat">
+       <property name="text">
+        <string>生成</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>快速取点</string>
@@ -26,7 +59,7 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="4" column="2">
       <spacer name="verticalSpacer_2">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -39,7 +72,7 @@
        </property>
       </spacer>
      </item>
-     <item row="2" column="0">
+     <item row="2" column="2">
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
         <string/>
@@ -89,10 +122,20 @@
           </property>
          </widget>
         </item>
+        <item row="5" column="1">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>坐标换算比例:</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="1" colspan="2">
          <widget class="QLabel" name="label_2">
           <property name="text">
            <string>基于基准点坐标偏移快速取点</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -103,15 +146,32 @@
           </property>
          </widget>
         </item>
+        <item row="5" column="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QDoubleSpinBox" name="scaleX">
+            <property name="maximum">
+             <double>1000.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="scaleY">
+            <property name="maximum">
+             <double>1000.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
         <item row="10" column="2">
          <widget class="QSpinBox" name="pointCount"/>
-        </item>
-        <item row="11" column="2">
-         <widget class="QPushButton" name="creat">
-          <property name="text">
-           <string>生成</string>
-          </property>
-         </widget>
         </item>
         <item row="6" column="1">
          <widget class="QLabel" name="label_6">
@@ -133,6 +193,19 @@
            <string>点数</string>
           </property>
          </widget>
+        </item>
+        <item row="6" column="3">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item row="7" column="1">
          <widget class="QLabel" name="label_7">
@@ -287,42 +360,11 @@
           </item>
          </layout>
         </item>
-        <item row="5" column="1">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>坐标换算比例:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="2">
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QDoubleSpinBox" name="scaleX">
-            <property name="maximum">
-             <double>1000.000000000000000</double>
-            </property>
-            <property name="value">
-             <double>1.000000000000000</double>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QDoubleSpinBox" name="scaleY">
-            <property name="maximum">
-             <double>1000.000000000000000</double>
-            </property>
-            <property name="value">
-             <double>1.000000000000000</double>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
        </layout>
       </widget>
      </item>
-     <item row="2" column="1">
-      <spacer name="horizontalSpacer_2">
+     <item row="3" column="1">
+      <spacer name="horizontalSpacer_5">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>

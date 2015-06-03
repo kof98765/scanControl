@@ -37,6 +37,7 @@
 #include "laser/laser.h"
 #include "pointdatadialog.h"
 #include "getpointdialog.h"
+#include "repeatabilitydialog.h"
 using namespace Halcon;
 
 
@@ -123,9 +124,11 @@ private:
     Plot *plot;
     QFile out;
     getPointDialog *getPoint;
+
     QDialog *dataDialog;
     profileGet *profile;
     summarizing *sum;
+    repeatabilityDialog *repeat;
 	summarizing *roiList;
     QButtonGroup *mygroup;
     GLWidget *glWidget;

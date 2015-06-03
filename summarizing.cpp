@@ -28,7 +28,7 @@ void summarizing::clear_table()
         table->removeRow(i);
     }
     index=1;
-	qDebug()<<"rowcount"<<maxrow;
+
 }
 void summarizing::add_row()
 {
@@ -39,6 +39,34 @@ void summarizing::add_row()
     table->setItem(table->rowCount()-1,0,item);
 
     init();
+}
+void summarizing::calculateRepeatability(int column1,int column2)
+{
+    QStringList itemList;
+    QMap<QString,double> maxList;
+    QMap<QString,double> minList;
+    for(int i=0;i<table->rowCount();i++)
+    {
+        QString tmp=table->item(i,column1)->text();
+        if(!itemList.contains(tmp))
+        {
+
+            maxList.insert(tmp,table->item(i,column2)->text().toDouble());
+            minList.insert(tmp,table->item(i,column2)->text().toDouble());
+            itemList.append(tmp);
+        }
+        else
+        {
+            double value=table->item(i,column2)->text().toDouble();
+            if(value>maxList.value(tmp))
+                maxList.insert(tmp,value);
+            if(value<minList.value(tmp))
+                minList.insert(tmp,value);
+
+        }
+
+    }
+    emit reportRepeatability(minList,maxList);
 }
 void summarizing::add_item(int type, QString str)
 {

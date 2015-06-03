@@ -69,7 +69,8 @@ SOURCES += main.cpp\
     pointdatadialog.cpp \
     Flatness.cpp \
     qcustomplot.cpp \
-    getpointdialog.cpp
+    getpointdialog.cpp \
+    repeatabilitydialog.cpp
 
 
 
@@ -102,7 +103,8 @@ HEADERS  += mainwindow.h \
     pointdatadialog.h \
     Flatness.h \
     qcustomplot.h \
-    getpointdialog.h
+    getpointdialog.h \
+    repeatabilitydialog.h
 
 
 
@@ -112,7 +114,8 @@ FORMS    += mainwindow.ui \
     pointanalyze.ui \
     settingDialog.ui \
     pointdatadialog.ui \
-    getpointdialog.ui
+    getpointdialog.ui \
+    repeatabilitydialog.ui
 
 RESOURCES += \
     icons.qrc \

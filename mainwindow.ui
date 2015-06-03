@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
+    <width>1308</width>
     <height>748</height>
    </rect>
   </property>
@@ -28,7 +28,7 @@
      <rect>
       <x>760</x>
       <y>10</y>
-      <width>521</width>
+      <width>541</width>
       <height>601</height>
      </rect>
     </property>
@@ -190,8 +190,11 @@
       </item>
       <item row="0" column="1">
        <widget class="QPushButton" name="chart">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="text">
-         <string>查看图表</string>
+         <string>查看重复性</string>
         </property>
        </widget>
       </item>
@@ -286,7 +289,7 @@
        <rect>
         <x>310</x>
         <y>120</y>
-        <width>154</width>
+        <width>211</width>
         <height>155</height>
        </rect>
       </property>
@@ -470,7 +473,7 @@
        <rect>
         <x>310</x>
         <y>40</y>
-        <width>151</width>
+        <width>211</width>
         <height>81</height>
        </rect>
       </property>
@@ -684,7 +687,7 @@ border-radius:25px
       <rect>
        <x>10</x>
        <y>570</y>
-       <width>501</width>
+       <width>591</width>
        <height>20</height>
       </rect>
      </property>
@@ -900,7 +903,7 @@ border-radius:25px</string>
    <widget class="QPushButton" name="twoDButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>20</x>
       <y>0</y>
       <width>75</width>
       <height>23</height>
@@ -913,7 +916,7 @@ border-radius:25px</string>
    <widget class="QPushButton" name="threeDButton">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>100</x>
       <y>0</y>
       <width>75</width>
       <height>23</height>
@@ -948,17 +951,6 @@ border-radius:25px</string>
     <property name="text">
      <string>0,0</string>
     </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>10</y>
-      <width>121</width>
-      <height>611</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="imgList" stretch=""/>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -1002,13 +994,37 @@ border-radius:25px</string>
      <string/>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>20</y>
+      <width>120</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>91</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="imgList"/>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1280</width>
+     <width>1308</width>
      <height>23</height>
     </rect>
    </property>
@@ -1053,7 +1069,7 @@ border-radius:25px</string>
     <string>toolBar</string>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(197, 197, 197);</string>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>

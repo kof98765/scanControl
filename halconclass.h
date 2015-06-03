@@ -17,8 +17,24 @@
 using namespace std;
 using namespace Halcon;
 void CPPExpDefaultExceptionHandler(const Halcon::HException& except);
-
-
+typedef struct Roi{
+    double x;
+    double y;
+    double endX;
+    double endY;
+    double Phi;
+    double Length1;
+    double Length2;
+    int func;
+    int index;
+    int team;
+    double min;
+    double max;
+    int color;
+    int drawType;
+    char* name;
+}Roi;
+Q_DECLARE_METATYPE(Roi)
 
 
 class halconClass:public QThread
@@ -110,9 +126,9 @@ private:
     HTuple centerX,centerY;
 
     QList<Hobject*> imgList;
-
+    QMap<int,QList<Hobject>> unitList;
     QTime time;
-
+    Hobject tmpObj;
     QMap<QString,QVariant> roiList;
     QMap<QString,QVariant> dataList;
     QMap<QString,QList<HTuple>> locateList;
