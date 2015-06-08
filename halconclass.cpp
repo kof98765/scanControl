@@ -230,7 +230,23 @@ void halconClass::selectImg(int i)
         return;
     index=i;
 
+    QMap<QString,QVariant> teamPoint = set.value("basePoint").toMap();
+    if(teamPoint.size()>0)
+    {
+        for(int i=0;i<teamPoint.size();i++)
+        {
+            QMap<QString,QVariant> point=teamPoint.value(QString::number(i)).toMap();
+            QPointF p=point.value(QString::number(index)).toPointF();
+            qDebug()<<p.x()<<p.y();
+            emit reportBasePoint(p.x(),p.y());
+
+
+
+
+        }
+    }
     copy_image(*imgList.at(i),&Image);
+    clear_window(WindowHandle);
     disp_img();
 }
 void halconClass::disp_xld(HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2)
@@ -315,29 +331,55 @@ void halconClass::disp_img()
         //显示矩形窗口
         QStringList list=roiList.keys();
         //绘制基准点相关图形
-        QMap<QString,QVariant> point=set.value("basePoint").toMap();
-        set_tposition(WindowHandle,point.value(QString::number(index)).toPointF().y(),point.value(QString::number(index)).toPointF().x());
-        gen_cross_contour_xld(&Rectangle,point.value(QString::number(index)).toPointF().y(),point.value(QString::number(index)).toPointF().x(),20,0);
-        //gen_rectangle2(&Rectangle,point.value(QString::number(index)).toPointF().y(),point.value(QString::number(index)).toPointF().x(),0,5,5);
-        disp_obj(Rectangle,WindowHandle);
-        write_string(WindowHandle,"center");
-         QMap<QString,QVariant> base=set.value("locationList").toMap().value(QString::number(index)).toMap();
-         if(base.value("func").toInt()==2)
-         {
-            disp_xld(base.value("Row").toDouble(),base.value("Column").toDouble(),base.value("Row1").toDouble(),base.value("Column1").toDouble());
-            disp_xld(base.value("Row2").toDouble(),base.value("Column2").toDouble(),base.value("Row3").toDouble(),base.value("Column3").toDouble());
-            disp_xld(base.value("Row4").toDouble(),base.value("Column4").toDouble(),base.value("Row5").toDouble(),base.value("Column5").toDouble());
-         }
-         if(base.value("func").toInt()==1)
-         {
-             disp_xld(base.value("Row").toDouble(),base.value("Column").toDouble(),base.value("Row1").toDouble(),base.value("Column1").toDouble());
-         }
+
+        QMap<QString,QVariant> teamPoint = set.value("basePoint").toMap();
+
+        for(int i=0;i<teamPoint.size();i++)
+        {
+           QMap<QString,QVariant> point=teamPoint.value(QString::number(i)).toMap();
+           QPointF p=point.value(QString::number(index)).toPointF();
+
+           set_tposition(WindowHandle,p.y(),p.x());
+           gen_cross_contour_xld(&Rectangle,p.y(),p.x(),20,0);
+           //gen_rectangle2(&Rectangle,point.value(QString::number(index)).toPointF().y(),point.value(QString::number(index)).toPointF().x(),0,5,5);
+           disp_obj(Rectangle,WindowHandle);
+           write_string(WindowHandle,QString("center%1").arg(i).toUtf8().data());
+
+
+            QMap<QString,QVariant> baseList=set.value("team").toMap().value(QString::number(i)).toMap();
+
+            if(baseList.keys().size()<=0)
+                continue;
+
+            QMap<QString,QVariant> base=baseList.value(QString::number(index)).toMap();
+
+            if(base.keys().size()<=0)
+                continue;
+            if(base.value("func").toInt()==2)
+            {
+                disp_xld(base.value("Row").toDouble(),base.value("Column").toDouble(),base.value("Row1").toDouble(),base.value("Column1").toDouble());
+                disp_xld(base.value("Row2").toDouble(),base.value("Column2").toDouble(),base.value("Row3").toDouble(),base.value("Column3").toDouble());
+                disp_xld(base.value("Row4").toDouble(),base.value("Column4").toDouble(),base.value("Row5").toDouble(),base.value("Column5").toDouble());
+            }
+            if(base.value("func").toInt()==1|base.value("func").toInt()==0)
+            {
+                disp_xld(base.value("Row").toDouble(),base.value("Column").toDouble(),base.value("Row1").toDouble(),base.value("Column1").toDouble());
+            }
+        }
         if(list.size()==0)
             return;
 
         for(int i=0;i<list.size();i++)
         {
             QMap<QString,QVariant> roi=set.value("team/"+list.at(i)).toMap();
+            double x=0,y=0;
+
+                QMap<QString,QVariant> point=teamPoint.value(roi.value("team").toString()).toMap();
+
+
+                    x=point.value(QString::number(index)).toPointF().x();
+                    y=point.value(QString::number(index)).toPointF().y();
+
 
             if(roi.value("index").toInt()==index)
             {
@@ -352,32 +394,19 @@ void halconClass::disp_img()
                 }
                 else
                 {
-                    if(roi.value("isDraw").toInt()==0)
-                    {
-                        gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+point.value(QString::number(index)).toPointF().y(),roi.value("Column").toDouble()+point.value(QString::number(index)).toPointF().x(),roi.value("Phi").toDouble(),roi.value("Length1").toDouble(),roi.value("Length2").toDouble());
-                        if(roi.value("func").toInt()==5)
-                        {
-                            Hobject Rectangle2;
-                            gen_rectangle2(&Rectangle2,roi.value("Row2").toDouble()+point.value(QString::number(index)).toPointF().y(),roi.value("Column2").toDouble()+point.value(QString::number(index)).toPointF().x(),roi.value("Phi2").toDouble(),roi.value("Length3").toDouble(),roi.value("Length4").toDouble());
-                            gen_contour_region_xld(Rectangle2,&Contours,"border");
-                            disp_obj(Contours,WindowHandle);
 
-                        }
-                        set_tposition(WindowHandle,roi.value("Row").toDouble()+point.value(QString::number(index)).toPointF().y(),roi.value("Column").toDouble()+point.value(QString::number(index)).toPointF().x());
-                    }
-                    else
+                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+y,roi.value("Column").toDouble()+x,roi.value("Phi").toDouble(),roi.value("Length1").toDouble(),roi.value("Length2").toDouble());
+                    if(roi.value("func").toInt()==5)
                     {
-                        gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Length1").toDouble(),roi.value("Length2").toDouble());
-                        if(roi.value("func").toInt()==5)
-                        {
-                            Hobject Rectangle2;
-                            gen_rectangle2(&Rectangle2,roi.value("Row2").toDouble(),roi.value("Column2").toDouble(),roi.value("Phi2").toDouble(),roi.value("Length3").toDouble(),roi.value("Length4").toDouble());
-                            gen_contour_region_xld(Rectangle2,&Contours,"border");
-                            disp_obj(Contours,WindowHandle);
+                        Hobject Rectangle2;
+                        gen_rectangle2(&Rectangle2,roi.value("Row2").toDouble()+y,roi.value("Column2").toDouble()+x,roi.value("Phi2").toDouble(),roi.value("Length3").toDouble(),roi.value("Length4").toDouble());
+                        gen_contour_region_xld(Rectangle2,&Contours,"border");
+                        disp_obj(Contours,WindowHandle);
 
-                        }
-                        set_tposition(WindowHandle,roi.value("Row").toDouble(),roi.value("Column").toDouble());
                     }
+                    set_tposition(WindowHandle,roi.value("Row").toDouble()+y,roi.value("Column").toDouble()+x);
+
+
 
                 }
                 set_rgb(WindowHandle,(int)((roi.value("color").toInt()&(0xff<<16))>>16),(int)((roi.value("color").toInt()&(0xff<<8))>>8),(int)(roi.value("color").toInt()&0xff));
@@ -673,7 +702,7 @@ void halconClass::delRect(QString name)
 
 
     dataList.insert(roi.value("team","0").toString(),data);
-    qDebug()<<"del"<<roi.value("team").toString()<<dataList;
+
 
     set.setValue("dataList",dataList);
     set.setValue("roiList",roiList);
@@ -684,6 +713,9 @@ void halconClass::delRect(QString name)
 		clear_window(WindowHandle);
     disp_img();
 }
+/*
+    获取两点一线确定基准点所需要的参数
+*/
 void halconClass::twoPointOneLineBasePoint(QMap<QString,QVariant> map)
 {
     HTuple  Row, Column, Row2, Column2,Phi,Length1,Length2, Max;
@@ -714,13 +746,21 @@ void halconClass::twoPointOneLineBasePoint(QMap<QString,QVariant> map)
     disp_xld(Row,Column,Row2,Column2);
 
     map.insert("index",index);
-    QMap<QString,QVariant> local=set.value("locationList").toMap();
+    QMap<QString,QVariant> teamMap=set.value("team").toMap();
+    QMap<QString,QVariant> local=teamMap.value(map.value("team").toString()).toMap();
+
     local.insert(QString::number(index),map);
-    set.setValue("locationList",local);
+
+    teamMap.insert(map.value("team").toString(),local);
+
+    set.setValue("team",teamMap);
     emit Warning("");
 
     set.sync();
 }
+/*
+    以一个圆来确定基准点
+*/
 void halconClass::oneRectBasePoint(QMap<QString,QVariant> map)
 {
     Hobject Rectangle;
@@ -734,20 +774,30 @@ void halconClass::oneRectBasePoint(QMap<QString,QVariant> map)
      map.insert("Row1",Row2[0].D());
      map.insert("Column1",Column2[0].D());
       map.insert("index",index);
-      QMap<QString,QVariant> local=set.value("locationList").toMap();
+      QMap<QString,QVariant> teamMap=set.value("team").toMap();
+      QMap<QString,QVariant> local=teamMap.value(map.value("team").toString()).toMap();
+
       local.insert(QString::number(index),map);
-      set.setValue("locationList",local);
+
+      teamMap.insert(map.value("team").toString(),local);
+
+      set.setValue("team",teamMap);
       emit Warning("");
 
       set.sync();
 
 }
+/*
+    判断使用哪一种定位算法
+*/
 void halconClass::drawToFindBasePoint(QMap<QString,QVariant> map)
 {
     int func=map.value("func").toInt();
     switch(func)
     {
     case 0:
+        write_image(Image,"tiff",0,QString("%1.tif").arg(index).toUtf8().data());
+        createTemplate(map);
         break;
     case 1:
         oneRectBasePoint(map);
@@ -809,9 +859,18 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
         {
             draw_rectangle2(WindowHandle,&Row,&Column,&Phi,&Length1,&Length2);
             //roiList[1-5]
+            double x=0,y=0;
+            QMap<QString,QVariant> teamPoint=set.value("basePoint").toMap();
+            qDebug()<<teamPoint;
+            QMap<QString,QVariant> point=teamPoint.value(map.value("team").toString()).toMap();
 
-            roi.insert("Row",Row[0].D());
-            roi.insert("Column",Column[0].D());
+            x=point.value(QString::number(index)).toPointF().x();
+            y=point.value(QString::number(index)).toPointF().y();
+
+
+
+            roi.insert("Row",Row[0].D()-y);
+            roi.insert("Column",Column[0].D()-x);
             roi.insert("Phi",Phi[0].D());
             roi.insert("Length1",Length1[0].D());
             roi.insert("Length2",Length2[0].D());
@@ -824,19 +883,20 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
                 gen_rectangle2(&Rectangle,Row,Column,Phi,Length1,Length2);
                 disp_obj(Rectangle,WindowHandle);
             }
+            qDebug()<<"xy"<<Row[0].D()<<Column[0].D()<<x<<y;
             //两点高差计算需要第二个点
             if(func==5)
             {
                 emit Warning(QStringLiteral("请绘制第二个计算点,按右键结束"));
                 draw_rectangle2(WindowHandle,&Row,&Column,&Phi,&Length1,&Length2);
                 emit Warning("");
-                roi.insert("Row2",Row[0].D());
-                roi.insert("Column2",Column[0].D());
+                roi.insert("Row2",Row[0].D()-y);
+                roi.insert("Column2",Column[0].D()-x);
                 roi.insert("Phi2",Phi[0].D());
                 roi.insert("Length3",Length1[0].D());
                 roi.insert("Length4",Length2[0].D());
             }
-            qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D()<<Phi[0].D();
+
         }
         else
         {
@@ -856,7 +916,7 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
                 roi.insert("Length3",map.value("Length3").toDouble());
                 roi.insert("Length4",map.value("Length4").toDouble());
             }
-            qDebug()<<"func"<<row<<column<<length1<<length2;
+
         }
     }
     else
@@ -874,7 +934,7 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
         roi.insert("Row2",Row2[0].D());
         roi.insert("Column2",Column2[0].D());
 
-        qDebug()<<"func"<<func<<Row[0].D()<<Column[0].D();
+
 
     }
 
@@ -922,11 +982,53 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
         //  write_image(Image,"tiff",0,QString("%1_%2.tif").arg(roi.value("team").toInt()).arg(roi.value("index").toInt()).toUtf8().data());
         // createTemplate(team);
     }
+    qDebug()<<"add finish";
     //更新界面
+
     disp_img();
     emit flushRoiList(roiList.keys());
 }
+QPointF halconClass::matchTemplate(QMap<QString,QVariant> roi)
+{
+    HTuple TemplateID,Row,Column,hv_Angle,Result;
+    typedef int (*MT)(Hobject inImage,HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2,HTuple hv_mode,HTuple hv__min,HTuple hv__max,HTuple hv_TemplateID,HTuple* hv_Row, HTuple *hv_Column,HTuple *hv_Angle,HTuple *hv_Score);
+    MT cal=NULL;
 
+    cal=(MT)GetProcAddress(hInstance,"Match_template");
+
+
+    QFile f(QString("%1_%2.mod").arg(roi.value("index").toInt()).arg(roi.value("team").toInt()).toUtf8().data());
+    if(!f.exists())
+    {
+        emit Error(QStringLiteral("没有")+ QString("%1_%2.mod").arg(roi.value("index").toInt()).arg(roi.value("team").toInt()).toUtf8().data());
+        return QPointF(0,0);
+    }
+
+    read_ncc_model(QString("%1_%2.mod").arg(roi.value("index").toInt()).arg(roi.value("team").toInt()).toUtf8().data(),&TemplateID);
+
+
+    qDebug()<<"start match";
+    double minRange,maxRange;
+    minRange=set.value("minMeasuringRange","-7.5").toDouble();
+    maxRange=set.value("maxMeasuringRange","7.5").toDouble();
+
+    int ret=(*cal)(*imgList.at(roi.value("index").toInt()),roi.value("Row").toDouble()-200, roi.value("Column").toDouble()-200,roi.value("Row1").toDouble()+200, roi.value("Column1").toDouble()+200,1,minRange,maxRange,TemplateID,&Row,&Column,&hv_Angle,&Result);
+    clear_ncc_model(TemplateID);
+    qDebug()<<"ret ="<<ret;
+    if(ret==-1)
+    {
+        qDebug()<<"at lease one not match";
+        emit Error("match fail!!");
+        return QPointF(0,0);
+    }
+    if(ret==1)
+    {
+        return QPointF(Column[0].D(),Row[0].D());
+
+    }
+
+
+}
 /*
  *  name:matchTemplate
     type:函数
@@ -937,6 +1039,7 @@ void halconClass::drawRect(QMap<QString,QVariant> map)
         匹配模板
 
 */
+/*
 void halconClass::matchTemplate(int team)
 {
     int num=0;
@@ -1040,6 +1143,7 @@ void halconClass::matchTemplate(int team)
 
     qDebug()<<QStringLiteral("匹配模板时间:")<<time.elapsed()<<"ms";
 }
+*/
 /*
  *  name:createTemplate
     type:函数
@@ -1050,72 +1154,70 @@ void halconClass::matchTemplate(int team)
         创建模板
 
 */
-void halconClass::createTemplate(int team)
+void halconClass::createTemplate(QMap<QString,QVariant> map)
 {
     int num=0;
     QTime time;
     HTuple templateID;
     time.start();
+    Hobject Rectangle;
+    HTuple  Row, Column, Row2, Column2;
+    int color=map.value("color").toInt();
+    set_rgb(WindowHandle,(int)((color&(0xff<<16))>>16),(int)((color&(0xff<<8))>>8),(int)(color&0xff));
+    emit Warning(QStringLiteral("框一个特征明显的物体,以创建模板"));
+    draw_rectangle1(WindowHandle,&Row,&Column,&Row2,&Column2);
+     map.insert("Row",Row[0].D());
+     map.insert("Column",Column[0].D());
+     map.insert("Row1",Row2[0].D());
+     map.insert("Column1",Column2[0].D());
+      map.insert("index",index);
+      QMap<QString,QVariant> teamMap=set.value("team").toMap();
+      QMap<QString,QVariant> local=teamMap.value(map.value("team").toString()).toMap();
+
+      local.insert(QString::number(index),map);
+
+      teamMap.insert(map.value("team").toString(),local);
+
+      set.setValue("team",teamMap);
+      emit Warning("");
+
+      set.sync();
 
     CT cal=NULL;
 
     cal=(CT)GetProcAddress(hInstance,"Create_template");
-   if (HDevWindowStack::IsOpen()&hasData)
+
+    Hobject image;
+
+
+
+    num++;
+    QFile f(QString("%1.tif").arg(index));
+    if(!f.exists())
     {
-        Hobject image, RegionComplement, ImageReduced,rect;
-        HTuple  tmp, tmp2, Row2, Column2, Min=0, Max=0,Indices;
-        HTuple Rows,Columns,Grayval;
-        HTuple  Range,String,s,Result,Number;
-
-        QString n=dataList.keys().at(team);
-
-        QStringList list=dataList.value(n).toStringList();
-        qDebug()<<"create"<<list;
-        for(int i=0;i<list.size();i++)
-        {
-            QStringList str=roiList.value(list.at(i)).toStringList();
-
-            QMap<QString,QVariant> roi=set.value("team/"+list.at(i)).toMap();
-            qDebug()<<roi;
-            if(roi.value("func").toInt()==0)
-            {
-                qDebug()<<"create template"<<list.at(i)<<"imgList size"<<imgList.size()<<roi.value("index").toInt();
-                if(imgList.size()<=roi.value("index").toInt())
-                    continue;
-                num++;
-                QFile f(QString("%1_%2.tif").arg(roi.value("team").toInt()).arg(roi.value("index").toInt()));
-                if(!f.exists())
-                {
-                    emit Error("no file to locate");
-                    return;
-                }
-                read_image(&image,QString("%1_%2.tif").arg(roi.value("team").toInt()).arg(roi.value("index").toInt()).toUtf8().data());
-                HTuple min,max,range;
-
-                qDebug()<<"creat point"<<roi.value("Row").toDouble()<<roi.value("Column").toDouble()<<roi.value("Row2").toDouble()<<roi.value("Column2").toDouble();
-                double minRange,maxRange;
-                minRange=set.value("minMeasuringRange","-7.5").toDouble();
-                maxRange=set.value("maxMeasuringRange","7.5").toDouble();
-                int result=(*cal)(image,roi.value("Row").toDouble(), roi.value("Column").toDouble(), roi.value("Row2").toDouble(), roi.value("Column2").toDouble(),1,minRange,maxRange,&templateID);
-                qDebug()<<"Create_template"<<result;
-                if(templateID.Num()!=0)
-                {
-                    write_ncc_model(templateID,QString("%1_%2.mod").arg(roi.value("team").toInt()).arg(roi.value("index").toInt()).toUtf8().data());
+        emit Error("no file to locate");
+        return;
+    }
+    read_image(&image,QString("%1.tif").arg(map.value("index").toInt()).toUtf8().data());
+    HTuple min,max,range;
 
 
-                    qDebug()<<"templateID get";
-                }
-                else
-                {
-                    emit Error("create templateID fail");
-                    return;
-                }
-                }
+    double minRange,maxRange;
+    minRange=set.value("minMeasuringRange","-7.5").toDouble();
+    maxRange=set.value("maxMeasuringRange","7.5").toDouble();
+    int result=(*cal)(image,Row[0].D(), Column[0].D(),Row2[0].D(),Column2[0].D(),1,minRange,maxRange,&templateID);
+    qDebug()<<"Create_template"<<result;
+    if(templateID.Num()!=0)
+    {
+        write_ncc_model(templateID,QString("%1_%2.mod").arg(map.value("index").toInt()).arg(map.value("team").toInt()).toUtf8().data());
 
-        }
 
-        if(num==0)
-            return;
+        qDebug()<<"templateID get";
+    }
+    else
+    {
+        emit Error("create templateID fail");
+        return;
     }
 
     qDebug()<<QStringLiteral("生成模板时间:")<<time.elapsed()<<"ms";
@@ -1145,10 +1247,10 @@ void halconClass::calculatePlaneness(int team)
 
          QStringList list=dataList.value(n).toStringList();
 
-         std::vector<double> x,y,z;
-         x.resize(100);
-         y.resize(100);
-         z.resize(100);
+         std::vector<double> xv,yv,zv;
+         xv.resize(100);
+         yv.resize(100);
+         zv.resize(100);
          int in=0;
         qDebug()<<"plane list.size"<<list.size();
          for(int i=0;i<list.size();i++)
@@ -1166,14 +1268,20 @@ void halconClass::calculatePlaneness(int team)
                //      return;
                //  }
                 num++;
-                 QMap<QString,QVariant> point=set.value("basePoint").toMap();
+                double x=0,y=0;
+                QMap<QString,QVariant> teamPoint=set.value("basePoint").toMap();
+
+                    QMap<QString,QVariant> point=teamPoint.value(roi.value("team").toString()).toMap();
+
+                    x=point.value(roi.value("index").toString()).toPointF().x();
+                    y=point.value(roi.value("index").toString()).toPointF().y();
+
 
                  qDebug()<<"start planePoint";
 
-                 if(roi.value("isDraw").toInt()==0)
-                     gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+point.value(roi.value("index").toString()).toPointF().y(),roi.value("Column").toDouble()+point.value(roi.value("index").toString()).toPointF().x(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
-                 else
-                     gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+
+                 gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+y,roi.value("Column").toDouble()+x,roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+
                  //affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
                 // disp_obj(RegionAffineTrans,WindowHandle);
                 // qDebug()<<"planePoint orginal point"<<roi.value("Row").toDouble()<<roi.value("Column").toDouble();
@@ -1192,24 +1300,18 @@ void halconClass::calculatePlaneness(int team)
                  }
 
                  tuple_max(Grayval, &tmp);
-                 qDebug()<<"max"<<tmp[0].D();
-                 tuple_find(Grayval,0,&Indices);
+
                  double sumResult;
                  tuple_sum(Grayval,&sumResult);
                  double mean=sumResult/(Grayval.Num());
 
-                 if(roi.value("isDraw").toInt()==0)
-                 {
-                    x[in]=roi.value("Column").toFloat()+point.value(roi.value("index").toString()).toPointF().x();
-                    y[in]=roi.value("Row").toFloat()+point.value(roi.value("index").toString()).toPointF().y();
-                 }
-                 else
-                 {
-                     x[in]=roi.value("Column").toFloat();
-                     y[in]=roi.value("Row").toFloat();
-                 }
-                 z[in]=mean;
-                 qDebug()<<"xyz"<<x[in]<<y[in]<<z[in]<<in;
+
+                 xv[in]=roi.value("Column").toFloat()+x;
+                 yv[in]=roi.value("Row").toFloat()+y;
+
+
+                 zv[in]=mean;
+                 qDebug()<<"xyz"<<xv[in]<<yv[in]<<zv[in]<<in;
                  in++;
 
 
@@ -1226,26 +1328,27 @@ void halconClass::calculatePlaneness(int team)
              emit Error(QString("not enough four point,at lease %1 point").arg(set.value("check_num",4).toInt()));
              return;
          }
-         qDebug()<<"cloud";
+
          tagPoint p;
          tagPlane Plane;
 
          HTuple dist;
-         tagPoint *pointList=listToPoint(&x[0],&y[0],&z[0],in);
+         tagPoint *pointList=listToPoint(&xv[0],&yv[0],&zv[0],in);
+         //求平面方程
          PlaneSet(pointList,Plane,in);
          for(int i=0;i<in;i++)
          {
-
+            //点到平面高度
              result=PointToPlane(pointList[i],Plane,result);
              dist.Append(result);
-             qDebug()<<result;
+
          }
 
          tuple_max(dist,&Max);
          tuple_min(dist,&Min);
          result=abs(Max[0].D()-Min[0].D());
          /// (*cal)(&x[0],&y[0],&z[0],in,result);
-         qDebug()<<"cloud"<<result;
+
          emit sendPlaneness(n.toInt(),result);
          qDebug()<<QStringLiteral("平面度为:")<<result<<Max[0].D()<<Min[0].D();
 
@@ -1291,28 +1394,26 @@ QPoint halconClass::findCenter(Hobject image,HTuple Row,HTuple Column,HTuple Row
     }
     tuple_max(Length, &Max);
 
-
     select_contours_xld(Edges,&ObjectSelected,"contour_length",Max,Max,-0.5,0.5);
-
 
    // area_center_xld(ObjectSelected, &Area, &Row, &Column, &PointOrder);
     get_contour_xld(ObjectSelected,&Row,&Column);
     disp_obj(ObjectSelected,WindowHandle);
 
 
-
     return QPoint(Column[0].D(),Row[0].D());
 
 }
-QPointF halconClass::findRectCenter(Hobject image,double r,double c,double r2,double c2)
+QPointF halconClass::findRectCenter(QMap<QString,QVariant> roi)
 {
     Hobject Region,Edges,ImageReduced,SelectedContours,ContEllipse;
     HTuple Length,Max,Area,PointOrder,Row,Column,Radius1,Radius2,Phi,StartPhi,EndPhi;
-    gen_rectangle1(&Region,r,c,r2,c2);
-    reduce_domain(image,Region,&ImageReduced);
+    gen_rectangle1(&Region,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Row1").toDouble(),roi.value("Column1").toDouble());
+    reduce_domain(*imgList.at(roi.value("index").toInt()),Region,&ImageReduced);
     HTuple low=1,hight=2;
     edges_sub_pix(ImageReduced, &Edges, "canny", 1, low,hight);
-    length_xld(Edges, &Length);
+    select_contours_xld(Edges,&SelectedContours,"curvature",5,50, 0, 0);
+    length_xld(SelectedContours, &Length);
     if(Length.Num()<1)
     {
         qDebug()<<"not find the center!";
@@ -1322,13 +1423,13 @@ QPointF halconClass::findRectCenter(Hobject image,double r,double c,double r2,do
     select_contours_xld(Edges, &SelectedContours, "contour_length", Max, Max, -0.5, 0.5);
     HTuple hv_Exception;
     try{
-    HException::InstallHHandler(&CPPExpDefaultExceptionHandler);
-    fit_ellipse_contour_xld(SelectedContours, "fitzgibbon", -1, 0, 0, 200, 3, 2, &Row,
-          &Column, &Phi, &Radius1, &Radius2, &StartPhi, &EndPhi, &PointOrder);
-      gen_ellipse_contour_xld(&ContEllipse, Row, Column, Phi, Radius1, Radius2, 0, 6.28318,
-          "positive", 1.5);
+        HException::InstallHHandler(&CPPExpDefaultExceptionHandler);
+        fit_ellipse_contour_xld(SelectedContours, "fitzgibbon", -1, 0, 0, 200, 3, 2, &Row,
+                                &Column, &Phi, &Radius1, &Radius2, &StartPhi, &EndPhi, &PointOrder);
+        gen_ellipse_contour_xld(&ContEllipse, Row, Column, Phi, Radius1, Radius2, 0, 6.28318,
+                                "positive", 1.5);
 
-    qDebug()<<"basePoint"<<Column[0].D()<<Row[0].D();
+
     }catch (HException &HDevExpDefaultException)
     {
         HDevExpDefaultException.ToHTuple(&hv_Exception);
@@ -1361,10 +1462,10 @@ void halconClass::RectHeightSub(int team)
 
         QStringList list=dataList.value(n).toStringList();
 
-        std::vector<double> x,y,z,temp;
-        x.resize(100);
-        y.resize(100);
-        z.resize(100);
+        std::vector<double> xv,yv,zv,temp;
+        xv.resize(100);
+        yv.resize(100);
+        zv.resize(100);
         temp.resize(100);
         int in=0;
         qDebug()<<"heightsub list.size"<<list.size();
@@ -1380,17 +1481,23 @@ void halconClass::RectHeightSub(int team)
                 if(imgList.size()<=roi.value("index").toInt())
                     continue;
                 num++;
-                qDebug()<<"start heightsub";
+
               //  if(matList.value(roi.value("index").toString(),NULL)==NULL)
               //  {
                //     emit Error(QStringLiteral("定位失败"));
                //     return;
                // }
-                 QMap<QString,QVariant> point=set.value("basePoint").toMap();
-                if(roi.value("isDraw").toInt()==0)
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+point.value(roi.value("index").toString()).toPointF().y(),roi.value("Column").toDouble()+point.value(roi.value("index").toString()).toPointF().x(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
-                else
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                double x=0,y=0;
+                QMap<QString,QVariant> teamPoint=set.value("basePoint").toMap();
+
+                QMap<QString,QVariant> point=teamPoint.value(roi.value("team").toString()).toMap();
+
+                x=point.value(roi.value("index").toString()).toPointF().x();
+                y=point.value(roi.value("index").toString()).toPointF().y();
+
+
+                 gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+y,roi.value("Column").toDouble()+x,roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+
                 //affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
                //  disp_obj(RegionAffineTrans,WindowHandle);
                // qDebug()<<"RectHeightSub orginal point"<<roi.value("Row").toDouble()<<roi.value("Column").toDouble();
@@ -1405,17 +1512,19 @@ void halconClass::RectHeightSub(int team)
                     continue;
                 }
                 tuple_max(Grayval, &tmp);
-                qDebug()<<"max"<<tmp[0].D();
+
                 tuple_find(Grayval,0,&Indices);
                 double sumResult;
                 tuple_sum(Grayval,&sumResult);
                 double mean=sumResult/(Grayval.Num());
 
-                x[in]=roi.value("Column").toFloat()+point.value(roi.value("index").toString()).toPointF().x();
-                y[in]=roi.value("Row").toFloat()+point.value(roi.value("index").toString()).toPointF().y();
-                z[in]=mean;
+
+                xv[in]=roi.value("Column").toFloat()+x;
+                yv[in]=roi.value("Row").toFloat()+y;
+
+                zv[in]=mean;
                 temp[in]=i;
-                qDebug()<<"xyz"<<x[in]<<y[in]<<z[in]<<in;
+                qDebug()<<"xyz"<<xv[in]<<yv[in]<<zv[in]<<in;
                 in++;
             }
         }
@@ -1423,7 +1532,7 @@ void halconClass::RectHeightSub(int team)
         if(num==0)
             return;
 
-        qDebug()<<"creat cloud";
+
         double result;
 
         VectorInfo vec;
@@ -1435,7 +1544,7 @@ void halconClass::RectHeightSub(int team)
             return;
         }
         tagPlane Plane;
-        tagPoint *pointList=listToPoint((double *)&x[0],(double *)&y[0],(double *)&z[0],in);
+        tagPoint *pointList=listToPoint((double *)&xv[0],(double *)&yv[0],(double *)&zv[0],in);
         PlaneSet(pointList,Plane,in);
         for(int j=0;j<in;j++)
         {
@@ -1448,9 +1557,9 @@ void halconClass::RectHeightSub(int team)
            if(roi.value("func").toInt()==4)
            {
                tagPoint p;
-               p.x=x[j];
-               p.y=y[j];
-               p.z=z[j];
+               p.x=xv[j];
+               p.y=yv[j];
+               p.z=zv[j];
                result=PointToPlane(pointList[j],Plane,result);
                dist.Append(result);
 
@@ -1501,17 +1610,23 @@ void halconClass::pointToPoint(int team)
                 if(imgList.size()<=roi.value("index").toInt())
                     continue;
                 num++;
-                qDebug()<<"start ptop";
+
              //   if(matList.value(roi.value("index").toString(),NULL)==NULL)
               //  {
               //      emit Error(QStringLiteral("定位失败"));
                //     return;
               //  }
-                QMap<QString,QVariant> point=set.value("basePoint").toMap();
-                if(roi.value("isDraw").toInt()==0)
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+point.value(roi.value("index").toString()).toPointF().y(),roi.value("Column").toDouble()+point.value(roi.value("index").toString()).toPointF().x(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
-                else
-                    gen_rectangle2(&Rectangle,roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+                double x=0,y=0;
+                QMap<QString,QVariant> teamPoint=set.value("basePoint").toMap();
+
+                    QMap<QString,QVariant> point=teamPoint.value(roi.value("team").toString()).toMap();
+
+                        x=point.value(roi.value("index").toString()).toPointF().x();
+                        y=point.value(roi.value("index").toString()).toPointF().y();
+
+
+                gen_rectangle2(&Rectangle,roi.value("Row").toDouble()+y,roi.value("Column").toDouble()+x,roi.value("Phi").toDouble(),roi.value("Lenght1").toDouble(),roi.value("Length2").toDouble());
+
                // affine_trans_region(Rectangle,&RegionAffineTrans,matList.value(roi.value("index").toString()),"false");
                //  disp_obj(RegionAffineTrans,WindowHandle);
                 //qDebug()<<"ptop orginal point"<<roi.value("Row").toDouble()<<roi.value("Column").toDouble();
@@ -1535,10 +1650,8 @@ void halconClass::pointToPoint(int team)
                 tuple_mean(-Grayval,&tmp);
 
                 //min_max_gray(ImageReduced,ImageReduced,0,&Min,&Max,&Range);
-                if(roi.value("isDraw").toInt()==0)
-                    gen_rectangle2(&Rectangle,roi.value("Row2").toDouble()+point.value(roi.value("index").toString()).toPointF().y(),roi.value("Column2").toDouble()+point.value(roi.value("index").toString()).toPointF().x(),roi.value("Phi2").toDouble(),roi.value("Lenght3").toDouble(),roi.value("Length4").toDouble());
-                else
-                    gen_rectangle2(&Rectangle,roi.value("Row2").toDouble(),roi.value("Column2").toDouble(),roi.value("Phi2").toDouble(),roi.value("Lenght13").toDouble(),roi.value("Length4").toDouble());
+                gen_rectangle2(&Rectangle,roi.value("Row2").toDouble()+y,roi.value("Column2").toDouble()+x,roi.value("Phi2").toDouble(),roi.value("Lenght3").toDouble(),roi.value("Length4").toDouble());
+
 
                 reduce_domain(*imgList.at(roi.value("index").toInt()), Rectangle, &ImageReduced);
                 get_region_points(ImageReduced, &Rows, &Columns);
@@ -1564,6 +1677,7 @@ void halconClass::pointToPoint(int team)
         }
 
     }
+    qDebug()<<QStringLiteral("计算两点高差结束");
 }
 /*
     计算所有区域
@@ -1571,23 +1685,13 @@ void halconClass::pointToPoint(int team)
 void halconClass::calculate()
 {
     unitList.clear();
-    QMap<QString,QVariant> point;
-    for(int i=0;i<imgList.size();i++)
-    {
-        QPointF p=calculateBasePoint(i);
 
-        point.insert(QString::number(i),p);
+    calculateBasePoint();
 
-         //emit Warning(QString("basePoint:%1,%2").arg(basePointList.at(i).x()).arg(basePointList.at(i).y()));
-    }
-    set.setValue("basePoint",point);
-    set.sync();
     emit disp_img();
 
     for(int i=0;i<dataList.size();i++)
     {
-
-        //matchTemplate(i);
 
         calculatePlaneness(i);
         RectHeightSub(i);
@@ -1713,7 +1817,7 @@ void halconClass::getImagebyPointer1(double *pdValueZ,int w,int h)
 	hasData=true;
     isLoadFile=false;
 
-
+    clear_window(WindowHandle);
     emit dispImg();
    
 }
@@ -1778,90 +1882,120 @@ void halconClass::compoundImg(int xOffset,int yOffset)
   //  }
 
 }
+QPointF halconClass::findTwoPointOneLineBasePoint(QMap<QString,QVariant> roi)
+{
+    HTuple  Area, Row, Column;
+    HTuple Row1,Column1,Row2,Column2,Length2;
+    Hobject  ROI_0, ImageReduced, ROI_1, ImageReduced1;
+    HTuple  Length;
+    HTuple  Max, RowBegin, ColBegin, RowEnd, ColEnd, Nr, Nc;
+    HTuple  Dist;
+    Hobject  Edges, SelectedContours, ROI_2, ImageReduced2, RegionLines;
 
+
+    Row1.Append(roi.value("Row").toDouble());
+    Row2.Append(roi.value("Row1").toDouble());
+    Row1.Append(roi.value("Row2").toDouble());
+    Row2.Append(roi.value("Row3").toDouble());
+    Row1.Append(roi.value("Row4").toDouble());
+    Row2.Append(roi.value("Row5").toDouble());
+    Column1.Append(roi.value("Column").toDouble());
+    Column2.Append(roi.value("Column1").toDouble());
+    Column1.Append(roi.value("Column2").toDouble());
+    Column2.Append(roi.value("Column3").toDouble());
+    Column1.Append(roi.value("Column4").toDouble());
+    Column2.Append(roi.value("Column5").toDouble());
+
+
+    //gen_rectangle1(&ROI_0, Row1, Column1, Row2, Column2);
+
+    gen_rectangle1(&ROI_0,Row1[0].D(),Column1[0].D(),Row2[0].D(),Column2[0].D());
+    reduce_domain(*imgList.at(roi.value("index").toInt()), ROI_0, &ImageReduced);
+
+
+    edges_sub_pix(ImageReduced, &Edges, "canny", 1, HTuple(0.1), HTuple(0.2));
+    length_xld(Edges,&Length);
+    if(Length.Num()<1)
+    {
+        return QPointF(0,0);
+    }
+    tuple_max(Length,&Max);
+    select_contours_xld(Edges, &SelectedContours, "contour_length", Max, Max, 0.01,
+          0.02);
+    disp_obj(SelectedContours,WindowHandle);
+    fit_line_contour_xld(SelectedContours, "tukey", -1, 0, 5, 2, &RowBegin, &ColBegin,
+        &RowEnd, &ColEnd, &Nr, &Nc, &Dist);
+    qDebug()<<"line"<<RowBegin[0].D()<<ColBegin[0].D()<<RowEnd[0].D()<<ColEnd[0].D();
+    Hobject tmpobj;
+
+    gen_region_line(&tmpobj,RowBegin-1000,ColBegin,RowEnd+1000,ColEnd);
+    unitList[index].append(tmpobj);
+    QPoint p1=findCenter(*imgList.at(roi.value("index").toInt()),Row1[1].D(),Column1[1].D(),Row2[1].D(),Column2[1].D());
+
+    QPoint p2=findCenter(*imgList.at(roi.value("index").toInt()), Row1[2].D(), Column1[2].D(), Row2[2].D(), Column2[2].D());
+
+
+    gen_region_line(&RegionLines, p1.y(), p1.x(),p2.y(), p2.x());
+    qDebug()<<"p1,p2"<<p1<<p2;
+    //Clear measure when done
+    area_center(RegionLines, &Area, &Row, &Column);
+    //debug
+  qDebug()<<Column[0].D()<<Row[0].D();
+    gen_rectangle2(&tmpobj,p1.y(),p1.x(),0,5,5);
+    unitList[index].append(tmpobj);
+    gen_rectangle2(&tmpobj,p2.y(),p2.x(),0,5,5);
+    unitList[index].append(tmpobj);
+    //end debug
+    QPointF base=pointToLine(QPointF(ColBegin[0].D(),RowBegin[0].D()-1000),QPointF(ColEnd[0].D(),RowEnd[0].D()+1000),QPointF(Column[0].D(),Row[0].D()));
+  return base;
+}
 /*
     根据三条线段确定一个基准点
     Row1,Column1,Row2,Column2为四个数组,里面共有三组矩阵数据
     矩阵都需要包含一条边
     计算结果为根据后面两条边的中点相连后得出的线段中点,垂直于第一条边的交点
 */
-QPointF halconClass::calculateBasePoint(int index)
+void  halconClass::calculateBasePoint()
 {
-    Hobject  ROI_0, ImageReduced, ROI_1, ImageReduced1;
-      Hobject  Edges, SelectedContours, ROI_2, ImageReduced2, RegionLines;
+
+    // Local control variables
+    QMap<QString,QVariant> teamPoint;
+
+    QMap<QString,QVariant> team=set.value("team").toMap();
+    for(int i=0;i<team.keys().size();i++)
+    {
+        QMap<QString,QVariant> map=team.value(QString::number(i)).toMap();
+        QMap<QString,QVariant> indexPoint;
+        QPointF p;
+        for(int j=0;j<imgList.size();j++)
+        {
+            QMap<QString,QVariant> roi=map.value(QString::number(j)).toMap();
+            if(roi.value("func",-1).toInt()<0)
+                p=QPointF(0,0);
+            if(roi.value("func",-1).toInt()==0)
+            {
+                p= matchTemplate(roi);
+            }
+            if(roi.value("func",-1).toInt()==1)
+            {
+
+                p= findRectCenter(roi);
+
+            }
+            if(roi.value("func",-1).toInt()==2)
+                p= findTwoPointOneLineBasePoint(roi);
+            indexPoint.insert(QString::number(j),p);
+        }
+
+        teamPoint.insert(QString::number(i),indexPoint);
 
 
-      // Local control variables
-      HTuple  Length;
-      HTuple  Max, RowBegin, ColBegin, RowEnd, ColEnd, Nr, Nc;
-      HTuple  Dist;
-      HTuple  Area, Row, Column;
-
-      QMap<QString,QVariant> roi=set.value("locationList").toMap().value(QString::number(index)).toMap();
-      HTuple Row1,Column1,Row2,Column2,Length2;
-      if(roi.value("func").toInt()==1)
-      {
-
-         return findRectCenter(*imgList.at(roi.value("index").toInt()),roi.value("Row").toDouble(),roi.value("Column").toDouble(),roi.value("Row1").toDouble(),roi.value("Column1").toDouble());
-
-      }
-
-      Row1.Append(roi.value("Row").toDouble());
-      Row2.Append(roi.value("Row1").toDouble());
-      Row1.Append(roi.value("Row2").toDouble());
-      Row2.Append(roi.value("Row3").toDouble());
-      Row1.Append(roi.value("Row4").toDouble());
-      Row2.Append(roi.value("Row5").toDouble());
-      Column1.Append(roi.value("Column").toDouble());
-      Column2.Append(roi.value("Column1").toDouble());
-      Column1.Append(roi.value("Column2").toDouble());
-      Column2.Append(roi.value("Column3").toDouble());
-      Column1.Append(roi.value("Column4").toDouble());
-      Column2.Append(roi.value("Column5").toDouble());
+    }
 
 
-      //gen_rectangle1(&ROI_0, Row1, Column1, Row2, Column2);
+      set.setValue("basePoint",teamPoint);
+      set.sync();
 
-      gen_rectangle1(&ROI_0,Row1[0].D(),Column1[0].D(),Row2[0].D(),Column2[0].D());
-      reduce_domain(*imgList.at(roi.value("index").toInt()), ROI_0, &ImageReduced);
-
-
-      edges_sub_pix(ImageReduced, &Edges, "canny", 1, HTuple(0.1), HTuple(0.2));
-      length_xld(Edges,&Length);
-      if(Length.Num()<1)
-      {
-          return QPointF(0,0);
-      }
-      tuple_max(Length,&Max);
-      select_contours_xld(Edges, &SelectedContours, "contour_length", Max, Max, 0.01,
-            0.02);
-      disp_obj(SelectedContours,WindowHandle);
-      fit_line_contour_xld(SelectedContours, "tukey", -1, 0, 5, 2, &RowBegin, &ColBegin,
-          &RowEnd, &ColEnd, &Nr, &Nc, &Dist);
-      qDebug()<<"line"<<RowBegin[0].D()<<ColBegin[0].D()<<RowEnd[0].D()<<ColEnd[0].D();
-      Hobject tmpobj;
-
-      gen_region_line(&tmpobj,RowBegin-1000,ColBegin,RowEnd+1000,ColEnd);
-      unitList[index].append(tmpobj);
-      QPoint p1=findCenter(*imgList.at(roi.value("index").toInt()),Row1[1].D(),Column1[1].D(),Row2[1].D(),Column2[1].D());
-
-      QPoint p2=findCenter(*imgList.at(roi.value("index").toInt()), Row1[2].D(), Column1[2].D(), Row2[2].D(), Column2[2].D());
-
-
-      gen_region_line(&RegionLines, p1.y(), p1.x(),p2.y(), p2.x());
-      qDebug()<<"p1,p2"<<p1<<p2;
-      //Clear measure when done
-      area_center(RegionLines, &Area, &Row, &Column);
-      //debug
-    qDebug()<<Column[0].D()<<Row[0].D();
-      gen_rectangle2(&tmpobj,p1.y(),p1.x(),0,5,5);
-      unitList[index].append(tmpobj);
-      gen_rectangle2(&tmpobj,p2.y(),p2.x(),0,5,5);
-      unitList[index].append(tmpobj);
-      //end debug
-
-        QPointF base=pointToLine(QPointF(ColBegin[0].D(),RowBegin[0].D()-1000),QPointF(ColEnd[0].D(),RowEnd[0].D()+1000),QPointF(Column[0].D(),Row[0].D()));
-      return base;
 }
 
 /** @ brief 根据两点求出垂线过第三点的直线的交点

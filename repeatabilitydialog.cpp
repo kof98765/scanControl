@@ -29,3 +29,8 @@ void repeatabilityDialog::recvRepeatability(QMap<QString,double> minList,QMap<QS
 
     }
 }
+
+void repeatabilityDialog::on_excel_clicked()
+{
+    sum->to_excel();
+}

@@ -7306,7 +7306,25 @@ debug\repeatabilitydialog.obj: ..\repeatabilitydialog.cpp ..\repeatabilitydialog
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\qt_windows.h \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QProgressBar \
 		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qprogressbar.h \
-		release\ui_repeatabilitydialog.h
+		release\ui_repeatabilitydialog.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qaction.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QLabel \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qlabel.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\QPushButton \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qpushbutton.h \
+		C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\include\QtWidgets\qabstractbutton.h
 
 debug\qrc_icons.obj: debug\qrc_icons.cpp 
 

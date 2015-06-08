@@ -46,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // plot->resize(ui->base->widget(2)->size());
     imgView=new imgListView();
     imgView->setHBoxLayout(ui->imgList);
+
     getPoint=new getPointDialog();
     //qDebug()<<settings::team::roiList::roi.name;
 
@@ -335,6 +336,7 @@ void MainWindow::init_connect()
     //connect(hal,SIGNAL(clearMemory()),laser,SLOT(clearMemory()));
     connect(getPoint,SIGNAL(addRoi(QMap<QString,QVariant>)),hal,SLOT(drawRect(QMap<QString,QVariant>)));
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
+    connect(hal,SIGNAL(reportBasePoint(double,double)),this,SLOT(reportBasePoint(double,double)));
     connect(hal,SIGNAL(Warning(QString)),this,SLOT(Warning(QString)));
     connect(hal,SIGNAL(sendPlaneness(int,double)),this,SLOT(recvPlaneness(int,double)));
     connect(hal,SIGNAL(flushRoiList(QStringList)),this,SLOT(flushRoiList(QStringList)));
@@ -1156,8 +1158,7 @@ void MainWindow::flushRoiList(QStringList ll)
         case 5:
             roiList->add_item(3,roi.value("min").toString());
             roiList->add_item(4,roi.value("max").toString());
-            if(roi.value("isDraw").toInt()==0)
-                ui->lableXY->setText(QString("%1,%2").arg(roi.value("x").toFloat()).arg(roi.value("y").toFloat()));
+
             break;
         }
 
@@ -1353,7 +1354,10 @@ void MainWindow::on_chart_clicked()
     sum->calculateRepeatability(3,4);
     repeat->show();
 }
-
+void MainWindow::reportBasePoint(double x, double y)
+{
+    ui->lableXY->setText(QString("%1,%2").arg(x).arg(y));
+}
 void MainWindow::on_fastInput_clicked()
 {
     getPoint->show();

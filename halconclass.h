@@ -142,11 +142,11 @@ public slots:
      void zoomOut();
      QPoint getPoint();
      QPointF pointToLine(const QPointF &pt1, const QPointF &pt2, const QPointF &pt3);
-     QPointF calculateBasePoint(int i);
-
+     void calculateBasePoint();
+     QPointF findTwoPointOneLineBasePoint(QMap<QString,QVariant>);
      QPoint findCenter(Hobject image,HTuple Row,HTuple Column,HTuple Row2,HTuple Column2);
      QPoint findCenter(Hobject image,double Row,double Column,double Row2,double Column2);
-     QPointF findRectCenter(Hobject image,double Row,double Column,double Row2,double Column2);
+     QPointF findRectCenter(QMap<QString,QVariant>);
      void twoPointOneLineBasePoint(QMap<QString,QVariant> map);
      void oneRectBasePoint(QMap<QString,QVariant> map);
      void disp_xld(HTuple Row1,HTuple Column1,HTuple Row2,HTuple Column2);
@@ -163,8 +163,8 @@ public slots:
     void delRect(QString);
     void RectHeightSub(int team);
     void pointToPoint(int team);
-    void createTemplate(int team);
-    void matchTemplate(int team);
+    void createTemplate(QMap<QString,QVariant>);
+    QPointF matchTemplate(QMap<QString,QVariant>);
     void calculatePlaneness(int team);
     void selectImg(int index);
     void compoundImg(int xOffset,int yOffset);
@@ -185,6 +185,7 @@ signals:
     void deleteImg(int index);
     void deleteAllImg();
     void reConnect();
+    void reportBasePoint(double x,double y);
 
 
 };

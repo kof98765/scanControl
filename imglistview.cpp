@@ -24,13 +24,14 @@ imgListView::imgListView(QObject *parent) :
 void imgListView::setHBoxLayout(QLayout *l)
 {
     layout=(QHBoxLayout *)l;
+    l->setAlignment(Qt::AlignCenter);
 
 }
 void imgListView::setGridLayout(int w,int h,QGridLayout *l)
 {
     l->setColumnMinimumWidth(w,h);
     layout=l;
-
+     l->setAlignment(Qt::AlignCenter);
 }
 void imgListView::addImg(Hobject *obj)
 {

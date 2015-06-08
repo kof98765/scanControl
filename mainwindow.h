@@ -79,7 +79,7 @@ public slots:
     void Error(QString error);
     void Warning(QString str);
     void dispImg();
-
+    void reportBasePoint(double x,double y);
     void controlImg(int);
     void selectImg(int);
     void modeSelect(int);

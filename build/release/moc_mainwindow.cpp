@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[64];
-    char stringdata[876];
+    QByteArrayData data[67];
+    char stringdata[896];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -49,58 +49,62 @@ QT_MOC_LITERAL(16, 166, 5),
 QT_MOC_LITERAL(17, 172, 7),
 QT_MOC_LITERAL(18, 180, 3),
 QT_MOC_LITERAL(19, 184, 7),
-QT_MOC_LITERAL(20, 192, 10),
-QT_MOC_LITERAL(21, 203, 9),
-QT_MOC_LITERAL(22, 213, 10),
-QT_MOC_LITERAL(23, 224, 19),
-QT_MOC_LITERAL(24, 244, 6),
-QT_MOC_LITERAL(25, 251, 19),
-QT_MOC_LITERAL(26, 271, 7),
-QT_MOC_LITERAL(27, 279, 14),
-QT_MOC_LITERAL(28, 294, 13),
-QT_MOC_LITERAL(29, 308, 12),
-QT_MOC_LITERAL(30, 321, 4),
-QT_MOC_LITERAL(31, 326, 19),
-QT_MOC_LITERAL(32, 346, 23),
-QT_MOC_LITERAL(33, 370, 24),
-QT_MOC_LITERAL(34, 395, 10),
-QT_MOC_LITERAL(35, 406, 12),
-QT_MOC_LITERAL(36, 419, 5),
-QT_MOC_LITERAL(37, 425, 26),
-QT_MOC_LITERAL(38, 452, 3),
-QT_MOC_LITERAL(39, 456, 6),
-QT_MOC_LITERAL(40, 463, 25),
-QT_MOC_LITERAL(41, 489, 28),
-QT_MOC_LITERAL(42, 518, 23),
-QT_MOC_LITERAL(43, 542, 21),
-QT_MOC_LITERAL(44, 564, 10),
-QT_MOC_LITERAL(45, 575, 9),
-QT_MOC_LITERAL(46, 585, 16),
-QT_MOC_LITERAL(47, 602, 15),
-QT_MOC_LITERAL(48, 618, 8),
-QT_MOC_LITERAL(49, 627, 4),
-QT_MOC_LITERAL(50, 632, 14),
-QT_MOC_LITERAL(51, 647, 17),
-QT_MOC_LITERAL(52, 665, 17),
-QT_MOC_LITERAL(53, 683, 18),
-QT_MOC_LITERAL(54, 702, 11),
-QT_MOC_LITERAL(55, 714, 16),
-QT_MOC_LITERAL(56, 731, 18),
-QT_MOC_LITERAL(57, 750, 27),
-QT_MOC_LITERAL(58, 778, 5),
-QT_MOC_LITERAL(59, 784, 16),
-QT_MOC_LITERAL(60, 801, 16),
-QT_MOC_LITERAL(61, 818, 19),
-QT_MOC_LITERAL(62, 838, 16),
-QT_MOC_LITERAL(63, 855, 20)
+QT_MOC_LITERAL(20, 192, 15),
+QT_MOC_LITERAL(21, 208, 1),
+QT_MOC_LITERAL(22, 210, 1),
+QT_MOC_LITERAL(23, 212, 10),
+QT_MOC_LITERAL(24, 223, 9),
+QT_MOC_LITERAL(25, 233, 10),
+QT_MOC_LITERAL(26, 244, 19),
+QT_MOC_LITERAL(27, 264, 6),
+QT_MOC_LITERAL(28, 271, 19),
+QT_MOC_LITERAL(29, 291, 7),
+QT_MOC_LITERAL(30, 299, 14),
+QT_MOC_LITERAL(31, 314, 13),
+QT_MOC_LITERAL(32, 328, 12),
+QT_MOC_LITERAL(33, 341, 4),
+QT_MOC_LITERAL(34, 346, 19),
+QT_MOC_LITERAL(35, 366, 23),
+QT_MOC_LITERAL(36, 390, 24),
+QT_MOC_LITERAL(37, 415, 10),
+QT_MOC_LITERAL(38, 426, 12),
+QT_MOC_LITERAL(39, 439, 5),
+QT_MOC_LITERAL(40, 445, 26),
+QT_MOC_LITERAL(41, 472, 3),
+QT_MOC_LITERAL(42, 476, 6),
+QT_MOC_LITERAL(43, 483, 25),
+QT_MOC_LITERAL(44, 509, 28),
+QT_MOC_LITERAL(45, 538, 23),
+QT_MOC_LITERAL(46, 562, 21),
+QT_MOC_LITERAL(47, 584, 10),
+QT_MOC_LITERAL(48, 595, 9),
+QT_MOC_LITERAL(49, 605, 16),
+QT_MOC_LITERAL(50, 622, 15),
+QT_MOC_LITERAL(51, 638, 8),
+QT_MOC_LITERAL(52, 647, 4),
+QT_MOC_LITERAL(53, 652, 14),
+QT_MOC_LITERAL(54, 667, 17),
+QT_MOC_LITERAL(55, 685, 17),
+QT_MOC_LITERAL(56, 703, 18),
+QT_MOC_LITERAL(57, 722, 11),
+QT_MOC_LITERAL(58, 734, 16),
+QT_MOC_LITERAL(59, 751, 18),
+QT_MOC_LITERAL(60, 770, 27),
+QT_MOC_LITERAL(61, 798, 5),
+QT_MOC_LITERAL(62, 804, 16),
+QT_MOC_LITERAL(63, 821, 16),
+QT_MOC_LITERAL(64, 838, 19),
+QT_MOC_LITERAL(65, 858, 16),
+QT_MOC_LITERAL(66, 875, 20)
     },
     "MainWindow\0stopMove\0\0E128_detect\0"
     "outputMessage\0QtMsgType\0recvHeightSub\0"
     "recvPlaneness\0dispFrame\0unsigned char*\0"
     "buf\0size\0Net_Param\0about\0"
     "on_action_Quit_triggered\0Error\0error\0"
-    "Warning\0str\0dispImg\0controlImg\0selectImg\0"
-    "modeSelect\0on_loadFile_clicked\0detect\0"
+    "Warning\0str\0dispImg\0reportBasePoint\0"
+    "x\0y\0controlImg\0selectImg\0modeSelect\0"
+    "on_loadFile_clicked\0detect\0"
     "startButton_clicked\0netTest\0on_textChanged\0"
     "recvHeartPack\0flushRoiList\0list\0"
     "on_roiColor_clicked\0on_launchDevice_clicked\0"
@@ -127,7 +131,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      50,   14, // methods
+      51,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -135,58 +139,59 @@ static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  264,    2, 0x06 /* Public */,
-       3,    0,  265,    2, 0x06 /* Public */,
+       1,    0,  269,    2, 0x06 /* Public */,
+       3,    0,  270,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    2,  266,    2, 0x0a /* Public */,
-       6,    4,  271,    2, 0x0a /* Public */,
-       6,    4,  280,    2, 0x0a /* Public */,
-       7,    2,  289,    2, 0x0a /* Public */,
-       8,    2,  294,    2, 0x0a /* Public */,
-      12,    0,  299,    2, 0x0a /* Public */,
-      13,    0,  300,    2, 0x0a /* Public */,
-      14,    0,  301,    2, 0x0a /* Public */,
-      15,    1,  302,    2, 0x0a /* Public */,
-      17,    1,  305,    2, 0x0a /* Public */,
-      19,    0,  308,    2, 0x0a /* Public */,
-      20,    1,  309,    2, 0x0a /* Public */,
-      21,    1,  312,    2, 0x0a /* Public */,
-      22,    1,  315,    2, 0x0a /* Public */,
-      23,    0,  318,    2, 0x0a /* Public */,
-      24,    0,  319,    2, 0x0a /* Public */,
-      25,    0,  320,    2, 0x0a /* Public */,
-      26,    1,  321,    2, 0x0a /* Public */,
-      27,    0,  324,    2, 0x0a /* Public */,
-      28,    0,  325,    2, 0x0a /* Public */,
-      29,    1,  326,    2, 0x0a /* Public */,
-      31,    0,  329,    2, 0x0a /* Public */,
-      32,    0,  330,    2, 0x0a /* Public */,
-      33,    0,  331,    2, 0x0a /* Public */,
-      34,    1,  332,    2, 0x0a /* Public */,
-      37,    2,  335,    2, 0x0a /* Public */,
-      40,    0,  340,    2, 0x0a /* Public */,
-      41,    0,  341,    2, 0x0a /* Public */,
-      42,    0,  342,    2, 0x0a /* Public */,
-      43,    0,  343,    2, 0x0a /* Public */,
-      44,    0,  344,    2, 0x0a /* Public */,
-      45,    0,  345,    2, 0x0a /* Public */,
-      46,    0,  346,    2, 0x0a /* Public */,
-      47,    0,  347,    2, 0x0a /* Public */,
-      48,    1,  348,    2, 0x0a /* Public */,
-      50,    0,  351,    2, 0x0a /* Public */,
-      51,    0,  352,    2, 0x0a /* Public */,
-      52,    0,  353,    2, 0x0a /* Public */,
-      53,    0,  354,    2, 0x08 /* Private */,
-      54,    0,  355,    2, 0x08 /* Private */,
-      55,    2,  356,    2, 0x08 /* Private */,
-      56,    0,  361,    2, 0x08 /* Private */,
-      57,    1,  362,    2, 0x08 /* Private */,
-      59,    0,  365,    2, 0x08 /* Private */,
-      60,    0,  366,    2, 0x08 /* Private */,
-      61,    0,  367,    2, 0x08 /* Private */,
-      62,    0,  368,    2, 0x08 /* Private */,
-      63,    0,  369,    2, 0x08 /* Private */,
+       4,    2,  271,    2, 0x0a /* Public */,
+       6,    4,  276,    2, 0x0a /* Public */,
+       6,    4,  285,    2, 0x0a /* Public */,
+       7,    2,  294,    2, 0x0a /* Public */,
+       8,    2,  299,    2, 0x0a /* Public */,
+      12,    0,  304,    2, 0x0a /* Public */,
+      13,    0,  305,    2, 0x0a /* Public */,
+      14,    0,  306,    2, 0x0a /* Public */,
+      15,    1,  307,    2, 0x0a /* Public */,
+      17,    1,  310,    2, 0x0a /* Public */,
+      19,    0,  313,    2, 0x0a /* Public */,
+      20,    2,  314,    2, 0x0a /* Public */,
+      23,    1,  319,    2, 0x0a /* Public */,
+      24,    1,  322,    2, 0x0a /* Public */,
+      25,    1,  325,    2, 0x0a /* Public */,
+      26,    0,  328,    2, 0x0a /* Public */,
+      27,    0,  329,    2, 0x0a /* Public */,
+      28,    0,  330,    2, 0x0a /* Public */,
+      29,    1,  331,    2, 0x0a /* Public */,
+      30,    0,  334,    2, 0x0a /* Public */,
+      31,    0,  335,    2, 0x0a /* Public */,
+      32,    1,  336,    2, 0x0a /* Public */,
+      34,    0,  339,    2, 0x0a /* Public */,
+      35,    0,  340,    2, 0x0a /* Public */,
+      36,    0,  341,    2, 0x0a /* Public */,
+      37,    1,  342,    2, 0x0a /* Public */,
+      40,    2,  345,    2, 0x0a /* Public */,
+      43,    0,  350,    2, 0x0a /* Public */,
+      44,    0,  351,    2, 0x0a /* Public */,
+      45,    0,  352,    2, 0x0a /* Public */,
+      46,    0,  353,    2, 0x0a /* Public */,
+      47,    0,  354,    2, 0x0a /* Public */,
+      48,    0,  355,    2, 0x0a /* Public */,
+      49,    0,  356,    2, 0x0a /* Public */,
+      50,    0,  357,    2, 0x0a /* Public */,
+      51,    1,  358,    2, 0x0a /* Public */,
+      53,    0,  361,    2, 0x0a /* Public */,
+      54,    0,  362,    2, 0x0a /* Public */,
+      55,    0,  363,    2, 0x0a /* Public */,
+      56,    0,  364,    2, 0x08 /* Private */,
+      57,    0,  365,    2, 0x08 /* Private */,
+      58,    2,  366,    2, 0x08 /* Private */,
+      59,    0,  371,    2, 0x08 /* Private */,
+      60,    1,  372,    2, 0x08 /* Private */,
+      62,    0,  375,    2, 0x08 /* Private */,
+      63,    0,  376,    2, 0x08 /* Private */,
+      64,    0,  377,    2, 0x08 /* Private */,
+      65,    0,  378,    2, 0x08 /* Private */,
+      66,    0,  379,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -204,6 +209,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::QString,   16,
     QMetaType::Void, QMetaType::QString,   18,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Double, QMetaType::Double,   21,   22,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
@@ -213,21 +219,21 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QStringList,   30,
+    QMetaType::Void, QMetaType::QStringList,   33,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 35,   36,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   38,   39,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 38,   39,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   41,   42,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   49,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   52,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -235,7 +241,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   58,
+    QMetaType::Void, QMetaType::Int,   61,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -263,43 +269,44 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 10: _t->Error((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 11: _t->Warning((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 12: _t->dispImg(); break;
-        case 13: _t->controlImg((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->selectImg((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 15: _t->modeSelect((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 16: _t->on_loadFile_clicked(); break;
-        case 17: _t->detect(); break;
-        case 18: _t->startButton_clicked(); break;
-        case 19: _t->netTest((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 20: _t->on_textChanged(); break;
-        case 21: _t->recvHeartPack(); break;
-        case 22: _t->flushRoiList((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
-        case 23: _t->on_roiColor_clicked(); break;
-        case 24: _t->on_launchDevice_clicked(); break;
-        case 25: _t->on_actionReset_triggered(); break;
-        case 26: _t->paintEvent((*reinterpret_cast< QPaintEvent*(*)>(_a[1]))); break;
-        case 27: _t->on_tableWidget_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 28: _t->on_realTimeButton_clicked(); break;
-        case 29: _t->on_singleFrameButton_clicked(); break;
-        case 30: _t->on_threeDButton_clicked(); break;
-        case 31: _t->on_twoDButton_clicked(); break;
-        case 32: _t->startVideo(); break;
-        case 33: _t->stopVideo(); break;
-        case 34: _t->startSingleFrame(); break;
-        case 35: _t->stopSingleFrame(); break;
-        case 36: _t->openFile((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 37: _t->action_delItem(); break;
-        case 38: _t->action_delAllItem(); break;
-        case 39: _t->action_modifyItem(); break;
-        case 40: _t->on_roiDraw_clicked(); break;
-        case 41: _t->statusCheck(); break;
-        case 42: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 43: _t->on_toExcel_clicked(); break;
-        case 44: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 45: _t->on_draw1_clicked(); break;
-        case 46: _t->on_draw2_clicked(); break;
-        case 47: _t->on_loadData_clicked(); break;
-        case 48: _t->on_chart_clicked(); break;
-        case 49: _t->on_fastInput_clicked(); break;
+        case 13: _t->reportBasePoint((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 14: _t->controlImg((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->selectImg((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: _t->modeSelect((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->on_loadFile_clicked(); break;
+        case 18: _t->detect(); break;
+        case 19: _t->startButton_clicked(); break;
+        case 20: _t->netTest((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 21: _t->on_textChanged(); break;
+        case 22: _t->recvHeartPack(); break;
+        case 23: _t->flushRoiList((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
+        case 24: _t->on_roiColor_clicked(); break;
+        case 25: _t->on_launchDevice_clicked(); break;
+        case 26: _t->on_actionReset_triggered(); break;
+        case 27: _t->paintEvent((*reinterpret_cast< QPaintEvent*(*)>(_a[1]))); break;
+        case 28: _t->on_tableWidget_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 29: _t->on_realTimeButton_clicked(); break;
+        case 30: _t->on_singleFrameButton_clicked(); break;
+        case 31: _t->on_threeDButton_clicked(); break;
+        case 32: _t->on_twoDButton_clicked(); break;
+        case 33: _t->startVideo(); break;
+        case 34: _t->stopVideo(); break;
+        case 35: _t->startSingleFrame(); break;
+        case 36: _t->stopSingleFrame(); break;
+        case 37: _t->openFile((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 38: _t->action_delItem(); break;
+        case 39: _t->action_delAllItem(); break;
+        case 40: _t->action_modifyItem(); break;
+        case 41: _t->on_roiDraw_clicked(); break;
+        case 42: _t->statusCheck(); break;
+        case 43: _t->updataProsessBar((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 44: _t->on_toExcel_clicked(); break;
+        case 45: _t->on_func_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 46: _t->on_draw1_clicked(); break;
+        case 47: _t->on_draw2_clicked(); break;
+        case 48: _t->on_loadData_clicked(); break;
+        case 49: _t->on_chart_clicked(); break;
+        case 50: _t->on_fastInput_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -345,13 +352,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 50)
+        if (_id < 51)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 50;
+        _id -= 51;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 50)
+        if (_id < 51)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 50;
+        _id -= 51;
     }
     return _id;
 }

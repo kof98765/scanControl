@@ -62,6 +62,35 @@ public:
     QAction *action_2;
     QAction *actionStop;
     QWidget *centralWidget;
+    QGridLayout *gridLayout_5;
+    QGroupBox *groupBox_6;
+    QGridLayout *gridLayout_4;
+    QHBoxLayout *horizontalLayout_4;
+    QPushButton *twoDButton;
+    QPushButton *threeDButton;
+    QLabel *prompt;
+    QLabel *rate;
+    QLabel *pos;
+    QLabel *label;
+    QLabel *lableXY;
+    QGroupBox *view_box;
+    QProgressBar *progressBar;
+    QStackedWidget *base;
+    QWidget *threeDView;
+    QWidget *realTimeView;
+    QGridLayout *gridLayout;
+    QLabel *videoFrame;
+    QWidget *singleFrameView;
+    QWidget *twoDView;
+    QWidget *layoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *imgLeft;
+    QPushButton *imgRight;
+    QPushButton *imgUp;
+    QPushButton *imgDown;
+    QPushButton *imgBig;
+    QPushButton *imgSmall;
+    QPushButton *imgRotate;
     QGroupBox *groupBox_4;
     QPushButton *startButton;
     QPushButton *settings;
@@ -109,31 +138,6 @@ public:
     QRadioButton *draw2;
     QLabel *connect;
     QPushButton *reset;
-    QGroupBox *view_box;
-    QProgressBar *progressBar;
-    QStackedWidget *base;
-    QWidget *threeDView;
-    QWidget *realTimeView;
-    QGridLayout *gridLayout;
-    QLabel *videoFrame;
-    QWidget *singleFrameView;
-    QWidget *twoDView;
-    QWidget *layoutWidget;
-    QHBoxLayout *horizontalLayout;
-    QPushButton *imgLeft;
-    QPushButton *imgRight;
-    QPushButton *imgUp;
-    QPushButton *imgDown;
-    QPushButton *imgBig;
-    QPushButton *imgSmall;
-    QPushButton *imgRotate;
-    QPushButton *twoDButton;
-    QPushButton *threeDButton;
-    QLabel *rate;
-    QLabel *pos;
-    QLabel *label;
-    QLabel *lableXY;
-    QLabel *prompt;
     QGroupBox *groupBox_5;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *imgList;
@@ -148,7 +152,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1308, 748);
+        MainWindow->resize(1366, 748);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -233,12 +237,196 @@ public:
         actionStop->setObjectName(QStringLiteral("actionStop"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        groupBox_4 = new QGroupBox(centralWidget);
-        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(760, 10, 541, 601));
+        gridLayout_5 = new QGridLayout(centralWidget);
+        gridLayout_5->setSpacing(6);
+        gridLayout_5->setContentsMargins(11, 11, 11, 11);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        groupBox_6 = new QGroupBox(centralWidget);
+        groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
+        gridLayout_4 = new QGridLayout(groupBox_6);
+        gridLayout_4->setSpacing(6);
+        gridLayout_4->setContentsMargins(11, 11, 11, 11);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        twoDButton = new QPushButton(groupBox_6);
+        twoDButton->setObjectName(QStringLiteral("twoDButton"));
+
+        horizontalLayout_4->addWidget(twoDButton);
+
+        threeDButton = new QPushButton(groupBox_6);
+        threeDButton->setObjectName(QStringLiteral("threeDButton"));
+
+        horizontalLayout_4->addWidget(threeDButton);
+
+        prompt = new QLabel(groupBox_6);
+        prompt->setObjectName(QStringLiteral("prompt"));
+        prompt->setStyleSheet(QStringLiteral("color: rgb(255, 0, 0);"));
+
+        horizontalLayout_4->addWidget(prompt);
+
+        rate = new QLabel(groupBox_6);
+        rate->setObjectName(QStringLiteral("rate"));
+
+        horizontalLayout_4->addWidget(rate);
+
+        pos = new QLabel(groupBox_6);
+        pos->setObjectName(QStringLiteral("pos"));
+
+        horizontalLayout_4->addWidget(pos);
+
+        label = new QLabel(groupBox_6);
+        label->setObjectName(QStringLiteral("label"));
+
+        horizontalLayout_4->addWidget(label);
+
+        lableXY = new QLabel(groupBox_6);
+        lableXY->setObjectName(QStringLiteral("lableXY"));
+
+        horizontalLayout_4->addWidget(lableXY);
+
+
+        gridLayout_4->addLayout(horizontalLayout_4, 0, 0, 1, 1);
+
+        view_box = new QGroupBox(groupBox_6);
+        view_box->setObjectName(QStringLiteral("view_box"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(view_box->sizePolicy().hasHeightForWidth());
+        view_box->setSizePolicy(sizePolicy1);
+        view_box->setMouseTracking(false);
+        view_box->setAutoFillBackground(false);
+        view_box->setStyleSheet(QLatin1String("QGroupBox#view_box{\n"
+"background-color: rgb(255, 255, 255);\n"
+"border:2px;\n"
+"border-radius:25px\n"
+"}"));
+        progressBar = new QProgressBar(view_box);
+        progressBar->setObjectName(QStringLiteral("progressBar"));
+        progressBar->setGeometry(QRect(10, 570, 591, 20));
+        progressBar->setStyleSheet(QLatin1String("border:2px;\n"
+"border-radius:25px"));
+        progressBar->setValue(0);
+        progressBar->setAlignment(Qt::AlignCenter);
+        progressBar->setInvertedAppearance(false);
+        progressBar->setTextDirection(QProgressBar::TopToBottom);
+        base = new QStackedWidget(view_box);
+        base->setObjectName(QStringLiteral("base"));
+        base->setGeometry(QRect(10, 30, 591, 541));
+        base->setCursor(QCursor(Qt::ArrowCursor));
+        base->setAutoFillBackground(true);
+        base->setStyleSheet(QStringLiteral(""));
+        base->setMidLineWidth(0);
+        threeDView = new QWidget();
+        threeDView->setObjectName(QStringLiteral("threeDView"));
+        base->addWidget(threeDView);
+        realTimeView = new QWidget();
+        realTimeView->setObjectName(QStringLiteral("realTimeView"));
+        gridLayout = new QGridLayout(realTimeView);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        videoFrame = new QLabel(realTimeView);
+        videoFrame->setObjectName(QStringLiteral("videoFrame"));
+        videoFrame->setAutoFillBackground(true);
+
+        gridLayout->addWidget(videoFrame, 0, 0, 1, 1);
+
+        base->addWidget(realTimeView);
+        singleFrameView = new QWidget();
+        singleFrameView->setObjectName(QStringLiteral("singleFrameView"));
+        base->addWidget(singleFrameView);
+        twoDView = new QWidget();
+        twoDView->setObjectName(QStringLiteral("twoDView"));
+        base->addWidget(twoDView);
+        layoutWidget = new QWidget(view_box);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 0, 591, 26));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        imgLeft = new QPushButton(layoutWidget);
+        imgLeft->setObjectName(QStringLiteral("imgLeft"));
+        imgLeft->setAutoFillBackground(false);
+        imgLeft->setStyleSheet(QStringLiteral(""));
+        QIcon icon10;
+        icon10.addFile(QStringLiteral(":/file/icons/ic_back.png"), QSize(), QIcon::Normal, QIcon::Off);
+        imgLeft->setIcon(icon10);
+        imgLeft->setAutoRepeat(false);
+        imgLeft->setFlat(true);
+
+        horizontalLayout->addWidget(imgLeft);
+
+        imgRight = new QPushButton(layoutWidget);
+        imgRight->setObjectName(QStringLiteral("imgRight"));
+        imgRight->setAutoFillBackground(false);
+        imgRight->setStyleSheet(QStringLiteral("color: rgb(255, 255, 127);"));
+        QIcon icon11;
+        icon11.addFile(QStringLiteral(":/file/icons/ic_forward.png"), QSize(), QIcon::Normal, QIcon::Off);
+        imgRight->setIcon(icon11);
+        imgRight->setFlat(true);
+
+        horizontalLayout->addWidget(imgRight);
+
+        imgUp = new QPushButton(layoutWidget);
+        imgUp->setObjectName(QStringLiteral("imgUp"));
+        QIcon icon12;
+        icon12.addFile(QStringLiteral(":/icons/ic_up.png"), QSize(), QIcon::Normal, QIcon::Off);
+        imgUp->setIcon(icon12);
+        imgUp->setFlat(true);
+
+        horizontalLayout->addWidget(imgUp);
+
+        imgDown = new QPushButton(layoutWidget);
+        imgDown->setObjectName(QStringLiteral("imgDown"));
+        QIcon icon13;
+        icon13.addFile(QStringLiteral(":/icons/ic_down.png"), QSize(), QIcon::Normal, QIcon::Off);
+        imgDown->setIcon(icon13);
+        imgDown->setFlat(true);
+
+        horizontalLayout->addWidget(imgDown);
+
+        imgBig = new QPushButton(layoutWidget);
+        imgBig->setObjectName(QStringLiteral("imgBig"));
+        QIcon icon14;
+        icon14.addFile(QStringLiteral(":/file/icons/ic_zoom_in.png"), QSize(), QIcon::Normal, QIcon::Off);
+        imgBig->setIcon(icon14);
+        imgBig->setFlat(true);
+
+        horizontalLayout->addWidget(imgBig);
+
+        imgSmall = new QPushButton(layoutWidget);
+        imgSmall->setObjectName(QStringLiteral("imgSmall"));
+        QIcon icon15;
+        icon15.addFile(QStringLiteral(":/file/icons/ic_zoom_out.png"), QSize(), QIcon::Normal, QIcon::Off);
+        imgSmall->setIcon(icon15);
+        imgSmall->setFlat(true);
+
+        horizontalLayout->addWidget(imgSmall);
+
+        imgRotate = new QPushButton(layoutWidget);
+        imgRotate->setObjectName(QStringLiteral("imgRotate"));
+        QIcon icon16;
+        icon16.addFile(QStringLiteral(":/file/icons/ic_undo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        imgRotate->setIcon(icon16);
+        imgRotate->setFlat(true);
+
+        horizontalLayout->addWidget(imgRotate);
+
+
+        gridLayout_4->addWidget(view_box, 1, 0, 1, 1);
+
+        gridLayout_4->setRowStretch(0, 1);
+        gridLayout_4->setRowStretch(1, 20);
+
+        gridLayout_5->addWidget(groupBox_6, 0, 0, 1, 1);
+
+        groupBox_4 = new QGroupBox(centralWidget);
+        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         sizePolicy1.setHeightForWidth(groupBox_4->sizePolicy().hasHeightForWidth());
         groupBox_4->setSizePolicy(sizePolicy1);
         groupBox_4->setStyleSheet(QStringLiteral(""));
@@ -247,9 +435,9 @@ public:
         startButton->setEnabled(true);
         startButton->setGeometry(QRect(120, 10, 101, 31));
         startButton->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
-        QIcon icon10;
-        icon10.addFile(QStringLiteral(":/new/prefix1/ico/video_play.png"), QSize(), QIcon::Normal, QIcon::Off);
-        startButton->setIcon(icon10);
+        QIcon icon17;
+        icon17.addFile(QStringLiteral(":/new/prefix1/ico/video_play.png"), QSize(), QIcon::Normal, QIcon::Off);
+        startButton->setIcon(icon17);
         startButton->setCheckable(false);
         startButton->setChecked(false);
         startButton->setFlat(false);
@@ -263,7 +451,7 @@ public:
         launchDevice->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         groupBox_2 = new QGroupBox(groupBox_4);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(10, 370, 531, 224));
+        groupBox_2->setGeometry(QRect(10, 370, 511, 224));
         gridLayout_3 = new QGridLayout(groupBox_2);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -308,7 +496,7 @@ public:
 
         groupBox_3 = new QGroupBox(groupBox_4);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(10, 50, 601, 311));
+        groupBox_3->setGeometry(QRect(0, 50, 521, 311));
         groupBox = new QGroupBox(groupBox_3);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(10, 20, 281, 281));
@@ -350,7 +538,7 @@ public:
 
         layoutWidget_2 = new QWidget(groupBox_3);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(310, 120, 211, 155));
+        layoutWidget_2->setGeometry(QRect(310, 120, 201, 155));
         formLayout = new QFormLayout(layoutWidget_2);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
@@ -395,7 +583,7 @@ public:
         roiColor = new QPushButton(layoutWidget_2);
         roiColor->setObjectName(QStringLiteral("roiColor"));
         roiColor->setAutoFillBackground(false);
-        roiColor->setStyleSheet(QStringLiteral("background-color: rgb(0, 255, 255);"));
+        roiColor->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, roiColor);
 
@@ -426,7 +614,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 211, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 201, 81));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -516,169 +704,29 @@ public:
         reset->setObjectName(QStringLiteral("reset"));
         reset->setGeometry(QRect(340, 10, 75, 31));
         reset->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
-        view_box = new QGroupBox(centralWidget);
-        view_box->setObjectName(QStringLiteral("view_box"));
-        view_box->setGeometry(QRect(10, 30, 611, 591));
-        sizePolicy.setHeightForWidth(view_box->sizePolicy().hasHeightForWidth());
-        view_box->setSizePolicy(sizePolicy);
-        view_box->setMouseTracking(false);
-        view_box->setAutoFillBackground(false);
-        view_box->setStyleSheet(QLatin1String("QGroupBox#view_box{\n"
-"background-color: rgb(255, 255, 255);\n"
-"border:2px;\n"
-"border-radius:25px\n"
-"}"));
-        progressBar = new QProgressBar(view_box);
-        progressBar->setObjectName(QStringLiteral("progressBar"));
-        progressBar->setGeometry(QRect(10, 570, 591, 20));
-        progressBar->setStyleSheet(QLatin1String("border:2px;\n"
-"border-radius:25px"));
-        progressBar->setValue(0);
-        progressBar->setAlignment(Qt::AlignCenter);
-        progressBar->setInvertedAppearance(false);
-        progressBar->setTextDirection(QProgressBar::TopToBottom);
-        base = new QStackedWidget(view_box);
-        base->setObjectName(QStringLiteral("base"));
-        base->setGeometry(QRect(10, 30, 591, 541));
-        base->setCursor(QCursor(Qt::ArrowCursor));
-        base->setAutoFillBackground(true);
-        base->setStyleSheet(QStringLiteral(""));
-        base->setMidLineWidth(0);
-        threeDView = new QWidget();
-        threeDView->setObjectName(QStringLiteral("threeDView"));
-        base->addWidget(threeDView);
-        realTimeView = new QWidget();
-        realTimeView->setObjectName(QStringLiteral("realTimeView"));
-        gridLayout = new QGridLayout(realTimeView);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        videoFrame = new QLabel(realTimeView);
-        videoFrame->setObjectName(QStringLiteral("videoFrame"));
-        videoFrame->setAutoFillBackground(true);
 
-        gridLayout->addWidget(videoFrame, 0, 0, 1, 1);
+        gridLayout_5->addWidget(groupBox_4, 0, 2, 1, 1);
 
-        base->addWidget(realTimeView);
-        singleFrameView = new QWidget();
-        singleFrameView->setObjectName(QStringLiteral("singleFrameView"));
-        base->addWidget(singleFrameView);
-        twoDView = new QWidget();
-        twoDView->setObjectName(QStringLiteral("twoDView"));
-        base->addWidget(twoDView);
-        layoutWidget = new QWidget(view_box);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 0, 591, 26));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        imgLeft = new QPushButton(layoutWidget);
-        imgLeft->setObjectName(QStringLiteral("imgLeft"));
-        imgLeft->setAutoFillBackground(false);
-        imgLeft->setStyleSheet(QStringLiteral(""));
-        QIcon icon11;
-        icon11.addFile(QStringLiteral(":/file/icons/ic_back.png"), QSize(), QIcon::Normal, QIcon::Off);
-        imgLeft->setIcon(icon11);
-        imgLeft->setAutoRepeat(false);
-        imgLeft->setFlat(true);
-
-        horizontalLayout->addWidget(imgLeft);
-
-        imgRight = new QPushButton(layoutWidget);
-        imgRight->setObjectName(QStringLiteral("imgRight"));
-        imgRight->setAutoFillBackground(false);
-        imgRight->setStyleSheet(QStringLiteral("color: rgb(255, 255, 127);"));
-        QIcon icon12;
-        icon12.addFile(QStringLiteral(":/file/icons/ic_forward.png"), QSize(), QIcon::Normal, QIcon::Off);
-        imgRight->setIcon(icon12);
-        imgRight->setFlat(true);
-
-        horizontalLayout->addWidget(imgRight);
-
-        imgUp = new QPushButton(layoutWidget);
-        imgUp->setObjectName(QStringLiteral("imgUp"));
-        QIcon icon13;
-        icon13.addFile(QStringLiteral(":/icons/ic_up.png"), QSize(), QIcon::Normal, QIcon::Off);
-        imgUp->setIcon(icon13);
-        imgUp->setFlat(true);
-
-        horizontalLayout->addWidget(imgUp);
-
-        imgDown = new QPushButton(layoutWidget);
-        imgDown->setObjectName(QStringLiteral("imgDown"));
-        QIcon icon14;
-        icon14.addFile(QStringLiteral(":/icons/ic_down.png"), QSize(), QIcon::Normal, QIcon::Off);
-        imgDown->setIcon(icon14);
-        imgDown->setFlat(true);
-
-        horizontalLayout->addWidget(imgDown);
-
-        imgBig = new QPushButton(layoutWidget);
-        imgBig->setObjectName(QStringLiteral("imgBig"));
-        QIcon icon15;
-        icon15.addFile(QStringLiteral(":/file/icons/ic_zoom_in.png"), QSize(), QIcon::Normal, QIcon::Off);
-        imgBig->setIcon(icon15);
-        imgBig->setFlat(true);
-
-        horizontalLayout->addWidget(imgBig);
-
-        imgSmall = new QPushButton(layoutWidget);
-        imgSmall->setObjectName(QStringLiteral("imgSmall"));
-        QIcon icon16;
-        icon16.addFile(QStringLiteral(":/file/icons/ic_zoom_out.png"), QSize(), QIcon::Normal, QIcon::Off);
-        imgSmall->setIcon(icon16);
-        imgSmall->setFlat(true);
-
-        horizontalLayout->addWidget(imgSmall);
-
-        imgRotate = new QPushButton(layoutWidget);
-        imgRotate->setObjectName(QStringLiteral("imgRotate"));
-        QIcon icon17;
-        icon17.addFile(QStringLiteral(":/file/icons/ic_undo.png"), QSize(), QIcon::Normal, QIcon::Off);
-        imgRotate->setIcon(icon17);
-        imgRotate->setFlat(true);
-
-        horizontalLayout->addWidget(imgRotate);
-
-        twoDButton = new QPushButton(centralWidget);
-        twoDButton->setObjectName(QStringLiteral("twoDButton"));
-        twoDButton->setGeometry(QRect(20, 0, 75, 23));
-        threeDButton = new QPushButton(centralWidget);
-        threeDButton->setObjectName(QStringLiteral("threeDButton"));
-        threeDButton->setGeometry(QRect(100, 0, 75, 23));
-        rate = new QLabel(centralWidget);
-        rate->setObjectName(QStringLiteral("rate"));
-        rate->setGeometry(QRect(410, 10, 54, 12));
-        pos = new QLabel(centralWidget);
-        pos->setObjectName(QStringLiteral("pos"));
-        pos->setGeometry(QRect(470, 10, 54, 12));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(540, 10, 54, 12));
-        lableXY = new QLabel(centralWidget);
-        lableXY->setObjectName(QStringLiteral("lableXY"));
-        lableXY->setGeometry(QRect(590, 10, 121, 16));
-        prompt = new QLabel(centralWidget);
-        prompt->setObjectName(QStringLiteral("prompt"));
-        prompt->setGeometry(QRect(180, 10, 221, 16));
-        prompt->setStyleSheet(QStringLiteral("color: rgb(255, 0, 0);"));
         groupBox_5 = new QGroupBox(centralWidget);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
-        groupBox_5->setGeometry(QRect(630, 20, 120, 591));
         verticalLayoutWidget = new QWidget(groupBox_5);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 91, 591));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 111, 591));
         imgList = new QVBoxLayout(verticalLayoutWidget);
         imgList->setSpacing(6);
         imgList->setContentsMargins(11, 11, 11, 11);
         imgList->setObjectName(QStringLiteral("imgList"));
         imgList->setContentsMargins(0, 0, 0, 0);
+
+        gridLayout_5->addWidget(groupBox_5, 0, 1, 1, 1);
+
+        gridLayout_5->setColumnStretch(0, 5);
+        gridLayout_5->setColumnStretch(1, 1);
+        gridLayout_5->setColumnStretch(2, 4);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1308, 23));
+        menuBar->setGeometry(QRect(0, 0, 1366, 23));
         menu_S = new QMenu(menuBar);
         menu_S->setObjectName(QStringLiteral("menu_S"));
         menu = new QMenu(menuBar);
@@ -692,7 +740,6 @@ public:
         MainWindow->setStatusBar(statusBar);
         toolBar = new QToolBar(MainWindow);
         toolBar->setObjectName(QStringLiteral("toolBar"));
-        toolBar->setStyleSheet(QStringLiteral("background-color: rgb(197, 197, 197);"));
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menuBar->addAction(menu_2->menuAction());
@@ -764,6 +811,45 @@ public:
         actionSubHeight->setText(QApplication::translate("MainWindow", "\346\265\213\351\207\217\351\253\230\345\267\256", 0));
         action_2->setText(QApplication::translate("MainWindow", "\346\265\213\351\207\217\351\253\230\345\267\256", 0));
         actionStop->setText(QApplication::translate("MainWindow", "stop", 0));
+        groupBox_6->setTitle(QString());
+        twoDButton->setText(QApplication::translate("MainWindow", "2D\346\230\276\347\244\272", 0));
+        threeDButton->setText(QApplication::translate("MainWindow", "3D\346\230\276\347\244\272", 0));
+        prompt->setText(QString());
+        rate->setText(QApplication::translate("MainWindow", "0", 0));
+        pos->setText(QApplication::translate("MainWindow", "0,0", 0));
+        label->setText(QApplication::translate("MainWindow", "\345\237\272\345\207\206\347\202\271:", 0));
+        lableXY->setText(QApplication::translate("MainWindow", "0,0", 0));
+        view_box->setTitle(QString());
+        progressBar->setFormat(QApplication::translate("MainWindow", "%p%", 0));
+        videoFrame->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        imgLeft->setToolTip(QApplication::translate("MainWindow", "\345\267\246\347\247\273", 0));
+#endif // QT_NO_TOOLTIP
+        imgLeft->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        imgRight->setToolTip(QApplication::translate("MainWindow", "\345\217\263\347\247\273", 0));
+#endif // QT_NO_TOOLTIP
+        imgRight->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        imgUp->setToolTip(QApplication::translate("MainWindow", "\344\270\212\347\247\273", 0));
+#endif // QT_NO_TOOLTIP
+        imgUp->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        imgDown->setToolTip(QApplication::translate("MainWindow", "\344\270\213\347\247\273", 0));
+#endif // QT_NO_TOOLTIP
+        imgDown->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        imgBig->setToolTip(QApplication::translate("MainWindow", "\346\224\276\345\244\247", 0));
+#endif // QT_NO_TOOLTIP
+        imgBig->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        imgSmall->setToolTip(QApplication::translate("MainWindow", "\347\274\251\345\260\217", 0));
+#endif // QT_NO_TOOLTIP
+        imgSmall->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        imgRotate->setToolTip(QApplication::translate("MainWindow", "\346\227\213\350\275\254", 0));
+#endif // QT_NO_TOOLTIP
+        imgRotate->setText(QString());
         groupBox_4->setTitle(QString());
         startButton->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\346\265\213\351\207\217", 0));
         settings->setText(QApplication::translate("MainWindow", "\345\217\202\346\225\260\350\256\276\347\275\256", 0));
@@ -839,44 +925,6 @@ public:
         draw2->setText(QApplication::translate("MainWindow", "\351\224\256\345\205\245\345\214\272\345\237\237", 0));
         connect->setText(QString());
         reset->setText(QApplication::translate("MainWindow", "\345\244\215\344\275\215", 0));
-        view_box->setTitle(QString());
-        progressBar->setFormat(QApplication::translate("MainWindow", "%p%", 0));
-        videoFrame->setText(QString());
-#ifndef QT_NO_TOOLTIP
-        imgLeft->setToolTip(QApplication::translate("MainWindow", "\345\267\246\347\247\273", 0));
-#endif // QT_NO_TOOLTIP
-        imgLeft->setText(QString());
-#ifndef QT_NO_TOOLTIP
-        imgRight->setToolTip(QApplication::translate("MainWindow", "\345\217\263\347\247\273", 0));
-#endif // QT_NO_TOOLTIP
-        imgRight->setText(QString());
-#ifndef QT_NO_TOOLTIP
-        imgUp->setToolTip(QApplication::translate("MainWindow", "\344\270\212\347\247\273", 0));
-#endif // QT_NO_TOOLTIP
-        imgUp->setText(QString());
-#ifndef QT_NO_TOOLTIP
-        imgDown->setToolTip(QApplication::translate("MainWindow", "\344\270\213\347\247\273", 0));
-#endif // QT_NO_TOOLTIP
-        imgDown->setText(QString());
-#ifndef QT_NO_TOOLTIP
-        imgBig->setToolTip(QApplication::translate("MainWindow", "\346\224\276\345\244\247", 0));
-#endif // QT_NO_TOOLTIP
-        imgBig->setText(QString());
-#ifndef QT_NO_TOOLTIP
-        imgSmall->setToolTip(QApplication::translate("MainWindow", "\347\274\251\345\260\217", 0));
-#endif // QT_NO_TOOLTIP
-        imgSmall->setText(QString());
-#ifndef QT_NO_TOOLTIP
-        imgRotate->setToolTip(QApplication::translate("MainWindow", "\346\227\213\350\275\254", 0));
-#endif // QT_NO_TOOLTIP
-        imgRotate->setText(QString());
-        twoDButton->setText(QApplication::translate("MainWindow", "2D\346\230\276\347\244\272", 0));
-        threeDButton->setText(QApplication::translate("MainWindow", "3D\346\230\276\347\244\272", 0));
-        rate->setText(QApplication::translate("MainWindow", "0", 0));
-        pos->setText(QApplication::translate("MainWindow", "0,0", 0));
-        label->setText(QApplication::translate("MainWindow", "\345\237\272\345\207\206\347\202\271:", 0));
-        lableXY->setText(QApplication::translate("MainWindow", "0,0", 0));
-        prompt->setText(QString());
         groupBox_5->setTitle(QString());
         menu_S->setTitle(QApplication::translate("MainWindow", "\350\256\276\347\275\256(&S)", 0));
         menu->setTitle(QApplication::translate("MainWindow", "\345\270\256\345\212\251(&H)", 0));
