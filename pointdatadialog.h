@@ -6,6 +6,12 @@
 #include <QDebug>
 #include <QFile>
 #include <QFileDialog>
+extern "C" {
+#include "lua.h"
+#include "lualib.h"
+#include "lauxlib.h"
+
+}
 namespace Ui {
 class pointDataDialog;
 }
@@ -22,10 +28,15 @@ private slots:
     void on_roiColor_clicked();
 
     void on_loadPoint_clicked();
+    void getPoint();
+    void loadLua(char *);
 signals:
     void addRoi(QMap<QString,QVariant>);
 private:
     Ui::pointDataDialog *ui;
+
+
+    lua_State *l;
 };
 
 #endif // POINTDATADIALOG_H

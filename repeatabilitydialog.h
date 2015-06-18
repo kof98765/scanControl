@@ -21,8 +21,11 @@ private:
     summarizing *sum;
 public slots:
     void recvRepeatability(QMap<QString,double>,QMap<QString,double>);
+signals:
+    void flush();
 private slots:
     void on_excel_clicked();
+
 };
 
 #endif // REPEATABILITYDIALOG_H

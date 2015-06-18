@@ -34,3 +34,5 @@ void repeatabilityDialog::on_excel_clicked()
 {
     sum->to_excel();
 }
+
+

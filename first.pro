@@ -59,7 +59,6 @@ SOURCES += main.cpp\
     profileget.cpp \
     msghandlerwapper.cpp \
     settingDialog.cpp \
-    glwidget.cpp \
     imgListView.cpp\
     profileget.cpp \
     lua/lua.cpp \
@@ -93,7 +92,6 @@ HEADERS  += mainwindow.h \
     profileget.h \
     msghandlerwapper.h \
     settingDialog.h \
-    glwidget.h \
     imgListView.h \
     profileget.h \
     lua/lua.h \
@@ -104,7 +102,7 @@ HEADERS  += mainwindow.h \
     Flatness.h \
     qcustomplot.h \
     getpointdialog.h \
-    repeatabilitydialog.h
+    repeatabilitydialog.h \
 
 
 

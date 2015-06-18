@@ -44,6 +44,12 @@ void kingsControl::initDevice()
 
     flushSettings();
 }
+/*
+    函数名:flushSettings
+    描述:
+        读取设置
+
+*/
 void kingsControl::flushSettings()
 {
     int mode=set.value("mode",1).toInt();
@@ -60,6 +66,9 @@ void kingsControl::flushSettings()
     qDebug()<<"dataPort"<<dataPort;
 
 }
+/*
+    初始化usb模式
+*/
 void kingsControl::usbMode()
 {
 
@@ -76,6 +85,9 @@ void kingsControl::usbMode()
     qDebug()<<"usb mode is init";
 
 }
+/*
+    初始化网络模式
+*/
 void kingsControl::EthernetMode()
 {
 
@@ -119,6 +131,9 @@ void kingsControl::EthernetMode()
     //if (!NativeMethods::CheckReturnCode(rc)) return;
     //qDebug()<<"etherneMode is init";
 }
+/*
+    开始接收数据,会根据thranferMode决定传输模式
+*/
 void kingsControl::startGetData()
 {
 
@@ -159,6 +174,7 @@ void kingsControl::setDispMode(int mode)
     displayMode=mode;
     startGetData();
 }
+//开始使用usb传输数据
 void kingsControl::startGetUsbData()
 {
     qDebug()<<"start usb";
@@ -178,7 +194,7 @@ void kingsControl::startGetUsbData()
         emit Error(QString("HighSpeedDataUsbCommunicationInitalize:0x%1").arg(rc,0,16));
         return;
     }
-
+    //这里有三种模式,使用配置系统的参数
     req.bySendPos =set.value("sendPos",0).toInt();
 
     // High-speed data communication start prep
@@ -201,6 +217,9 @@ void kingsControl::startGetUsbData()
     }
     qDebug()<<"start usb finish";
 }
+/*
+    开始使用网络传输数据
+*/
 void kingsControl::startGetEthernetData()
 {
     qDebug()<<"start ethernet";
@@ -232,13 +251,13 @@ void kingsControl::startGetEthernetData()
         emit Error(QString("PreStartHighSpeedDataCommunication:0x%1").arg(rc,0,16));
         return;
     }
-
+    //设置缓冲区大小
     vdValueZ.resize(profileInfo.wProfDataCnt*set.value("profileCount",1000).toInt());
     x.resize(profileInfo.wProfDataCnt);
     qDebug()<<"profDataCnt"<<profileInfo.wProfDataCnt;
     // Start high-speed data communication.
 
-
+    //开始传输
     rc = (CRc::Rc)LJV7IF_StartHighSpeedDataCommunication(DEVICE_ID);
     qDebug()<<rc;
     if (rc!=CRc::Ok)
@@ -248,7 +267,9 @@ void kingsControl::startGetEthernetData()
     }
     qDebug()<<"start net finish";
 }
-
+/*
+    停止接收数据
+*/
 void kingsControl::stopGetData()
 {
     // Stop high-speed data communication.
@@ -325,7 +346,9 @@ void kingsControl::GetBatchProfile()
 
 
 
-
+/*
+真正的回调函数
+*/
 
 void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD notify, DWORD user)
 {
@@ -333,10 +356,7 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
     DWORD profileSize = size / sizeof(DWORD);
 
     //得到每一帧的数据
-    // Retain profile data
-    //qDebug()<<"recv:"<<count;
-    //qDebug()<<"size"<<size;
-
+   //每次回调都发个信号,QT专用
     emit heartPack();
     if((notify&0xffff)!=0)
     {
@@ -354,10 +374,10 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
 
         ProfileData _profileData;
         _profileData.SetData(&profileBuf[0],profileSize);
-
+        //有时候一次回调包含有N帧
         for(int i=0;i<_profileData.profSize;i++)
         {
-
+            //数据是一个很大的整数,这里做了些处理,限制数据只在最大最小量程内
             vdValueZ[receiveCount*_profileData.profSize+i]=(int)_profileData._profileValue[i]*0.00001;
             double v=vdValueZ[receiveCount*_profileData.profSize+i];
             if(v>maxMeasuringRange)
@@ -372,11 +392,11 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
 
 
 
-
+        //当达到所需要的帧数时
         if((receiveCount+1)==set.value("profileCount").toInt())
         {
 
-
+            //单帧模式需要一个x轴数据
             for(int i=0;i<_profileData.profSize;i++)
             {
                  x[i]=i*0.01;
@@ -384,6 +404,7 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
             //单帧模式
             if(displayMode==0)
             {
+                //发送单帧数据
                 emit dispSingleFrame(0,0,&x[0],&vdValueZ[0],_profileData.profSize);
 
             }
@@ -391,6 +412,7 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
             //连续图像模式
             if(displayMode==1)
             {
+                //发送图像数据
                 emit putImagebyPointer1(&vdValueZ[0],_profileData.profSize,receiveCount+1);
 
 
@@ -398,6 +420,7 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
             //单图像模式
             if(displayMode==2)
             {
+                //发送单张
                 emit putImagebyPointer1(&vdValueZ[0],_profileData.profSize,receiveCount+1);
                 stopGetData();
             }
@@ -410,7 +433,9 @@ void kingsControl::new_callback(BYTE* buffer, DWORD size, DWORD count, DWORD not
 
     //delete[]bufferArray;
 }
-
+/*
+    系统回调函数,由于QT类不支持一般的写法,这里做了一个中转
+*/
 void _cdecl _callback(BYTE* buffer, DWORD size, DWORD count, DWORD notify, DWORD user)
 {
     kingsControl *_Sample=(kingsControl*)obj;

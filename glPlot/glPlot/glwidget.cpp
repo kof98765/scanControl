@@ -48,6 +48,7 @@
 GLWidget::GLWidget(QWidget *parent)
     : QGLWidget(parent)
 {
+
     gear1 = 0;
     gear2 = 0;
     gear3 = 0;

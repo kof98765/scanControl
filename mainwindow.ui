@@ -48,6 +48,12 @@
          </item>
          <item>
           <widget class="QLabel" name="prompt">
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">color: rgb(255, 0, 0);</string>
            </property>
@@ -488,6 +494,11 @@ border-radius:25px</string>
             <string>计算结果</string>
            </property>
           </column>
+          <column>
+           <property name="text">
+            <string>时间</string>
+           </property>
+          </column>
          </widget>
         </item>
         <item row="0" column="1">
@@ -671,7 +682,7 @@ border-radius:25px</string>
           <widget class="QComboBox" name="func">
            <item>
             <property name="text">
-             <string>定位区域</string>
+             <string>模板匹配</string>
             </property>
            </item>
            <item>
@@ -775,8 +786,8 @@ border-radius:25px</string>
          <rect>
           <x>310</x>
           <y>40</y>
-          <width>201</width>
-          <height>81</height>
+          <width>240</width>
+          <height>104</height>
          </rect>
         </property>
         <layout class="QFormLayout" name="formLayout_2">
@@ -836,28 +847,28 @@ border-radius:25px</string>
          <item row="1" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QSpinBox" name="pointX">
+            <widget class="QDoubleSpinBox" name="pointX">
              <property name="enabled">
               <bool>false</bool>
              </property>
              <property name="minimum">
-              <number>-10000</number>
+              <double>-5000.000000000000000</double>
              </property>
              <property name="maximum">
-              <number>10000</number>
+              <double>5000.000000000000000</double>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="pointY">
+            <widget class="QDoubleSpinBox" name="pointY">
              <property name="enabled">
               <bool>false</bool>
              </property>
              <property name="minimum">
-              <number>-10000</number>
+              <double>-5000.000000000000000</double>
              </property>
              <property name="maximum">
-              <number>10000</number>
+              <double>5000.000000000000000</double>
              </property>
             </widget>
            </item>
@@ -866,26 +877,39 @@ border-radius:25px</string>
          <item row="2" column="0">
           <widget class="QLabel" name="Label_6">
            <property name="text">
-            <string>单位:</string>
+            <string>坐标换算比例</string>
            </property>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QComboBox" name="unit">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
-            <property name="text">
-             <string>微米</string>
-            </property>
+            <widget class="QDoubleSpinBox" name="scaleX">
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>0.001000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
            </item>
            <item>
-            <property name="text">
-             <string>毫米</string>
-            </property>
+            <widget class="QDoubleSpinBox" name="scaleY">
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>0.001000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
            </item>
-          </widget>
+          </layout>
          </item>
         </layout>
        </widget>

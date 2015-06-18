@@ -138,6 +138,9 @@ void MainWindow::initLaser()
     connect(laser,SIGNAL(heartPack()),this,SLOT(recvHeartPack()));
     connect(laser,SIGNAL(Error(QString)),this,SLOT(Error(QString)));
 }
+/*
+    窗口事件
+*/
 bool MainWindow::eventFilter(QObject *target, QEvent *event)
 {
     static QPoint start,end,threeDstart,threeDend,hps,hpe;
@@ -336,6 +339,7 @@ void MainWindow::init_connect()
     //connect(hal,SIGNAL(clearMemory()),laser,SLOT(clearMemory()));
     connect(getPoint,SIGNAL(addRoi(QMap<QString,QVariant>)),hal,SLOT(drawRect(QMap<QString,QVariant>)));
     connect(hal,SIGNAL(dispImg()),this,SLOT(dispImg()));
+
     connect(hal,SIGNAL(reportBasePoint(double,double)),this,SLOT(reportBasePoint(double,double)));
     connect(hal,SIGNAL(Warning(QString)),this,SLOT(Warning(QString)));
     connect(hal,SIGNAL(sendPlaneness(int,double)),this,SLOT(recvPlaneness(int,double)));
@@ -376,10 +380,13 @@ void MainWindow::init_connect()
 void MainWindow::Error(QString str)
 {
 
-    QMessageBox::warning(this,
-                         QStringLiteral("错误"),
-                         str,
-                         QMessageBox::Yes );
+    //QMessageBox::warning(this,
+   //                      QStringLiteral("错误"),
+    //                     str,
+    //                     QMessageBox::Yes );
+    ui->prompt->setText(str);
+    QTimer time;
+    time.singleShot(3000,ui->prompt,SLOT(clear()));
 }
 void MainWindow::Warning(QString str)
 {
@@ -430,7 +437,7 @@ void MainWindow::dispImg()
 {
 
     status=0;
-
+    sum->calculateRepeatability(3,4);
     switch(ui->base->currentIndex())
     {
     case 0:
@@ -840,6 +847,7 @@ void MainWindow::recvHeightSub(int,double min,double max,double range)
 {}
 void MainWindow::recvHeightSub(QString name,double min1,double max1,double range)
 {
+    QString time=QTime::currentTime().toString();
     status=0;
     int i;
     double min,max;
@@ -857,7 +865,7 @@ void MainWindow::recvHeightSub(QString name,double min1,double max1,double range
     min=roi.value("min").toDouble();
     max=roi.value("max").toDouble();
 
-    out.write(QTime::currentTime().toString().toUtf8()+',');
+    out.write(time.toUtf8()+',');
     if(range<min|range>max)
     {
         sum->add_item(0,QString("NG"));
@@ -882,6 +890,7 @@ void MainWindow::recvHeightSub(QString name,double min1,double max1,double range
     sum->add_item(3,name);
     out.write((name+',').toUtf8());
     sum->add_item(4,QString("%1").arg(range));
+    sum->add_item(5,time);
     out.write(QString("%1\r\n").arg(range).toUtf8());
 
 
@@ -907,7 +916,7 @@ void MainWindow::recvPlaneness(int team,double result1)
 {
     status=0;
     QStringList datastring;
-
+    QString time=QTime::currentTime().toString();
 
     QMap<QString,QVariant> data=set.value("dataList").toMap();
     if(ui->tableWidget->rowCount()>1000)
@@ -918,7 +927,7 @@ void MainWindow::recvPlaneness(int team,double result1)
     QStringList str=map.value(QString::number(team)).toStringList();
     double min=str.size()>0?str.at(0).toDouble():0;
     double max=str.size()>0?str.at(1).toDouble():0;
-    out.write(QTime::currentTime().toString().toUtf8()+',');
+    out.write(time.toUtf8()+',');
     if(result1<min|result1>max)
     {
         sum->add_item(0,QString("NG"));
@@ -944,7 +953,7 @@ void MainWindow::recvPlaneness(int team,double result1)
     out.write("N/A,");
     sum->add_item(4,QString("%1").arg(result1));
     out.write(QString("%1\r\n").arg(result1).toUtf8());
-
+    sum->add_item(5,time);
     //sum->add_item(7,QString("%1,%2").arg(str.at(2)).arg(str.at(1)));
 
     ui->tableWidget->setSortingEnabled(true);
@@ -1079,9 +1088,9 @@ void MainWindow::on_roiDraw_clicked()
         ui->maxValue1->setText(QString::number(max));
     }
     QMap<QString,QVariant> map,limit;
-    map.insert("Row",ui->pointY->value());
-    map.insert("Column",ui->pointX->value());
-    map.insert("unit",ui->unit->currentIndex());
+    map.insert("Row",ui->pointY->value()/ui->scaleY->value());
+    map.insert("Column",ui->pointX->value()/ui->scaleX->value());
+
     map.insert("Length1",ui->roiLength1->value());
     map.insert("Length2",ui->roiLength2->value());
     map.insert("name",ui->roiName->text());
@@ -1131,13 +1140,13 @@ void MainWindow::flushRoiList(QStringList ll)
         switch(roi.value("func").toInt())
         {
         case 0:
-            roiList->add_item(2,QStringLiteral("定位"));
+            roiList->add_item(2,QStringLiteral("模板匹配"));
             break;
         case 1:
-            roiList->add_item(2,QStringLiteral("搜索"));
+            roiList->add_item(2,QStringLiteral("找中心点"));
             break;
         case 2:
-            roiList->add_item(2,QStringLiteral("定基准点"));
+            roiList->add_item(2,QStringLiteral("两点一线"));
 
             break;
         case 3:
@@ -1152,7 +1161,7 @@ void MainWindow::flushRoiList(QStringList ll)
         }
         switch(roi.value("func").toInt())
         {
-        case 2:
+
         case 3:
         case 4:
         case 5:
@@ -1328,7 +1337,7 @@ void MainWindow::on_draw1_clicked()
     ui->roiLength2->setEnabled(false);
     ui->pointX->setEnabled(false);
     ui->pointY->setEnabled(false);
-    ui->unit->setEnabled(false);
+
 }
 
 void MainWindow::on_draw2_clicked()
@@ -1337,7 +1346,7 @@ void MainWindow::on_draw2_clicked()
     ui->roiLength2->setEnabled(true);
     ui->pointX->setEnabled(true);
     ui->pointY->setEnabled(true);
-    ui->unit->setEnabled(true);
+
 }
 /*
     读取点位
@@ -1351,7 +1360,7 @@ void MainWindow::on_loadData_clicked()
 
 void MainWindow::on_chart_clicked()
 {
-    sum->calculateRepeatability(3,4);
+
     repeat->show();
 }
 void MainWindow::reportBasePoint(double x, double y)

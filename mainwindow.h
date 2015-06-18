@@ -31,7 +31,6 @@
 #include "pointanalyze.h"
 #include "profileget.h"
 #include "msghandlerwapper.h"
-#include "glwidget.h"
 #include <QColorDialog>
 #include "kingscontrol.h"
 #include "laser/laser.h"
@@ -83,7 +82,7 @@ public slots:
     void controlImg(int);
     void selectImg(int);
     void modeSelect(int);
-    void on_loadFile_clicked();
+
     void detect();
     void startButton_clicked();
     void netTest(QString);
@@ -131,7 +130,7 @@ private:
     repeatabilityDialog *repeat;
 	summarizing *roiList;
     QButtonGroup *mygroup;
-    GLWidget *glWidget;
+
     QString searchPath;
     QList<QString> fileList;
     QPalette palette;
@@ -174,6 +173,7 @@ signals:
     void E128_detect();
 
 private slots:
+    void on_loadFile_clicked();
     void on_roiDraw_clicked();
     void statusCheck();
     void updataProsessBar(QString,int);

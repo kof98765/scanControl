@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
@@ -130,10 +131,12 @@ public:
     QSpinBox *roiLength2;
     QLabel *Label_5;
     QHBoxLayout *horizontalLayout_2;
-    QSpinBox *pointX;
-    QSpinBox *pointY;
+    QDoubleSpinBox *pointX;
+    QDoubleSpinBox *pointY;
     QLabel *Label_6;
-    QComboBox *unit;
+    QHBoxLayout *horizontalLayout_5;
+    QDoubleSpinBox *scaleX;
+    QDoubleSpinBox *scaleY;
     QRadioButton *draw1;
     QRadioButton *draw2;
     QLabel *connect;
@@ -262,6 +265,7 @@ public:
 
         prompt = new QLabel(groupBox_6);
         prompt->setObjectName(QStringLiteral("prompt"));
+        prompt->setMinimumSize(QSize(200, 0));
         prompt->setStyleSheet(QStringLiteral("color: rgb(255, 0, 0);"));
 
         horizontalLayout_4->addWidget(prompt);
@@ -466,8 +470,8 @@ public:
         gridLayout_3->addWidget(toExcel, 0, 2, 1, 1);
 
         tableWidget = new QTableWidget(groupBox_2);
-        if (tableWidget->columnCount() < 5)
-            tableWidget->setColumnCount(5);
+        if (tableWidget->columnCount() < 6)
+            tableWidget->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -478,6 +482,8 @@ public:
         tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         tableWidget->setSelectionMode(QAbstractItemView::MultiSelection);
@@ -507,18 +513,18 @@ public:
         roiList = new QTableWidget(groupBox);
         if (roiList->columnCount() < 6)
             roiList->setColumnCount(6);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(0, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(1, __qtablewidgetitem6);
+        roiList->setHorizontalHeaderItem(0, __qtablewidgetitem6);
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(2, __qtablewidgetitem7);
+        roiList->setHorizontalHeaderItem(1, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(3, __qtablewidgetitem8);
+        roiList->setHorizontalHeaderItem(2, __qtablewidgetitem8);
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(4, __qtablewidgetitem9);
+        roiList->setHorizontalHeaderItem(3, __qtablewidgetitem9);
         QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        roiList->setHorizontalHeaderItem(5, __qtablewidgetitem10);
+        roiList->setHorizontalHeaderItem(4, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        roiList->setHorizontalHeaderItem(5, __qtablewidgetitem11);
         roiList->setObjectName(QStringLiteral("roiList"));
         roiList->setSelectionBehavior(QAbstractItemView::SelectRows);
         roiList->setSortingEnabled(true);
@@ -614,7 +620,7 @@ public:
         roiDraw->setGeometry(QRect(310, 280, 151, 23));
         formLayoutWidget = new QWidget(groupBox_3);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(310, 40, 201, 81));
+        formLayoutWidget->setGeometry(QRect(310, 40, 240, 104));
         formLayout_2 = new QFormLayout(formLayoutWidget);
         formLayout_2->setSpacing(6);
         formLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -658,19 +664,19 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        pointX = new QSpinBox(formLayoutWidget);
+        pointX = new QDoubleSpinBox(formLayoutWidget);
         pointX->setObjectName(QStringLiteral("pointX"));
         pointX->setEnabled(false);
-        pointX->setMinimum(-10000);
-        pointX->setMaximum(10000);
+        pointX->setMinimum(-5000);
+        pointX->setMaximum(5000);
 
         horizontalLayout_2->addWidget(pointX);
 
-        pointY = new QSpinBox(formLayoutWidget);
+        pointY = new QDoubleSpinBox(formLayoutWidget);
         pointY->setObjectName(QStringLiteral("pointY"));
         pointY->setEnabled(false);
-        pointY->setMinimum(-10000);
-        pointY->setMaximum(10000);
+        pointY->setMinimum(-5000);
+        pointY->setMaximum(5000);
 
         horizontalLayout_2->addWidget(pointY);
 
@@ -682,11 +688,27 @@ public:
 
         formLayout_2->setWidget(2, QFormLayout::LabelRole, Label_6);
 
-        unit = new QComboBox(formLayoutWidget);
-        unit->setObjectName(QStringLiteral("unit"));
-        unit->setEnabled(false);
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        scaleX = new QDoubleSpinBox(formLayoutWidget);
+        scaleX->setObjectName(QStringLiteral("scaleX"));
+        scaleX->setDecimals(3);
+        scaleX->setMinimum(0.001);
+        scaleX->setValue(1);
 
-        formLayout_2->setWidget(2, QFormLayout::FieldRole, unit);
+        horizontalLayout_5->addWidget(scaleX);
+
+        scaleY = new QDoubleSpinBox(formLayoutWidget);
+        scaleY->setObjectName(QStringLiteral("scaleY"));
+        scaleY->setDecimals(3);
+        scaleY->setMinimum(0.001);
+        scaleY->setValue(1);
+
+        horizontalLayout_5->addWidget(scaleY);
+
+
+        formLayout_2->setLayout(2, QFormLayout::FieldRole, horizontalLayout_5);
 
         draw1 = new QRadioButton(groupBox_3);
         draw1->setObjectName(QStringLiteral("draw1"));
@@ -866,21 +888,23 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "\350\256\241\347\256\227\347\273\223\346\236\234", 0));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "\346\227\266\351\227\264", 0));
         chart->setText(QApplication::translate("MainWindow", "\346\237\245\347\234\213\351\207\215\345\244\215\346\200\247", 0));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221\346\265\213\351\207\217\345\214\272\345\237\237", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\210\227\350\241\250", 0));
-        QTableWidgetItem *___qtablewidgetitem5 = roiList->horizontalHeaderItem(0);
-        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
-        QTableWidgetItem *___qtablewidgetitem6 = roiList->horizontalHeaderItem(1);
-        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204", 0));
-        QTableWidgetItem *___qtablewidgetitem7 = roiList->horizontalHeaderItem(2);
-        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "\347\261\273\345\236\213", 0));
-        QTableWidgetItem *___qtablewidgetitem8 = roiList->horizontalHeaderItem(3);
-        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\344\270\213\351\231\220", 0));
-        QTableWidgetItem *___qtablewidgetitem9 = roiList->horizontalHeaderItem(4);
-        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
-        QTableWidgetItem *___qtablewidgetitem10 = roiList->horizontalHeaderItem(5);
-        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", " \345\237\272\345\207\206\347\202\271", 0));
+        QTableWidgetItem *___qtablewidgetitem6 = roiList->horizontalHeaderItem(0);
+        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215", 0));
+        QTableWidgetItem *___qtablewidgetitem7 = roiList->horizontalHeaderItem(1);
+        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "\345\210\206\347\273\204", 0));
+        QTableWidgetItem *___qtablewidgetitem8 = roiList->horizontalHeaderItem(2);
+        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "\347\261\273\345\236\213", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = roiList->horizontalHeaderItem(3);
+        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "\346\234\200\345\260\217\344\270\213\351\231\220", 0));
+        QTableWidgetItem *___qtablewidgetitem10 = roiList->horizontalHeaderItem(4);
+        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\344\270\212\351\231\220", 0));
+        QTableWidgetItem *___qtablewidgetitem11 = roiList->horizontalHeaderItem(5);
+        ___qtablewidgetitem11->setText(QApplication::translate("MainWindow", " \345\237\272\345\207\206\347\202\271", 0));
         loadData->setText(QApplication::translate("MainWindow", "\344\270\200\351\224\256\345\257\274\345\205\245", 0));
         fastInput->setText(QApplication::translate("MainWindow", "\345\277\253\351\200\237\345\275\225\345\205\245", 0));
         label_2->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\345\220\215:", 0));
@@ -899,7 +923,7 @@ public:
         label_6->setText(QApplication::translate("MainWindow", "\347\261\273\345\236\213:", 0));
         func->clear();
         func->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "\345\256\232\344\275\215\345\214\272\345\237\237", 0)
+         << QApplication::translate("MainWindow", "\346\250\241\346\235\277\345\214\271\351\205\215", 0)
          << QApplication::translate("MainWindow", "\345\256\232\345\237\272\345\207\206\347\202\271(\344\270\255\345\277\203\347\202\271)", 0)
          << QApplication::translate("MainWindow", "\345\256\232\345\237\272\345\207\206\347\202\271(\344\270\244\347\202\271\344\270\200\347\272\277)", 0)
          << QApplication::translate("MainWindow", "\350\256\241\347\256\227\345\271\263\351\235\242\345\272\246", 0)
@@ -915,12 +939,7 @@ public:
         roiDraw->setText(QApplication::translate("MainWindow", "\347\273\230\345\210\266", 0));
         Label_4->setText(QApplication::translate("MainWindow", "\345\214\272\345\237\237\351\225\277\345\256\275:", 0));
         Label_5->setText(QApplication::translate("MainWindow", "\345\235\220\346\240\207:", 0));
-        Label_6->setText(QApplication::translate("MainWindow", "\345\215\225\344\275\215:", 0));
-        unit->clear();
-        unit->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "\345\276\256\347\261\263", 0)
-         << QApplication::translate("MainWindow", "\346\257\253\347\261\263", 0)
-        );
+        Label_6->setText(QApplication::translate("MainWindow", "\345\235\220\346\240\207\346\215\242\347\256\227\346\257\224\344\276\213", 0));
         draw1->setText(QApplication::translate("MainWindow", "\347\273\230\345\210\266\345\214\272\345\237\237", 0));
         draw2->setText(QApplication::translate("MainWindow", "\351\224\256\345\205\245\345\214\272\345\237\237", 0));
         connect->setText(QString());
